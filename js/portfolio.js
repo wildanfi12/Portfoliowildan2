@@ -1756,148 +1756,157 @@ const PROJECTS = [
 
   {
     id: 'video-editing-howell',
-    title: 'PT. Howell Niaga Indonesia',
+    title: 'Howell',
     category: 'video',
     categoryName: 'Video Editing & Motion',
     client: 'PT. Howell Niaga Indonesia',
-    metric: '21 Video Commercial & Product Showcase',
-    thumbnail: 'assets/howell-video/1_adapter_hdmi_8k_adp006.mp4',
-    shortDesc: 'Folder Video Editing Howell — 21 Video Commercial, Product Showcase, Kunjungan Pabrik, Konten Komedi Kantor & Edukasi Kabel.',
-    fullDesc: 'Folder koleksi resmi Video Editing untuk PT. Howell Niaga Indonesia dari folder assets/Video Editing/Howell. Di dalamnya berisi 21 aset video commercial & sosial media meliputi Product Showcase Adapter HDMI 8K, Adaptor ADP024, Kabel LAN CAT6, Charger 20W, Konten Komedi Kantor (Gen-Z Pulang Kerja, Ghibah, Lupa Absen, Kerja Jaman Batu), Kunjungan Pabrik Howell, serta Video Edukasi Perbedaan USB & HDMI.',
+    metric: '22 Video Commercial & Product Showcase • Bunny Stream',
+    thumbnail: 'assets/howell-video/howell_1.jpg',
+    shortDesc: 'Folder Video Editing Howell — 22 Video Commercial, Product Showcase, Kunjungan Pabrik, Konten Komedi Kantor & Edukasi Kabel via Bunny Stream CDN.',
+    fullDesc: 'Folder koleksi resmi Video Editing untuk Howell (PT. Howell Niaga Indonesia) yang terhubung langsung ke Bunny Stream CDN. Di dalamnya berisi 22 aset video commercial & sosial media meliputi Product Showcase Adapter HDMI 8K, Adaptor ADP024, Kabel LAN CAT6, Charger 20W, Konten Komedi Kantor (Gen-Z Pulang Kerja, Ghibah, Lupa Absen, Kerja Jaman Batu), Kunjungan Pabrik Howell, serta Video Edukasi Perbedaan USB & HDMI.',
     challenge: 'Memproduksi seri video produk elektronik Howell dan konten komedi kantor yang menghibur serta berkonversi tinggi untuk TikTok & Instagram Reels.',
-    solution: 'Editing video produk ritmis, transisi kinetik, animasi teks spesifikasi teknis, copywriting komedi relate, dan sound design profesional.',
+    solution: 'Integrasi video streaming melalui Bunny Stream CDN berkecepatan tinggi, editing video produk ritmis, transisi kinetik, animasi teks spesifikasi teknis, copywriting komedi relate, dan sound design profesional.',
     results: [
-      '21 Aset Video Commercial & Social Media Reels Resmi Terintegrasi di Folder Howell',
+      '22 Aset Video Commercial & Social Media Reels Resmi Terkoneksi ke Bunny Stream CDN (Library ID: 756896)',
+      'Streaming Cepat Kualitas HD Bebas Buffering & Bebas Iklan',
       'Meningkatkan engagement penonton & jangkauan organik media sosial Howell'
     ],
-    tools: ['Premiere Pro', 'After Effects', 'CapCut Pro'],
-    embedVideo: 'assets/howell-video/1_adapter_hdmi_8k_adp006.mp4',
+    tools: ['Premiere Pro', 'After Effects', 'CapCut Pro', 'Bunny Stream'],
+    bunnyVideoId: 'dad99ec4-89b5-4d66-bc61-15ff6ae57060',
+    bunnyLibraryId: '756896',
+    embedVideo: 'https://iframe.mediadelivery.net/embed/756896/dad99ec4-89b5-4d66-bc61-15ff6ae57060',
     items: [
       {
-        name: 'Howell — Adapter HDMI 8K ADP006 Product Video',
-        img: 'assets/howell-video/1_adapter_hdmi_8k_adp006.mp4',
-        video: 'assets/howell-video/1_adapter_hdmi_8k_adp006.mp4',
-        desc: 'Video komersial & product showcase Adapter HDMI 8K ADP006.'
+        name: 'Adapter HDMI 8K ADP006-3.mp4',
+        img: 'assets/howell-video/howell_1.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/dad99ec4-89b5-4d66-bc61-15ff6ae57060',
+        desc: 'Adapter HDMI 8K ADP006-3.mp4 — Video showcase produk Adapter HDMI 8K ADP006.'
       },
       {
-        name: 'Howell — Adaptor ADP 024 Commercial Reel',
-        img: 'assets/howell-video/2_adaptor_adp024.mp4',
-        video: 'assets/howell-video/2_adaptor_adp024.mp4',
-        desc: 'Video komersial & product showcase Adaptor ADP 024.'
+        name: 'Adaptor adp 024 new 3.mp4',
+        img: 'assets/howell-video/howell_2.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/dd2b3b3b-ac28-4ffe-b2d1-0f3a3f33bfe8',
+        desc: 'Adaptor adp 024 new 3.mp4 — Video commercial & product showcase Adaptor ADP 024.'
       },
       {
-        name: 'Howell — Cable CAT 6 UTP Indoor 120M',
-        img: 'assets/howell-video/3_cat6_utp_indoor.mp4',
-        video: 'assets/howell-video/3_cat6_utp_indoor.mp4',
-        desc: 'Video product showcase kabel LAN Cat 6 UTP Indoor 120M.'
+        name: 'Cat 6 UTP Indoor 120M.mp4',
+        img: 'assets/howell-video/howell_3.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/8123e8cc-d7d8-40df-8538-51399a89f114',
+        desc: 'Cat 6 UTP Indoor 120M.mp4 — Video product showcase Kabel LAN Cat 6 UTP Indoor 120M.'
       },
       {
-        name: 'Howell — Fast Charger 20W HW-C02A',
-        img: 'assets/howell-video/4_charger_20w_hwc02a.mp4',
-        video: 'assets/howell-video/4_charger_20w_hwc02a.mp4',
-        desc: 'Video commercial showcase Charger 20 Watt HW-C02A.'
+        name: 'Charger 20 watt (HW-C02A).mp4',
+        img: 'assets/howell-video/howell_4.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/044065b7-bb35-492b-8984-acfcbf609b33',
+        desc: 'Charger 20 watt (HW-C02A).mp4 — Video commercial showcase Fast Charger 20W HW-C02A.'
       },
       {
-        name: 'Howell — Konten Komedi Customer Datang',
-        img: 'assets/howell-video/5_costumer_datang.mp4',
-        video: 'assets/howell-video/5_costumer_datang.mp4',
-        desc: 'Video konten komedi kantor sketsa Customer Datang.'
+        name: 'Costumer datang.mp4',
+        img: 'assets/howell-video/howell_5.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/83e9e094-2d80-4a9a-9664-e4596994ebd5',
+        desc: 'Costumer datang.mp4 — Video konten komedi kantor sketsa Customer Datang.'
       },
       {
-        name: 'Howell — Gen-Z Pulang Kerja Reels',
-        img: 'assets/howell-video/6_genz_pulang_kerja.mp4',
-        video: 'assets/howell-video/6_genz_pulang_kerja.mp4',
-        desc: 'Video konten komedi kantor sketsa Gen-Z Pulang Kerja.'
+        name: 'genz pulang kerja2.mp4',
+        img: 'assets/howell-video/howell_6.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/c2d7710c-581f-4d93-a227-49353ed6aba6',
+        desc: 'genz pulang kerja2.mp4 — Video reels komedi kantor sketsa Gen-Z Pulang Kerja seri 2.'
       },
       {
-        name: 'Howell — Konten Ghibah Kantor',
-        img: 'assets/howell-video/7_ghibah.mp4',
-        video: 'assets/howell-video/7_ghibah.mp4',
-        desc: 'Video konten komedi kantor sketsa Ghibah.'
+        name: 'Ghibah.mp4',
+        img: 'assets/howell-video/howell_7.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/1aaab4ee-9824-424d-ba9d-0a2c1382a6df',
+        desc: 'Ghibah.mp4 — Video konten komedi kantor sketsa Ghibah.'
       },
       {
-        name: 'Howell — HDMI 4K H0203 Product Showcase',
-        img: 'assets/howell-video/8_hdmi_4k_h0203.mp4',
-        video: 'assets/howell-video/8_hdmi_4k_h0203.mp4',
-        desc: 'Video komersial showcase Kabel HDMI 4K H0203.'
+        name: 'HDMI 4K H0203 New-.mp4',
+        img: 'assets/howell-video/howell_8.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/b5ae02c7-5b9d-41b5-bb30-5f13818ea49b',
+        desc: 'HDMI 4K H0203 New-.mp4 — Video commercial showcase Kabel HDMI 4K H0203.'
       },
       {
-        name: 'Howell — Gaming Headset HW-01 Commercial',
-        img: 'assets/howell-video/9_headset_hw01.mp4',
-        video: 'assets/howell-video/9_headset_hw01.mp4',
-        desc: 'Video komersial showcase Headset Gaming HW-01.'
+        name: 'Headset HW 01 (1)(1).mp4',
+        img: 'assets/howell-video/howell_9.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/23aa64ec-f69a-440a-8917-1c3b917feab9',
+        desc: 'Headset HW 01 (1)(1).mp4 — Video komersial showcase Gaming Headset HW-01.'
       },
       {
-        name: 'Howell — HW-C03 Voice AI Product Video',
-        img: 'assets/howell-video/10_hwc03_voice_ai.mp4',
-        video: 'assets/howell-video/10_hwc03_voice_ai.mp4',
-        desc: 'Video komersial & voice AI showcase Howell HW-C03.'
+        name: 'Howell HW-C03-Voice-ai(1).mp4',
+        img: 'assets/howell-video/howell_10.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/06198824-ea5d-4576-9850-79b8af8ff71b',
+        desc: 'Howell HW-C03-Voice-ai(1).mp4 — Video komersial & voice AI showcase Howell HW-C03.'
       },
       {
-        name: 'Howell — Kabel Data Fast Charging AC0501',
-        img: 'assets/howell-video/11_kabel_data_ac0501.mp4',
-        video: 'assets/howell-video/11_kabel_data_ac0501.mp4',
-        desc: 'Video product showcase Kabel Data AC0501.'
+        name: 'Kabel data AC0501-ai.mp4',
+        img: 'assets/howell-video/howell_11.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/c81f4734-0fc9-4998-af49-bb376e736f73',
+        desc: 'Kabel data AC0501-ai.mp4 — Video product showcase Kabel Data Fast Charging AC0501.'
       },
       {
-        name: 'Howell — Kabel LAN CAT6 Roll 305M Voice Video',
-        img: 'assets/howell-video/12_kabel_lan_cat6.mp4',
-        video: 'assets/howell-video/12_kabel_lan_cat6.mp4',
-        desc: 'Video product showcase Kabel LAN CAT6 Roll 305M.'
+        name: 'Kabel LAN CAT6 Roll 305-Voice.mp4',
+        img: 'assets/howell-video/howell_12.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/81302d0d-12d3-4305-90d9-d8ba0312ccd6',
+        desc: 'Kabel LAN CAT6 Roll 305-Voice.mp4 — Video product showcase Kabel LAN CAT6 Roll 305M Voice.'
       },
       {
-        name: 'Howell — Konten Kerja Jaman Batu',
-        img: 'assets/howell-video/13_kerja_jaman_batu.mp4',
-        video: 'assets/howell-video/13_kerja_jaman_batu.mp4',
-        desc: 'Video konten komedi kantor Kerja Jaman Batu.'
+        name: 'Kerja jaman batu.mp4',
+        img: 'assets/howell-video/howell_13.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/52d17d84-271f-4ab0-bb8c-759f9a2b735c',
+        desc: 'Kerja jaman batu.mp4 — Video konten komedi kantor sketsa Kerja Jaman Batu.'
       },
       {
-        name: 'Howell — Konten Kerja Kompak Tim',
-        img: 'assets/howell-video/14_kerja_kompak.mp4',
-        video: 'assets/howell-video/14_kerja_kompak.mp4',
-        desc: 'Video konten komedi kantor Kerja Kompak.'
+        name: 'Kerja kompak.mp4',
+        img: 'assets/howell-video/howell_14.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/0fd5cd4c-ce81-415a-99b8-98d06e4a62b8',
+        desc: 'Kerja kompak.mp4 — Video konten komedi kantor sketsa Kerja Kompak Tim.'
       },
       {
-        name: 'Howell — Konten Spesial 17 Agustus',
-        img: 'assets/howell-video/15_konten_17_agustus.mp4',
-        video: 'assets/howell-video/15_konten_17_agustus.mp4',
-        desc: 'Video konten kreasi HUT Kemerdekaan RI 17 Agustus.'
+        name: 'Konten 17 Agustus.mp4',
+        img: 'assets/howell-video/howell_15.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/f37e31f2-9746-4ab1-85bd-3b2c35951c4f',
+        desc: 'Konten 17 Agustus.mp4 — Video konten kreasi HUT Kemerdekaan RI 17 Agustus.'
       },
       {
-        name: 'Howell — Kunjungan Pabrik Howell Part 1',
-        img: 'assets/howell-video/16_kunjungan_pabrik_1.mp4',
-        video: 'assets/howell-video/16_kunjungan_pabrik_1.mp4',
-        desc: 'Video liputan & event coverage Kunjungan Pabrik Howell Edisi 1.'
+        name: 'Kunjungan pabrik howell new.mp4',
+        img: 'assets/howell-video/howell_16.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/95c1f711-5ca1-4e45-a812-d2f16bca44ed',
+        desc: 'Kunjungan pabrik howell new.mp4 — Video liputan & event coverage Kunjungan Pabrik Howell New.'
       },
       {
-        name: 'Howell — Kunjungan Pabrik Howell Part 2',
-        img: 'assets/howell-video/17_kunjungan_pabrik_2.mp4',
-        video: 'assets/howell-video/17_kunjungan_pabrik_2.mp4',
-        desc: 'Video liputan & event coverage Kunjungan Pabrik Howell Edisi 2.'
+        name: 'Kunjungan pabrik howell- 2.mp4',
+        img: 'assets/howell-video/howell_17.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/c152b05a-1fec-410b-a420-5c6128ee6c8e',
+        desc: 'Kunjungan pabrik howell- 2.mp4 — Video liputan & event coverage Kunjungan Pabrik Howell Part 2.'
       },
       {
-        name: 'Howell — Konten Komedi Lupa Absen',
-        img: 'assets/howell-video/18_lupa_absen.mp4',
-        video: 'assets/howell-video/18_lupa_absen.mp4',
-        desc: 'Video konten komedi kantor sketsa Lupa Absen.'
+        name: 'Kunjungan pabrik howell-3.mov',
+        img: 'assets/howell-video/howell_18.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/6f73a42c-ad82-4b78-a1d0-70c5f7ee44d7',
+        desc: 'Kunjungan pabrik howell-3.mov — Video liputan & event coverage Kunjungan Pabrik Howell Part 3.'
       },
       {
-        name: 'Howell — Edukasi Mengenal Perbedaan USB',
-        img: 'assets/howell-video/19_mengenal_perbedaan_usb.mp4',
-        video: 'assets/howell-video/19_mengenal_perbedaan_usb.mp4',
-        desc: 'Video edukasi & perbandingan tipe port USB.'
+        name: 'Kunjungan pabrik howell-motion.mov',
+        img: 'assets/howell-video/howell_19.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/42635dbf-c6ba-4d61-a858-e1fbbecf74ad',
+        desc: 'Kunjungan pabrik howell-motion.mov — Video motion graphics dokumentasi Kunjungan Pabrik Howell.'
       },
       {
-        name: 'Howell — Konten Komedi Pegel Pegel Kantor',
-        img: 'assets/howell-video/20_pegel_pegel.mp4',
-        video: 'assets/howell-video/20_pegel_pegel.mp4',
-        desc: 'Video konten komedi kantor Pegel Pegel.'
+        name: 'Mengenal Perbedaan USB.mp4',
+        img: 'assets/howell-video/howell_20.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/52e794ef-aa5a-44ae-8d48-b97051996dae',
+        desc: 'Mengenal Perbedaan USB.mp4 — Video edukasi & perbandingan tipe port USB.'
       },
       {
-        name: 'Howell — Edukasi Perbedaan Kabel HDMI',
-        img: 'assets/howell-video/21_perbedaan_kabel_hdmi.mp4',
-        video: 'assets/howell-video/21_perbedaan_kabel_hdmi.mp4',
-        desc: 'Video edukasi & perbandingan versi kabel HDMI.'
+        name: 'Pegel pegel.mp4',
+        img: 'assets/howell-video/howell_21.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/275875d8-b374-451e-ad4e-4d0487f7487e',
+        desc: 'Pegel pegel.mp4 — Video konten komedi kantor sketsa Pegel Pegel.'
+      },
+      {
+        name: 'Perbedaan Kabel HDMI(2).mp4',
+        img: 'assets/howell-video/howell_22.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/aa6990ec-c230-44e0-aab1-f185bde4d82f',
+        desc: 'Perbedaan Kabel HDMI(2).mp4 — Video edukasi & perbandingan versi kabel HDMI seri 2.'
       }
     ]
   },
@@ -1908,66 +1917,63 @@ const PROJECTS = [
     category: 'video',
     categoryName: 'Video Editing & Motion',
     client: 'Coca-Cola',
-    metric: '8 Video Commercial Editing Aset',
-    thumbnail: 'assets/coca-cola-video/Found_it_beat_202603221953.mp4',
-    shortDesc: 'Folder Video Editing Coca-Cola — 8 Video Commercial Editing, Shorts/Reels & Sound Design.',
-    fullDesc: 'Folder koleksi resmi Video Editing untuk Coca-Cola dari folder assets/Video Editing/ANDREY/Cocacola. Berisi 8 aset video komersial, fast-cut editing, kinetic titles, color grading, dan sound design.',
+    metric: '7 Video Commercial • Bunny Stream',
+    thumbnail: 'assets/coca-cola/cover.jpg',
+    shortDesc: 'Folder Video Editing Coca-Cola — 7 Video Commercial Editing, Shorts/Reels & Sound Design via Bunny Stream CDN.',
+    fullDesc: 'Folder koleksi resmi Video Editing untuk Coca-Cola yang terhubung langsung ke Bunny Stream CDN. Berisi 7 seri video komersial dengan fast-cut editing, kinetic titles, color grading merah krispi khas Coca-Cola, dan sound design profesional.',
     challenge: 'Mengemas visual cerita & momen Coca-Cola menjadi video promosi berenergi tinggi dengan retensi penonton maksimal.',
-    solution: 'Editing video ritmis dengan potongan lagu trending, animasi teks kinetik, dan penyelarasan warna merah Coca-Cola krispi.',
+    solution: 'Editing video ritmis dengan potongan lagu trending, animasi teks kinetik, dan integrasi Bunny Stream CDN untuk streaming instan kualitas HD.',
     results: [
-      '8 Aset Video Commercial Editing Resmi Terintegrasi di Folder Coca-Cola',
-      'Digunakan untuk tayangan media sosial Instagram Reels, TikTok, YouTube Shorts & Ads'
+      '7 Aset Video Commercial Editing Resmi Terintegrasi di Folder Coca-Cola (Library ID: 756896)',
+      'Pemutaran Cepat Kualitas HD Bebas Buffering & Bebas Iklan',
+      'Format Siap untuk Instagram Reels, TikTok Ads & YouTube Shorts'
     ],
-    tools: ['Premiere Pro', 'After Effects', 'CapCut Pro', 'DaVinci Resolve'],
-    embedVideo: 'assets/coca-cola-video/Found_it_beat_202603221953.mp4',
+    tools: ['Premiere Pro', 'After Effects', 'CapCut Pro', 'DaVinci Resolve', 'Bunny Stream'],
+    bunnyVideoId: '2479bf00-6cb8-4ca5-b07e-5bb6f5f75145',
+    bunnyLibraryId: '756896',
+    embedVideo: 'https://iframe.mediadelivery.net/embed/756896/2479bf00-6cb8-4ca5-b07e-5bb6f5f75145',
     items: [
       {
-        name: 'Coca-Cola — Found It Beat Commercial',
-        img: 'assets/coca-cola-video/cover.png',
-        video: 'assets/coca-cola-video/Found_it_beat_202603221953.mp4',
-        desc: 'Video komersial & editing ritmis Found It Beat.'
+        name: 'Found_it_beat_202603221953.mp4',
+        img: 'assets/coca-cola/1.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/2479bf00-6cb8-4ca5-b07e-5bb6f5f75145',
+        desc: 'Found_it_beat_202603221953.mp4 — Video komersial & editing ritmis Found It Beat.'
       },
       {
-        name: 'Coca-Cola — Fridge Door Opening Shot',
-        img: 'assets/coca-cola-video/cover.png',
-        video: 'assets/coca-cola-video/Fridge_door_opening_202603222021.mp4',
-        desc: 'Video komersial & editing ritmis Fridge Door Opening.'
+        name: 'Fridge_door_opening_202603222021.mp4',
+        img: 'assets/coca-cola/2.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/32f63168-43bb-453b-8f93-107b7d27788d',
+        desc: 'Fridge_door_opening_202603222021.mp4 — Video komersial & editing ritmis Fridge Door Opening.'
       },
       {
-        name: 'Coca-Cola — Man Walking Commercial',
-        img: 'assets/coca-cola-video/cover.png',
-        video: 'assets/coca-cola-video/Man_walking_and_202603221955.mp4',
-        desc: 'Video komersial & editing ritmis Man Walking.'
+        name: 'Orang_bergerak_berjalan_202603222003.mp4',
+        img: 'assets/coca-cola/3.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/23dc7705-7780-4dff-817b-5ead4c978336',
+        desc: 'Orang_bergerak_berjalan_202603222003.mp4 — Video komersial & editing ritmis Outdoor Walking.'
       },
       {
-        name: 'Coca-Cola — Outdoor Walking Ad',
-        img: 'assets/coca-cola-video/cover.png',
-        video: 'assets/coca-cola-video/Orang_bergerak_berjalan_202603222003.mp4',
-        desc: 'Video komersial & editing ritmis Outdoor Walking Ad.'
+        name: 'Permintaan_Video_Sisca_Berpikir.mp4',
+        img: 'assets/coca-cola/4.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/c93541e8-469e-4fdb-a387-e5f89041ee75',
+        desc: 'Permintaan_Video_Sisca_Berpikir.mp4 — Video komersial & konsep iklan Sisca Berpikir.'
       },
       {
-        name: 'Coca-Cola — Sisca Berpikir Ad Concept',
-        img: 'assets/coca-cola-video/cover.png',
-        video: 'assets/coca-cola-video/Permintaan_Video_Sisca_Berpikir.mp4',
-        desc: 'Video komersial & editing ritmis Sisca Berpikir.'
+        name: 'Person_holding_Coca-Cola_202603221957.mp4',
+        img: 'assets/coca-cola/5.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/3e38f5da-245b-4f7d-9edb-f0dddd71888d',
+        desc: 'Person_holding_Coca-Cola_202603221957.mp4 — Video komersial Person Holding Coca-Cola.'
       },
       {
-        name: 'Coca-Cola — Person Holding Coca-Cola Shot',
-        img: 'assets/coca-cola-video/cover.png',
-        video: 'assets/coca-cola-video/Person_holding_Coca-Cola_202603221957.mp4',
-        desc: 'Video komersial & editing ritmis Person Holding Coca-Cola.'
+        name: 'Video_Generation_For_Hot_Woman.mp4',
+        img: 'assets/coca-cola/6.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/6bb493c4-0a3b-4653-8e65-0b8ba612680e',
+        desc: 'Video_Generation_For_Hot_Woman.mp4 — Video komersial konsep iklan sinematik.'
       },
       {
-        name: 'Coca-Cola — Commercial Video Concept',
-        img: 'assets/coca-cola-video/cover.png',
-        video: 'assets/coca-cola-video/Video_Generation_For_Hot_Woman.mp4',
-        desc: 'Video komersial & editing ritmis Commercial Video Concept.'
-      },
-      {
-        name: 'Coca-Cola — Melting Station Commercial',
-        img: 'assets/coca-cola-video/cover.png',
-        video: 'assets/coca-cola-video/Video_Generation_Melting_Station.mp4',
-        desc: 'Video komersial & editing ritmis Melting Station.'
+        name: 'Video_Generation_Melting_Station.mp4',
+        img: 'assets/coca-cola/7.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/b2814029-f11c-43e6-9623-e23e1c078a45',
+        desc: 'Video_Generation_Melting_Station.mp4 — Video komersial & visual efek Melting Station.'
       }
     ]
   },
@@ -1978,138 +1984,135 @@ const PROJECTS = [
     category: 'video',
     categoryName: 'Video Editing & Motion',
     client: 'Cari Tofu',
-    metric: '20 Video Reels & Animasi',
-    thumbnail: 'assets/cari-tofu/tofu_1.mp4',
-    shortDesc: 'Folder Video Editing Cari Tofu — 20 Video Animasi, Parodi, Shorts/Reels & Sound Design.',
-    fullDesc: 'Folder koleksi resmi Video Editing & Animasi untuk Cari Tofu dari folder assets/Video Editing/Cari Tofu. Di dalamnya berisi 20 aset video animasi komik, parodi komedi, reels trending, dan sound design ritmis ber-views tinggi.',
+    metric: '19 Video Reels & Animasi • Bunny Stream',
+    thumbnail: 'assets/cari-tofu/tofu_1.jpg',
+    shortDesc: 'Folder Video Editing Cari Tofu — 19 Video Animasi, Parodi, Shorts/Reels & Sound Design via Bunny Stream CDN.',
+    fullDesc: 'Folder koleksi resmi Video Editing & Animasi untuk Cari Tofu yang terhubung langsung ke Bunny Stream CDN. Di dalamnya berisi 19 aset video animasi komik karakter Tofu, parodi komedi viral, reels trending, dan sound design ritmis ber-views tinggi.',
     challenge: 'Menciptakan animasi & editing video komedi parodi yang menghibur dan viral di TikTok & Instagram Reels.',
-    solution: 'Keyframing animasi karakter dinamis, dialog komedi ritmis, kinetic captions, dan sound design komedi.',
+    solution: 'Integrasi video streaming melalui Bunny Stream CDN berkecepatan tinggi, keyframing animasi karakter dinamis, dialog komedi ritmis, kinetic captions, dan sound design komedi.',
     results: [
-      '20 Aset Video Animasi & Commercial Reels Resmi Terintegrasi di Folder Cari Tofu',
+      '19 Aset Video Animasi & Commercial Reels Resmi Terkoneksi ke Bunny Stream CDN (Library ID: 756896)',
+      'Streaming Cepat Kualitas HD Bebas Buffering & Bebas Iklan',
       'Meningkatkan engagement penonton & jangkauan organik media sosial'
     ],
-    tools: ['Premiere Pro', 'After Effects', 'CapCut Pro', 'Blender'],
-    embedVideo: 'assets/cari-tofu/tofu_1.mp4',
+    tools: ['Premiere Pro', 'After Effects', 'CapCut Pro', 'Blender', 'Bunny Stream'],
+    bunnyVideoId: 'ef3f0a98-8111-4a48-8ddb-1ecb017c230d',
+    bunnyLibraryId: '756896',
+    embedVideo: 'https://iframe.mediadelivery.net/embed/756896/ef3f0a98-8111-4a48-8ddb-1ecb017c230d',
     items: [
       {
-        name: 'Cari Tofu — Kilas Balik 2025',
-        img: 'assets/cari-tofu/tofu_1.mp4',
-        video: 'assets/cari-tofu/tofu_1.mp4',
-        desc: 'Video animasi & editing komedi Kilas Balik 2025.'
+        name: '2025.mp4',
+        img: 'assets/cari-tofu/tofu_1.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/ef3f0a98-8111-4a48-8ddb-1ecb017c230d',
+        desc: '2025.mp4 — Video animasi kilas balik 2025 Cari Tofu.'
       },
       {
-        name: 'Cari Tofu — Refleksi 2026',
-        img: 'assets/cari-tofu/tofu_2.mp4',
-        video: 'assets/cari-tofu/tofu_2.mp4',
-        desc: 'Video animasi & editing komedi Refleksi 2026.'
+        name: '2026 2.mp4',
+        img: 'assets/cari-tofu/tofu_2.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/d58649f3-fe0e-4c80-b2ac-c7dc4f3274aa',
+        desc: '2026 2.mp4 — Video animasi refleksi tahun 2026 seri 2.'
       },
       {
-        name: 'Cari Tofu — 3D Animasi Tofu',
-        img: 'assets/cari-tofu/tofu_3.mp4',
-        video: 'assets/cari-tofu/tofu_3.mp4',
-        desc: 'Video animasi & editing komedi 3D Animasi Tofu.'
+        name: 'agak laen .mp4',
+        img: 'assets/cari-tofu/tofu_3.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/392fd04d-9cf0-4625-a093-07d0c632f842',
+        desc: 'agak laen .mp4 — Video parodi komedi animasi Agak Laen.'
       },
       {
-        name: 'Cari Tofu — Agak Laen Parodi',
-        img: 'assets/cari-tofu/tofu_4.mp4',
-        video: 'assets/cari-tofu/tofu_4.mp4',
-        desc: 'Video animasi & editing komedi Agak Laen Parodi.'
+        name: 'Bansos.mp4',
+        img: 'assets/cari-tofu/tofu_4.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/1289a273-37d8-4e0f-b8e9-e9b718019ce2',
+        desc: 'Bansos.mp4 — Video animasi parodi komedi bertema Bansos.'
       },
       {
-        name: 'Cari Tofu — Bansos Commercial Parody',
-        img: 'assets/cari-tofu/tofu_5.mp4',
-        video: 'assets/cari-tofu/tofu_5.mp4',
-        desc: 'Video animasi & editing komedi Bansos Commercial Parody.'
+        name: 'Belum ngapa ngapain. 🙂#animasi #komikindonesia #sumatera #2026 #fyp.mp4',
+        img: 'assets/cari-tofu/tofu_5.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/d5ded190-2ab6-459f-89dc-c328a79baf2c',
+        desc: 'Belum ngapa ngapain.mp4 — Video animasi komik komedi relatable Cari Tofu.'
       },
       {
-        name: 'Cari Tofu — Belum Ngapa-ngapain Animasi',
-        img: 'assets/cari-tofu/tofu_6.mp4',
-        video: 'assets/cari-tofu/tofu_6.mp4',
-        desc: 'Video animasi & editing komedi Belum Ngapa-ngapain Animasi.'
+        name: 'Bener apa kata @gadgetins )  #animasi #tofu #karakter.mp4',
+        img: 'assets/cari-tofu/tofu_6.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/d8e35d41-8ff7-4f96-8ae7-a56a7064d53d',
+        desc: 'Bener apa kata @gadgetins.mp4 — Video animasi karakter Cari Tofu parodi Gadgetin.'
       },
       {
-        name: 'Cari Tofu — Gadgetins Character Animation',
-        img: 'assets/cari-tofu/tofu_7.mp4',
-        video: 'assets/cari-tofu/tofu_7.mp4',
-        desc: 'Video animasi & editing komedi Gadgetins Character Animation.'
+        name: 'December again2.mp4',
+        img: 'assets/cari-tofu/tofu_7.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/464b8831-b4ff-4012-9ff3-a32cac8bf32c',
+        desc: 'December again2.mp4 — Video animasi musiman komedi December Again seri 2.'
       },
       {
-        name: 'Cari Tofu — December Again Video',
-        img: 'assets/cari-tofu/tofu_8.mp4',
-        video: 'assets/cari-tofu/tofu_8.mp4',
-        desc: 'Video animasi & editing komedi December Again Video.'
+        name: 'Gabawa kes  #tofu #animasi #komik #komikindonesia #prayforsumatera #sumatera #aceh #acehtamiang.mp4',
+        img: 'assets/cari-tofu/tofu_8.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/b26e6259-ce4f-4a9e-9cfa-48511f2a2877',
+        desc: 'Gabawa kes.mp4 — Video animasi komik strip Cari Tofu.'
       },
       {
-        name: 'Cari Tofu — Gabawa Cash Tofu Comic',
-        img: 'assets/cari-tofu/tofu_9.mp4',
-        video: 'assets/cari-tofu/tofu_9.mp4',
-        desc: 'Video animasi & editing komedi Gabawa Cash Tofu Comic.'
+        name: 'Horor Final.mp4',
+        img: 'assets/cari-tofu/tofu_9.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/e7b6b8a2-09d5-4f2a-ad68-af023541e841',
+        desc: 'Horor Final.mp4 — Video animasi cerita horor komedi Cari Tofu.'
       },
       {
-        name: 'Cari Tofu — Horor Final Story',
-        img: 'assets/cari-tofu/tofu_10.mp4',
-        video: 'assets/cari-tofu/tofu_10.mp4',
-        desc: 'Video animasi & editing komedi Horor Final Story.'
+        name: 'Hujan 2.mp4',
+        img: 'assets/cari-tofu/tofu_10.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/e4ae2c78-ebd9-4ba7-97f2-f97ea787c859',
+        desc: 'Hujan 2.mp4 — Video animasi suasana musim hujan Cari Tofu seri 2.'
       },
       {
-        name: 'Cari Tofu — Hujan Seasonal Video',
-        img: 'assets/cari-tofu/tofu_11.mp4',
-        video: 'assets/cari-tofu/tofu_11.mp4',
-        desc: 'Video animasi & editing komedi Hujan Seasonal Video.'
+        name: 'Indra Jegel 2.mp4',
+        img: 'assets/cari-tofu/tofu_11.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/d76168e7-d6e7-44df-8960-1c29c9ab1865',
+        desc: 'Indra Jegel 2.mp4 — Video animasi komedi reels Indra Jegel seri 2.'
       },
       {
-        name: 'Cari Tofu — Indra Jegel Comedy Reel',
-        img: 'assets/cari-tofu/tofu_12.mp4',
-        video: 'assets/cari-tofu/tofu_12.mp4',
-        desc: 'Video animasi & editing komedi Indra Jegel Comedy Reel.'
+        name: 'Kelakuan warga +62 🙂#family #family100 #quiz #kuis #parodi #reelsindonesia #viralindonesia.mp4',
+        img: 'assets/cari-tofu/tofu_12.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/b14c3e60-a2b1-46a3-8d92-8ce309b7d817',
+        desc: 'Kelakuan warga +62.mp4 — Video parodi kuis komedi Kelakuan Warga +62.'
       },
       {
-        name: 'Cari Tofu — Kelakuan Warga +62 Quiz Parody',
-        img: 'assets/cari-tofu/tofu_13.mp4',
-        video: 'assets/cari-tofu/tofu_13.mp4',
-        desc: 'Video animasi & editing komedi Kelakuan Warga +62 Quiz Parody.'
+        name: 'Konten sedih.mp4',
+        img: 'assets/cari-tofu/tofu_13.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/34e906d8-9e91-4d3b-8d5f-57301f870457',
+        desc: 'Konten sedih.mp4 — Video animasi storytelling drama komedi Cari Tofu.'
       },
       {
-        name: 'Cari Tofu — Konten Sedih Storytelling',
-        img: 'assets/cari-tofu/tofu_14.mp4',
-        video: 'assets/cari-tofu/tofu_14.mp4',
-        desc: 'Video animasi & editing komedi Konten Sedih Storytelling.'
+        name: 'Laki laki tidak bercerita(1).mp4',
+        img: 'assets/cari-tofu/tofu_14.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/c387575e-8334-4682-a91a-2e859bb9fff3',
+        desc: 'Laki laki tidak bercerita(1).mp4 — Video animasi relatable Laki-laki Tidak Bercerita.'
       },
       {
-        name: 'Cari Tofu — Laki-laki Tidak Bercerita',
-        img: 'assets/cari-tofu/tofu_15.mp4',
-        video: 'assets/cari-tofu/tofu_15.mp4',
-        desc: 'Video animasi & editing komedi Laki-laki Tidak Bercerita.'
+        name: 'Maafkan anakmu ini. 🙂@sumbermakmurasli #animasi #parodi #reelsindonesia #viralindonesia.mp4',
+        img: 'assets/cari-tofu/tofu_15.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/392f3ea8-8e54-4e95-b25f-a1d22ecc9ae4',
+        desc: 'Maafkan anakmu ini.mp4 — Video parodi komedi animasi Maafkan Anakmu Ini.'
       },
       {
-        name: 'Cari Tofu — Maafkan Anakmu ini Parody',
-        img: 'assets/cari-tofu/tofu_16.mp4',
-        video: 'assets/cari-tofu/tofu_16.mp4',
-        desc: 'Video animasi & editing komedi Maafkan Anakmu ini Parody.'
+        name: 'Nyalain Lampu di mobil.mp4',
+        img: 'assets/cari-tofu/tofu_16.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/a81570f1-630a-440e-8760-2f20d9101bb0',
+        desc: 'Nyalain Lampu di mobil.mp4 — Video animasi komedi relatable di dalam mobil.'
       },
       {
-        name: 'Cari Tofu — Nyalain Lampu di Mobil',
-        img: 'assets/cari-tofu/tofu_17.mp4',
-        video: 'assets/cari-tofu/tofu_17.mp4',
-        desc: 'Video animasi & editing komedi Nyalain Lampu di Mobil.'
+        name: 'Pengemis.mp4',
+        img: 'assets/cari-tofu/tofu_17.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/eeffd6e6-79c7-4b67-a4e3-c696e1f33e67',
+        desc: 'Pengemis.mp4 — Video animasi sosial komedi Pengemis.'
       },
       {
-        name: 'Cari Tofu — Pengemis Social Short',
-        img: 'assets/cari-tofu/tofu_18.mp4',
-        video: 'assets/cari-tofu/tofu_18.mp4',
-        desc: 'Video animasi & editing komedi Pengemis Social Short.'
+        name: 'SAWIT.mp4',
+        img: 'assets/cari-tofu/tofu_18.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/29b80767-9b47-471a-80f4-75e92ff64a07',
+        desc: 'SAWIT.mp4 — Video animasi komedi spesial perkebunan SAWIT.'
       },
       {
-        name: 'Cari Tofu — SAWIT Animation Special',
-        img: 'assets/cari-tofu/tofu_19.mp4',
-        video: 'assets/cari-tofu/tofu_19.mp4',
-        desc: 'Video animasi & editing komedi SAWIT Animation Special.'
-      },
-      {
-        name: 'Cari Tofu — Tips Menyalurkan Uang Tofu',
-        img: 'assets/cari-tofu/tofu_20.mp4',
-        video: 'assets/cari-tofu/tofu_20.mp4',
-        desc: 'Video animasi & editing komedi Tips Menyalurkan Uang Tofu.'
+        name: 'Tips menyalurkan uang.  #tofu #animasi #komik #komikindonesia #prayforsumatera #sumatera #aceh #acehtamiang.mp4',
+        img: 'assets/cari-tofu/tofu_19.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/a6bb83ea-aa75-432b-9978-4a025795af84',
+        desc: 'Tips menyalurkan uang.mp4 — Video edukasi dan animasi komik Cari Tofu.'
       }
     ]
   },
@@ -2120,37 +2123,120 @@ const PROJECTS = [
     category: 'video',
     categoryName: 'Video Editing & Motion',
     client: 'Elvorindo',
-    metric: '2 Video Commercial & Motion Aset',
-    thumbnail: 'assets/elvorindo-video/Gathering Elvorindo 2.mov',
-    shortDesc: 'Folder Video Editing Elvorindo — Video Event Gathering & Animasi Stiker WhatsApp.',
-    fullDesc: 'Folder koleksi resmi Video Editing untuk Elvorindo dari folder assets/Video Editing/Elvorindo. Berisi video event coverage Gathering Elvorindo dan animasi stiker WhatsApp berformat gerak ritmis.',
-    challenge: 'Mengdokumentasikan momen kebersamaan acara Gathering Elvorindo dan membuat konten stiker animasi kreatif.',
-    solution: 'Editing video dokumentasi acara dengan musik latar dinamis, transisi sinematik, dan animasi motion stiker.',
+    metric: '2 Video Commercial & Motion • Bunny Stream',
+    thumbnail: 'assets/elvorindo/gathering.jpg',
+    shortDesc: 'Folder Video Editing Elvorindo — Video Event Gathering & Animasi Stiker WhatsApp via Bunny Stream CDN.',
+    fullDesc: 'Folder koleksi resmi Video Editing untuk Elvorindo yang terhubung langsung ke Bunny Stream CDN. Berisi video event coverage Gathering Elvorindo dan animasi stiker WhatsApp berformat gerak ritmis.',
+    challenge: 'Mendokumentasikan momen kebersamaan acara Gathering Elvorindo dan membuat konten stiker animasi kreatif dengan kualitas streaming tinggi.',
+    solution: 'Integrasi video streaming melalui Bunny Stream CDN berkecepatan tinggi, editing video dokumentasi acara dengan transisi sinematik, dan animasi motion stiker.',
     results: [
-      '2 Aset Video Editing & Motion Resmi Terintegrasi di Folder Elvorindo',
+      '2 Aset Video Editing & Motion Resmi Terkoneksi ke Bunny Stream CDN (Library ID: 756896)',
+      'Streaming Cepat Kualitas HD Bebas Buffering & Bebas Iklan',
       'Digunakan untuk dokumentasi internal & publikasi media sosial Elvorindo'
     ],
-    tools: ['Premiere Pro', 'After Effects', 'CapCut Pro'],
-    embedVideo: 'assets/elvorindo-video/Gathering Elvorindo 2.mov',
+    tools: ['Premiere Pro', 'After Effects', 'CapCut Pro', 'Bunny Stream'],
+    bunnyVideoId: '1cf27b72-e6ac-4332-843f-f0cb3a468d1e',
+    bunnyLibraryId: '756896',
+    embedVideo: 'https://iframe.mediadelivery.net/embed/756896/1cf27b72-e6ac-4332-843f-f0cb3a468d1e',
     items: [
       {
-        name: 'Elvorindo — Video Event Gathering',
-        img: 'assets/elvorindo-video/Gathering Elvorindo 2.mov',
-        video: 'assets/elvorindo-video/Gathering Elvorindo 2.mov',
-        desc: 'Video dokumentasi & event coverage Gathering Elvorindo 2.'
+        name: 'Gathering Elvorindo 2.mov',
+        img: 'assets/elvorindo/gathering.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/1cf27b72-e6ac-4332-843f-f0cb3a468d1e',
+        desc: 'Gathering Elvorindo 2.mov — Video dokumentasi acara event gathering internal Elvorindo.'
       },
       {
-        name: 'Elvorindo — Animasi Stiker WhatsApp',
-        img: 'assets/elvorindo-video/Stiker Wa.mov',
-        video: 'assets/elvorindo-video/Stiker Wa.mov',
-        desc: 'Video animasi motion stiker WhatsApp Elvorindo.'
+        name: 'Stiker Wa.mov',
+        img: 'assets/elvorindo/stiker.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/a146406c-ba07-4316-99ae-22e485f46462',
+        desc: 'Stiker Wa.mov — Video animasi motion graphics stiker WhatsApp Elvorindo.'
       }
     ]
   },
 
   {
-    tools: ['Premiere Pro', 'CapCut Pro'],
-    embedVideo: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/SubaruOutback2012.mp4'
+    id: 'video-editing-fkdb',
+    title: 'FKDB',
+    category: 'video',
+    categoryName: 'Video Editing & Motion',
+    client: 'Forum Komunikasi Doa Bangsa (FKDB)',
+    metric: '10 Video Dokumentasi & Liputan • Bunny Stream',
+    thumbnail: 'assets/fkdb-video/fkdb_1.jpg',
+    shortDesc: 'Folder Video Editing FKDB — 10 Video Dokumentasi Acara, Ekspor, Liputan Resmi & Motion via Bunny Stream CDN.',
+    fullDesc: 'Folder koleksi resmi Video Editing untuk Forum Komunikasi Doa Bangsa (FKDB) yang terhubung langsung ke Bunny Stream CDN. Berisi 10 aset video dokumentasi kegiatan kemandirian ekonomi, pelepasan ekspor perdana, kunjungan pimpinan lembaga, sinergi ketahanan pangan Polri, dan program pendidikan binaan FKDB.',
+    challenge: 'Mendokumentasikan berbagai kegiatan skala nasional dan corporate events FKDB secara profesional dengan kualitas audio-visual prima.',
+    solution: 'Integrasi video streaming melalui Bunny Stream CDN berkecepatan tinggi, penyelarasan narasi jurnalistik yang jelas, dan color grading standar dokumenter resmi.',
+    results: [
+      '10 Video Liputan Resmi Terkoneksi ke Bunny Stream CDN (Library ID: 756896)',
+      'Streaming Cepat Kualitas HD Bebas Buffering & Bebas Iklan',
+      'Format Optimal untuk Publikasi Media Sosial, Dokumentasi Korporat & Arsip Resmi'
+    ],
+    tools: ['Premiere Pro', 'After Effects', 'CapCut Pro', 'Bunny Stream'],
+    bunnyVideoId: 'edaa2a09-729e-4523-987e-395b5f2e42c0',
+    bunnyLibraryId: '756896',
+    embedVideo: 'https://iframe.mediadelivery.net/embed/756896/edaa2a09-729e-4523-987e-395b5f2e42c0',
+    items: [
+      {
+        name: 'Sukabumi, 28 Oktober 2025 - PT Doa Bangsa Agrobisnis (DBA), perusahaan binaan FKDB, sukses melepas ekspor perdana 57,6 metrik to.mp4',
+        img: 'assets/fkdb-video/fkdb_1.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/edaa2a09-729e-4523-987e-395b5f2e42c0',
+        desc: 'Pelepasan ekspor perdana 57,6 metrik ton komoditas PT Doa Bangsa Agrobisnis (DBA) binaan FKDB.'
+      },
+      {
+        name: 'Kunjungan Wakil Ketua DPR RI, Dr. (H.C.) H. Rachmat Gobel, ke Pabrik Tempe Azaki Sukabumi binaan.mp4',
+        img: 'assets/fkdb-video/fkdb_2.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/6f692b9d-0d12-4b99-9c58-ed131185c024',
+        desc: 'Liputan dokumentasi kunjungan Wakil Ketua DPR RI ke Pabrik Tempe Azaki Sukabumi binaan FKDB.'
+      },
+      {
+        name: 'Sinergi FKDB dan Baharkam Polri kembali diwujudkan melalui Budidaya Jagung dan penyerahan bibit untuk kelompok tani binaan FKDB .mp4',
+        img: 'assets/fkdb-video/fkdb_3.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/b124a424-51b3-4208-8267-f980e3f1403c',
+        desc: 'Sinergi FKDB dan Baharkam Polri dalam program budidaya jagung dan penyerahan bibit tani.'
+      },
+      {
+        name: 'PT Azaki Food Internasional binaan FKDB mengikuti kegiatan Pesta Rakyat Alumni IPB Pulang Kampus 2025 (PRA IPK 2025) yang digela.mp4',
+        img: 'assets/fkdb-video/fkdb_4.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/49e2e0d8-3380-4578-b1f3-ff7c20d10a8b',
+        desc: 'Partisipasi PT Azaki Food Internasional binaan FKDB dalam Pesta Rakyat Alumni IPB 2025.'
+      },
+      {
+        name: 'Acara puncak Milad ke-15 Yayasan Pembina Pendidikan Doa Bangsa (YPPDB) yang digelar di SMA Doa B.mp4',
+        img: 'assets/fkdb-video/fkdb_5.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/7d5735e2-b327-4d77-9c42-d66fd4f3df94',
+        desc: 'Dokumentasi acara puncak peringatan Milad ke-15 Yayasan Pembina Pendidikan Doa Bangsa.'
+      },
+      {
+        name: 'Hallo Sobat FKDB. 😍Yuk, intip keseruan Paviliun Doa Bangsa dalam momen penyerahan dokumen Nota .mp4',
+        img: 'assets/fkdb-video/fkdb_6.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/9fbbd29e-f1ec-440b-8e24-0ec633ad55ce',
+        desc: 'Highlight keseruan Paviliun Doa Bangsa dalam penyerahan dokumen nota kesepahaman resmi.'
+      },
+      {
+        name: 'Dirgahayu Republik Indonesia, Merdeka! ✊Yuk intip keseruan pegawai DPP FKDB dalam lomba 17-an 🇮.mp4',
+        img: 'assets/fkdb-video/fkdb_7.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/c95d4ff1-6b04-4fef-8444-3c8dc3d9a0a5',
+        desc: 'Dokumentasi kemeriahan perayaan HUT Kemerdekaan RI dan lomba 17-an DPP FKDB.'
+      },
+      {
+        name: 'Grand Opening Optik Kovalen.mp4',
+        img: 'assets/fkdb-video/fkdb_8.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/21163679-c3d6-4c88-9935-a3e6599fb576',
+        desc: 'Dokumentasi peresmian dan Grand Opening Optik Kovalen unit usaha binaan FKDB.'
+      },
+      {
+        name: 'Forum Komunikasi Doa Bangsa (FKDB) bersama Palang Merah Indonesia (PMI) menggelar aksi sosial donor darah serentak dalam rangka .mp4',
+        img: 'assets/fkdb-video/fkdb_9.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/c4e1709a-6a67-4e28-a8a1-a71c6d016e4f',
+        desc: 'Aksi kepedulian sosial donor darah serentak kolaborasi FKDB bersama PMI.'
+      },
+      {
+        name: 'FKDB menggelar Rapat Kerja Tahunan PT-CV-Koperasi Binaan Tahun 2026 di Sukabumi sebagai langkah .mp4',
+        img: 'assets/fkdb-video/fkdb_10.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/492a5634-6906-4806-ae40-2d1933936d33',
+        desc: 'Liputan Rapat Kerja Tahunan PT-CV-Koperasi Binaan FKDB 2026 di Sukabumi.'
+      }
+    ]
   },
 
   {
@@ -2299,299 +2385,306 @@ const PROJECTS = [
 
   {
     id: 'video-editing-andrey-andreydigital-lead-magnet-ads',
-    title: 'andreydigital.id — Lead Magnet Video Ads',
+    title: 'Lead Magnet Video Ads',
     category: 'video',
     categoryName: 'Video Editing & Motion',
     client: 'andreydigital.id',
-    metric: '3 Video Commercial & Motion Aset',
-    thumbnail: 'assets/andrey-video-editing/andreydigital-lead-magnet-ads/Video Ads 1.mp4',
-    shortDesc: 'Folder Video Editing andreydigital.id — 3 Aset Video Commercial, Shorts/Reels & Sound Design.',
-    fullDesc: 'Folder koleksi resmi Video Editing untuk andreydigital.id dari folder Video Editing/ANDREY. Berisi 3 aset video komersial, fast-cut editing, kinetic titles, color grading, dan sound design.',
-    challenge: 'Mengemas visual cerita & momen andreydigital.id menjadi video promosi berenergi tinggi dengan retensi penonton maksimal.',
-    solution: 'Editing video ritmis dengan potongan lagu trending, animasi teks kinetik, dan penyelarasan warna profesional.',
+    metric: '3 Video Commercial • Bunny Stream',
+    thumbnail: 'assets/andreydigital/1.png',
+    shortDesc: 'Folder Video Editing Lead Magnet Video Ads — 3 Seri Video Ads Promosi & Konversi via Bunny Stream CDN.',
+    fullDesc: 'Folder koleksi resmi Video Editing untuk Lead Magnet Video Ads andreydigital.id yang terhubung langsung ke Bunny Stream CDN. Berisi 3 varian video promosi berkonversi tinggi (Video Ads 1, Video Ads 2, dan Video Ads 3) dengan hook kuat, kinetic typography, dan sound design profesional.',
+    challenge: 'Membuat 3 variasi video iklan lead magnet dengan pacing cepat dan hook visual dinamis untuk memicu audiens mendaftar atau mengunduh lead magnet.',
+    solution: 'Integrasi video streaming melalui Bunny Stream CDN berkecepatan tinggi, transisi kinetik ritmis, call-to-action tegas, dan pemutaran responsif HD.',
     results: [
-      '3 Aset Video Editing Resmi Terintegrasi di Folder andreydigital.id',
-      'Digunakan untuk tayangan media sosial Instagram Reels, TikTok, YouTube Shorts & Ads'
+      '3 Video Iklan Lead Magnet Resmi Terkoneksi ke Bunny Stream CDN (Library ID: 756896)',
+      'Pemutaran Instan Kualitas HD Bebas Buffering & Bebas Iklan',
+      'Format Video Ads Siap untuk Meta Ads (Instagram & Facebook) serta TikTok Ads'
     ],
-    tools: ['Premiere Pro', 'After Effects', 'CapCut Pro', 'DaVinci Resolve'],
-    embedVideo: 'assets/andrey-video-editing/andreydigital-lead-magnet-ads/Video Ads 1.mp4',
+    tools: ['Premiere Pro', 'After Effects', 'CapCut Pro', 'Bunny Stream'],
+    bunnyVideoId: 'd5cb96f7-6ba7-49ad-9f22-7b17d3d4fe16',
+    bunnyLibraryId: '756896',
+    embedVideo: 'https://iframe.mediadelivery.net/embed/756896/d5cb96f7-6ba7-49ad-9f22-7b17d3d4fe16',
     items: [
       {
-        name: 'andreydigital.id — Commercial Video Clip 1',
-        img: 'assets/andrey-video-editing/andreydigital-lead-magnet-ads/Video Ads 1.mp4',
-        video: 'assets/andrey-video-editing/andreydigital-lead-magnet-ads/Video Ads 1.mp4',
-        desc: 'Video komersial & editing ritmis Video Ads 1.mp4.'
+        name: '1. Video Ads 1',
+        img: 'assets/andreydigital/1.png',
+        video: 'https://iframe.mediadelivery.net/embed/756896/d5cb96f7-6ba7-49ad-9f22-7b17d3d4fe16',
+        desc: 'Video Ads 1 — Iklan promosi lead magnet dengan hook visual dramatis.'
       },
       {
-        name: 'andreydigital.id — Commercial Video Clip 2',
-        img: 'assets/andrey-video-editing/andreydigital-lead-magnet-ads/Video Ads 1.mp4',
-        video: 'assets/andrey-video-editing/andreydigital-lead-magnet-ads/Video Ads 2.mp4',
-        desc: 'Video komersial & editing ritmis Video Ads 2.mp4.'
+        name: '2. Video Ads 2',
+        img: 'assets/andreydigital/1.png',
+        video: 'https://iframe.mediadelivery.net/embed/756896/32baba50-0a00-4aaf-ba97-943f4650bab8',
+        desc: 'Video Ads 2 — Kinetic typography & dynamic value proposition.'
       },
       {
-        name: 'andreydigital.id — Commercial Video Clip 3',
-        img: 'assets/andrey-video-editing/andreydigital-lead-magnet-ads/Video Ads 1.mp4',
-        video: 'assets/andrey-video-editing/andreydigital-lead-magnet-ads/Video Ads 3.mp4',
-        desc: 'Video komersial & editing ritmis Video Ads 3.mp4.'
+        name: '3. Video Ads 3',
+        img: 'assets/andreydigital/1.png',
+        video: 'https://iframe.mediadelivery.net/embed/756896/c2ac5630-4ba1-4b25-9831-e3bc7dd9f2eb',
+        desc: 'Video Ads 3 — Fast-cut editing & call-to-action penawaran khusus.'
       }
     ]
   },
 
   {
     id: 'video-editing-andrey-andreydigital-make-money-vads',
-    title: 'andreydigital.id — Make Money Digital Product Video Ads',
+    title: 'Make Money with Digital Product Video Ads',
     category: 'video',
     categoryName: 'Video Editing & Motion',
     client: 'andreydigital.id',
-    metric: '5 Video Commercial & Motion Aset',
-    thumbnail: 'assets/andrey-video-editing/andreydigital-make-money-vads/Bongkar Rahasia Nambah 3 JUTA Per Minggu.mp4',
-    shortDesc: 'Folder Video Editing andreydigital.id — 5 Aset Video Commercial, Shorts/Reels & Sound Design.',
-    fullDesc: 'Folder koleksi resmi Video Editing untuk andreydigital.id dari folder Video Editing/ANDREY. Berisi 5 aset video komersial, fast-cut editing, kinetic titles, color grading, dan sound design.',
-    challenge: 'Mengemas visual cerita & momen andreydigital.id menjadi video promosi berenergi tinggi dengan retensi penonton maksimal.',
-    solution: 'Editing video ritmis dengan potongan lagu trending, animasi teks kinetik, dan penyelarasan warna profesional.',
+    metric: '5 Video Commercial • Bunny Stream',
+    thumbnail: 'assets/advertising-campaigns/andreydigital-make-money/MMDP Square.png',
+    shortDesc: 'Folder Video Editing Make Money with Digital Product Video Ads — 5 Seri Iklan Video Edukasi & Konversi via Bunny Stream CDN.',
+    fullDesc: 'Folder koleksi resmi Video Editing untuk Make Money with Digital Product Video Ads andreydigital.id yang terhubung langsung ke Bunny Stream CDN. Menampilkan 5 video iklan komersial berkonversi tinggi dengan hook dinamis, visual editing ritmis, dan call-to-action tegas.',
+    challenge: 'Membuat 5 variasi video iklan komersial produk digital dengan retensi tinggi pada 3 detik pertama untuk memaksimalkan ROAS campaign.',
+    solution: 'Integrasi video streaming melalui Bunny Stream CDN berkecepatan tinggi, kinetic typography, pacing editing ritmis, dan sound design profesional.',
     results: [
-      '5 Aset Video Editing Resmi Terintegrasi di Folder andreydigital.id',
-      'Digunakan untuk tayangan media sosial Instagram Reels, TikTok, YouTube Shorts & Ads'
+      '5 Video Iklan Komersial Resmi Terkoneksi ke Bunny Stream CDN (Library ID: 756896)',
+      'Pemutaran Instan Kualitas HD Bebas Buffering & Bebas Iklan',
+      'Format Video Ads Siap untuk Instagram Reels, TikTok Ads & Facebook Ads'
     ],
-    tools: ['Premiere Pro', 'After Effects', 'CapCut Pro', 'DaVinci Resolve'],
-    embedVideo: 'assets/andrey-video-editing/andreydigital-make-money-vads/Bongkar Rahasia Nambah 3 JUTA Per Minggu.mp4',
+    tools: ['Premiere Pro', 'After Effects', 'CapCut Pro', 'Bunny Stream'],
+    bunnyVideoId: 'dc1f31c5-e84d-4d4c-9360-3d8e130a411e',
+    bunnyLibraryId: '756896',
+    embedVideo: 'https://iframe.mediadelivery.net/embed/756896/dc1f31c5-e84d-4d4c-9360-3d8e130a411e',
     items: [
       {
-        name: 'andreydigital.id — Commercial Video Clip 1',
-        img: 'assets/andrey-video-editing/andreydigital-make-money-vads/Bongkar Rahasia Nambah 3 JUTA Per Minggu.mp4',
-        video: 'assets/andrey-video-editing/andreydigital-make-money-vads/Bongkar Rahasia Nambah 3 JUTA Per Minggu.mp4',
-        desc: 'Video komersial & editing ritmis Bongkar Rahasia Nambah 3 JUTA Per Minggu.mp4.'
+        name: 'Bongkar Rahasia Nambah 3 JUTA Per Minggu.mp4',
+        img: 'assets/advertising-campaigns/andreydigital-make-money/MMDP Square.png',
+        video: 'https://iframe.mediadelivery.net/embed/756896/dc1f31c5-e84d-4d4c-9360-3d8e130a411e',
+        desc: 'Bongkar Rahasia Nambah 3 JUTA Per Minggu.mp4 — Video iklan komersial konversi tinggi.'
       },
       {
-        name: 'andreydigital.id — Commercial Video Clip 2',
-        img: 'assets/andrey-video-editing/andreydigital-make-money-vads/Bongkar Rahasia Nambah 3 JUTA Per Minggu.mp4',
-        video: 'assets/andrey-video-editing/andreydigital-make-money-vads/BONGKAR STRATEGI HASILKAN JUTAAN RUPIAH PER MINGGU.mp4',
-        desc: 'Video komersial & editing ritmis BONGKAR STRATEGI HASILKAN JUTAAN RUPIAH PER MINGGU.mp4.'
+        name: 'BONGKAR STRATEGI HASILKAN JUTAAN RUPIAH PER MINGGU.mp4',
+        img: 'assets/advertising-campaigns/andreydigital-make-money/MMDP Square.png',
+        video: 'https://iframe.mediadelivery.net/embed/756896/56331c85-d576-4f7e-98ba-7fb748cf660b',
+        desc: 'BONGKAR STRATEGI HASILKAN JUTAAN RUPIAH PER MINGGU.mp4 — Video promosi strategi produk digital.'
       },
       {
-        name: 'andreydigital.id — Commercial Video Clip 3',
-        img: 'assets/andrey-video-editing/andreydigital-make-money-vads/Bongkar Rahasia Nambah 3 JUTA Per Minggu.mp4',
-        video: 'assets/andrey-video-editing/andreydigital-make-money-vads/MMDP Video Ads 3 CP 3.mov',
-        desc: 'Video komersial & editing ritmis MMDP Video Ads 3 CP 3.mov.'
+        name: 'Monetisasi Skill Jadi Cuan dari Produk Digital.mp4',
+        img: 'assets/advertising-campaigns/andreydigital-make-money/MMDP Square.png',
+        video: 'https://iframe.mediadelivery.net/embed/756896/38bedd3e-61ff-4faa-9f04-8d1c8f7ce060',
+        desc: 'Monetisasi Skill Jadi Cuan dari Produk Digital.mp4 — Video edukasi monetisasi keahlian.'
       },
       {
-        name: 'andreydigital.id — Commercial Video Clip 4',
-        img: 'assets/andrey-video-editing/andreydigital-make-money-vads/Bongkar Rahasia Nambah 3 JUTA Per Minggu.mp4',
-        video: 'assets/andrey-video-editing/andreydigital-make-money-vads/MMDP Video Ads 4 CP 6.mp4',
-        desc: 'Video komersial & editing ritmis MMDP Video Ads 4 CP 6.mp4.'
+        name: 'MMDP Video Ads 3 CP 3.mov',
+        img: 'assets/advertising-campaigns/andreydigital-make-money/MMDP Square.png',
+        video: 'https://iframe.mediadelivery.net/embed/756896/15a0c8db-7e01-455f-ac31-c98214e48d9c',
+        desc: 'MMDP Video Ads 3 CP 3.mov — Copywriting visual & dynamic pacing.'
       },
       {
-        name: 'andreydigital.id — Commercial Video Clip 5',
-        img: 'assets/andrey-video-editing/andreydigital-make-money-vads/Bongkar Rahasia Nambah 3 JUTA Per Minggu.mp4',
-        video: 'assets/andrey-video-editing/andreydigital-make-money-vads/Monetisasi Skill Jadi Cuan dari Produk Digital.mp4',
-        desc: 'Video komersial & editing ritmis Monetisasi Skill Jadi Cuan dari Produk Digital.mp4.'
+        name: 'MMDP Video Ads 4 CP 6.mp4',
+        img: 'assets/advertising-campaigns/andreydigital-make-money/MMDP Square.png',
+        video: 'https://iframe.mediadelivery.net/embed/756896/0b8dcc66-12de-4365-9df8-2c5d29f4dbd7',
+        desc: 'MMDP Video Ads 4 CP 6.mp4 — Fast-paced kinetic typography & strong call-to-action.'
       }
     ]
   },
 
   {
     id: 'video-editing-andrey-content-creator-ai',
-    title: 'Content Creator AI Videos',
+    title: 'Conten Creator AI Vids',
     category: 'video',
     categoryName: 'Video Editing & Motion',
     client: 'Content Creator AI',
-    metric: '3 Video Commercial & Motion Aset',
-    thumbnail: 'assets/andrey-video-editing/content-creator-ai/Gemini_Generated_Image_2jh14l2jh14l2jh1.png',
-    shortDesc: 'Folder Video Editing Content Creator AI — 3 Aset Video Commercial, Shorts/Reels & Sound Design.',
-    fullDesc: 'Folder koleksi resmi Video Editing untuk Content Creator AI dari folder Video Editing/ANDREY. Berisi 3 aset video komersial, fast-cut editing, kinetic titles, color grading, dan sound design.',
-    challenge: 'Mengemas visual cerita & momen Content Creator AI menjadi video promosi berenergi tinggi dengan retensi penonton maksimal.',
-    solution: 'Editing video ritmis dengan potongan lagu trending, animasi teks kinetik, dan penyelarasan warna profesional.',
+    metric: '2 Video Commercial • Bunny Stream',
+    thumbnail: 'assets/content-creator-ai/resep.jpg',
+    shortDesc: 'Folder Video Editing Conten Creator AI Vids — Seri Video Commercial & Vlog Edukasi AI via Bunny Stream CDN.',
+    fullDesc: 'Folder koleksi resmi Video Editing untuk Conten Creator AI Vids yang terhubung langsung ke Bunny Stream CDN. Berisi video komersial dan vlog edukasi interaktif hasil prompt engineering, visual storytelling ceria, kinetic typography, dan sound design profesional.',
+    challenge: 'Mengemas konten vlog edukasi dan resep komersial bernuansa ceria dengan pacing dinamis dan visual hook penonton tinggi.',
+    solution: 'Integrasi video streaming melalui Bunny Stream CDN berkecepatan tinggi, cut dinamis, musik trending, dan pemutaran HD instan.',
     results: [
-      '3 Aset Video Editing Resmi Terintegrasi di Folder Content Creator AI',
-      'Digunakan untuk tayangan media sosial Instagram Reels, TikTok, YouTube Shorts & Ads'
+      '2 Video Komersial Resmi Terkoneksi ke Bunny Stream CDN (Library ID: 756896)',
+      'Pemutaran Instan Kualitas HD Bebas Buffering & Bebas Iklan',
+      'Format Siap untuk YouTube Shorts, Instagram Reels & TikTok'
     ],
-    tools: ['Premiere Pro', 'After Effects', 'CapCut Pro', 'DaVinci Resolve'],
-    embedVideo: 'assets/andrey-video-editing/content-creator-ai/Resep_Vlog_Ala_Sunda_Ceria.mp4',
+    tools: ['Premiere Pro', 'After Effects', 'CapCut Pro', 'Bunny Stream'],
+    bunnyVideoId: 'f3cf936c-9ba3-427b-b25f-5904143b5fc7',
+    bunnyLibraryId: '756896',
+    embedVideo: 'https://iframe.mediadelivery.net/embed/756896/f3cf936c-9ba3-427b-b25f-5904143b5fc7',
     items: [
       {
-        name: 'Content Creator AI — Visual Graphic 1',
-        img: 'assets/andrey-video-editing/content-creator-ai/Gemini_Generated_Image_2jh14l2jh14l2jh1.png',
-        desc: 'Desain visual art & poster promosi Gemini_Generated_Image_2jh14l2jh14l2jh1.png.'
+        name: 'Resep_Vlog_Ala_Sunda_Ceria.mp4',
+        img: 'assets/content-creator-ai/resep.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/f3cf936c-9ba3-427b-b25f-5904143b5fc7',
+        desc: 'Resep_Vlog_Ala_Sunda_Ceria.mp4 — Video komersial & vlog kuliner ceria.'
       },
       {
-        name: 'Content Creator AI — Commercial Video Clip 2',
-        img: 'assets/andrey-video-editing/content-creator-ai/Gemini_Generated_Image_2jh14l2jh14l2jh1.png',
-        video: 'assets/andrey-video-editing/content-creator-ai/Resep_Vlog_Ala_Sunda_Ceria.mp4',
-        desc: 'Video komersial & editing ritmis Resep_Vlog_Ala_Sunda_Ceria.mp4.'
-      },
-      {
-        name: 'Content Creator AI — Commercial Video Clip 3',
-        img: 'assets/andrey-video-editing/content-creator-ai/Gemini_Generated_Image_2jh14l2jh14l2jh1.png',
-        video: 'assets/andrey-video-editing/content-creator-ai/Video_Vlog_Evaluasi_Prompt_Ceria.mp4',
-        desc: 'Video komersial & editing ritmis Video_Vlog_Evaluasi_Prompt_Ceria.mp4.'
+        name: 'Video_Vlog_Evaluasi_Prompt_Ceria.mp4',
+        img: 'assets/content-creator-ai/evaluasi.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/dc62b648-fc78-4fad-acba-30aa68bad11a',
+        desc: 'Video_Vlog_Evaluasi_Prompt_Ceria.mp4 — Video vlog edukasi evaluasi prompt AI.'
       }
     ]
   },
 
   {
     id: 'video-editing-andrey-diary-karyawan-reels',
-    title: 'Diary Karyawan — Social Media Reels',
+    title: 'Diary Karyawan Reels',
     category: 'video',
     categoryName: 'Video Editing & Motion',
     client: 'Diary Karyawan',
-    metric: '8 Video Commercial & Motion Aset',
-    thumbnail: 'assets/andrey-video-editing/diary-karyawan-reels/1.mp4',
-    shortDesc: 'Folder Video Editing Diary Karyawan — 8 Aset Video Commercial, Shorts/Reels & Sound Design.',
-    fullDesc: 'Folder koleksi resmi Video Editing untuk Diary Karyawan dari folder Video Editing/ANDREY. Berisi 8 aset video komersial, fast-cut editing, kinetic titles, color grading, dan sound design.',
+    metric: '7 Video Commercial • Bunny Stream',
+    thumbnail: 'assets/diary-karyawan/1.jpg',
+    shortDesc: 'Folder Video Editing Diary Karyawan Reels — 7 Koleksi Video Commercial, Shorts/Reels & Sound Design via Bunny Stream CDN.',
+    fullDesc: 'Folder koleksi resmi Video Editing untuk Diary Karyawan Reels yang terhubung langsung ke Bunny Stream CDN. Berisi 7 seri video komersial dengan fast-cut editing, kinetic titles, color grading, dan sound design profesional.',
     challenge: 'Mengemas visual cerita & momen Diary Karyawan menjadi video promosi berenergi tinggi dengan retensi penonton maksimal.',
-    solution: 'Editing video ritmis dengan potongan lagu trending, animasi teks kinetik, dan penyelarasan warna profesional.',
+    solution: 'Editing video ritmis dengan potongan lagu trending, animasi teks kinetik, dan integrasi streaming Bunny Stream CDN kualitas HD.',
     results: [
-      '8 Aset Video Editing Resmi Terintegrasi di Folder Diary Karyawan',
-      'Digunakan untuk tayangan media sosial Instagram Reels, TikTok, YouTube Shorts & Ads'
+      '7 Aset Video Editing Resmi Terkoneksi ke Bunny Stream CDN (Library ID: 756896)',
+      'Pemutaran Cepat Kualitas HD Bebas Buffering & Bebas Iklan',
+      'Format Siap untuk Instagram Reels, TikTok, & YouTube Shorts'
     ],
-    tools: ['Premiere Pro', 'After Effects', 'CapCut Pro', 'DaVinci Resolve'],
-    embedVideo: 'assets/andrey-video-editing/diary-karyawan-reels/1.mp4',
+    tools: ['Premiere Pro', 'After Effects', 'CapCut Pro', 'Bunny Stream'],
+    bunnyVideoId: 'd5e95c3d-a52d-4a55-969c-50b8304c732d',
+    bunnyLibraryId: '756896',
+    embedVideo: 'https://iframe.mediadelivery.net/embed/756896/d5e95c3d-a52d-4a55-969c-50b8304c732d',
     items: [
       {
-        name: 'Diary Karyawan — Commercial Video Clip 1',
-        img: 'assets/andrey-video-editing/diary-karyawan-reels/1.mp4',
-        video: 'assets/andrey-video-editing/diary-karyawan-reels/1.mp4',
-        desc: 'Video komersial & editing ritmis 1.mp4.'
+        name: '1.mp4',
+        img: 'assets/diary-karyawan/1.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/d5e95c3d-a52d-4a55-969c-50b8304c732d',
+        desc: '1.mp4 — Video komersial & editing ritmis Diary Karyawan seri 1.'
       },
       {
-        name: 'Diary Karyawan — Commercial Video Clip 2',
-        img: 'assets/andrey-video-editing/diary-karyawan-reels/1.mp4',
-        video: 'assets/andrey-video-editing/diary-karyawan-reels/2.mp4',
-        desc: 'Video komersial & editing ritmis 2.mp4.'
+        name: '2.mp4',
+        img: 'assets/diary-karyawan/2.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/9c6dc604-1b61-4565-b326-cc4f10c861d4',
+        desc: '2.mp4 — Video komersial & editing ritmis Diary Karyawan seri 2.'
       },
       {
-        name: 'Diary Karyawan — Commercial Video Clip 3',
-        img: 'assets/andrey-video-editing/diary-karyawan-reels/1.mp4',
-        video: 'assets/andrey-video-editing/diary-karyawan-reels/3.mp4',
-        desc: 'Video komersial & editing ritmis 3.mp4.'
+        name: '3.mp4',
+        img: 'assets/diary-karyawan/3.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/d525e6e1-4e92-469a-acec-c6e6e2647308',
+        desc: '3.mp4 — Video komersial & editing ritmis Diary Karyawan seri 3.'
       },
       {
-        name: 'Diary Karyawan — Commercial Video Clip 4',
-        img: 'assets/andrey-video-editing/diary-karyawan-reels/1.mp4',
-        video: 'assets/andrey-video-editing/diary-karyawan-reels/4.mp4',
-        desc: 'Video komersial & editing ritmis 4.mp4.'
+        name: '5.mp4',
+        img: 'assets/diary-karyawan/5.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/25ca96a6-9e5b-476f-9e86-d8c4367d7e71',
+        desc: '5.mp4 — Video komersial & editing ritmis Diary Karyawan seri 5.'
       },
       {
-        name: 'Diary Karyawan — Commercial Video Clip 5',
-        img: 'assets/andrey-video-editing/diary-karyawan-reels/1.mp4',
-        video: 'assets/andrey-video-editing/diary-karyawan-reels/5.mp4',
-        desc: 'Video komersial & editing ritmis 5.mp4.'
+        name: '6.mp4',
+        img: 'assets/diary-karyawan/6.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/bacec36d-1173-4b03-bcf3-daa701aa64f1',
+        desc: '6.mp4 — Video komersial & editing ritmis Diary Karyawan seri 6.'
       },
       {
-        name: 'Diary Karyawan — Commercial Video Clip 6',
-        img: 'assets/andrey-video-editing/diary-karyawan-reels/1.mp4',
-        video: 'assets/andrey-video-editing/diary-karyawan-reels/6.mp4',
-        desc: 'Video komersial & editing ritmis 6.mp4.'
+        name: '7.mp4',
+        img: 'assets/diary-karyawan/7.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/c2aa104f-cef0-4eda-b206-5ac2a46b0f1b',
+        desc: '7.mp4 — Video komersial & editing ritmis Diary Karyawan seri 7.'
       },
       {
-        name: 'Diary Karyawan — Commercial Video Clip 7',
-        img: 'assets/andrey-video-editing/diary-karyawan-reels/1.mp4',
-        video: 'assets/andrey-video-editing/diary-karyawan-reels/7.mp4',
-        desc: 'Video komersial & editing ritmis 7.mp4.'
-      },
-      {
-        name: 'Diary Karyawan — Commercial Video Clip 8',
-        img: 'assets/andrey-video-editing/diary-karyawan-reels/1.mp4',
-        video: 'assets/andrey-video-editing/diary-karyawan-reels/8.mp4',
-        desc: 'Video komersial & editing ritmis 8.mp4.'
+        name: '8.mp4',
+        img: 'assets/diary-karyawan/8.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/65edbb13-006e-404e-9c23-d88decb0507e',
+        desc: '8.mp4 — Video komersial & editing ritmis Diary Karyawan seri 8.'
       }
     ]
   },
 
   {
     id: 'video-editing-andrey-fighting-style-ai',
-    title: 'Fighting Style — AI Action Videos',
+    title: 'Fighting Style AI Vids',
     category: 'video',
     categoryName: 'Video Editing & Motion',
     client: 'Action AI Motion',
-    metric: '3 Video Commercial & Motion Aset',
-    thumbnail: 'assets/andrey-video-editing/fighting-style-ai/High_Octane_Captain_America_Fight_Scene.mp4',
-    shortDesc: 'Folder Video Editing Action AI Motion — 3 Aset Video Commercial, Shorts/Reels & Sound Design.',
-    fullDesc: 'Folder koleksi resmi Video Editing untuk Action AI Motion dari folder Video Editing/ANDREY. Berisi 3 aset video komersial, fast-cut editing, kinetic titles, color grading, dan sound design.',
-    challenge: 'Mengemas visual cerita & momen Action AI Motion menjadi video promosi berenergi tinggi dengan retensi penonton maksimal.',
-    solution: 'Editing video ritmis dengan potongan lagu trending, animasi teks kinetik, dan penyelarasan warna profesional.',
+    metric: '3 Video Commercial • Bunny Stream',
+    thumbnail: 'assets/fighting-style/captain.jpg',
+    shortDesc: 'Folder Video Editing Fighting Style AI Vids — 3 Aset Video Aksi Generative AI & Sound Design via Bunny Stream CDN.',
+    fullDesc: 'Folder koleksi resmi Video Editing untuk Fighting Style AI Vids yang terhubung langsung ke Bunny Stream CDN. Menampilkan 3 seri video aksi pertarungan jarak dekat (hand-to-hand combat) berintensitas tinggi hasil generative AI visual (Kling & VEO) dengan sound design dinamis dan transisi ritmis.',
+    challenge: 'Menyajikan adegan koreografi laga dan pertarungan cepat bertenaga tinggi dengan detail gerakan fluid dan sinematik.',
+    solution: 'Integrasi video streaming melalui Bunny Stream CDN berkecepatan tinggi, penyelarasan efek suara hantaman (impact SFX), dan pemutaran HD instan.',
     results: [
-      '3 Aset Video Editing Resmi Terintegrasi di Folder Action AI Motion',
-      'Digunakan untuk tayangan media sosial Instagram Reels, TikTok, YouTube Shorts & Ads'
+      '3 Video Aksi Laga AI Resmi Terkoneksi ke Bunny Stream CDN (Library ID: 756896)',
+      'Pemutaran Cepat Kualitas HD Bebas Buffering & Bebas Iklan',
+      'Format Siap untuk Instagram Reels, TikTok & YouTube Shorts'
     ],
-    tools: ['Premiere Pro', 'After Effects', 'CapCut Pro', 'DaVinci Resolve'],
-    embedVideo: 'assets/andrey-video-editing/fighting-style-ai/High_Octane_Captain_America_Fight_Scene.mp4',
+    tools: ['Premiere Pro', 'After Effects', 'CapCut Pro', 'Bunny Stream'],
+    bunnyVideoId: 'f0b426ea-6494-41a1-949b-2b37a7b05445',
+    bunnyLibraryId: '756896',
+    embedVideo: 'https://iframe.mediadelivery.net/embed/756896/f0b426ea-6494-41a1-949b-2b37a7b05445',
     items: [
       {
-        name: 'Action AI Motion — Commercial Video Clip 1',
-        img: 'assets/andrey-video-editing/fighting-style-ai/High_Octane_Captain_America_Fight_Scene.mp4',
-        video: 'assets/andrey-video-editing/fighting-style-ai/High_Octane_Captain_America_Fight_Scene.mp4',
-        desc: 'Video komersial & editing ritmis High_Octane_Captain_America_Fight_Scene.mp4.'
+        name: 'High_Octane_Captain_America_Fight_Scene.mp4',
+        img: 'assets/fighting-style/captain.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/f0b426ea-6494-41a1-949b-2b37a7b05445',
+        desc: 'High_Octane_Captain_America_Fight_Scene.mp4 — Video koreografi aksi laga Captain America bertenaga tinggi.'
       },
       {
-        name: 'Action AI Motion — Commercial Video Clip 2',
-        img: 'assets/andrey-video-editing/fighting-style-ai/High_Octane_Captain_America_Fight_Scene.mp4',
-        video: 'assets/andrey-video-editing/fighting-style-ai/Kling Hand to Hand Combat.mp4',
-        desc: 'Video komersial & editing ritmis Kling Hand to Hand Combat.mp4.'
+        name: 'Kling Hand to Hand Combat.mp4',
+        img: 'assets/fighting-style/kling.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/d6393043-d980-43f6-bf9d-a5699b58e254',
+        desc: 'Kling Hand to Hand Combat.mp4 — Video simulasi pertarungan jarak dekat hasil AI Kling.'
       },
       {
-        name: 'Action AI Motion — Commercial Video Clip 3',
-        img: 'assets/andrey-video-editing/fighting-style-ai/High_Octane_Captain_America_Fight_Scene.mp4',
-        video: 'assets/andrey-video-editing/fighting-style-ai/VEO Hand to Hand Combat.mp4',
-        desc: 'Video komersial & editing ritmis VEO Hand to Hand Combat.mp4.'
+        name: 'VEO Hand to Hand Combat.mp4',
+        img: 'assets/fighting-style/veo.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/90415c99-ee7a-4388-9768-5b89f2da22d8',
+        desc: 'VEO Hand to Hand Combat.mp4 — Video aksi sinematik hand-to-hand combat AI VEO.'
       }
     ]
   },
 
   {
     id: 'video-editing-andrey-food-vlog-ai',
-    title: 'Food Vlog — AI Culinary Videos',
+    title: 'Food Vlog AI Video',
     category: 'video',
     categoryName: 'Video Editing & Motion',
     client: 'Culinary AI',
-    metric: '6 Video Commercial & Motion Aset',
-    thumbnail: 'assets/andrey-video-editing/food-vlog-ai/1.mp4',
-    shortDesc: 'Folder Video Editing Culinary AI — 6 Aset Video Commercial, Shorts/Reels & Sound Design.',
-    fullDesc: 'Folder koleksi resmi Video Editing untuk Culinary AI dari folder Video Editing/ANDREY. Berisi 6 aset video komersial, fast-cut editing, kinetic titles, color grading, dan sound design.',
-    challenge: 'Mengemas visual cerita & momen Culinary AI menjadi video promosi berenergi tinggi dengan retensi penonton maksimal.',
-    solution: 'Editing video ritmis dengan potongan lagu trending, animasi teks kinetik, dan penyelarasan warna profesional.',
+    metric: '6 Video Commercial • Bunny Stream',
+    thumbnail: 'assets/food-vlog-ai/1.jpg',
+    shortDesc: 'Folder Video Editing Food Vlog AI Video — 6 Aset Video Kuliner Sinematik Generative AI via Bunny Stream CDN.',
+    fullDesc: 'Folder koleksi resmi Video Editing untuk Food Vlog AI Video yang terhubung langsung ke Bunny Stream CDN. Menampilkan 6 seri video commercial & aesthetic food vlog berbasis generative AI visual dengan motion ritmis, appetizing color grading, dan sound design dinamis.',
+    challenge: 'Menyajikan visual presentasi kuliner generative AI yang menggugah selera dengan tempo editing cepat dan kualitas visual tinggi.',
+    solution: 'Integrasi video streaming melalui Bunny Stream CDN berkecepatan tinggi, optimasi visual presentasi makanan lezat, dan pemutaran responsif.',
     results: [
-      '6 Aset Video Editing Resmi Terintegrasi di Folder Culinary AI',
-      'Digunakan untuk tayangan media sosial Instagram Reels, TikTok, YouTube Shorts & Ads'
+      '6 Video Komersial Kuliner AI Resmi Terkoneksi ke Bunny Stream CDN (Library ID: 756896)',
+      'Streaming Cepat Kualitas HD Bebas Buffering & Bebas Iklan',
+      'Format Optimal untuk Instagram Reels, TikTok & YouTube Shorts'
     ],
-    tools: ['Premiere Pro', 'After Effects', 'CapCut Pro', 'DaVinci Resolve'],
-    embedVideo: 'assets/andrey-video-editing/food-vlog-ai/1.mp4',
+    tools: ['Premiere Pro', 'After Effects', 'CapCut Pro', 'DaVinci Resolve', 'Bunny Stream'],
+    bunnyVideoId: '810784b8-a614-4c4e-bd9f-6dda718cf2de',
+    bunnyLibraryId: '756896',
+    embedVideo: 'https://iframe.mediadelivery.net/embed/756896/810784b8-a614-4c4e-bd9f-6dda718cf2de',
     items: [
       {
-        name: 'Culinary AI — Commercial Video Clip 1',
-        img: 'assets/andrey-video-editing/food-vlog-ai/1.mp4',
-        video: 'assets/andrey-video-editing/food-vlog-ai/1.mp4',
-        desc: 'Video komersial & editing ritmis 1.mp4.'
+        name: '1.mp4',
+        img: 'assets/food-vlog-ai/1.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/810784b8-a614-4c4e-bd9f-6dda718cf2de',
+        desc: '1.mp4 — Video komersial kuliner Food Vlog AI Video seri 1.'
       },
       {
-        name: 'Culinary AI — Commercial Video Clip 2',
-        img: 'assets/andrey-video-editing/food-vlog-ai/1.mp4',
-        video: 'assets/andrey-video-editing/food-vlog-ai/2.mp4',
-        desc: 'Video komersial & editing ritmis 2.mp4.'
+        name: '2.mp4',
+        img: 'assets/food-vlog-ai/2.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/71192ca6-f8a3-4ab2-89d0-b0d406d19b7c',
+        desc: '2.mp4 — Video komersial kuliner Food Vlog AI Video seri 2.'
       },
       {
-        name: 'Culinary AI — Commercial Video Clip 3',
-        img: 'assets/andrey-video-editing/food-vlog-ai/1.mp4',
-        video: 'assets/andrey-video-editing/food-vlog-ai/3.mp4',
-        desc: 'Video komersial & editing ritmis 3.mp4.'
+        name: '3.mp4',
+        img: 'assets/food-vlog-ai/3.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/5bfe193f-3590-42f7-8ea4-02869816e4e0',
+        desc: '3.mp4 — Video komersial kuliner Food Vlog AI Video seri 3.'
       },
       {
-        name: 'Culinary AI — Commercial Video Clip 4',
-        img: 'assets/andrey-video-editing/food-vlog-ai/1.mp4',
-        video: 'assets/andrey-video-editing/food-vlog-ai/4.mp4',
-        desc: 'Video komersial & editing ritmis 4.mp4.'
+        name: '4.mp4',
+        img: 'assets/food-vlog-ai/4.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/f0d38f6f-8700-4cc5-b4aa-aa5af30fdd3e',
+        desc: '4.mp4 — Video komersial kuliner Food Vlog AI Video seri 4.'
       },
       {
-        name: 'Culinary AI — Commercial Video Clip 5',
-        img: 'assets/andrey-video-editing/food-vlog-ai/1.mp4',
-        video: 'assets/andrey-video-editing/food-vlog-ai/5.mp4',
-        desc: 'Video komersial & editing ritmis 5.mp4.'
+        name: '5.mp4',
+        img: 'assets/food-vlog-ai/5.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/f48a0dcc-6c21-4206-82fb-7e6d843df361',
+        desc: '5.mp4 — Video komersial kuliner Food Vlog AI Video seri 5.'
       },
       {
-        name: 'Culinary AI — Commercial Video Clip 6',
-        img: 'assets/andrey-video-editing/food-vlog-ai/1.mp4',
-        video: 'assets/andrey-video-editing/food-vlog-ai/6.mp4',
-        desc: 'Video komersial & editing ritmis 6.mp4.'
+        name: '6.mp4',
+        img: 'assets/food-vlog-ai/6.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/49ae9077-b747-479b-be51-d259c4aeb130',
+        desc: '6.mp4 — Video komersial kuliner Food Vlog AI Video seri 6.'
       }
     ]
   },
@@ -2626,315 +2719,304 @@ const PROJECTS = [
 
   {
     id: 'video-editing-andrey-kucingkerja-reels',
-    title: 'Kucingkerja_id — AI Reels Series',
+    title: 'Kucingkerja_id AI Reels',
     category: 'video',
     categoryName: 'Video Editing & Motion',
     client: 'Kucingkerja.id',
-    metric: '15 Video Commercial & Motion Aset',
-    thumbnail: 'assets/andrey-video-editing/kucingkerja-reels/1.mp4',
-    shortDesc: 'Folder Video Editing Kucingkerja.id — 15 Aset Video Commercial, Shorts/Reels & Sound Design.',
-    fullDesc: 'Folder koleksi resmi Video Editing untuk Kucingkerja.id dari folder Video Editing/ANDREY. Berisi 15 aset video komersial, fast-cut editing, kinetic titles, color grading, dan sound design.',
-    challenge: 'Mengemas visual cerita & momen Kucingkerja.id menjadi video promosi berenergi tinggi dengan retensi penonton maksimal.',
-    solution: 'Editing video ritmis dengan potongan lagu trending, animasi teks kinetik, dan penyelarasan warna profesional.',
+    metric: '12 Video Commercial • Bunny Stream',
+    thumbnail: 'assets/kucingkerja-reels/3.jpg',
+    shortDesc: 'Folder Video Editing Kucingkerja_id AI Reels — 12 Aset Video Karakter AI Kucing & Motion Graphics via Bunny Stream CDN.',
+    fullDesc: 'Folder koleksi resmi Video Editing untuk Kucingkerja_id AI Reels yang terhubung langsung ke Bunny Stream CDN. Menampilkan 12 seri video komedi & relatable kehidupan kerja bertema karakter kucing AI dengan kinetic typography, sound effects lucu, dan storytelling kreatif.',
+    challenge: 'Mengemas konten visual cerita karakter kucing bertema dunia kerja dengan transisi dinamis dan retensi penonton tinggi.',
+    solution: 'Integrasi video streaming melalui Bunny Stream CDN berkecepatan tinggi, optimasi subtitle kinetik, dan pacing editing yang menghibur.',
     results: [
-      '15 Aset Video Editing Resmi Terintegrasi di Folder Kucingkerja.id',
-      'Digunakan untuk tayangan media sosial Instagram Reels, TikTok, YouTube Shorts & Ads'
+      '12 Video Reels Resmi Terkoneksi ke Bunny Stream CDN (Library ID: 756896)',
+      'Streaming Cepat Kualitas HD Bebas Buffering & Bebas Iklan',
+      'Format Optimal untuk Instagram Reels, TikTok & YouTube Shorts'
     ],
-    tools: ['Premiere Pro', 'After Effects', 'CapCut Pro', 'DaVinci Resolve'],
-    embedVideo: 'assets/andrey-video-editing/kucingkerja-reels/1.mp4',
+    tools: ['Premiere Pro', 'After Effects', 'CapCut Pro', 'DaVinci Resolve', 'Bunny Stream'],
+    bunnyVideoId: '88937fa4-b0fe-470e-9a9d-9fbd7f18212c',
+    bunnyLibraryId: '756896',
+    embedVideo: 'https://iframe.mediadelivery.net/embed/756896/88937fa4-b0fe-470e-9a9d-9fbd7f18212c',
     items: [
       {
-        name: 'Kucingkerja.id — Commercial Video Clip 1',
-        img: 'assets/andrey-video-editing/kucingkerja-reels/1.mp4',
-        video: 'assets/andrey-video-editing/kucingkerja-reels/1.mp4',
-        desc: 'Video komersial & editing ritmis 1.mp4.'
+        name: '3.mp4',
+        img: 'assets/kucingkerja-reels/3.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/88937fa4-b0fe-470e-9a9d-9fbd7f18212c',
+        desc: '3.mp4 — Video kreatif Kucingkerja_id AI Reels seri 3.'
       },
       {
-        name: 'Kucingkerja.id — Commercial Video Clip 2',
-        img: 'assets/andrey-video-editing/kucingkerja-reels/1.mp4',
-        video: 'assets/andrey-video-editing/kucingkerja-reels/10.mp4',
-        desc: 'Video komersial & editing ritmis 10.mp4.'
+        name: '5.mp4',
+        img: 'assets/kucingkerja-reels/5.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/8c332b4a-4c90-43f7-8c8b-32ce7651189d',
+        desc: '5.mp4 — Video kreatif Kucingkerja_id AI Reels seri 5.'
       },
       {
-        name: 'Kucingkerja.id — Commercial Video Clip 3',
-        img: 'assets/andrey-video-editing/kucingkerja-reels/1.mp4',
-        video: 'assets/andrey-video-editing/kucingkerja-reels/11.mp4',
-        desc: 'Video komersial & editing ritmis 11.mp4.'
+        name: '6.mp4',
+        img: 'assets/kucingkerja-reels/6.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/509438e5-97d3-4cea-b1f0-d13de93a99d8',
+        desc: '6.mp4 — Video kreatif Kucingkerja_id AI Reels seri 6.'
       },
       {
-        name: 'Kucingkerja.id — Commercial Video Clip 4',
-        img: 'assets/andrey-video-editing/kucingkerja-reels/1.mp4',
-        video: 'assets/andrey-video-editing/kucingkerja-reels/12.mp4',
-        desc: 'Video komersial & editing ritmis 12.mp4.'
+        name: '7.mp4',
+        img: 'assets/kucingkerja-reels/7.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/cae5c35f-567d-43e1-b1d8-3dc368822ed3',
+        desc: '7.mp4 — Video kreatif Kucingkerja_id AI Reels seri 7.'
       },
       {
-        name: 'Kucingkerja.id — Commercial Video Clip 5',
-        img: 'assets/andrey-video-editing/kucingkerja-reels/1.mp4',
-        video: 'assets/andrey-video-editing/kucingkerja-reels/13.mp4',
-        desc: 'Video komersial & editing ritmis 13.mp4.'
+        name: '8.mp4',
+        img: 'assets/kucingkerja-reels/8.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/470942a6-9836-4585-a8b9-e9b7a8a8be4b',
+        desc: '8.mp4 — Video kreatif Kucingkerja_id AI Reels seri 8.'
       },
       {
-        name: 'Kucingkerja.id — Commercial Video Clip 6',
-        img: 'assets/andrey-video-editing/kucingkerja-reels/1.mp4',
-        video: 'assets/andrey-video-editing/kucingkerja-reels/14.mp4',
-        desc: 'Video komersial & editing ritmis 14.mp4.'
+        name: '9.mp4',
+        img: 'assets/kucingkerja-reels/9.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/6fd89579-ffe6-44b4-89eb-b87575a0d3de',
+        desc: '9.mp4 — Video kreatif Kucingkerja_id AI Reels seri 9.'
       },
       {
-        name: 'Kucingkerja.id — Commercial Video Clip 7',
-        img: 'assets/andrey-video-editing/kucingkerja-reels/1.mp4',
-        video: 'assets/andrey-video-editing/kucingkerja-reels/15.mp4',
-        desc: 'Video komersial & editing ritmis 15.mp4.'
+        name: '10.mp4',
+        img: 'assets/kucingkerja-reels/10.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/249d8985-b1c3-48e3-9af6-76d35d1c22c0',
+        desc: '10.mp4 — Video kreatif Kucingkerja_id AI Reels seri 10.'
       },
       {
-        name: 'Kucingkerja.id — Commercial Video Clip 8',
-        img: 'assets/andrey-video-editing/kucingkerja-reels/1.mp4',
-        video: 'assets/andrey-video-editing/kucingkerja-reels/2.mp4',
-        desc: 'Video komersial & editing ritmis 2.mp4.'
+        name: '11.mp4',
+        img: 'assets/kucingkerja-reels/11.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/7c2c6df9-6728-4ae6-bdf1-4cf308d2b9ae',
+        desc: '11.mp4 — Video kreatif Kucingkerja_id AI Reels seri 11.'
       },
       {
-        name: 'Kucingkerja.id — Commercial Video Clip 9',
-        img: 'assets/andrey-video-editing/kucingkerja-reels/1.mp4',
-        video: 'assets/andrey-video-editing/kucingkerja-reels/3.mp4',
-        desc: 'Video komersial & editing ritmis 3.mp4.'
+        name: '12.mp4',
+        img: 'assets/kucingkerja-reels/12.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/c57e7a1b-ded0-4245-89aa-03e7af0848d9',
+        desc: '12.mp4 — Video kreatif Kucingkerja_id AI Reels seri 12.'
       },
       {
-        name: 'Kucingkerja.id — Commercial Video Clip 10',
-        img: 'assets/andrey-video-editing/kucingkerja-reels/1.mp4',
-        video: 'assets/andrey-video-editing/kucingkerja-reels/4.mp4',
-        desc: 'Video komersial & editing ritmis 4.mp4.'
+        name: '13.mp4',
+        img: 'assets/kucingkerja-reels/13.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/6fc43602-d93f-49a4-9699-211e161fe936',
+        desc: '13.mp4 — Video kreatif Kucingkerja_id AI Reels seri 13.'
       },
       {
-        name: 'Kucingkerja.id — Commercial Video Clip 11',
-        img: 'assets/andrey-video-editing/kucingkerja-reels/1.mp4',
-        video: 'assets/andrey-video-editing/kucingkerja-reels/5.mp4',
-        desc: 'Video komersial & editing ritmis 5.mp4.'
+        name: '14.mp4',
+        img: 'assets/kucingkerja-reels/14.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/56b88252-733a-4b56-8663-f3be4ec716e1',
+        desc: '14.mp4 — Video kreatif Kucingkerja_id AI Reels seri 14.'
       },
       {
-        name: 'Kucingkerja.id — Commercial Video Clip 12',
-        img: 'assets/andrey-video-editing/kucingkerja-reels/1.mp4',
-        video: 'assets/andrey-video-editing/kucingkerja-reels/6.mp4',
-        desc: 'Video komersial & editing ritmis 6.mp4.'
-      },
-      {
-        name: 'Kucingkerja.id — Commercial Video Clip 13',
-        img: 'assets/andrey-video-editing/kucingkerja-reels/1.mp4',
-        video: 'assets/andrey-video-editing/kucingkerja-reels/7.mp4',
-        desc: 'Video komersial & editing ritmis 7.mp4.'
-      },
-      {
-        name: 'Kucingkerja.id — Commercial Video Clip 14',
-        img: 'assets/andrey-video-editing/kucingkerja-reels/1.mp4',
-        video: 'assets/andrey-video-editing/kucingkerja-reels/8.mp4',
-        desc: 'Video komersial & editing ritmis 8.mp4.'
-      },
-      {
-        name: 'Kucingkerja.id — Commercial Video Clip 15',
-        img: 'assets/andrey-video-editing/kucingkerja-reels/1.mp4',
-        video: 'assets/andrey-video-editing/kucingkerja-reels/9.mp4',
-        desc: 'Video komersial & editing ritmis 9.mp4.'
+        name: '15.mp4',
+        img: 'assets/kucingkerja-reels/15.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/375bde1b-8d0b-42c7-902c-bb6885745e5c',
+        desc: '15.mp4 — Video kreatif Kucingkerja_id AI Reels seri 15.'
       }
     ]
   },
 
   {
     id: 'video-editing-andrey-lamis-resto-reels',
-    title: 'Lamis Resto — Promotional Reels',
+    title: 'Lamis Resto Promotional Reels',
     category: 'video',
     categoryName: 'Video Editing & Motion',
     client: 'Lamis Resto',
-    metric: '5 Video Commercial & Motion Aset',
-    thumbnail: 'assets/andrey-video-editing/lamis-resto-reels/Jumat - Gathering.mp4',
-    shortDesc: 'Folder Video Editing Lamis Resto — 5 Aset Video Commercial, Shorts/Reels & Sound Design.',
-    fullDesc: 'Folder koleksi resmi Video Editing untuk Lamis Resto dari folder Video Editing/ANDREY. Berisi 5 aset video komersial, fast-cut editing, kinetic titles, color grading, dan sound design.',
-    challenge: 'Mengemas visual cerita & momen Lamis Resto menjadi video promosi berenergi tinggi dengan retensi penonton maksimal.',
-    solution: 'Editing video ritmis dengan potongan lagu trending, animasi teks kinetik, dan penyelarasan warna profesional.',
+    metric: '5 Video Commercial • Bunny Stream',
+    thumbnail: 'assets/lamis-resto-reels/gathering.jpg',
+    shortDesc: 'Folder Video Editing Lamis Resto Promotional Reels — 5 Aset Video Promosi Kuliner & Restoran via Bunny Stream CDN.',
+    fullDesc: 'Folder koleksi resmi Video Editing untuk Lamis Resto Promotional Reels yang terhubung langsung ke Bunny Stream CDN. Menampilkan 5 seri video reels promosi kuliner, gathering acara, behind-the-scenes dapur, dan highlight menu best seller dengan sinematografi memikat serta sound design dinamis.',
+    challenge: 'Mengemas suasana restoran dan cita rasa hidangan kuliner menjadi konten video reels berenergi positif dengan retensi tinggi.',
+    solution: 'Integrasi video streaming melalui Bunny Stream CDN berkecepatan tinggi, color grading makanan yang appetizing, dan transisi ritmis.',
     results: [
-      '5 Aset Video Editing Resmi Terintegrasi di Folder Lamis Resto',
-      'Digunakan untuk tayangan media sosial Instagram Reels, TikTok, YouTube Shorts & Ads'
+      '5 Video Reels Promosi Resmi Terkoneksi ke Bunny Stream CDN (Library ID: 756896)',
+      'Streaming Cepat Kualitas HD Bebas Buffering & Bebas Iklan',
+      'Format Optimal untuk Instagram Reels, TikTok & YouTube Shorts'
     ],
-    tools: ['Premiere Pro', 'After Effects', 'CapCut Pro', 'DaVinci Resolve'],
-    embedVideo: 'assets/andrey-video-editing/lamis-resto-reels/Jumat - Gathering.mp4',
+    tools: ['Premiere Pro', 'After Effects', 'CapCut Pro', 'DaVinci Resolve', 'Bunny Stream'],
+    bunnyVideoId: '90057698-58f6-463b-a6d0-eeb75a07e47e',
+    bunnyLibraryId: '756896',
+    embedVideo: 'https://iframe.mediadelivery.net/embed/756896/90057698-58f6-463b-a6d0-eeb75a07e47e',
     items: [
       {
-        name: 'Lamis Resto — Commercial Video Clip 1',
-        img: 'assets/andrey-video-editing/lamis-resto-reels/Jumat - Gathering.mp4',
-        video: 'assets/andrey-video-editing/lamis-resto-reels/Jumat - Gathering.mp4',
-        desc: 'Video komersial & editing ritmis Jumat - Gathering.mp4.'
+        name: 'Jumat - Gathering.mp4',
+        img: 'assets/lamis-resto-reels/gathering.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/90057698-58f6-463b-a6d0-eeb75a07e47e',
+        desc: 'Jumat - Gathering.mp4 — Video promosi event gathering & suasana hangat Lamis Resto.'
       },
       {
-        name: 'Lamis Resto — Commercial Video Clip 2',
-        img: 'assets/andrey-video-editing/lamis-resto-reels/Jumat - Gathering.mp4',
-        video: 'assets/andrey-video-editing/lamis-resto-reels/Kitchen - Lamis Resto.mp4',
-        desc: 'Video komersial & editing ritmis Kitchen - Lamis Resto.mp4.'
+        name: 'Kitchen - Lamis Resto.mp4',
+        img: 'assets/lamis-resto-reels/kitchen.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/2dd51a9b-2ec0-4d30-9a11-4c5ee230caa1',
+        desc: 'Kitchen - Lamis Resto.mp4 — Video behind the scenes dapur & persiapan kuliner higienis.'
       },
       {
-        name: 'Lamis Resto — Commercial Video Clip 3',
-        img: 'assets/andrey-video-editing/lamis-resto-reels/Jumat - Gathering.mp4',
-        video: 'assets/andrey-video-editing/lamis-resto-reels/KONTEN REELS, 19 MARET.mp4',
-        desc: 'Video komersial & editing ritmis KONTEN REELS, 19 MARET.mp4.'
+        name: 'KONTEN REELS, 19 MARET.mp4',
+        img: 'assets/lamis-resto-reels/konten.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/1f97df11-2ce0-400c-90ed-3272befd7d09',
+        desc: 'KONTEN REELS, 19 MARET.mp4 — Video reels konten kreatif dan sajian favorit Lamis Resto.'
       },
       {
-        name: 'Lamis Resto — Commercial Video Clip 4',
-        img: 'assets/andrey-video-editing/lamis-resto-reels/Jumat - Gathering.mp4',
-        video: 'assets/andrey-video-editing/lamis-resto-reels/selasa_promotional_menu_best_seller.mp4',
-        desc: 'Video komersial & editing ritmis selasa_promotional_menu_best_seller.mp4.'
+        name: 'selasa_promotional_menu_best_seller.mp4',
+        img: 'assets/lamis-resto-reels/selasa.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/08eb686f-6189-4a9e-8ee7-eb4ddfb03690',
+        desc: 'selasa_promotional_menu_best_seller.mp4 — Video promo menu best seller dengan visual menggugah selera.'
       },
       {
-        name: 'Lamis Resto — Commercial Video Clip 5',
-        img: 'assets/andrey-video-editing/lamis-resto-reels/Jumat - Gathering.mp4',
-        video: 'assets/andrey-video-editing/lamis-resto-reels/Senin - Edukasi.mp4',
-        desc: 'Video komersial & editing ritmis Senin - Edukasi.mp4.'
+        name: 'Senin - Edukasi.mp4',
+        img: 'assets/lamis-resto-reels/senin.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/df5e16ef-9746-46d5-84db-7c9b687d867c',
+        desc: 'Senin - Edukasi.mp4 — Video edukasi kuliner & cerita bahan makanan berkualitas.'
       }
     ]
   },
 
   {
     id: 'video-editing-andrey-mixue-vlogger-ai',
-    title: 'Mixue Vlogger — AI Commercial Videos',
+    title: 'Mixue Vlogger AI Vids',
     category: 'video',
     categoryName: 'Video Editing & Motion',
     client: 'Mixue',
-    metric: '6 Video Commercial & Motion Aset',
-    thumbnail: 'assets/andrey-video-editing/mixue-vlogger-ai/1.mp4',
-    shortDesc: 'Folder Video Editing Mixue — 6 Aset Video Commercial, Shorts/Reels & Sound Design.',
-    fullDesc: 'Folder koleksi resmi Video Editing untuk Mixue dari folder Video Editing/ANDREY. Berisi 6 aset video komersial, fast-cut editing, kinetic titles, color grading, dan sound design.',
-    challenge: 'Mengemas visual cerita & momen Mixue menjadi video promosi berenergi tinggi dengan retensi penonton maksimal.',
-    solution: 'Editing video ritmis dengan potongan lagu trending, animasi teks kinetik, dan penyelarasan warna profesional.',
+    metric: '6 Video Commercial • Bunny Stream',
+    thumbnail: 'assets/mixue-vlogger-ai/1.jpg',
+    shortDesc: 'Folder Video Editing Mixue Vlogger AI Vids — 6 Aset Video Promosi Es Krim & Vlogger AI via Bunny Stream CDN.',
+    fullDesc: 'Folder koleksi resmi Video Editing untuk Mixue Vlogger AI Vids yang terhubung langsung ke Bunny Stream CDN. Menampilkan 6 seri video komersial brand Mixue dengan karakter AI presenter vlogger interaktif, animasi visual segar, dan motion editing dinamis.',
+    challenge: 'Mengemas daya tarik brand es krim & minuman viral Mixue ke dalam format vlogger AI yang menghibur dan meningkatkan konversi iklan.',
+    solution: 'Integrasi video streaming melalui Bunny Stream CDN berkecepatan tinggi, penyelarasan visual karakter presenter AI, dan ritme audio ceria.',
     results: [
-      '6 Aset Video Editing Resmi Terintegrasi di Folder Mixue',
-      'Digunakan untuk tayangan media sosial Instagram Reels, TikTok, YouTube Shorts & Ads'
+      '6 Video Iklan Vlogger AI Resmi Terkoneksi ke Bunny Stream CDN (Library ID: 756896)',
+      'Streaming Cepat Kualitas HD Bebas Buffering & Bebas Iklan',
+      'Format Optimal untuk Instagram Reels, TikTok & YouTube Shorts'
     ],
-    tools: ['Premiere Pro', 'After Effects', 'CapCut Pro', 'DaVinci Resolve'],
-    embedVideo: 'assets/andrey-video-editing/mixue-vlogger-ai/1.mp4',
+    tools: ['Premiere Pro', 'After Effects', 'CapCut Pro', 'DaVinci Resolve', 'Bunny Stream'],
+    bunnyVideoId: 'fb46d260-eee1-4c66-bb7d-b57730cbdb81',
+    bunnyLibraryId: '756896',
+    embedVideo: 'https://iframe.mediadelivery.net/embed/756896/fb46d260-eee1-4c66-bb7d-b57730cbdb81',
     items: [
       {
-        name: 'Mixue — Commercial Video Clip 1',
-        img: 'assets/andrey-video-editing/mixue-vlogger-ai/1.mp4',
-        video: 'assets/andrey-video-editing/mixue-vlogger-ai/1.mp4',
-        desc: 'Video komersial & editing ritmis 1.mp4.'
+        name: '1.mp4',
+        img: 'assets/mixue-vlogger-ai/1.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/fb46d260-eee1-4c66-bb7d-b57730cbdb81',
+        desc: '1.mp4 — Video komersial Mixue Vlogger AI Vids seri 1.'
       },
       {
-        name: 'Mixue — Commercial Video Clip 2',
-        img: 'assets/andrey-video-editing/mixue-vlogger-ai/1.mp4',
-        video: 'assets/andrey-video-editing/mixue-vlogger-ai/2.mp4',
-        desc: 'Video komersial & editing ritmis 2.mp4.'
+        name: '2.mp4',
+        img: 'assets/mixue-vlogger-ai/2.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/6f312a89-daa2-464b-9996-ce6799a8d306',
+        desc: '2.mp4 — Video komersial Mixue Vlogger AI Vids seri 2.'
       },
       {
-        name: 'Mixue — Commercial Video Clip 3',
-        img: 'assets/andrey-video-editing/mixue-vlogger-ai/1.mp4',
-        video: 'assets/andrey-video-editing/mixue-vlogger-ai/3.mp4',
-        desc: 'Video komersial & editing ritmis 3.mp4.'
+        name: '3.mp4',
+        img: 'assets/mixue-vlogger-ai/3.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/dc8247a7-85c5-46bc-9b98-df99208d90d0',
+        desc: '3.mp4 — Video komersial Mixue Vlogger AI Vids seri 3.'
       },
       {
-        name: 'Mixue — Commercial Video Clip 4',
-        img: 'assets/andrey-video-editing/mixue-vlogger-ai/1.mp4',
-        video: 'assets/andrey-video-editing/mixue-vlogger-ai/Video_Generation_Request_Mixue_Ad.mp4',
-        desc: 'Video komersial & editing ritmis Video_Generation_Request_Mixue_Ad.mp4.'
+        name: 'Video_Generation_Request_Mixue_Ad.mp4',
+        img: 'assets/mixue-vlogger-ai/ad.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/66150804-5ba0-40ad-9d0f-9f42363a8442',
+        desc: 'Video_Generation_Request_Mixue_Ad.mp4 — Video iklan komersial Mixue berbasis generative AI motion.'
       },
       {
-        name: 'Mixue — Commercial Video Clip 5',
-        img: 'assets/andrey-video-editing/mixue-vlogger-ai/1.mp4',
-        video: 'assets/andrey-video-editing/mixue-vlogger-ai/Video_Mixue_Panas_Tanpa_Musik.mp4',
-        desc: 'Video komersial & editing ritmis Video_Mixue_Panas_Tanpa_Musik.mp4.'
+        name: 'Video_Mixue_Panas_Tanpa_Musik.mp4',
+        img: 'assets/mixue-vlogger-ai/panas.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/70369183-5e48-4d83-ac41-46669e350ff0',
+        desc: 'Video_Mixue_Panas_Tanpa_Musik.mp4 — Video adegan Mixue cuaca panas & kesegaran es krim viral.'
       },
       {
-        name: 'Mixue — Commercial Video Clip 6',
-        img: 'assets/andrey-video-editing/mixue-vlogger-ai/1.mp4',
-        video: 'assets/andrey-video-editing/mixue-vlogger-ai/Woman_waves,_points_202603262023.mp4',
-        desc: 'Video komersial & editing ritmis Woman_waves,_points_202603262023.mp4.'
+        name: 'Woman_waves,_points_202603262023.mp4',
+        img: 'assets/mixue-vlogger-ai/woman.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/ce338136-b933-43d4-b1db-1c4f5511da6a',
+        desc: 'Woman_waves,_points_202603262023.mp4 — Video presenter vlogger AI merekomendasikan menu Mixue.'
       }
     ]
   },
 
   {
     id: 'video-editing-andrey-ponds-acne-solution',
-    title: 'Ponds Acne Solution — AI Commercial Clips',
+    title: 'Ponds Acne Solution AI Clip',
     category: 'video',
     categoryName: 'Video Editing & Motion',
     client: 'Pond’s',
-    metric: '12 Video Commercial & Motion Aset',
-    thumbnail: 'assets/andrey-video-editing/ponds-acne-solution/0.jpg',
-    shortDesc: 'Folder Video Editing Pond’s — 12 Aset Video Commercial, Shorts/Reels & Sound Design.',
-    fullDesc: 'Folder koleksi resmi Video Editing untuk Pond’s dari folder Video Editing/ANDREY. Berisi 12 aset video komersial, fast-cut editing, kinetic titles, color grading, dan sound design.',
-    challenge: 'Mengemas visual cerita & momen Pond’s menjadi video promosi berenergi tinggi dengan retensi penonton maksimal.',
-    solution: 'Editing video ritmis dengan potongan lagu trending, animasi teks kinetik, dan penyelarasan warna profesional.',
+    metric: '11 Video Commercial • Bunny Stream',
+    thumbnail: 'assets/ponds-acne-solution/0.jpg',
+    shortDesc: 'Folder Video Editing Ponds Acne Solution AI Clip — 11 Aset Video Komersial Skincare AI via Bunny Stream CDN.',
+    fullDesc: 'Folder koleksi resmi Video Editing untuk Ponds Acne Solution AI Clip yang terhubung langsung ke Bunny Stream CDN. Menampilkan 11 klip video komersial perawatan kulit anti-jerawat dengan sinematografi beauty shoot premium, pergerakan kamera halus, dan color grading jernih.',
+    challenge: 'Mengemas pesan klinis dan visual estetik perawatan kulit jerawat menjadi konten video komersial beresolusi tinggi yang meyakinkan konsumen.',
+    solution: 'Integrasi video streaming melalui Bunny Stream CDN berkecepatan tinggi, optimasi visual kulit glowing & sehat, serta pemutaran responsif.',
     results: [
-      '12 Aset Video Editing Resmi Terintegrasi di Folder Pond’s',
-      'Digunakan untuk tayangan media sosial Instagram Reels, TikTok, YouTube Shorts & Ads'
+      '11 Video Komersial Skincare Resmi Terkoneksi ke Bunny Stream CDN (Library ID: 756896)',
+      'Streaming Cepat Kualitas HD Bebas Buffering & Bebas Iklan',
+      'Format Optimal untuk Instagram Reels, TikTok & YouTube Shorts'
     ],
-    tools: ['Premiere Pro', 'After Effects', 'CapCut Pro', 'DaVinci Resolve'],
-    embedVideo: 'assets/andrey-video-editing/ponds-acne-solution/0.mp4',
+    tools: ['Premiere Pro', 'After Effects', 'CapCut Pro', 'DaVinci Resolve', 'Bunny Stream'],
+    bunnyVideoId: '576dee0b-e400-4509-adf2-38e1accb32db',
+    bunnyLibraryId: '756896',
+    embedVideo: 'https://iframe.mediadelivery.net/embed/756896/576dee0b-e400-4509-adf2-38e1accb32db',
     items: [
       {
-        name: 'Pond’s — Visual Graphic 1',
-        img: 'assets/andrey-video-editing/ponds-acne-solution/0.jpg',
-        desc: 'Desain visual art & poster promosi 0.jpg.'
+        name: '0.mp4',
+        img: 'assets/ponds-acne-solution/0.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/576dee0b-e400-4509-adf2-38e1accb32db',
+        desc: '0.mp4 — Video komersial kecantikan Pond’s Acne Solution seri 0.'
       },
       {
-        name: 'Pond’s — Commercial Video Clip 2',
-        img: 'assets/andrey-video-editing/ponds-acne-solution/0.jpg',
-        video: 'assets/andrey-video-editing/ponds-acne-solution/0.mp4',
-        desc: 'Video komersial & editing ritmis 0.mp4.'
+        name: '1.mp4',
+        img: 'assets/ponds-acne-solution/1.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/852874f1-1166-4a7a-b453-4a0e40f61e63',
+        desc: '1.mp4 — Video komersial kecantikan Pond’s Acne Solution seri 1.'
       },
       {
-        name: 'Pond’s — Commercial Video Clip 3',
-        img: 'assets/andrey-video-editing/ponds-acne-solution/0.jpg',
-        video: 'assets/andrey-video-editing/ponds-acne-solution/1 (1).mp4',
-        desc: 'Video komersial & editing ritmis 1 (1).mp4.'
+        name: '1 (1).mp4',
+        img: 'assets/ponds-acne-solution/1_alt.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/bbd833ab-7ff9-4963-bc72-c6a86bd6beb8',
+        desc: '1 (1).mp4 — Video komersial kecantikan Pond’s Acne Solution variasi 1.'
       },
       {
-        name: 'Pond’s — Commercial Video Clip 4',
-        img: 'assets/andrey-video-editing/ponds-acne-solution/0.jpg',
-        video: 'assets/andrey-video-editing/ponds-acne-solution/1.mp4',
-        desc: 'Video komersial & editing ritmis 1.mp4.'
+        name: '2.mp4',
+        img: 'assets/ponds-acne-solution/2.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/a8dccfe4-a1f2-4c20-96d7-46da60784689',
+        desc: '2.mp4 — Video komersial kecantikan Pond’s Acne Solution seri 2.'
       },
       {
-        name: 'Pond’s — Commercial Video Clip 5',
-        img: 'assets/andrey-video-editing/ponds-acne-solution/0.jpg',
-        video: 'assets/andrey-video-editing/ponds-acne-solution/2.1.mp4',
-        desc: 'Video komersial & editing ritmis 2.1.mp4.'
+        name: '2.1.mp4',
+        img: 'assets/ponds-acne-solution/2_1.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/f2669c28-5eea-4774-ac75-7a5da78f65a9',
+        desc: '2.1.mp4 — Video komersial kecantikan Pond’s Acne Solution seri 2.1.'
       },
       {
-        name: 'Pond’s — Commercial Video Clip 6',
-        img: 'assets/andrey-video-editing/ponds-acne-solution/0.jpg',
-        video: 'assets/andrey-video-editing/ponds-acne-solution/2.2.mp4',
-        desc: 'Video komersial & editing ritmis 2.2.mp4.'
+        name: '2.2.mp4',
+        img: 'assets/ponds-acne-solution/2_2.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/8356b238-780d-47c3-85af-e8e32076ec73',
+        desc: '2.2.mp4 — Video komersial kecantikan Pond’s Acne Solution seri 2.2.'
       },
       {
-        name: 'Pond’s — Commercial Video Clip 7',
-        img: 'assets/andrey-video-editing/ponds-acne-solution/0.jpg',
-        video: 'assets/andrey-video-editing/ponds-acne-solution/2.mp4',
-        desc: 'Video komersial & editing ritmis 2.mp4.'
+        name: '3.mp4',
+        img: 'assets/ponds-acne-solution/3.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/d963468e-4f67-4981-8d7d-a6a636049bb4',
+        desc: '3.mp4 — Video komersial kecantikan Pond’s Acne Solution seri 3.'
       },
       {
-        name: 'Pond’s — Commercial Video Clip 8',
-        img: 'assets/andrey-video-editing/ponds-acne-solution/0.jpg',
-        video: 'assets/andrey-video-editing/ponds-acne-solution/3 (1).mp4',
-        desc: 'Video komersial & editing ritmis 3 (1).mp4.'
+        name: '3 (1).mp4',
+        img: 'assets/ponds-acne-solution/3_alt.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/e0613f7c-2c88-4b11-bbc9-da364ee07148',
+        desc: '3 (1).mp4 — Video komersial kecantikan Pond’s Acne Solution variasi 3.'
       },
       {
-        name: 'Pond’s — Commercial Video Clip 9',
-        img: 'assets/andrey-video-editing/ponds-acne-solution/0.jpg',
-        video: 'assets/andrey-video-editing/ponds-acne-solution/3.mp4',
-        desc: 'Video komersial & editing ritmis 3.mp4.'
+        name: '4.mp4',
+        img: 'assets/ponds-acne-solution/4.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/07291511-c2c3-4c19-90bf-794203a3fd24',
+        desc: '4.mp4 — Video komersial kecantikan Pond’s Acne Solution seri 4.'
       },
       {
-        name: 'Pond’s — Commercial Video Clip 10',
-        img: 'assets/andrey-video-editing/ponds-acne-solution/0.jpg',
-        video: 'assets/andrey-video-editing/ponds-acne-solution/4.mp4',
-        desc: 'Video komersial & editing ritmis 4.mp4.'
+        name: '5.mp4',
+        img: 'assets/ponds-acne-solution/5.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/0523294d-d7eb-4733-9c71-78c8ee9d1a9d',
+        desc: '5.mp4 — Video komersial kecantikan Pond’s Acne Solution seri 5.'
       },
       {
-        name: 'Pond’s — Commercial Video Clip 11',
-        img: 'assets/andrey-video-editing/ponds-acne-solution/0.jpg',
-        video: 'assets/andrey-video-editing/ponds-acne-solution/5.mp4',
-        desc: 'Video komersial & editing ritmis 5.mp4.'
-      },
-      {
-        name: 'Pond’s — Commercial Video Clip 12',
-        img: 'assets/andrey-video-editing/ponds-acne-solution/0.jpg',
-        video: 'assets/andrey-video-editing/ponds-acne-solution/6.mp4',
-        desc: 'Video komersial & editing ritmis 6.mp4.'
+        name: '6.mp4',
+        img: 'assets/ponds-acne-solution/6.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/db9edec9-8bf3-4a91-a2fc-39d970dc1f1a',
+        desc: '6.mp4 — Video komersial kecantikan Pond’s Acne Solution seri 6.'
       }
     ]
   },
