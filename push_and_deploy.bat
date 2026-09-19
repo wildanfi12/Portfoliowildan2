@@ -1,8 +1,8 @@
 @echo off
-title Push to GitHub & Deploy to Vercel - Wildan Portfolio
+title Push ke GitHub dan Deploy ke Vercel - Wildan Portfolio
 color 0b
 echo ========================================================
-echo       WILDAN PORTFOLIO - PUSH KE GITHUB & VERCEL
+echo       WILDAN PORTFOLIO - PUSH KE GITHUB DAN VERCEL
 echo ========================================================
 echo.
 
