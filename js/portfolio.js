@@ -2242,27 +2242,57 @@ const PROJECTS = [
     category: 'video',
     categoryName: 'Video Editing & Motion',
     client: 'andreydigital.id',
-    metric: 'HD Video • Bunny Stream',
+    metric: '6 Video Showcase • Bunny Stream',
     thumbnail: 'assets/advertising-campaigns/andreydigital-viewers-to-buyers/1.png',
-    shortDesc: 'Folder Video Editing Education Reels — Streaming Video Edukasi & Reels Berkecepatan Tinggi via Bunny Stream CDN.',
-    fullDesc: 'Folder koleksi resmi Video Editing untuk Education Reels yang terhubung langsung ke Bunny Stream CDN. Menampilkan konten edukasi berkualitas HD, transisi ritmis, animasi teks kinetik, dan pemutaran instan tanpa jeda buffering.',
-    challenge: 'Menyajikan video edukasi format reels interaktif dalam kualitas streaming HD tercepat tanpa membebani bandwidth hosting.',
-    solution: 'Integrasi video streaming melalui Bunny Stream CDN, embed player responsif dengan kontrol interaktif, dan optimasi delivery global.',
+    shortDesc: 'Folder Video Editing Education Reels — 6 Koleksi Video Edukasi & Reels Berkecepatan Tinggi via Bunny Stream CDN.',
+    fullDesc: 'Folder koleksi resmi Video Editing untuk Education Reels andreydigital.id yang terhubung langsung ke Bunny Stream CDN. Berisi 6 seri video edukasi & reels komersial (Bisnis Usai Ngantor Capek, MARK 10, MARK 11, MARK 7, MARK 9, & Video Escape Roadmap) dalam kualitas streaming HD instan tanpa buffering.',
+    challenge: 'Menyajikan seluruh 6 video serial edukasi reels berdurasi penuh dalam kualitas streaming HD tercepat tanpa membebani bandwidth hosting.',
+    solution: 'Integrasi video streaming melalui Bunny Stream CDN berkecepatan tinggi, navigasi playlist interaktif di dalam modal, dan optimasi pengiriman CDN global.',
     results: [
-      'Video Edukasi Resmi Terkoneksi Langsung ke Bunny Stream CDN',
-      'Pemutaran Cepat Kualitas HD Bebas Buffering & Watermark',
+      '6 Video Edukasi & Reels Resmi Terkoneksi Langsung ke Bunny Stream CDN (Library ID: 756896)',
+      'Pemutaran Instan Kualitas HD Bebas Buffering & Bebas Iklan',
       'Format Edukasi Siap untuk Instagram Reels, TikTok & Portfolio'
     ],
     tools: ['Premiere Pro', 'After Effects', 'CapCut Pro', 'Bunny Stream'],
-    bunnyVideoId: 'cb11d264-432d-4ec1-8975-f2f10bee34bb',
+    bunnyVideoId: '746f7ece-dc2c-4f62-a014-3983e1f2512b',
     bunnyLibraryId: '756896',
-    embedVideo: 'https://iframe.mediadelivery.net/embed/756896/cb11d264-432d-4ec1-8975-f2f10bee34bb',
+    embedVideo: 'https://iframe.mediadelivery.net/embed/756896/746f7ece-dc2c-4f62-a014-3983e1f2512b',
     items: [
       {
-        name: 'Education Reels — Video Showcase',
+        name: '1. Bisnis Usai Ngantor Capek',
         img: 'assets/advertising-campaigns/andreydigital-viewers-to-buyers/1.png',
-        video: 'https://iframe.mediadelivery.net/embed/756896/cb11d264-432d-4ec1-8975-f2f10bee34bb',
-        desc: 'Streaming video edukasi reels via Bunny Stream CDN.'
+        video: 'https://iframe.mediadelivery.net/embed/756896/746f7ece-dc2c-4f62-a014-3983e1f2512b',
+        desc: 'Video Bisnis Usai Ngantor Capek — Editing edukasi interaktif & hook kuat.'
+      },
+      {
+        name: '2. MARK 10',
+        img: 'assets/advertising-campaigns/andreydigital-viewers-to-buyers/1.png',
+        video: 'https://iframe.mediadelivery.net/embed/756896/256f633f-63bb-4df5-8401-9102003b7fd1',
+        desc: 'MARK 10 — Seri video edukasi bisnis digital & visual storytelling.'
+      },
+      {
+        name: '3. MARK 11',
+        img: 'assets/advertising-campaigns/andreydigital-viewers-to-buyers/1.png',
+        video: 'https://iframe.mediadelivery.net/embed/756896/a67d0d14-9770-4054-b131-003f75bc77ab',
+        desc: 'MARK 11 — Kinetic typography & dynamic sound design.'
+      },
+      {
+        name: '4. MARK 7',
+        img: 'assets/advertising-campaigns/andreydigital-viewers-to-buyers/1.png',
+        video: 'https://iframe.mediadelivery.net/embed/756896/4c4a9a51-cf75-4e0c-9844-b008fc6cb8cb',
+        desc: 'MARK 7 — Fast-paced editing untuk konversi penonton ke pembeli.'
+      },
+      {
+        name: '5. MARK 9',
+        img: 'assets/advertising-campaigns/andreydigital-viewers-to-buyers/1.png',
+        video: 'https://iframe.mediadelivery.net/embed/756896/44bcd88f-d58e-4270-9971-5232460d02a0',
+        desc: 'MARK 9 — Rhythmic cut & color grading profesional.'
+      },
+      {
+        name: '6. Video Escape Roadmap Dibuat',
+        img: 'assets/advertising-campaigns/andreydigital-viewers-to-buyers/1.png',
+        video: 'https://iframe.mediadelivery.net/embed/756896/15622f0d-153b-4e11-bd3a-fc367a702927',
+        desc: 'Video Escape Roadmap Dibuat — Edukasi roadmap step-by-step.'
       }
     ]
   },
