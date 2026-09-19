@@ -2238,58 +2238,31 @@ const PROJECTS = [
 
   {
     id: 'video-editing-andrey-andreydigital-education-reels',
-    title: 'andreydigital.id — Education Reels',
+    title: 'Education Reels',
     category: 'video',
     categoryName: 'Video Editing & Motion',
     client: 'andreydigital.id',
-    metric: '6 Video Commercial & Motion Aset',
-    thumbnail: 'assets/andrey-video-editing/andreydigital-education-reels/1. Video_Bisnis_Usai_Ngantor_Capek.mp4',
-    shortDesc: 'Folder Video Editing andreydigital.id — 6 Aset Video Commercial, Shorts/Reels & Sound Design.',
-    fullDesc: 'Folder koleksi resmi Video Editing untuk andreydigital.id dari folder Video Editing/ANDREY. Berisi 6 aset video komersial, fast-cut editing, kinetic titles, color grading, dan sound design.',
-    challenge: 'Mengemas visual cerita & momen andreydigital.id menjadi video promosi berenergi tinggi dengan retensi penonton maksimal.',
-    solution: 'Editing video ritmis dengan potongan lagu trending, animasi teks kinetik, dan penyelarasan warna profesional.',
+    metric: 'HD Video • Bunny Stream',
+    thumbnail: 'assets/advertising-campaigns/andreydigital-viewers-to-buyers/1.png',
+    shortDesc: 'Folder Video Editing Education Reels — Streaming Video Edukasi & Reels Berkecepatan Tinggi via Bunny Stream CDN.',
+    fullDesc: 'Folder koleksi resmi Video Editing untuk Education Reels yang terhubung langsung ke Bunny Stream CDN. Menampilkan konten edukasi berkualitas HD, transisi ritmis, animasi teks kinetik, dan pemutaran instan tanpa jeda buffering.',
+    challenge: 'Menyajikan video edukasi format reels interaktif dalam kualitas streaming HD tercepat tanpa membebani bandwidth hosting.',
+    solution: 'Integrasi video streaming melalui Bunny Stream CDN, embed player responsif dengan kontrol interaktif, dan optimasi delivery global.',
     results: [
-      '6 Aset Video Editing Resmi Terintegrasi di Folder andreydigital.id',
-      'Digunakan untuk tayangan media sosial Instagram Reels, TikTok, YouTube Shorts & Ads'
+      'Video Edukasi Resmi Terkoneksi Langsung ke Bunny Stream CDN',
+      'Pemutaran Cepat Kualitas HD Bebas Buffering & Watermark',
+      'Format Edukasi Siap untuk Instagram Reels, TikTok & Portfolio'
     ],
-    tools: ['Premiere Pro', 'After Effects', 'CapCut Pro', 'DaVinci Resolve'],
-    embedVideo: 'assets/andrey-video-editing/andreydigital-education-reels/1. Video_Bisnis_Usai_Ngantor_Capek.mp4',
+    tools: ['Premiere Pro', 'After Effects', 'CapCut Pro', 'Bunny Stream'],
+    bunnyVideoId: 'cb11d264-432d-4ec1-8975-f2f10bee34bb',
+    bunnyLibraryId: '756896',
+    embedVideo: 'https://iframe.mediadelivery.net/embed/756896/cb11d264-432d-4ec1-8975-f2f10bee34bb',
     items: [
       {
-        name: 'andreydigital.id — Commercial Video Clip 1',
-        img: 'assets/andrey-video-editing/andreydigital-education-reels/1. Video_Bisnis_Usai_Ngantor_Capek.mp4',
-        video: 'assets/andrey-video-editing/andreydigital-education-reels/1. Video_Bisnis_Usai_Ngantor_Capek.mp4',
-        desc: 'Video komersial & editing ritmis 1. Video_Bisnis_Usai_Ngantor_Capek.mp4.'
-      },
-      {
-        name: 'andreydigital.id — Commercial Video Clip 2',
-        img: 'assets/andrey-video-editing/andreydigital-education-reels/1. Video_Bisnis_Usai_Ngantor_Capek.mp4',
-        video: 'assets/andrey-video-editing/andreydigital-education-reels/MARK 10.mp4',
-        desc: 'Video komersial & editing ritmis MARK 10.mp4.'
-      },
-      {
-        name: 'andreydigital.id — Commercial Video Clip 3',
-        img: 'assets/andrey-video-editing/andreydigital-education-reels/1. Video_Bisnis_Usai_Ngantor_Capek.mp4',
-        video: 'assets/andrey-video-editing/andreydigital-education-reels/MARK 11.mp4',
-        desc: 'Video komersial & editing ritmis MARK 11.mp4.'
-      },
-      {
-        name: 'andreydigital.id — Commercial Video Clip 4',
-        img: 'assets/andrey-video-editing/andreydigital-education-reels/1. Video_Bisnis_Usai_Ngantor_Capek.mp4',
-        video: 'assets/andrey-video-editing/andreydigital-education-reels/MARK 7.mp4',
-        desc: 'Video komersial & editing ritmis MARK 7.mp4.'
-      },
-      {
-        name: 'andreydigital.id — Commercial Video Clip 5',
-        img: 'assets/andrey-video-editing/andreydigital-education-reels/1. Video_Bisnis_Usai_Ngantor_Capek.mp4',
-        video: 'assets/andrey-video-editing/andreydigital-education-reels/MARK 9.mp4',
-        desc: 'Video komersial & editing ritmis MARK 9.mp4.'
-      },
-      {
-        name: 'andreydigital.id — Commercial Video Clip 6',
-        img: 'assets/andrey-video-editing/andreydigital-education-reels/1. Video_Bisnis_Usai_Ngantor_Capek.mp4',
-        video: 'assets/andrey-video-editing/andreydigital-education-reels/Video_Escape_Roadmap_Dibuat.mp4',
-        desc: 'Video komersial & editing ritmis Video_Escape_Roadmap_Dibuat.mp4.'
+        name: 'Education Reels — Video Showcase',
+        img: 'assets/advertising-campaigns/andreydigital-viewers-to-buyers/1.png',
+        video: 'https://iframe.mediadelivery.net/embed/756896/cb11d264-432d-4ec1-8975-f2f10bee34bb',
+        desc: 'Streaming video edukasi reels via Bunny Stream CDN.'
       }
     ]
   },
