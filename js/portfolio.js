@@ -4655,26 +4655,12 @@ function initPortfolio() {
     modalClose.addEventListener('click', closeModal);
   }
 
-  const modalContentEl = modalBackdrop ? modalBackdrop.querySelector('.modal-content') : null;
-  if (modalContentEl) {
-    modalContentEl.addEventListener('wheel', (e) => {
-      e.stopPropagation();
-    }, { passive: true });
-  }
-
   if (modalBackdrop) {
     modalBackdrop.addEventListener('click', (e) => {
       if (e.target === modalBackdrop) {
         closeModal();
       }
     });
-
-    modalBackdrop.addEventListener('wheel', (e) => {
-      if (e.target === modalBackdrop) {
-        e.preventDefault();
-        e.stopPropagation();
-      }
-    }, { passive: false });
   }
 
   // Initial Render

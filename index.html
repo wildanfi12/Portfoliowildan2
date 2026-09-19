@@ -4074,7 +4074,12 @@
        LENIS SMOOTH SCROLL & SCROLL LOCK MODEL
        ========================================================================== */
     window.scrollTo(0, 0);
-    const lenis = (typeof Lenis !== 'undefined') ? new Lenis({ smoothWheel: true }) : null;
+    const lenis = (typeof Lenis !== 'undefined') ? new Lenis({
+      smoothWheel: true,
+      prevent: (node) => {
+        return !!(node && node.closest && node.closest('#project-modal, #image-zoom-modal, #request-modal, #nav-overlay'));
+      }
+    }) : null;
 
     if (lenis) {
       function raf(time) {
@@ -4104,22 +4109,56 @@
     window.stopScroll = stopScroll;
     window.startScroll = startScroll;
 
-    /* Prevent wheel event from propagating to window/Lenis on all modals */
-    document.querySelectorAll('#project-modal, #image-zoom-modal, #request-modal, #nav-overlay').forEach(modal => {
-      modal.addEventListener('wheel', (e) => {
-        if (e.target === modal) {
+    /* Handle wheel events inside modals reliably across all browsers */
+    const projectModal = document.getElementById('project-modal');
+    const projectContent = projectModal ? projectModal.querySelector('.modal-content') : null;
+    if (projectModal && projectContent) {
+      projectModal.addEventListener('wheel', (e) => {
+        if (projectModal.classList.contains('active')) {
           e.preventDefault();
           e.stopPropagation();
+          projectContent.scrollBy({ top: e.deltaY, behavior: 'auto' });
         }
       }, { passive: false });
+    }
 
-      const scrollBox = modal.querySelector('.modal-content, .modal-panel, .nav-overlay-body, .zoom-viewport');
-      if (scrollBox) {
-        scrollBox.addEventListener('wheel', (e) => {
+    const requestModal = document.getElementById('request-modal');
+    const requestPanel = document.getElementById('modal-panel');
+    if (requestModal && requestPanel) {
+      requestModal.addEventListener('wheel', (e) => {
+        if (requestModal.classList.contains('open')) {
+          e.preventDefault();
           e.stopPropagation();
-        }, { passive: true });
-      }
-    });
+          requestPanel.scrollBy({ top: e.deltaY, behavior: 'auto' });
+        }
+      }, { passive: false });
+    }
+
+    const navOverlayEl = document.getElementById('nav-overlay');
+    const navOverlayBody = navOverlayEl ? navOverlayEl.querySelector('.nav-overlay-body') : null;
+    if (navOverlayEl && navOverlayBody) {
+      navOverlayEl.addEventListener('wheel', (e) => {
+        if (navOverlayEl.classList.contains('open')) {
+          e.preventDefault();
+          e.stopPropagation();
+          navOverlayBody.scrollBy({ top: e.deltaY, behavior: 'auto' });
+        }
+      }, { passive: false });
+    }
+
+    const imageZoomModal = document.getElementById('image-zoom-modal');
+    if (imageZoomModal) {
+      imageZoomModal.addEventListener('wheel', (e) => {
+        if (imageZoomModal.classList.contains('active')) {
+          e.preventDefault();
+          e.stopPropagation();
+          const zoomInBtn = document.getElementById('zoom-in-btn');
+          const zoomOutBtn = document.getElementById('zoom-out-btn');
+          if (e.deltaY < 0 && zoomInBtn) zoomInBtn.click();
+          else if (e.deltaY > 0 && zoomOutBtn) zoomOutBtn.click();
+        }
+      }, { passive: false });
+    }
 
     /* Scroll is enabled immediately by default */
 
@@ -4392,7 +4431,6 @@
         closeNavMenu();
         closeRequestModal();
         /* Close case study project modal if open */
-        const projectModal = document.getElementById('project-modal');
         if (projectModal && projectModal.classList.contains('active')) {
           projectModal.classList.remove('active');
           startScroll();
@@ -4407,7 +4445,6 @@
     });
 
     /* Project modal backdrop click to close */
-    const projectModal = document.getElementById('project-modal');
     if (projectModal) {
       projectModal.addEventListener('click', (e) => {
         if (e.target === projectModal) {
