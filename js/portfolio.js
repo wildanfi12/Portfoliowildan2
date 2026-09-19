@@ -4295,13 +4295,13 @@ function initPortfolio() {
         `}
       </div>
       <div class="modal-header-text" style="margin-bottom: 1.5rem;">
-        <span class="section-badge" style="${project.youtubeUrl ? 'background:rgba(220,38,38,0.9); color:#fff;' : ''}">📁 Folder ${project.client} • ${project.categoryName} • ${project.metric}</span>
-        <h2 style="font-size: 2.2rem; margin: 0.5rem 0 0.5rem 0;">${project.title}</h2>
-        <p style="font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 1rem;">${project.fullDesc}</p>
+        <span class="section-badge" style="display:inline-block; font-size:0.75rem; padding:0.35rem 0.8rem; border-radius:9999px; background:rgba(255,255,255,0.1); color:rgba(255,255,255,0.85); ${project.youtubeUrl ? 'background:rgba(220,38,38,0.9); color:#fff;' : ''}">📁 Folder ${project.client} • ${project.categoryName} • ${project.metric}</span>
+        <h2 class="modal-project-title">${project.title}</h2>
+        <p style="font-size: 1rem; color: rgba(255, 255, 255, 0.7); margin-bottom: 1rem; line-height: 1.6;">${project.fullDesc}</p>
         ${project.youtubeUrl ? `
           <div>
-            <a href="${project.youtubeUrl}" target="_blank" class="btn btn-primary" style="background:#ff0000; border-color:#ff0000; color:#fff; font-weight:700; font-size:1.05rem; padding:0.75rem 1.4rem; display:inline-flex; align-items:center; gap:0.6rem; text-decoration:none; border-radius:12px; box-shadow: 0 4px 15px rgba(255, 0, 0, 0.3);">
-              <svg viewBox="0 0 24 24" width="22" height="22" fill="#fff"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            <a href="${project.youtubeUrl}" target="_blank" class="btn btn-primary" style="background:#ff0000; border-color:#ff0000; color:#fff; font-weight:700; font-size:0.95rem; padding:0.7rem 1.3rem; display:inline-flex; align-items:center; gap:0.6rem; text-decoration:none; border-radius:12px; box-shadow: 0 4px 15px rgba(255, 0, 0, 0.3); max-width:100%; word-break:break-word;">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="#fff" style="flex-shrink:0;"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
               ▶ Kunjungi Channel YouTube Doa Bangsa TV
             </a>
           </div>
@@ -4310,12 +4310,12 @@ function initPortfolio() {
 
       <!-- INSIDE BRAND FOLDER: ARTWORK & VIDEO ITEMS GRID -->
       ${project.items && project.items.length > 0 ? `
-        <div style="margin-bottom: 2.5rem; background: rgba(255, 255, 255, 0.02); padding: 1.5rem; border-radius: 20px; border: 1px solid var(--glass-border);">
-          <h3 style="margin-bottom: 1.2rem; font-family: var(--font-heading); font-size: 1.35rem; color: var(--text-primary); display: flex; align-items: center; justify-content: space-between;">
-            <span style="display: flex; align-items: center; gap: 0.6rem;">📁 Isi Folder ${project.categoryName} ${project.client} (${project.items.length} Aset)</span>
-            <span style="font-size: 0.85rem; color: var(--accent-secondary); font-weight: 500;">🔍 Klik untuk putar / perbesar</span>
-          </h3>
-          <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1.2rem;">
+        <div style="margin-bottom: 2rem; background: rgba(255, 255, 255, 0.02); padding: 1.25rem; border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.08);">
+          <div style="margin-bottom: 1rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem;">
+            <span style="display: flex; align-items: center; gap: 0.5rem; font-weight: 600; font-size: 1.15rem; color: #fff;">📁 Isi Folder ${project.categoryName} ${project.client} (${project.items.length} Aset)</span>
+            <span style="font-size: 0.8rem; color: var(--accent-from); font-weight: 500;">🔍 Klik untuk putar / perbesar</span>
+          </div>
+          <div class="modal-items-grid">
             ${project.items.map((item, idx) => {
               const isBunnyItem = item.video && (item.video.includes('mediadelivery.net') || item.video.includes('bunny') || item.video.includes('mediadelivery'));
               const isDirectVid = item.video && (item.video.endsWith('.mp4') || item.video.endsWith('.mov'));
@@ -4324,12 +4324,12 @@ function initPortfolio() {
               const coverSrc = item.img || (project.thumbnail && !project.thumbnail.endsWith('.mp4') ? project.thumbnail : '');
 
               return `
-                <div class="glass-card" style="padding: 0.9rem; border-radius: 16px; cursor: pointer; transition: transform 0.25s ease, border-color 0.25s ease;" onclick="window.onItemClick('${project.id}', ${idx}, ${isItemVid})">
-                  <div style="aspect-ratio: 16/9; border-radius: 12px; overflow: hidden; margin-bottom: 0.8rem; border: 1px solid var(--glass-border); background: #000; position: relative;">
+                <div class="modal-folder-item" onclick="window.onItemClick('${project.id}', ${idx}, ${isItemVid})">
+                  <div style="aspect-ratio: 16/9; border-radius: 10px; overflow: hidden; margin-bottom: 0.75rem; border: 1px solid rgba(255, 255, 255, 0.1); background: #000; position: relative;">
                     ${isBunnyItem ? 
                       `<img src="${coverSrc}" alt="${item.name}" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
                        <div class="video-poster-fallback" style="opacity: 1; display: flex; align-items: center; justify-content: center; position: absolute; inset: 0; background: rgba(0,0,0,0.35);">
-                         <div class="video-poster-icon" style="width:36px;height:36px;font-size:1rem; border-radius:50%; background:rgba(0,102,255,0.9); color:#fff; display:flex; align-items:center; justify-content:center; box-shadow:0 4px 15px rgba(0,102,255,0.6);">▶</div>
+                         <div class="video-poster-icon" style="width:36px;height:36px;font-size:1rem; border-radius:50%; background:rgba(207,128,71,0.95); color:#fff; display:flex; align-items:center; justify-content:center; box-shadow:0 4px 15px rgba(207,128,71,0.5);">▶</div>
                        </div>` : 
                       isDirectVid ? 
                       `<div class="video-poster-fallback"><div class="video-poster-icon" style="width:32px;height:32px;font-size:1rem;">▶</div></div>
@@ -4338,8 +4338,8 @@ function initPortfolio() {
                        <div class="modal-media-zoom-overlay" style="bottom:0.5rem; right:0.5rem; font-size:0.75rem; padding:0.25rem 0.6rem;">🔍 Zoom</div>`
                     }
                   </div>
-                  <h5 style="font-size: 0.95rem; font-family: var(--font-heading); margin-bottom: 0.3rem; color: var(--text-primary);">${item.name}</h5>
-                  <p style="font-size: 0.8rem; color: var(--text-secondary); line-height: 1.4;">${item.desc}</p>
+                  <h5 style="font-size: 0.9rem; font-weight: 600; margin-bottom: 0.25rem; color: #fff;">${item.name}</h5>
+                  <p style="font-size: 0.78rem; color: rgba(255, 255, 255, 0.55); line-height: 1.4;">${item.desc}</p>
                 </div>
               `;
             }).join('')}
@@ -4347,34 +4347,35 @@ function initPortfolio() {
         </div>
       ` : ''}
 
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 2rem;">
-        <div class="glass-card" style="padding: 1.5rem;">
-          <h4 style="color: var(--accent-secondary); margin-bottom: 0.5rem;">The Challenge</h4>
-          <p style="font-size: 0.95rem;">${project.challenge}</p>
+      <div class="modal-two-col-grid">
+        <div style="padding: 1.25rem; background: rgba(255, 255, 255, 0.04); border-radius: 14px; border: 1px solid rgba(255, 255, 255, 0.08);">
+          <h4 style="color: var(--accent-from); margin-bottom: 0.5rem; font-size: 0.95rem; font-weight: 600;">The Challenge</h4>
+          <p style="font-size: 0.88rem; line-height: 1.5; color: rgba(255, 255, 255, 0.75);">${project.challenge}</p>
         </div>
-        <div class="glass-card" style="padding: 1.5rem;">
-          <h4 style="color: var(--accent-success); margin-bottom: 0.5rem;">The Creative Solution</h4>
-          <p style="font-size: 0.95rem;">${project.solution}</p>
+        <div style="padding: 1.25rem; background: rgba(255, 255, 255, 0.04); border-radius: 14px; border: 1px solid rgba(255, 255, 255, 0.08);">
+          <h4 style="color: #34d399; margin-bottom: 0.5rem; font-size: 0.95rem; font-weight: 600;">The Creative Solution</h4>
+          <p style="font-size: 0.88rem; line-height: 1.5; color: rgba(255, 255, 255, 0.75);">${project.solution}</p>
         </div>
       </div>
 
       <div style="margin-bottom: 2rem;">
-        <h4 style="margin-bottom: 0.8rem; font-family: var(--font-heading);">Key Results & Metrics</h4>
+        <h4 style="margin-bottom: 0.75rem; font-size: 1rem; font-weight: 600; color: #fff;">Key Results & Metrics</h4>
         <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem;">
-          ${project.results.map(r => `<li style="display: flex; align-items: center; gap: 0.6rem; color: var(--text-primary);"><span style="color: var(--accent-success);">✓</span> ${r}</li>`).join('')}
+          ${project.results.map(r => `<li style="display: flex; align-items: center; gap: 0.6rem; color: rgba(255, 255, 255, 0.85); font-size: 0.9rem;"><span style="color: #34d399; font-weight: 700;">✓</span> ${r}</li>`).join('')}
         </ul>
       </div>
 
       <div>
-        <h4 style="margin-bottom: 0.8rem; font-family: var(--font-heading);">Tools & Tech Stack</h4>
-        <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
-          ${project.tools.map(t => `<span class="skill-pill">${t}</span>`).join('')}
+        <h4 style="margin-bottom: 0.75rem; font-size: 1rem; font-weight: 600; color: #fff;">Tools & Tech Stack</h4>
+        <div style="display: flex; gap: 0.4rem; flex-wrap: wrap;">
+          ${project.tools.map(t => `<span class="skill-pill" style="background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.15); color: #fff;">${t}</span>`).join('')}
         </div>
       </div>
     `;
 
     modalBackdrop.classList.add('active');
     document.body.style.overflow = 'hidden';
+    if (typeof window.stopScroll === 'function') window.stopScroll();
   }
 
   // Helper function when an item card inside folder modal is clicked
@@ -4472,6 +4473,7 @@ function initPortfolio() {
     activeIndex = Math.max(0, Math.min(startIndex, activeGallery.length - 1));
     zoomModal.classList.add('active');
     document.body.style.overflow = 'hidden';
+    if (typeof window.stopScroll === 'function') window.stopScroll();
 
     updateZoomImage(folderTitle);
   };
@@ -4578,6 +4580,7 @@ function initPortfolio() {
     const projectModal = document.getElementById('project-modal');
     if (!projectModal || !projectModal.classList.contains('active')) {
       document.body.style.overflow = 'auto';
+      if (typeof window.startScroll === 'function') window.startScroll();
     }
   }
 
@@ -4619,6 +4622,7 @@ function initPortfolio() {
     if (!modalBackdrop) return;
     modalBackdrop.classList.remove('active');
     document.body.style.overflow = 'auto';
+    if (typeof window.startScroll === 'function') window.startScroll();
 
     // Stop and pause all video and iframe elements inside modal to stop audio immediately
     const videos = modalBackdrop.querySelectorAll('video');
