@@ -1,0 +1,32 @@
+# System & OS
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
+*.bak
+.vscode/
+.idea/
+
+# Raw Source Asset Directories (Duplicates of web assets)
+assets/Motion/
+assets/Video Editing/
+assets/Graphic Design/
+assets/Logo/
+
+# Exclude heavy raw video files (>80MB) to comply with GitHub 100MB limit
+*.mov
+assets/andrey-video-editing/
+assets/howell-video/11_kabel_data_ac0501.mp4
+assets/howell-video/12_kabel_lan_cat6.mp4
+assets/howell-video/16_kunjungan_pabrik_1.mp4
+assets/howell-video/17_kunjungan_pabrik_2.mp4
+assets/howell-video/19_mengenal_perbedaan_usb.mp4
+assets/howell-video/1_adapter_hdmi_8k_adp006.mp4
+assets/howell-video/21_perbedaan_kabel_hdmi.mp4
+assets/howell-video/3_cat6_utp_indoor.mp4
+assets/howell-video/4_charger_20w_hwc02a.mp4
+assets/howell-video/8_hdmi_4k_h0203.mp4
+assets/howell-video/9_headset_hw01.mp4
+assets/howell-motion/1_adapter_hdmi_8k.mp4
+assets/howell-motion/3_poster_promo.mp4
+assets/cari-tofu/tofu_19.mp4
