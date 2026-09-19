@@ -4374,8 +4374,11 @@ function initPortfolio() {
     `;
 
     modalBackdrop.classList.add('active');
-    document.body.style.overflow = 'hidden';
+    document.documentElement.classList.add('scroll-locked');
+    document.body.classList.add('scroll-locked');
     if (typeof window.stopScroll === 'function') window.stopScroll();
+    const modalContentEl = modalBackdrop.querySelector('.modal-content');
+    if (modalContentEl) modalContentEl.scrollTop = 0;
   }
 
   // Helper function when an item card inside folder modal is clicked
@@ -4472,7 +4475,8 @@ function initPortfolio() {
 
     activeIndex = Math.max(0, Math.min(startIndex, activeGallery.length - 1));
     zoomModal.classList.add('active');
-    document.body.style.overflow = 'hidden';
+    document.documentElement.classList.add('scroll-locked');
+    document.body.classList.add('scroll-locked');
     if (typeof window.stopScroll === 'function') window.stopScroll();
 
     updateZoomImage(folderTitle);
@@ -4579,6 +4583,8 @@ function initPortfolio() {
     resetZoomState();
     const projectModal = document.getElementById('project-modal');
     if (!projectModal || !projectModal.classList.contains('active')) {
+      document.documentElement.classList.remove('scroll-locked');
+      document.body.classList.remove('scroll-locked');
       document.body.style.overflow = 'auto';
       if (typeof window.startScroll === 'function') window.startScroll();
     }
@@ -4621,6 +4627,8 @@ function initPortfolio() {
   function closeModal() {
     if (!modalBackdrop) return;
     modalBackdrop.classList.remove('active');
+    document.documentElement.classList.remove('scroll-locked');
+    document.body.classList.remove('scroll-locked');
     document.body.style.overflow = 'auto';
     if (typeof window.startScroll === 'function') window.startScroll();
 
@@ -4647,12 +4655,26 @@ function initPortfolio() {
     modalClose.addEventListener('click', closeModal);
   }
 
+  const modalContentEl = modalBackdrop ? modalBackdrop.querySelector('.modal-content') : null;
+  if (modalContentEl) {
+    modalContentEl.addEventListener('wheel', (e) => {
+      e.stopPropagation();
+    }, { passive: true });
+  }
+
   if (modalBackdrop) {
     modalBackdrop.addEventListener('click', (e) => {
       if (e.target === modalBackdrop) {
         closeModal();
       }
     });
+
+    modalBackdrop.addEventListener('wheel', (e) => {
+      if (e.target === modalBackdrop) {
+        e.preventDefault();
+        e.stopPropagation();
+      }
+    }, { passive: false });
   }
 
   // Initial Render
