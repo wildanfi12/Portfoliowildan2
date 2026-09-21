@@ -2628,8 +2628,9 @@
     .footer-shell {
       position: relative;
       z-index: 10;
-      padding-top: 3.5rem;
-      padding-bottom: 2rem;
+      padding-top: 2.5rem;    /* 40px mobile */
+      padding-bottom: 1.5rem; /* 24px mobile */
+      padding-inline: 1.5rem; /* 24px mobile */
     }
     @media (min-width: 640px) {
       .footer-shell {
@@ -2646,9 +2647,9 @@
     .footer-cta-row {
       display: flex;
       flex-direction: column;
-      gap: 1.5rem;
+      gap: 1.25rem;
       border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-      padding-bottom: 2.5rem;
+      padding-bottom: 2rem;   /* 32px mobile */
     }
     @media (min-width: 640px) {
       .footer-cta-row {
@@ -2665,20 +2666,45 @@
       }
     }
     .footer-cta-h2 {
-      max-width: 16ch;
-      font-size: clamp(1.85rem, 5vw, 3.75rem);
+      max-width: 14ch;
+      font-size: clamp(1.85rem, 8.2vw, 2.35rem); /* ~30px–38px */
       font-weight: 600;
+      line-height: 1.1;
       letter-spacing: -0.02em;
     }
+    @media (min-width: 640px) {
+      .footer-cta-h2 {
+        max-width: 16ch;
+        font-size: clamp(1.85rem, 5vw, 3.75rem);
+        line-height: 1.15;
+      }
+    }
+    @media (max-width: 639px) {
+      .footer-cta-row .btn-pill {
+        height: 52px;
+        padding: 0.35rem 0.35rem 0.35rem 1.25rem;
+        font-size: 0.92rem;
+        align-self: flex-start;
+        width: fit-content;
+      }
+    }
 
+    /* Mobile Compact Layout: Row 1 Brand, Row 2 Nav + Services (2-col), Row 3 Social */
     .footer-cols {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 1.5rem;
-      padding-block: 2rem;
+      grid-template-areas:
+        "brand brand"
+        "nav services"
+        "social social";
+      row-gap: 1.75rem;    /* 28px */
+      column-gap: 1.5rem;   /* 24px */
+      padding-top: 1.75rem; /* 28px */
+      padding-bottom: 1.25rem; /* 20px */
     }
     @media (min-width: 640px) {
       .footer-cols {
+        grid-template-areas: none;
         gap: 2.5rem;
         padding-block: 2.5rem;
       }
@@ -2686,17 +2712,42 @@
     @media (min-width: 1024px) {
       .footer-cols {
         grid-template-columns: repeat(4, 1fr);
+        grid-template-areas: none;
         gap: 3rem;
         padding-block: 4rem;
       }
     }
 
+    .footer-brand-col {
+      grid-area: brand;
+    }
+    .footer-nav-col {
+      grid-area: nav;
+      align-self: start;
+    }
+    .footer-services-col {
+      grid-area: services;
+      align-self: start;
+    }
+    .footer-social-col {
+      grid-area: social;
+    }
+    @media (min-width: 640px) {
+      .footer-brand-col,
+      .footer-nav-col,
+      .footer-services-col,
+      .footer-social-col {
+        grid-area: auto;
+      }
+    }
+
     .footer-col-title {
-      font-size: 0.72rem;
+      font-size: 0.72rem;   /* ~11.5px */
       text-transform: uppercase;
-      letter-spacing: 0.025em;
+      letter-spacing: 0.05em;
+      font-weight: 600;
       color: rgba(255, 255, 255, 0.4);
-      margin-bottom: 1rem;
+      margin-bottom: 0.75rem; /* ~12px */
     }
     @media (min-width: 640px) {
       .footer-col-title {
@@ -2704,11 +2755,12 @@
         margin-bottom: 1.25rem;
       }
     }
+
     .footer-col-links {
       display: flex;
       flex-direction: column;
-      gap: 0.65rem;
-      font-size: 0.85rem;
+      gap: 0.7rem;          /* ~11px */
+      font-size: 0.95rem;   /* ~15px */
     }
     @media (min-width: 640px) {
       .footer-col-links {
@@ -2716,15 +2768,44 @@
         font-size: 0.875rem;
       }
     }
+
+    /* Social Inline on Mobile */
+    @media (max-width: 639px) {
+      .footer-social-col {
+        padding-top: 0.25rem;
+      }
+      .footer-social-col .footer-col-title {
+        margin-bottom: 0.6rem;
+      }
+      .footer-social-links {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 0.5rem 0.85rem;
+      }
+      .footer-social-links li {
+        display: inline-flex;
+        align-items: center;
+      }
+      .footer-social-links li:not(:last-child)::after {
+        content: '·';
+        color: rgba(255, 255, 255, 0.3);
+        margin-left: 0.85rem;
+        font-weight: 700;
+      }
+    }
+
     .footer-tagline {
-      max-width: 20rem;
-      font-size: 0.82rem;
+      max-width: 270px;
+      font-size: 0.9rem;    /* ~14.5px */
       color: rgba(255, 255, 255, 0.55);
-      line-height: 1.45;
-      margin-top: 0.65rem;
+      line-height: 1.5;
+      margin-top: 0.35rem;
     }
     @media (min-width: 640px) {
       .footer-tagline {
+        max-width: 20rem;
         font-size: 0.875rem;
         line-height: 1.4;
         margin-top: 0.75rem;
@@ -2761,18 +2842,34 @@
     }
 
     .footer-watermark {
-      position: absolute;
-      inset-inline: 0;
-      bottom: -1.5rem;
-      z-index: 0;
+      position: relative;
+      display: block;
+      width: 100%;
       text-align: center;
+      font-size: clamp(85px, 26vw, 130px);
+      line-height: 0.85;
+      height: 75px;
+      margin-top: 0.75rem;
+      margin-bottom: 0;
+      color: rgba(255, 255, 255, 0.04);
+      letter-spacing: -0.04em;
+      font-weight: 700;
+      overflow: hidden;
+      white-space: nowrap;
       pointer-events: none;
       user-select: none;
-      font-weight: 700;
-      line-height: 1;
-      font-size: var(--text-watermark);
-      color: rgba(255, 255, 255, 0.05);
-      letter-spacing: -0.04em;
+    }
+    @media (min-width: 640px) {
+      .footer-watermark {
+        position: absolute;
+        inset-inline: 0;
+        bottom: -1.5rem;
+        height: auto;
+        margin: 0;
+        z-index: 0;
+        font-size: var(--text-watermark);
+        color: rgba(255, 255, 255, 0.05);
+      }
     }
 
     /* ==========================================================================
@@ -4586,7 +4683,7 @@
       <div class="footer-cols">
         
         <!-- Brand Column -->
-        <div>
+        <div class="footer-brand-col">
           <button class="brand-btn" data-target="home" style="color:#fff;">
             <span>Wildan</span>
           </button>
@@ -4594,7 +4691,7 @@
         </div>
 
         <!-- Navigation Links -->
-        <div>
+        <div class="footer-nav-col">
           <p class="footer-col-title">Navigation</p>
           <ul class="footer-col-links">
             <li><a href="#home" class="animated-link"><span>Home</span></a></li>
@@ -4605,7 +4702,7 @@
         </div>
 
         <!-- Services Links -->
-        <div>
+        <div class="footer-services-col">
           <p class="footer-col-title">Services</p>
           <ul class="footer-col-links">
             <li><a href="#services" class="animated-link"><span>Video Editing</span></a></li>
@@ -4616,9 +4713,9 @@
         </div>
 
         <!-- Social Links -->
-        <div>
+        <div class="footer-social-col">
           <p class="footer-col-title">Social</p>
-          <ul class="footer-col-links">
+          <ul class="footer-col-links footer-social-links">
             <li><a href="https://wa.me/6282250561757" target="_blank" rel="noopener" class="animated-link"><span>WhatsApp</span></a></li>
             <li><a href="https://instagram.com/wildanfii/" target="_blank" rel="noopener" class="animated-link"><span>Instagram</span></a></li>
             <li><a href="mailto:wildanfi1212@gmail.com" class="animated-link"><span>Email</span></a></li>
