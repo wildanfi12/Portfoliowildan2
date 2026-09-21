@@ -1834,45 +1834,64 @@
     .services-list {
       display: flex;
       flex-direction: column;
+      list-style: none;
     }
     .service-row-item {
       border-top: 1px solid var(--line);
+      position: relative;
     }
     .service-row-item:first-child {
       border-top: none;
     }
+    .service-row-item:last-child {
+      border-bottom: 1px solid var(--line);
+    }
 
-    .service-row-link {
+    .service-row-trigger {
+      width: 100%;
       display: flex;
       align-items: center;
       gap: 0.75rem;
+      border: none;
       border-radius: var(--radius-card-sm);
       padding-block: 1.15rem;
       padding-inline: 0.75rem;
-      background: rgba(241, 240, 238, 0);
-      transition: background 0.3s ease, transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+      background: transparent;
+      color: inherit;
+      cursor: pointer;
+      text-align: left;
+      font: inherit;
+      transition: background 0.28s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
     @media (min-width: 640px) {
-      .service-row-link {
+      .service-row-trigger {
         gap: 1.25rem;
         padding-block: 1.75rem;
         padding-inline: 1.5rem;
       }
     }
     @media (min-width: 1024px) {
-      .service-row-link {
+      .service-row-trigger {
         gap: 1.5rem;
         padding-block: 2rem;
       }
     }
     @media (hover: hover) {
-      .service-row-link:hover {
-        background: rgba(241, 240, 238, 1);
-        transform: translateX(0.5rem);
+      .service-row-trigger:hover {
+        background: rgba(241, 240, 238, 0.65);
       }
-      .service-row-link:hover .service-badge svg {
+      .service-row-item:not(.is-active) .service-row-trigger:hover .service-badge svg {
         transform: translate(3px, -3px);
       }
+    }
+    .service-row-trigger:focus-visible {
+      outline: 2px solid var(--ink);
+      outline-offset: -2px;
+    }
+    .service-row-item.is-active .service-row-trigger {
+      background: rgba(241, 240, 238, 0.75);
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
     }
 
     .service-index {
@@ -1893,11 +1912,13 @@
         width: 2.5rem;
       }
     }
+
     .service-title {
       flex: 1;
       font-size: 1.25rem;
       font-weight: 500;
       letter-spacing: -0.01em;
+      color: var(--foreground);
     }
     @media (min-width: 640px) {
       .service-title {
@@ -1921,6 +1942,7 @@
       font-size: 0.875rem;
       color: rgba(17, 17, 17, 0.55);
       line-height: 1.4;
+      text-align: right;
     }
     @media (min-width: 1024px) {
       .service-desc {
@@ -1937,6 +1959,7 @@
       background: var(--ink);
       color: #fff;
       flex-shrink: 0;
+      transition: background 0.25s ease, transform 0.25s ease;
     }
     @media (min-width: 640px) {
       .service-badge {
@@ -1951,7 +1974,162 @@
       }
     }
     .service-badge svg {
-      transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+      width: 1.15em;
+      height: 1.15em;
+      transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+    .service-row-item.is-active .service-badge svg {
+      transform: rotate(90deg);
+    }
+
+    /* Accordion Expand Panel */
+    .service-expand-panel {
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: grid-template-rows 0.38s cubic-bezier(0.2, 0.8, 0.2, 1);
+      overflow: hidden;
+      background: transparent;
+    }
+    .service-row-item.is-active .service-expand-panel {
+      grid-template-rows: 1fr;
+      background: rgba(241, 240, 238, 0.75);
+      border-bottom-left-radius: var(--radius-card-sm);
+      border-bottom-right-radius: var(--radius-card-sm);
+    }
+
+    .service-expand-inner {
+      min-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transform: translateY(-8px);
+      transition: opacity 0.3s ease, transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+      padding-inline: 0.75rem;
+      padding-bottom: 1.5rem;
+    }
+    @media (min-width: 640px) {
+      .service-expand-inner {
+        padding-inline: 1.5rem;
+        padding-bottom: 2rem;
+      }
+    }
+    .service-row-item.is-active .service-expand-inner {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .service-expand-content {
+      border-top: 1px solid rgba(0, 0, 0, 0.08);
+      padding-top: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    @media (min-width: 768px) {
+      .service-expand-content {
+        padding-top: 1.5rem;
+        padding-left: calc(2rem + 1.25rem);
+      }
+    }
+    @media (min-width: 1024px) {
+      .service-expand-content {
+        padding-left: calc(2.5rem + 1.5rem);
+        padding-right: 3rem;
+      }
+    }
+
+    .service-expand-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(17, 17, 17, 0.45);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+    }
+    .service-expand-label::before {
+      content: '';
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    .service-expand-text {
+      font-size: 0.95rem;
+      line-height: 1.65;
+      color: rgba(17, 17, 17, 0.85);
+      max-width: 62ch;
+    }
+    @media (min-width: 640px) {
+      .service-expand-text {
+        font-size: 1.05rem;
+      }
+    }
+
+    .service-expand-footer {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      margin-top: 0.5rem;
+      padding-top: 1rem;
+      border-top: 1px dashed rgba(0, 0, 0, 0.1);
+    }
+    @media (min-width: 768px) {
+      .service-expand-footer {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1.5rem;
+      }
+    }
+
+    .service-expand-focus {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 0.35rem 0.5rem;
+      font-size: 0.82rem;
+      line-height: 1.5;
+    }
+    @media (min-width: 640px) {
+      .service-expand-focus {
+        font-size: 0.875rem;
+      }
+    }
+    .service-focus-label {
+      font-weight: 600;
+      color: var(--foreground);
+    }
+    .service-focus-items {
+      color: rgba(17, 17, 17, 0.65);
+    }
+
+    .service-explore-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--ink);
+      text-decoration: none;
+      white-space: nowrap;
+      border-bottom: 1px solid rgba(17, 17, 17, 0.3);
+      padding-bottom: 2px;
+      transition: border-color 0.2s ease, opacity 0.2s ease, transform 0.2s ease;
+      flex-shrink: 0;
+      align-self: flex-start;
+    }
+    @media (min-width: 768px) {
+      .service-explore-link {
+        align-self: center;
+      }
+    }
+    .service-explore-link:hover {
+      border-color: var(--ink);
+      opacity: 0.85;
+      transform: translateX(3px);
     }
 
     /* ==========================================================================
@@ -3339,6 +3517,7 @@
         padding-block: 1.25rem;
         font-size: 1rem;
       }
+      .service-row-trigger,
       .service-row-link {
         padding-block: 1.25rem;
       }
@@ -3710,72 +3889,186 @@
           <span class="reveal-line-wrap"><span class="reveal-line">What we do best</span></span>
         </h2>
 
-        <ul class="services-list">
+        <ul class="services-list" id="services-accordion">
           
+          <!-- 01 Video Editing -->
           <li class="service-row-item reveal-fade-up" style="transition-delay: 0ms;">
-            <a href="#works" class="service-row-link service-filter-link" data-filter="video">
+            <button type="button" class="service-row-trigger" aria-expanded="false" aria-controls="service-panel-01" id="service-header-01">
               <span class="service-index">01</span>
               <h3 class="service-title">Video Editing</h3>
               <p class="service-desc">Scalable social reels, short-form storytelling, and commercial video post-production.</p>
-              <div class="service-badge">
+              <div class="service-badge" aria-hidden="true">
                 <svg class="icon icon-stroke" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg>
               </div>
-            </a>
+            </button>
+            <div class="service-expand-panel" id="service-panel-01" role="region" aria-labelledby="service-header-01">
+              <div class="service-expand-inner">
+                <div class="service-expand-content">
+                  <span class="service-expand-label">WHAT I DO</span>
+                  <p class="service-expand-text">I create engaging short-form and long-form video content for social media, brands, and digital campaigns. My work includes cutting and pacing, storytelling, transitions, sound design, color correction, subtitles, product videos, promotional content, and social media reels.</p>
+                  <div class="service-expand-footer">
+                    <div class="service-expand-focus">
+                      <span class="service-focus-label">Focus:</span>
+                      <span class="service-focus-items">Social Media Reels · Product Videos · Commercial Content · YouTube</span>
+                    </div>
+                    <a href="#works" class="service-explore-link service-filter-link" data-filter="video">
+                      <span>View video works</span>
+                      <svg class="icon icon-stroke" viewBox="0 0 24 24" style="width:12px; height:12px;"><path d="M7 17 17 7M8 7h9v9"/></svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
           </li>
 
+          <!-- 02 Graphic Design -->
           <li class="service-row-item reveal-fade-up" style="transition-delay: 60ms;">
-            <a href="#works" class="service-row-link service-filter-link" data-filter="design">
+            <button type="button" class="service-row-trigger" aria-expanded="false" aria-controls="service-panel-02" id="service-header-02">
               <span class="service-index">02</span>
               <h3 class="service-title">Graphic Design</h3>
               <p class="service-desc">Brand logos, promotional flyers, posters, carousels, and complete visual identities.</p>
-              <div class="service-badge">
+              <div class="service-badge" aria-hidden="true">
                 <svg class="icon icon-stroke" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg>
               </div>
-            </a>
+            </button>
+            <div class="service-expand-panel" id="service-panel-02" role="region" aria-labelledby="service-header-02">
+              <div class="service-expand-inner">
+                <div class="service-expand-content">
+                  <span class="service-expand-label">WHAT I DO</span>
+                  <p class="service-expand-text">I design visual assets for brands, products, and digital campaigns, including social media posts, promotional banners, posters, carousels, product visuals, packaging concepts, and other marketing materials.</p>
+                  <div class="service-expand-footer">
+                    <div class="service-expand-focus">
+                      <span class="service-focus-label">Focus:</span>
+                      <span class="service-focus-items">Social Media · Branding · Promotional Materials · Product Visuals</span>
+                    </div>
+                    <a href="#works" class="service-explore-link service-filter-link" data-filter="design">
+                      <span>View design works</span>
+                      <svg class="icon icon-stroke" viewBox="0 0 24 24" style="width:12px; height:12px;"><path d="M7 17 17 7M8 7h9v9"/></svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
           </li>
 
+          <!-- 03 AI Design -->
           <li class="service-row-item reveal-fade-up" style="transition-delay: 120ms;">
-            <a href="#works" class="service-row-link service-filter-link" data-filter="ai">
+            <button type="button" class="service-row-trigger" aria-expanded="false" aria-controls="service-panel-03" id="service-header-03">
               <span class="service-index">03</span>
               <h3 class="service-title">AI Design</h3>
               <p class="service-desc">Generative AI artwork, hyper-realistic character visuals, and cutting-edge creative assets.</p>
-              <div class="service-badge">
+              <div class="service-badge" aria-hidden="true">
                 <svg class="icon icon-stroke" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg>
               </div>
-            </a>
+            </button>
+            <div class="service-expand-panel" id="service-panel-03" role="region" aria-labelledby="service-header-03">
+              <div class="service-expand-inner">
+                <div class="service-expand-content">
+                  <span class="service-expand-label">WHAT I DO</span>
+                  <p class="service-expand-text">I use generative AI to create custom visual assets, digital artwork, product visuals, creative concepts, and realistic scenes. AI is integrated with traditional design and editing workflows to produce visuals that are both distinctive and practical.</p>
+                  <div class="service-expand-footer">
+                    <div class="service-expand-focus">
+                      <span class="service-focus-label">Focus:</span>
+                      <span class="service-focus-items">AI Art · Product Visualization · Creative Concepts · Digital Assets</span>
+                    </div>
+                    <a href="#works" class="service-explore-link service-filter-link" data-filter="ai">
+                      <span>View AI works</span>
+                      <svg class="icon icon-stroke" viewBox="0 0 24 24" style="width:12px; height:12px;"><path d="M7 17 17 7M8 7h9v9"/></svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
           </li>
 
+          <!-- 04 Motion Graphics -->
           <li class="service-row-item reveal-fade-up" style="transition-delay: 180ms;">
-            <a href="#works" class="service-row-link service-filter-link" data-filter="motion">
+            <button type="button" class="service-row-trigger" aria-expanded="false" aria-controls="service-panel-04" id="service-header-04">
               <span class="service-index">04</span>
               <h3 class="service-title">Motion Graphics</h3>
               <p class="service-desc">Kinetic typography, animated product reels, 2D/3D visual effects, and logo animation.</p>
-              <div class="service-badge">
+              <div class="service-badge" aria-hidden="true">
                 <svg class="icon icon-stroke" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg>
               </div>
-            </a>
+            </button>
+            <div class="service-expand-panel" id="service-panel-04" role="region" aria-labelledby="service-header-04">
+              <div class="service-expand-inner">
+                <div class="service-expand-content">
+                  <span class="service-expand-label">WHAT I DO</span>
+                  <p class="service-expand-text">I create motion-based visuals that make content more dynamic and engaging, including kinetic typography, animated logos, product animations, social media graphics, transitions, and 2D visual effects.</p>
+                  <div class="service-expand-footer">
+                    <div class="service-expand-focus">
+                      <span class="service-focus-label">Focus:</span>
+                      <span class="service-focus-items">Kinetic Typography · Logo Animation · Product Motion · 2D Effects</span>
+                    </div>
+                    <a href="#works" class="service-explore-link service-filter-link" data-filter="motion">
+                      <span>View motion works</span>
+                      <svg class="icon icon-stroke" viewBox="0 0 24 24" style="width:12px; height:12px;"><path d="M7 17 17 7M8 7h9v9"/></svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
           </li>
 
+          <!-- 05 Advertising -->
           <li class="service-row-item reveal-fade-up" style="transition-delay: 240ms;">
-            <a href="#works" class="service-row-link service-filter-link" data-filter="ads">
+            <button type="button" class="service-row-trigger" aria-expanded="false" aria-controls="service-panel-05" id="service-header-05">
               <span class="service-index">05</span>
               <h3 class="service-title">Advertising</h3>
               <p class="service-desc">High-conversion Meta & TikTok ad creative variations, product landing ads, and sales funnels.</p>
-              <div class="service-badge">
+              <div class="service-badge" aria-hidden="true">
                 <svg class="icon icon-stroke" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg>
               </div>
-            </a>
+            </button>
+            <div class="service-expand-panel" id="service-panel-05" role="region" aria-labelledby="service-header-05">
+              <div class="service-expand-inner">
+                <div class="service-expand-content">
+                  <span class="service-expand-label">WHAT I DO</span>
+                  <p class="service-expand-text">I create visual content for digital advertising and promotional campaigns, including Meta and TikTok ad creatives, product-focused videos, promotional graphics, creative variations, and content designed to communicate offers clearly.</p>
+                  <div class="service-expand-footer">
+                    <div class="service-expand-focus">
+                      <span class="service-focus-label">Focus:</span>
+                      <span class="service-focus-items">Meta Ads · TikTok Ads · Product Campaigns · Promotional Creatives</span>
+                    </div>
+                    <a href="#works" class="service-explore-link service-filter-link" data-filter="ads">
+                      <span>View advertising works</span>
+                      <svg class="icon icon-stroke" viewBox="0 0 24 24" style="width:12px; height:12px;"><path d="M7 17 17 7M8 7h9v9"/></svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
           </li>
 
+          <!-- 06 YouTube -->
           <li class="service-row-item reveal-fade-up" style="transition-delay: 300ms;">
-            <a href="#works" class="service-row-link service-filter-link" data-filter="youtube">
+            <button type="button" class="service-row-trigger" aria-expanded="false" aria-controls="service-panel-06" id="service-header-06">
               <span class="service-index">06</span>
               <h3 class="service-title">YouTube</h3>
               <p class="service-desc">End-to-end channel production, high-CTR thumbnail design, and long-form video editing.</p>
-              <div class="service-badge">
+              <div class="service-badge" aria-hidden="true">
                 <svg class="icon icon-stroke" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg>
               </div>
-            </a>
+            </button>
+            <div class="service-expand-panel" id="service-panel-06" role="region" aria-labelledby="service-header-06">
+              <div class="service-expand-inner">
+                <div class="service-expand-content">
+                  <span class="service-expand-label">WHAT I DO</span>
+                  <p class="service-expand-text">I handle end-to-end YouTube content production, from editing and storytelling to subtitles, sound design, pacing, thumbnails, and long-form video optimization for a stronger viewing experience.</p>
+                  <div class="service-expand-footer">
+                    <div class="service-expand-focus">
+                      <span class="service-focus-label">Focus:</span>
+                      <span class="service-focus-items">Long-form Editing · Storytelling · Thumbnails · Content Production</span>
+                    </div>
+                    <a href="#works" class="service-explore-link service-filter-link" data-filter="youtube">
+                      <span>View YouTube works</span>
+                      <svg class="icon icon-stroke" viewBox="0 0 24 24" style="width:12px; height:12px;"><path d="M7 17 17 7M8 7h9v9"/></svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
           </li>
 
         </ul>
@@ -4854,6 +5147,43 @@
       }
     }
     window.addEventListener('scroll', handleStatsCount, { passive: true });
+
+    /* ==========================================================================
+       SERVICES ACCORDION (Interactive Expandable List)
+       ========================================================================== */
+    const serviceItems = document.querySelectorAll('.service-row-item');
+
+    serviceItems.forEach(item => {
+      const trigger = item.querySelector('.service-row-trigger');
+      if (!trigger) return;
+
+      trigger.addEventListener('click', (e) => {
+        // Prevent toggle if clicking on an interactive inner link if any
+        if (e.target.closest('a')) return;
+
+        const isCurrentlyActive = item.classList.contains('is-active');
+
+        // Collapse all other services
+        serviceItems.forEach(otherItem => {
+          if (otherItem !== item && otherItem.classList.contains('is-active')) {
+            otherItem.classList.remove('is-active');
+            const otherTrigger = otherItem.querySelector('.service-row-trigger');
+            if (otherTrigger) {
+              otherTrigger.setAttribute('aria-expanded', 'false');
+            }
+          }
+        });
+
+        // Toggle the clicked service
+        if (isCurrentlyActive) {
+          item.classList.remove('is-active');
+          trigger.setAttribute('aria-expanded', 'false');
+        } else {
+          item.classList.add('is-active');
+          trigger.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
 
     /* ==========================================================================
        FAQ ACCORDION
