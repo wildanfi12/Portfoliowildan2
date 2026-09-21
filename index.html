@@ -74,6 +74,9 @@
       font-size: 16px;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+      width: 100%;
+      max-width: 100%;
     }
 
     /* Stable responsive font sizing */
@@ -3725,319 +3728,398 @@
         height: 3rem;
       }
     }
-
     /* ==========================================================================
-       RESPONSIVE: MOBILE LAYOUT (max-width: 639px)
-       Intentionally redesigned — NOT a scaled-down desktop.
-       Desktop CSS is 100% untouched; these are mobile-specific overrides.
+       RESPONSIVE DESIGN SYSTEM: MOBILE (320px - 639px)
+       Intentionally composed for phone viewports.
        ========================================================================== */
     @media (max-width: 639px) {
 
-      /* Shell: increase side padding for editorial feel */
+      /* 1. Global shell & section containment */
       .shell {
-        padding-inline: 1.5rem;
+        padding-inline: 1.25rem !important;
+        width: 100% !important;
+        max-width: 100% !important;
       }
 
-      /* #home section: remove min-height, compact vertical */
+      /* 2. Header: clean, compact, minimal */
+      #main-header {
+        padding-block: 0.6rem !important;
+      }
+      .header-shell {
+        padding-block: 0 !important;
+      }
+      .brand-btn {
+        font-size: 1.125rem !important;
+      }
+      .menu-btn {
+        min-height: 40px !important;
+        min-width: 40px !important;
+      }
+
+      /* 3. Hero section container: reduced vertical height */
       #home {
-        min-height: 0 !important;
-        border-radius: 0 0 1.5rem 1.5rem;
+        min-height: auto !important;
+        overflow: hidden !important;
+        border-radius: 0 0 1.5rem 1.5rem !important;
       }
 
-      /* Hero shell: column layout, tighter padding */
+      /* 4. Watermark: remove on mobile to prevent overflow & clutter */
+      .hero-watermark {
+        display: none !important;
+      }
+
+      /* 5. Hero shell: compact vertical rhythm */
       .hero-shell {
+        display: flex !important;
         flex-direction: column !important;
-        padding-top: 2.5rem !important;
+        padding-top: 1.75rem !important;
         padding-bottom: 2rem !important;
-        gap: 2rem !important;
+        gap: 1.75rem !important;
         align-items: stretch !important;
+        overflow: hidden !important;
       }
 
-      /* LEFT COLUMN: full width, sensible gap */
+      /* 6. Hero Left: text intro */
       .hero-left {
         width: 100% !important;
+        max-width: 100% !important;
         flex: none !important;
-        gap: 1rem !important;
+        gap: 0.85rem !important;
+        min-width: 0 !important;
       }
 
-      /* Eyebrow label */
+      /* Eyebrow badge */
       .eyebrow-dark {
-        font-size: 0.75rem;
+        font-size: 0.72rem !important;
+        margin-bottom: 0.1rem !important;
       }
 
-      /* Headline: purpose-built mobile typography */
+      /* Headline: scaled down, controlled 3-line wrap */
       .hero-title {
-        font-size: clamp(2rem, 9.5vw, 2.6rem) !important;
-        line-height: 0.98 !important;
-        letter-spacing: -0.03em !important;
-        max-width: 100% !important;
+        font-size: clamp(1.7rem, 7.8vw, 2.15rem) !important;
+        line-height: 1.02 !important;
+        letter-spacing: -0.028em !important;
+        max-width: 320px !important;
+        word-break: keep-all !important;
       }
 
-      /* Description: comfortable reading width */
+      /* Subtitle/description: editorial, readable width */
       .hero-subtitle {
-        font-size: 0.9rem !important;
-        line-height: 1.5 !important;
-        max-width: 100% !important;
-        color: rgba(17,17,17,0.6);
+        font-size: 0.86rem !important;
+        line-height: 1.48 !important;
+        max-width: 330px !important;
+        color: rgba(17, 17, 17, 0.65) !important;
+        word-break: normal !important;
       }
 
-      /* Skill pills: flex-wrap, 8px gap, no overflow */
+      /* Skill pills: wrap cleanly, 8px gap, compact font */
       .hero-floating-skills {
         display: flex !important;
         flex-wrap: wrap !important;
-        gap: 0.5rem !important;
-        max-width: 100%;
-        overflow: hidden;
+        gap: 7px !important;
+        max-width: 340px !important;
+        overflow: visible !important;
       }
       .skill-pill {
-        font-size: 0.73rem !important;
-        padding: 0.3rem 0.65rem !important;
-        gap: 0.3rem !important;
-        flex-shrink: 0;
+        font-size: 0.72rem !important;
+        padding: 0.28rem 0.62rem !important;
+        border-radius: var(--radius-pill) !important;
+        background: rgba(255, 255, 255, 0.95) !important;
+        border: 1px solid var(--line) !important;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.03) !important;
+        flex-shrink: 0 !important;
+        white-space: nowrap !important;
       }
 
-      /* Rating row: compact, single line */
-      .rating-row { gap: 0.4rem; }
-      .stars-group { font-size: 0.82rem; }
-      .rating-text  { font-size: 0.78rem; }
+      /* Rating */
+      .rating-row {
+        gap: 0.35rem !important;
+        margin-top: 0.15rem !important;
+      }
+      .stars-group {
+        font-size: 0.82rem !important;
+      }
+      .rating-text {
+        font-size: 0.75rem !important;
+        color: rgba(17, 17, 17, 0.7) !important;
+      }
 
-      /* CTA buttons: natural row, proportional height */
+      /* CTA buttons: row, proportional height */
       .hero-ctas {
         display: flex !important;
         flex-direction: row !important;
-        flex-wrap: nowrap !important;
-        gap: 0.5rem !important;
-        width: 100%;
+        flex-wrap: wrap !important;
+        gap: 8px !important;
+        margin-top: 0.35rem !important;
+        width: 100% !important;
       }
-      .hero-ctas .btn-pill { flex: 0 0 auto; }
-      .pill-inner {
+      .hero-ctas .btn-pill {
+        flex: 0 0 auto !important;
+      }
+      .hero-ctas .pill-inner {
         min-height: 44px !important;
         font-size: 0.82rem !important;
       }
       .btn-pill.pill-no-arrow .pill-inner {
-        padding: 0.6rem 1.1rem !important;
+        padding: 0.55rem 1.15rem !important;
       }
       .btn-pill.pill-with-arrow .pill-inner {
-        padding: 0.25rem 0.25rem 0.25rem 1.1rem !important;
+        padding: 0.25rem 0.25rem 0.25rem 1.15rem !important;
       }
       .pill-badge {
-        width: 1.9rem !important;
-        height: 1.9rem !important;
+        width: 1.85rem !important;
+        height: 1.85rem !important;
       }
 
-      /* RIGHT COLUMN: controlled width, centered */
+      /* 7. Hero Right column: separate image card & featured card */
       .hero-right {
         width: 100% !important;
-        max-width: 320px !important;
-        margin: 0 auto !important;
-        align-items: center !important;
-        gap: 0.75rem !important;
+        max-width: 330px !important;
+        margin-inline: auto !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 1rem !important;
+        align-items: stretch !important;
       }
 
-      /* Showcase card: fits container */
+      /* Showcase card wrapper becomes clean vertical stack of 2 cards */
       .hero-showcase-card {
+        background: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
+        padding: 0 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 12px !important;
         width: 100% !important;
-        max-width: 100% !important;
-        padding: 0.65rem !important;
-        gap: 0.6rem !important;
-        box-shadow: 0 12px 40px -8px rgba(0,0,0,0.12) !important;
+        transform: none !important;
       }
 
-      /* CRITICAL FIX: Portrait box controlled height — was 4/4.7 = ~394px tall */
+      /* CARD 1: Large Hero Image Card */
       .portrait-box {
-        aspect-ratio: 3 / 3.5 !important;
-        max-height: 260px !important;
         width: 100% !important;
+        height: 270px !important;
+        aspect-ratio: unset !important;
+        border-radius: 26px !important;
+        box-shadow: 0 16px 36px -8px rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(255, 255, 255, 0.8) inset !important;
+        border: 1px solid rgba(230, 229, 226, 0.95) !important;
+        overflow: hidden !important;
+        position: relative !important;
+        background: #eae9e6 !important;
       }
-
-      /* Portrait captions */
-      .portrait-name  { font-size: 1.1rem; }
-      .portrait-title { font-size: 0.65rem; }
+      .portrait-photo {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        object-position: center 25% !important;
+      }
       .portrait-badge-top {
-        font-size: 0.62rem;
-        padding: 0.28rem 0.6rem;
-        top: 0.6rem;
-        right: 0.6rem;
+        top: 0.75rem !important;
+        right: 0.75rem !important;
+        font-size: 0.65rem !important;
+        padding: 0.3rem 0.65rem !important;
+      }
+      .portrait-caption-bottom {
+        bottom: 0.75rem !important;
+        left: 0.85rem !important;
+        right: 0.85rem !important;
+      }
+      .portrait-name {
+        font-size: 1.15rem !important;
+        font-weight: 600 !important;
+        line-height: 1.1 !important;
+      }
+      .portrait-title {
+        font-size: 0.62rem !important;
+        letter-spacing: 0.04em !important;
       }
 
-      /* Carousel dock: compact */
+      /* CARD 2: Featured Content Card (Carousel Dock) below image */
       .hero-carousel-dock {
-        padding: 0.5rem 0.6rem !important;
-        gap: 0.5rem !important;
+        border-radius: 18px !important;
+        background: rgba(255, 255, 255, 0.95) !important;
+        border: 1px solid rgba(230, 229, 226, 0.95) !important;
+        box-shadow: 0 8px 24px -6px rgba(0, 0, 0, 0.06), 0 0 0 1px rgba(255, 255, 255, 0.9) inset !important;
+        padding: 0.65rem 0.75rem !important;
+        display: flex !important;
+        gap: 0.65rem !important;
+        align-items: center !important;
+        width: 100% !important;
       }
       .carousel-spark-tile {
-        width: 2.5rem !important;
-        height: 2.5rem !important;
+        width: 2.6rem !important;
+        height: 2.6rem !important;
+        border-radius: 12px !important;
+        flex-shrink: 0 !important;
       }
-      .carousel-spark-tile svg { width: 1.1rem; height: 1.1rem; }
-      .carousel-slot { height: 2rem; }
-      .hero-card-caption { font-size: 0.58rem; }
-      .hero-card-title   { font-size: 0.78rem; }
+      .carousel-spark-tile svg {
+        width: 1.15rem !important;
+        height: 1.15rem !important;
+      }
+      .carousel-slot {
+        height: 2.1rem !important;
+      }
+      .hero-card-caption {
+        font-size: 0.6rem !important;
+      }
+      .hero-card-title {
+        font-size: 0.78rem !important;
+      }
 
-      /* Partners / Trusted brands */
+      /* 8. Trusted by Leading Brands: generous spacing & natural wrap */
       .hero-partners-wrap {
+        margin-top: 1.5rem !important;
         width: 100% !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 0.5rem !important;
         align-items: flex-start !important;
-        gap: 0.3rem !important;
       }
-      .hero-partners-label { font-size: 0.65rem; letter-spacing: 0.04em; }
+      .hero-partners-label {
+        font-size: 0.65rem !important;
+        letter-spacing: 0.05em !important;
+        color: rgba(17, 17, 17, 0.5) !important;
+      }
       .hero-partners-pills {
         display: flex !important;
         flex-wrap: wrap !important;
-        gap: 0.3rem !important;
+        gap: 0.35rem !important;
         justify-content: flex-start !important;
       }
       .partner-pill {
         font-size: 0.68rem !important;
-        padding: 0.18rem 0.48rem !important;
+        padding: 0.2rem 0.5rem !important;
+        border-radius: var(--radius-pill) !important;
+        background: rgba(255, 255, 255, 0.85) !important;
+        border: 1px solid var(--line) !important;
       }
 
-      /* Status bar bottom: compact */
+      /* 9. Bottom Status bar */
       .hero-status-bar {
-        padding-block: 0.6rem !important;
-        font-size: 0.72rem;
-      }
-
-      /* Watermark: constrained, no horizontal overflow */
-      .hero-watermark {
-        font-size: clamp(3rem, 22vw, 5rem) !important;
-        bottom: 0.75rem;
-        overflow: hidden;
-        max-width: 100%;
+        padding-block: 0.65rem !important;
+        font-size: 0.72rem !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        border-top: 1px solid rgba(17, 17, 17, 0.08) !important;
       }
     }
 
-    /* Extra-small phones (up to 374px) */
-    @media (max-width: 374px) {
+    /* Extra small phones (<= 360px) */
+    @media (max-width: 360px) {
       .hero-title {
-        font-size: clamp(1.75rem, 9vw, 2.1rem) !important;
+        font-size: clamp(1.5rem, 7.5vw, 1.85rem) !important;
       }
       .hero-right {
-        max-width: 280px !important;
+        max-width: 290px !important;
       }
       .portrait-box {
-        max-height: 220px !important;
-        aspect-ratio: 3 / 3.2 !important;
+        height: 240px !important;
       }
     }
 
     /* ==========================================================================
-       RESPONSIVE: TABLET LAYOUT (640px to 1023px)
-       Two-column composition: text LEFT, image RIGHT
+       RESPONSIVE DESIGN SYSTEM: TABLET (640px - 1023px)
+       Intentionally composed two-column layout.
        ========================================================================== */
     @media (min-width: 640px) and (max-width: 1023px) {
 
-      /* Shell: proper tablet padding */
       .shell {
-        padding-inline: 2rem;
+        padding-inline: 2rem !important;
       }
 
-      /* Hero shell: CSS grid two-column */
-      .hero-shell {
-        display: grid !important;
-        grid-template-columns: minmax(0, 1fr) minmax(0px, 300px) !important;
-        gap: 2rem !important;
-        align-items: center !important;
-        padding-top: 2.5rem !important;
-        padding-bottom: 2.5rem !important;
-        flex-direction: unset !important;
+      #home {
+        min-height: auto !important;
       }
 
-      /* LEFT: text column */
-      .hero-left {
-        grid-column: 1 !important;
-        grid-row: 1 !important;
-        flex: none !important;
-        gap: 1.15rem !important;
-      }
-
-      /* Headline: clear tablet scale */
-      .hero-title {
-        font-size: clamp(1.85rem, 4vw, 2.75rem) !important;
-        line-height: 1.02 !important;
+      .hero-watermark {
+        font-size: clamp(5rem, 12vw, 8rem) !important;
+        bottom: 1.5rem !important;
+        opacity: 0.04 !important;
+        overflow: hidden !important;
         max-width: 100% !important;
       }
 
-      /* Description */
+      .hero-shell {
+        display: grid !important;
+        grid-template-columns: minmax(0, 1fr) minmax(280px, 320px) !important;
+        gap: 2.5rem !important;
+        align-items: center !important;
+        padding-top: 2.75rem !important;
+        padding-bottom: 2.75rem !important;
+        flex-direction: unset !important;
+      }
+
+      .hero-left {
+        grid-column: 1 !important;
+        gap: 1.15rem !important;
+        min-width: 0 !important;
+      }
+
+      .hero-title {
+        font-size: clamp(1.85rem, 3.8vw, 2.5rem) !important;
+        line-height: 1.05 !important;
+        max-width: 100% !important;
+      }
+
       .hero-subtitle {
-        font-size: 0.925rem !important;
+        font-size: 0.92rem !important;
         max-width: 36ch !important;
         line-height: 1.55 !important;
       }
 
-      /* Skill pills */
-      .hero-floating-skills { gap: 0.4rem !important; }
+      .hero-floating-skills {
+        gap: 0.35rem !important;
+      }
       .skill-pill {
         font-size: 0.75rem !important;
-        padding: 0.3rem 0.7rem !important;
+        padding: 0.3rem 0.65rem !important;
       }
 
-      /* CTA */
-      .pill-inner {
-        min-height: 48px !important;
-        font-size: 0.875rem !important;
-      }
-
-      /* RIGHT: image column */
       .hero-right {
         grid-column: 2 !important;
-        grid-row: 1 !important;
         width: 100% !important;
-        max-width: 100% !important;
-        margin: 0 !important;
+        max-width: 320px !important;
         align-items: flex-end !important;
         gap: 0.85rem !important;
       }
 
-      /* Portrait: controlled aspect ratio on tablet */
-      .portrait-box {
-        aspect-ratio: 3 / 3.8 !important;
-        max-height: 380px !important;
+      .hero-showcase-card {
+        width: 100% !important;
+        padding: 0.85rem !important;
+        border-radius: var(--radius-card) !important;
+        background: rgba(255, 255, 255, 0.92) !important;
+        border: 1px solid rgba(230, 229, 226, 0.95) !important;
+        box-shadow: 0 20px 50px -12px rgba(0,0,0,0.1) !important;
+        gap: 0.75rem !important;
       }
 
-      /* Carousel dock */
-      .hero-carousel-dock { padding: 0.6rem 0.7rem !important; }
+      .portrait-box {
+        aspect-ratio: 4 / 4.5 !important;
+        max-height: 360px !important;
+        border-radius: var(--radius-card-sm) !important;
+      }
 
-      /* Partners */
-      .hero-partners-pills { justify-content: flex-start !important; }
+      .portrait-photo {
+        object-position: center 20% !important;
+      }
 
-      /* Status bar */
+      .hero-carousel-dock {
+        padding: 0.6rem 0.75rem !important;
+      }
+
+      .hero-partners-wrap {
+        width: 100% !important;
+        align-items: flex-end !important;
+      }
+
+      .hero-partners-pills {
+        justify-content: flex-end !important;
+      }
+
       .hero-status-bar {
-        font-size: 0.82rem;
+        font-size: 0.8rem !important;
         padding-block: 0.75rem !important;
-      }
-    }
-
-    /* Narrow tablet (640px to 767px) */
-    @media (min-width: 640px) and (max-width: 767px) {
-      .hero-shell {
-        grid-template-columns: minmax(0, 1fr) minmax(0px, 240px) !important;
-        gap: 1.5rem !important;
-        padding-top: 2rem !important;
-        padding-bottom: 2rem !important;
-      }
-      .hero-title {
-        font-size: clamp(1.75rem, 4.5vw, 2.4rem) !important;
-      }
-      .portrait-box {
-        max-height: 320px !important;
-        aspect-ratio: 3 / 3.6 !important;
-      }
-    }
-
-    /* Large tablet (900px to 1023px) */
-    @media (min-width: 900px) and (max-width: 1023px) {
-      .hero-shell {
-        grid-template-columns: minmax(0, 1fr) minmax(0px, 360px) !important;
-        gap: 3rem !important;
-        padding-top: 3.5rem !important;
-        padding-bottom: 3.5rem !important;
-      }
-      .hero-title {
-        font-size: clamp(2.25rem, 3.5vw, 3rem) !important;
-      }
-      .portrait-box {
-        max-height: 420px !important;
       }
     }
 
