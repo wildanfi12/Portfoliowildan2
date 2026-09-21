@@ -3729,160 +3729,188 @@
       }
     }
     /* ==========================================================================
-       RESPONSIVE DESIGN SYSTEM: MOBILE (320px - 639px)
-       Intentionally composed for phone viewports.
+       FINAL VISUAL REFINEMENT: MOBILE (320px - 639px)
+       Senior Web Designer Editorial Composition System
        ========================================================================== */
     @media (max-width: 639px) {
 
-      /* 1. Global shell & section containment */
+      /* 1. Global shell & horizontal alignment system */
       .shell {
-        padding-inline: 1.25rem !important;
+        padding-inline: 1.25rem !important; /* 20px consistent boundary */
         width: 100% !important;
         max-width: 100% !important;
       }
 
-      /* 2. Header: clean, compact, minimal */
+      /* 2. Header: clean, minimal, vertically aligned */
       #main-header {
-        padding-block: 0.6rem !important;
+        padding-block: 0.65rem !important;
       }
       .header-shell {
         padding-block: 0 !important;
+        padding-inline: 1.25rem !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
       }
       .brand-btn {
-        font-size: 1.125rem !important;
+        font-size: 1.15rem !important;
+        font-weight: 600 !important;
+        letter-spacing: -0.02em !important;
       }
       .menu-btn {
         min-height: 40px !important;
         min-width: 40px !important;
+        padding: 0 0.85rem !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
       }
 
-      /* 3. Hero section container: reduced vertical height */
+      /* 3. Hero section container: proportional vertical envelope */
       #home {
         min-height: auto !important;
         overflow: hidden !important;
-        border-radius: 0 0 1.5rem 1.5rem !important;
+        border-radius: 0 0 1.75rem 1.75rem !important;
       }
 
-      /* 4. Watermark: remove on mobile to prevent overflow & clutter */
+      /* 4. Background watermark: hidden on mobile to eliminate overflow & visual clutter */
       .hero-watermark {
         display: none !important;
       }
 
-      /* 5. Hero shell: compact vertical rhythm */
+      /* 5. Hero shell: single column with intentional spacing rhythm */
       .hero-shell {
         display: flex !important;
         flex-direction: column !important;
-        padding-top: 1.75rem !important;
+        padding-top: 1.5rem !important;
         padding-bottom: 2rem !important;
-        gap: 1.75rem !important;
+        gap: 1.85rem !important;
         align-items: stretch !important;
         overflow: hidden !important;
       }
 
-      /* 6. Hero Left: text intro */
+      /* 6. Hero Left: text content column */
       .hero-left {
         width: 100% !important;
         max-width: 100% !important;
         flex: none !important;
-        gap: 0.85rem !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 0.9rem !important;
         min-width: 0 !important;
       }
 
-      /* Eyebrow badge */
+      /* Small Label */
       .eyebrow-dark {
         font-size: 0.72rem !important;
-        margin-bottom: 0.1rem !important;
+        font-weight: 500 !important;
+        letter-spacing: 0.02em !important;
+        margin-bottom: 0 !important;
       }
 
-      /* Headline: scaled down, controlled 3-line wrap */
+      /* Headline: strong, controlled, 3-line editorial composition */
       .hero-title {
-        font-size: clamp(1.7rem, 7.8vw, 2.15rem) !important;
+        font-size: clamp(1.68rem, 7.5vw, 2.05rem) !important;
         line-height: 1.02 !important;
-        letter-spacing: -0.028em !important;
+        letter-spacing: -0.03em !important;
         max-width: 320px !important;
+        font-weight: 700 !important;
         word-break: keep-all !important;
+        margin: 0 !important;
       }
 
-      /* Subtitle/description: editorial, readable width */
+      /* Description: comfortable line length and reading rhythm */
       .hero-subtitle {
         font-size: 0.86rem !important;
         line-height: 1.48 !important;
-        max-width: 330px !important;
+        max-width: 335px !important;
         color: rgba(17, 17, 17, 0.65) !important;
+        font-weight: 400 !important;
         word-break: normal !important;
+        margin: 0.1rem 0 0 0 !important;
       }
 
-      /* Skill pills: wrap cleanly, 8px gap, compact font */
+      /* Services / Skill Pills: 8px gap, consistent height, 2-3 row natural wrap */
       .hero-floating-skills {
         display: flex !important;
         flex-wrap: wrap !important;
-        gap: 7px !important;
+        gap: 8px !important;
         max-width: 340px !important;
         overflow: visible !important;
+        margin-top: 0.2rem !important;
       }
       .skill-pill {
+        min-height: 32px !important;
+        display: inline-flex !important;
+        align-items: center !important;
         font-size: 0.72rem !important;
-        padding: 0.28rem 0.62rem !important;
+        padding: 0.28rem 0.65rem !important;
         border-radius: var(--radius-pill) !important;
         background: rgba(255, 255, 255, 0.95) !important;
         border: 1px solid var(--line) !important;
-        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.03) !important;
-        flex-shrink: 0 !important;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03) !important;
         white-space: nowrap !important;
+        flex-shrink: 0 !important;
       }
 
-      /* Rating */
+      /* Social Proof */
       .rating-row {
-        gap: 0.35rem !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        gap: 0.4rem !important;
         margin-top: 0.15rem !important;
       }
       .stars-group {
-        font-size: 0.82rem !important;
+        font-size: 0.8rem !important;
+        letter-spacing: 0.05em !important;
       }
       .rating-text {
         font-size: 0.75rem !important;
-        color: rgba(17, 17, 17, 0.7) !important;
+        font-weight: 500 !important;
+        color: rgba(17, 17, 17, 0.68) !important;
       }
 
-      /* CTA buttons: row, proportional height */
+      /* CTA Buttons: balanced height, primary / secondary relationship */
       .hero-ctas {
         display: flex !important;
         flex-direction: row !important;
         flex-wrap: wrap !important;
-        gap: 8px !important;
-        margin-top: 0.35rem !important;
+        gap: 10px !important;
+        align-items: center !important;
+        margin-top: 0.4rem !important;
         width: 100% !important;
       }
       .hero-ctas .btn-pill {
         flex: 0 0 auto !important;
       }
       .hero-ctas .pill-inner {
-        min-height: 44px !important;
+        min-height: 46px !important;
         font-size: 0.82rem !important;
+        font-weight: 500 !important;
       }
       .btn-pill.pill-no-arrow .pill-inner {
-        padding: 0.55rem 1.15rem !important;
+        padding: 0.55rem 1.25rem !important;
       }
       .btn-pill.pill-with-arrow .pill-inner {
-        padding: 0.25rem 0.25rem 0.25rem 1.15rem !important;
+        padding: 0.25rem 0.25rem 0.25rem 1.25rem !important;
       }
       .pill-badge {
         width: 1.85rem !important;
         height: 1.85rem !important;
       }
 
-      /* 7. Hero Right column: separate image card & featured card */
+      /* 7. Hero Right: Standalone Photo Card & Standalone Featured Card */
       .hero-right {
         width: 100% !important;
         max-width: 330px !important;
         margin-inline: auto !important;
         display: flex !important;
         flex-direction: column !important;
-        gap: 1rem !important;
+        gap: 0 !important;
         align-items: stretch !important;
       }
 
-      /* Showcase card wrapper becomes clean vertical stack of 2 cards */
+      /* Container unbundles both cards with 24px breathing room */
       .hero-showcase-card {
         background: transparent !important;
         border: none !important;
@@ -3890,18 +3918,18 @@
         padding: 0 !important;
         display: flex !important;
         flex-direction: column !important;
-        gap: 12px !important;
+        gap: 24px !important; /* 24px breathing room between Photo Card and Featured Card */
         width: 100% !important;
         transform: none !important;
       }
 
-      /* CARD 1: Large Hero Image Card */
+      /* COMPONENT 1: Standalone Hero Image Card */
       .portrait-box {
         width: 100% !important;
-        height: 270px !important;
+        height: 280px !important;
         aspect-ratio: unset !important;
         border-radius: 26px !important;
-        box-shadow: 0 16px 36px -8px rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(255, 255, 255, 0.8) inset !important;
+        box-shadow: 0 14px 34px -8px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.8) inset !important;
         border: 1px solid rgba(230, 229, 226, 0.95) !important;
         overflow: hidden !important;
         position: relative !important;
@@ -3911,36 +3939,43 @@
         width: 100% !important;
         height: 100% !important;
         object-fit: cover !important;
-        object-position: center 25% !important;
+        object-position: center 25% !important; /* Wildan's face perfectly centered in focal area */
       }
       .portrait-badge-top {
-        top: 0.75rem !important;
-        right: 0.75rem !important;
+        top: 0.85rem !important;
+        right: 0.85rem !important;
         font-size: 0.65rem !important;
-        padding: 0.3rem 0.65rem !important;
+        padding: 0.28rem 0.65rem !important;
+        border-radius: var(--radius-pill) !important;
+      }
+      .portrait-badge-top .pulse-dot {
+        width: 6px !important;
+        height: 6px !important;
       }
       .portrait-caption-bottom {
-        bottom: 0.75rem !important;
-        left: 0.85rem !important;
-        right: 0.85rem !important;
+        bottom: 0.85rem !important;
+        left: 0.95rem !important;
+        right: 0.95rem !important;
       }
       .portrait-name {
         font-size: 1.15rem !important;
         font-weight: 600 !important;
         line-height: 1.1 !important;
+        color: #ffffff !important;
       }
       .portrait-title {
         font-size: 0.62rem !important;
-        letter-spacing: 0.04em !important;
+        letter-spacing: 0.05em !important;
+        color: rgba(255, 255, 255, 0.85) !important;
       }
 
-      /* CARD 2: Featured Content Card (Carousel Dock) below image */
+      /* COMPONENT 2: Standalone Featured Capability Card */
       .hero-carousel-dock {
-        border-radius: 18px !important;
+        border-radius: 20px !important;
         background: rgba(255, 255, 255, 0.95) !important;
         border: 1px solid rgba(230, 229, 226, 0.95) !important;
-        box-shadow: 0 8px 24px -6px rgba(0, 0, 0, 0.06), 0 0 0 1px rgba(255, 255, 255, 0.9) inset !important;
-        padding: 0.65rem 0.75rem !important;
+        box-shadow: 0 8px 24px -6px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(255, 255, 255, 0.9) inset !important;
+        padding: 0.75rem 0.85rem !important;
         display: flex !important;
         gap: 0.65rem !important;
         align-items: center !important;
@@ -3961,43 +3996,49 @@
       }
       .hero-card-caption {
         font-size: 0.6rem !important;
+        color: rgba(17, 17, 17, 0.5) !important;
       }
       .hero-card-title {
         font-size: 0.78rem !important;
+        font-weight: 600 !important;
       }
 
-      /* 8. Trusted by Leading Brands: generous spacing & natural wrap */
+      /* 8. Trusted by Leading Brands: 32px breathing room, natural wrapping */
       .hero-partners-wrap {
-        margin-top: 1.5rem !important;
+        margin-top: 2rem !important; /* 32px breathing room */
         width: 100% !important;
         display: flex !important;
         flex-direction: column !important;
-        gap: 0.5rem !important;
+        gap: 0.6rem !important;
         align-items: flex-start !important;
       }
       .hero-partners-label {
         font-size: 0.65rem !important;
-        letter-spacing: 0.05em !important;
-        color: rgba(17, 17, 17, 0.5) !important;
+        letter-spacing: 0.06em !important;
+        text-transform: uppercase !important;
+        color: rgba(17, 17, 17, 0.45) !important;
       }
       .hero-partners-pills {
         display: flex !important;
         flex-wrap: wrap !important;
-        gap: 0.35rem !important;
+        gap: 6px !important;
         justify-content: flex-start !important;
       }
       .partner-pill {
-        font-size: 0.68rem !important;
-        padding: 0.2rem 0.5rem !important;
+        font-size: 0.7rem !important;
+        padding: 0.22rem 0.55rem !important;
         border-radius: var(--radius-pill) !important;
-        background: rgba(255, 255, 255, 0.85) !important;
+        background: rgba(255, 255, 255, 0.9) !important;
         border: 1px solid var(--line) !important;
       }
 
-      /* 9. Bottom Status bar */
+      /* 9. Bottom Status bar: clean editorial transition */
       .hero-status-bar {
-        padding-block: 0.65rem !important;
+        margin-top: 1.75rem !important;
+        padding-block: 0.75rem !important;
         font-size: 0.72rem !important;
+        letter-spacing: 0.05em !important;
+        text-transform: uppercase !important;
         display: flex !important;
         align-items: center !important;
         justify-content: space-between !important;
@@ -4005,22 +4046,33 @@
       }
     }
 
-    /* Extra small phones (<= 360px) */
+    /* Extra small phones (<= 360px): intentional stacked CTA */
     @media (max-width: 360px) {
       .hero-title {
-        font-size: clamp(1.5rem, 7.5vw, 1.85rem) !important;
+        font-size: clamp(1.45rem, 7.5vw, 1.75rem) !important;
       }
       .hero-right {
         max-width: 290px !important;
       }
       .portrait-box {
-        height: 240px !important;
+        height: 250px !important;
+      }
+      .hero-ctas {
+        flex-direction: column !important;
+        width: 100% !important;
+      }
+      .hero-ctas .btn-pill {
+        width: 100% !important;
+      }
+      .hero-ctas .pill-inner {
+        width: 100% !important;
+        justify-content: center !important;
       }
     }
 
     /* ==========================================================================
-       RESPONSIVE DESIGN SYSTEM: TABLET (640px - 1023px)
-       Intentionally composed two-column layout.
+       FINAL VISUAL REFINEMENT: TABLET (640px - 1023px)
+       Two-Column Balanced Composition System
        ========================================================================== */
     @media (min-width: 640px) and (max-width: 1023px) {
 
@@ -4033,71 +4085,84 @@
       }
 
       .hero-watermark {
-        font-size: clamp(5rem, 12vw, 8rem) !important;
+        font-size: clamp(5.5rem, 13vw, 8.5rem) !important;
         bottom: 1.5rem !important;
-        opacity: 0.04 !important;
+        opacity: 0.035 !important;
         overflow: hidden !important;
         max-width: 100% !important;
+        pointer-events: none !important;
       }
 
       .hero-shell {
         display: grid !important;
-        grid-template-columns: minmax(0, 1fr) minmax(280px, 320px) !important;
-        gap: 2.5rem !important;
+        grid-template-columns: minmax(0, 1fr) minmax(300px, 340px) !important;
+        gap: 2.75rem !important;
         align-items: center !important;
-        padding-top: 2.75rem !important;
-        padding-bottom: 2.75rem !important;
+        padding-top: 3rem !important;
+        padding-bottom: 3rem !important;
         flex-direction: unset !important;
       }
 
       .hero-left {
         grid-column: 1 !important;
-        gap: 1.15rem !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 1.2rem !important;
         min-width: 0 !important;
       }
 
       .hero-title {
-        font-size: clamp(1.85rem, 3.8vw, 2.5rem) !important;
-        line-height: 1.05 !important;
+        font-size: clamp(2rem, 3.8vw, 2.6rem) !important;
+        line-height: 1.04 !important;
         max-width: 100% !important;
+        letter-spacing: -0.028em !important;
       }
 
       .hero-subtitle {
         font-size: 0.92rem !important;
-        max-width: 36ch !important;
+        max-width: 38ch !important;
         line-height: 1.55 !important;
+        color: rgba(17, 17, 17, 0.65) !important;
       }
 
       .hero-floating-skills {
-        gap: 0.35rem !important;
+        display: flex !important;
+        flex-wrap: wrap !important;
+        gap: 8px !important;
       }
       .skill-pill {
-        font-size: 0.75rem !important;
-        padding: 0.3rem 0.65rem !important;
+        font-size: 0.76rem !important;
+        padding: 0.32rem 0.7rem !important;
       }
 
       .hero-right {
         grid-column: 2 !important;
         width: 100% !important;
-        max-width: 320px !important;
-        align-items: flex-end !important;
-        gap: 0.85rem !important;
+        max-width: 340px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 1rem !important;
       }
 
       .hero-showcase-card {
         width: 100% !important;
         padding: 0.85rem !important;
-        border-radius: var(--radius-card) !important;
+        border-radius: 28px !important;
         background: rgba(255, 255, 255, 0.92) !important;
         border: 1px solid rgba(230, 229, 226, 0.95) !important;
         box-shadow: 0 20px 50px -12px rgba(0,0,0,0.1) !important;
+        display: flex !important;
+        flex-direction: column !important;
         gap: 0.75rem !important;
       }
 
       .portrait-box {
-        aspect-ratio: 4 / 4.5 !important;
-        max-height: 360px !important;
-        border-radius: var(--radius-card-sm) !important;
+        height: 340px !important;
+        aspect-ratio: unset !important;
+        border-radius: 20px !important;
+        overflow: hidden !important;
+        position: relative !important;
       }
 
       .portrait-photo {
@@ -4105,16 +4170,23 @@
       }
 
       .hero-carousel-dock {
-        padding: 0.6rem 0.75rem !important;
+        padding: 0.65rem 0.8rem !important;
       }
 
       .hero-partners-wrap {
         width: 100% !important;
+        margin-top: 1rem !important;
+        display: flex !important;
+        flex-direction: column !important;
         align-items: flex-end !important;
+        gap: 0.5rem !important;
       }
 
       .hero-partners-pills {
         justify-content: flex-end !important;
+        display: flex !important;
+        flex-wrap: wrap !important;
+        gap: 6px !important;
       }
 
       .hero-status-bar {
