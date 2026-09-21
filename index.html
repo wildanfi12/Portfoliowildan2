@@ -3725,6 +3725,174 @@
         height: 3rem;
       }
     }
+
+    /* ==========================================================================
+       RESPONSIVE: HERO SECTION — MOBILE (≤639px)
+       Desktop layout is 100% untouched. Only mobile overrides here.
+       ========================================================================== */
+    @media (max-width: 639px) {
+
+      /* Reduce hero section vertical padding */
+      .hero-shell {
+        padding-top: 1.25rem;
+        padding-bottom: 1.5rem;
+        gap: 1.25rem;
+      }
+
+      /* Headline: tighter, scaled for small screens */
+      .hero-title {
+        font-size: clamp(1.65rem, 8vw, 2.2rem);
+        max-width: 100%;
+        line-height: 1.08;
+      }
+
+      /* Description: shorter max-width, comfortable read */
+      .hero-subtitle {
+        font-size: 0.875rem;
+        max-width: 32ch;
+        line-height: 1.5;
+      }
+
+      /* Skill pills: tighter gap, slightly smaller text */
+      .hero-floating-skills {
+        gap: 0.3rem;
+      }
+      .skill-pill {
+        font-size: 0.72rem;
+        padding: 0.28rem 0.6rem;
+        gap: 0.3rem;
+      }
+
+      /* Rating row: compact */
+      .stars-group {
+        font-size: 0.85rem;
+      }
+      .rating-text {
+        font-size: 0.78rem;
+      }
+
+      /* CTA buttons: proportional, not too tall */
+      .hero-ctas {
+        gap: 0.5rem;
+      }
+
+      /* Right column: constrain on mobile so image doesn't dominate */
+      .hero-right {
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
+      }
+
+      /* Portrait box: cap aspect ratio so photo doesn't fill entire screen */
+      .portrait-box {
+        aspect-ratio: 4 / 4.2;
+      }
+
+      /* Carousel dock: slightly more compact */
+      .hero-carousel-dock {
+        padding: 0.55rem 0.65rem;
+        gap: 0.6rem;
+      }
+      .carousel-spark-tile {
+        width: 2.75rem;
+        height: 2.75rem;
+      }
+      .hero-card-title {
+        font-size: 0.8rem;
+      }
+      .hero-card-caption {
+        font-size: 0.6rem;
+      }
+
+      /* Partner pills: tighter wrap */
+      .hero-partners-pills {
+        gap: 0.28rem;
+      }
+      .partner-pill {
+        font-size: 0.68rem;
+        padding: 0.18rem 0.45rem;
+      }
+      .hero-partners-label {
+        font-size: 0.65rem;
+      }
+
+      /* Status bar bottom: compact */
+      .hero-status-bar {
+        padding-block: 0.65rem;
+        font-size: 0.75rem;
+      }
+
+      /* Eyebrow badge: slightly smaller */
+      .eyebrow-dark {
+        font-size: 0.72rem;
+      }
+
+      /* Prevent hero watermark overflow */
+      .hero-watermark {
+        font-size: clamp(3.5rem, 20vw, 5rem);
+        overflow: hidden;
+        bottom: 1rem;
+      }
+    }
+
+    /* Very small screens (≤374px) — extra refinements */
+    @media (max-width: 374px) {
+      .hero-title {
+        font-size: clamp(1.5rem, 9vw, 1.9rem);
+      }
+      .hero-right {
+        max-width: 260px;
+      }
+      .portrait-box {
+        aspect-ratio: 4 / 3.8;
+      }
+    }
+
+    /* ==========================================================================
+       RESPONSIVE: HERO SECTION — TABLET (640px–1023px)
+       ========================================================================== */
+    @media (min-width: 640px) and (max-width: 1023px) {
+
+      /* Tablet hero shell: row layout with better proportions */
+      .hero-shell {
+        padding-top: 2.25rem;
+        padding-bottom: 2.5rem;
+        gap: 1.75rem;
+        align-items: flex-start;
+      }
+
+      /* Headline scales nicely on tablet */
+      .hero-title {
+        font-size: clamp(1.9rem, 4.5vw, 3rem);
+      }
+
+      /* Right column: proportional on different tablet widths */
+      .hero-right {
+        width: clamp(220px, 36%, 310px);
+        flex-shrink: 0;
+      }
+
+      /* Portrait photo: consistent focal point */
+      .portrait-box {
+        aspect-ratio: 4 / 4.5;
+      }
+
+      /* Partner pills: wrap evenly */
+      .hero-partners-pills {
+        justify-content: flex-start;
+      }
+    }
+
+    /* iPad Air / Pro (820px–1023px): fine-tune right column */
+    @media (min-width: 820px) and (max-width: 1023px) {
+      .hero-right {
+        width: clamp(260px, 34%, 320px);
+      }
+      .hero-shell {
+        padding-top: 2.75rem;
+        padding-bottom: 3rem;
+      }
+    }
   </style>
 </head>
 <body>
