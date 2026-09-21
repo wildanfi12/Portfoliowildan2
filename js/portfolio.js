@@ -2689,33 +2689,6 @@ const PROJECTS = [
     ]
   },
 
-  {
-    id: 'video-editing-andrey-howell-shoots-ai',
-    title: 'Howell Product Shoots — AI Commercial Video',
-    category: 'video',
-    categoryName: 'Video Editing & Motion',
-    client: 'PT. Howell Niaga Indonesia',
-    metric: '1 Video Commercial & Motion Aset',
-    thumbnail: 'assets/andrey-video-editing/howell-shoots-ai/Mark.mp4',
-    shortDesc: 'Folder Video Editing PT. Howell Niaga Indonesia — 1 Aset Video Commercial, Shorts/Reels & Sound Design.',
-    fullDesc: 'Folder koleksi resmi Video Editing untuk PT. Howell Niaga Indonesia dari folder Video Editing/ANDREY. Berisi 1 aset video komersial, fast-cut editing, kinetic titles, color grading, dan sound design.',
-    challenge: 'Mengemas visual cerita & momen PT. Howell Niaga Indonesia menjadi video promosi berenergi tinggi dengan retensi penonton maksimal.',
-    solution: 'Editing video ritmis dengan potongan lagu trending, animasi teks kinetik, dan penyelarasan warna profesional.',
-    results: [
-      '1 Aset Video Editing Resmi Terintegrasi di Folder PT. Howell Niaga Indonesia',
-      'Digunakan untuk tayangan media sosial Instagram Reels, TikTok, YouTube Shorts & Ads'
-    ],
-    tools: ['Premiere Pro', 'After Effects', 'CapCut Pro', 'DaVinci Resolve'],
-    embedVideo: 'assets/andrey-video-editing/howell-shoots-ai/Mark.mp4',
-    items: [
-      {
-        name: 'PT. Howell Niaga Indonesia — Commercial Video Clip 1',
-        img: 'assets/andrey-video-editing/howell-shoots-ai/Mark.mp4',
-        video: 'assets/andrey-video-editing/howell-shoots-ai/Mark.mp4',
-        desc: 'Video komersial & editing ritmis Mark.mp4.'
-      }
-    ]
-  },
 
   {
     id: 'video-editing-andrey-kucingkerja-reels',
@@ -3021,67 +2994,6 @@ const PROJECTS = [
     ]
   },
 
-  {
-    id: 'video-editing-andrey-se-indonesia-short',
-    title: 'Se_Indonesia — AI Short Clip',
-    category: 'video',
-    categoryName: 'Video Editing & Motion',
-    client: 'Se_Indonesia',
-    metric: '1 Video Commercial & Motion Aset',
-    thumbnail: 'assets/andrey-video-editing/se-indonesia-short/Food_Video_Generation_From_Prompts.mp4',
-    shortDesc: 'Folder Video Editing Se_Indonesia — 1 Aset Video Commercial, Shorts/Reels & Sound Design.',
-    fullDesc: 'Folder koleksi resmi Video Editing untuk Se_Indonesia dari folder Video Editing/ANDREY. Berisi 1 aset video komersial, fast-cut editing, kinetic titles, color grading, dan sound design.',
-    challenge: 'Mengemas visual cerita & momen Se_Indonesia menjadi video promosi berenergi tinggi dengan retensi penonton maksimal.',
-    solution: 'Editing video ritmis dengan potongan lagu trending, animasi teks kinetik, dan penyelarasan warna profesional.',
-    results: [
-      '1 Aset Video Editing Resmi Terintegrasi di Folder Se_Indonesia',
-      'Digunakan untuk tayangan media sosial Instagram Reels, TikTok, YouTube Shorts & Ads'
-    ],
-    tools: ['Premiere Pro', 'After Effects', 'CapCut Pro', 'DaVinci Resolve'],
-    embedVideo: 'assets/andrey-video-editing/se-indonesia-short/Food_Video_Generation_From_Prompts.mp4',
-    items: [
-      {
-        name: 'Se_Indonesia — Commercial Video Clip 1',
-        img: 'assets/andrey-video-editing/se-indonesia-short/Food_Video_Generation_From_Prompts.mp4',
-        video: 'assets/andrey-video-editing/se-indonesia-short/Food_Video_Generation_From_Prompts.mp4',
-        desc: 'Video komersial & editing ritmis Food_Video_Generation_From_Prompts.mp4.'
-      }
-    ]
-  },
-
-  {
-    id: 'video-editing-andrey-shoe-product-beauty',
-    title: 'Shoe Product Beauty Shoots — AI Motion',
-    category: 'video',
-    categoryName: 'Video Editing & Motion',
-    client: 'Shoe Product AI',
-    metric: '2 Video Commercial & Motion Aset',
-    thumbnail: 'assets/andrey-video-editing/shoe-product-beauty/kling_20260403_作品__00_00___0_5553_0.mp4',
-    shortDesc: 'Folder Video Editing Shoe Product AI — 2 Aset Video Commercial, Shorts/Reels & Sound Design.',
-    fullDesc: 'Folder koleksi resmi Video Editing untuk Shoe Product AI dari folder Video Editing/ANDREY. Berisi 2 aset video komersial, fast-cut editing, kinetic titles, color grading, dan sound design.',
-    challenge: 'Mengemas visual cerita & momen Shoe Product AI menjadi video promosi berenergi tinggi dengan retensi penonton maksimal.',
-    solution: 'Editing video ritmis dengan potongan lagu trending, animasi teks kinetik, dan penyelarasan warna profesional.',
-    results: [
-      '2 Aset Video Editing Resmi Terintegrasi di Folder Shoe Product AI',
-      'Digunakan untuk tayangan media sosial Instagram Reels, TikTok, YouTube Shorts & Ads'
-    ],
-    tools: ['Premiere Pro', 'After Effects', 'CapCut Pro', 'DaVinci Resolve'],
-    embedVideo: 'assets/andrey-video-editing/shoe-product-beauty/kling_20260403_作品__00_00___0_5553_0.mp4',
-    items: [
-      {
-        name: 'Shoe Product AI — Commercial Video Clip 1',
-        img: 'assets/andrey-video-editing/shoe-product-beauty/kling_20260403_作品__00_00___0_5553_0.mp4',
-        video: 'assets/andrey-video-editing/shoe-product-beauty/kling_20260403_作品__00_00___0_5553_0.mp4',
-        desc: 'Video komersial & editing ritmis kling_20260403_作品__00_00___0_5553_0.mp4.'
-      },
-      {
-        name: 'Shoe Product AI — Commercial Video Clip 2',
-        img: 'assets/andrey-video-editing/shoe-product-beauty/kling_20260403_作品__00_00___0_5553_0.mp4',
-        video: 'assets/andrey-video-editing/shoe-product-beauty/Shoe_Product_Video_Generation.mp4',
-        desc: 'Video komersial & editing ritmis Shoe_Product_Video_Generation.mp4.'
-      }
-    ]
-  },
 
 
   // --- AI DESIGN FOLDER (PER-BRAND CARDS) ---
@@ -3449,153 +3361,237 @@ const PROJECTS = [
 
   {
     id: 'motion-graphics-coca-cola',
-    title: 'Coca-Cola',
+    title: 'Motion Coca-Cola Commercial Ads',
     category: 'motion',
     categoryName: 'Motion Graphics',
     client: 'Coca-Cola',
-    metric: '4 Video Motion Commercial Aset',
-    thumbnail: 'assets/coca-cola-motion/kling_1.mp4',
-    shortDesc: 'Folder Motion Graphics Coca-Cola — 4 Animasi Video Motion Ads, VEO 3.1, Dreamina & Kling 3.0 Commercial Renders.',
-    fullDesc: 'Folder koleksi resmi Motion Graphics untuk Coca-Cola dari folder assets/Motion/Coca Cola Commercial Ads. Di dalamnya berisi 4 aset animasi video motion graphics komersial iklan minuman bersoda Coca-Cola menggunakan AI VEO 3.1, Dreamina, dan generasi motion Kling 3.0.',
+    metric: '4 Video Motion Commercial • Bunny Stream',
+    thumbnail: 'assets/motion-coca-cola/coca_cola_1.jpg',
+    shortDesc: 'Folder Motion Graphics Coca-Cola Commercial Ads — 4 Video Motion Ads (Kling 3.0, Dreamina Cold Intro, VEO 3.1) via Bunny Stream CDN.',
+    fullDesc: 'Folder koleksi resmi Motion Graphics untuk Motion Coca-Cola Commercial Ads yang terhubung langsung ke Bunny Stream CDN. Di dalamnya berisi 4 aset animasi video motion graphics komersial iklan minuman bersoda Coca-Cola menggunakan Kling 3.0, Dreamina Cold Intro, dan AI VEO 3.1.',
     challenge: 'Membuat animasi iklan komersial Coca-Cola yang dinamis dengan elemen cairan menyegarkan, pencahayaan es krispi, dan motion ritmis.',
-    solution: 'Generasi video motion AI VEO 3.1 & Kling 3.0, penggabungan elemen efek komersial, dan penyelarasan warna brand Coca-Cola merah krispi.',
+    solution: 'Integrasi video streaming melalui Bunny Stream CDN berkecepatan tinggi, generasi video motion AI Kling 3.0 & VEO 3.1, penggabungan elemen efek komersial, dan penyelarasan warna brand Coca-Cola merah krispi.',
     results: [
-      '4 Aset Motion Graphics Video Commercial Resmi Terintegrasi di Folder Coca-Cola',
+      '4 Aset Video Motion Graphics Commercial Resmi Terkoneksi ke Bunny Stream CDN (Library ID: 756896)',
+      'Streaming Cepat Kualitas HD Bebas Buffering & Bebas Iklan',
       'Digunakan untuk tayangan promosi kampanye periklanan digital Coca-Cola'
     ],
-    tools: ['After Effects', 'Premiere Pro', 'VEO 3.1', 'Kling AI'],
-    embedVideo: 'assets/coca-cola-motion/kling_1.mp4',
+    tools: ['After Effects', 'Premiere Pro', 'Kling AI', 'VEO 3.1', 'Bunny Stream'],
+    bunnyVideoId: '2b2e4dd9-7006-4b95-9039-4f535b2bf61a',
+    bunnyLibraryId: '756896',
+    embedVideo: 'https://iframe.mediadelivery.net/embed/756896/2b2e4dd9-7006-4b95-9039-4f535b2bf61a',
     items: [
       {
-        name: 'Coca-Cola — Tempting Intro Cold Refreshment Dreamina',
-        img: 'assets/coca-cola-motion/cover.png',
-        video: 'assets/coca-cola-motion/dreamina_1.mp4',
-        desc: 'Animasi motion graphics intro menyegarkan iklan Coca-Cola Dreamina.'
+        name: 'Kling 3.0 #2.mp4',
+        img: 'assets/motion-coca-cola/coca_cola_1.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/2b2e4dd9-7006-4b95-9039-4f535b2bf61a',
+        desc: 'Kling 3.0 #2.mp4 — Animasi motion graphics iklan komersial Coca-Cola Kling 3.0 edisi 2.'
       },
       {
-        name: 'Coca-Cola — Motion Commercial Ad Kling 3.0 Part 1',
-        img: 'assets/coca-cola-motion/cover.png',
-        video: 'assets/coca-cola-motion/kling_1.mp4',
-        desc: 'Animasi motion graphics iklan komersial Coca-Cola Kling 3.0 edisi 1.'
+        name: 'Kling 3.0 #1.mp4',
+        img: 'assets/motion-coca-cola/coca_cola_2.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/ffd06187-495d-4367-802b-b2a9f9a14786',
+        desc: 'Kling 3.0 #1.mp4 — Animasi motion graphics iklan komersial Coca-Cola Kling 3.0 edisi 1.'
       },
       {
-        name: 'Coca-Cola — Motion Commercial Ad Kling 3.0 Part 2',
-        img: 'assets/coca-cola-motion/cover.png',
-        video: 'assets/coca-cola-motion/kling_2.mp4',
-        desc: 'Animasi motion graphics iklan komersial Coca-Cola Kling 3.0 edisi 2.'
+        name: 'dreamina-2026-04-03-6623-[Detik 0–2] – TEMPTING INTRO (COLD FEEL)....mp4',
+        img: 'assets/motion-coca-cola/coca_cola_3.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/f60f74ef-c15d-4dc3-a66f-284e00838f92',
+        desc: 'dreamina-2026-04-03-6623-[Detik 0–2] – TEMPTING INTRO (COLD FEEL)....mp4 — Animasi intro tempting cold refreshment iklan Coca-Cola Dreamina.'
       },
       {
-        name: 'Coca-Cola — Motion Commercial Ad VEO 3.1 Renders',
-        img: 'assets/coca-cola-motion/cover.png',
-        video: 'assets/coca-cola-motion/veo_3_1.mp4',
-        desc: 'Animasi motion graphics iklan komersial Coca-Cola generasi VEO 3.1.'
+        name: 'VEO 3.1.mp4',
+        img: 'assets/motion-coca-cola/coca_cola_4.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/0e71e3f0-8e13-41e7-b500-bc7613f91013',
+        desc: 'VEO 3.1.mp4 — Animasi motion graphics iklan komersial Coca-Cola generasi VEO 3.1.'
       }
     ]
   },
 
   {
     id: 'motion-graphics-se-indonesia',
-    title: 'Se_Indonesia',
+    title: 'Motion Se_Indonesia',
     category: 'motion',
     categoryName: 'Motion Graphics',
     client: 'Se_Indonesia',
-    metric: '1 Video Motion Short Clip Aset',
-    thumbnail: 'assets/se-indonesia-motion/se_indonesia_motion.mp4',
-    shortDesc: 'Folder Motion Graphics Se_Indonesia — 1 Video Motion Commercial Short Clip, Food Motion & Sound Design.',
-    fullDesc: 'Folder koleksi resmi Motion Graphics untuk Se_Indonesia dari folder assets/Motion/Se_Indonesia AI Short Clip. Di dalamnya berisi 1 aset video motion graphics promosi produk kuliner Se_Indonesia dengan motion typography kinetik dan efek visual makanan ber-retensi tinggi.',
+    metric: '1 Video Motion Commercial • Bunny Stream',
+    thumbnail: 'assets/motion-se-indonesia/se_indonesia_motion_1.jpg',
+    shortDesc: 'Folder Motion Graphics Se_Indonesia — 1 Video Motion Commercial Short Clip, Food Motion AI via Bunny Stream CDN.',
+    fullDesc: 'Folder koleksi resmi Motion Graphics untuk Motion Se_Indonesia yang terhubung langsung ke Bunny Stream CDN. Di dalamnya berisi 1 aset video motion graphics promosi produk kuliner Se_Indonesia dengan motion typography kinetik, efek visual makanan ber-retensi tinggi, dan AI food motion.',
     challenge: 'Mengemas visual cerita & animasi gerakan makanan Se_Indonesia menjadi tayangan promosi berenergi tinggi.',
-    solution: 'Editing motion ritmis, generasi AI food motion, animasi judul kinetik, dan penyelarasan warna profesional.',
+    solution: 'Integrasi video streaming via Bunny Stream CDN berkecepatan tinggi, editing motion ritmis, generasi AI food motion, animasi judul kinetik, dan penyelarasan warna profesional.',
     results: [
-      '1 Aset Motion Graphics Video Commercial Resmi Terintegrasi di Folder Se_Indonesia',
+      '1 Aset Video Motion Graphics Commercial Resmi Terkoneksi ke Bunny Stream CDN (Library ID: 756896)',
+      'Streaming Cepat Kualitas HD Bebas Buffering & Bebas Iklan',
       'Digunakan untuk publikasi media sosial & kampanye promosi Se_Indonesia'
     ],
-    tools: ['After Effects', 'Premiere Pro', 'CapCut Pro'],
-    embedVideo: 'assets/se-indonesia-motion/se_indonesia_motion.mp4',
+    tools: ['After Effects', 'Premiere Pro', 'CapCut Pro', 'Bunny Stream'],
+    bunnyVideoId: '51314ab1-a392-4c5f-834a-549411e5e3d8',
+    bunnyLibraryId: '756896',
+    embedVideo: 'https://iframe.mediadelivery.net/embed/756896/51314ab1-a392-4c5f-834a-549411e5e3d8',
     items: [
       {
-        name: 'Se_Indonesia — Food Motion Video Commercial Short',
-        img: 'assets/se-indonesia-motion/se_indonesia_motion.mp4',
-        video: 'assets/se-indonesia-motion/se_indonesia_motion.mp4',
-        desc: 'Video motion graphics komersial food motion Se_Indonesia.'
+        name: 'Food_Video_Generation_From_Prompts.mp4',
+        img: 'assets/motion-se-indonesia/se_indonesia_motion_1.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/51314ab1-a392-4c5f-834a-549411e5e3d8',
+        desc: 'Food_Video_Generation_From_Prompts.mp4 — Video motion graphics komersial food motion Se_Indonesia dari generasi AI prompt.'
       }
     ]
   },
 
   {
     id: 'motion-graphics-shoe-product',
-    title: 'Shoe Product AI',
+    title: 'Motion Shoe Product Beauty Shoots',
     category: 'motion',
     categoryName: 'Motion Graphics',
     client: 'Shoe Product AI',
-    metric: '2 Video Motion Beauty Shoots Aset',
-    thumbnail: 'assets/shoe-product-motion/shoe_kling_1.mp4',
-    shortDesc: 'Folder Motion Graphics Shoe Product AI — 2 Video Motion Beauty Shoots, Commercial Footwear & Dynamic Camera Renders.',
-    fullDesc: 'Folder koleksi resmi Motion Graphics untuk Shoe Product AI dari folder assets/Motion/Shoe Product Beauty Shoots AI. Di dalamnya berisi 2 aset animasi video motion graphics komersial iklan produk sepatu dengan pergerakan kamera sinematik 3D dan generasi motion Kling AI.',
+    metric: '2 Video Motion Beauty Shoots • Bunny Stream',
+    thumbnail: 'assets/motion-shoe-product/shoe_motion_1.jpg',
+    shortDesc: 'Folder Motion Graphics Shoe Product Beauty Shoots — 2 Video Motion Beauty Shoots Footwear AI via Bunny Stream CDN.',
+    fullDesc: 'Folder koleksi resmi Motion Graphics untuk Motion Shoe Product Beauty Shoots yang terhubung langsung ke Bunny Stream CDN. Di dalamnya berisi 2 aset animasi video motion graphics komersial iklan produk sepatu dengan pergerakan kamera sinematik 3D dan generasi motion AI (Kling AI).',
     challenge: 'Menciptakan animasi gerakan produk sepatu berestetika tinggi dengan efek pencahayaan studio dan dynamic camera roll.',
-    solution: 'Generasi video motion produk Kling AI, keyframing pergerakan kamera sinematik, dan sound design ritmis.',
+    solution: 'Integrasi video streaming melalui Bunny Stream CDN berkecepatan tinggi, generasi video motion produk Kling AI, keyframing pergerakan kamera sinematik, dan sound design ritmis.',
     results: [
-      '2 Aset Motion Graphics Video Commercial Resmi Terintegrasi di Folder Shoe Product AI',
+      '2 Aset Video Motion Graphics Commercial Resmi Terkoneksi ke Bunny Stream CDN (Library ID: 756896)',
+      'Streaming Cepat Kualitas HD Bebas Buffering & Bebas Iklan',
       'Digunakan untuk promosi produk sepatu di media sosial & e-commerce'
     ],
-    tools: ['After Effects', 'Kling AI', 'Premiere Pro'],
-    embedVideo: 'assets/shoe-product-motion/shoe_kling_1.mp4',
+    tools: ['After Effects', 'Kling AI', 'Premiere Pro', 'Bunny Stream'],
+    bunnyVideoId: '7aabeaf6-a16e-45af-b324-e15917b44695',
+    bunnyLibraryId: '756896',
+    embedVideo: 'https://iframe.mediadelivery.net/embed/756896/7aabeaf6-a16e-45af-b324-e15917b44695',
     items: [
       {
-        name: 'Shoe Product AI — Beauty Shoots Motion Video 1',
-        img: 'assets/shoe-product-motion/shoe_kling_1.mp4',
-        video: 'assets/shoe-product-motion/shoe_kling_1.mp4',
-        desc: 'Animasi motion graphics 3D beauty shoots produk sepatu edisi Kling 1.'
+        name: 'Shoe_Product_Video_Generation.mp4',
+        img: 'assets/motion-shoe-product/shoe_motion_1.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/7aabeaf6-a16e-45af-b324-e15917b44695',
+        desc: 'Shoe_Product_Video_Generation.mp4 — Animasi 3D beauty shoots motion showcase produk sepatu footwear.'
       },
       {
-        name: 'Shoe Product AI — Beauty Shoots Motion Video 2',
-        img: 'assets/shoe-product-motion/shoe_generation.mp4',
-        video: 'assets/shoe-product-motion/shoe_generation.mp4',
-        desc: 'Animasi motion graphics 3D commercial product sepatu generasi AI 2.'
+        name: 'kling_20260403_作品__00_00___0_5553_0.mp4',
+        img: 'assets/motion-shoe-product/shoe_motion_2.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/87a2c326-5fc6-4196-8c22-18a011c470a9',
+        desc: 'kling_20260403_作品__00_00___0_5553_0.mp4 — Animasi motion graphics commercial produk sepatu generasi Kling AI.'
       }
     ]
   },
   {
     id: 'motion-graphics-howell',
-    title: 'PT. Howell Niaga Indonesia',
+    title: 'Motion Howell',
     category: 'motion',
     categoryName: 'Motion Graphics',
     client: 'PT. Howell Niaga Indonesia',
-    metric: '4 Video Motion Graphics Commercial',
-    thumbnail: 'assets/howell-motion/1_adapter_hdmi_8k.mp4',
-    shortDesc: 'Folder Motion Graphics Howell — 4 Animasi Video Motion 3D/2D Product Showcase, Promo Banner & Cable Specs.',
-    fullDesc: 'Folder koleksi resmi Motion Graphics untuk PT. Howell Niaga Indonesia dari folder assets/Motion/Howell. Di dalamnya berisi 4 aset animasi video motion graphics komersial meliputi 3D Product Motion Video Adapter HDMI 8K (ADP008), Animasi Spesifikasi Cable HDMI (H0103), Motion Poster Video Promosi, serta Animasi Spesifikasi Kabel USB A to Micro USB (AC0601).',
+    metric: '16 Video Motion Commercial • Bunny Stream',
+    thumbnail: 'assets/motion-howell/howell_motion_1.jpg',
+    shortDesc: 'Folder Motion Graphics Howell — 16 Video Motion Commercial 3D/2D Product Showcase, Promo Megasale, Adapter & Cable Specs via Bunny Stream CDN.',
+    fullDesc: 'Folder koleksi resmi Motion Graphics untuk Motion Howell yang terhubung langsung ke Bunny Stream CDN. Di dalamnya berisi 16 aset animasi video motion graphics komersial meliputi 3D Product Motion Adapter HDMI 8K, Microphone Audio MIC002, Cable HDMI H0103, USB A to Micro USB, Poster Promo, HDMI 4in1 Splitter, Spider-Man 2 Cinematic, Box 9.9 Megasale, HUB 8in1, Type C to DP, HDMI 8K Ultra HD, LAN Gigabit, dan ragam adaptor USB Howell.',
     challenge: 'Menciptakan animasi motion graphics 3D/2D produk elektronik Howell yang dinamis, futuristik, dan menjelaskan spesifikasi teknis dengan visual menarik.',
-    solution: 'Keyframing animasi produk 3D/2D di After Effects, efek pencahayaan neon kinetik, motion typography spesifikasi produk, dan sound design futuristik.',
+    solution: 'Integrasi video streaming melalui Bunny Stream CDN berkecepatan tinggi, keyframing animasi produk 3D/2D di After Effects, efek pencahayaan neon kinetik, motion typography spesifikasi produk, dan sound design futuristik.',
     results: [
-      '4 Aset Motion Graphics Video Commercial Resmi Terintegrasi di Folder Howell',
+      '16 Aset Video Motion Graphics Commercial Resmi Terkoneksi ke Bunny Stream CDN (Library ID: 756896)',
+      'Streaming Cepat Kualitas HD Bebas Buffering & Bebas Iklan',
       'Digunakan untuk tayangan promosi marketplace, display toko fisik & kampanye digital Howell'
     ],
-    tools: ['After Effects', 'Premiere Pro', 'Cinema 4D', 'Illustrator'],
-    embedVideo: 'assets/howell-motion/1_adapter_hdmi_8k.mp4',
+    tools: ['After Effects', 'Premiere Pro', 'Cinema 4D', 'Illustrator', 'Bunny Stream'],
+    bunnyVideoId: 'bfc74b4f-d82f-4107-8afb-12b7a6d87d18',
+    bunnyLibraryId: '756896',
+    embedVideo: 'https://iframe.mediadelivery.net/embed/756896/bfc74b4f-d82f-4107-8afb-12b7a6d87d18',
     items: [
       {
-        name: 'Howell — 3D Motion Video Adapter HDMI 8K (ADP008)',
-        img: 'assets/howell-motion/1_adapter_hdmi_8k.mp4',
-        video: 'assets/howell-motion/1_adapter_hdmi_8k.mp4',
-        desc: 'Animasi motion graphics 3D commercial product Adapter HDMI 8K ADP008.'
+        name: 'Adapter HDMI 8K Adapter HDMI 8K ADP008 new.mp4',
+        img: 'assets/motion-howell/howell_motion_1.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/bfc74b4f-d82f-4107-8afb-12b7a6d87d18',
+        desc: 'Adapter HDMI 8K Adapter HDMI 8K ADP008 new.mp4 — Animasi 3D motion graphics produk Adapter HDMI 8K ADP008.'
       },
       {
-        name: 'Howell — Motion Specs Cable HDMI (H0103)',
-        img: 'assets/howell-motion/2_hdmi_h0103.mp4',
-        video: 'assets/howell-motion/2_hdmi_h0103.mp4',
-        desc: 'Animasi motion graphics spesifikasi kabel HDMI H0103.'
+        name: 'MIC002-Motion.mov',
+        img: 'assets/motion-howell/howell_motion_2.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/6d437386-d1d3-44d9-bb9b-732f68234a7b',
+        desc: 'MIC002-Motion.mov — Motion graphics showcase produk Microphone Audio MIC002.'
       },
       {
-        name: 'Howell — Motion Graphics Poster Promo Commercial',
-        img: 'assets/howell-motion/3_poster_promo.mp4',
-        video: 'assets/howell-motion/3_poster_promo.mp4',
-        desc: 'Video poster animasi motion graphics promosi produk Howell.'
+        name: 'HDMI (H0103) ai(1).mp4',
+        img: 'assets/motion-howell/howell_motion_3.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/10b0b75b-54c1-4380-8790-ca1c2e558bd7',
+        desc: 'HDMI (H0103) ai(1).mp4 — Animasi motion graphics spesifikasi teknis kabel HDMI H0103.'
       },
       {
-        name: 'Howell — Motion Specs USB A to Micro USB (AC0601)',
-        img: 'assets/howell-motion/4_usb_a_to_micro_usb.mp4',
-        video: 'assets/howell-motion/4_usb_a_to_micro_usb.mp4',
-        desc: 'Animasi motion graphics spesifikasi kabel USB A to Micro USB AC0601.'
+        name: 'USB A to Micro USB (AC0601) ai.mp4',
+        img: 'assets/motion-howell/howell_motion_4.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/182fcb5b-8254-4f64-aba8-a425a912bac7',
+        desc: 'USB A to Micro USB (AC0601) ai.mp4 — Animasi motion graphics kabel USB A to Micro USB AC0601.'
+      },
+      {
+        name: 'Poster promo .mp4',
+        img: 'assets/motion-howell/howell_motion_5.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/650316bd-7369-4611-8349-8ad6e7eeb372',
+        desc: 'Poster promo .mp4 — Video poster animasi motion graphics promosi produk Howell.'
+      },
+      {
+        name: 'HDMI 4in1 H3203-Motion.mov',
+        img: 'assets/motion-howell/howell_motion_6.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/ba3f4191-56b6-499d-938b-abaf84131ca7',
+        desc: 'HDMI 4in1 H3203-Motion.mov — Motion graphics showcase produk HDMI 4in1 Splitter H3203.'
+      },
+      {
+        name: 'spiderman 2.mp4',
+        img: 'assets/motion-howell/howell_motion_7.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/093ebb36-c33a-45c0-a5af-aea9dd820803',
+        desc: 'spiderman 2.mp4 — Animasi motion graphics cinematic gaming Spider-Man 2 produk Howell.'
+      },
+      {
+        name: 'Box 9.9 Megasale.mp4',
+        img: 'assets/motion-howell/howell_motion_8.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/e058a690-f57e-43ec-bcf5-fd86059574ef',
+        desc: 'Box 9.9 Megasale.mp4 — Motion graphics iklan promosi campaign Box 9.9 Megasale Howell.'
+      },
+      {
+        name: 'HUB 8in1 HUB801-Motion.mov',
+        img: 'assets/motion-howell/howell_motion_9.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/92927adf-cefd-4ee0-8301-ce7d83e77b30',
+        desc: 'HUB 8in1 HUB801-Motion.mov — Motion graphics showcase fitur USB HUB 8in1 HUB801.'
+      },
+      {
+        name: 'Type C to DP CDP013-motion.mov',
+        img: 'assets/motion-howell/howell_motion_10.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/d5f84043-aee7-4f4d-9f28-eb9353245757',
+        desc: 'Type C to DP CDP013-motion.mov — Motion graphics kabel konverter Type C to DisplayPort CDP013.'
+      },
+      {
+        name: 'HDMI 8K CH 0703-Motion.mov',
+        img: 'assets/motion-howell/howell_motion_11.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/dcd9c368-3a8c-4f02-90c7-25a9b2df920d',
+        desc: 'HDMI 8K CH 0703-Motion.mov — Motion graphics kabel premium HDMI 8K Ultra HD CH0703.'
+      },
+      {
+        name: 'LAN CEA001-motion(1).mov',
+        img: 'assets/motion-howell/howell_motion_12.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/da831289-6679-401f-86db-e34bd0c9241d',
+        desc: 'LAN CEA001-motion(1).mov — Motion graphics kecepatan transfer kabel LAN Gigabit CEA001.'
+      },
+      {
+        name: 'USB CEA004-Motion.mov',
+        img: 'assets/motion-howell/howell_motion_13.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/fe262244-ae02-4af0-a194-b0e5ddaaff8f',
+        desc: 'USB CEA004-Motion.mov — Motion graphics fitur dan durabilitas kabel USB CEA004.'
+      },
+      {
+        name: 'HDMI L CH0603-motion.mov',
+        img: 'assets/motion-howell/howell_motion_14.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/4b9d0c56-e47e-4db1-ba6d-9fe78e57b00d',
+        desc: 'HDMI L CH0603-motion.mov — Motion graphics siku sudut L kabel HDMI CH0603.'
+      },
+      {
+        name: 'USB A - LAN UEA001-motion.mov',
+        img: 'assets/motion-howell/howell_motion_15.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/9b3f683c-880b-498a-8501-05fdbe0dbf83',
+        desc: 'USB A - LAN UEA001-motion.mov — Motion graphics adapter USB-A to Ethernet LAN UEA001.'
+      },
+      {
+        name: 'USB UMF101- motion.mov',
+        img: 'assets/motion-howell/howell_motion_16.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/d9a6071e-bf5d-4582-ba79-f02ae90d241a',
+        desc: 'USB UMF101- motion.mov — Motion graphics kabel ekstensi USB UMF101.'
       }
     ]
   },
@@ -4284,12 +4280,75 @@ function initPortfolio() {
 
   if (!grid) return;
 
+  // Dynamic Breakpoint-aware initial & increment count
+  function getInitialCount() {
+    const w = window.innerWidth;
+    if (w >= 1200) return 12;   // Desktop: >=1200px -> 12 projects initially
+    if (w >= 768) return 8;     // Tablet: 768px-1199px -> 8 projects initially
+    return 6;                   // Mobile: <=767px -> 6 projects initially
+  }
+
+  let visibleCount = getInitialCount();
+  let currentFilter = 'all';
+
+  const showMoreWrap = document.getElementById('show-more-wrap');
+
+  function updateShowMoreControls(totalFiltered) {
+    if (!showMoreWrap) return;
+
+    const baseCount = getInitialCount();
+    const remaining = totalFiltered - visibleCount;
+
+    if (remaining > 0) {
+      showMoreWrap.innerHTML = `
+        <button class="btn-show-more" id="btn-show-more">
+          <span>Show More</span>
+          <span class="show-more-count">(${remaining} more)</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-left:0.25rem;"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+      `;
+      const btnMore = document.getElementById('btn-show-more');
+      if (btnMore) {
+        btnMore.addEventListener('click', () => {
+          visibleCount += baseCount;
+          renderProjects(currentFilter, false);
+        });
+      }
+    } else if (visibleCount > baseCount && totalFiltered > baseCount) {
+      showMoreWrap.innerHTML = `
+        <button class="btn-show-more btn-show-less" id="btn-show-less">
+          <span>Show Less</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-left:0.25rem;"><path d="M18 15l-6-6-6 6"/></svg>
+        </button>
+      `;
+      const btnLess = document.getElementById('btn-show-less');
+      if (btnLess) {
+        btnLess.addEventListener('click', () => {
+          visibleCount = baseCount;
+          renderProjects(currentFilter, false);
+          const worksSec = document.getElementById('works');
+          if (worksSec) {
+            worksSec.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        });
+      }
+    } else {
+      showMoreWrap.innerHTML = '';
+    }
+  }
+
   // Render Project Cards
-  function renderProjects(filter = 'all') {
+  function renderProjects(filter = 'all', resetCount = true) {
+    if (resetCount || filter !== currentFilter) {
+      currentFilter = filter;
+      visibleCount = getInitialCount();
+    }
+
     grid.innerHTML = '';
     const filtered = filter === 'all' ? PROJECTS : PROJECTS.filter(p => p.category === filter);
+    const visibleProjects = filtered.slice(0, visibleCount);
 
-    filtered.forEach(p => {
+    visibleProjects.forEach(p => {
       const card = document.createElement('div');
       card.className = 'glass-card project-card reveal-up revealed';
       const isCardVid = p.thumbnail.endsWith('.mp4') || p.thumbnail.endsWith('.mov');
@@ -4317,9 +4376,6 @@ function initPortfolio() {
         <div class="project-content">
           <h3 class="project-title">${p.title}</h3>
           <p class="project-desc">${p.shortDesc}</p>
-          <div class="project-tech">
-            ${p.tools.map(t => `<span class="service-tag">${t}</span>`).join('')}
-          </div>
         </div>
       `;
 
@@ -4333,18 +4389,32 @@ function initPortfolio() {
       grid.appendChild(card);
     });
 
+    updateShowMoreControls(filtered.length);
     document.querySelectorAll('.reveal-up').forEach(el => el.classList.add('revealed'));
   }
 
-  // Filter Buttons Click
+  // Filter Buttons Click - always resets count on category switch
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
       filterBtns.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
       const filter = btn.getAttribute('data-filter');
-      renderProjects(filter);
+      renderProjects(filter, true);
     });
   });
+
+  // Responsive resize handler - smoothly adjusts visible baseline if not expanded
+  let resizeTimer = null;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+      const base = getInitialCount();
+      if (visibleCount <= base) {
+        visibleCount = base;
+        renderProjects(currentFilter, false);
+      }
+    }, 250);
+  }, { passive: true });
 
 
   // Modal Open Function for Brand Folders & Artwork Assets
@@ -4443,18 +4513,11 @@ function initPortfolio() {
         </div>
       </div>
 
-      <div style="margin-bottom: 2rem;">
+      <div style="margin-bottom: 0.5rem;">
         <h4 style="margin-bottom: 0.75rem; font-size: 1rem; font-weight: 600; color: #fff;">Key Results & Metrics</h4>
         <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem;">
           ${project.results.map(r => `<li style="display: flex; align-items: center; gap: 0.6rem; color: rgba(255, 255, 255, 0.85); font-size: 0.9rem;"><span style="color: #34d399; font-weight: 700;">✓</span> ${r}</li>`).join('')}
         </ul>
-      </div>
-
-      <div>
-        <h4 style="margin-bottom: 0.75rem; font-size: 1rem; font-weight: 600; color: #fff;">Tools & Tech Stack</h4>
-        <div style="display: flex; gap: 0.4rem; flex-wrap: wrap;">
-          ${project.tools.map(t => `<span class="skill-pill" style="background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.15); color: #fff;">${t}</span>`).join('')}
-        </div>
       </div>
     `;
 

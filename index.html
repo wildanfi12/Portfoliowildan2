@@ -677,32 +677,10 @@
 
     .hero-title {
       max-width: 16ch;
-      font-size: clamp(32px, 8vw, 42px);
+      font-size: clamp(1.85rem, 5.5vw, 3.75rem);
       font-weight: 700;
       line-height: 1.05;
       letter-spacing: -0.025em;
-    }
-    @media (max-width: 360px) {
-      .hero-title {
-        font-size: 28px;
-        line-height: 1.08;
-      }
-    }
-    @media (min-width: 640px) {
-      .hero-title {
-        font-size: 2.5rem;
-        line-height: 0.98;
-      }
-    }
-    @media (min-width: 768px) {
-      .hero-title {
-        font-size: 3rem;
-      }
-    }
-    @media (min-width: 1200px) {
-      .hero-title {
-        font-size: 3.75rem;
-      }
     }
 
     .rating-row {
@@ -1410,59 +1388,121 @@
       }
     }
     .portfolio-h2 {
-      font-size: 2rem;
+      font-size: clamp(1.5rem, 5vw, 3rem);
       font-weight: 600;
       letter-spacing: -0.02em;
     }
+
+    /* Show More / Show Less button */
+    .show-more-wrap {
+      text-align: center;
+      margin-top: 2rem;
+    }
     @media (min-width: 640px) {
-      .portfolio-h2 {
-        font-size: 2.5rem;
-      }
+      .show-more-wrap { margin-top: 2.5rem; }
     }
     @media (min-width: 1024px) {
-      .portfolio-h2 {
-        font-size: 3rem;
-      }
+      .show-more-wrap { margin-top: 3rem; }
+    }
+    .btn-show-more {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      border-radius: var(--radius-pill);
+      background: var(--ink);
+      color: #fff;
+      font-size: 0.875rem;
+      font-weight: 500;
+      padding: 0.75rem 1.75rem;
+      min-height: 48px;
+      border: 1.5px solid transparent;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+      letter-spacing: -0.01em;
+    }
+    .btn-show-more:hover {
+      background: #222;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+    }
+    .btn-show-more .show-more-count {
+      font-size: 0.78rem;
+      color: rgba(255, 255, 255, 0.6);
+      font-weight: 400;
+    }
+    .btn-show-more.btn-show-less {
+      background: transparent;
+      border-color: var(--line);
+      color: rgba(17, 17, 17, 0.7);
+    }
+    .btn-show-more.btn-show-less:hover {
+      border-color: rgba(17, 17, 17, 0.4);
+      color: #111;
+      background: var(--surface);
     }
 
     /* Filter Pills Bar */
     .portfolio-filter {
       display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      overscroll-behavior-x: contain;
       gap: 0.45rem;
-      margin-bottom: 2rem;
+      margin-bottom: 1.75rem;
+      padding-bottom: 0.35rem;
+      padding-inline: 0.25rem;
+      /* Hide scrollbar visually */
+      scrollbar-width: none;
+      -ms-overflow-style: none;
     }
-    @media (min-width: 640px) {
+    .portfolio-filter::-webkit-scrollbar {
+      display: none;
+    }
+    @media (min-width: 768px) {
       .portfolio-filter {
+        flex-wrap: wrap;
+        justify-content: center;
+        overflow-x: visible;
         gap: 0.5rem;
-        margin-bottom: 3rem;
+        margin-bottom: 2.5rem;
       }
     }
     @media (min-width: 1024px) {
       .portfolio-filter {
-        margin-bottom: 3.5rem;
+        margin-bottom: 3rem;
       }
     }
     .filter-btn {
       border: 1px solid var(--line);
       border-radius: var(--radius-pill);
-      padding: 0.4rem 0.95rem;
-      font-size: 0.82rem;
+      padding: 0.38rem 0.85rem;
+      font-size: 0.8rem;
       font-weight: 500;
       background: transparent;
       color: rgba(17, 17, 17, 0.7);
-      min-height: 40px;
+      min-height: 38px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
+      white-space: nowrap;
+      flex-shrink: 0;
       transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
     @media (min-width: 640px) {
       .filter-btn {
+        padding: 0.45rem 1.1rem;
+        font-size: 0.82rem;
+        min-height: 40px;
+      }
+    }
+    @media (min-width: 768px) {
+      .filter-btn {
         padding: 0.5rem 1.25rem;
         font-size: 0.875rem;
         min-height: 44px;
+        flex-shrink: unset;
+        white-space: normal;
       }
     }
     .filter-btn:hover {
@@ -1479,18 +1519,29 @@
     /* Dynamic Portfolio Grid */
     .portfolio-grid {
       display: grid;
-      grid-template-columns: 1fr;
-      gap: 1.25rem;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.65rem;
     }
-    @media (min-width: 600px) {
+    @media (min-width: 640px) {
+      .portfolio-grid {
+        gap: 0.85rem;
+      }
+    }
+    @media (min-width: 768px) {
       .portfolio-grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 1.25rem;
+        gap: 1rem;
       }
     }
     @media (min-width: 1024px) {
       .portfolio-grid {
         grid-template-columns: repeat(3, 1fr);
+        gap: 1.25rem;
+      }
+    }
+    @media (min-width: 1200px) {
+      .portfolio-grid {
+        grid-template-columns: repeat(4, 1fr);
         gap: 1.5rem;
       }
     }
@@ -1560,31 +1611,75 @@
 
     .project-category-badge {
       position: absolute;
-      top: 1rem;
-      left: 1rem;
+      top: 0.45rem;
+      left: 0.45rem;
       z-index: 2;
       background: rgba(10, 10, 10, 0.75);
       backdrop-filter: blur(8px);
       -webkit-backdrop-filter: blur(8px);
       border: 1px solid rgba(255, 255, 255, 0.15);
       border-radius: var(--radius-pill);
-      padding: 0.3rem 0.75rem;
-      font-size: 0.75rem;
+      padding: 0.18rem 0.5rem;
+      font-size: 0.62rem;
       color: #fff;
       font-weight: 500;
+      max-width: 65%;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    @media (min-width: 640px) {
+      .project-category-badge {
+        top: 0.75rem;
+        left: 0.75rem;
+        padding: 0.25rem 0.65rem;
+        font-size: 0.72rem;
+        max-width: 70%;
+      }
+    }
+    @media (min-width: 1024px) {
+      .project-category-badge {
+        top: 1rem;
+        left: 1rem;
+        padding: 0.3rem 0.75rem;
+        font-size: 0.75rem;
+        max-width: none;
+      }
     }
 
     .project-metric {
       position: absolute;
-      top: 1rem;
-      right: 1rem;
+      top: 0.45rem;
+      right: 0.45rem;
       z-index: 2;
       background: var(--accent);
       border-radius: var(--radius-pill);
-      padding: 0.3rem 0.75rem;
-      font-size: 0.75rem;
+      padding: 0.18rem 0.5rem;
+      font-size: 0.62rem;
       font-weight: 600;
       color: #fff;
+      max-width: 32%;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    @media (min-width: 640px) {
+      .project-metric {
+        top: 0.75rem;
+        right: 0.75rem;
+        padding: 0.25rem 0.65rem;
+        font-size: 0.72rem;
+        max-width: 35%;
+      }
+    }
+    @media (min-width: 1024px) {
+      .project-metric {
+        top: 1rem;
+        right: 1rem;
+        padding: 0.3rem 0.75rem;
+        font-size: 0.75rem;
+        max-width: none;
+      }
     }
 
     .project-overlay {
@@ -1598,11 +1693,37 @@
       justify-content: center;
       opacity: 0;
       transition: opacity 0.3s ease;
-      padding: 1rem;
+      padding: 0.75rem;
+    }
+    .project-overlay .btn {
+      border-radius: var(--radius-pill);
+      padding: 0.4rem 0.85rem;
+      font-size: 0.75rem;
+      font-weight: 500;
+      background: rgba(17, 17, 17, 0.85);
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+      cursor: pointer;
+      white-space: nowrap;
+      transition: transform 0.2s ease, background 0.2s ease;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+    .project-overlay .btn:hover {
+      transform: scale(1.04);
+      background: #000;
+      border-color: rgba(255, 255, 255, 0.5);
+    }
+    @media (max-width: 480px) {
+      .project-overlay .btn {
+        padding: 0.28rem 0.6rem;
+        font-size: 0.65rem;
+      }
     }
 
     .project-content {
-      padding: 1.2rem;
+      padding: 0.7rem;
       flex: 1;
       display: flex;
       flex-direction: column;
@@ -1610,47 +1731,95 @@
     }
     @media (min-width: 640px) {
       .project-content {
-        padding: 1.5rem;
+        padding: 1rem;
+      }
+    }
+    @media (min-width: 1024px) {
+      .project-content {
+        padding: 1.35rem;
       }
     }
     .project-title {
-      font-size: 1.15rem;
+      font-size: 0.82rem;
       font-weight: 600;
       letter-spacing: -0.01em;
-      margin-bottom: 0.35rem;
+      margin-bottom: 0.2rem;
       color: #fff;
+      line-height: 1.25;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    @media (min-width: 480px) {
+      .project-title {
+        font-size: 0.88rem;
+        margin-bottom: 0.25rem;
+      }
     }
     @media (min-width: 640px) {
       .project-title {
-        font-size: 1.25rem;
-        margin-bottom: 0.4rem;
+        font-size: 1rem;
+        margin-bottom: 0.3rem;
+        -webkit-line-clamp: unset;
+        overflow: visible;
+        display: block;
+      }
+    }
+    @media (min-width: 1024px) {
+      .project-title {
+        font-size: 1.1rem;
+        margin-bottom: 0.35rem;
       }
     }
     .project-desc {
-      font-size: 0.82rem;
+      font-size: 0.72rem;
       color: rgba(255, 255, 255, 0.55);
-      line-height: 1.42;
-      margin-bottom: 1rem;
+      line-height: 1.35;
+      margin-bottom: 0.5rem;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
     }
     @media (min-width: 640px) {
       .project-desc {
-        font-size: 0.85rem;
+        font-size: 0.82rem;
         line-height: 1.4;
-        margin-bottom: 1.25rem;
+        margin-bottom: 0.85rem;
+        -webkit-line-clamp: 3;
+      }
+    }
+    @media (min-width: 1024px) {
+      .project-desc {
+        font-size: 0.85rem;
+        margin-bottom: 1.1rem;
+        -webkit-line-clamp: unset;
+        overflow: visible;
+        display: block;
       }
     }
     .project-tech {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.4rem;
+      gap: 0.3rem;
+    }
+    @media (min-width: 640px) {
+      .project-tech { gap: 0.4rem; }
     }
     .service-tag {
       display: inline-flex;
       border: 1px solid rgba(255, 255, 255, 0.18);
       border-radius: var(--radius-pill);
-      padding: 0.25rem 0.65rem;
-      font-size: 0.75rem;
+      padding: 0.15rem 0.4rem;
+      font-size: 0.62rem;
       color: rgba(255, 255, 255, 0.75);
+    }
+    @media (min-width: 640px) {
+      .service-tag {
+        padding: 0.2rem 0.6rem;
+        font-size: 0.72rem;
+      }
     }
 
     /* ==========================================================================
@@ -1674,20 +1843,18 @@
     .services-h2 {
       margin-block: 1rem 2rem;
       max-width: 16ch;
-      font-size: 1.85rem;
+      font-size: clamp(1.85rem, 5vw, 3rem);
       font-weight: 600;
       letter-spacing: -0.02em;
     }
     @media (min-width: 640px) {
       .services-h2 {
         margin-block: 1.25rem 2.5rem;
-        font-size: 2.5rem;
       }
     }
     @media (min-width: 1024px) {
       .services-h2 {
         margin-bottom: 3rem;
-        font-size: 3rem;
       }
     }
 
@@ -1871,8 +2038,8 @@
     .stats-grid {
       margin-top: 2.25rem;
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      column-gap: 1.5rem;
+      grid-template-columns: repeat(3, 1fr);
+      column-gap: 1.25rem;
       row-gap: 2rem;
     }
     @media (min-width: 640px) {
@@ -1884,7 +2051,7 @@
     }
     @media (min-width: 1024px) {
       .stats-grid {
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(3, 1fr);
         margin-top: 3.5rem;
         row-gap: 3rem;
       }
@@ -2017,9 +2184,11 @@
     .tech-card:hover .tech-svg {
       transform: scale(1.06);
     }
-    .tech-svg svg {
+    .tech-svg svg,
+    .tech-svg img {
       width: 100%;
       height: 100%;
+      object-fit: contain;
       display: block;
     }
     .tech-info {
@@ -2346,24 +2515,9 @@
     }
     .footer-cta-h2 {
       max-width: 16ch;
-      font-size: 1.85rem;
+      font-size: clamp(1.85rem, 5vw, 3.75rem);
       font-weight: 600;
       letter-spacing: -0.02em;
-    }
-    @media (min-width: 640px) {
-      .footer-cta-h2 {
-        font-size: 2.5rem;
-      }
-    }
-    @media (min-width: 768px) {
-      .footer-cta-h2 {
-        font-size: 3rem;
-      }
-    }
-    @media (min-width: 1024px) {
-      .footer-cta-h2 {
-        font-size: 3.75rem;
-      }
     }
 
     .footer-cols {
@@ -3202,7 +3356,9 @@
       .filter-btn {
         min-height: 40px;
         font-size: 0.8rem;
-        padding: 0.5rem 1rem;
+        padding: 0.45rem 1rem;
+        white-space: nowrap;
+        flex-shrink: 0;
       }
       .card-btn {
         width: 2rem;
@@ -3226,27 +3382,18 @@
       }
     }
 
-    /* Improved filter pills wrapping */
-    .portfolio-filter {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 0.4rem;
-      margin-bottom: 2.5rem;
-    }
-
     /* Smooth image loading */
     img {
       transition: opacity 0.3s ease;
     }
 
-    /* Better project card on mobile */
+    /* Compact project card on mobile */
     @media (max-width: 479px) {
       .project-card {
-        border-radius: 1.25rem;
+        border-radius: 1rem;
       }
       .project-content {
-        padding: 1.25rem;
+        padding: 0.65rem;
       }
     }
 
@@ -3343,7 +3490,6 @@
     <div class="shell header-shell">
       <!-- Left brand -->
       <button class="brand-btn" id="brand-home-btn" aria-label="Wildan Home">
-        <svg class="icon brand-logo-spark" viewBox="0 0 48 48"><path d="M24 2c2.2 13.8 7.9 19.6 22 22-14.1 2.4-19.8 8.2-22 22-2.2-13.8-7.9-19.6-22-22 14.1-2.4 19.8-8.2 22-22Z" fill="currentColor"/></svg>
         <span>Wildan</span>
       </button>
 
@@ -3360,14 +3506,8 @@
         </ul>
       </nav>
 
-      <!-- Right: Local Clock & Menu Button -->
+      <!-- Right: Menu Button -->
       <div class="header-right">
-        <div class="clock-chip" aria-label="Local Time">
-          <span class="clock-label">Local time</span>
-          <span class="clock-time" id="live-time">9:41am</span>
-          <span class="clock-dot">•</span>
-          <span class="clock-date" id="live-date">12 March, 2025</span>
-        </div>
 
         <button class="menu-btn" id="menu-open-btn" aria-label="Open Navigation Menu">
           <span class="menu-btn-inner">
@@ -3541,8 +3681,7 @@
 
       <!-- Bottom Status Bar -->
       <div class="shell hero-status-bar reveal-fade-up" style="transition-delay: 900ms;">
-        <span>Working since 2020</span>
-        <span class="status-center">Remote-first, worldwide</span>
+        <span>Remote-first, worldwide</span>
         <span class="status-scroll">
           <span>Scroll to explore</span>
           <span>↓</span>
@@ -3583,6 +3722,9 @@
 
         <!-- Dynamic Grid of Project Cards (rendered via portfolio.js) -->
         <div class="portfolio-grid" id="portfolio-grid"></div>
+
+        <!-- Show More / Show Less Controls -->
+        <div id="show-more-wrap" class="show-more-wrap"></div>
 
       </div>
     </section>
@@ -3683,16 +3825,9 @@
 
             <div class="stat-item reveal-fade-up" style="transition-delay: 180ms;">
               <div class="stat-val-box">
-                <span class="stat-num" data-target="12">0</span>
+                <span class="stat-num" data-target="30">0</span><span>+</span>
               </div>
-              <p class="stat-label">Years of craft</p>
-            </div>
-
-            <div class="stat-item reveal-fade-up" style="transition-delay: 270ms;">
-              <div class="stat-val-box">
-                <span class="stat-num" data-target="40">0</span><span>+</span>
-              </div>
-              <p class="stat-label">Team members</p>
+              <p class="stat-label">Brands handled</p>
             </div>
 
           </div>
@@ -3718,9 +3853,10 @@
           <!-- 01 Premiere Pro -->
           <div class="tech-card">
             <div class="tech-svg">
-              <svg viewBox="0 0 100 100">
-                <rect width="100" height="100" rx="22" fill="#00005B" stroke="#9999FF" stroke-width="4"/>
-                <text x="50" y="66" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="46" font-weight="800" fill="#9999FF" text-anchor="middle">Pr</text>
+              <svg viewBox="0 0 240 234" fill="none">
+                <rect width="240" height="234" rx="48" fill="#00005B"/>
+                <path d="M57 164V61c0-0.7 0.3-1.1 1-1.1 1.7 0 3.3 0 5.6-0.1 2.4-0.1 4.9-0.1 7.6-0.2s5.6-0.1 8.7-0.2 6.1-0.1 9.1-0.1c8.2 0 15 1 20.6 3.1 5 1.7 9.6 4.5 13.4 8.2 3.2 3.2 5.7 7.1 7.3 11.4 1.5 4.2 2.3 8.5 2.3 13 0 8.6-2 15.7-6 21.3s-9.6 9.8-16.1 12.2c-6.8 2.5-14.3 3.4-22.5 3.4-2.4 0-4 0-5-0.1s-2.4-0.1-4.3-0.1V164c0.1 0.7-0.4 1.3-1.1 1.4h-0.4-19c-0.8 0-1.2-0.4-1.2-1.3zm21.8-84.7v33.6c1.4 0.1 2.7 0.2 3.9 0.2h5.3c3.9 0 7.8-0.6 11.5-1.8 3.2-0.9 6-2.8 8.2-5.3 2.1-2.5 3.1-5.9 3.1-10.3 0.1-3.1-0.7-6.2-2.3-8.9-1.7-2.6-4.1-4.6-7-5.7-3.7-1.5-7.7-2.1-11.8-2-2.6 0-4.9 0-6.8 0.1-2-0.1-3.4 0-4.1 0.1z" fill="#9999FF"/>
+                <path d="M147 85.2h17.5c1 0 1.8 0.7 2.1 1.6 0.3 0.8 0.5 1.6 0.6 2.5 0.2 1 0.4 2.1 0.5 3.1 0.1 1.1 0.2 2.3 0.2 3.6 3-3.5 6.6-6.4 10.7-8.6 4.6-2.6 9.9-3.9 15.2-3.9 0.7-0.1 1.3 0.4 1.4 1.1v0.4 19.5c0 0.8-0.5 1.1-1.6 1.1-3.6-0.1-7.3 0.2-10.8 1-2.9 0.6-5.7 1.5-8.4 2.7-1.9 0.9-3.7 2.1-5.1 3.7v51c0 1-0.4 1.4-1.3 1.4h-19.7c-0.8 0.1-1.5-0.4-1.6-1.2v-0.4-55.4c0-2.4 0-4.9-0.1-7.5s-0.1-5.2-0.2-7.8c0-2.3-0.2-4.5-0.4-6.8-0.1-0.5 0.2-1 0.7-1.1 0-0.1 0.2-0.1 0.3 0z" fill="#9999FF"/>
               </svg>
             </div>
             <div class="tech-info">
@@ -3732,9 +3868,10 @@
           <!-- 02 After Effects -->
           <div class="tech-card">
             <div class="tech-svg">
-              <svg viewBox="0 0 100 100">
-                <rect width="100" height="100" rx="22" fill="#00005B" stroke="#9999FF" stroke-width="4"/>
-                <text x="50" y="66" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="46" font-weight="800" fill="#9999FF" text-anchor="middle">Ae</text>
+              <svg viewBox="0 0 240 234" fill="none">
+                <rect width="240" height="234" rx="48" fill="#00005B"/>
+                <path d="M96.4 140H59.2l-7.6 23.6c-0.2 0.9-1 1.5-1.9 1.4H30.9c-1.1 0-1.4-0.6-1.1-1.8l32.2-92.3c0.3-1 0.6-1.9 1-3.1 0.4-2.1 0.6-4.3 0.6-6.5-0.1-0.5 0.3-1 0.8-1.1h0.3 25.6c0.7 0 1.2 0.3 1.3 0.8l36.5 102c0.3 1.1 0 1.6-1 1.6h-20.9c-0.7 0.1-1.4-0.4-1.6-1.1l-8.2-24zm-31.4-19.9h25.4c-0.6-2.1-1.4-4.6-2.3-7.2-0.9-2.7-1.8-5.6-2.7-8.6-1-3.1-1.9-6.1-2.9-9.2s-1.9-6-2.7-8.9c-0.8-2.8-1.5-5.4-2.2-7.8h-0.2c-0.9 4.3-2 8.6-3.4 12.9-1.5 4.8-3 9.8-4.6 14.8-1.3 5.1-2.9 9.8-4.4 14z" fill="#9999FF"/>
+                <path d="M187 131h-31.7c0.4 3.1 1.4 6.2 3.1 8.9 1.8 2.7 4.3 4.8 7.3 6 4 1.7 8.4 2.6 12.8 2.5 3.5-0.1 7-0.4 10.4-1.1 3.1-0.4 6.1-1.2 8.9-2.3 0.5-0.4 0.8-0.2 0.8 0.8v15.3c0 0.4-0.1 0.8-0.2 1.2-0.2 0.3-0.4 0.5-0.7 0.7-3.2 1.4-6.5 2.4-10 3-4.7 0.9-9.4 1.3-14.2 1.2-7.6 0-14-1.2-19.2-3.5-4.9-2.1-9.2-5.4-12.6-9.5-3.2-3.9-5.5-8.3-6.9-13.1-1.4-4.7-2.1-9.6-2.1-14.6 0-5.4 0.8-10.7 2.5-15.9 1.6-5 4.1-9.6 7.5-13.7 3.3-4 7.4-7.2 12.1-9.5s10.3-3.1 16.7-3.1c5.3-0.1 10.6 0.9 15.5 3.1 4.1 1.8 7.7 4.5 10.5 8 2.6 3.4 4.7 7.2 6 11.4 1.3 4 1.9 8.1 1.9 12.2 0 2.4-0.1 4.5-0.2 6.4-0.2 1.9-0.3 3.3-0.4 4.2-0.1 0.7-0.7 1.3-1.4 1.3-0.6 0-1.7 0.1-3.3 0.2-1.6 0.2-3.5 0.3-5.8 0.3s-4.7-0.4-7.3-0.4zm-31.7-14.6h21.1c2.6 0 4.5 0 5.7-0.1 0.8-0.1 1.6-0.3 2.3-0.8v-1c0-1.3-0.2-2.5-0.6-3.7-1.8-5.6-7.1-9.4-13-9.2-5.5-0.3-10.7 2.6-13.3 7.6-1.2 2.3-1.9 4.7-2.2 7.2z" fill="#9999FF"/>
               </svg>
             </div>
             <div class="tech-info">
@@ -3746,9 +3883,10 @@
           <!-- 03 Photoshop -->
           <div class="tech-card">
             <div class="tech-svg">
-              <svg viewBox="0 0 100 100">
-                <rect width="100" height="100" rx="22" fill="#001E36" stroke="#31A8FF" stroke-width="4"/>
-                <text x="50" y="66" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="46" font-weight="800" fill="#31A8FF" text-anchor="middle">Ps</text>
+              <svg viewBox="0 0 240 234" fill="none">
+                <rect width="240" height="234" rx="48" fill="#001E36"/>
+                <path d="M54 164.1V61.2c0-0.7 0.3-1.1 1-1.1 1.7 0 3.3 0 5.6-0.1 2.4-0.1 4.9-0.1 7.6-0.2 2.7-0.1 5.6-0.1 8.7-0.2 3.1-0.1 6.1-0.1 9.1-0.1 8.2 0 15 1 20.6 3.1 5 1.7 9.6 4.5 13.4 8.2 3.2 3.2 5.7 7.1 7.3 11.4 1.5 4.2 2.3 8.5 2.3 13 0 8.6-2 15.7-6 21.3-4 5.6-9.6 9.8-16.1 12.2-6.8 2.5-14.3 3.4-22.5 3.4-2.4 0-4 0-5-0.1-1-0.1-2.4-0.1-4.3-0.1v32.1c0.1 0.7-0.4 1.3-1.1 1.4-0.1 0-0.2 0-0.4 0H55.2C54.4 165.4 54 165 54 164.1zm21.8-84.7V113c1.4 0.1 2.7 0.2 3.9 0.2H85c3.9 0 7.8-0.6 11.5-1.8 3.2-0.9 6-2.8 8.2-5.3 2.1-2.5 3.1-5.9 3.1-10.3 0.1-3.1-0.7-6.2-2.3-8.9-1.7-2.6-4.1-4.6-7-5.7-3.7-1.5-7.7-2.1-11.8-2-2.6 0-4.9 0-6.8 0.1-2.1 0.2-3.5 0.3-4.2 0.4l-0.1-0.2z" fill="#31A8FF"/>
+                <path d="M192 106.9c-3-1.6-6.2-2.7-9.6-3.4c-3.7-0.8-7.4-1.3-11.2-1.3-2-0.1-4.1 0.2-6 0.7-1.3 0.3-2.4 1-3.1 2-0.5 0.8-0.8 1.8-0.8 2.7 0 0.9 0.4 1.8 1 2.6 0.9 1.1 2.1 2 3.4 2.7 2.3 1.2 4.7 2.3 7.1 3.3 5.4 1.8 10.6 4.3 15.4 7.3 3.3 2.1 6 4.9 7.9 8.3 1.6 3.2 2.4 6.7 2.3 10.3 0.1 4.7-1.3 9.4-3.9 13.3-2.8 4-6.7 7.1-11.2 8.9-4.9 2.1-10.9 3.2-18.1 3.2-4.6 0-9.1-0.4-13.6-1.3-3.5-0.6-7-1.7-10.2-3.2-0.7-0.4-1.2-1.1-1.1-1.9v-17.4c0-0.3 0.1-0.7 0.4-0.9 0.3-0.2 0.6-0.1 0.9 0.1 3.9 2.3 8 3.9 12.4 4.9 3.8 1 7.8 1.5 11.8 1.5 3.8 0 6.5-0.5 8.3-1.4 1.6-0.7 2.7-2.4 2.7-4.2 0-1.4-0.8-2.7-2.4-4-1.6-1.3-4.9-2.8-9.8-4.7-5.1-1.8-9.8-4.2-14.2-7.2-3.1-2.2-5.7-5.1-7.6-8.5c-1.6-3.2-2.4-6.7-2.3-10.2 0-4.3 1.2-8.4 3.4-12.1 2.5-4 6.2-7.2 10.5-9.2 4.7-2.4 10.6-3.5 17.7-3.5 4.1 0 8.3 0.3 12.4 0.9 3 0.4 5.9 1.2 8.6 2.3 0.4 0.1 0.8 0.5 1 0.9 0.1 0.4 0.2 0.8 0.2 1.2v16.3c0 0.4-0.2 0.8-0.5 1-0.3 0.3-0.8 0.3-1.2 0.1z" fill="#31A8FF"/>
               </svg>
             </div>
             <div class="tech-info">
@@ -3760,9 +3898,11 @@
           <!-- 04 Illustrator -->
           <div class="tech-card">
             <div class="tech-svg">
-              <svg viewBox="0 0 100 100">
-                <rect width="100" height="100" rx="22" fill="#330000" stroke="#FF9A00" stroke-width="4"/>
-                <text x="50" y="66" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="46" font-weight="800" fill="#FF9A00" text-anchor="middle">Ai</text>
+              <svg viewBox="0 0 250 250" fill="none">
+                <rect width="250" height="250" rx="48" fill="#330000"/>
+                <path d="M122.11 66.15h-37.41l-42.97 115.62h33.48l5.58-17.27h42.98l5.58 17.27h34.5l-41.73-115.62zM102.27 135.65h-12.17l12.17-37.69 12.17 37.69h-12.17z" fill="#FF9A00"/>
+                <rect x="168.12" y="90.74" width="30.98" height="91.03" fill="#FF9A00"/>
+                <path d="M200.12 74.28c0.09 8.49-6.78 14.49-16.5 14.41-9.73 0.08-16.59-5.92-16.5-14.41-0.09-8.49 6.78-14.49 16.5-14.41 9.73-0.08 16.59 5.92 16.5 14.41z" fill="#FF9A00"/>
               </svg>
             </div>
             <div class="tech-info">
@@ -3774,12 +3914,12 @@
           <!-- 05 Figma -->
           <div class="tech-card">
             <div class="tech-svg">
-              <svg viewBox="0 0 100 100" fill="none">
-                <path d="M26 26a12 12 0 0 1 12-12h12v24H38a12 12 0 0 1-12-12z" fill="#F24E1E"/>
-                <path d="M50 14h12a12 12 0 0 1 0 24H50V14z" fill="#FF7262"/>
-                <path d="M26 50a12 12 0 0 1 12-12h12v24H38a12 12 0 0 1-12-12z" fill="#A259FF"/>
-                <circle cx="62" cy="50" r="12" fill="#1ABCFE"/>
-                <path d="M26 74a12 12 0 0 1 12-12h12v12a12 12 0 0 1-24 0z" fill="#0ACF83"/>
+              <svg viewBox="0 0 200 300" fill="none">
+                <path d="M50 300c27.6 0 50-22.4 50-50v-50H50c-27.6 0-50 22.4-50 50s22.4 50 50 50z" fill="#0ACF83"/>
+                <path d="M0 150c0-27.6 22.4-50 50-50h50v100H50c-27.6 0-50-22.4-50-50z" fill="#A259FF"/>
+                <path d="M0 50C0 22.4 22.4 0 50 0h50v100H50C22.4 100 0 77.6 0 50z" fill="#F24E1E"/>
+                <path d="M100 0h50c27.6 0 50 22.4 50 50s-22.4 50-50 50h-50V0z" fill="#FF7262"/>
+                <path d="M200 150c0 27.6-22.4 50-50 50s-50-22.4-50-50 22.4-50 50-50 50 22.4 50 50z" fill="#1ABCFE"/>
               </svg>
             </div>
             <div class="tech-info">
@@ -3791,17 +3931,7 @@
           <!-- 06 Canva -->
           <div class="tech-card">
             <div class="tech-svg">
-              <svg viewBox="0 0 100 100">
-                <defs>
-                  <linearGradient id="canva-glow" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stop-color="#00C4CC"/>
-                    <stop offset="50%" stop-color="#0074E4"/>
-                    <stop offset="100%" stop-color="#7D2AE8"/>
-                  </linearGradient>
-                </defs>
-                <circle cx="50" cy="50" r="48" fill="url(#canva-glow)"/>
-                <path d="M36 64c-8.5 0-14-6-14-15.5S28 32 39 32c6.5 0 10.5 3.5 10.5 7.5 0 5-6 8-16 8.5-.2 2-.3 4-.3 6 0 4 2 6 5.5 6 3.5 0 6.5-1.5 9-4.5l2.5 3c-3.5 4.5-8.5 7-14.2 7zm8.5-22c-.5-.5-1.5-.8-2.5-.8-6.5 0-11.5 7.5-12.5 14.5 7-.5 11.5-2.5 12.5-6.5.5-2.5.5-5.5-1-7.2zm30 22c-3.5 0-6.5-1.5-8.5-4l-.5 3.5h-4l3-20h4l-1 6c2.5-4 5.5-6.5 9.5-6.5 5 0 8 3.5 8 9 0 7.5-5.5 12-10.5 12zm-1-3c3.5 0 7.5-3 7.5-9 0-4-2-6-5-6-3.5 0-7 3.5-8.5 8.5-.1 1-.2 2-.2 3 1 2.5 3.5 3.5 6.2 3.5z" fill="#ffffff"/>
-              </svg>
+              <img src="assets/canva-icon.png" alt="Canva">
             </div>
             <div class="tech-info">
               <span class="tech-name">Canva</span>
@@ -3814,8 +3944,9 @@
             <div class="tech-svg">
               <svg viewBox="0 0 100 100" fill="none">
                 <rect width="100" height="100" rx="22" fill="#000000"/>
-                <path d="M22 28c0-3.3 2.7-6 6-6h44c3.3 0 6 2.7 6 6v4c0 2.2-1.2 4.2-3.1 5.3L50 51.5 25.1 37.3A6.1 6.1 0 0 1 22 32v-4z" fill="#FFFFFF"/>
-                <path d="M22 72c0 3.3 2.7 6 6 6h44c3.3 0 6-2.7 6-6v-4a6.1 6.1 0 0 0-3.1-5.3L50 48.5 25.1 62.7A6.1 6.1 0 0 0 22 68v4z" fill="#FFFFFF"/>
+                <g transform="translate(19, 19) scale(2.58)" fill="#FFFFFF">
+                  <path fill-rule="evenodd" d="M24.189 6.442V2.671l-4.535 2.383V4.91c.002-1.505-1.078-2.411-2.638-2.411H2.64C.993 2.5 0 3.407 0 4.91V8.72L6.354 12 0 15.316v3.8C0 20.595 1 21.5 2.64 21.5h14.373c1.56 0 2.639-.907 2.639-2.382v-.197l4.536 2.409v-3.828L13.64 12 24.19 6.443zM9.982 13.873l7.797 4.083H2.157l7.825-4.083zm7.741-7.828l-7.742 4.057-7.825-4.057h15.567z"/>
+                </g>
               </svg>
             </div>
             <div class="tech-info">
@@ -3829,7 +3960,9 @@
             <div class="tech-svg">
               <svg viewBox="0 0 100 100" fill="none">
                 <rect width="100" height="100" rx="22" fill="#10A37F"/>
-                <path d="M74.8 46.2a15.8 15.8 0 0 0-1.3-12.7 16.3 16.3 0 0 0-12.2-8 16 16 0 0 0-15.6 4.3 15.8 15.8 0 0 0-12.4 6 16.2 16.2 0 0 0-2.3 14.4 15.8 15.8 0 0 0-8.9 9.3 16.2 16.2 0 0 0 3.3 14.2 15.8 15.8 0 0 0 1.3 12.7 16.3 16.3 0 0 0 12.2 8 16 16 0 0 0 15.6-4.3 15.8 15.8 0 0 0 12.4-6 16.2 16.2 0 0 0 2.3-14.4 15.8 15.8 0 0 0 8.9-9.3 16.2 16.2 0 0 0-3.3-14.2zm-18.4 25.5a11.8 11.8 0 0 1-7.2-2.4l-9.8-5.7a2 2 0 0 1-1-1.7v-11.4l3.5 2a2 2 0 0 0 2 0l8.4-4.8 8.4 4.8a2 2 0 0 0 2 0l8.4-4.8v9.9a11.9 11.9 0 0 1-14.7 9.3zm-20.8-12a11.8 11.8 0 0 1-1.5-7.4l.1-11.3a2 2 0 0 1 1-1.7l9.8-5.7 3.5 2a2 2 0 0 0 2 0v9.7l-8.4 4.8v9.7a2 2 0 0 0 1 1.7l-7.5-1.8zm-2.4-23.5a11.8 11.8 0 0 1 5.7-5l9.9-5.7a2 2 0 0 1 2 0l9.8 5.7v4a2 2 0 0 0 0 2l-8.4 4.9-8.4-4.9a2 2 0 0 0-2 0l-8.6 1zm31.7 13.7l-8.4-4.9 8.4-4.9a2 2 0 0 0 1-1.7v-9.7l7.5 1.8a11.8 11.8 0 0 1 1.5 7.4l-.1 11.3a2 2 0 0 1-1 1.7l-9.8 5.7zm6.7-11.7l-3.5-2a2 2 0 0 0-2 0l-9.8 5.7-3.5-2a2 2 0 0 0-2 0l-8.4 4.9v-9.9a11.9 11.9 0 0 1 14.7-9.3 11.8 11.8 0 0 1 7.2 2.4l9.8 5.7a2 2 0 0 1 1 1.7v3.5zm-14.7 3.8l-5.3-3.1 5.3-3.1 5.3 3.1z" fill="#ffffff"/>
+                <g transform="translate(19, 19) scale(2.58)" fill="#FFFFFF">
+                  <path fill-rule="evenodd" d="M9.205 8.658v-2.26c0-.19.072-.333.238-.428l4.543-2.616c.619-.357 1.356-.523 2.117-.523 2.854 0 4.662 2.212 4.662 4.566 0 .167 0 .357-.024.547l-4.71-2.759a.797.797 0 00-.856 0l-5.97 3.473zm10.609 8.8V12.06c0-.333-.143-.57-.429-.737l-5.97-3.473 1.95-1.118a.433.433 0 01.476 0l4.543 2.617c1.309.76 2.189 2.378 2.189 3.948 0 1.808-1.07 3.473-2.76 4.163zM7.802 12.703l-1.95-1.142c-.167-.095-.239-.238-.239-.428V5.899c0-2.545 1.95-4.472 4.591-4.472 1 0 1.927.333 2.712.928L8.23 5.067c-.285.166-.428.404-.428.737v6.898zM12 15.128l-2.795-1.57v-3.33L12 8.658l2.795 1.57v3.33L12 15.128zm1.796 7.23c-1 0-1.927-.332-2.712-.927l4.686-2.712c.285-.166.428-.404.428-.737v-6.898l1.974 1.142c.167.095.238.238.238.428v5.233c0 2.545-1.974 4.472-4.614 4.472zm-5.637-5.303l-4.544-2.617c-1.308-.761-2.188-2.378-2.188-3.948A4.482 4.482 0 014.21 6.327v5.423c0 .333.143.571.428.738l5.947 3.449-1.95 1.118a.432.432 0 01-.476 0zm-.262 3.9c-2.688 0-4.662-2.021-4.662-4.519 0-.19.024-.38.047-.57l4.686 2.71c.286.167.571.167.856 0l5.97-3.448v2.26c0 .19-.07.333-.237.428l-4.543 2.616c-.619.357-1.356.523-2.117.523zm5.899 2.83a5.947 5.947 0 005.827-4.756C22.287 18.339 24 15.84 24 13.296c0-1.665-.713-3.282-1.998-4.448.119-.5.19-.999.19-1.498 0-3.401-2.759-5.947-5.946-5.947-.642 0-1.26.095-1.88.31A5.962 5.962 0 0010.205 0a5.947 5.947 0 00-5.827 4.757C1.713 5.447 0 7.945 0 10.49c0 1.666.713 3.283 1.998 4.448-.119.5-.19 1-.19 1.499 0 3.401 2.759 5.946 5.946 5.946.642 0 1.26-.095 1.88-.309a5.96 5.96 0 004.162 1.713z"/>
+                </g>
               </svg>
             </div>
             <div class="tech-info">
@@ -3843,16 +3976,8 @@
             <div class="tech-svg">
               <svg viewBox="0 0 100 100" fill="none">
                 <rect width="100" height="100" rx="22" fill="#D97757"/>
-                <g fill="#FFFFFF">
-                  <path d="M50 18c-2.2 0-4 1.8-4 4v16.1a4 4 0 1 0 8 0V22c0-2.2-1.8-4-4-4z"/>
-                  <path d="M50 61.9a4 4 0 0 0-4 4V82c0 2.2 1.8 4 4 4s4-1.8 4-4V65.9a4 4 0 0 0-4-4z"/>
-                  <path d="M22 46c-2.2 0-4 1.8-4 4s1.8 4 4 4h16.1a4 4 0 1 0 0-8H22z"/>
-                  <path d="M61.9 50a4 4 0 0 0 4-4H82c2.2 0 4 1.8 4 4s-1.8 4-4 4h-16.1a4 4 0 0 0-4-4z"/>
-                  <path d="M30.2 24.6c-1.6-1.6-4.1-1.6-5.7 0s-1.6 4.1 0 5.7l11.4 11.4a4 4 0 1 0 5.7-5.7L30.2 24.6z"/>
-                  <path d="M58.4 52.8a4 4 0 0 0 5.7 5.7L75.5 69.9c1.6 1.6 4.1 1.6 5.7 0s1.6-4.1 0-5.7L69.8 52.8a4 4 0 0 0-5.7 0z"/>
-                  <path d="M69.8 24.6l-11.4 11.4a4 4 0 1 0 5.7 5.7L75.5 30.3c1.6-1.6 1.6-4.1 0-5.7s-4.1-1.6-5.7 0z"/>
-                  <path d="M35.9 58.5a4 4 0 0 0-5.7-5.7L18.8 64.2c-1.6 1.6-1.6 4.1 0 5.7s4.1 1.6 5.7 0l11.4-11.4z"/>
-                  <circle cx="50" cy="50" r="9"/>
+                <g transform="translate(18, 18) scale(2.666)" fill="#FFFFFF">
+                  <path d="M4.709 15.955l4.72-2.647.08-.23-.08-.128H9.2l-.79-.048-2.698-.073-2.339-.097-2.266-.122-.571-.121L0 11.784l.055-.352.48-.321.686.06 1.52.103 2.278.158 1.652.097 2.449.255h.389l.055-.157-.134-.098-.103-.097-2.358-1.596-2.552-1.688-1.336-.972-.724-.491-.364-.462-.158-1.008.656-.722.881.06.225.061.893.686 1.908 1.476 2.491 1.833.365.304.145-.103.019-.073-.164-.274-1.355-2.446-1.446-2.49-.644-1.032-.17-.619a2.97 2.97 0 01-.104-.729L6.283.134 6.696 0l.996.134.42.364.62 1.414 1.002 2.229 1.555 3.03.456.898.243.832.091.255h.158V9.01l.128-1.706.237-2.095.23-2.695.08-.76.376-.91.747-.492.584.28.48.685-.067.444-.286 1.851-.559 2.903-.364 1.942h.212l.243-.242.985-1.306 1.652-2.064.73-.82.85-.904.547-.431h1.033l.76 1.129-.34 1.166-1.064 1.347-.881 1.142-1.264 1.7-.79 1.36.073.11.188-.02 2.856-.606 1.543-.28 1.841-.315.833.388.091.395-.328.807-1.969.486-2.309.462-3.439.813-.042.03.049.061 1.549.146.662.036h1.622l3.02.225.79.522.474.638-.079.485-1.215.62-1.64-.389-3.829-.91-1.312-.329h-.182v.11l1.093 1.068 2.006 1.81 2.509 2.33.127.578-.322.455-.34-.049-2.205-1.657-.851-.747-1.926-1.62h-.128v.17l.444.649 2.345 3.521.122 1.08-.17.353-.608.213-.668-.122-1.374-1.925-1.415-2.167-1.143-1.943-.14.08-.674 7.254-.316.37-.729.28-.607-.461-.322-.747.322-1.476.389-1.924.315-1.53.286-1.9.17-.632-.012-.042-.14.018-1.434 1.967-2.18 2.945-1.726 1.845-.414.164-.717-.37.067-.662.401-.589 2.388-3.036 1.44-1.882.93-1.086-.006-.158h-.055L4.132 18.56l-1.13.146-.487-.456.061-.746.231-.243 1.908-1.312-.006.006z"/>
                 </g>
               </svg>
             </div>
@@ -3867,15 +3992,17 @@
             <div class="tech-svg">
               <svg viewBox="0 0 100 100" fill="none">
                 <defs>
-                  <linearGradient id="gemini-star" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <linearGradient id="gemini-star-grad" x1="0%" y1="0%" x2="100%" y2="100%">
                     <stop offset="0%" stop-color="#1B72E8"/>
-                    <stop offset="40%" stop-color="#7B2CBF"/>
-                    <stop offset="75%" stop-color="#C72C41"/>
+                    <stop offset="35%" stop-color="#7B2CBF"/>
+                    <stop offset="70%" stop-color="#C72C41"/>
                     <stop offset="100%" stop-color="#F4511E"/>
                   </linearGradient>
                 </defs>
                 <rect width="100" height="100" rx="22" fill="#0E121A"/>
-                <path d="M50 14c0 19.88-16.12 36-36 36 19.88 0 36 16.12 36 36 0-19.88 16.12-36 36-36-19.88 0-36-16.12-36-36z" fill="url(#gemini-star)"/>
+                <g transform="translate(18, 18) scale(2.666)">
+                  <path d="M20.616 10.835a14.147 14.147 0 01-4.45-3.001 14.111 14.111 0 01-3.678-6.452.503.503 0 00-.975 0 14.134 14.134 0 01-3.679 6.452 14.155 14.155 0 01-4.45 3.001c-.65.28-1.318.505-2.002.678a.502.502 0 000 .975c.684.172 1.35.397 2.002.677a14.147 14.147 0 014.45 3.001 14.112 14.112 0 013.679 6.453.502.502 0 00.975 0c.172-.685.397-1.351.677-2.003a14.145 14.145 0 013.001-4.45 14.113 14.113 0 016.453-3.678.503.503 0 000-.975 13.245 13.245 0 01-2.003-.678z" fill="url(#gemini-star-grad)"/>
+                </g>
               </svg>
             </div>
             <div class="tech-info">
@@ -3886,26 +4013,8 @@
 
           <!-- 11 Antigravity -->
           <div class="tech-card">
-            <div class="tech-svg">
-              <svg viewBox="0 0 100 100" fill="none">
-                <defs>
-                  <linearGradient id="antigrav-g" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stop-color="#4285F4"/>
-                    <stop offset="35%" stop-color="#34A853"/>
-                    <stop offset="70%" stop-color="#FBBC05"/>
-                    <stop offset="100%" stop-color="#EA4335"/>
-                  </linearGradient>
-                  <linearGradient id="antigrav-core" x1="0%" y1="100%" x2="100%" y2="0%">
-                    <stop offset="0%" stop-color="#6366F1"/>
-                    <stop offset="100%" stop-color="#A855F7"/>
-                  </linearGradient>
-                </defs>
-                <rect width="100" height="100" rx="22" fill="#0A0E17"/>
-                <ellipse cx="50" cy="50" rx="36" ry="14" stroke="url(#antigrav-g)" stroke-width="3.5" transform="rotate(-30 50 50)"/>
-                <ellipse cx="50" cy="50" rx="36" ry="14" stroke="url(#antigrav-core)" stroke-width="2.5" opacity="0.8" transform="rotate(30 50 50)"/>
-                <circle cx="50" cy="50" r="14" fill="url(#antigrav-g)"/>
-                <circle cx="50" cy="50" r="6" fill="#FFFFFF"/>
-              </svg>
+            <div class="tech-svg" style="padding: 2px;">
+              <img src="assets/antigravity-logo.png" alt="Antigravity">
             </div>
             <div class="tech-info">
               <span class="tech-name">Antigravity</span>
@@ -3913,24 +4022,10 @@
             </div>
           </div>
 
-          <!-- 12 Google Flow Labs -->
+          <!-- 12 Flow Labs -->
           <div class="tech-card">
             <div class="tech-svg">
-              <svg viewBox="0 0 100 100" fill="none">
-                <defs>
-                  <linearGradient id="flow-wave" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stop-color="#4285F4"/>
-                    <stop offset="50%" stop-color="#34A853"/>
-                    <stop offset="100%" stop-color="#FBBC05"/>
-                  </linearGradient>
-                </defs>
-                <rect width="100" height="100" rx="22" fill="#16181D"/>
-                <path d="M43 23h14v13l19 30c3 4.7-.2 11-5.8 11H29.8c-5.6 0-8.8-6.3-5.8-11l19-30V23z" stroke="#FFFFFF" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M32 64c5-3.5 11-2.5 16 1s11 2.5 20-1" stroke="url(#flow-wave)" stroke-width="4.5" stroke-linecap="round"/>
-                <circle cx="43" cy="50" r="3.5" fill="#EA4335"/>
-                <circle cx="56" cy="44" r="3" fill="#FBBC05"/>
-                <circle cx="50" cy="71" r="3.5" fill="#4285F4"/>
-              </svg>
+              <img src="assets/google-flow-app-icon.png" alt="Flow Labs" style="border-radius: 22%;">
             </div>
             <div class="tech-info">
               <span class="tech-name">Flow Labs</span>
@@ -3943,15 +4038,18 @@
             <div class="tech-svg">
               <svg viewBox="0 0 100 100" fill="none">
                 <defs>
-                  <linearGradient id="kling-bg" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stop-color="#00E5FF"/>
-                    <stop offset="50%" stop-color="#651FFF"/>
-                    <stop offset="100%" stop-color="#D500F9"/>
-                  </linearGradient>
+                  <radialGradient cx="0" cy="0" gradientTransform="matrix(7.47772 -12.51022 17.14368 10.24728 5.173 13.637)" gradientUnits="userSpaceOnUse" id="kling-rg0" r="1"><stop offset=".095" stop-color="#FFF959"></stop><stop offset=".326" stop-color="#0DF35E"></stop><stop offset=".64" stop-color="#0BF2F9"></stop><stop offset="1" stop-color="#04A6F0"></stop></radialGradient>
+                  <radialGradient cx="0" cy="0" gradientTransform="rotate(120.868 6.491 10.491) scale(14.5747 19.9728)" gradientUnits="userSpaceOnUse" id="kling-rg1" r="1"><stop offset=".095" stop-color="#FFF959"></stop><stop offset=".326" stop-color="#0DF35E"></stop><stop offset=".64" stop-color="#0BF2F9"></stop><stop offset="1" stop-color="#04A6F0"></stop></radialGradient>
+                  <linearGradient gradientUnits="userSpaceOnUse" id="kling-lg2" x1="15.578" x2="18.062" y1="1.798" y2="9.861"><stop stop-color="#003EFF"></stop><stop offset="1" stop-color="#0BFFE7"></stop></linearGradient>
+                  <linearGradient gradientUnits="userSpaceOnUse" id="kling-lg3" x1="8.422" x2="5.938" y1="22.142" y2="14.079"><stop stop-color="#003EFF"></stop><stop offset="1" stop-color="#0BFFE7"></stop></linearGradient>
                 </defs>
-                <rect width="100" height="100" rx="22" fill="url(#kling-bg)"/>
-                <path d="M28 24h10v52H28V24z" fill="#FFFFFF"/>
-                <path d="M43 49l26-25h14L54 53l30 23H69L43 49z" fill="#FFFFFF"/>
+                <rect width="100" height="100" rx="22" fill="#0A0D14"/>
+                <g transform="translate(18, 18) scale(2.666)">
+                  <path d="M5.412 13.775A23.193 23.193 0 017.41 9.32c3.17-5.492 7.795-8.757 10.33-7.294C12.038-1.266 4.598.944 1.122 6.964A13.378 13.378 0 00.085 9.22c-.259.739.092 1.534.77 1.926l4.557 2.63z" fill="url(#kling-rg0)"/>
+                  <path d="M18.588 10.164a23.188 23.188 0 01-1.999 4.455c-3.17 5.492-7.795 8.758-10.33 7.294 5.703 3.293 13.143 1.082 16.619-4.938a13.392 13.392 0 001.037-2.255c.259-.738-.092-1.534-.77-1.925l-4.557-2.63z" fill="url(#kling-rg1)"/>
+                  <path d="M16.59 14.62c3.17-5.492 3.686-11.13 1.15-12.594C15.207.563 10.582 3.83 7.41 9.32c2.074-3.59 5.809-5.315 8.344-3.852 2.534 1.464 2.908 5.56.835 9.151z" fill="url(#kling-lg2)"/>
+                  <path d="M7.41 9.32c-3.17 5.492-3.686 11.13-1.15 12.593 2.534 1.464 7.159-1.802 10.33-7.294-2.074 3.591-5.809 5.316-8.344 3.852-2.534-1.463-2.908-5.56-.835-9.15z" fill="url(#kling-lg3)"/>
+                </g>
               </svg>
             </div>
             <div class="tech-info">
@@ -3965,8 +4063,9 @@
             <div class="tech-svg">
               <svg viewBox="0 0 100 100" fill="none">
                 <rect width="100" height="100" rx="22" fill="#0F1015"/>
-                <path d="M29 25h26c11.5 0 19.5 8 19.5 18.5s-8 18.5-19.5 18.5H41v14H29V25zm12 10.5v16h13.5c5.5 0 9-3.5 9-8s-3.5-8-9-8H41z" fill="#FFFFFF"/>
-                <path d="M55 62l19 20H60L42 63.5l13-1.5z" fill="#FFFFFF"/>
+                <g transform="translate(19, 19) scale(2.58)" fill="#FFFFFF">
+                  <path fill-rule="evenodd" d="M17.86 22.992c-2.669.245-4.887-2.876-6.597-4.454C10.398 24.759 1 24.177 1 17.86V6.15c0-.921.244-1.861.733-2.65C2.635 1.977 4.383.98 6.15 1h11.71c6.316 0 6.918 9.398.677 10.243l2.97 2.951c3.252 3.064.808 8.929-3.646 8.797zm-1.428-3.721c1.842 1.898 4.774-1.034 2.876-2.876l-5.132-5.132H11.3v2.876l4.436 4.436.696.696zM4.12 17.842c-.037 2.632 4.117 2.632 4.06 0V6.132c.038-1.316-1.353-2.35-2.612-1.955-.057.019-.113.037-.15.056-.79.301-1.335 1.09-1.317 1.936v11.673h.02zm13.74-9.68c2.632.037 2.632-4.098 0-4.06h-6.973c.526 1.109.395 2.857.413 4.06h6.56z"/>
+                </g>
               </svg>
             </div>
             <div class="tech-info">
@@ -3980,10 +4079,9 @@
             <div class="tech-svg">
               <svg viewBox="0 0 100 100" fill="none">
                 <rect width="100" height="100" rx="22" fill="#0C101C"/>
-                <path d="M25 68c15 6 34 6 50 0-4 9-21 12-34 10-8-1-13-5-16-10z" fill="#FFFFFF"/>
-                <path d="M47 22v42c-8-3-15-9-19-17 9 2 15-5 19-25z" fill="#FFFFFF"/>
-                <path d="M53 28v36c9-3 17-9 21-18-8 1-15-4-21-18z" fill="#FFFFFF"/>
-                <rect x="48.5" y="20" width="3" height="46" rx="1.5" fill="#FFFFFF" opacity="0.6"/>
+                <g transform="translate(18, 18) scale(2.666)" fill="#FFFFFF">
+                  <path fill-rule="evenodd" d="M22.369 17.676c-1.387 1.259-3.17 2.378-5.332 3.417.044.03.086.057.13.083l.018.01.019.012c.216.123.42.184.641.184.222 0 .426-.061.642-.184l.018-.011.019-.011c.14-.084.266-.178.492-.366l.178-.148c.279-.232.426-.342.625-.456.304-.174.612-.266.949-.266.337 0 .645.092.949.266l.023.014c.188.109.334.219.602.442l.178.148c.221.184.346.278.483.36l.028.017.018.01c.21.12.407.181.62.185h.022a.31.31 0 110 .618c-.337 0-.645-.092-.95-.266a3.137 3.137 0 01-.09-.054l-.022-.014-.022-.013-.02-.014a5.356 5.356 0 01-.49-.377l-.159-.132a3.836 3.836 0 00-.483-.36l-.027-.017-.019-.01a1.256 1.256 0 00-.641-.185c-.222 0-.426.061-.641.184l-.02.011-.018.011c-.14.084-.266.178-.492.366l-.158.132a5.125 5.125 0 01-.51.39l-.022.014-.022.014-.09.054a1.868 1.868 0 01-.95.266c-.337 0-.644-.092-.949-.266a3.137 3.137 0 01-.09-.054l-.022-.014-.022-.013-.026-.017a4.881 4.881 0 01-.425-.325.308.308 0 01-.12-.1l-.098-.081a3.836 3.836 0 00-.483-.36l-.027-.017-.019-.01a1.256 1.256 0 00-.641-.185c-.222 0-.426.061-.642.184l-.018.011-.019.011c-.14.084-.266.178-.492.366l-.158.132a5.125 5.125 0 01-.51.39l-.023.014-.022.014-.09.054A1.868 1.868 0 0112 22c-.337 0-.645-.092-.949-.266a3.137 3.137 0 01-.09-.054l-.022-.014-.022-.013-.021-.014a5.356 5.356 0 01-.49-.377l-.158-.132a3.836 3.836 0 00-.483-.36l-.028-.017-.018-.01a1.256 1.256 0 00-.642-.185c-.221 0-.425.061-.641.184l-.019.011-.018.011c-.141.084-.266.178-.492.366l-.158.132a5.125 5.125 0 01-.511.39l-.022.014-.022.014-.09.054a1.868 1.868 0 01-.986.264c-.746-.09-1.319-.38-1.89-.866l-.035-.03c-.047-.041-.118-.106-.192-.174l-.196-.181-.107-.1-.011-.01a1.531 1.531 0 00-.336-.253.313.313 0 00-.095-.03h-.005c-.119.022-.238.059-.361.11a.308.308 0 01-.077.061l-.008.005a.309.309 0 01-.126.034 5.66 5.66 0 00-.774.518l-.416.324-.055.043a6.542 6.542 0 01-.324.236c-.305.207-.552.315-.8.315a.31.31 0 01-.01-.618h.01c.09 0 .235-.062.438-.198l.04-.027c.077-.054.163-.117.27-.199l.385-.301.06-.047c.268-.206.506-.373.73-.505l-.633-1.21a.309.309 0 01.254-.451l20.287-1.305a.309.309 0 01.228.537zm-1.118.14L2.369 19.03l.423.809c.128-.045.256-.078.388-.1a.31.31 0 01.052-.005c.132 0 .26.032.386.093.153.073.294.179.483.35l.016.015.092.086.144.134.097.089c.065.06.125.114.16.144.485.418.948.658 1.554.736h.011a1.25 1.25 0 00.6-.172l.021-.011.019-.011.018-.011c.141-.084.266-.178.492-.366l.178-.148c.279-.232.426-.342.625-.456.305-.174.612-.266.95-.266.336 0 .644.092.948.266l.023.014c.188.109.335.219.603.442l.177.148c.222.184.346.278.484.36l.027.017.019.01c.215.124.42.185.641.185.222 0 .426-.061.641-.184l.019-.011.018-.011c.141-.084.267-.178.493-.366l.177-.148c.28-.232.427-.342.626-.456.304-.174.612-.266.949-.266.337 0 .644.092.949.266l.025.015c.187.109.334.22.603.443 1.867-.878 3.448-1.811 4.73-2.832l.02-.016zM3.653 2.026C6.073 3.06 8.69 4.941 10.8 7.258c2.46 2.7 4.109 5.828 4.637 9.149a.31.31 0 01-.421.335c-2.348-.945-4.54-1.258-6.59-1.02-1.739.2-3.337.792-4.816 1.703-.294.182-.62-.182-.405-.454 1.856-2.355 2.581-4.99 2.343-7.794-.195-2.292-1.031-4.61-2.284-6.709a.31.31 0 01.388-.442zM10.04 4.45c1.778.543 3.892 2.102 5.782 4.243 1.984 2.248 3.552 4.934 4.347 7.582a.31.31 0 01-.401.38l-.022-.01-.386-.154a10.594 10.594 0 00-.291-.112l-.016-.006c-.68-.247-1.199-.291-1.944-.101a.31.31 0 01-.375-.218C15.378 11.123 13.073 7.276 9.775 5c-.291-.201-.072-.653.266-.55zM4.273 2.996l.008.015c1.028 1.94 1.708 4.031 1.885 6.113.213 2.513-.31 4.906-1.673 7.092l-.02.031.003-.001c1.198-.581 2.47-.969 3.825-1.132l.055-.006c1.981-.23 4.083.029 6.309.837l.066.025-.007-.039c-.593-2.95-2.108-5.737-4.31-8.179l-.07-.078c-1.785-1.96-3.944-3.6-6.014-4.65l-.057-.028zm7.92 3.238l.048.048c2.237 2.295 3.885 5.431 4.974 9.191l.038.132.022-.004c.71-.133 1.284-.063 1.963.18l.027.01.066.024.046.018-.025-.073c-.811-2.307-2.208-4.62-3.936-6.594l-.058-.065c-1.02-1.155-2.103-2.132-3.15-2.856l-.015-.011z"/>
+                </g>
               </svg>
             </div>
             <div class="tech-info">
@@ -3997,8 +4095,9 @@
             <div class="tech-svg">
               <svg viewBox="0 0 100 100" fill="none">
                 <rect width="100" height="100" rx="22" fill="#000000"/>
-                <rect x="35" y="25" width="10" height="50" rx="5" fill="#FFFFFF"/>
-                <rect x="55" y="25" width="10" height="50" rx="5" fill="#FFFFFF"/>
+                <g transform="translate(20, 20) scale(2.5)" fill="#FFFFFF">
+                  <path d="M5 0h5v24H5V0zM14 0h5v24h-5V0z"/>
+                </g>
               </svg>
             </div>
             <div class="tech-info">
@@ -4206,7 +4305,6 @@
         <!-- Brand Column -->
         <div>
           <button class="brand-btn" data-target="home" style="color:#fff;">
-            <svg class="icon brand-logo-spark" viewBox="0 0 48 48"><path d="M24 2c2.2 13.8 7.9 19.6 22 22-14.1 2.4-19.8 8.2-22 22-2.2-13.8-7.9-19.6-22-22 14.1-2.4 19.8-8.2 22-22Z" fill="currentColor"/></svg>
             <span>Wildan</span>
           </button>
           <p class="footer-tagline">Creative Designer & Video Specialist crafting high-converting visual assets.</p>
@@ -4241,7 +4339,6 @@
           <p class="footer-col-title">Social</p>
           <ul class="footer-col-links">
             <li><a href="https://wa.me/6282250561757" target="_blank" rel="noopener" class="animated-link"><span>WhatsApp</span></a></li>
-            <li><a href="https://github.com/wildanfi12" target="_blank" rel="noopener" class="animated-link"><span>GitHub</span></a></li>
             <li><a href="https://instagram.com/wildanfii/" target="_blank" rel="noopener" class="animated-link"><span>Instagram</span></a></li>
             <li><a href="mailto:wildanfi1212@gmail.com" class="animated-link"><span>Email</span></a></li>
           </ul>
@@ -4250,8 +4347,7 @@
       </div>
 
       <!-- Legal Bar -->
-      <div class="footer-legal-bar">
-        <span>© 2026 Wildan Studio. All rights reserved.</span>
+      <div class="footer-legal-bar" style="justify-content: flex-end;">
         <div class="legal-links">
           <a href="#home" class="animated-link"><span>Privacy</span></a>
           <a href="#home" class="animated-link"><span>Terms</span></a>
@@ -4270,7 +4366,6 @@
   <div id="nav-overlay" role="dialog" aria-modal="true" aria-label="Navigation Menu" data-lenis-prevent>
     <div class="shell nav-overlay-top">
       <div class="brand-btn" style="color:#fff;">
-        <svg class="icon brand-logo-spark" viewBox="0 0 48 48" style="color:var(--accent-from);"><path d="M24 2c2.2 13.8 7.9 19.6 22 22-14.1 2.4-19.8 8.2-22 22-2.2-13.8-7.9-19.6-22-22 14.1-2.4 19.8-8.2 22-22Z" fill="currentColor"/></svg>
         <span>Wildan</span>
       </div>
 
@@ -4369,7 +4464,6 @@
             <span class="overlay-contact-label">Socials</span>
             <div style="display:flex; gap:0.75rem;">
               <a href="https://instagram.com/wildanfii/" target="_blank" rel="noopener" style="color:var(--accent-from);">Instagram ↗</a>
-              <a href="https://github.com/wildanfi12" target="_blank" rel="noopener" style="color:var(--accent-from);">GitHub ↗</a>
             </div>
           </div>
         </div>
@@ -4497,7 +4591,7 @@
   </div>
 
   <!-- Portfolio Data & Render Script -->
-  <script src="js/portfolio.js?v=2.1"></script>
+  <script src="js/portfolio.js?v=2.2"></script>
 
   <!-- Local Lenis Smooth Scroll Library (Offline & file:// Compatible) -->
   <script src="js/lenis.min.js"></script>
