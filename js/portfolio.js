@@ -2148,6 +2148,85 @@ const PROJECTS = [
   },
 
   {
+    id: 'video-editing-mid-layer',
+    title: 'Mid Layer',
+    category: 'video',
+    categoryName: 'Video Editing & Motion',
+    client: 'Mid Layer',
+    metric: '9 Video Reels & Storytelling • Bunny Stream',
+    thumbnail: 'assets/mid-layer/mid_1.jpg',
+    shortDesc: 'Folder Video Editing Mid Layer — 9 Video Reels Edukasi, Pop Culture, Storytelling & Animasi via Bunny Stream CDN.',
+    fullDesc: 'Folder koleksi resmi Video Editing untuk Mid Layer yang terhubung langsung ke Bunny Stream CDN. Berisi 9 video reels bertema psikologi buku, motivasi, self-development, eksplorasi sains NASA, dan mini dokumenter musik & pop culture dengan dynamic motion, captions, dan sound design profesional.',
+    challenge: 'Mengolah topik edukasi, biografi, dan storytelling menjadi video format vertikal 9:16 yang engaging, cepat dipahami, dan mempertahankan retensi penonton tinggi.',
+    solution: 'Integrasi video streaming melalui Bunny Stream CDN berkecepatan tinggi, pacing editing dinamis, tipografi kinetik, animasi ilustrasi tematik, dan sound design immersive.',
+    results: [
+      '9 Aset Video Reels & Storytelling Resmi Terkoneksi ke Bunny Stream CDN (Library ID: 756896)',
+      'Streaming Cepat Kualitas HD Bebas Buffering & Bebas Iklan',
+      'Format Optimal untuk TikTok, Instagram Reels, dan YouTube Shorts'
+    ],
+    tools: ['Premiere Pro', 'After Effects', 'CapCut Pro', 'Bunny Stream'],
+    bunnyVideoId: 'a858712e-f57b-4df0-a5b5-4ec786052bfe',
+    bunnyLibraryId: '756896',
+    embedVideo: 'https://iframe.mediadelivery.net/embed/756896/a858712e-f57b-4df0-a5b5-4ec786052bfe',
+    items: [
+      {
+        name: 'The Paradox of Choice — Barry Schwartz.mp4',
+        img: 'assets/mid-layer/mid_1.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/a858712e-f57b-4df0-a5b5-4ec786052bfe',
+        desc: 'Review buku The Paradox of Choice — Video reels edukasi psikologi & pengambilan keputusan.'
+      },
+      {
+        name: 'Urban Commuter Storytelling.mp4',
+        img: 'assets/mid-layer/mid_2.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/b70376b9-aea6-4466-a3fa-b99b0ae0d04d',
+        desc: 'Urban Commuter Storytelling — Video sinematik kehidupan urban & perjalanan harian.'
+      },
+      {
+        name: 'Office Routine 2D Animation.mp4',
+        img: 'assets/mid-layer/mid_3.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/52829eea-0dbc-400c-8631-80616f330262',
+        desc: 'Office Routine — Animasi gerak 2D seputar dinamika kerja dan produktivitas kantor.'
+      },
+      {
+        name: 'Self Development — Kita Juga Lagi Berproses.mp4',
+        img: 'assets/mid-layer/mid_4.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/60c55eed-dfe1-4969-8e6f-982fdbc81c7c',
+        desc: 'Self Development — Konten refleksi diri dan motivasi tentang menghargai proses hidup.'
+      },
+      {
+        name: 'Mindset & Final Thoughts — Overcoming Limits.mp4',
+        img: 'assets/mid-layer/mid_5.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/b5ba9ab9-17ca-4645-9764-bc6514c2231f',
+        desc: 'Mindset & Final Thoughts — Video animasi seputar menembus batasan pola pikir sendiri.'
+      },
+      {
+        name: 'NASA Artemis & Orion Translunar Mission.mp4',
+        img: 'assets/mid-layer/mid_6.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/f5992c4a-f0e3-499d-985a-0909d89f745b',
+        desc: 'NASA Artemis & Orion — Dokumenter singkat sains & eksplorasi misi luar angkasa NASA.'
+      },
+      {
+        name: 'Kurt Cobain & Nirvana Storytelling.mp4',
+        img: 'assets/mid-layer/mid_7.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/c7553e73-cdf7-49df-81de-3133f7632640',
+        desc: 'Kurt Cobain Storytelling — Mini dokumenter biografi vokalis Nirvana & kultur musik 90an.'
+      },
+      {
+        name: 'XXXTentacion Bio & Facts.mp4',
+        img: 'assets/mid-layer/mid_8.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/2db65fa0-a82b-4c10-bc04-c6efcf1b8a59',
+        desc: 'XXXTentacion Bio & Facts — Video dokumenter hip-hop fakta resmi perjalanan karier.'
+      },
+      {
+        name: 'Biographical Narrative & Relationship Journey.mp4',
+        img: 'assets/mid-layer/mid_9.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/e03e2010-69e2-4167-8003-8fccdd7ec10a',
+        desc: 'Biographical Narrative — Storytelling dokumenter perjalanan kisah nyata kehidupan.'
+      }
+    ]
+  },
+
+  {
     id: 'video-editing-elvorindo',
     title: 'Elvorindo',
     category: 'video',
