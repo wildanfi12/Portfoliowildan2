@@ -460,7 +460,7 @@
     .nav-center {
       display: none;
     }
-    @media (min-width: 1024px) {
+    @media (min-width: 1025px) {
       .nav-center {
         display: flex;
       }
@@ -575,6 +575,11 @@
     @media (min-width: 640px) {
       .menu-btn-text {
         display: inline;
+      }
+    }
+    @media (min-width: 1025px) {
+      .menu-btn {
+        display: none !important;
       }
     }
 
@@ -3752,6 +3757,9 @@
         align-items: center !important;
         justify-content: space-between !important;
       }
+      .nav-center {
+        display: none !important;
+      }
       .brand-btn {
         font-size: 1.15rem !important;
         font-weight: 600 !important;
@@ -4071,10 +4079,17 @@
     }
 
     /* ==========================================================================
-       FINAL VISUAL REFINEMENT: TABLET (640px - 1023px)
+       FINAL VISUAL REFINEMENT: TABLET (640px - 1024px)
        Two-Column Balanced Composition System
        ========================================================================== */
-    @media (min-width: 640px) and (max-width: 1023px) {
+    @media (min-width: 640px) and (max-width: 1024px) {
+
+      .nav-center {
+        display: none !important;
+      }
+      .menu-btn {
+        display: inline-flex !important;
+      }
 
       .shell {
         padding-inline: 2rem !important;
