@@ -13,6 +13,9 @@ const PROJECTS = [
     client: 'Client Brands & Agencies',
     metric: '10 Brand Logo Vector & Asset Collection',
     thumbnail: 'assets/logos/1.png',
+    thumbBg: '#ffffff',
+    embedVideo: 'assets/logos/1.png',
+    embedBg: '#ffffff',
     shortDesc: 'Folder Logo & Brand Identity — Koleksi Desain Logo Resmi (Vector Logos, Client Identity & Symbol Design).',
     fullDesc: 'Folder koleksi resmi Desain Logo & Identitas Brand dari folder assets/Logo. Di dalamnya berisi 10 aset desain logo klien dan korporat resmi dengan berbagai gaya simbolis, tipografi modern, dan desain vektor presisi.',
     challenge: 'Merancang simbol logo & identitas visual brand yang unik, modern, mudah diingat, dan dapat diaplikasikan fleksibel di berbagai media cetak & digital.',
@@ -22,57 +25,66 @@ const PROJECTS = [
       'Digunakan untuk identitas visual utama, media branding, dan e-commerce klien'
     ],
     tools: ['Illustrator', 'Photoshop', 'CorelDRAW'],
-    embedVideo: 'assets/logos/1.png',
     items: [
       {
-        name: 'Brand Logo 1 — Modern Symbol Design',
+        name: 'Brand Logo 1 — FKDB 1 Dekade (10th Anniversary)',
         img: 'assets/logos/1.png',
-        desc: 'Desain logo identitas brand modern edisi 1.'
+        desc: 'Desain logo resmi peringatan 1 Dekade FKDB (Simbol 10th Kemandirian & Persatuan).',
+        bg: '#ffffff'
       },
       {
-        name: 'Brand Logo 2 — Minimalist Emblem',
+        name: 'Brand Logo 2 — MIDLAY',
         img: 'assets/logos/2.png',
-        desc: 'Desain logo identitas brand minimalis edisi 2.'
+        desc: 'Desain logo modern & emblem identitas brand MIDLAY.',
+        bg: '#111111'
       },
       {
-        name: 'Brand Logo 3 — Corporate Identity Mark',
+        name: 'Brand Logo 3 — Nadia Bakery',
         img: 'assets/logos/3.png',
-        desc: 'Desain logo identitas korporat & bisnis edisi 3.'
+        desc: 'Desain logo identitas korporat & bakery artisan Nadia Bakery (Est. 2005).',
+        bg: '#ffffff'
       },
       {
-        name: 'Brand Logo 4 — Creative Studio Mark',
+        name: 'Brand Logo 4 — JOURJOLI Creative Studio',
         img: 'assets/logos/4.png',
-        desc: 'Desain logo studio kreatif edisi 4.'
+        desc: 'Desain logo tipografi elegan & modern studio kreatif JOURJOLI.',
+        bg: '#ffffff'
       },
       {
-        name: 'Brand Logo 5 — Vector Badge Design',
+        name: 'Brand Logo 5 — jourjoli Made In Indonesia',
         img: 'assets/logos/5.png',
-        desc: 'Desain logo lencana vektor edisi 5.'
+        desc: 'Desain logo lencana vektor brand fashion lokal jourjoli.',
+        bg: '#ffffff'
       },
       {
-        name: 'Brand Logo 6 — E-Commerce Brand Logo',
+        name: 'Brand Logo 6 — DH TEKNIK',
         img: 'assets/logos/6.png',
-        desc: 'Desain logo e-commerce & toko online edisi 6.'
+        desc: 'Desain logo industri & teknik servis engineering DH TEKNIK.',
+        bg: '#ffffff'
       },
       {
-        name: 'Brand Logo 7 — Premium Iconography',
+        name: 'Brand Logo 7 — DIPPO DAY',
         img: 'assets/logos/7.png',
-        desc: 'Desain logo ikonografi premium edisi 7.'
+        desc: 'Desain logo ikonografi dan monogram tegas brand DIPPO DAY.',
+        bg: '#ffffff'
       },
       {
-        name: 'Brand Logo 8 — Typography Brand Mark',
+        name: 'Brand Logo 8 — CARI DIGITAL',
         img: 'assets/logos/8.png',
-        desc: 'Desain logo tipografi khas edisi 8.'
+        desc: 'Desain logo agency pemasaran & solusi digital CARI DIGITAL.',
+        bg: '#ffffff'
       },
       {
-        name: 'Brand Logo 9 — Geometric Monogram',
+        name: 'Brand Logo 9 — DH TOOLS',
         img: 'assets/logos/9.png',
-        desc: 'Desain logo monogram geometris edisi 9.'
+        desc: 'Desain logo perkakas profesional & hardware tooling DH TOOLS.',
+        bg: '#ffffff'
       },
       {
-        name: 'Brand Logo 10 — Luxury Brand Identity',
+        name: 'Brand Logo 10 — cari! tofu',
         img: 'assets/logos/10.png',
-        desc: 'Desain logo identitas brand eksklusif edisi 10.'
+        desc: 'Desain logo maskot ilustratif & identitas kuliner cari! tofu.',
+        bg: '#111111'
       }
     ]
   },
@@ -4167,29 +4179,35 @@ const PROJECTS = [
     categoryName: 'YouTube Content',
     client: 'Doa Bangsa TV',
     metric: '▶ Channel YouTube Official',
-    thumbnail: 'assets/youtube/doa-bangsa-tv-cover.png',
+    thumbnail: 'assets/Youtube/doa-bangsa-tv-thumb.png',
     youtubeUrl: 'https://www.youtube.com/@DoaBangsatv/videos',
     shortDesc: 'Official YouTube Channel Doa Bangsa TV — Liputan Khusus, Video Edukasi, Program Inspirasi & Live Streaming.',
     fullDesc: 'Saluran Resmi YouTube Doa Bangsa TV (https://www.youtube.com/@DoaBangsatv/videos). Menyajikan konten tayangan video edukasi, liputan program Forum Komunikasi Doa Bangsa (FKDB), inspirasi kemandirian ekonomi, dan dokumenter kegiatan nasional.',
     challenge: 'Membangun saluran YouTube resmi Doa Bangsa TV dengan identitas visual profesional, thumbnails high-CTR, dan penataan playlist terstruktur.',
-    solution: 'Produksi video terpadu, editing acara liputan, pembuatan thumbnail menarik, dan integrasi langsung ke Channel Resmi YouTube.',
+    solution: 'Produksi video terpadu, editing acara liputan, pembuatan thumbnail menarik berorientasi CTR tinggi, dan integrasi langsung ke Channel Resmi YouTube.',
     results: [
-      'Saluran Resmi YouTube Doa Bangsa TV Aktif & Terintegrasi',
-      'Menyajikan Ratusan Video Edukasi & Inspirasi Nasional'
+      'Saluran Resmi YouTube Doa Bangsa TV Aktif & Terintegrasi (80.1K+ Subs, 1.2K+ Video)',
+      'Menyajikan Ratusan Video Edukasi & Inspirasi Nasional dengan Thumbnails 16:9 Konsisten'
     ],
     tools: ['YouTube', 'Premiere Pro', 'Photoshop', 'After Effects'],
-    embedVideo: 'assets/youtube/doa-bangsa-tv-cover.png',
+    embedVideo: 'assets/Youtube/doa-bangsa-tv-thumb.png',
     items: [
       {
-        name: 'Doa Bangsa TV — Channel YouTube Official',
-        img: 'assets/youtube/doa-bangsa-tv-cover.png',
-        desc: 'Klik untuk langsung menuju ke Channel YouTube Resmi Doa Bangsa TV.',
+        name: 'Doa Bangsa TV — Inspirasi Kemandirian & Edukasi (Official 16:9 Thumbnail)',
+        img: 'assets/Youtube/doa-bangsa-tv-thumb.png',
+        desc: 'Desain visual thumbnail resmi YouTube Doa Bangsa TV: Inspirasi Kemandirian & Edukasi.',
+        url: 'https://www.youtube.com/@DoaBangsatv/videos'
+      },
+      {
+        name: 'Doa Bangsa TV — Channel Homepage & Liputan FKDB',
+        img: 'assets/Youtube/doa-bangsa-tv-cover.png',
+        desc: 'Tampilan saluran resmi YouTube Doa Bangsa TV dengan 80.1 rb subscriber & 1,2 rb video.',
         url: 'https://www.youtube.com/@DoaBangsatv/videos'
       },
       {
         name: 'Program Liputan FKDB Doa Bangsa TV',
         img: 'assets/fkdb/Flyer Idul Fitri FKDB 2025.png',
-        desc: 'Kumpulan program liputan & acara inspiratif Doa Bangsa TV.',
+        desc: 'Kumpulan program liputan & materi acara inspiratif Doa Bangsa TV.',
         url: 'https://www.youtube.com/@DoaBangsatv/videos'
       }
     ]
@@ -4202,23 +4220,53 @@ const PROJECTS = [
     categoryName: 'YouTube Content',
     client: 'Buddhis Indonesia',
     metric: '▶ Channel YouTube Official',
-    thumbnail: 'assets/youtube/buddhis-indonesia-cover.png',
+    thumbnail: 'assets/Youtube/buddhis-indonesia-thumb.png',
     youtubeUrl: 'https://www.youtube.com/@buddhisindonesia2023/videos',
     shortDesc: 'Official YouTube Channel Buddhis Indonesia — Video Edukasi, AI YouTube Thumbnails & Konten Keagamaan.',
-    fullDesc: 'Saluran Resmi YouTube Buddhis Indonesia (https://www.youtube.com/@buddhisindonesia2023/videos). Menyajikan konten video edukasi spiritual, ajaran kebaikan, pembahasan dharma, dan video pendek inspiratif.',
+    fullDesc: 'Saluran Resmi YouTube Buddhis Indonesia (https://www.youtube.com/@buddhisindonesia2023/videos). Menyajikan konten video edukasi spiritual, ajaran kebaikan, pembahasan dharma, dan video pendek inspiratif dengan thumbnail AI beresolusi 1920x1080.',
     challenge: 'Mendesain visual thumbnail YouTube ber-CTR tinggi dan mengemas video edukasi spiritual yang menarik bagi audiens luas.',
     solution: 'Generasi gambar AI untuk thumbnail YouTube, editing video edukasi ritmis, dan integrasi ke Channel Resmi YouTube.',
     results: [
-      'Saluran Resmi YouTube Buddhis Indonesia Aktif & Terintegrasi',
-      'Menyajikan Video Edukasi & AI YouTube Thumbnails High-CTR'
+      'Saluran Resmi YouTube Buddhis Indonesia Aktif & Terintegrasi (9.9K+ Subs, 2.6K+ Video)',
+      'Menyajikan Video Edukasi & AI YouTube Thumbnails High-CTR Resolusi 1920x1080'
     ],
     tools: ['YouTube', 'Photoshop', 'Midjourney', 'Premiere Pro'],
-    embedVideo: 'assets/youtube/buddhis-indonesia-cover.png',
+    embedVideo: 'assets/Youtube/buddhis-indonesia-thumb.png',
     items: [
       {
-        name: 'Buddhis Indonesia — Channel YouTube Official',
-        img: 'assets/youtube/buddhis-indonesia-cover.png',
-        desc: 'Klik untuk langsung menuju ke Channel YouTube Resmi Buddhis Indonesia.',
+        name: 'Buddhis Indonesia — Latihan Meditasi Mental Health Awareness (16:9 Thumbnail)',
+        img: 'assets/andrey-graphic-design/buddhis-indonesia/1.png',
+        desc: 'Desain thumbnail YouTube Series 1: Latihan Meditasi Untuk Meningkatkan Mental Health Awareness.',
+        url: 'https://www.youtube.com/@buddhisindonesia2023/videos'
+      },
+      {
+        name: 'Buddhis Indonesia — Cara Membuat Hati & Pikiran Tenang (16:9 Thumbnail)',
+        img: 'assets/andrey-graphic-design/buddhis-indonesia/2.png',
+        desc: 'Desain thumbnail YouTube Series 2: Cara Membuat Hati dan Pikiran Tenang Dari Seorang Meditator.',
+        url: 'https://www.youtube.com/@buddhisindonesia2023/videos'
+      },
+      {
+        name: 'Buddhis Indonesia — Rahasia Menghilangkan Stres (16:9 Thumbnail)',
+        img: 'assets/andrey-graphic-design/buddhis-indonesia/3.png',
+        desc: 'Desain thumbnail YouTube Series 3: Rahasia Menghilangkan Stres.',
+        url: 'https://www.youtube.com/@buddhisindonesia2023/videos'
+      },
+      {
+        name: 'Buddhis Indonesia — Atasi Stress Dengan Latihan Meditasi (16:9 Thumbnail)',
+        img: 'assets/andrey-graphic-design/buddhis-indonesia/4.png',
+        desc: 'Desain thumbnail YouTube Series 4: Atasi Stress Dengan Latihan Meditasi.',
+        url: 'https://www.youtube.com/@buddhisindonesia2023/videos'
+      },
+      {
+        name: 'Buddhis Indonesia — Meditasi Untuk Menenangkan Hati & Pikiran (16:9 Thumbnail)',
+        img: 'assets/andrey-graphic-design/buddhis-indonesia/5.png',
+        desc: 'Desain thumbnail YouTube Series 5: Meditasi Untuk Menenangkan Hati dan Pikiran.',
+        url: 'https://www.youtube.com/@buddhisindonesia2023/videos'
+      },
+      {
+        name: 'Buddhis Indonesia — Channel Official Hub',
+        img: 'assets/Youtube/buddhis-indonesia-cover.png',
+        desc: 'Tampilan saluran resmi YouTube Buddhis Indonesia (9.95 rb subscriber & 2,6 rb video).',
         url: 'https://www.youtube.com/@buddhisindonesia2023/videos'
       }
     ]
@@ -4231,23 +4279,29 @@ const PROJECTS = [
     categoryName: 'YouTube Content',
     client: 'Coach Yanto',
     metric: '▶ Channel YouTube Official',
-    thumbnail: 'assets/youtube/coach-yanto-cover.png',
+    thumbnail: 'assets/Youtube/coach-yanto-thumb.png',
     youtubeUrl: 'https://www.youtube.com/@coachyanto/videos',
     shortDesc: 'Official YouTube Channel Coach Yanto — Video Coaching Bisnis, Development Mentoring & Mindset Shorts.',
-    fullDesc: 'Saluran Resmi YouTube Coach Yanto (https://www.youtube.com/@coachyanto/videos). Menyajikan konten video coaching bisnis, strategi pengembangan diri, tips kepemimpinan, dan sesi mentoring interaktif.',
+    fullDesc: 'Saluran Resmi YouTube Coach Yanto (https://www.youtube.com/@coachyanto/videos). Menyajikan konten video coaching bisnis, strategi pengembangan diri, tips kepemimpinan, dan sesi mentoring interaktif dengan thumbnail high-CTR berkarakter kepemimpinan kuat.',
     challenge: 'Mengemas sesi coaching bisnis & personal growth durasi panjang menjadi video edukasi berretensi tinggi dan thumbnail profesional.',
-    solution: 'Editing video webinar & coaching dinamis, judul teks kinetik, thumbnail branding tebal, dan integrasi langsung ke Channel YouTube.',
+    solution: 'Editing video webinar & coaching dinamis, judul teks kinetik, thumbnail branding tebal ber-CTR tinggi, dan integrasi langsung ke Channel YouTube.',
     results: [
-      'Saluran Resmi YouTube Coach Yanto Aktif & Terintegrasi',
-      'Menyajikan Video Coaching Bisnis & Pengembangan Diri'
+      'Saluran Resmi YouTube Coach Yanto Aktif & Terintegrasi (26.4K+ Subs, 565+ Video)',
+      'Menyajikan Video Coaching Bisnis & Pengembangan Diri dengan High Engagement'
     ],
     tools: ['YouTube', 'Premiere Pro', 'Photoshop', 'CapCut Pro'],
-    embedVideo: 'assets/youtube/coach-yanto-cover.png',
+    embedVideo: 'assets/Youtube/coach-yanto-thumb.png',
     items: [
       {
-        name: 'Coach Yanto — Channel YouTube Official',
-        img: 'assets/youtube/coach-yanto-cover.png',
-        desc: 'Klik untuk langsung menuju ke Channel YouTube Resmi Coach Yanto.',
+        name: 'Coach Yanto — Tenangkan Akar Overthinking (Official 16:9 Thumbnail)',
+        img: 'assets/Youtube/coach-yanto-thumb.png',
+        desc: 'Desain thumbnail resmi YouTube: Tenangkan Akar Overthinking — Mental Clarity & Mindset.',
+        url: 'https://www.youtube.com/@coachyanto/videos'
+      },
+      {
+        name: 'Coach Yanto — Success & Happiness Official Channel',
+        img: 'assets/Youtube/coach-yanto-cover.png',
+        desc: 'Tampilan saluran resmi YouTube Coach Yanto: Executive Mentor & Leadership Expert.',
         url: 'https://www.youtube.com/@coachyanto/videos'
       }
     ]
@@ -4259,15 +4313,46 @@ const PROJECTS = [
     category: 'youtube',
     categoryName: 'YouTube Content',
     client: 'Mind Mastery Academy',
-    metric: '+500K Views',
-    thumbnail: 'assets/mind-mastery/1.png',
+    metric: '+500K Views • Official Thumbnail',
+    thumbnail: 'assets/Youtube/mind-mastery-thumb.png',
+    youtubeUrl: 'https://www.youtube.com/@coachyanto/videos',
     shortDesc: 'Folder YouTube Content Mind Mastery Academy — Editing Video Edukasi, Thumbnail High-CTR, & Sound Design.',
-    fullDesc: 'Pascaproduksi lengkap saluran YouTube Mind Mastery Academy. Meliputi editing video edukasi durasi panjang, switching kamera, judul kinetik, dan desain thumbnail ber-CTR tinggi.',
-    challenge: 'Pertahankan retensi penonton pada materi edukasi durasi 20 menit.',
-    solution: 'Editing dinamis dengan efek suara & zoom visual berkala tiap 15 detik.',
-    results: ['500K+ Total Penayangan YouTube'],
-    tools: ['Premiere Pro', 'Photoshop'],
-    embedVideo: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4'
+    fullDesc: 'Pascaproduksi lengkap saluran YouTube Mind Mastery Academy. Meliputi editing video edukasi durasi panjang, switching kamera, judul kinetik, dan desain thumbnail 16:9 ber-CTR tinggi untuk seri Memprogram Ulang Pikiran Bawah Sadar & Meditasi.',
+    challenge: 'Pertahankan retensi penonton pada materi edukasi durasi 20 menit dan buat thumbnail yang memikat serta berbobot keilmuan.',
+    solution: 'Editing dinamis dengan efek suara & zoom visual berkala tiap 15 detik, dilengkapi thumbnail 16:9 bernuansa neural lighting & visual subconscious mind.',
+    results: [
+      '500K+ Total Penayangan YouTube',
+      'Desain Visual Thumbnail 16:9 High-CTR & Cover E-Learning Komprehensif'
+    ],
+    tools: ['Premiere Pro', 'Photoshop', 'Illustrator'],
+    embedVideo: 'assets/Youtube/mind-mastery-thumb.png',
+    items: [
+      {
+        name: 'Mind Mastery Academy — Memprogram Ulang Pikiran Bawah Sadar (Official 16:9 Thumbnail)',
+        img: 'assets/Youtube/mind-mastery-thumb.png',
+        desc: 'Desain thumbnail YouTube 16:9: Memprogram Ulang Pikiran Bawah Sadar series.'
+      },
+      {
+        name: 'E-Learning Series — Memprogram Ulang Pikiran Series',
+        img: 'assets/mind-mastery/4.png',
+        desc: 'Visual materi e-learning series Mind Mastery Academy x Coach Yanto.'
+      },
+      {
+        name: '21 Days Law of Attraction Meditation Journey',
+        img: 'assets/mind-mastery/3.png',
+        desc: 'Visual modul panduan meditasi 21 hari Law of Attraction.'
+      },
+      {
+        name: 'E-Learning Meditasi 10 Hari Fokus & Produktif',
+        img: 'assets/mind-mastery/2.png',
+        desc: 'Visual modul e-learning 10 hari fokus & produktif.'
+      },
+      {
+        name: 'Promo Bundling E-Learning Pack',
+        img: 'assets/mind-mastery/1.png',
+        desc: 'Desain visual paket promo bundling Mind Mastery Academy.'
+      }
+    ]
   }
 ];
 
@@ -4352,9 +4437,11 @@ function initPortfolio() {
       const card = document.createElement('div');
       card.className = 'glass-card project-card reveal-up revealed';
       const isCardVid = p.thumbnail.endsWith('.mp4') || p.thumbnail.endsWith('.mov');
+      const thumbBgStyle = p.thumbBg ? ` style="background: ${p.thumbBg};"` : '';
+      const thumbImgStyle = p.thumbBg ? ' style="object-fit: contain; padding: 1.25rem;"' : '';
 
       card.innerHTML = `
-        <div class="project-thumb">
+        <div class="project-thumb"${thumbBgStyle}>
           ${isCardVid ? `
             <div class="video-poster-fallback">
               <div class="video-poster-icon">▶</div>
@@ -4362,7 +4449,7 @@ function initPortfolio() {
             </div>
             <video src="${p.thumbnail.includes('#t=') ? p.thumbnail : p.thumbnail + '#t=0.5'}" class="card-video-thumb" autoplay loop muted playsinline preload="metadata" onloadedmetadata="if(this.currentTime<0.5) this.currentTime=0.5;"></video>
           ` : `
-            <img src="${p.thumbnail}" alt="${p.title}" loading="lazy">
+            <img src="${p.thumbnail}" alt="${p.title}" loading="lazy"${thumbImgStyle}>
           `}
           <span class="project-category-badge" style="${p.youtubeUrl ? 'background:rgba(220,38,38,0.9); color:#fff;' : ''}">📁 ${p.categoryName} • ${p.client}</span>
           <div class="project-overlay">
@@ -4379,11 +4466,7 @@ function initPortfolio() {
       `;
 
       card.addEventListener('click', () => {
-        if (p.youtubeUrl) {
-          window.open(p.youtubeUrl, '_blank');
-        } else {
-          openModal(p);
-        }
+        openModal(p);
       });
       grid.appendChild(card);
     });
@@ -4422,7 +4505,8 @@ function initPortfolio() {
     
     const isBunny = !!project.bunnyVideoId || (project.embedVideo && (project.embedVideo.includes('iframe.mediadelivery.net') || project.embedVideo.includes('player.mediadelivery.net') || project.embedVideo.includes('bunny') || project.embedVideo.includes('mediadelivery')));
     const isVideo = !isBunny && project.embedVideo && (project.embedVideo.endsWith('.mp4') || project.embedVideo.endsWith('.mov'));
-    const imageItems = project.items ? project.items.filter(item => item.img && !item.video) : [];
+    const initialEmbedBg = project.embedBg || (project.items && project.items[0] && project.items[0].bg) || '#000';
+    const isInitialLogo = !!project.embedBg || (project.items && project.items[0] && !!project.items[0].bg);
 
     let bunnyEmbedSrc = '';
     if (isBunny) {
@@ -4436,7 +4520,7 @@ function initPortfolio() {
     }
 
     modalBody.innerHTML = `
-      <div class="modal-media" id="modal-main-media" style="position:relative;" onclick="${(!isVideo && !isBunny) ? `window.openZoomViewerForProject('${project.id}', 0)` : ''}">
+      <div class="modal-media" id="modal-main-media" style="position:relative; background:${initialEmbedBg};" onclick="${(!isVideo && !isBunny) ? `window.openZoomViewerForProject('${project.id}', 0)` : ''}">
         ${isBunny ? `
           <div class="bunny-player-box" style="position:relative; width:100%; aspect-ratio:16/9; border-radius:14px; overflow:hidden; background:#000; box-shadow:0 8px 32px rgba(0,0,0,0.5);">
             <iframe src="${bunnyEmbedSrc}" loading="lazy" style="border:0; position:absolute; top:0; left:0; height:100%; width:100%;" allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;" allowfullscreen="true"></iframe>
@@ -4444,7 +4528,7 @@ function initPortfolio() {
         ` : isVideo ? `
           <video id="modal-video-player" src="${project.embedVideo}" controls autoplay loop muted preload="metadata" playsinline style="width:100%; height:100%; object-fit:contain; background:#000;"></video>
         ` : `
-          <img src="${project.embedVideo}" alt="${project.title}" loading="lazy">
+          <img id="modal-main-image" src="${project.embedVideo}" alt="${project.title}" loading="lazy" style="${isInitialLogo ? 'object-fit: contain; padding: 2rem; width: 100%; height: 100%;' : ''}">
           <div class="modal-media-zoom-overlay">🔍 Klik untuk Zoom Fullscreen</div>
         `}
       </div>
@@ -4456,7 +4540,7 @@ function initPortfolio() {
           <div>
             <a href="${project.youtubeUrl}" target="_blank" class="btn btn-primary" style="background:#ff0000; border-color:#ff0000; color:#fff; font-weight:700; font-size:0.95rem; padding:0.7rem 1.3rem; display:inline-flex; align-items:center; gap:0.6rem; text-decoration:none; border-radius:12px; box-shadow: 0 4px 15px rgba(255, 0, 0, 0.3); max-width:100%; word-break:break-word;">
               <svg viewBox="0 0 24 24" width="20" height="20" fill="#fff" style="flex-shrink:0;"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-              ▶ Kunjungi Channel YouTube Doa Bangsa TV
+              ▶ Kunjungi Channel YouTube ${project.title}
             </a>
           </div>
         ` : ''}
@@ -4476,10 +4560,12 @@ function initPortfolio() {
               const isItemVid = isBunnyItem || isDirectVid || (item.img && (item.img.endsWith('.mp4') || item.img.endsWith('.mov')));
               const mediaSrc = item.video || item.img;
               const coverSrc = item.img || (project.thumbnail && !project.thumbnail.endsWith('.mp4') ? project.thumbnail : '');
+              const itemBg = item.bg || '#000';
+              const isLogoItem = !!item.bg;
 
               return `
                 <div class="modal-folder-item" onclick="window.onItemClick('${project.id}', ${idx}, ${isItemVid})">
-                  <div style="aspect-ratio: 16/9; border-radius: 10px; overflow: hidden; margin-bottom: 0.75rem; border: 1px solid rgba(255, 255, 255, 0.1); background: #000; position: relative;">
+                  <div style="aspect-ratio: 16/9; border-radius: 10px; overflow: hidden; margin-bottom: 0.75rem; border: 1px solid rgba(255, 255, 255, 0.12); background: ${itemBg}; position: relative; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 16px rgba(0,0,0,0.3);">
                     ${isBunnyItem ? 
                       `<img src="${coverSrc}" alt="${item.name}" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
                        <div class="video-poster-fallback" style="opacity: 1; display: flex; align-items: center; justify-content: center; position: absolute; inset: 0; background: rgba(0,0,0,0.35);">
@@ -4488,7 +4574,7 @@ function initPortfolio() {
                       isDirectVid ? 
                       `<div class="video-poster-fallback"><div class="video-poster-icon" style="width:32px;height:32px;font-size:1rem;">▶</div></div>
                        <video src="${mediaSrc.includes('#t=') ? mediaSrc : mediaSrc + '#t=1.0'}" class="card-video-thumb" autoplay loop muted playsinline preload="metadata" onloadedmetadata="if(this.currentTime<0.5) this.currentTime=1.0;"></video>` : 
-                      `<img src="${coverSrc || item.img}" alt="${item.name}" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
+                      `<img src="${coverSrc || item.img}" alt="${item.name}" loading="lazy" style="width: 100%; height: 100%; ${isLogoItem ? 'object-fit: contain; padding: 0.85rem;' : 'object-fit: cover;'}">
                        <div class="modal-media-zoom-overlay" style="bottom:0.5rem; right:0.5rem; font-size:0.75rem; padding:0.25rem 0.6rem;">🔍 Zoom</div>`
                     }
                   </div>
@@ -4536,6 +4622,7 @@ function initPortfolio() {
     if (isVideo) {
       window.viewMediaPreview(item.video || item.img, item.name, true);
     } else {
+      window.viewMediaPreview(item.img, item.name, false, item.bg);
       window.openZoomViewerForProject(projectId, itemIndex);
     }
   };
@@ -4548,7 +4635,7 @@ function initPortfolio() {
     if (project.items && project.items.length > 0) {
       galleryItems = project.items.filter(item => item.img && !item.video);
     } else if (project.embedVideo && !project.embedVideo.endsWith('.mp4')) {
-      galleryItems = [{ name: project.title, img: project.embedVideo }];
+      galleryItems = [{ name: project.title, img: project.embedVideo, bg: project.embedBg }];
     }
 
     if (galleryItems.length > 0) {
@@ -4557,7 +4644,7 @@ function initPortfolio() {
   };
 
   // Helper function to view media (image or video) preview inside modal
-  window.viewMediaPreview = function(mediaSrc, title, isVideo) {
+  window.viewMediaPreview = function(mediaSrc, title, isVideo, itemBg = null) {
     const mediaContainer = document.getElementById('modal-main-media');
     if (mediaContainer) {
       // Pause any previously playing video
@@ -4578,15 +4665,20 @@ function initPortfolio() {
         let embedUrl = mediaSrc.replace('player.mediadelivery.net/play/', 'iframe.mediadelivery.net/embed/');
         const sep = embedUrl.includes('?') ? '&' : '?';
         const finalUrl = `${embedUrl}${sep}autoplay=true&loop=false`;
+        mediaContainer.style.background = '#000';
         mediaContainer.innerHTML = `
           <div class="bunny-player-box" style="position:relative; width:100%; aspect-ratio:16/9; border-radius:14px; overflow:hidden; background:#000; box-shadow:0 8px 32px rgba(0,0,0,0.5);">
             <iframe src="${finalUrl}" loading="lazy" style="border:0; position:absolute; top:0; left:0; height:100%; width:100%;" allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;" allowfullscreen="true"></iframe>
           </div>
         `;
       } else if (isVideo) {
+        mediaContainer.style.background = '#000';
         mediaContainer.innerHTML = `<video src="${mediaSrc}" controls autoplay loop style="width: 100%; height: 100%; object-fit: contain; background: #000;"></video>`;
       } else {
-        mediaContainer.innerHTML = `<img src="${mediaSrc}" alt="${title}" style="width: 100%; height: 100%; object-fit: contain; background: #000;">
+        const bg = itemBg || '#000';
+        const padStyle = itemBg ? 'object-fit: contain; padding: 2rem;' : 'object-fit: contain;';
+        mediaContainer.style.background = bg;
+        mediaContainer.innerHTML = `<img src="${mediaSrc}" alt="${title}" style="width: 100%; height: 100%; ${padStyle} background: ${bg};">
         <div class="modal-media-zoom-overlay">🔍 Klik untuk Zoom Fullscreen</div>`;
       }
       mediaContainer.scrollIntoView({ behavior: 'smooth' });
@@ -4637,6 +4729,18 @@ function initPortfolio() {
     zoomImg.src = item.img;
     zoomTitle.textContent = item.name || folderTitle || 'Preview Foto';
     zoomCounter.textContent = `${activeIndex + 1} / ${activeGallery.length}`;
+
+    if (item.bg) {
+      zoomImg.style.background = item.bg;
+      zoomImg.style.borderRadius = '12px';
+      zoomImg.style.padding = '2rem';
+      zoomImg.style.boxShadow = '0 12px 48px rgba(0,0,0,0.6)';
+    } else {
+      zoomImg.style.background = 'transparent';
+      zoomImg.style.borderRadius = '0';
+      zoomImg.style.padding = '0';
+      zoomImg.style.boxShadow = 'none';
+    }
 
     if (zoomPrevBtn) zoomPrevBtn.style.display = activeGallery.length > 1 ? 'flex' : 'none';
     if (zoomNextBtn) zoomNextBtn.style.display = activeGallery.length > 1 ? 'flex' : 'none';
