@@ -3727,172 +3727,320 @@
     }
 
     /* ==========================================================================
-       RESPONSIVE: HERO SECTION — MOBILE (≤639px)
-       Desktop layout is 100% untouched. Only mobile overrides here.
+       RESPONSIVE: MOBILE LAYOUT (max-width: 639px)
+       Intentionally redesigned — NOT a scaled-down desktop.
+       Desktop CSS is 100% untouched; these are mobile-specific overrides.
        ========================================================================== */
     @media (max-width: 639px) {
 
-      /* Reduce hero section vertical padding */
+      /* Shell: increase side padding for editorial feel */
+      .shell {
+        padding-inline: 1.5rem;
+      }
+
+      /* #home section: remove min-height, compact vertical */
+      #home {
+        min-height: 0 !important;
+        border-radius: 0 0 1.5rem 1.5rem;
+      }
+
+      /* Hero shell: column layout, tighter padding */
       .hero-shell {
-        padding-top: 1.25rem;
-        padding-bottom: 1.5rem;
-        gap: 1.25rem;
+        flex-direction: column !important;
+        padding-top: 2.5rem !important;
+        padding-bottom: 2rem !important;
+        gap: 2rem !important;
+        align-items: stretch !important;
       }
 
-      /* Headline: tighter, scaled for small screens */
+      /* LEFT COLUMN: full width, sensible gap */
+      .hero-left {
+        width: 100% !important;
+        flex: none !important;
+        gap: 1rem !important;
+      }
+
+      /* Eyebrow label */
+      .eyebrow-dark {
+        font-size: 0.75rem;
+      }
+
+      /* Headline: purpose-built mobile typography */
       .hero-title {
-        font-size: clamp(1.65rem, 8vw, 2.2rem);
-        max-width: 100%;
-        line-height: 1.08;
+        font-size: clamp(2rem, 9.5vw, 2.6rem) !important;
+        line-height: 0.98 !important;
+        letter-spacing: -0.03em !important;
+        max-width: 100% !important;
       }
 
-      /* Description: shorter max-width, comfortable read */
+      /* Description: comfortable reading width */
       .hero-subtitle {
-        font-size: 0.875rem;
-        max-width: 32ch;
-        line-height: 1.5;
+        font-size: 0.9rem !important;
+        line-height: 1.5 !important;
+        max-width: 100% !important;
+        color: rgba(17,17,17,0.6);
       }
 
-      /* Skill pills: tighter gap, slightly smaller text */
+      /* Skill pills: flex-wrap, 8px gap, no overflow */
       .hero-floating-skills {
-        gap: 0.3rem;
+        display: flex !important;
+        flex-wrap: wrap !important;
+        gap: 0.5rem !important;
+        max-width: 100%;
+        overflow: hidden;
       }
       .skill-pill {
-        font-size: 0.72rem;
-        padding: 0.28rem 0.6rem;
-        gap: 0.3rem;
+        font-size: 0.73rem !important;
+        padding: 0.3rem 0.65rem !important;
+        gap: 0.3rem !important;
+        flex-shrink: 0;
       }
 
-      /* Rating row: compact */
-      .stars-group {
-        font-size: 0.85rem;
-      }
-      .rating-text {
-        font-size: 0.78rem;
-      }
+      /* Rating row: compact, single line */
+      .rating-row { gap: 0.4rem; }
+      .stars-group { font-size: 0.82rem; }
+      .rating-text  { font-size: 0.78rem; }
 
-      /* CTA buttons: proportional, not too tall */
+      /* CTA buttons: natural row, proportional height */
       .hero-ctas {
-        gap: 0.5rem;
-      }
-
-      /* Right column: constrain on mobile so image doesn't dominate */
-      .hero-right {
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+        gap: 0.5rem !important;
         width: 100%;
-        max-width: 300px;
-        margin: 0 auto;
+      }
+      .hero-ctas .btn-pill { flex: 0 0 auto; }
+      .pill-inner {
+        min-height: 44px !important;
+        font-size: 0.82rem !important;
+      }
+      .btn-pill.pill-no-arrow .pill-inner {
+        padding: 0.6rem 1.1rem !important;
+      }
+      .btn-pill.pill-with-arrow .pill-inner {
+        padding: 0.25rem 0.25rem 0.25rem 1.1rem !important;
+      }
+      .pill-badge {
+        width: 1.9rem !important;
+        height: 1.9rem !important;
       }
 
-      /* Portrait box: cap aspect ratio so photo doesn't fill entire screen */
+      /* RIGHT COLUMN: controlled width, centered */
+      .hero-right {
+        width: 100% !important;
+        max-width: 320px !important;
+        margin: 0 auto !important;
+        align-items: center !important;
+        gap: 0.75rem !important;
+      }
+
+      /* Showcase card: fits container */
+      .hero-showcase-card {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0.65rem !important;
+        gap: 0.6rem !important;
+        box-shadow: 0 12px 40px -8px rgba(0,0,0,0.12) !important;
+      }
+
+      /* CRITICAL FIX: Portrait box controlled height — was 4/4.7 = ~394px tall */
       .portrait-box {
-        aspect-ratio: 4 / 4.2;
+        aspect-ratio: 3 / 3.5 !important;
+        max-height: 260px !important;
+        width: 100% !important;
       }
 
-      /* Carousel dock: slightly more compact */
+      /* Portrait captions */
+      .portrait-name  { font-size: 1.1rem; }
+      .portrait-title { font-size: 0.65rem; }
+      .portrait-badge-top {
+        font-size: 0.62rem;
+        padding: 0.28rem 0.6rem;
+        top: 0.6rem;
+        right: 0.6rem;
+      }
+
+      /* Carousel dock: compact */
       .hero-carousel-dock {
-        padding: 0.55rem 0.65rem;
-        gap: 0.6rem;
+        padding: 0.5rem 0.6rem !important;
+        gap: 0.5rem !important;
       }
       .carousel-spark-tile {
-        width: 2.75rem;
-        height: 2.75rem;
+        width: 2.5rem !important;
+        height: 2.5rem !important;
       }
-      .hero-card-title {
-        font-size: 0.8rem;
-      }
-      .hero-card-caption {
-        font-size: 0.6rem;
-      }
+      .carousel-spark-tile svg { width: 1.1rem; height: 1.1rem; }
+      .carousel-slot { height: 2rem; }
+      .hero-card-caption { font-size: 0.58rem; }
+      .hero-card-title   { font-size: 0.78rem; }
 
-      /* Partner pills: tighter wrap */
+      /* Partners / Trusted brands */
+      .hero-partners-wrap {
+        width: 100% !important;
+        align-items: flex-start !important;
+        gap: 0.3rem !important;
+      }
+      .hero-partners-label { font-size: 0.65rem; letter-spacing: 0.04em; }
       .hero-partners-pills {
-        gap: 0.28rem;
+        display: flex !important;
+        flex-wrap: wrap !important;
+        gap: 0.3rem !important;
+        justify-content: flex-start !important;
       }
       .partner-pill {
-        font-size: 0.68rem;
-        padding: 0.18rem 0.45rem;
-      }
-      .hero-partners-label {
-        font-size: 0.65rem;
+        font-size: 0.68rem !important;
+        padding: 0.18rem 0.48rem !important;
       }
 
       /* Status bar bottom: compact */
       .hero-status-bar {
-        padding-block: 0.65rem;
-        font-size: 0.75rem;
-      }
-
-      /* Eyebrow badge: slightly smaller */
-      .eyebrow-dark {
+        padding-block: 0.6rem !important;
         font-size: 0.72rem;
       }
 
-      /* Prevent hero watermark overflow */
+      /* Watermark: constrained, no horizontal overflow */
       .hero-watermark {
-        font-size: clamp(3.5rem, 20vw, 5rem);
+        font-size: clamp(3rem, 22vw, 5rem) !important;
+        bottom: 0.75rem;
         overflow: hidden;
-        bottom: 1rem;
+        max-width: 100%;
       }
     }
 
-    /* Very small screens (≤374px) — extra refinements */
+    /* Extra-small phones (up to 374px) */
     @media (max-width: 374px) {
       .hero-title {
-        font-size: clamp(1.5rem, 9vw, 1.9rem);
+        font-size: clamp(1.75rem, 9vw, 2.1rem) !important;
       }
       .hero-right {
-        max-width: 260px;
+        max-width: 280px !important;
       }
       .portrait-box {
-        aspect-ratio: 4 / 3.8;
+        max-height: 220px !important;
+        aspect-ratio: 3 / 3.2 !important;
       }
     }
 
     /* ==========================================================================
-       RESPONSIVE: HERO SECTION — TABLET (640px–1023px)
+       RESPONSIVE: TABLET LAYOUT (640px to 1023px)
+       Two-column composition: text LEFT, image RIGHT
        ========================================================================== */
     @media (min-width: 640px) and (max-width: 1023px) {
 
-      /* Tablet hero shell: row layout with better proportions */
-      .hero-shell {
-        padding-top: 2.25rem;
-        padding-bottom: 2.5rem;
-        gap: 1.75rem;
-        align-items: flex-start;
+      /* Shell: proper tablet padding */
+      .shell {
+        padding-inline: 2rem;
       }
 
-      /* Headline scales nicely on tablet */
+      /* Hero shell: CSS grid two-column */
+      .hero-shell {
+        display: grid !important;
+        grid-template-columns: minmax(0, 1fr) minmax(0px, 300px) !important;
+        gap: 2rem !important;
+        align-items: center !important;
+        padding-top: 2.5rem !important;
+        padding-bottom: 2.5rem !important;
+        flex-direction: unset !important;
+      }
+
+      /* LEFT: text column */
+      .hero-left {
+        grid-column: 1 !important;
+        grid-row: 1 !important;
+        flex: none !important;
+        gap: 1.15rem !important;
+      }
+
+      /* Headline: clear tablet scale */
       .hero-title {
-        font-size: clamp(1.9rem, 4.5vw, 3rem);
+        font-size: clamp(1.85rem, 4vw, 2.75rem) !important;
+        line-height: 1.02 !important;
+        max-width: 100% !important;
       }
 
-      /* Right column: proportional on different tablet widths */
+      /* Description */
+      .hero-subtitle {
+        font-size: 0.925rem !important;
+        max-width: 36ch !important;
+        line-height: 1.55 !important;
+      }
+
+      /* Skill pills */
+      .hero-floating-skills { gap: 0.4rem !important; }
+      .skill-pill {
+        font-size: 0.75rem !important;
+        padding: 0.3rem 0.7rem !important;
+      }
+
+      /* CTA */
+      .pill-inner {
+        min-height: 48px !important;
+        font-size: 0.875rem !important;
+      }
+
+      /* RIGHT: image column */
       .hero-right {
-        width: clamp(220px, 36%, 310px);
-        flex-shrink: 0;
+        grid-column: 2 !important;
+        grid-row: 1 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        align-items: flex-end !important;
+        gap: 0.85rem !important;
       }
 
-      /* Portrait photo: consistent focal point */
+      /* Portrait: controlled aspect ratio on tablet */
       .portrait-box {
-        aspect-ratio: 4 / 4.5;
+        aspect-ratio: 3 / 3.8 !important;
+        max-height: 380px !important;
       }
 
-      /* Partner pills: wrap evenly */
-      .hero-partners-pills {
-        justify-content: flex-start;
+      /* Carousel dock */
+      .hero-carousel-dock { padding: 0.6rem 0.7rem !important; }
+
+      /* Partners */
+      .hero-partners-pills { justify-content: flex-start !important; }
+
+      /* Status bar */
+      .hero-status-bar {
+        font-size: 0.82rem;
+        padding-block: 0.75rem !important;
       }
     }
 
-    /* iPad Air / Pro (820px–1023px): fine-tune right column */
-    @media (min-width: 820px) and (max-width: 1023px) {
-      .hero-right {
-        width: clamp(260px, 34%, 320px);
-      }
+    /* Narrow tablet (640px to 767px) */
+    @media (min-width: 640px) and (max-width: 767px) {
       .hero-shell {
-        padding-top: 2.75rem;
-        padding-bottom: 3rem;
+        grid-template-columns: minmax(0, 1fr) minmax(0px, 240px) !important;
+        gap: 1.5rem !important;
+        padding-top: 2rem !important;
+        padding-bottom: 2rem !important;
+      }
+      .hero-title {
+        font-size: clamp(1.75rem, 4.5vw, 2.4rem) !important;
+      }
+      .portrait-box {
+        max-height: 320px !important;
+        aspect-ratio: 3 / 3.6 !important;
       }
     }
+
+    /* Large tablet (900px to 1023px) */
+    @media (min-width: 900px) and (max-width: 1023px) {
+      .hero-shell {
+        grid-template-columns: minmax(0, 1fr) minmax(0px, 360px) !important;
+        gap: 3rem !important;
+        padding-top: 3.5rem !important;
+        padding-bottom: 3.5rem !important;
+      }
+      .hero-title {
+        font-size: clamp(2.25rem, 3.5vw, 3rem) !important;
+      }
+      .portrait-box {
+        max-height: 420px !important;
+      }
+    }
+
   </style>
 </head>
 <body>
