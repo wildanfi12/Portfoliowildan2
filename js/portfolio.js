@@ -1767,6 +1767,91 @@ const PROJECTS = [
   },
 
   {
+    id: 'video-editing-fkdb',
+    title: 'FKDB',
+    category: 'video',
+    categoryName: 'Video Editing & Motion',
+    client: 'Forum Komunikasi Doa Bangsa (FKDB)',
+    metric: '10 Video Dokumentasi & Liputan • Bunny Stream',
+    thumbnail: 'assets/fkdb-video/fkdb_1.jpg',
+    shortDesc: 'Folder Video Editing FKDB — 10 Video Dokumentasi Acara, Ekspor, Liputan Resmi & Motion via Bunny Stream CDN.',
+    fullDesc: 'Folder koleksi resmi Video Editing untuk Forum Komunikasi Doa Bangsa (FKDB) yang terhubung langsung ke Bunny Stream CDN. Berisi 10 aset video dokumentasi kegiatan kemandirian ekonomi, pelepasan ekspor perdana, kunjungan pimpinan lembaga, sinergi ketahanan pangan Polri, dan program pendidikan binaan FKDB.',
+    challenge: 'Mendokumentasikan berbagai kegiatan skala nasional dan corporate events FKDB secara profesional dengan kualitas audio-visual prima.',
+    solution: 'Integrasi video streaming melalui Bunny Stream CDN berkecepatan tinggi, penyelarasan narasi jurnalistik yang jelas, dan color grading standar dokumenter resmi.',
+    results: [
+      '10 Video Liputan Resmi Terkoneksi ke Bunny Stream CDN (Library ID: 756896)',
+      'Streaming Cepat Kualitas HD Bebas Buffering & Bebas Iklan',
+      'Format Optimal untuk Publikasi Media Sosial, Dokumentasi Korporat & Arsip Resmi'
+    ],
+    tools: ['Premiere Pro', 'After Effects', 'CapCut Pro', 'Bunny Stream'],
+    bunnyVideoId: 'edaa2a09-729e-4523-987e-395b5f2e42c0',
+    bunnyLibraryId: '756896',
+    embedVideo: 'https://iframe.mediadelivery.net/embed/756896/edaa2a09-729e-4523-987e-395b5f2e42c0',
+    items: [
+      {
+        name: 'Sukabumi, 28 Oktober 2025 - PT Doa Bangsa Agrobisnis (DBA), perusahaan binaan FKDB, sukses melepas ekspor perdana 57,6 metrik to.mp4',
+        img: 'assets/fkdb-video/fkdb_1.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/edaa2a09-729e-4523-987e-395b5f2e42c0',
+        desc: 'Pelepasan ekspor perdana 57,6 metrik ton komoditas PT Doa Bangsa Agrobisnis (DBA) binaan FKDB.'
+      },
+      {
+        name: 'Kunjungan Wakil Ketua DPR RI, Dr. (H.C.) H. Rachmat Gobel, ke Pabrik Tempe Azaki Sukabumi binaan.mp4',
+        img: 'assets/fkdb-video/fkdb_2.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/6f692b9d-0d12-4b99-9c58-ed131185c024',
+        desc: 'Liputan dokumentasi kunjungan Wakil Ketua DPR RI ke Pabrik Tempe Azaki Sukabumi binaan FKDB.'
+      },
+      {
+        name: 'Sinergi FKDB dan Baharkam Polri kembali diwujudkan melalui Budidaya Jagung dan penyerahan bibit untuk kelompok tani binaan FKDB .mp4',
+        img: 'assets/fkdb-video/fkdb_3.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/b124a424-51b3-4208-8267-f980e3f1403c',
+        desc: 'Sinergi FKDB dan Baharkam Polri dalam program budidaya jagung dan penyerahan bibit tani.'
+      },
+      {
+        name: 'PT Azaki Food Internasional binaan FKDB mengikuti kegiatan Pesta Rakyat Alumni IPB Pulang Kampus 2025 (PRA IPK 2025) yang digela.mp4',
+        img: 'assets/fkdb-video/fkdb_4.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/49e2e0d8-3380-4578-b1f3-ff7c20d10a8b',
+        desc: 'Partisipasi PT Azaki Food Internasional binaan FKDB dalam Pesta Rakyat Alumni IPB 2025.'
+      },
+      {
+        name: 'Acara puncak Milad ke-15 Yayasan Pembina Pendidikan Doa Bangsa (YPPDB) yang digelar di SMA Doa B.mp4',
+        img: 'assets/fkdb-video/fkdb_5.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/7d5735e2-b327-4d77-9c42-d66fd4f3df94',
+        desc: 'Dokumentasi acara puncak peringatan Milad ke-15 Yayasan Pembina Pendidikan Doa Bangsa.'
+      },
+      {
+        name: 'Hallo Sobat FKDB. 😍Yuk, intip keseruan Paviliun Doa Bangsa dalam momen penyerahan dokumen Nota .mp4',
+        img: 'assets/fkdb-video/fkdb_6.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/9fbbd29e-f1ec-440b-8e24-0ec633ad55ce',
+        desc: 'Highlight keseruan Paviliun Doa Bangsa dalam penyerahan dokumen nota kesepahaman resmi.'
+      },
+      {
+        name: 'Dirgahayu Republik Indonesia, Merdeka! ✊Yuk intip keseruan pegawai DPP FKDB dalam lomba 17-an 🇮.mp4',
+        img: 'assets/fkdb-video/fkdb_7.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/c95d4ff1-6b04-4fef-8444-3c8dc3d9a0a5',
+        desc: 'Dokumentasi kemeriahan perayaan HUT Kemerdekaan RI dan lomba 17-an DPP FKDB.'
+      },
+      {
+        name: 'Grand Opening Optik Kovalen.mp4',
+        img: 'assets/fkdb-video/fkdb_8.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/21163679-c3d6-4c88-9935-a3e6599fb576',
+        desc: 'Dokumentasi peresmian dan Grand Opening Optik Kovalen unit usaha binaan FKDB.'
+      },
+      {
+        name: 'Forum Komunikasi Doa Bangsa (FKDB) bersama Palang Merah Indonesia (PMI) menggelar aksi sosial donor darah serentak dalam rangka .mp4',
+        img: 'assets/fkdb-video/fkdb_9.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/c4e1709a-6a67-4e28-a8a1-a71c6d016e4f',
+        desc: 'Aksi kepedulian sosial donor darah serentak kolaborasi FKDB bersama PMI.'
+      },
+      {
+        name: 'FKDB menggelar Rapat Kerja Tahunan PT-CV-Koperasi Binaan Tahun 2026 di Sukabumi sebagai langkah .mp4',
+        img: 'assets/fkdb-video/fkdb_10.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/492a5634-6906-4806-ae40-2d1933936d33',
+        desc: 'Liputan Rapat Kerja Tahunan PT-CV-Koperasi Binaan FKDB 2026 di Sukabumi.'
+      }
+    ]
+  },
+
+  {
     id: 'video-editing-howell',
     title: 'Howell',
     category: 'video',
@@ -1919,73 +2004,6 @@ const PROJECTS = [
         img: 'assets/howell-video/howell_22.jpg',
         video: 'https://iframe.mediadelivery.net/embed/756896/aa6990ec-c230-44e0-aab1-f185bde4d82f',
         desc: 'Perbedaan Kabel HDMI(2).mp4 — Video edukasi & perbandingan versi kabel HDMI seri 2.'
-      }
-    ]
-  },
-
-  {
-    id: 'video-editing-coca-cola',
-    title: 'Coca-Cola',
-    category: 'video',
-    categoryName: 'Video Editing & Motion',
-    client: 'Coca-Cola',
-    metric: '7 Video Commercial • Bunny Stream',
-    thumbnail: 'assets/coca-cola/cover.jpg',
-    shortDesc: 'Folder Video Editing Coca-Cola — 7 Video Commercial Editing, Shorts/Reels & Sound Design via Bunny Stream CDN.',
-    fullDesc: 'Folder koleksi resmi Video Editing untuk Coca-Cola yang terhubung langsung ke Bunny Stream CDN. Berisi 7 seri video komersial dengan fast-cut editing, kinetic titles, color grading merah krispi khas Coca-Cola, dan sound design profesional.',
-    challenge: 'Mengemas visual cerita & momen Coca-Cola menjadi video promosi berenergi tinggi dengan retensi penonton maksimal.',
-    solution: 'Editing video ritmis dengan potongan lagu trending, animasi teks kinetik, dan integrasi Bunny Stream CDN untuk streaming instan kualitas HD.',
-    results: [
-      '7 Aset Video Commercial Editing Resmi Terintegrasi di Folder Coca-Cola (Library ID: 756896)',
-      'Pemutaran Cepat Kualitas HD Bebas Buffering & Bebas Iklan',
-      'Format Siap untuk Instagram Reels, TikTok Ads & YouTube Shorts'
-    ],
-    tools: ['Premiere Pro', 'After Effects', 'CapCut Pro', 'DaVinci Resolve', 'Bunny Stream'],
-    bunnyVideoId: '2479bf00-6cb8-4ca5-b07e-5bb6f5f75145',
-    bunnyLibraryId: '756896',
-    embedVideo: 'https://iframe.mediadelivery.net/embed/756896/2479bf00-6cb8-4ca5-b07e-5bb6f5f75145',
-    items: [
-      {
-        name: 'Found_it_beat_202603221953.mp4',
-        img: 'assets/coca-cola/1.jpg',
-        video: 'https://iframe.mediadelivery.net/embed/756896/2479bf00-6cb8-4ca5-b07e-5bb6f5f75145',
-        desc: 'Found_it_beat_202603221953.mp4 — Video komersial & editing ritmis Found It Beat.'
-      },
-      {
-        name: 'Fridge_door_opening_202603222021.mp4',
-        img: 'assets/coca-cola/2.jpg',
-        video: 'https://iframe.mediadelivery.net/embed/756896/32f63168-43bb-453b-8f93-107b7d27788d',
-        desc: 'Fridge_door_opening_202603222021.mp4 — Video komersial & editing ritmis Fridge Door Opening.'
-      },
-      {
-        name: 'Orang_bergerak_berjalan_202603222003.mp4',
-        img: 'assets/coca-cola/3.jpg',
-        video: 'https://iframe.mediadelivery.net/embed/756896/23dc7705-7780-4dff-817b-5ead4c978336',
-        desc: 'Orang_bergerak_berjalan_202603222003.mp4 — Video komersial & editing ritmis Outdoor Walking.'
-      },
-      {
-        name: 'Permintaan_Video_Sisca_Berpikir.mp4',
-        img: 'assets/coca-cola/4.jpg',
-        video: 'https://iframe.mediadelivery.net/embed/756896/c93541e8-469e-4fdb-a387-e5f89041ee75',
-        desc: 'Permintaan_Video_Sisca_Berpikir.mp4 — Video komersial & konsep iklan Sisca Berpikir.'
-      },
-      {
-        name: 'Person_holding_Coca-Cola_202603221957.mp4',
-        img: 'assets/coca-cola/5.jpg',
-        video: 'https://iframe.mediadelivery.net/embed/756896/3e38f5da-245b-4f7d-9edb-f0dddd71888d',
-        desc: 'Person_holding_Coca-Cola_202603221957.mp4 — Video komersial Person Holding Coca-Cola.'
-      },
-      {
-        name: 'Video_Generation_For_Hot_Woman.mp4',
-        img: 'assets/coca-cola/6.jpg',
-        video: 'https://iframe.mediadelivery.net/embed/756896/6bb493c4-0a3b-4653-8e65-0b8ba612680e',
-        desc: 'Video_Generation_For_Hot_Woman.mp4 — Video komersial konsep iklan sinematik.'
-      },
-      {
-        name: 'Video_Generation_Melting_Station.mp4',
-        img: 'assets/coca-cola/7.jpg',
-        video: 'https://iframe.mediadelivery.net/embed/756896/b2814029-f11c-43e6-9623-e23e1c078a45',
-        desc: 'Video_Generation_Melting_Station.mp4 — Video komersial & visual efek Melting Station.'
       }
     ]
   },
@@ -2167,86 +2185,68 @@ const PROJECTS = [
   },
 
   {
-    id: 'video-editing-fkdb',
-    title: 'FKDB',
+    id: 'video-editing-coca-cola',
+    title: 'Coca-Cola',
     category: 'video',
     categoryName: 'Video Editing & Motion',
-    client: 'Forum Komunikasi Doa Bangsa (FKDB)',
-    metric: '10 Video Dokumentasi & Liputan • Bunny Stream',
-    thumbnail: 'assets/fkdb-video/fkdb_1.jpg',
-    shortDesc: 'Folder Video Editing FKDB — 10 Video Dokumentasi Acara, Ekspor, Liputan Resmi & Motion via Bunny Stream CDN.',
-    fullDesc: 'Folder koleksi resmi Video Editing untuk Forum Komunikasi Doa Bangsa (FKDB) yang terhubung langsung ke Bunny Stream CDN. Berisi 10 aset video dokumentasi kegiatan kemandirian ekonomi, pelepasan ekspor perdana, kunjungan pimpinan lembaga, sinergi ketahanan pangan Polri, dan program pendidikan binaan FKDB.',
-    challenge: 'Mendokumentasikan berbagai kegiatan skala nasional dan corporate events FKDB secara profesional dengan kualitas audio-visual prima.',
-    solution: 'Integrasi video streaming melalui Bunny Stream CDN berkecepatan tinggi, penyelarasan narasi jurnalistik yang jelas, dan color grading standar dokumenter resmi.',
+    client: 'Coca-Cola',
+    metric: '7 Video Commercial • Bunny Stream',
+    thumbnail: 'assets/coca-cola/cover.jpg',
+    shortDesc: 'Folder Video Editing Coca-Cola — 7 Video Commercial Editing, Shorts/Reels & Sound Design via Bunny Stream CDN.',
+    fullDesc: 'Folder koleksi resmi Video Editing untuk Coca-Cola yang terhubung langsung ke Bunny Stream CDN. Berisi 7 seri video komersial dengan fast-cut editing, kinetic titles, color grading merah krispi khas Coca-Cola, dan sound design profesional.',
+    challenge: 'Mengemas visual cerita & momen Coca-Cola menjadi video promosi berenergi tinggi dengan retensi penonton maksimal.',
+    solution: 'Editing video ritmis dengan potongan lagu trending, animasi teks kinetik, dan integrasi Bunny Stream CDN untuk streaming instan kualitas HD.',
     results: [
-      '10 Video Liputan Resmi Terkoneksi ke Bunny Stream CDN (Library ID: 756896)',
-      'Streaming Cepat Kualitas HD Bebas Buffering & Bebas Iklan',
-      'Format Optimal untuk Publikasi Media Sosial, Dokumentasi Korporat & Arsip Resmi'
+      '7 Aset Video Commercial Editing Resmi Terintegrasi di Folder Coca-Cola (Library ID: 756896)',
+      'Pemutaran Cepat Kualitas HD Bebas Buffering & Bebas Iklan',
+      'Format Siap untuk Instagram Reels, TikTok Ads & YouTube Shorts'
     ],
-    tools: ['Premiere Pro', 'After Effects', 'CapCut Pro', 'Bunny Stream'],
-    bunnyVideoId: 'edaa2a09-729e-4523-987e-395b5f2e42c0',
+    tools: ['Premiere Pro', 'After Effects', 'CapCut Pro', 'DaVinci Resolve', 'Bunny Stream'],
+    bunnyVideoId: '2479bf00-6cb8-4ca5-b07e-5bb6f5f75145',
     bunnyLibraryId: '756896',
-    embedVideo: 'https://iframe.mediadelivery.net/embed/756896/edaa2a09-729e-4523-987e-395b5f2e42c0',
+    embedVideo: 'https://iframe.mediadelivery.net/embed/756896/2479bf00-6cb8-4ca5-b07e-5bb6f5f75145',
     items: [
       {
-        name: 'Sukabumi, 28 Oktober 2025 - PT Doa Bangsa Agrobisnis (DBA), perusahaan binaan FKDB, sukses melepas ekspor perdana 57,6 metrik to.mp4',
-        img: 'assets/fkdb-video/fkdb_1.jpg',
-        video: 'https://iframe.mediadelivery.net/embed/756896/edaa2a09-729e-4523-987e-395b5f2e42c0',
-        desc: 'Pelepasan ekspor perdana 57,6 metrik ton komoditas PT Doa Bangsa Agrobisnis (DBA) binaan FKDB.'
+        name: 'Found_it_beat_202603221953.mp4',
+        img: 'assets/coca-cola/1.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/2479bf00-6cb8-4ca5-b07e-5bb6f5f75145',
+        desc: 'Found_it_beat_202603221953.mp4 — Video komersial & editing ritmis Found It Beat.'
       },
       {
-        name: 'Kunjungan Wakil Ketua DPR RI, Dr. (H.C.) H. Rachmat Gobel, ke Pabrik Tempe Azaki Sukabumi binaan.mp4',
-        img: 'assets/fkdb-video/fkdb_2.jpg',
-        video: 'https://iframe.mediadelivery.net/embed/756896/6f692b9d-0d12-4b99-9c58-ed131185c024',
-        desc: 'Liputan dokumentasi kunjungan Wakil Ketua DPR RI ke Pabrik Tempe Azaki Sukabumi binaan FKDB.'
+        name: 'Fridge_door_opening_202603222021.mp4',
+        img: 'assets/coca-cola/2.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/32f63168-43bb-453b-8f93-107b7d27788d',
+        desc: 'Fridge_door_opening_202603222021.mp4 — Video komersial & editing ritmis Fridge Door Opening.'
       },
       {
-        name: 'Sinergi FKDB dan Baharkam Polri kembali diwujudkan melalui Budidaya Jagung dan penyerahan bibit untuk kelompok tani binaan FKDB .mp4',
-        img: 'assets/fkdb-video/fkdb_3.jpg',
-        video: 'https://iframe.mediadelivery.net/embed/756896/b124a424-51b3-4208-8267-f980e3f1403c',
-        desc: 'Sinergi FKDB dan Baharkam Polri dalam program budidaya jagung dan penyerahan bibit tani.'
+        name: 'Orang_bergerak_berjalan_202603222003.mp4',
+        img: 'assets/coca-cola/3.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/23dc7705-7780-4dff-817b-5ead4c978336',
+        desc: 'Orang_bergerak_berjalan_202603222003.mp4 — Video komersial & editing ritmis Outdoor Walking.'
       },
       {
-        name: 'PT Azaki Food Internasional binaan FKDB mengikuti kegiatan Pesta Rakyat Alumni IPB Pulang Kampus 2025 (PRA IPK 2025) yang digela.mp4',
-        img: 'assets/fkdb-video/fkdb_4.jpg',
-        video: 'https://iframe.mediadelivery.net/embed/756896/49e2e0d8-3380-4578-b1f3-ff7c20d10a8b',
-        desc: 'Partisipasi PT Azaki Food Internasional binaan FKDB dalam Pesta Rakyat Alumni IPB 2025.'
+        name: 'Permintaan_Video_Sisca_Berpikir.mp4',
+        img: 'assets/coca-cola/4.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/c93541e8-469e-4fdb-a387-e5f89041ee75',
+        desc: 'Permintaan_Video_Sisca_Berpikir.mp4 — Video komersial & konsep iklan Sisca Berpikir.'
       },
       {
-        name: 'Acara puncak Milad ke-15 Yayasan Pembina Pendidikan Doa Bangsa (YPPDB) yang digelar di SMA Doa B.mp4',
-        img: 'assets/fkdb-video/fkdb_5.jpg',
-        video: 'https://iframe.mediadelivery.net/embed/756896/7d5735e2-b327-4d77-9c42-d66fd4f3df94',
-        desc: 'Dokumentasi acara puncak peringatan Milad ke-15 Yayasan Pembina Pendidikan Doa Bangsa.'
+        name: 'Person_holding_Coca-Cola_202603221957.mp4',
+        img: 'assets/coca-cola/5.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/3e38f5da-245b-4f7d-9edb-f0dddd71888d',
+        desc: 'Person_holding_Coca-Cola_202603221957.mp4 — Video komersial Person Holding Coca-Cola.'
       },
       {
-        name: 'Hallo Sobat FKDB. 😍Yuk, intip keseruan Paviliun Doa Bangsa dalam momen penyerahan dokumen Nota .mp4',
-        img: 'assets/fkdb-video/fkdb_6.jpg',
-        video: 'https://iframe.mediadelivery.net/embed/756896/9fbbd29e-f1ec-440b-8e24-0ec633ad55ce',
-        desc: 'Highlight keseruan Paviliun Doa Bangsa dalam penyerahan dokumen nota kesepahaman resmi.'
+        name: 'Video_Generation_For_Hot_Woman.mp4',
+        img: 'assets/coca-cola/6.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/6bb493c4-0a3b-4653-8e65-0b8ba612680e',
+        desc: 'Video_Generation_For_Hot_Woman.mp4 — Video komersial konsep iklan sinematik.'
       },
       {
-        name: 'Dirgahayu Republik Indonesia, Merdeka! ✊Yuk intip keseruan pegawai DPP FKDB dalam lomba 17-an 🇮.mp4',
-        img: 'assets/fkdb-video/fkdb_7.jpg',
-        video: 'https://iframe.mediadelivery.net/embed/756896/c95d4ff1-6b04-4fef-8444-3c8dc3d9a0a5',
-        desc: 'Dokumentasi kemeriahan perayaan HUT Kemerdekaan RI dan lomba 17-an DPP FKDB.'
-      },
-      {
-        name: 'Grand Opening Optik Kovalen.mp4',
-        img: 'assets/fkdb-video/fkdb_8.jpg',
-        video: 'https://iframe.mediadelivery.net/embed/756896/21163679-c3d6-4c88-9935-a3e6599fb576',
-        desc: 'Dokumentasi peresmian dan Grand Opening Optik Kovalen unit usaha binaan FKDB.'
-      },
-      {
-        name: 'Forum Komunikasi Doa Bangsa (FKDB) bersama Palang Merah Indonesia (PMI) menggelar aksi sosial donor darah serentak dalam rangka .mp4',
-        img: 'assets/fkdb-video/fkdb_9.jpg',
-        video: 'https://iframe.mediadelivery.net/embed/756896/c4e1709a-6a67-4e28-a8a1-a71c6d016e4f',
-        desc: 'Aksi kepedulian sosial donor darah serentak kolaborasi FKDB bersama PMI.'
-      },
-      {
-        name: 'FKDB menggelar Rapat Kerja Tahunan PT-CV-Koperasi Binaan Tahun 2026 di Sukabumi sebagai langkah .mp4',
-        img: 'assets/fkdb-video/fkdb_10.jpg',
-        video: 'https://iframe.mediadelivery.net/embed/756896/492a5634-6906-4806-ae40-2d1933936d33',
-        desc: 'Liputan Rapat Kerja Tahunan PT-CV-Koperasi Binaan FKDB 2026 di Sukabumi.'
+        name: 'Video_Generation_Melting_Station.mp4',
+        img: 'assets/coca-cola/7.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/b2814029-f11c-43e6-9623-e23e1c078a45',
+        desc: 'Video_Generation_Melting_Station.mp4 — Video komersial & visual efek Melting Station.'
       }
     ]
   },
