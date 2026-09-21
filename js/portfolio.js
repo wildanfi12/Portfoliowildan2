@@ -4492,7 +4492,13 @@ function initPortfolio() {
           renderProjects(currentFilter, false);
           const worksSec = document.getElementById('works');
           if (worksSec) {
-            worksSec.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            if (typeof window.smoothScrollTo === 'function') {
+              window.smoothScrollTo('works');
+            } else if (window.lenis && typeof window.lenis.scrollTo === 'function') {
+              window.lenis.scrollTo(worksSec, { duration: 1.2 });
+            } else {
+              worksSec.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
           }
         });
       }
