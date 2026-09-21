@@ -1648,38 +1648,7 @@
     }
 
     .project-metric {
-      position: absolute;
-      top: 0.45rem;
-      right: 0.45rem;
-      z-index: 2;
-      background: var(--accent);
-      border-radius: var(--radius-pill);
-      padding: 0.18rem 0.5rem;
-      font-size: 0.62rem;
-      font-weight: 600;
-      color: #fff;
-      max-width: 32%;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-    @media (min-width: 640px) {
-      .project-metric {
-        top: 0.75rem;
-        right: 0.75rem;
-        padding: 0.25rem 0.65rem;
-        font-size: 0.72rem;
-        max-width: 35%;
-      }
-    }
-    @media (min-width: 1024px) {
-      .project-metric {
-        top: 1rem;
-        right: 1rem;
-        padding: 0.3rem 0.75rem;
-        font-size: 0.75rem;
-        max-width: none;
-      }
+      display: none !important;
     }
 
     .project-overlay {
@@ -3498,9 +3467,6 @@
         <ul class="nav-list">
           <li><button class="nav-item-btn active" data-target="home" aria-current="page">Home</button></li>
           <li><button class="nav-item-btn" data-target="works">Portfolio</button></li>
-          <li><button class="nav-item-btn" data-target="services">Services</button></li>
-          <li><button class="nav-item-btn" data-target="tools">Tools</button></li>
-          <li><button class="nav-item-btn" data-target="testimonials">Reviews</button></li>
           <li><button class="nav-item-btn" data-target="faq">FAQ</button></li>
           <li><button class="nav-item-btn btn-open-modal">Contact</button></li>
         </ul>
@@ -3745,32 +3711,43 @@
         <ul class="services-list">
           
           <li class="service-row-item reveal-fade-up" style="transition-delay: 0ms;">
-            <a href="javascript:void(0)" class="service-row-link btn-open-modal">
+            <a href="#works" class="service-row-link service-filter-link" data-filter="video">
               <span class="service-index">01</span>
-              <h3 class="service-title">Video Editing & Motion Graphics</h3>
-              <p class="service-desc">Scalable social reels, commercials, and YouTube content built to captivate.</p>
+              <h3 class="service-title">Video Editing</h3>
+              <p class="service-desc">Scalable social reels, short-form storytelling, and commercial video post-production.</p>
               <div class="service-badge">
                 <svg class="icon icon-stroke" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg>
               </div>
             </a>
           </li>
 
-          <li class="service-row-item reveal-fade-up" style="transition-delay: 80ms;">
-            <a href="javascript:void(0)" class="service-row-link btn-open-modal">
+          <li class="service-row-item reveal-fade-up" style="transition-delay: 60ms;">
+            <a href="#works" class="service-row-link service-filter-link" data-filter="design">
               <span class="service-index">02</span>
-              <h3 class="service-title">Graphic Design & Branding</h3>
-              <p class="service-desc">Posters, banners, carousels, and marketplace designs that look sharp.</p>
+              <h3 class="service-title">Graphic Design</h3>
+              <p class="service-desc">Brand logos, promotional flyers, posters, carousels, and complete visual identities.</p>
               <div class="service-badge">
                 <svg class="icon icon-stroke" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg>
               </div>
             </a>
           </li>
 
-          <li class="service-row-item reveal-fade-up" style="transition-delay: 160ms;">
-            <a href="javascript:void(0)" class="service-row-link btn-open-modal">
+          <li class="service-row-item reveal-fade-up" style="transition-delay: 120ms;">
+            <a href="#works" class="service-row-link service-filter-link" data-filter="ai">
               <span class="service-index">03</span>
-              <h3 class="service-title">AI Video & Digital Art</h3>
-              <p class="service-desc">Cutting-edge generation using Kling AI, Gemini, ChatGPT, and Leonardo AI.</p>
+              <h3 class="service-title">AI Design</h3>
+              <p class="service-desc">Generative AI artwork, hyper-realistic character visuals, and cutting-edge creative assets.</p>
+              <div class="service-badge">
+                <svg class="icon icon-stroke" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg>
+              </div>
+            </a>
+          </li>
+
+          <li class="service-row-item reveal-fade-up" style="transition-delay: 180ms;">
+            <a href="#works" class="service-row-link service-filter-link" data-filter="motion">
+              <span class="service-index">04</span>
+              <h3 class="service-title">Motion Graphics</h3>
+              <p class="service-desc">Kinetic typography, animated product reels, 2D/3D visual effects, and logo animation.</p>
               <div class="service-badge">
                 <svg class="icon icon-stroke" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg>
               </div>
@@ -3778,10 +3755,21 @@
           </li>
 
           <li class="service-row-item reveal-fade-up" style="transition-delay: 240ms;">
-            <a href="javascript:void(0)" class="service-row-link btn-open-modal">
-              <span class="service-index">04</span>
-              <h3 class="service-title">Advertising & Paid Media</h3>
-              <p class="service-desc">High ROAS Meta & TikTok ad creative variations engineered for conversion.</p>
+            <a href="#works" class="service-row-link service-filter-link" data-filter="ads">
+              <span class="service-index">05</span>
+              <h3 class="service-title">Advertising</h3>
+              <p class="service-desc">High-conversion Meta & TikTok ad creative variations, product landing ads, and sales funnels.</p>
+              <div class="service-badge">
+                <svg class="icon icon-stroke" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg>
+              </div>
+            </a>
+          </li>
+
+          <li class="service-row-item reveal-fade-up" style="transition-delay: 300ms;">
+            <a href="#works" class="service-row-link service-filter-link" data-filter="youtube">
+              <span class="service-index">06</span>
+              <h3 class="service-title">YouTube</h3>
+              <p class="service-desc">End-to-end channel production, high-CTR thumbnail design, and long-form video editing.</p>
               <div class="service-badge">
                 <svg class="icon icon-stroke" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg>
               </div>
@@ -4316,9 +4304,7 @@
           <ul class="footer-col-links">
             <li><a href="#home" class="animated-link"><span>Home</span></a></li>
             <li><a href="#works" class="animated-link"><span>Portfolio</span></a></li>
-            <li><a href="#services" class="animated-link"><span>Services</span></a></li>
-            <li><a href="#tools" class="animated-link"><span>Tools</span></a></li>
-            <li><a href="#testimonials" class="animated-link"><span>Reviews</span></a></li>
+            <li><a href="#faq" class="animated-link"><span>FAQ</span></a></li>
             <li><a href="https://wa.me/6282250561757" target="_blank" rel="noopener" class="animated-link"><span>Contact</span></a></li>
           </ul>
         </div>
@@ -4346,13 +4332,6 @@
 
       </div>
 
-      <!-- Legal Bar -->
-      <div class="footer-legal-bar" style="justify-content: flex-end;">
-        <div class="legal-links">
-          <a href="#home" class="animated-link"><span>Privacy</span></a>
-          <a href="#home" class="animated-link"><span>Terms</span></a>
-        </div>
-      </div>
 
     </div>
 
@@ -4386,43 +4365,22 @@
           </button>
         </li>
         <li>
-          <button class="overlay-nav-btn" data-target="works" style="transition-delay: 90ms;">
+          <button class="overlay-nav-btn" data-target="works" style="transition-delay: 100ms;">
             <span class="overlay-idx">02</span>
             <span class="overlay-label">Portfolio</span>
             <span class="overlay-sublabel">Video, Design & AI Works</span>
           </button>
         </li>
         <li>
-          <button class="overlay-nav-btn" data-target="services" style="transition-delay: 130ms;">
+          <button class="overlay-nav-btn" data-target="faq" style="transition-delay: 150ms;">
             <span class="overlay-idx">03</span>
-            <span class="overlay-label">Services</span>
-            <span class="overlay-sublabel">Capabilities & Pricing</span>
-          </button>
-        </li>
-        <li>
-          <button class="overlay-nav-btn" data-target="tools" style="transition-delay: 170ms;">
-            <span class="overlay-idx">04</span>
-            <span class="overlay-label">Tools & Stack</span>
-            <span class="overlay-sublabel">Software & AI Stack</span>
-          </button>
-        </li>
-        <li>
-          <button class="overlay-nav-btn" data-target="testimonials" style="transition-delay: 210ms;">
-            <span class="overlay-idx">05</span>
-            <span class="overlay-label">Reviews</span>
-            <span class="overlay-sublabel">Client Testimonials</span>
-          </button>
-        </li>
-        <li>
-          <button class="overlay-nav-btn" data-target="faq" style="transition-delay: 250ms;">
-            <span class="overlay-idx">06</span>
             <span class="overlay-label">FAQ</span>
             <span class="overlay-sublabel">Questions & Answers</span>
           </button>
         </li>
         <li>
-          <button class="overlay-nav-btn btn-open-modal" style="transition-delay: 290ms;">
-            <span class="overlay-idx">07</span>
+          <button class="overlay-nav-btn btn-open-modal" style="transition-delay: 200ms;">
+            <span class="overlay-idx">04</span>
             <span class="overlay-label">Contact</span>
             <span class="overlay-sublabel">WhatsApp & Inquiries</span>
           </button>
@@ -4591,7 +4549,7 @@
   </div>
 
   <!-- Portfolio Data & Render Script -->
-  <script src="js/portfolio.js?v=2.2"></script>
+  <script src="js/portfolio.js?v=2.3"></script>
 
   <!-- Local Lenis Smooth Scroll Library (Offline & file:// Compatible) -->
   <script src="js/lenis.min.js"></script>
@@ -5017,6 +4975,19 @@
           e.preventDefault();
           smoothScrollTo(target);
         }
+      });
+    });
+
+    /* Service Filter Links - Jump to Portfolio and activate category */
+    document.querySelectorAll('.service-filter-link').forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const filter = link.getAttribute('data-filter');
+        const filterBtn = document.querySelector(`.filter-btn[data-filter="${filter}"]`);
+        if (filterBtn) {
+          filterBtn.click();
+        }
+        smoothScrollTo('works');
       });
     });
 

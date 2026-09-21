@@ -13,7 +13,7 @@ const PROJECTS = [
     client: 'Client Brands & Agencies',
     metric: '10 Brand Logo Vector & Asset Collection',
     thumbnail: 'assets/logos/1.png',
-    shortDesc: 'Folder Logo & Brand Identity — 10 Aset Desain Logo Resmi (Vector Logos, Client Identity & Symbol Design).',
+    shortDesc: 'Folder Logo & Brand Identity — Koleksi Desain Logo Resmi (Vector Logos, Client Identity & Symbol Design).',
     fullDesc: 'Folder koleksi resmi Desain Logo & Identitas Brand dari folder assets/Logo. Di dalamnya berisi 10 aset desain logo klien dan korporat resmi dengan berbagai gaya simbolis, tipografi modern, dan desain vektor presisi.',
     challenge: 'Merancang simbol logo & identitas visual brand yang unik, modern, mudah diingat, dan dapat diaplikasikan fleksibel di berbagai media cetak & digital.',
     solution: 'Eksplorasi bentuk geometris presisi, pemilihan warna psikologi brand yang kuat, serta pembuatan file vektor skala tinggi di Adobe Illustrator.',
@@ -84,7 +84,7 @@ const PROJECTS = [
     client: 'FKDB',
     metric: '62 Aset Desain Grafis',
     thumbnail: 'assets/fkdb-graphic-design/33.png',
-    shortDesc: 'Folder Desain Grafis FKDB — 62 Aset Desain (Poster, Flyers, Banner, Twibbon, Sertifikat, Feed Instagram, Mockup & Stiker).',
+    shortDesc: 'Folder Desain Grafis FKDB — Poster, Flyers, Banner, Twibbon, Sertifikat, Feed Instagram, Mockup & Stiker.',
     fullDesc: 'Folder koleksi lengkap Desain Grafis resmi untuk FKDB (Forum Komunikasi Doa Bangsa) dari folder assets/Graphic Design/FKDB. Berisi 62 aset desain grafis komprehensif meliputi Poster PHBN, Banner Hari Besar Nasional (HUT RI, Bhayangkara, TNI AU, Pancasila, Hardiknas), Twibbon Idul Fitri & Idul Adha, Feed Instagram Kilas Balik, Job Vacancy, Design Kemasan Tempe Azaki, Sertifikat Pelatihan, hingga Stiker Unboxing & Mockups.',
     challenge: 'Membuat beragam aset desain visual publikasi dengan konsistensi identitas warna dan profesionalitas korporat FKDB.',
     solution: 'Merancang tata letak grid modular di Photoshop & Illustrator untuk flyer, twibbon transparan, carousel interaktif, dan sertifikat resmi.',
@@ -470,7 +470,7 @@ const PROJECTS = [
     client: 'Elvorindo',
     metric: '11 Aset Desain Grafis',
     thumbnail: 'assets/elvorindo-graphic-design/1.png',
-    shortDesc: 'Folder Desain Grafis Elvorindo — 11 Aset Desain (Bando Qyokazu, Poster 4:3 & 9:16, Stiker Unboxing, Label Pakaian & Card QC).',
+    shortDesc: 'Folder Desain Grafis Elvorindo — Bando Qyokazu, Poster 4:3 & 9:16, Stiker Unboxing, Label Pakaian & Card QC.',
     fullDesc: 'Folder koleksi resmi Desain Grafis untuk Elvorindo dari folder assets/Graphic Design/Elvorindo. Di dalamnya berisi 11 aset desain pilihan meliputi branding produk Qyokazu, bando promosi, poster rasio 4:3 & 9:16, stiker unboxing, label pakaian, serta kartu Quality Control 10x15 cm.',
     challenge: 'Mendesain seluruh ekosistem materi promosi fisik, stiker kemasan, dan visual produk Qyokazu Elvorindo dengan identitas brand yang konsisten dan elegan.',
     solution: 'Merancang tata letak grafis modular untuk bando produk, stiker unboxing, label pakaian modern, dan poster promosi cetak & digital.',
@@ -693,7 +693,7 @@ const PROJECTS = [
     client: 'Buddhis Indonesia',
     metric: '5 Aset Desain Grafis',
     thumbnail: 'assets/andrey-graphic-design/buddhis-indonesia/1.png',
-    shortDesc: 'Folder Desain Grafis Buddhis Indonesia — 5 Aset Visual & Creative Design.',
+    shortDesc: 'Folder Desain Grafis Buddhis Indonesia — Aset Visual & Creative Design.',
     fullDesc: 'Folder koleksi resmi Desain Grafis untuk Buddhis Indonesia dari folder Graphic Design/ANDREY DESIGN GRAPHIC. Berisi 5 aset desain visual art, banner promosi, dan materi media sosial.',
     challenge: 'Menciptakan identitas visual dan komunikasi pemasaran Buddhis Indonesia yang konsisten dan menarik.',
     solution: 'Desain grafis profesional dengan tata letak terstruktur, komposisi warna presisi, dan elemen visual modern.',
@@ -740,7 +740,7 @@ const PROJECTS = [
     client: 'andreydigital.id',
     metric: '31 Aset Desain Grafis',
     thumbnail: 'assets/andrey-graphic-design/canva-course/0.png',
-    shortDesc: 'Folder Desain Grafis andreydigital.id — 31 Aset Visual & Creative Design.',
+    shortDesc: 'Folder Desain Grafis andreydigital.id — Aset Visual & Creative Design.',
     fullDesc: 'Folder koleksi resmi Desain Grafis untuk andreydigital.id dari folder Graphic Design/ANDREY DESIGN GRAPHIC. Berisi 31 aset desain visual art, banner promosi, dan materi media sosial.',
     challenge: 'Menciptakan identitas visual dan komunikasi pemasaran andreydigital.id yang konsisten dan menarik.',
     solution: 'Desain grafis profesional dengan tata letak terstruktur, komposisi warna presisi, dan elemen visual modern.',
@@ -4365,7 +4365,6 @@ function initPortfolio() {
             <img src="${p.thumbnail}" alt="${p.title}" loading="lazy">
           `}
           <span class="project-category-badge" style="${p.youtubeUrl ? 'background:rgba(220,38,38,0.9); color:#fff;' : ''}">📁 ${p.categoryName} • ${p.client}</span>
-          <span class="project-metric" style="${p.youtubeUrl ? 'background:rgba(220,38,38,0.9); color:#fff;' : ''}">${p.metric}</span>
           <div class="project-overlay">
             ${p.youtubeUrl ? 
               `<button class="btn btn-primary btn-sm" style="background:#ff0000; border-color:#ff0000; color:#fff;" onclick="event.stopPropagation(); window.open('${p.youtubeUrl}', '_blank');">▶ Buka YouTube Channel</button>` : 
