@@ -3078,11 +3078,9 @@
       transform: scale(1);
     }
 
-    /* Background Scroll Lock state */
-    html.scroll-locked,
+    /* Background Scroll Lock state - Preserve scroll position without collapsing document height */
     body.scroll-locked {
       overflow: hidden !important;
-      height: 100% !important;
       overscroll-behavior: none !important;
     }
 
@@ -4549,7 +4547,7 @@
   </div>
 
   <!-- Portfolio Data & Render Script -->
-  <script src="js/portfolio.js?v=2.4"></script>
+  <script src="js/portfolio.js?v=2.5"></script>
 
   <!-- Local Lenis Smooth Scroll Library (Offline & file:// Compatible) -->
   <script src="js/lenis.min.js"></script>
@@ -4566,6 +4564,7 @@
         return !!(node && node.closest && node.closest('#project-modal, #image-zoom-modal, #request-modal, #nav-overlay'));
       }
     }) : null;
+    window.lenis = lenis;
 
     if (lenis) {
       function raf(time) {
@@ -4576,20 +4575,45 @@
     }
 
     let scrollEnabled = true;
+    let savedScrollPosition = 0;
+
     function stopScroll() {
       if (!scrollEnabled) return;
       scrollEnabled = false;
+
+      // Capture exact page scroll before locking
+      const curY = (window.lenis && typeof window.lenis.scroll === 'number')
+        ? window.lenis.scroll
+        : (window.scrollY || window.pageYOffset || document.documentElement.scrollTop || 0);
+
+      if (curY > 0 || typeof window.savedScrollPosition !== 'number') {
+        savedScrollPosition = curY;
+        window.savedScrollPosition = curY;
+      }
+
       if (lenis) lenis.stop();
-      document.documentElement.classList.add('scroll-locked');
       document.body.classList.add('scroll-locked');
     }
 
     function startScroll() {
       if (scrollEnabled) return;
       scrollEnabled = true;
-      if (lenis) lenis.start();
-      document.documentElement.classList.remove('scroll-locked');
+
       document.body.classList.remove('scroll-locked');
+      document.documentElement.classList.remove('scroll-locked');
+
+      const targetY = (typeof window.savedScrollPosition === 'number' && window.savedScrollPosition >= 0)
+        ? window.savedScrollPosition
+        : savedScrollPosition;
+
+      if (lenis) {
+        lenis.start();
+        if (typeof targetY === 'number' && targetY >= 0) {
+          lenis.scrollTo(targetY, { immediate: true });
+        }
+      } else if (typeof targetY === 'number' && targetY >= 0) {
+        window.scrollTo({ top: targetY, behavior: 'instant' });
+      }
     }
 
     window.stopScroll = stopScroll;
@@ -4659,7 +4683,11 @@
     function smoothScrollTo(id) {
       const el = document.getElementById(id);
       if (!el) return;
-      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      if (window.lenis && typeof window.lenis.scrollTo === 'function') {
+        window.lenis.scrollTo(el, { duration: 1.2 });
+      } else {
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
     }
 
 
@@ -4917,7 +4945,9 @@
         closeNavMenu();
         closeRequestModal();
         /* Close case study project modal if open */
-        if (projectModal && projectModal.classList.contains('active')) {
+        if (typeof window.closeModal === 'function') {
+          window.closeModal();
+        } else if (projectModal && projectModal.classList.contains('active')) {
           projectModal.classList.remove('active');
           startScroll();
           /* Stop any iframes playing */
@@ -4934,8 +4964,12 @@
     if (projectModal) {
       projectModal.addEventListener('click', (e) => {
         if (e.target === projectModal) {
-          projectModal.classList.remove('active');
-          startScroll();
+          if (typeof window.closeModal === 'function') {
+            window.closeModal();
+          } else {
+            projectModal.classList.remove('active');
+            startScroll();
+          }
         }
       });
     }

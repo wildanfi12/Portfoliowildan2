@@ -4502,6 +4502,14 @@ function initPortfolio() {
   // Modal Open Function for Brand Folders & Artwork Assets
   function openModal(project) {
     if (!modalBackdrop || !modalBody) return;
+
+    // Capture exact scroll position before opening modal
+    const curY = (window.lenis && typeof window.lenis.scroll === 'number')
+      ? window.lenis.scroll
+      : (window.scrollY || window.pageYOffset || document.documentElement.scrollTop || 0);
+    if (curY > 0) {
+      window.savedScrollPosition = curY;
+    }
     
     const isBunny = !!project.bunnyVideoId || (project.embedVideo && (project.embedVideo.includes('iframe.mediadelivery.net') || project.embedVideo.includes('player.mediadelivery.net') || project.embedVideo.includes('bunny') || project.embedVideo.includes('mediadelivery')));
     const isVideo = !isBunny && project.embedVideo && (project.embedVideo.endsWith('.mp4') || project.embedVideo.endsWith('.mov'));
@@ -4607,9 +4615,11 @@ function initPortfolio() {
     `;
 
     modalBackdrop.classList.add('active');
-    document.documentElement.classList.add('scroll-locked');
-    document.body.classList.add('scroll-locked');
-    if (typeof window.stopScroll === 'function') window.stopScroll();
+    if (typeof window.stopScroll === 'function') {
+      window.stopScroll();
+    } else {
+      document.body.classList.add('scroll-locked');
+    }
     const modalContentEl = modalBackdrop.querySelector('.modal-content');
     if (modalContentEl) modalContentEl.scrollTop = 0;
   }
@@ -4681,7 +4691,10 @@ function initPortfolio() {
         mediaContainer.innerHTML = `<img src="${mediaSrc}" alt="${title}" style="width: 100%; height: 100%; ${padStyle} background: ${bg};">
         <div class="modal-media-zoom-overlay">🔍 Klik untuk Zoom Fullscreen</div>`;
       }
-      mediaContainer.scrollIntoView({ behavior: 'smooth' });
+      const modalContentEl = document.querySelector('#project-modal .modal-content');
+      if (modalContentEl) {
+        modalContentEl.scrollTo({ top: 0, behavior: 'smooth' });
+      }
     }
   };
 
@@ -4712,11 +4725,21 @@ function initPortfolio() {
     activeGallery = galleryItems.filter(item => item.img && !item.video);
     if (activeGallery.length === 0) return;
 
+    // Preserve scroll position if not already recorded
+    if (typeof window.savedScrollPosition !== 'number' || window.savedScrollPosition <= 0) {
+      const curY = (window.lenis && typeof window.lenis.scroll === 'number')
+        ? window.lenis.scroll
+        : (window.scrollY || window.pageYOffset || document.documentElement.scrollTop || 0);
+      if (curY > 0) window.savedScrollPosition = curY;
+    }
+
     activeIndex = Math.max(0, Math.min(startIndex, activeGallery.length - 1));
     zoomModal.classList.add('active');
-    document.documentElement.classList.add('scroll-locked');
-    document.body.classList.add('scroll-locked');
-    if (typeof window.stopScroll === 'function') window.stopScroll();
+    if (typeof window.stopScroll === 'function') {
+      window.stopScroll();
+    } else {
+      document.body.classList.add('scroll-locked');
+    }
 
     updateZoomImage(folderTitle);
   };
@@ -4834,14 +4857,23 @@ function initPortfolio() {
     resetZoomState();
     const projectModal = document.getElementById('project-modal');
     if (!projectModal || !projectModal.classList.contains('active')) {
-      document.documentElement.classList.remove('scroll-locked');
-      document.body.classList.remove('scroll-locked');
-      document.body.style.overflow = 'auto';
-      if (typeof window.startScroll === 'function') window.startScroll();
+      if (typeof window.startScroll === 'function') {
+        window.startScroll();
+      } else {
+        document.body.classList.remove('scroll-locked');
+        document.documentElement.classList.remove('scroll-locked');
+      }
     }
   }
+  window.closeZoomModal = closeZoomModal;
 
-  if (zoomCloseBtn) zoomCloseBtn.addEventListener('click', closeZoomModal);
+  if (zoomCloseBtn) {
+    zoomCloseBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      closeZoomModal();
+    });
+  }
   if (zoomModal) {
     zoomModal.addEventListener('click', (e) => {
       if (e.target === zoomModal) closeZoomModal();
@@ -4874,14 +4906,10 @@ function initPortfolio() {
     }
   });
 
-  // Modal Close Function with Audio Leak Protection
+  // Modal Close Function with Audio Leak Protection & Scroll Restoration
   function closeModal() {
     if (!modalBackdrop) return;
     modalBackdrop.classList.remove('active');
-    document.documentElement.classList.remove('scroll-locked');
-    document.body.classList.remove('scroll-locked');
-    document.body.style.overflow = 'auto';
-    if (typeof window.startScroll === 'function') window.startScroll();
 
     // Stop and pause all video and iframe elements inside modal to stop audio immediately
     const videos = modalBackdrop.querySelectorAll('video');
@@ -4900,10 +4928,25 @@ function initPortfolio() {
     if (modalBody) {
       modalBody.innerHTML = '';
     }
+
+    if (typeof window.startScroll === 'function') {
+      window.startScroll();
+    } else {
+      document.body.classList.remove('scroll-locked');
+      document.documentElement.classList.remove('scroll-locked');
+      if (typeof window.savedScrollPosition === 'number' && window.savedScrollPosition > 0) {
+        window.scrollTo({ top: window.savedScrollPosition, behavior: 'instant' });
+      }
+    }
   }
+  window.closeModal = closeModal;
 
   if (modalClose) {
-    modalClose.addEventListener('click', closeModal);
+    modalClose.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      closeModal();
+    });
   }
 
   if (modalBackdrop) {
