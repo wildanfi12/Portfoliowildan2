@@ -4768,7 +4768,7 @@ function initPortfolio() {
         `;
       } else if (isVideo) {
         mediaContainer.style.background = '#000';
-        mediaContainer.innerHTML = `<video src="${mediaSrc}" controls autoplay loop style="width: 100%; height: 100%; object-fit: contain; background: #000;"></video>`;
+        mediaContainer.innerHTML = `<video src="${mediaSrc}" controls autoplay loop muted playsinline style="width: 100%; height: 100%; object-fit: contain; background: #000;"></video>`;
       } else {
         const bg = itemBg || '#000';
         const padStyle = itemBg ? 'object-fit: contain; padding: 2rem;' : 'object-fit: contain;';

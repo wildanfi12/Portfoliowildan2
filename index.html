@@ -5,7 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Wildan — Creative Designer, Video Editor & AI Creator</title>
   <meta name="description" content="Wildan is an independent creative designer, video editor, motion graphics artist, and AI content creator crafting visual experiences that move people." />
-  <meta name="author" content="Wildan" />
+  <meta name="author" content="Wildan Firdaus" />
+  <meta name="keywords" content="Wildan Firdaus, video editor, content creator, motion designer, graphic designer, AI creative, social media specialist, portfolio, Indonesia" />
+  <meta name="robots" content="index, follow" />
   <meta name="theme-color" content="#0a0a0a" />
 
   <link rel="canonical" href="https://portfoliowildanf2.vercel.app/" />
@@ -25,6 +27,9 @@
   <meta name="twitter:image" content="https://portfoliowildanf2.vercel.app/assets/wildan-profile.jpg" />
 
   <link rel="icon" type="image/jpeg" href="assets/wildan-profile.jpg" />
+
+  <!-- Preload LCP hero image for faster First/Largest Contentful Paint -->
+  <link rel="preload" as="image" href="assets/wildan-profile-cafe.jpg" fetchpriority="high" />
 
   <!-- Google Fonts: Onest -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -393,189 +398,149 @@
     }
 
     /* ==========================================================================
-       HEADER (FIXED OVERLAY)
+       FLOATING ISLAND HEADER (PILL CAPSULE SPECIFICATION)
        ========================================================================== */
     #main-header {
-      position: sticky;
-      top: 0;
-      inset-inline: 0;
-      z-index: 50;
-      background: rgba(255, 255, 255, 0.85);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border-bottom: 1px solid rgba(230, 229, 226, 0.6);
-      transition: box-shadow 0.3s ease;
-    }
-    #main-header.scrolled {
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+      position: fixed;
+      top: 1.25rem;
+      left: 50%;
+      transform: translate3d(-50%, 0, 0);
+      z-index: 100;
+      width: max-content;
+      max-width: calc(100vw - 2rem);
+      pointer-events: auto;
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.32s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: transform, opacity;
     }
 
-    .header-shell {
+    /* Scroll-Down Popup Slide Out: smooth spring-like slide & subtle scale */
+    #main-header.header-hidden {
+      transform: translate3d(-50%, -150%, 0) scale(0.95);
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .floating-header-island {
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      gap: 1.5rem;
-      padding-block: 0.85rem;
-    }
-    @media (min-width: 640px) {
-      .header-shell {
-        padding-block: 1.15rem;
-      }
-    }
-    @media (min-width: 1024px) {
-      .header-shell {
-        padding-block: 1.75rem;
-      }
+      gap: 0.65rem;
+      padding: 5px 6px 5px 6px;
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(228, 228, 231, 0.95);
+      border-radius: 9999px;
+      box-shadow: 0 12px 30px -4px rgba(0, 0, 0, 0.08), 0 2px 8px -2px rgba(0, 0, 0, 0.04), 0 0 0 1px rgba(255, 255, 255, 0.8) inset;
+      transition: box-shadow 0.3s ease, border-color 0.3s ease, background 0.3s ease;
     }
 
-    .brand-btn {
+    #main-header.scrolled .floating-header-island {
+      box-shadow: 0 16px 36px -4px rgba(0, 0, 0, 0.12), 0 4px 12px -2px rgba(0, 0, 0, 0.06), 0 0 0 1px rgba(255, 255, 255, 0.95) inset;
+      background: rgba(255, 255, 255, 0.96);
+      border-color: rgba(212, 212, 216, 0.95);
+    }
+
+    /* Left: Profile Avatar & Brand */
+    .floating-brand-btn {
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
-      font-size: 1.15rem;
-      font-weight: 600;
-      letter-spacing: -0.01em;
-      transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+      background: transparent;
+      border: none;
+      padding: 0;
+      margin: 0;
+      cursor: pointer;
+      border-radius: 9999px;
+      text-decoration: none;
+      color: inherit;
     }
-    @media (hover: hover) {
-      .brand-btn:hover {
-        transform: scale(1.04);
-      }
+    .floating-avatar {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center 20%;
+      border: 1.5px solid rgba(255, 255, 255, 0.95);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+      display: block;
+      transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
-    .brand-logo-spark {
-      color: var(--accent);
-      font-size: 1.15rem;
-      width: 1em;
-      height: 1em;
+    .floating-brand-btn:hover .floating-avatar {
+      transform: scale(1.08);
     }
-    @media (min-width: 1024px) {
-      .brand-btn {
-        font-size: 1.125rem;
-      }
-      .brand-logo-spark {
-        font-size: 1.25rem;
-      }
+    .floating-brand-name {
+      display: none !important;
     }
 
-    .nav-center {
-      display: none;
-    }
-    @media (min-width: 1024px) {
-      .nav-center {
-        display: flex;
-      }
-    }
-    .nav-list {
+    /* Center: Navigation Links */
+    .floating-nav {
       display: flex;
       align-items: center;
-      gap: 2rem;
+    }
+    .floating-nav-list {
+      display: flex;
+      align-items: center;
+      gap: 0.2rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .floating-nav-link {
+      background: transparent;
+      border: none;
+      font-family: inherit;
       font-size: 0.875rem;
       font-weight: 500;
+      color: #52525b;
+      padding: 0.42rem 0.8rem;
+      border-radius: 9999px;
+      cursor: pointer;
+      transition: color 0.2s ease, background 0.2s ease;
+      white-space: nowrap;
     }
-    .nav-item-btn {
-      transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.3s ease;
-      opacity: 0.8;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.25rem;
+    .floating-nav-link:hover {
+      color: #09090b;
+      background: rgba(0, 0, 0, 0.04);
     }
-    @media (hover: hover) {
-      .nav-item-btn:hover {
-        transform: translateY(-2px);
-        opacity: 1;
-      }
-    }
-    .nav-item-btn.active {
-      opacity: 1;
+    .floating-nav-link.active {
+      color: #09090b;
       font-weight: 600;
     }
 
-    .header-right {
+    /* Right: Actions (Contact Pill & Menu Button) */
+    .floating-actions {
       display: flex;
       align-items: center;
-      gap: 0.75rem;
+      gap: 0.35rem;
     }
-
-    .clock-chip {
-      display: none;
-      align-items: center;
-      border: 1px solid rgba(230, 229, 226, 0.8);
-      background: rgba(255, 255, 255, 0.45);
-      backdrop-filter: blur(4px);
-      -webkit-backdrop-filter: blur(4px);
-      border-radius: var(--radius-control);
-      padding: 0.5rem 0.75rem;
-      gap: 0.75rem;
-      font-size: 0.75rem;
-      color: rgba(17, 17, 17, 0.7);
-    }
-    @media (min-width: 768px) {
-      .clock-chip {
-        display: flex;
-      }
-    }
-    .clock-label {
-      color: rgba(17, 17, 17, 0.45);
-    }
-    .clock-time {
-      font-variant-numeric: tabular-nums;
-      font-weight: 500;
-      color: #111;
-      min-width: 3.5rem;
-    }
-    .clock-dot {
-      color: rgba(17, 17, 17, 0.3);
-    }
-    .clock-date {
-      font-weight: 500;
-    }
-
-    .menu-btn {
-      border: 1px solid rgba(230, 229, 226, 0.8);
-      background: rgba(255, 255, 255, 0.45);
-      backdrop-filter: blur(4px);
-      -webkit-backdrop-filter: blur(4px);
-      border-radius: var(--radius-control);
-      min-height: 44px;
-      min-width: 44px;
+    .floating-contact-btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      transition: background 0.3s ease, border-color 0.3s ease;
+      background: #18181b;
+      color: #ffffff;
+      border: none;
+      border-radius: 9999px;
+      padding: 0.48rem 1.15rem;
+      font-family: inherit;
+      font-size: 0.875rem;
+      font-weight: 600;
+      cursor: pointer;
+      white-space: nowrap;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.16);
+      transition: background 0.2s ease, transform 0.2s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.2s ease;
     }
-    @media (hover: hover) {
-      .menu-btn:hover {
-        background: rgba(255, 255, 255, 0.75);
-      }
+    .floating-contact-btn:hover {
+      background: #000000;
+      transform: translateY(-1px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.24);
     }
-    .menu-btn-inner {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.5rem 0.85rem;
-      font-size: 0.75rem;
-      font-weight: 500;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+    .floating-contact-btn:active {
+      transform: translateY(0);
     }
-    @media (min-width: 640px) {
-      .menu-btn-inner {
-        padding: 0.5rem 1rem;
-      }
-    }
-    @media (hover: hover) {
-      .menu-btn:hover .menu-btn-inner {
-        transform: scale(1.05);
-      }
-    }
-    .menu-btn-text {
-      display: none;
-    }
-    @media (min-width: 640px) {
-      .menu-btn-text {
-        display: inline;
-      }
+
+    .floating-menu-btn {
+      display: none !important;
     }
 
     /* ==========================================================================
@@ -639,7 +604,7 @@
       display: flex;
       flex-direction: column;
       gap: 1.5rem;
-      padding-top: 1.75rem;
+      padding-top: 5rem;
       padding-bottom: 2.25rem;
       flex: 1;
     }
@@ -648,7 +613,7 @@
         flex-direction: row;
         align-items: center;
         gap: 2rem;
-        padding-top: 2.75rem;
+        padding-top: 5.5rem;
         padding-bottom: 3rem;
       }
     }
@@ -657,7 +622,7 @@
         display: grid;
         grid-template-columns: repeat(12, 1fr);
         gap: 2.5rem;
-        padding-top: 5rem;
+        padding-top: 6rem;
         padding-bottom: 5rem;
         align-items: center;
       }
@@ -830,241 +795,99 @@
       }
     }
 
-    /* Masterpiece Studio Showcase Card */
-    .hero-showcase-card {
-      width: 100%;
-      max-width: 100%;
-      border-radius: var(--radius-card);
-      padding: 0.85rem;
-      background: rgba(255, 255, 255, 0.9);
-      border: 1px solid rgba(230, 229, 226, 0.95);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.09), 0 0 0 1px rgba(255, 255, 255, 0.9) inset;
-      transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.4s ease;
-      display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
-    }
-    @media (min-width: 640px) {
-      .hero-showcase-card {
-        padding: 1rem;
-        gap: 0.85rem;
-      }
-    }
-    .hero-showcase-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 32px 70px -15px rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(255, 255, 255, 0.95) inset;
-    }
-
+    /* 3D Perspective Photo Card Stage */
     .portrait-box {
       position: relative;
       width: 100%;
-      aspect-ratio: 4/4.7;
-      border-radius: var(--radius-card-sm);
-      overflow: hidden;
-      background: #eae9e6;
-      border: 1px solid rgba(17, 17, 17, 0.06);
+      max-width: 390px;
+      aspect-ratio: 4/5.1;
+      border-radius: 28px;
+      overflow: visible; /* Allows 3D rotation depth & tilt */
+      perspective: 1200px;
+      -webkit-perspective: 1200px;
+      perspective-origin: center center;
+      background: transparent;
+      border: none;
+      margin: 0 auto;
     }
+    @media (min-width: 1024px) {
+      .portrait-box {
+        max-width: 390px;
+        margin: 0 0 0 auto;
+      }
+    }
+
+    /* Preserve-3D Flipping Card Container */
+    .portrait-card-flip {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transform-style: preserve-3d;
+      -webkit-transform-style: preserve-3d;
+      will-change: transform;
+      border-radius: 28px;
+      box-shadow: 0 25px 55px -12px rgba(0, 0, 0, 0.22), 0 0 0 1px rgba(17, 17, 17, 0.08);
+      transition: box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+
+    .portrait-card-flip:hover {
+      box-shadow: 0 34px 75px -15px rgba(0, 0, 0, 0.28), 0 0 0 1px rgba(17, 17, 17, 0.12);
+    }
+
+    /* Double-Sided Faces Common Styling */
+    .portrait-face {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 28px;
+      overflow: hidden;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+      background: #eae9e6;
+      border: 1px solid rgba(17, 17, 17, 0.08);
+    }
+
+    /* Front Face (0°) */
+    .portrait-face.front {
+      transform: rotateY(0deg);
+      z-index: 2;
+    }
+
+    /* Back Face (180°) */
+    .portrait-face.back {
+      transform: rotateY(180deg);
+      z-index: 1;
+    }
+
     .portrait-photo {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: center 18%;
+      object-position: center 20%;
+      display: block;
+      user-select: none;
+      -webkit-user-drag: none;
       transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
-    .hero-showcase-card:hover .portrait-photo {
-      transform: scale(1.04);
-    }
-    .portrait-overlay-bottom {
-      position: absolute;
-      inset-inline: 0;
-      bottom: 0;
-      height: 48%;
-      background: linear-gradient(to top, rgba(10, 10, 10, 0.85) 0%, rgba(10, 10, 10, 0.35) 55%, transparent 100%);
-      pointer-events: none;
+
+    .portrait-face.back .portrait-photo {
+      object-position: center 15%;
     }
 
-    .portrait-badge-top {
-      position: absolute;
-      top: 0.85rem;
-      right: 0.85rem;
-      background: rgba(10, 10, 10, 0.78);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      padding: 0.35rem 0.75rem;
-      border-radius: var(--radius-pill);
-      font-size: 0.7rem;
-      font-weight: 500;
-      color: #34d399;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
-    }
-    .portrait-badge-top .pulse-dot {
-      width: 6px;
-      height: 6px;
-      background: #10b981;
-      border-radius: 50%;
-      box-shadow: 0 0 8px #10b981;
-      animation: pulseGreen 2s infinite;
-    }
-    @keyframes pulseGreen {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.4; transform: scale(0.85); }
+    .portrait-card-flip:hover .portrait-photo {
+      transform: scale(1.03);
     }
 
-    .portrait-caption-bottom {
-      position: absolute;
-      bottom: 0.85rem;
-      left: 1rem;
-      right: 1rem;
-      z-index: 5;
-      color: #fff;
-    }
-    .portrait-name {
-      font-size: 1.35rem;
-      font-weight: 600;
-      letter-spacing: -0.01em;
-      line-height: 1.2;
-      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
-    }
-    .portrait-title {
-      font-size: 0.75rem;
-      color: #f3c299;
-      font-weight: 500;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      text-shadow: 0 1px 6px rgba(0, 0, 0, 0.4);
-    }
-
-    /* Integrated Carousel Capability Dock */
-    .hero-carousel-dock {
-      border-radius: var(--radius-card-sm);
-      background: rgba(244, 243, 240, 0.9);
-      border: 1px solid rgba(230, 229, 226, 0.9);
-      padding: 0.65rem 0.75rem;
-      display: flex;
-      gap: 0.75rem;
-      align-items: center;
-    }
-    .carousel-spark-tile {
-      width: 3.25rem;
-      height: 3.25rem;
-      aspect-ratio: 1;
-      border-radius: var(--radius-control);
-      background: var(--ink);
-      color: var(--accent-from);
-      display: grid;
-      place-items: center;
-      flex-shrink: 0;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    }
-    .carousel-spark-tile svg {
-      width: 1.5rem;
-      height: 1.5rem;
-    }
-
-    .carousel-panel {
-      flex: 1;
-      min-width: 0;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      gap: 0.25rem;
-    }
-    .carousel-slot {
-      position: relative;
-      height: 2.25rem;
-      overflow: hidden;
-    }
-    .card-slide {
-      transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.4s ease;
-    }
-    .card-slide.outgoing {
-      transform: translateY(-12px);
-      opacity: 0;
-      position: absolute;
-      inset: 0;
-    }
-    .card-slide.incoming {
-      transform: translateY(12px);
-      opacity: 0;
-    }
-    .card-slide.active {
-      transform: translateY(0);
-      opacity: 1;
-    }
-    .hero-card-caption {
-      font-size: 0.65rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: var(--accent);
-      margin-bottom: 0.1rem;
-    }
-    .hero-card-title {
-      font-size: 0.875rem;
-      font-weight: 600;
-      line-height: 1.25;
-      color: #111;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-
-    .carousel-bottom-row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .hero-card-dashes {
-      display: flex;
-      align-items: center;
-      gap: 0.25rem;
-    }
-    .dash-pill {
-      height: 0.25rem;
-      border-radius: var(--radius-pill);
-      background: rgba(17, 17, 17, 0.2);
-      width: 0.35rem;
-      transition: all 0.3s ease;
-    }
-    .dash-pill.active {
-      width: 0.9rem;
-      background: var(--ink);
-    }
-    .card-nav-btns {
-      display: flex;
-      gap: 0.3rem;
-    }
-    .card-btn {
-      width: 1.6rem;
-      height: 1.6rem;
-      display: grid;
-      place-items: center;
-      border-radius: var(--radius-pill);
-      background: #fff;
-      color: rgba(17, 17, 17, 0.7);
-      border: 1px solid var(--line);
-      font-size: 0.7rem;
-      transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease;
-    }
-    .card-btn:hover {
-      color: #111;
-      border-color: rgba(17, 17, 17, 0.4);
-      background: #fff;
-    }
-
-    /* Trusted Brands Bar below Showcase */
+    /* Profile & Tags Bar below Photo Card */
     .hero-partners-wrap {
       width: 100%;
-      max-width: 100%;
+      max-width: 390px;
+      margin-top: 1rem;
       display: flex;
       flex-direction: column;
-      gap: 0.4rem;
+      gap: 0.45rem;
     }
     @media (min-width: 640px) {
       .hero-partners-wrap {
@@ -1074,14 +897,15 @@
     @media (min-width: 1024px) {
       .hero-partners-wrap {
         align-items: flex-end;
+        margin-left: auto;
       }
     }
     .hero-partners-label {
-      font-size: 0.7rem;
-      font-weight: 500;
+      font-size: 0.72rem;
+      font-weight: 600;
       text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: rgba(17, 17, 17, 0.45);
+      letter-spacing: 0.08em;
+      color: rgba(17, 17, 17, 0.48);
     }
     .hero-partners-pills {
       display: flex;
@@ -1097,13 +921,13 @@
       font-size: 0.72rem;
       font-weight: 500;
       color: rgba(17, 17, 17, 0.65);
-      background: rgba(255, 255, 255, 0.75);
+      background: rgba(255, 255, 255, 0.8);
       border: 1px solid var(--line);
       border-radius: var(--radius-pill);
-      padding: 0.2rem 0.55rem;
+      padding: 0.22rem 0.65rem;
       display: inline-flex;
       align-items: center;
-      gap: 0.3rem;
+      white-space: nowrap;
       transition: all 0.2s ease;
     }
     .partner-pill:hover {
@@ -3741,29 +3565,38 @@
         max-width: 100% !important;
       }
 
-      /* 2. Header: clean, minimal, vertically aligned */
+      /* 2. Floating Header Island Mobile Adjustments */
       #main-header {
-        padding-block: 0.65rem !important;
+        top: 0.75rem !important;
+        padding: 0 !important;
+        max-width: calc(100vw - 1.25rem) !important;
       }
-      .header-shell {
-        padding-block: 0 !important;
-        padding-inline: 1.25rem !important;
-        display: flex !important;
-        align-items: center !important;
-        justify-content: space-between !important;
+      .floating-header-island {
+        padding: 4px 6px !important;
+        gap: 0.35rem !important;
       }
-      .brand-btn {
-        font-size: 1.15rem !important;
-        font-weight: 600 !important;
-        letter-spacing: -0.02em !important;
+      .floating-avatar {
+        width: 32px !important;
+        height: 32px !important;
       }
-      .menu-btn {
-        min-height: 40px !important;
-        min-width: 40px !important;
-        padding: 0 0.85rem !important;
-        display: inline-flex !important;
-        align-items: center !important;
-        justify-content: center !important;
+      .floating-nav-link {
+        font-size: 0.78rem !important;
+        padding: 0.35rem 0.52rem !important;
+      }
+      .floating-contact-btn {
+        font-size: 0.78rem !important;
+        padding: 0.38rem 0.85rem !important;
+      }
+      .floating-menu-btn {
+        width: 32px !important;
+        height: 32px !important;
+        min-width: 32px !important;
+        min-height: 32px !important;
+        padding: 0 !important;
+        border-radius: 50% !important;
+      }
+      .hero-shell {
+        padding-top: 4.85rem !important;
       }
 
       /* 3. Hero section container: proportional vertical envelope */
@@ -3782,7 +3615,7 @@
       .hero-shell {
         display: flex !important;
         flex-direction: column !important;
-        padding-top: 1.5rem !important;
+        padding-top: 5.25rem !important;
         padding-bottom: 2rem !important;
         gap: 1.85rem !important;
         align-items: stretch !important;
@@ -3900,136 +3733,76 @@
       }
 
       /* 7. Hero Right: Standalone Photo Card & Standalone Featured Card */
+      /* 7. Hero Right: Standalone 3D Photo Card */
       .hero-right {
         width: 100% !important;
-        max-width: 330px !important;
+        max-width: 320px !important;
         margin-inline: auto !important;
         display: flex !important;
         flex-direction: column !important;
-        gap: 0 !important;
-        align-items: stretch !important;
+        gap: 1.25rem !important;
+        align-items: center !important;
       }
 
-      /* Container unbundles both cards with 24px breathing room */
-      .hero-showcase-card {
-        background: transparent !important;
-        border: none !important;
-        box-shadow: none !important;
-        padding: 0 !important;
-        display: flex !important;
-        flex-direction: column !important;
-        gap: 24px !important; /* 24px breathing room between Photo Card and Featured Card */
-        width: 100% !important;
-        transform: none !important;
-      }
-
-      /* COMPONENT 1: Standalone Hero Image Card */
       .portrait-box {
         width: 100% !important;
-        height: 280px !important;
-        aspect-ratio: unset !important;
-        border-radius: 26px !important;
-        box-shadow: 0 14px 34px -8px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.8) inset !important;
-        border: 1px solid rgba(230, 229, 226, 0.95) !important;
-        overflow: hidden !important;
+        max-width: 300px !important;
+        aspect-ratio: 4/5.1 !important;
+        height: auto !important;
+        border-radius: 28px !important;
+        box-shadow: none !important;
+        border: none !important;
+        overflow: visible !important;
         position: relative !important;
-        background: #eae9e6 !important;
+        background: transparent !important;
+        margin: 0 auto !important;
+      }
+      .portrait-card-flip {
+        border-radius: 28px !important;
+        box-shadow: 0 16px 40px -10px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(17, 17, 17, 0.08) !important;
+      }
+      .portrait-face {
+        border-radius: 28px !important;
+        border: 1px solid rgba(17, 17, 17, 0.08) !important;
       }
       .portrait-photo {
         width: 100% !important;
         height: 100% !important;
         object-fit: cover !important;
-        object-position: center 25% !important; /* Wildan's face perfectly centered in focal area */
-      }
-      .portrait-badge-top {
-        top: 0.85rem !important;
-        right: 0.85rem !important;
-        font-size: 0.65rem !important;
-        padding: 0.28rem 0.65rem !important;
-        border-radius: var(--radius-pill) !important;
-      }
-      .portrait-badge-top .pulse-dot {
-        width: 6px !important;
-        height: 6px !important;
-      }
-      .portrait-caption-bottom {
-        bottom: 0.85rem !important;
-        left: 0.95rem !important;
-        right: 0.95rem !important;
-      }
-      .portrait-name {
-        font-size: 1.15rem !important;
-        font-weight: 600 !important;
-        line-height: 1.1 !important;
-        color: #ffffff !important;
-      }
-      .portrait-title {
-        font-size: 0.62rem !important;
-        letter-spacing: 0.05em !important;
-        color: rgba(255, 255, 255, 0.85) !important;
+        object-position: center 20% !important;
       }
 
-      /* COMPONENT 2: Standalone Featured Capability Card */
-      .hero-carousel-dock {
-        border-radius: 20px !important;
-        background: rgba(255, 255, 255, 0.95) !important;
-        border: 1px solid rgba(230, 229, 226, 0.95) !important;
-        box-shadow: 0 8px 24px -6px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(255, 255, 255, 0.9) inset !important;
-        padding: 0.75rem 0.85rem !important;
-        display: flex !important;
-        gap: 0.65rem !important;
-        align-items: center !important;
-        width: 100% !important;
-      }
-      .carousel-spark-tile {
-        width: 2.6rem !important;
-        height: 2.6rem !important;
-        border-radius: 12px !important;
-        flex-shrink: 0 !important;
-      }
-      .carousel-spark-tile svg {
-        width: 1.15rem !important;
-        height: 1.15rem !important;
-      }
-      .carousel-slot {
-        height: 2.1rem !important;
-      }
-      .hero-card-caption {
-        font-size: 0.6rem !important;
-        color: rgba(17, 17, 17, 0.5) !important;
-      }
-      .hero-card-title {
-        font-size: 0.78rem !important;
-        font-weight: 600 !important;
-      }
-
-      /* 8. Trusted by Leading Brands: 32px breathing room, natural wrapping */
+      /* 8. Profile & Tags Bar below Photo Card */
       .hero-partners-wrap {
-        margin-top: 2rem !important; /* 32px breathing room */
+        margin-top: 1.25rem !important;
         width: 100% !important;
+        max-width: 320px !important;
         display: flex !important;
         flex-direction: column !important;
-        gap: 0.6rem !important;
-        align-items: flex-start !important;
+        gap: 0.5rem !important;
+        align-items: center !important;
       }
       .hero-partners-label {
-        font-size: 0.65rem !important;
-        letter-spacing: 0.06em !important;
+        font-size: 0.68rem !important;
+        letter-spacing: 0.08em !important;
         text-transform: uppercase !important;
-        color: rgba(17, 17, 17, 0.45) !important;
+        color: rgba(17, 17, 17, 0.48) !important;
+        font-weight: 600 !important;
+        text-align: center !important;
       }
       .hero-partners-pills {
         display: flex !important;
         flex-wrap: wrap !important;
         gap: 6px !important;
-        justify-content: flex-start !important;
+        justify-content: center !important;
       }
       .partner-pill {
-        font-size: 0.7rem !important;
-        padding: 0.22rem 0.55rem !important;
+        font-size: 0.72rem !important;
+        padding: 0.22rem 0.6rem !important;
         border-radius: var(--radius-pill) !important;
         background: rgba(255, 255, 255, 0.9) !important;
         border: 1px solid var(--line) !important;
+        white-space: nowrap !important;
       }
 
       /* 9. Bottom Status bar: clean editorial transition */
@@ -4055,7 +3828,9 @@
         max-width: 290px !important;
       }
       .portrait-box {
-        height: 250px !important;
+        max-width: 270px !important;
+        aspect-ratio: 4/5.1 !important;
+        height: auto !important;
       }
       .hero-ctas {
         flex-direction: column !important;
@@ -4098,7 +3873,7 @@
         grid-template-columns: minmax(0, 1fr) minmax(300px, 340px) !important;
         gap: 2.75rem !important;
         align-items: center !important;
-        padding-top: 3rem !important;
+        padding-top: 5.5rem !important;
         padding-bottom: 3rem !important;
         flex-direction: unset !important;
       }
@@ -4145,37 +3920,38 @@
         gap: 1rem !important;
       }
 
-      .hero-showcase-card {
-        width: 100% !important;
-        padding: 0.85rem !important;
-        border-radius: 28px !important;
-        background: rgba(255, 255, 255, 0.92) !important;
-        border: 1px solid rgba(230, 229, 226, 0.95) !important;
-        box-shadow: 0 20px 50px -12px rgba(0,0,0,0.1) !important;
-        display: flex !important;
-        flex-direction: column !important;
-        gap: 0.75rem !important;
-      }
-
       .portrait-box {
-        height: 340px !important;
-        aspect-ratio: unset !important;
-        border-radius: 20px !important;
-        overflow: hidden !important;
+        width: 100% !important;
+        max-width: 320px !important;
+        aspect-ratio: 4/5.1 !important;
+        height: auto !important;
+        border-radius: 28px !important;
+        overflow: visible !important;
         position: relative !important;
+        background: transparent !important;
+        border: none !important;
+        margin: 0 auto !important;
       }
-
+      .portrait-card-flip {
+        border-radius: 28px !important;
+        box-shadow: 0 20px 50px -12px rgba(0,0,0,0.2), 0 0 0 1px rgba(17, 17, 17, 0.08) !important;
+      }
+      .portrait-face {
+        border-radius: 28px !important;
+        border: 1px solid rgba(17, 17, 17, 0.08) !important;
+      }
       .portrait-photo {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
         object-position: center 20% !important;
-      }
-
-      .hero-carousel-dock {
-        padding: 0.65rem 0.8rem !important;
       }
 
       .hero-partners-wrap {
         width: 100% !important;
+        max-width: 320px !important;
         margin-top: 1rem !important;
+        margin-left: auto !important;
         display: flex !important;
         flex-direction: column !important;
         align-items: flex-end !important;
@@ -4201,32 +3977,35 @@
 
   <!-- Accessible Skip to Content -->
   <!-- ==========================================================================
-       HEADER (FIXED OVERLAY)
+       FLOATING ISLAND HEADER
        ========================================================================== -->
-  <header id="main-header">
-    <div class="shell header-shell">
-      <!-- Left brand -->
-      <button class="brand-btn" id="brand-home-btn" aria-label="Wildan Home">
-        <span>Wildan</span>
+  <header id="main-header" class="floating-header">
+    <div class="floating-header-island">
+      <!-- Left brand avatar & name -->
+      <button class="brand-btn floating-brand-btn" id="brand-home-btn" aria-label="Wildan Home" data-target="home">
+        <img src="assets/wildan-profile-cafe.jpg" alt="Wildan" class="floating-avatar">
+        <span class="floating-brand-name">Wildan</span>
       </button>
 
       <!-- Center Nav Links -->
-      <nav class="nav-center" aria-label="Main Navigation">
-        <ul class="nav-list">
-          <li><button class="nav-item-btn active" data-target="home" aria-current="page">Home</button></li>
-          <li><button class="nav-item-btn" data-target="works">Portfolio</button></li>
-          <li><button class="nav-item-btn" data-target="faq">FAQ</button></li>
-          <li><button class="nav-item-btn btn-open-modal">Contact</button></li>
+      <nav class="nav-center floating-nav" aria-label="Main Navigation">
+        <ul class="nav-list floating-nav-list">
+          <li><button class="nav-item-btn floating-nav-link active" data-target="home" aria-current="page">Home</button></li>
+          <li><button class="nav-item-btn floating-nav-link" data-target="works">Portfolio</button></li>
+          <li><button class="nav-item-btn floating-nav-link" data-target="faq">FAQ</button></li>
         </ul>
       </nav>
 
-      <!-- Right: Menu Button -->
-      <div class="header-right">
+      <!-- Right: Action Buttons (Contact Pill + Menu) -->
+      <div class="header-right floating-actions">
+        <button class="floating-contact-btn btn-open-modal" aria-label="Contact Wildan">
+          <span>Contact</span>
+        </button>
 
-        <button class="menu-btn" id="menu-open-btn" aria-label="Open Navigation Menu">
-          <span class="menu-btn-inner">
-            <svg class="icon icon-stroke" viewBox="0 0 24 24" style="font-size:0.875rem;"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
-            <span class="menu-btn-text">Menu</span>
+        <button class="menu-btn floating-menu-btn" id="menu-open-btn" aria-label="Open Navigation Menu">
+          <span class="menu-btn-inner floating-menu-inner">
+            <svg class="icon icon-stroke" viewBox="0 0 24 24" style="width:16px;height:16px;"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+            <span class="menu-btn-text floating-menu-text">Menu</span>
           </span>
         </button>
       </div>
@@ -4306,86 +4085,33 @@
         <!-- Right Column -->
         <div class="hero-right">
           
-          <!-- Wildan's Unified Studio Showcase Card -->
-          <div class="hero-showcase-card reveal-fade-up" style="transition-delay: 350ms;">
-            
-            <!-- Portrait Image Box -->
-            <div class="portrait-box">
-              <img src="assets/wildan-profile.jpg" alt="Wildan — Creative Designer & AI Specialist" class="portrait-photo">
+          <!-- 3D Standalone Photo Card Stage -->
+          <div class="portrait-box reveal-fade-up" id="heroPortraitStage" style="transition-delay: 350ms;">
+            <div class="portrait-card-flip" id="heroPortraitFlip" title="Click to flip portrait card">
               
-              <!-- Subtle bottom gradient for readability -->
-              <div class="portrait-overlay-bottom"></div>
-
-              <!-- Top-right availability status pill -->
-              <div class="portrait-badge-top">
-                <span class="pulse-dot"></span>
-                <span>Available for Projects</span>
+              <!-- FRONT FACE (0°) - Cafe Portrait -->
+              <div class="portrait-face front">
+                <img src="assets/wildan-profile-cafe.jpg" alt="Wildan — Creative Designer & AI Specialist" class="portrait-photo">
               </div>
 
-              <!-- Bottom Profile Title -->
-              <div class="portrait-caption-bottom">
-                <h3 class="portrait-name">Wildan</h3>
-                <p class="portrait-title">Creative Designer & Video Specialist</p>
+              <!-- BACK FACE (180°) - Office Portrait -->
+              <div class="portrait-face back">
+                <img src="assets/wildan-profile-office.jpg" alt="Wildan Firdaus — Motion Designer & AI Creator" class="portrait-photo">
               </div>
+
             </div>
-
-            <!-- Integrated Carousel Capability Dock -->
-            <div class="hero-carousel-dock" id="hero-carousel-card">
-              <div class="carousel-spark-tile">
-                <svg class="icon" viewBox="0 0 48 48"><path d="M24 2c2.2 13.8 7.9 19.6 22 22-14.1 2.4-19.8 8.2-22 22-2.2-13.8-7.9-19.6-22-22 14.1-2.4 19.8-8.2 22-22Z" fill="currentColor"/></svg>
-              </div>
-              <div class="carousel-panel">
-                <div class="carousel-slot" id="carousel-slot">
-                  <div class="card-slide active" data-idx="0">
-                    <p class="hero-card-caption">Video & Motion</p>
-                    <h4 class="hero-card-title">Crafted to captivate.</h4>
-                  </div>
-                  <div class="card-slide incoming" data-idx="1" style="display:none;">
-                    <p class="hero-card-caption">AI Digital Art</p>
-                    <h4 class="hero-card-title">Prompt to perfection.</h4>
-                  </div>
-                  <div class="card-slide incoming" data-idx="2" style="display:none;">
-                    <p class="hero-card-caption">Graphic Design</p>
-                    <h4 class="hero-card-title">Designed to convert.</h4>
-                  </div>
-                  <div class="card-slide incoming" data-idx="3" style="display:none;">
-                    <p class="hero-card-caption">Advertising Ads</p>
-                    <h4 class="hero-card-title">Engineered for ROAS.</h4>
-                  </div>
-                </div>
-
-                <div class="carousel-bottom-row">
-                  <div class="hero-card-dashes" id="carousel-dashes">
-                    <span class="dash-pill active"></span>
-                    <span class="dash-pill"></span>
-                    <span class="dash-pill"></span>
-                    <span class="dash-pill"></span>
-                  </div>
-                  <div class="card-nav-btns">
-                    <button class="card-btn" id="carousel-prev" aria-label="Previous capability">
-                      <svg class="icon icon-stroke" viewBox="0 0 24 24" style="transform:rotate(180deg);"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-                    </button>
-                    <button class="card-btn" id="carousel-next" aria-label="Next capability">
-                      <svg class="icon icon-stroke" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-
           </div>
 
-          <!-- Micro Partners Bar below Showcase -->
+          <!-- Micro Profile & Tags Bar below Photo Card -->
           <div class="hero-partners-wrap reveal-fade-up" style="transition-delay: 500ms;">
-            <span class="hero-partners-label">Trusted by Leading Brands</span>
+            <span class="hero-partners-label">Wildan Firdaus</span>
             <div class="hero-partners-pills">
-              <span class="partner-pill">FKDB</span>
-              <span class="partner-pill">Yuntea</span>
-              <span class="partner-pill">Howell</span>
-              <span class="partner-pill">Belayang</span>
-              <span class="partner-pill">Etawa 99</span>
-              <span class="partner-pill">Eastern</span>
-              <span class="partner-pill">Kalceri</span>
+              <span class="partner-pill">Content Creator</span>
+              <span class="partner-pill">Video Editor</span>
+              <span class="partner-pill">Social Media Specialist</span>
+              <span class="partner-pill">Graphic Designer</span>
+              <span class="partner-pill">Motion Designer</span>
+              <span class="partner-pill">AI Creative</span>
             </div>
           </div>
 
@@ -5029,7 +4755,7 @@
               <p class="testimonial-quote">"Keren!! Gambar produknya kelihatan jelas tajam dan ga pecah... komunikasinya juga sangat responsif dan memuaskan. Sukses selalu!"</p>
             </div>
             <div class="client-info">
-              <img src="assets/testimonials/tika.jpg" alt="Tika Rosmayanti Avatar" class="client-avatar">
+              <img src="assets/testimonials/tika.jpg" alt="Tika Rosmayanti Avatar" class="client-avatar" loading="lazy">
               <div>
                 <div class="client-name">Tika Rosmayanti</div>
                 <div class="client-role">Pemilik UMKM</div>
@@ -5252,7 +4978,7 @@
       <!-- Right Column: Wildan Studio Info & Direct WhatsApp -->
       <div class="overlay-info-card">
         <div class="overlay-profile-header">
-          <img src="assets/wildan-profile.jpg" alt="Wildan" class="overlay-profile-avatar">
+          <img src="assets/wildan-profile.jpg" alt="Wildan" class="overlay-profile-avatar" loading="lazy">
           <div>
             <div class="overlay-badge-dot-wrap">
               <span class="overlay-pulse-dot"></span>
@@ -5534,28 +5260,151 @@
       }, { passive: false });
     }
 
-    /* Scroll is enabled immediately by default */
+    /* ==========================================================================
+       FLOATING HEADER SMART SCROLL CONTROLLER
+       - Scroll DOWN: hides with smooth spring popup
+       - Scroll UP: reveals smoothly
+       - Near top (scrollY <= 50): guaranteed visible
+       - Jitter-free with threshold dampening & RAF throttling
+       - Preserves visibility during programmatic nav clicks
+       - Automatically syncs active nav link as sections come into view
+       ========================================================================== */
+    const mainHeader = document.getElementById('main-header');
+    let lastHeaderScrollY = Math.max(0, window.pageYOffset || document.documentElement.scrollTop || 0);
+    let isHeaderHidden = false;
+    let isProgrammaticNavScroll = false;
+    let programmaticNavTimer = null;
+    let headerRafPending = false;
 
-    /* Add scrolled class to header on scroll */
-    window.addEventListener('scroll', () => {
-      if (mainHeader) {
-        mainHeader.classList.toggle('scrolled', window.scrollY > 20);
+    // Active link synchronization helper
+    const navLinks = document.querySelectorAll('.floating-nav-link');
+    const sectionsToTrack = [
+      { id: 'home', el: document.getElementById('home') },
+      { id: 'works', el: document.getElementById('works') },
+      { id: 'faq', el: document.getElementById('faq') }
+    ];
+
+    function updateActiveNavLink(currentY) {
+      if (!navLinks.length) return;
+      let activeSectionId = 'home';
+      const offset = 220; // section detection offset
+
+      for (let i = sectionsToTrack.length - 1; i >= 0; i--) {
+        const item = sectionsToTrack[i];
+        if (item.el) {
+          const rect = item.el.getBoundingClientRect();
+          if (rect.top <= offset) {
+            activeSectionId = item.id;
+            break;
+          }
+        }
       }
-    }, { passive: true });
 
+      navLinks.forEach(link => {
+        const target = link.getAttribute('data-target');
+        const isActive = (target === activeSectionId);
+        link.classList.toggle('active', isActive);
+        if (isActive) {
+          link.setAttribute('aria-current', 'page');
+        } else {
+          link.removeAttribute('aria-current');
+        }
+      });
+    }
+
+    function updateFloatingHeader() {
+      headerRafPending = false;
+      if (!mainHeader) return;
+
+      const currentY = Math.max(0, (window.lenis && typeof window.lenis.scroll === 'number')
+        ? window.lenis.scroll
+        : (window.pageYOffset || document.documentElement.scrollTop || 0));
+
+      // Synchronize active nav link
+      updateActiveNavLink(currentY);
+
+      // If document is scroll-locked (modal or nav overlay is open), do not alter header state
+      if (document.body.classList.contains('scroll-locked')) return;
+
+      const delta = currentY - lastHeaderScrollY;
+      const scrollThreshold = 8; // threshold in px to prevent micro jitter
+
+      // Elevated shadow state when scrolled past 20px
+      mainHeader.classList.toggle('scrolled', currentY > 20);
+
+      // Always show when near the very top
+      if (currentY <= 45) {
+        if (isHeaderHidden) {
+          mainHeader.classList.remove('header-hidden');
+          isHeaderHidden = false;
+        }
+        lastHeaderScrollY = currentY;
+        return;
+      }
+
+      // If programmatic nav scroll in progress, keep header visible
+      if (isProgrammaticNavScroll) {
+        if (isHeaderHidden) {
+          mainHeader.classList.remove('header-hidden');
+          isHeaderHidden = false;
+        }
+        lastHeaderScrollY = currentY;
+        return;
+      }
+
+      // Scrolling DOWN -> Hide header with popup slide out
+      if (delta > scrollThreshold && currentY > 70) {
+        if (!isHeaderHidden) {
+          mainHeader.classList.add('header-hidden');
+          isHeaderHidden = true;
+        }
+      }
+      // Scrolling UP -> Reveal header smoothly
+      else if (delta < -scrollThreshold) {
+        if (isHeaderHidden) {
+          mainHeader.classList.remove('header-hidden');
+          isHeaderHidden = false;
+        }
+      }
+
+      lastHeaderScrollY = currentY;
+    }
+
+    function onPageScroll() {
+      if (!headerRafPending) {
+        headerRafPending = true;
+        requestAnimationFrame(updateFloatingHeader);
+      }
+    }
+
+    window.addEventListener('scroll', onPageScroll, { passive: true });
+    if (window.lenis && typeof window.lenis.on === 'function') {
+      window.lenis.on('scroll', onPageScroll);
+    }
 
     function smoothScrollTo(id) {
       const el = document.getElementById(id);
       if (!el) return;
+
+      isProgrammaticNavScroll = true;
+      if (isHeaderHidden && mainHeader) {
+        mainHeader.classList.remove('header-hidden');
+        isHeaderHidden = false;
+      }
+
+      if (programmaticNavTimer) clearTimeout(programmaticNavTimer);
+      programmaticNavTimer = setTimeout(() => {
+        isProgrammaticNavScroll = false;
+        lastHeaderScrollY = Math.max(0, window.pageYOffset || document.documentElement.scrollTop || 0);
+      }, 1300);
+
       if (window.lenis && typeof window.lenis.scrollTo === 'function') {
-        window.lenis.scrollTo(el, { duration: 1.2 });
+        window.lenis.scrollTo(el, { duration: 1.2, offset: -24 });
       } else {
         el.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
     }
     window.smoothScrollTo = smoothScrollTo;
-
-
 
     /* ==========================================================================
        LIVE LOCAL CLOCK
@@ -5585,7 +5434,6 @@
     /* ==========================================================================
        DIRECT SITE ENTRANCE (NO LOADER SCREEN)
        ========================================================================== */
-    const mainHeader = document.getElementById('main-header');
     const heroWatermark = document.getElementById('hero-watermark');
     const heroTitle = document.getElementById('hero-title');
 
@@ -5597,75 +5445,6 @@
     });
 
 
-
-    /* ==========================================================================
-       HEROCARD CAROUSEL
-       ========================================================================== */
-    const carouselCard = document.getElementById('hero-carousel-card');
-    const prevBtn = document.getElementById('carousel-prev');
-    const nextBtn = document.getElementById('carousel-next');
-    const slides = document.querySelectorAll('.card-slide');
-    const dashes = document.querySelectorAll('.dash-pill');
-    let activeIdx = 0;
-    const totalSlides = slides.length;
-    let carouselTimer = null;
-
-    function showSlide(newIdx, direction = 1) {
-      if (newIdx === activeIdx) return;
-      const outgoing = slides[activeIdx];
-      const incoming = slides[newIdx];
-
-      outgoing.className = 'card-slide outgoing';
-      outgoing.style.display = 'block';
-
-      incoming.style.display = 'block';
-      incoming.className = direction > 0 ? 'card-slide incoming' : 'card-slide outgoing';
-
-      requestAnimationFrame(() => {
-        incoming.className = 'card-slide active';
-      });
-
-      setTimeout(() => {
-        outgoing.style.display = 'none';
-      }, 400);
-
-      if (dashes[activeIdx]) dashes[activeIdx].classList.remove('active');
-      if (dashes[newIdx]) dashes[newIdx].classList.add('active');
-
-      activeIdx = newIdx;
-    }
-
-    function resetCarouselTimer() {
-      if (carouselTimer) clearInterval(carouselTimer);
-      carouselTimer = setInterval(() => {
-        const next = (activeIdx + 1) % totalSlides;
-        showSlide(next, 1);
-      }, 4200);
-    }
-
-    if (nextBtn && prevBtn && carouselCard) {
-      nextBtn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        const next = (activeIdx + 1) % totalSlides;
-        showSlide(next, 1);
-        resetCarouselTimer();
-      });
-
-      prevBtn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        const prev = (activeIdx - 1 + totalSlides) % totalSlides;
-        showSlide(prev, -1);
-        resetCarouselTimer();
-      });
-
-      carouselCard.addEventListener('click', () => {
-        const next = (activeIdx + 1) % totalSlides;
-        showSlide(next, 1);
-        resetCarouselTimer();
-      });
-
-      resetCarouselTimer();
-    }
 
     /* ==========================================================================
        WORD REVEAL & INTERSECTION OBSERVER
@@ -5926,6 +5705,112 @@
         smoothScrollTo('works');
       });
     });
+
+    /* ==========================================================================
+       HERO 3D ROTATING PHOTO CARD ENGINE (SCROLL FLIP & 3D PARALLAX)
+       ========================================================================== */
+    (function () {
+      const stage = document.getElementById('heroPortraitStage');
+      const cardFlip = document.getElementById('heroPortraitFlip');
+      const showcaseCard = stage;
+      if (!cardFlip || !stage) return;
+
+      let targetRotY = 0;
+      let currentRotY = 0;
+      let mouseTiltX = 0;
+      let mouseTiltY = 0;
+      let currentMouseTiltX = 0;
+      let currentMouseTiltY = 0;
+      let isManualToggled = false;
+      let isManualOverride = false;
+
+      // Global control for testing and interactive embedding
+      window.setHeroCardRotation = function (deg, immediate = false) {
+        isManualOverride = true;
+        targetRotY = deg;
+        if (immediate) {
+          currentRotY = deg;
+        }
+      };
+
+      window.getHeroCardStatus = function () {
+        return {
+          currentRotY: currentRotY,
+          targetRotY: targetRotY,
+          transform: cardFlip ? cardFlip.style.transform : null
+        };
+      };
+
+      // Click to toggle flip (Front 0° <-> Back 180°)
+      cardFlip.addEventListener('click', (e) => {
+        isManualToggled = !isManualToggled;
+        isManualOverride = true;
+        targetRotY = isManualToggled ? 180 : 0;
+      });
+
+      // Mouse parallax tilt on hover (Desktop)
+      if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+        showcaseCard.addEventListener('mousemove', (e) => {
+          const rect = showcaseCard.getBoundingClientRect();
+          const cx = rect.left + rect.width / 2;
+          const cy = rect.top + rect.height / 2;
+          mouseTiltX = ((e.clientX - cx) / (rect.width / 2)) * 6; // max 6 deg
+          mouseTiltY = -((e.clientY - cy) / (rect.height / 2)) * 6;
+        }, { passive: true });
+
+        showcaseCard.addEventListener('mouseleave', () => {
+          mouseTiltX = 0;
+          mouseTiltY = 0;
+        });
+      }
+
+      // Scroll Flip Calculation (Maps hero scroll progression to 3D rotation)
+      function updateFromScroll() {
+        if (isManualOverride) return;
+
+        const scrollY = window.pageYOffset || document.documentElement.scrollTop;
+        // Flip completes across the hero section scroll (approx 550px)
+        const runway = 550;
+        const p = Math.min(Math.max(scrollY / runway, 0), 1);
+        
+        // 0° -> 180° -> 340° (Framer reference)
+        targetRotY = p * 340;
+      }
+
+      window.addEventListener('scroll', () => {
+        // If user scrolls after clicking, resume scroll-driven rotation
+        if (isManualOverride) {
+          isManualOverride = false;
+          isManualToggled = false;
+        }
+        updateFromScroll();
+      }, { passive: true });
+
+      // 60FPS RAF Lerp Animation Loop
+      function animate() {
+        currentRotY += (targetRotY - currentRotY) * 0.12;
+        currentMouseTiltX += (mouseTiltX - currentMouseTiltX) * 0.08;
+        currentMouseTiltY += (mouseTiltY - currentMouseTiltY) * 0.08;
+
+        const rad = (currentRotY * Math.PI) / 180;
+        // Sinusoidal Z-tilt peaking at 8° during 90° & 270° transitions
+        const tiltZ = Math.sin(rad * 2) * 8;
+        // Subtle depth scale easing
+        const scale = 1 - Math.abs(Math.sin(rad)) * 0.04;
+
+        cardFlip.style.transform = `
+          rotateX(${currentMouseTiltY.toFixed(2)}deg)
+          rotateY(${(currentRotY + currentMouseTiltX).toFixed(2)}deg)
+          rotateZ(${tiltZ.toFixed(2)}deg)
+          scale(${scale.toFixed(3)})
+        `;
+
+        requestAnimationFrame(animate);
+      }
+
+      requestAnimationFrame(animate);
+      updateFromScroll();
+    })();
 
   </script>
 </body>
