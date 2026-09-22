@@ -28,10 +28,10 @@
 
   <link rel="icon" type="image/jpeg" href="assets/wildan-profile.jpg" />
 
-  <!-- Preload hero portraits for instantaneous 3D rotation & flipping -->
-  <link rel="preload" as="image" href="assets/wildan-profile-cafe.jpg" fetchpriority="high" />
-  <link rel="prefetch" as="image" href="assets/wildan-profile-office.jpg" />
-  <link rel="prefetch" as="image" href="assets/wildan-portrait-outdoor.jpg" />
+  <!-- Preload hero portraits (1.jpg, 2.jpg, 3.jpg) for instantaneous 3D rotation -->
+  <link rel="preload" as="image" href="assets/1.jpg" fetchpriority="high" />
+  <link rel="prefetch" as="image" href="assets/2.jpg" />
+  <link rel="prefetch" as="image" href="assets/3.jpg" />
 
   <!-- Google Fonts: Onest -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -3771,7 +3771,7 @@
         width: 100% !important;
         height: 100% !important;
         object-fit: cover !important;
-        object-position: center 20% !important;
+        object-position: center 20%;
       }
 
       /* 8. Profile & Tags Bar below Photo Card */
@@ -3946,7 +3946,7 @@
         width: 100% !important;
         height: 100% !important;
         object-fit: cover !important;
-        object-position: center 20% !important;
+        object-position: center 20%;
       }
 
       .hero-partners-wrap {
@@ -4071,14 +4071,14 @@
           <div class="portrait-box reveal-fade-up" id="heroPortraitStage" style="transition-delay: 350ms;">
             <div class="portrait-card-flip" id="heroPortraitFlip" title="Click to flip portrait card">
               
-              <!-- FRONT FACE (0°) - Cafe Portrait -->
+              <!-- FRONT FACE (0°) - Cafe Portrait (Foto 1) -->
               <div class="portrait-face front">
-                <img src="assets/wildan-profile-cafe.jpg" alt="Wildan — Creative Designer & AI Specialist" class="portrait-photo" id="frontPortraitPhoto">
+                <img src="assets/1.jpg" alt="Wildan — Cafe Portrait (1)" class="portrait-photo" id="frontPortraitPhoto">
               </div>
 
-              <!-- BACK FACE (180°) - Office Portrait -->
+              <!-- BACK FACE (180°) - Office Portrait (Foto 2) -->
               <div class="portrait-face back">
-                <img src="assets/wildan-profile-office.jpg" alt="Wildan Firdaus — Motion Designer & AI Creator" class="portrait-photo" id="backPortraitPhoto">
+                <img src="assets/2.jpg" alt="Wildan Firdaus — Office Portrait (2)" class="portrait-photo" id="backPortraitPhoto">
               </div>
 
             </div>
@@ -5701,18 +5701,18 @@
 
       const photos = [
         {
-          src: 'assets/wildan-profile-cafe.jpg',
-          alt: 'Wildan — Creative Designer & AI Specialist',
+          src: 'assets/1.jpg',
+          alt: 'Wildan — Cafe Portrait (Foto 1)',
           pos: 'center 20%'
         },
         {
-          src: 'assets/wildan-profile-office.jpg',
-          alt: 'Wildan Firdaus — Motion Designer & AI Creator',
+          src: 'assets/2.jpg',
+          alt: 'Wildan Firdaus — Office Portrait (Foto 2)',
           pos: 'center 15%'
         },
         {
-          src: 'assets/wildan-portrait-outdoor.jpg',
-          alt: 'Wildan Firdaus — Outdoor Portrait',
+          src: 'assets/3.jpg',
+          alt: 'Wildan Firdaus — Outdoor Portrait (Foto 3)',
           pos: 'center 20%'
         }
       ];
@@ -5724,30 +5724,48 @@
       let currentMouseTiltX = 0;
       let currentMouseTiltY = 0;
       let isManualOverride = false;
-      let currentStep = -999;
+      let lastFrontIdx = -1;
+      let lastBackIdx = -1;
 
-      // Update the invisible/hidden face seamlessly when card passes 90° / 270° / etc.
+      function setFront(idx) {
+        if (lastFrontIdx === idx) return;
+        lastFrontIdx = idx;
+        if (frontPhotoEl) {
+          frontPhotoEl.src = photos[idx].src;
+          frontPhotoEl.alt = photos[idx].alt;
+          frontPhotoEl.style.objectPosition = photos[idx].pos;
+        }
+      }
+
+      function setBack(idx) {
+        if (lastBackIdx === idx) return;
+        lastBackIdx = idx;
+        if (backPhotoEl) {
+          backPhotoEl.src = photos[idx].src;
+          backPhotoEl.alt = photos[idx].alt;
+          backPhotoEl.style.objectPosition = photos[idx].pos;
+        }
+      }
+
+      // Seamless bidirectional face updater:
+      // Works perfectly whether scrolling down or up, clicking forward or backward
       function updateFaces(angle) {
-        const step = Math.floor((angle + 90) / 180);
-        if (step !== currentStep) {
-          currentStep = step;
-          const nextIdx = (((step + 1) % 3) + 3) % 3;
+        const k = Math.round(angle / 180);
+        const activeIdx = ((k % 3) + 3) % 3;
+        const delta = angle - k * 180;
+        const neighborK = delta >= 0 ? k + 1 : k - 1;
+        const neighborIdx = ((neighborK % 3) + 3) % 3;
 
-          if (step % 2 === 0) {
-            // Front face is currently facing viewer -> Back face is hidden behind, update Back
-            if (backPhotoEl) {
-              backPhotoEl.src = photos[nextIdx].src;
-              backPhotoEl.alt = photos[nextIdx].alt;
-              backPhotoEl.style.objectPosition = photos[nextIdx].pos;
-            }
-          } else {
-            // Back face is currently facing viewer -> Front face is hidden behind, update Front
-            if (frontPhotoEl) {
-              frontPhotoEl.src = photos[nextIdx].src;
-              frontPhotoEl.alt = photos[nextIdx].alt;
-              frontPhotoEl.style.objectPosition = photos[nextIdx].pos;
-            }
-          }
+        if (Math.abs(k % 2) === 0) {
+          // Front face is visible -> shows activeIdx
+          setFront(activeIdx);
+          // Back face is hidden behind -> primed with neighborIdx
+          setBack(neighborIdx);
+        } else {
+          // Back face is visible -> shows activeIdx
+          setBack(activeIdx);
+          // Front face is hidden behind -> primed with neighborIdx
+          setFront(neighborIdx);
         }
       }
 
@@ -5765,7 +5783,8 @@
         return {
           currentRotY: currentRotY,
           targetRotY: targetRotY,
-          currentStep: currentStep,
+          lastFrontIdx: lastFrontIdx,
+          lastBackIdx: lastBackIdx,
           transform: cardFlip ? cardFlip.style.transform : null
         };
       };
