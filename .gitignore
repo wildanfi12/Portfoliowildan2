@@ -12,6 +12,7 @@ assets/Motion/
 assets/Video Editing/
 assets/Graphic Design/
 assets/Logo/
+assets/Foto profil/
 
 # Exclude heavy raw video files (>80MB) to comply with GitHub 100MB limit
 *.mov
@@ -30,3 +31,7 @@ assets/howell-video/9_headset_hw01.mp4
 assets/howell-motion/1_adapter_hdmi_8k.mp4
 assets/howell-motion/3_poster_promo.mp4
 assets/cari-tofu/tofu_19.mp4
+
+# Dev & verification scripts (not part of production website)
+verify_*.js
+3d-photo-card.html
