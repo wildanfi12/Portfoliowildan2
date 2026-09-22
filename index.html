@@ -28,8 +28,10 @@
 
   <link rel="icon" type="image/jpeg" href="assets/wildan-profile.jpg" />
 
-  <!-- Preload LCP hero image for faster First/Largest Contentful Paint -->
+  <!-- Preload hero portraits for instantaneous 3D rotation & flipping -->
   <link rel="preload" as="image" href="assets/wildan-profile-cafe.jpg" fetchpriority="high" />
+  <link rel="prefetch" as="image" href="assets/wildan-profile-office.jpg" />
+  <link rel="prefetch" as="image" href="assets/wildan-portrait-outdoor.jpg" />
 
   <!-- Google Fonts: Onest -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -4071,12 +4073,12 @@
               
               <!-- FRONT FACE (0°) - Cafe Portrait -->
               <div class="portrait-face front">
-                <img src="assets/wildan-profile-cafe.jpg" alt="Wildan — Creative Designer & AI Specialist" class="portrait-photo">
+                <img src="assets/wildan-profile-cafe.jpg" alt="Wildan — Creative Designer & AI Specialist" class="portrait-photo" id="frontPortraitPhoto">
               </div>
 
               <!-- BACK FACE (180°) - Office Portrait -->
               <div class="portrait-face back">
-                <img src="assets/wildan-profile-office.jpg" alt="Wildan Firdaus — Motion Designer & AI Creator" class="portrait-photo">
+                <img src="assets/wildan-profile-office.jpg" alt="Wildan Firdaus — Motion Designer & AI Creator" class="portrait-photo" id="backPortraitPhoto">
               </div>
 
             </div>
@@ -5687,13 +5689,33 @@
     });
 
     /* ==========================================================================
-       HERO 3D ROTATING PHOTO CARD ENGINE (SCROLL FLIP & 3D PARALLAX)
+       HERO 3D ROTATING PHOTO CARD ENGINE (3-PHOTO SCROLL FLIP & 3D PARALLAX)
        ========================================================================== */
     (function () {
       const stage = document.getElementById('heroPortraitStage');
       const cardFlip = document.getElementById('heroPortraitFlip');
+      const frontPhotoEl = document.getElementById('frontPortraitPhoto');
+      const backPhotoEl = document.getElementById('backPortraitPhoto');
       const showcaseCard = stage;
       if (!cardFlip || !stage) return;
+
+      const photos = [
+        {
+          src: 'assets/wildan-profile-cafe.jpg',
+          alt: 'Wildan — Creative Designer & AI Specialist',
+          pos: 'center 20%'
+        },
+        {
+          src: 'assets/wildan-profile-office.jpg',
+          alt: 'Wildan Firdaus — Motion Designer & AI Creator',
+          pos: 'center 15%'
+        },
+        {
+          src: 'assets/wildan-portrait-outdoor.jpg',
+          alt: 'Wildan Firdaus — Outdoor Portrait',
+          pos: 'center 20%'
+        }
+      ];
 
       let targetRotY = 0;
       let currentRotY = 0;
@@ -5701,8 +5723,33 @@
       let mouseTiltY = 0;
       let currentMouseTiltX = 0;
       let currentMouseTiltY = 0;
-      let isManualToggled = false;
       let isManualOverride = false;
+      let currentStep = -999;
+
+      // Update the invisible/hidden face seamlessly when card passes 90° / 270° / etc.
+      function updateFaces(angle) {
+        const step = Math.floor((angle + 90) / 180);
+        if (step !== currentStep) {
+          currentStep = step;
+          const nextIdx = (((step + 1) % 3) + 3) % 3;
+
+          if (step % 2 === 0) {
+            // Front face is currently facing viewer -> Back face is hidden behind, update Back
+            if (backPhotoEl) {
+              backPhotoEl.src = photos[nextIdx].src;
+              backPhotoEl.alt = photos[nextIdx].alt;
+              backPhotoEl.style.objectPosition = photos[nextIdx].pos;
+            }
+          } else {
+            // Back face is currently facing viewer -> Front face is hidden behind, update Front
+            if (frontPhotoEl) {
+              frontPhotoEl.src = photos[nextIdx].src;
+              frontPhotoEl.alt = photos[nextIdx].alt;
+              frontPhotoEl.style.objectPosition = photos[nextIdx].pos;
+            }
+          }
+        }
+      }
 
       // Global control for testing and interactive embedding
       window.setHeroCardRotation = function (deg, immediate = false) {
@@ -5710,6 +5757,7 @@
         targetRotY = deg;
         if (immediate) {
           currentRotY = deg;
+          updateFaces(deg);
         }
       };
 
@@ -5717,15 +5765,15 @@
         return {
           currentRotY: currentRotY,
           targetRotY: targetRotY,
+          currentStep: currentStep,
           transform: cardFlip ? cardFlip.style.transform : null
         };
       };
 
-      // Click to toggle flip (Front 0° <-> Back 180°)
+      // Click to flip: rotates by 180° to advance smoothly to the next photo
       cardFlip.addEventListener('click', (e) => {
-        isManualToggled = !isManualToggled;
         isManualOverride = true;
-        targetRotY = isManualToggled ? 180 : 0;
+        targetRotY += 180;
       });
 
       // Mouse parallax tilt on hover (Desktop)
@@ -5744,7 +5792,7 @@
         });
       }
 
-      // Scroll Flip Calculation (Maps hero scroll progression to 3D rotation)
+      // Scroll Flip Calculation (Maps hero scroll progression across all 3 photos)
       function updateFromScroll() {
         if (isManualOverride) return;
 
@@ -5753,15 +5801,14 @@
         const runway = 550;
         const p = Math.min(Math.max(scrollY / runway, 0), 1);
         
-        // 0° -> 180° -> 340° (Framer reference)
-        targetRotY = p * 340;
+        // 0° -> 180° (Photo 2) -> 360° (Photo 3)
+        targetRotY = p * 360;
       }
 
       window.addEventListener('scroll', () => {
-        // If user scrolls after clicking, resume scroll-driven rotation
+        // If user scrolls after clicking, resume scroll-driven rotation smoothly
         if (isManualOverride) {
           isManualOverride = false;
-          isManualToggled = false;
         }
         updateFromScroll();
       }, { passive: true });
@@ -5772,8 +5819,10 @@
         currentMouseTiltX += (mouseTiltX - currentMouseTiltX) * 0.08;
         currentMouseTiltY += (mouseTiltY - currentMouseTiltY) * 0.08;
 
+        updateFaces(currentRotY);
+
         const rad = (currentRotY * Math.PI) / 180;
-        // Sinusoidal Z-tilt peaking at 8° during 90° & 270° transitions
+        // Sinusoidal Z-tilt peaking at 8° during transition angles
         const tiltZ = Math.sin(rad * 2) * 8;
         // Subtle depth scale easing
         const scale = 1 - Math.abs(Math.sin(rad)) * 0.04;
