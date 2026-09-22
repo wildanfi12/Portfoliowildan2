@@ -94,25 +94,20 @@ const PROJECTS = [
     category: 'design',
     categoryName: 'Graphic Design',
     client: 'FKDB',
-    metric: '62 Aset Desain Grafis',
+    metric: '61 Aset Desain Grafis',
     thumbnail: 'assets/fkdb-graphic-design/33.png',
     shortDesc: 'Folder Desain Grafis FKDB — Poster, Flyers, Banner, Twibbon, Sertifikat, Feed Instagram, Mockup & Stiker.',
-    fullDesc: 'Folder koleksi lengkap Desain Grafis resmi untuk FKDB (Forum Komunikasi Doa Bangsa) dari folder assets/Graphic Design/FKDB. Berisi 62 aset desain grafis komprehensif meliputi Poster PHBN, Banner Hari Besar Nasional (HUT RI, Bhayangkara, TNI AU, Pancasila, Hardiknas), Twibbon Idul Fitri & Idul Adha, Feed Instagram Kilas Balik, Job Vacancy, Design Kemasan Tempe Azaki, Sertifikat Pelatihan, hingga Stiker Unboxing & Mockups.',
+    fullDesc: 'Folder koleksi lengkap Desain Grafis resmi untuk FKDB (Forum Komunikasi Doa Bangsa) dari folder assets/Graphic Design/FKDB. Berisi 61 aset desain grafis komprehensif meliputi Poster PHBN, Banner Hari Besar Nasional (HUT RI, Bhayangkara, TNI AU, Pancasila, Hardiknas), Twibbon Idul Fitri & Idul Adha, Feed Instagram Kilas Balik, Job Vacancy, Design Kemasan Tempe Azaki, Sertifikat Pelatihan, hingga Stiker Unboxing & Mockups.',
     challenge: 'Membuat beragam aset desain visual publikasi dengan konsistensi identitas warna dan profesionalitas korporat FKDB.',
     solution: 'Merancang tata letak grid modular di Photoshop & Illustrator untuk flyer, twibbon transparan, carousel interaktif, dan sertifikat resmi.',
     results: [
-      '62 Aset Desain Resmi Terintegrasi di Folder FKDB',
+      '61 Aset Desain Resmi Terintegrasi di Folder FKDB',
       'Digunakan dalam Kampanye Publikasi Nasional FKDB',
       'Tingkat Interaksi & Simpan Media Sosial Meningkat'
     ],
     tools: ['Photoshop', 'Illustrator', 'Canva'],
     embedVideo: 'assets/fkdb-graphic-design/33.png',
     items: [
-      {
-        name: 'FKDB — 10_Welding Accessoris',
-        img: 'assets/fkdb-graphic-design/1.png',
-        desc: 'Desain grafis publikasi resmi FKDB: 10_Welding Accessoris.'
-      },
       {
         name: 'FKDB — 12_TIMNAS INDO U-17',
         img: 'assets/fkdb-graphic-design/2.png',
