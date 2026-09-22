@@ -15,6 +15,8 @@
   <!-- Open Graph / Facebook / WhatsApp -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://portfoliowildanf2.vercel.app/" />
+  <meta property="og:site_name" content="Wildan Portfolio" />
+  <meta property="og:locale" content="id_ID" />
   <meta property="og:title" content="Wildan — Creative Designer, Video Editor & AI Creator" />
   <meta property="og:description" content="Commercial video editing, generative AI motion design, high-converting advertising creatives, and brand identity projects." />
   <meta property="og:image" content="https://portfoliowildanf2.vercel.app/assets/wildan-profile.jpg" />
@@ -5102,7 +5104,7 @@
   </div>
 
   <!-- Portfolio Data & Render Script -->
-  <script src="js/portfolio.js?v=2.8"></script>
+  <script src="js/portfolio.js?v=3.0"></script>
 
   <!-- Local Lenis Smooth Scroll Library (Offline & file:// Compatible) -->
   <script src="js/lenis.min.js"></script>
@@ -5372,26 +5374,18 @@
     window.smoothScrollTo = smoothScrollTo;
 
     /* ==========================================================================
-       LIVE LOCAL CLOCK
+       LIVE LOCAL CLOCK (Nav Overlay)
        ========================================================================== */
-    const liveTimeEl = document.getElementById('live-time');
-    const liveDateEl = document.getElementById('live-date');
     const overlayTimeEl = document.getElementById('overlay-live-time');
 
     function updateClock() {
+      if (!overlayTimeEl) return;
       const now = new Date();
       const rawHours = now.getHours();
       const hours = rawHours % 12 || 12;
       const minutes = String(now.getMinutes()).padStart(2, '0');
       const meridiem = rawHours >= 12 ? 'pm' : 'am';
-      const timeStr = `${hours}:${minutes}${meridiem}`;
-
-      const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-      const dateStr = `${now.getDate()} ${months[now.getMonth()]}, ${now.getFullYear()}`;
-
-      if (liveTimeEl) liveTimeEl.textContent = timeStr;
-      if (liveDateEl) liveDateEl.textContent = dateStr;
-      if (overlayTimeEl) overlayTimeEl.textContent = timeStr;
+      overlayTimeEl.textContent = `${hours}:${minutes}${meridiem}`;
     }
     updateClock();
     setInterval(updateClock, 1000);
@@ -5778,6 +5772,7 @@
       let touchStartX = 0;
       let touchStartY = 0;
       let isSwiping = false;
+      let justSwiped = false;
 
       cardFlip.addEventListener('touchstart', (e) => {
         if (e.touches.length !== 1) return;
@@ -5808,6 +5803,8 @@
 
         // Horizontal swipe gesture detected (threshold: 35px)
         if (Math.abs(dx) > 35 && Math.abs(dx) > Math.abs(dy) * 1.1) {
+          justSwiped = true;
+          setTimeout(() => { justSwiped = false; }, 350);
           isManualOverride = true;
           manualOverrideScrollY = window.pageYOffset || document.documentElement.scrollTop;
           if (dx < 0) {
@@ -5822,6 +5819,7 @@
 
       // Click / Tap to flip: rotates by 180° to advance smoothly to the next photo
       cardFlip.addEventListener('click', (e) => {
+        if (justSwiped) return;
         isManualOverride = true;
         manualOverrideScrollY = window.pageYOffset || document.documentElement.scrollTop;
         targetRotY += 180;
