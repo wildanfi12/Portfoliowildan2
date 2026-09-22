@@ -3613,128 +3613,93 @@
         display: none !important;
       }
 
-      /* 5. Hero shell: single column with intentional spacing rhythm */
+      /* 5. Hero shell: single column calibrated to fit all elements in mobile view */
       .hero-shell {
         display: flex !important;
         flex-direction: column !important;
-        padding-top: 5.25rem !important;
-        padding-bottom: 2rem !important;
-        gap: 1.85rem !important;
-        align-items: stretch !important;
+        padding-top: 4.25rem !important;
+        padding-bottom: 1rem !important;
+        gap: 0.9rem !important;
+        align-items: center !important;
         overflow: hidden !important;
       }
 
       /* 6. Hero Left: text content column */
       .hero-left {
         width: 100% !important;
-        max-width: 100% !important;
+        max-width: 330px !important;
         flex: none !important;
         display: flex !important;
         flex-direction: column !important;
-        gap: 0.9rem !important;
+        gap: 0.45rem !important;
+        align-items: center !important;
+        text-align: center !important;
         min-width: 0 !important;
       }
 
       /* Small Label */
       .eyebrow-dark {
-        font-size: 0.72rem !important;
+        font-size: 0.7rem !important;
         font-weight: 500 !important;
         letter-spacing: 0.02em !important;
         margin-bottom: 0 !important;
       }
 
-      /* Headline: strong, controlled, 3-line editorial composition */
+      /* Headline: strong, controlled editorial composition */
       .hero-title {
-        font-size: clamp(1.68rem, 7.5vw, 2.05rem) !important;
-        line-height: 1.02 !important;
-        letter-spacing: -0.03em !important;
+        font-size: clamp(1.45rem, 6.2vw, 1.8rem) !important;
+        line-height: 1.06 !important;
+        letter-spacing: -0.025em !important;
         max-width: 320px !important;
         font-weight: 700 !important;
-        word-break: keep-all !important;
+        text-align: center !important;
         margin: 0 !important;
-      }
-
-      /* Description: comfortable line length and reading rhythm */
-      .hero-subtitle {
-        font-size: 0.86rem !important;
-        line-height: 1.48 !important;
-        max-width: 335px !important;
-        color: rgba(17, 17, 17, 0.65) !important;
-        font-weight: 400 !important;
-        word-break: normal !important;
-        margin: 0.1rem 0 0 0 !important;
-      }
-
-      /* Services / Skill Pills: 8px gap, consistent height, 2-3 row natural wrap */
-      .hero-floating-skills {
-        display: flex !important;
-        flex-wrap: wrap !important;
-        gap: 8px !important;
-        max-width: 340px !important;
-        overflow: visible !important;
-        margin-top: 0.2rem !important;
-      }
-      .skill-pill {
-        min-height: 32px !important;
-        display: inline-flex !important;
-        align-items: center !important;
-        font-size: 0.72rem !important;
-        padding: 0.28rem 0.65rem !important;
-        border-radius: var(--radius-pill) !important;
-        background: rgba(255, 255, 255, 0.95) !important;
-        border: 1px solid var(--line) !important;
-        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03) !important;
-        white-space: nowrap !important;
-        flex-shrink: 0 !important;
       }
 
       /* Social Proof */
       .rating-row {
         display: inline-flex !important;
         align-items: center !important;
-        gap: 0.4rem !important;
-        margin-top: 0.15rem !important;
-      }
-      .stars-group {
-        font-size: 0.8rem !important;
-        letter-spacing: 0.05em !important;
+        justify-content: center !important;
+        margin-top: 0.05rem !important;
       }
       .rating-text {
-        font-size: 0.75rem !important;
+        font-size: 0.74rem !important;
         font-weight: 500 !important;
-        color: rgba(17, 17, 17, 0.68) !important;
+        color: rgba(17, 17, 17, 0.65) !important;
+        text-align: center !important;
       }
 
-      /* CTA Buttons: balanced height, primary / secondary relationship */
+      /* CTA Buttons */
       .hero-ctas {
         display: flex !important;
         flex-direction: row !important;
         flex-wrap: wrap !important;
-        gap: 10px !important;
+        gap: 8px !important;
         align-items: center !important;
-        margin-top: 0.4rem !important;
+        justify-content: center !important;
+        margin-top: 0.15rem !important;
         width: 100% !important;
       }
       .hero-ctas .btn-pill {
         flex: 0 0 auto !important;
       }
       .hero-ctas .pill-inner {
-        min-height: 46px !important;
-        font-size: 0.82rem !important;
+        min-height: 38px !important;
+        font-size: 0.78rem !important;
         font-weight: 500 !important;
       }
       .btn-pill.pill-no-arrow .pill-inner {
-        padding: 0.55rem 1.25rem !important;
+        padding: 0.4rem 1rem !important;
       }
       .btn-pill.pill-with-arrow .pill-inner {
-        padding: 0.25rem 0.25rem 0.25rem 1.25rem !important;
+        padding: 0.2rem 0.2rem 0.2rem 1rem !important;
       }
       .pill-badge {
-        width: 1.85rem !important;
-        height: 1.85rem !important;
+        width: 1.6rem !important;
+        height: 1.6rem !important;
       }
 
-      /* 7. Hero Right: Standalone Photo Card & Standalone Featured Card */
       /* 7. Hero Right: Standalone 3D Photo Card */
       .hero-right {
         width: 100% !important;
@@ -3742,16 +3707,16 @@
         margin-inline: auto !important;
         display: flex !important;
         flex-direction: column !important;
-        gap: 1.25rem !important;
+        gap: 0.6rem !important;
         align-items: center !important;
       }
 
       .portrait-box {
         width: 100% !important;
-        max-width: 300px !important;
-        aspect-ratio: 4/5.1 !important;
+        max-width: min(220px, 58vw) !important;
+        aspect-ratio: 4 / 4.9 !important;
         height: auto !important;
-        border-radius: 28px !important;
+        border-radius: 22px !important;
         box-shadow: none !important;
         border: none !important;
         overflow: visible !important;
@@ -3760,11 +3725,11 @@
         margin: 0 auto !important;
       }
       .portrait-card-flip {
-        border-radius: 28px !important;
-        box-shadow: 0 16px 40px -10px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(17, 17, 17, 0.08) !important;
+        border-radius: 22px !important;
+        box-shadow: 0 14px 35px -8px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(17, 17, 17, 0.08) !important;
       }
       .portrait-face {
-        border-radius: 28px !important;
+        border-radius: 22px !important;
         border: 1px solid rgba(17, 17, 17, 0.08) !important;
       }
       .portrait-photo {
@@ -3776,16 +3741,16 @@
 
       /* 8. Profile & Tags Bar below Photo Card */
       .hero-partners-wrap {
-        margin-top: 1.25rem !important;
+        margin-top: 0.45rem !important;
         width: 100% !important;
         max-width: 320px !important;
         display: flex !important;
         flex-direction: column !important;
-        gap: 0.5rem !important;
+        gap: 0.35rem !important;
         align-items: center !important;
       }
       .hero-partners-label {
-        font-size: 0.68rem !important;
+        font-size: 0.66rem !important;
         letter-spacing: 0.08em !important;
         text-transform: uppercase !important;
         color: rgba(17, 17, 17, 0.48) !important;
@@ -3795,23 +3760,23 @@
       .hero-partners-pills {
         display: flex !important;
         flex-wrap: wrap !important;
-        gap: 6px !important;
+        gap: 5px !important;
         justify-content: center !important;
       }
       .partner-pill {
-        font-size: 0.72rem !important;
-        padding: 0.22rem 0.6rem !important;
+        font-size: 0.68rem !important;
+        padding: 0.18rem 0.52rem !important;
         border-radius: var(--radius-pill) !important;
         background: rgba(255, 255, 255, 0.9) !important;
         border: 1px solid var(--line) !important;
         white-space: nowrap !important;
       }
 
-      /* 9. Bottom Status bar: clean editorial transition */
+      /* 9. Bottom Status bar */
       .hero-status-bar {
-        margin-top: 1.75rem !important;
-        padding-block: 0.75rem !important;
-        font-size: 0.72rem !important;
+        margin-top: 1rem !important;
+        padding-block: 0.6rem !important;
+        font-size: 0.7rem !important;
         letter-spacing: 0.05em !important;
         text-transform: uppercase !important;
         display: flex !important;
@@ -3872,11 +3837,11 @@
 
       .hero-shell {
         display: grid !important;
-        grid-template-columns: minmax(0, 1fr) minmax(300px, 340px) !important;
-        gap: 2.75rem !important;
+        grid-template-columns: minmax(0, 1.15fr) minmax(270px, 310px) !important;
+        gap: 2rem !important;
         align-items: center !important;
-        padding-top: 5.5rem !important;
-        padding-bottom: 3rem !important;
+        padding-top: 5rem !important;
+        padding-bottom: 2rem !important;
         flex-direction: unset !important;
       }
 
@@ -3884,7 +3849,7 @@
         grid-column: 1 !important;
         display: flex !important;
         flex-direction: column !important;
-        gap: 1.2rem !important;
+        gap: 1rem !important;
         min-width: 0 !important;
       }
 
@@ -3895,39 +3860,42 @@
         letter-spacing: -0.028em !important;
       }
 
-      .hero-subtitle {
-        font-size: 0.92rem !important;
-        max-width: 38ch !important;
-        line-height: 1.55 !important;
-        color: rgba(17, 17, 17, 0.65) !important;
+      .rating-row {
+        display: inline-flex !important;
+        align-items: center !important;
+        gap: 0.4rem !important;
       }
 
-      .hero-floating-skills {
-        display: flex !important;
-        flex-wrap: wrap !important;
-        gap: 8px !important;
+      .rating-text {
+        font-size: 0.82rem !important;
+        font-weight: 500 !important;
+        color: rgba(17, 17, 17, 0.68) !important;
       }
-      .skill-pill {
-        font-size: 0.76rem !important;
-        padding: 0.32rem 0.7rem !important;
+
+      .hero-ctas {
+        display: flex !important;
+        flex-direction: row !important;
+        gap: 10px !important;
+        align-items: center !important;
+        margin-top: 0.2rem !important;
       }
 
       .hero-right {
         grid-column: 2 !important;
         width: 100% !important;
-        max-width: 340px !important;
+        max-width: 310px !important;
         display: flex !important;
         flex-direction: column !important;
-        align-items: stretch !important;
-        gap: 1rem !important;
+        align-items: center !important;
+        gap: 0.75rem !important;
       }
 
       .portrait-box {
         width: 100% !important;
-        max-width: 320px !important;
-        aspect-ratio: 4/5.1 !important;
+        max-width: 280px !important;
+        aspect-ratio: 4/5 !important;
         height: auto !important;
-        border-radius: 28px !important;
+        border-radius: 26px !important;
         overflow: visible !important;
         position: relative !important;
         background: transparent !important;
@@ -3935,11 +3903,11 @@
         margin: 0 auto !important;
       }
       .portrait-card-flip {
-        border-radius: 28px !important;
-        box-shadow: 0 20px 50px -12px rgba(0,0,0,0.2), 0 0 0 1px rgba(17, 17, 17, 0.08) !important;
+        border-radius: 26px !important;
+        box-shadow: 0 18px 45px -10px rgba(0,0,0,0.2), 0 0 0 1px rgba(17, 17, 17, 0.08) !important;
       }
       .portrait-face {
-        border-radius: 28px !important;
+        border-radius: 26px !important;
         border: 1px solid rgba(17, 17, 17, 0.08) !important;
       }
       .portrait-photo {
@@ -3951,25 +3919,40 @@
 
       .hero-partners-wrap {
         width: 100% !important;
-        max-width: 320px !important;
-        margin-top: 1rem !important;
-        margin-left: auto !important;
+        max-width: 310px !important;
+        margin-top: 0.65rem !important;
+        margin-inline: auto !important;
         display: flex !important;
         flex-direction: column !important;
-        align-items: flex-end !important;
-        gap: 0.5rem !important;
+        align-items: center !important;
+        gap: 0.4rem !important;
+      }
+
+      .hero-partners-label {
+        font-size: 0.7rem !important;
+        letter-spacing: 0.08em !important;
+        text-transform: uppercase !important;
+        color: rgba(17, 17, 17, 0.48) !important;
+        font-weight: 600 !important;
+        text-align: center !important;
       }
 
       .hero-partners-pills {
-        justify-content: flex-end !important;
+        justify-content: center !important;
         display: flex !important;
         flex-wrap: wrap !important;
         gap: 6px !important;
       }
 
+      .partner-pill {
+        font-size: 0.72rem !important;
+        padding: 0.24rem 0.6rem !important;
+      }
+
       .hero-status-bar {
-        font-size: 0.8rem !important;
+        font-size: 0.78rem !important;
         padding-block: 0.75rem !important;
+        margin-top: 1.5rem !important;
       }
     }
 
@@ -5789,9 +5772,58 @@
         };
       };
 
-      // Click to flip: rotates by 180° to advance smoothly to the next photo
+      let manualOverrideScrollY = 0;
+
+      // Touch Swipe Gesture for Tablet & Mobile (Swipe Left = Next, Swipe Right = Prev)
+      let touchStartX = 0;
+      let touchStartY = 0;
+      let isSwiping = false;
+
+      cardFlip.addEventListener('touchstart', (e) => {
+        if (e.touches.length !== 1) return;
+        touchStartX = e.touches[0].clientX;
+        touchStartY = e.touches[0].clientY;
+        isSwiping = true;
+      }, { passive: true });
+
+      cardFlip.addEventListener('touchmove', (e) => {
+        if (!isSwiping || e.touches.length !== 1) return;
+        const dx = e.touches[0].clientX - touchStartX;
+        const dy = e.touches[0].clientY - touchStartY;
+        // Subtle tilt responsiveness when dragging horizontally
+        if (Math.abs(dx) > Math.abs(dy)) {
+          mouseTiltX = Math.max(Math.min(dx * 0.08, 8), -8);
+        }
+      }, { passive: true });
+
+      cardFlip.addEventListener('touchend', (e) => {
+        if (!isSwiping) return;
+        isSwiping = false;
+        mouseTiltX = 0;
+        mouseTiltY = 0;
+        const touchEndX = e.changedTouches[0].clientX;
+        const touchEndY = e.changedTouches[0].clientY;
+        const dx = touchEndX - touchStartX;
+        const dy = touchEndY - touchStartY;
+
+        // Horizontal swipe gesture detected (threshold: 35px)
+        if (Math.abs(dx) > 35 && Math.abs(dx) > Math.abs(dy) * 1.1) {
+          isManualOverride = true;
+          manualOverrideScrollY = window.pageYOffset || document.documentElement.scrollTop;
+          if (dx < 0) {
+            // Swiped left -> advance to next photo
+            targetRotY += 180;
+          } else {
+            // Swiped right -> return to previous photo
+            targetRotY -= 180;
+          }
+        }
+      }, { passive: true });
+
+      // Click / Tap to flip: rotates by 180° to advance smoothly to the next photo
       cardFlip.addEventListener('click', (e) => {
         isManualOverride = true;
+        manualOverrideScrollY = window.pageYOffset || document.documentElement.scrollTop;
         targetRotY += 180;
       });
 
@@ -5825,8 +5857,9 @@
       }
 
       window.addEventListener('scroll', () => {
-        // If user scrolls after clicking, resume scroll-driven rotation smoothly
-        if (isManualOverride) {
+        const scrollY = window.pageYOffset || document.documentElement.scrollTop;
+        // Only release manual override if user scrolls more than 60px away from the touch/click action
+        if (isManualOverride && Math.abs(scrollY - manualOverrideScrollY) > 60) {
           isManualOverride = false;
         }
         updateFromScroll();
