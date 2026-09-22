@@ -2344,7 +2344,25 @@ const PROJECTS = [
     solution: 'Cut video berenergi tinggi, teks overlay menarik, dan pencahayaan makanan dramatis.',
     results: ['650K Jangkauan Audiens'],
     tools: ['Premiere Pro', 'After Effects'],
-    embedVideo: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WeAreGoingOnBullrun.mp4'
+    embedVideo: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WeAreGoingOnBullrun.mp4',
+    items: [
+      {
+        name: 'Lamis Resto — Video Iklan Komersial 1',
+        video: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WeAreGoingOnBullrun.mp4',
+        img: 'assets/lamis-resto/1.png',
+        desc: 'Video iklan komersial kuliner Lamis Resto untuk kampanye promosi digital.'
+      },
+      {
+        name: 'Lamis Resto — Culinary Highlight Reel',
+        img: 'assets/lamis-resto/2.png',
+        desc: 'Materi visual promo hidangan spesial & culinary branding.'
+      },
+      {
+        name: 'Lamis Resto — Social Media Campaign Asset',
+        img: 'assets/lamis-resto/3.png',
+        desc: 'Aset visual pendukung kampanye media sosial Lamis Resto.'
+      }
+    ]
   },
   {
     id: 'video-editing-andrey-ai-video-bootcamp',
@@ -4454,6 +4472,7 @@ function initPortfolio() {
 
   let visibleCount = getInitialCount();
   let currentFilter = 'all';
+  let modalVideoObserver = null;
 
   const showMoreWrap = document.getElementById('show-more-wrap');
 
@@ -4507,6 +4526,53 @@ function initPortfolio() {
     }
   }
 
+  // Shared IntersectionObserver for lazy-loading and auto play/pause of card video thumbnails
+  let cardVideoObserver = null;
+  function setupVideoObserver() {
+    if (typeof IntersectionObserver === 'undefined') {
+      grid.querySelectorAll('video.card-video-thumb').forEach(v => {
+        if (!v.src && v.dataset.src) {
+          v.src = v.dataset.src;
+          v.play().catch(() => {});
+        }
+      });
+      return;
+    }
+
+    if (cardVideoObserver) {
+      cardVideoObserver.disconnect();
+    }
+
+    cardVideoObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        const video = entry.target;
+        if (entry.isIntersecting) {
+          // Lazy load video source if not set yet
+          if (!video.src && video.dataset.src) {
+            video.src = video.dataset.src;
+            video.load();
+          }
+          const playPromise = video.play();
+          if (playPromise !== undefined) {
+            playPromise.catch(() => {});
+          }
+        } else {
+          // Pause when off screen to conserve CPU, GPU and memory
+          if (video.src && !video.paused) {
+            video.pause();
+          }
+        }
+      });
+    }, {
+      rootMargin: '150px 0px 150px 0px',
+      threshold: 0.1
+    });
+
+    grid.querySelectorAll('video.card-video-thumb').forEach(v => {
+      cardVideoObserver.observe(v);
+    });
+  }
+
   // Render Project Cards
   function renderProjects(filter = 'all', resetCount = true) {
     if (resetCount || filter !== currentFilter) {
@@ -4532,7 +4598,7 @@ function initPortfolio() {
               <div class="video-poster-icon">▶</div>
               <span class="video-poster-badge">${p.client} • ${p.categoryName}</span>
             </div>
-            <video src="${p.thumbnail.includes('#t=') ? p.thumbnail : p.thumbnail + '#t=0.5'}" class="card-video-thumb" autoplay loop muted playsinline preload="metadata" onloadedmetadata="if(this.currentTime<0.5) this.currentTime=0.5;"></video>
+            <video data-src="${p.thumbnail.includes('#t=') ? p.thumbnail : p.thumbnail + '#t=0.5'}" class="card-video-thumb" loop muted playsinline preload="none"></video>
           ` : `
             <img src="${p.thumbnail}" alt="${p.title}" loading="lazy"${thumbImgStyle}>
           `}
@@ -4558,6 +4624,7 @@ function initPortfolio() {
 
     updateShowMoreControls(filtered.length);
     document.querySelectorAll('.reveal-up').forEach(el => el.classList.add('revealed'));
+    setupVideoObserver();
   }
 
   // Filter Buttons Click - always resets count on category switch
@@ -4666,7 +4733,7 @@ function initPortfolio() {
                        </div>` : 
                       isDirectVid ? 
                       `<div class="video-poster-fallback"><div class="video-poster-icon" style="width:32px;height:32px;font-size:1rem;">▶</div></div>
-                       <video src="${mediaSrc.includes('#t=') ? mediaSrc : mediaSrc + '#t=1.0'}" class="card-video-thumb" autoplay loop muted playsinline preload="metadata" onloadedmetadata="if(this.currentTime<0.5) this.currentTime=1.0;"></video>` : 
+                       <video data-src="${mediaSrc.includes('#t=') ? mediaSrc : mediaSrc + '#t=1.0'}" class="card-video-thumb modal-video-lazy" loop muted playsinline preload="none"></video>` : 
                       `<img src="${coverSrc || item.img}" alt="${item.name}" loading="lazy" style="width: 100%; height: 100%; ${isLogoItem ? 'object-fit: contain; padding: 0.85rem;' : 'object-fit: cover;'}">
                        <div class="modal-media-zoom-overlay" style="bottom:0.5rem; right:0.5rem; font-size:0.75rem; padding:0.25rem 0.6rem;">🔍 Zoom</div>`
                     }
@@ -4707,6 +4774,41 @@ function initPortfolio() {
     }
     const modalContentEl = modalBackdrop.querySelector('.modal-content');
     if (modalContentEl) modalContentEl.scrollTop = 0;
+
+    // Attach IntersectionObserver for lazy videos inside folder modal
+    if (modalVideoObserver) {
+      modalVideoObserver.disconnect();
+      modalVideoObserver = null;
+    }
+    const modalLazyVideos = modalBody.querySelectorAll('video.modal-video-lazy');
+    if (modalLazyVideos.length > 0) {
+      if (typeof IntersectionObserver !== 'undefined') {
+        modalVideoObserver = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            const v = entry.target;
+            if (entry.isIntersecting) {
+              if (!v.src && v.dataset.src) {
+                v.src = v.dataset.src;
+                v.load();
+              }
+              const p = v.play();
+              if (p !== undefined) p.catch(() => {});
+            } else {
+              if (v.src && !v.paused) v.pause();
+            }
+          });
+        }, {
+          root: modalContentEl,
+          rootMargin: '100px 0px 100px 0px',
+          threshold: 0.1
+        });
+        modalLazyVideos.forEach(v => modalVideoObserver.observe(v));
+      } else {
+        modalLazyVideos.forEach(v => {
+          if (v.dataset.src) v.src = v.dataset.src;
+        });
+      }
+    }
   }
 
   // Helper function when an item card inside folder modal is clicked
@@ -4996,13 +5098,18 @@ function initPortfolio() {
     if (!modalBackdrop) return;
     modalBackdrop.classList.remove('active');
 
+    if (modalVideoObserver) {
+      modalVideoObserver.disconnect();
+      modalVideoObserver = null;
+    }
+
     // Stop and pause all video and iframe elements inside modal to stop audio immediately
     const videos = modalBackdrop.querySelectorAll('video');
     videos.forEach(v => {
       try {
         v.pause();
         v.currentTime = 0;
-        v.src = '';
+        v.removeAttribute('src');
         v.load();
       } catch(err){}
     });
