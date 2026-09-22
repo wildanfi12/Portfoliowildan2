@@ -560,7 +560,7 @@ const PROJECTS = [
     metric: '4 Aset Desain',
     thumbnail: 'assets/mind-mastery/1.png',
     shortDesc: 'Folder Desain Grafis Mind Mastery Academy — Cover eBook 3D, Educational Course Assets & Promotional Mockups.',
-    fullDesc: 'Folder koleksi resmi Desain Grafis untuk Mind Mastery Academy dari folder D:\\PORTOFOLIO\\Cover eBook Mind Mastery Academy. Mencakup desain cover eBook 3D, materi grafis kelas edukasi, dan poster rilis modul.',
+    fullDesc: 'Folder koleksi resmi Desain Grafis untuk Mind Mastery Academy. Mencakup desain cover eBook 3D, materi grafis kelas edukasi, dan poster rilis modul.',
     challenge: 'Mendesain cover eBook digital berdaya pikat tinggi yang mendorong keputusan unduh/beli.',
     solution: 'Desain 3D mockup buku dengan perpaduan warna neon kontras dan ilustrasi edukatif modern.',
     results: [
@@ -602,7 +602,7 @@ const PROJECTS = [
     metric: '9 Aset Desain',
     thumbnail: 'assets/howell/12.png',
     shortDesc: 'Folder Desain Grafis PT. Howell Niaga Indonesia — Corporate Branding, B2B Catalogs, Product Flyers & Commercial Banners.',
-    fullDesc: 'Folder koleksi resmi Desain Grafis untuk PT. Howell Niaga Indonesia dari folder D:\\PORTOFOLIO\\Howell. Di dalamnya berisi 9 aset desain promosi produk industri, catalog banners, flyer spesifikasi teknik, dan poster komersial.',
+    fullDesc: 'Folder koleksi resmi Desain Grafis untuk PT. Howell Niaga Indonesia. Di dalamnya berisi 9 aset desain promosi produk industri, catalog banners, flyer spesifikasi teknik, dan poster komersial.',
     challenge: 'Menyusun katalog dan materi visual B2B perdagangan teknik dengan tingkat kejelasan produk tinggi.',
     solution: 'Desain bertema korporat modern dengan kombinasi warna presisi dan layout informasi bertingkat.',
     results: [
@@ -669,7 +669,7 @@ const PROJECTS = [
     metric: '3 Aset Desain',
     thumbnail: 'assets/lamis-resto/1.png',
     shortDesc: 'Folder Desain Grafis Lamis Resto — Menu Design, Promotional Posters, Social Media Feeds & Culinary Banners.',
-    fullDesc: 'Folder koleksi resmi Desain Grafis untuk Lamis Resto dari folder D:\\PORTOFOLIO\\Lamis Resto\\Lamis Resto. Mencakup desain poster menu spesial, materi promosi F&B, dan banner media sosial.',
+    fullDesc: 'Folder koleksi resmi Desain Grafis untuk Lamis Resto. Mencakup desain poster menu spesial, materi promosi F&B, dan banner media sosial.',
     challenge: 'Menyajikan menu kuliner dan promo restoran secara visual menggugah selera audiens.',
     solution: 'Penggunaan fotografi kuliner kontras tinggi, tipografi menu yang bersih, dan komposisi warna hangat.',
     results: [
@@ -4303,7 +4303,7 @@ const PROJECTS = [
       },
       {
         name: 'Program Liputan FKDB Doa Bangsa TV',
-        img: 'assets/fkdb/Flyer Idul Fitri FKDB 2025.png',
+        img: 'assets/fkdb-graphic-design/35.png',
         desc: 'Kumpulan program liputan & materi acara inspiratif Doa Bangsa TV.',
         url: 'https://www.youtube.com/@DoaBangsatv/videos'
       }
