@@ -1391,21 +1391,33 @@
       display: flex;
       flex-direction: column;
       cursor: pointer;
-      transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+      transition: transform 0.28s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.28s ease, border-color 0.28s ease;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      transform: translateZ(0);
+      will-change: transform;
     }
     @media (hover: hover) {
       .project-card:hover {
-        transform: translateY(-8px) scale(1.012);
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
-        border-color: rgba(255, 255, 255, 0.2);
+        transform: translateY(-6px);
+        box-shadow: 0 16px 36px rgba(0, 0, 0, 0.4);
+        border-color: rgba(255, 255, 255, 0.22);
       }
       .project-card:hover .project-thumb img,
       .project-card:hover .project-thumb video {
-        transform: scale(1.05);
+        transform: scale(1.04);
       }
       .project-card:hover .project-overlay {
         opacity: 1;
+        pointer-events: auto;
       }
+    }
+
+    /* Scroll Hover Guard: Prevent flickering and hover thrashing during scroll */
+    body.is-scrolling .project-card,
+    body.is-scrolling .modal-folder-item,
+    .modal-content.is-scrolling .modal-folder-item {
+      pointer-events: none !important;
     }
 
     .project-thumb {
@@ -1413,13 +1425,19 @@
       aspect-ratio: 16/10;
       overflow: hidden;
       background: #151515;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      transform: translateZ(0);
     }
     .project-thumb img,
     .project-thumb video {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+      transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      transform: translateZ(0);
     }
 
     .video-poster-fallback {
@@ -1431,6 +1449,8 @@
       background: rgba(0,0,0,0.5);
       z-index: 1;
       pointer-events: none;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
     }
     .video-poster-icon {
       width: 44px;
@@ -1449,10 +1469,8 @@
       top: 0.45rem;
       left: 0.45rem;
       z-index: 2;
-      background: rgba(10, 10, 10, 0.75);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-      border: 1px solid rgba(255, 255, 255, 0.15);
+      background: rgba(14, 14, 16, 0.92);
+      border: 1px solid rgba(255, 255, 255, 0.2);
       border-radius: var(--radius-pill);
       padding: 0.18rem 0.5rem;
       font-size: 0.62rem;
@@ -1462,6 +1480,9 @@
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      transform: translateZ(0);
     }
     @media (min-width: 640px) {
       .project-category-badge {
@@ -1490,34 +1511,37 @@
       position: absolute;
       inset: 0;
       z-index: 3;
-      background: rgba(10, 10, 10, 0.55);
-      backdrop-filter: blur(4px);
+      background: rgba(10, 10, 10, 0.72);
       display: flex;
       align-items: center;
       justify-content: center;
       opacity: 0;
-      transition: opacity 0.3s ease;
+      pointer-events: none;
+      transition: opacity 0.22s ease;
       padding: 0.75rem;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
     }
     .project-overlay .btn {
       border-radius: var(--radius-pill);
       padding: 0.4rem 0.85rem;
       font-size: 0.75rem;
       font-weight: 500;
-      background: rgba(17, 17, 17, 0.85);
+      background: rgba(22, 22, 22, 0.95);
       color: #fff;
-      border: 1px solid rgba(255, 255, 255, 0.25);
-      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
       cursor: pointer;
       white-space: nowrap;
-      transition: transform 0.2s ease, background 0.2s ease;
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
+      transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      transform: translateZ(0);
     }
     .project-overlay .btn:hover {
       transform: scale(1.04);
       background: #000;
-      border-color: rgba(255, 255, 255, 0.5);
+      border-color: rgba(255, 255, 255, 0.6);
     }
     @media (max-width: 480px) {
       .project-overlay .btn {
@@ -3169,9 +3193,10 @@
       padding: 1.25rem;
       box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8);
       transform: scale(0.96);
-      transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+      transition: transform 0.28s cubic-bezier(0.2, 0.8, 0.2, 1);
       overscroll-behavior: contain;
       -webkit-overflow-scrolling: touch;
+      contain: paint;
     }
     @media (min-width: 480px) {
       .modal-content {
@@ -3185,7 +3210,7 @@
       }
     }
     .modal-backdrop.active .modal-content {
-      transform: scale(1);
+      transform: none !important;
     }
 
     /* Background Scroll Lock state - Preserve scroll position without collapsing document height */
@@ -3223,25 +3248,33 @@
       margin-bottom: 1.5rem;
       border: 1px solid rgba(255, 255, 255, 0.1);
       position: relative;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      transform: translateZ(0);
     }
     .modal-media img,
     .modal-media video {
       width: 100%;
       height: 100%;
       object-fit: contain;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      transform: translateZ(0);
     }
     .modal-media-zoom-overlay {
       position: absolute;
       bottom: 0.75rem;
       right: 0.75rem;
-      background: rgba(0, 0, 0, 0.7);
-      backdrop-filter: blur(8px);
+      background: rgba(12, 12, 12, 0.88);
       border-radius: var(--radius-pill);
       padding: 0.35rem 0.85rem;
       font-size: 0.75rem;
       color: #fff;
-      border: 1px solid rgba(255, 255, 255, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.25);
       pointer-events: none;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      transform: translateZ(0);
     }
 
     /* Modal Interior Responsive Elements */
@@ -3294,11 +3327,15 @@
       background: rgba(255, 255, 255, 0.03);
       border: 1px solid rgba(255, 255, 255, 0.08);
       cursor: pointer;
-      transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1), border-color 0.25s ease, background 0.25s ease;
+      transition: transform 0.2s cubic-bezier(0.2, 0.8, 0.2, 1), border-color 0.2s ease, background 0.2s ease;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      transform: translateZ(0);
+      will-change: transform;
     }
     @media (hover: hover) {
       .modal-folder-item:hover {
-        transform: translateY(-4px);
+        transform: translateY(-3px);
         border-color: rgba(255, 255, 255, 0.25);
         background: rgba(255, 255, 255, 0.06);
       }
@@ -5176,14 +5213,13 @@
     window.stopScroll = stopScroll;
     window.startScroll = startScroll;
 
-    /* Handle wheel events inside modals reliably across all browsers */
+    /* Handle wheel events on outer backdrop without hijacking native inner scrolling */
     const projectModal = document.getElementById('project-modal');
     const projectContent = projectModal ? projectModal.querySelector('.modal-content') : null;
     if (projectModal && projectContent) {
       projectModal.addEventListener('wheel', (e) => {
-        if (projectModal.classList.contains('active')) {
+        if (projectModal.classList.contains('active') && e.target === projectModal) {
           e.preventDefault();
-          e.stopPropagation();
           projectContent.scrollBy({ top: e.deltaY, behavior: 'auto' });
         }
       }, { passive: false });
@@ -5193,9 +5229,8 @@
     const requestPanel = document.getElementById('modal-panel');
     if (requestModal && requestPanel) {
       requestModal.addEventListener('wheel', (e) => {
-        if (requestModal.classList.contains('open')) {
+        if (requestModal.classList.contains('open') && e.target === requestModal) {
           e.preventDefault();
-          e.stopPropagation();
           requestPanel.scrollBy({ top: e.deltaY, behavior: 'auto' });
         }
       }, { passive: false });
@@ -5205,9 +5240,8 @@
     const navOverlayBody = navOverlayEl ? navOverlayEl.querySelector('.nav-overlay-body') : null;
     if (navOverlayEl && navOverlayBody) {
       navOverlayEl.addEventListener('wheel', (e) => {
-        if (navOverlayEl.classList.contains('open')) {
+        if (navOverlayEl.classList.contains('open') && e.target === navOverlayEl) {
           e.preventDefault();
-          e.stopPropagation();
           navOverlayBody.scrollBy({ top: e.deltaY, behavior: 'auto' });
         }
       }, { passive: false });
@@ -5337,7 +5371,16 @@
       lastHeaderScrollY = currentY;
     }
 
+    let pageScrollTimer = null;
     function onPageScroll() {
+      if (!document.body.classList.contains('is-scrolling')) {
+        document.body.classList.add('is-scrolling');
+      }
+      clearTimeout(pageScrollTimer);
+      pageScrollTimer = setTimeout(() => {
+        document.body.classList.remove('is-scrolling');
+      }, 90);
+
       if (!headerRafPending) {
         headerRafPending = true;
         requestAnimationFrame(updateFloatingHeader);
