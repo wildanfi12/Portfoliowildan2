@@ -4545,7 +4545,6 @@ function initPortfolio() {
           // Lazy load video source if not set yet
           if (!video.src && video.dataset.src) {
             video.src = video.dataset.src;
-            video.load();
           }
           const playPromise = video.play();
           if (playPromise !== undefined) {
@@ -4559,8 +4558,8 @@ function initPortfolio() {
         }
       });
     }, {
-      rootMargin: '150px 0px 150px 0px',
-      threshold: 0.1
+      rootMargin: '200px 0px 200px 0px',
+      threshold: 0.05
     });
 
     grid.querySelectorAll('video.card-video-thumb').forEach(v => {
@@ -4595,7 +4594,7 @@ function initPortfolio() {
             </div>
             <video data-src="${p.thumbnail.includes('#t=') ? p.thumbnail : p.thumbnail + '#t=0.5'}" class="card-video-thumb" loop muted playsinline preload="none"></video>
           ` : `
-            <img src="${p.thumbnail}" alt="${p.title}" loading="lazy"${thumbImgStyle}>
+            <img src="${p.thumbnail}" alt="${p.title}" loading="lazy" decoding="async"${thumbImgStyle}>
           `}
           <span class="project-category-badge" style="${p.youtubeUrl ? 'background:rgba(220,38,38,0.9); color:#fff;' : ''}">📁 ${p.categoryName} • ${p.client}</span>
           <div class="project-overlay">
@@ -4722,14 +4721,14 @@ function initPortfolio() {
                 <div class="modal-folder-item" onclick="window.onItemClick('${project.id}', ${idx}, ${isItemVid})">
                   <div style="aspect-ratio: 16/9; border-radius: 10px; overflow: hidden; margin-bottom: 0.75rem; border: 1px solid rgba(255, 255, 255, 0.12); background: ${itemBg}; position: relative; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 16px rgba(0,0,0,0.3);">
                     ${isBunnyItem ? 
-                      `<img src="${coverSrc}" alt="${item.name}" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
+                      `<img src="${coverSrc}" alt="${item.name}" loading="lazy" decoding="async" style="width: 100%; height: 100%; object-fit: cover;">
                        <div class="video-poster-fallback" style="opacity: 1; display: flex; align-items: center; justify-content: center; position: absolute; inset: 0; background: rgba(0,0,0,0.35);">
                          <div class="video-poster-icon" style="width:36px;height:36px;font-size:1rem; border-radius:50%; background:rgba(207,128,71,0.95); color:#fff; display:flex; align-items:center; justify-content:center; box-shadow:0 4px 15px rgba(207,128,71,0.5);">▶</div>
                        </div>` : 
                       isDirectVid ? 
                       `<div class="video-poster-fallback"><div class="video-poster-icon" style="width:32px;height:32px;font-size:1rem;">▶</div></div>
-                       <video data-src="${mediaSrc.includes('#t=') ? mediaSrc : mediaSrc + '#t=1.0'}" class="card-video-thumb modal-video-lazy" loop muted playsinline preload="none"></video>` : 
-                      `<img src="${coverSrc || item.img}" alt="${item.name}" loading="lazy" style="width: 100%; height: 100%; ${isLogoItem ? 'object-fit: contain; padding: 0.85rem;' : 'object-fit: cover;'}">
+                       <video poster="${coverSrc}" data-src="${mediaSrc.includes('#t=') ? mediaSrc : mediaSrc + '#t=1.0'}" class="card-video-thumb modal-video-lazy" loop muted playsinline preload="none"></video>` : 
+                      `<img src="${coverSrc || item.img}" alt="${item.name}" loading="lazy" decoding="async" style="width: 100%; height: 100%; ${isLogoItem ? 'object-fit: contain; padding: 0.85rem;' : 'object-fit: cover;'}">
                        <div class="modal-media-zoom-overlay" style="bottom:0.5rem; right:0.5rem; font-size:0.75rem; padding:0.25rem 0.6rem;">🔍 Zoom</div>`
                     }
                   </div>
@@ -4768,7 +4767,19 @@ function initPortfolio() {
       document.body.classList.add('scroll-locked');
     }
     const modalContentEl = modalBackdrop.querySelector('.modal-content');
-    if (modalContentEl) modalContentEl.scrollTop = 0;
+    if (modalContentEl) {
+      modalContentEl.scrollTop = 0;
+      let modalScrollTimer = null;
+      modalContentEl.onscroll = () => {
+        if (!modalContentEl.classList.contains('is-scrolling')) {
+          modalContentEl.classList.add('is-scrolling');
+        }
+        clearTimeout(modalScrollTimer);
+        modalScrollTimer = setTimeout(() => {
+          modalContentEl.classList.remove('is-scrolling');
+        }, 90);
+      };
+    }
 
     // Attach IntersectionObserver for lazy videos inside folder modal
     if (modalVideoObserver) {
@@ -4784,7 +4795,6 @@ function initPortfolio() {
             if (entry.isIntersecting) {
               if (!v.src && v.dataset.src) {
                 v.src = v.dataset.src;
-                v.load();
               }
               const p = v.play();
               if (p !== undefined) p.catch(() => {});
@@ -4794,8 +4804,8 @@ function initPortfolio() {
           });
         }, {
           root: modalContentEl,
-          rootMargin: '100px 0px 100px 0px',
-          threshold: 0.1
+          rootMargin: '200px 0px 200px 0px',
+          threshold: 0.05
         });
         modalLazyVideos.forEach(v => modalVideoObserver.observe(v));
       } else {
