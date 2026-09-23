@@ -5572,6 +5572,7 @@
 
       if (progress >= 1) {
         hasCounted = true;
+        window.removeEventListener('scroll', handleStatsCount);
       }
     }
     window.addEventListener('scroll', handleStatsCount, { passive: true });
