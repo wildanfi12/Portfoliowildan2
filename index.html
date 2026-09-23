@@ -421,6 +421,7 @@
     #main-header.header-hidden {
       transform: translate3d(-50%, -150%, 0) scale(0.95);
       opacity: 0;
+      visibility: hidden;
       pointer-events: none;
     }
 
@@ -1391,9 +1392,8 @@
       display: flex;
       flex-direction: column;
       cursor: pointer;
-      -webkit-mask-image: -webkit-radial-gradient(white, black);
-      mask-image: -webkit-radial-gradient(white, black);
-      contain: paint;
+      isolation: isolate;
+      -webkit-tap-highlight-color: transparent;
     }
     @media (hover: hover) and (pointer: fine) {
       .project-card {
@@ -1438,9 +1438,7 @@
       position: relative;
       aspect-ratio: 16/10;
       overflow: hidden;
-      background: #151515;
-      -webkit-mask-image: -webkit-radial-gradient(white, black);
-      mask-image: -webkit-radial-gradient(white, black);
+      background: #18181c;
     }
     .project-thumb img,
     .project-thumb video {
@@ -1448,6 +1446,7 @@
       height: 100%;
       object-fit: cover;
       display: block;
+      opacity: 1 !important;
     }
     @media (hover: hover) and (pointer: fine) {
       .project-thumb img,
@@ -1465,8 +1464,6 @@
       background: rgba(0,0,0,0.5);
       z-index: 1;
       pointer-events: none;
-      -webkit-backface-visibility: hidden;
-      backface-visibility: hidden;
     }
     .video-poster-icon {
       width: 44px;
@@ -1496,9 +1493,7 @@
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
-      -webkit-backface-visibility: hidden;
-      backface-visibility: hidden;
-      transform: translateZ(0);
+      pointer-events: none;
     }
     @media (min-width: 640px) {
       .project-category-badge {
@@ -1535,8 +1530,6 @@
       pointer-events: none;
       transition: opacity 0.22s ease;
       padding: 0.75rem;
-      -webkit-backface-visibility: hidden;
-      backface-visibility: hidden;
     }
     .project-overlay .btn {
       border-radius: var(--radius-pill);
@@ -1550,9 +1543,6 @@
       cursor: pointer;
       white-space: nowrap;
       transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
-      -webkit-backface-visibility: hidden;
-      backface-visibility: hidden;
-      transform: translateZ(0);
     }
     .project-overlay .btn:hover {
       transform: scale(1.04);
@@ -2755,12 +2745,15 @@
       background: var(--ink);
       color: #fff;
       opacity: 0;
+      visibility: hidden;
       pointer-events: none;
-      transition: opacity 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+      transition: opacity 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), visibility 0s ease 0.35s;
     }
     #nav-overlay.open {
       opacity: 1;
+      visibility: visible;
       pointer-events: auto;
+      transition: opacity 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), visibility 0s ease 0s;
     }
 
     .nav-overlay-top {
@@ -3032,8 +3025,9 @@
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
       opacity: 0;
+      visibility: hidden;
       pointer-events: none;
-      transition: opacity 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+      transition: opacity 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), visibility 0s ease 0.3s;
     }
     @media (min-width: 640px) {
       #request-modal {
@@ -3042,7 +3036,9 @@
     }
     #request-modal.open {
       opacity: 1;
+      visibility: visible;
       pointer-events: auto;
+      transition: opacity 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), visibility 0s ease 0s;
     }
 
     .modal-panel {
@@ -3185,13 +3181,16 @@
       justify-content: center;
       padding: 1rem;
       opacity: 0;
+      visibility: hidden;
       pointer-events: none;
-      transition: opacity 0.3s ease;
+      transition: opacity 0.3s ease, visibility 0s ease 0.3s;
       overscroll-behavior: contain;
     }
     .modal-backdrop.active {
       opacity: 1;
+      visibility: visible;
       pointer-events: auto;
+      transition: opacity 0.3s ease, visibility 0s ease 0s;
     }
 
     .modal-content {
@@ -3370,12 +3369,15 @@
       display: flex;
       flex-direction: column;
       opacity: 0;
+      visibility: hidden;
       pointer-events: none;
-      transition: opacity 0.3s ease;
+      transition: opacity 0.3s ease, visibility 0s ease 0.3s;
     }
     .zoom-modal-backdrop.active {
       opacity: 1;
+      visibility: visible;
       pointer-events: auto;
+      transition: opacity 0.3s ease, visibility 0s ease 0s;
     }
 
     .zoom-toolbar {
@@ -3513,9 +3515,10 @@
       }
     }
 
-    /* Smooth image loading */
+    /* Stable image rendering: avoid opacity transitions that flash black backgrounds on scroll */
     img {
-      transition: opacity 0.3s ease;
+      max-width: 100%;
+      height: auto;
     }
 
     /* Compact project card on mobile */
@@ -4008,6 +4011,63 @@
         font-size: 0.78rem !important;
         padding-block: 0.75rem !important;
         margin-top: 1.5rem !important;
+      }
+    }
+
+    /* ==========================================================================
+       MOBILE & TABLET STABILITY & ANTI-FLICKER GUARDS (<= 1024px)
+       Eliminate scroll glitch, black frame flash, and layout recalculations
+       ========================================================================== */
+    @media (max-width: 1024px) {
+      /* 1. Disable translateY entrance animations that push content or delay rendering */
+      .reveal-fade-up,
+      .reveal-word,
+      .reveal-line,
+      .portfolio-filter,
+      .portfolio-h2,
+      .services-h2,
+      .stats-h2 {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+        will-change: auto !important;
+      }
+
+      /* 2. Project card rendering stability */
+      .project-card {
+        border-radius: var(--radius-card);
+        background: #0d0d11 !important;
+        isolation: isolate !important;
+        contain: none !important;
+        -webkit-mask-image: none !important;
+        mask-image: none !important;
+      }
+
+      .project-thumb {
+        -webkit-mask-image: none !important;
+        mask-image: none !important;
+      }
+
+      .project-thumb img,
+      .project-thumb video {
+        opacity: 1 !important;
+        transform: none !important;
+      }
+
+      /* 3. Keep interactive buttons snappy without layout jumps */
+      .filter-btn {
+        transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease !important;
+      }
+      .filter-btn.active {
+        transform: none !important;
+      }
+
+      .btn-show-more {
+        transition: background 0.15s ease, color 0.15s ease !important;
+      }
+      .btn-show-more:hover {
+        transform: none !important;
+        box-shadow: none !important;
       }
     }
 
@@ -5390,13 +5450,16 @@
 
     let pageScrollTimer = null;
     function onPageScroll() {
-      if (!document.body.classList.contains('is-scrolling')) {
-        document.body.classList.add('is-scrolling');
+      // Only toggle is-scrolling on desktop mouse devices to prevent touch hit-test & style invalidations on mobile
+      if (!isTouchDevice) {
+        if (!document.body.classList.contains('is-scrolling')) {
+          document.body.classList.add('is-scrolling');
+        }
+        clearTimeout(pageScrollTimer);
+        pageScrollTimer = setTimeout(() => {
+          document.body.classList.remove('is-scrolling');
+        }, 90);
       }
-      clearTimeout(pageScrollTimer);
-      pageScrollTimer = setTimeout(() => {
-        document.body.classList.remove('is-scrolling');
-      }, 90);
 
       if (!headerRafPending) {
         headerRafPending = true;
