@@ -4578,12 +4578,15 @@ function initPortfolio() {
     const filtered = filter === 'all' ? PROJECTS : PROJECTS.filter(p => p.category === filter);
     const visibleProjects = filtered.slice(0, visibleCount);
 
-    visibleProjects.forEach(p => {
+    visibleProjects.forEach((p, idx) => {
       const card = document.createElement('div');
       card.className = 'glass-card project-card reveal-up revealed';
       const isCardVid = p.thumbnail.endsWith('.mp4') || p.thumbnail.endsWith('.mov');
       const thumbBgStyle = p.thumbBg ? ` style="background: ${p.thumbBg};"` : '';
       const thumbImgStyle = p.thumbBg ? ' style="object-fit: contain; padding: 1.25rem;"' : '';
+      const isInitialBatch = idx < 12;
+      const loadingAttr = isInitialBatch ? 'loading="eager"' : 'loading="lazy"';
+      const fetchPriorityAttr = idx < 6 ? ' fetchpriority="high"' : '';
 
       card.innerHTML = `
         <div class="project-thumb"${thumbBgStyle}>
@@ -4594,7 +4597,7 @@ function initPortfolio() {
             </div>
             <video data-src="${p.thumbnail.includes('#t=') ? p.thumbnail : p.thumbnail + '#t=0.5'}" class="card-video-thumb" loop muted playsinline preload="none"></video>
           ` : `
-            <img src="${p.thumbnail}" alt="${p.title}" loading="lazy" decoding="async"${thumbImgStyle}>
+            <img src="${p.thumbnail}" alt="${p.title}" ${loadingAttr}${fetchPriorityAttr} decoding="async"${thumbImgStyle}>
           `}
           <span class="project-category-badge" style="${p.youtubeUrl ? 'background:rgba(220,38,38,0.9); color:#fff;' : ''}">📁 ${p.categoryName} • ${p.client}</span>
           <div class="project-overlay">
