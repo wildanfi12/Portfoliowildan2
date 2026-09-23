@@ -4580,13 +4580,13 @@ function initPortfolio() {
 
     visibleProjects.forEach((p, idx) => {
       const card = document.createElement('div');
-      card.className = 'glass-card project-card reveal-up revealed';
+      card.className = 'glass-card project-card';
       const isCardVid = p.thumbnail.endsWith('.mp4') || p.thumbnail.endsWith('.mov');
       const thumbBgStyle = p.thumbBg ? ` style="background: ${p.thumbBg};"` : '';
       const thumbImgStyle = p.thumbBg ? ' style="object-fit: contain; padding: 1.25rem;"' : '';
       const isInitialBatch = idx < 12;
       const loadingAttr = isInitialBatch ? 'loading="eager"' : 'loading="lazy"';
-      const fetchPriorityAttr = idx < 6 ? ' fetchpriority="high"' : '';
+      const fetchPriorityAttr = idx < 8 ? ' fetchpriority="high"' : '';
 
       card.innerHTML = `
         <div class="project-thumb"${thumbBgStyle}>
@@ -4620,7 +4620,6 @@ function initPortfolio() {
     });
 
     updateShowMoreControls(filtered.length);
-    document.querySelectorAll('.reveal-up').forEach(el => el.classList.add('revealed'));
     setupVideoObserver();
   }
 
