@@ -4567,57 +4567,83 @@ function initPortfolio() {
     });
   }
 
-  // Render Project Cards
+  // Helper to create a single project card DOM node
+  function createProjectCard(p, idx) {
+    const card = document.createElement('div');
+    card.className = 'glass-card project-card';
+    const isCardVid = p.thumbnail.endsWith('.mp4') || p.thumbnail.endsWith('.mov');
+    const thumbBgStyle = p.thumbBg ? ` style="background: ${p.thumbBg};"` : '';
+    const thumbImgStyle = p.thumbBg ? ' style="object-fit: contain; padding: 1.25rem;"' : '';
+    const isInitialBatch = idx < 12;
+    const loadingAttr = isInitialBatch ? 'loading="eager"' : 'loading="lazy"';
+    const fetchPriorityAttr = idx < 8 ? ' fetchpriority="high"' : '';
+    // Use sync decoding for initially visible cards to prevent WebKit flashing empty/black background on mobile
+    const decodingAttr = isInitialBatch ? 'decoding="sync"' : 'decoding="async"';
+
+    card.innerHTML = `
+      <div class="project-thumb"${thumbBgStyle}>
+        ${isCardVid ? `
+          <div class="video-poster-fallback">
+            <div class="video-poster-icon">▶</div>
+            <span class="video-poster-badge">${p.client} • ${p.categoryName}</span>
+          </div>
+          <video data-src="${p.thumbnail.includes('#t=') ? p.thumbnail : p.thumbnail + '#t=0.5'}" class="card-video-thumb" loop muted playsinline preload="none"></video>
+        ` : `
+          <img src="${p.thumbnail}" alt="${p.title}" ${loadingAttr}${fetchPriorityAttr} ${decodingAttr}${thumbImgStyle}>
+        `}
+        <span class="project-category-badge" style="${p.youtubeUrl ? 'background:rgba(220,38,38,0.9); color:#fff;' : ''}">📁 ${p.categoryName} • ${p.client}</span>
+        <div class="project-overlay">
+          ${p.youtubeUrl ? 
+            `<button class="btn btn-primary btn-sm" style="background:#ff0000; border-color:#ff0000; color:#fff;" onclick="event.stopPropagation(); window.open('${p.youtubeUrl}', '_blank');">▶ Buka YouTube Channel</button>` : 
+            `<button class="btn btn-primary btn-sm">Buka Folder ${p.client}</button>`
+          }
+        </div>
+      </div>
+      <div class="project-content">
+        <h3 class="project-title">${p.title}</h3>
+        <p class="project-desc">${p.shortDesc}</p>
+      </div>
+    `;
+
+    card.addEventListener('click', () => {
+      openModal(p);
+    });
+    return card;
+  }
+
+  // Render Project Cards - non-destructive DOM reconciliation
   function renderProjects(filter = 'all', resetCount = true) {
-    if (resetCount || filter !== currentFilter) {
+    const isCategoryChange = filter !== currentFilter;
+    if (resetCount || isCategoryChange) {
       currentFilter = filter;
       visibleCount = getInitialCount();
     }
 
-    grid.innerHTML = '';
-    const filtered = filter === 'all' ? PROJECTS : PROJECTS.filter(p => p.category === filter);
-    const visibleProjects = filtered.slice(0, visibleCount);
+    const filtered = currentFilter === 'all' ? PROJECTS : PROJECTS.filter(p => p.category === currentFilter);
+    const targetCount = Math.min(visibleCount, filtered.length);
 
-    visibleProjects.forEach((p, idx) => {
-      const card = document.createElement('div');
-      card.className = 'glass-card project-card';
-      const isCardVid = p.thumbnail.endsWith('.mp4') || p.thumbnail.endsWith('.mov');
-      const thumbBgStyle = p.thumbBg ? ` style="background: ${p.thumbBg};"` : '';
-      const thumbImgStyle = p.thumbBg ? ' style="object-fit: contain; padding: 1.25rem;"' : '';
-      const isInitialBatch = idx < 12;
-      const loadingAttr = isInitialBatch ? 'loading="eager"' : 'loading="lazy"';
-      const fetchPriorityAttr = idx < 8 ? ' fetchpriority="high"' : '';
-
-      card.innerHTML = `
-        <div class="project-thumb"${thumbBgStyle}>
-          ${isCardVid ? `
-            <div class="video-poster-fallback">
-              <div class="video-poster-icon">▶</div>
-              <span class="video-poster-badge">${p.client} • ${p.categoryName}</span>
-            </div>
-            <video data-src="${p.thumbnail.includes('#t=') ? p.thumbnail : p.thumbnail + '#t=0.5'}" class="card-video-thumb" loop muted playsinline preload="none"></video>
-          ` : `
-            <img src="${p.thumbnail}" alt="${p.title}" ${loadingAttr}${fetchPriorityAttr} decoding="async"${thumbImgStyle}>
-          `}
-          <span class="project-category-badge" style="${p.youtubeUrl ? 'background:rgba(220,38,38,0.9); color:#fff;' : ''}">📁 ${p.categoryName} • ${p.client}</span>
-          <div class="project-overlay">
-            ${p.youtubeUrl ? 
-              `<button class="btn btn-primary btn-sm" style="background:#ff0000; border-color:#ff0000; color:#fff;" onclick="event.stopPropagation(); window.open('${p.youtubeUrl}', '_blank');">▶ Buka YouTube Channel</button>` : 
-              `<button class="btn btn-primary btn-sm">Buka Folder ${p.client}</button>`
-            }
-          </div>
-        </div>
-        <div class="project-content">
-          <h3 class="project-title">${p.title}</h3>
-          <p class="project-desc">${p.shortDesc}</p>
-        </div>
-      `;
-
-      card.addEventListener('click', () => {
-        openModal(p);
-      });
-      grid.appendChild(card);
-    });
+    if (isCategoryChange || resetCount) {
+      grid.innerHTML = '';
+      const fragment = document.createDocumentFragment();
+      for (let i = 0; i < targetCount; i++) {
+        fragment.appendChild(createProjectCard(filtered[i], i));
+      }
+      grid.appendChild(fragment);
+    } else {
+      // Reconcile cards without destroying existing DOM nodes
+      const currentCardCount = grid.children.length;
+      if (targetCount > currentCardCount) {
+        const fragment = document.createDocumentFragment();
+        for (let i = currentCardCount; i < targetCount; i++) {
+          fragment.appendChild(createProjectCard(filtered[i], i));
+        }
+        grid.appendChild(fragment);
+      } else if (targetCount < currentCardCount) {
+        while (grid.children.length > targetCount) {
+          grid.removeChild(grid.lastElementChild);
+        }
+      }
+    }
 
     updateShowMoreControls(filtered.length);
     setupVideoObserver();
@@ -4633,17 +4659,27 @@ function initPortfolio() {
     });
   });
 
-  // Responsive resize handler - smoothly adjusts visible baseline if not expanded
+  // Responsive resize handler - only re-renders if horizontal breakpoint changes
+  let lastWindowWidth = window.innerWidth;
+  let lastBaseCount = getInitialCount();
   let resizeTimer = null;
   window.addEventListener('resize', () => {
+    const currentWidth = window.innerWidth;
+    // Strictly ignore vertical-only resize events triggered by mobile browser address bar collapse/expand
+    if (currentWidth === lastWindowWidth) return;
+    lastWindowWidth = currentWidth;
+
+    const newBase = getInitialCount();
+    if (newBase === lastBaseCount) return;
+    lastBaseCount = newBase;
+
     clearTimeout(resizeTimer);
     resizeTimer = setTimeout(() => {
-      const base = getInitialCount();
-      if (visibleCount <= base) {
-        visibleCount = base;
+      if (visibleCount <= lastBaseCount) {
+        visibleCount = newBase;
         renderProjects(currentFilter, false);
       }
-    }, 250);
+    }, 300);
   }, { passive: true });
 
 
