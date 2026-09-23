@@ -1391,13 +1391,14 @@
       display: flex;
       flex-direction: column;
       cursor: pointer;
-      transition: transform 0.28s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.28s ease, border-color 0.28s ease;
-      -webkit-backface-visibility: hidden;
-      backface-visibility: hidden;
-      transform: translateZ(0);
-      will-change: transform;
+      -webkit-mask-image: -webkit-radial-gradient(white, black);
+      mask-image: -webkit-radial-gradient(white, black);
+      contain: paint;
     }
-    @media (hover: hover) {
+    @media (hover: hover) and (pointer: fine) {
+      .project-card {
+        transition: transform 0.28s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.28s ease, border-color 0.28s ease;
+      }
       .project-card:hover {
         transform: translateY(-6px);
         box-shadow: 0 16px 36px rgba(0, 0, 0, 0.4);
@@ -1411,13 +1412,26 @@
         opacity: 1;
         pointer-events: auto;
       }
+      /* Desktop Scroll Hover Guard: Prevent flickering and hover thrashing during mouse scroll */
+      body.is-scrolling .project-card,
+      body.is-scrolling .modal-folder-item,
+      .modal-content.is-scrolling .modal-folder-item {
+        pointer-events: none !important;
+      }
     }
-
-    /* Scroll Hover Guard: Prevent flickering and hover thrashing during scroll */
-    body.is-scrolling .project-card,
-    body.is-scrolling .modal-folder-item,
-    .modal-content.is-scrolling .modal-folder-item {
-      pointer-events: none !important;
+    /* Touchscreen safety: completely disable hover overlays and transforms on mobile & tablet */
+    @media (hover: none), (pointer: coarse) {
+      .project-overlay {
+        display: none !important;
+      }
+      .project-card:hover {
+        transform: none !important;
+        box-shadow: none !important;
+      }
+      .project-card:hover .project-thumb img,
+      .project-card:hover .project-thumb video {
+        transform: none !important;
+      }
     }
 
     .project-thumb {
@@ -1425,19 +1439,21 @@
       aspect-ratio: 16/10;
       overflow: hidden;
       background: #151515;
-      -webkit-backface-visibility: hidden;
-      backface-visibility: hidden;
-      transform: translateZ(0);
+      -webkit-mask-image: -webkit-radial-gradient(white, black);
+      mask-image: -webkit-radial-gradient(white, black);
     }
     .project-thumb img,
     .project-thumb video {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
-      -webkit-backface-visibility: hidden;
-      backface-visibility: hidden;
-      transform: translateZ(0);
+      display: block;
+    }
+    @media (hover: hover) and (pointer: fine) {
+      .project-thumb img,
+      .project-thumb video {
+        transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+      }
     }
 
     .video-poster-fallback {
@@ -5152,7 +5168,8 @@
        LENIS SMOOTH SCROLL & SCROLL LOCK MODEL
        ========================================================================== */
     window.scrollTo(0, 0);
-    const lenis = (typeof Lenis !== 'undefined') ? new Lenis({
+    const isTouchDevice = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0) || (window.matchMedia && window.matchMedia('(pointer: coarse)').matches);
+    const lenis = (typeof Lenis !== 'undefined' && !isTouchDevice) ? new Lenis({
       smoothWheel: true,
       prevent: (node) => {
         return !!(node && node.closest && node.closest('#project-modal, #image-zoom-modal, #request-modal, #nav-overlay'));
@@ -5857,6 +5874,7 @@
             // Swiped right -> return to previous photo
             targetRotY -= 180;
           }
+          requestTick();
         }
       }, { passive: true });
 
@@ -5866,6 +5884,7 @@
         isManualOverride = true;
         manualOverrideScrollY = window.pageYOffset || document.documentElement.scrollTop;
         targetRotY += 180;
+        requestTick();
       });
 
       // Mouse parallax tilt on hover (Desktop)
@@ -5876,11 +5895,13 @@
           const cy = rect.top + rect.height / 2;
           mouseTiltX = ((e.clientX - cx) / (rect.width / 2)) * 6; // max 6 deg
           mouseTiltY = -((e.clientY - cy) / (rect.height / 2)) * 6;
+          requestTick();
         }, { passive: true });
 
         showcaseCard.addEventListener('mouseleave', () => {
           mouseTiltX = 0;
           mouseTiltY = 0;
+          requestTick();
         });
       }
 
@@ -5894,7 +5915,11 @@
         const p = Math.min(Math.max(scrollY / runway, 0), 1);
         
         // 0° -> 180° (Photo 2) -> 360° (Photo 3)
-        targetRotY = p * 360;
+        const newRot = p * 360;
+        if (Math.abs(newRot - targetRotY) > 0.05) {
+          targetRotY = newRot;
+          requestTick();
+        }
       }
 
       window.addEventListener('scroll', () => {
@@ -5906,11 +5931,31 @@
         updateFromScroll();
       }, { passive: true });
 
-      // 60FPS RAF Lerp Animation Loop
+      // Intelligent On-Demand RAF Lerp Loop (stops when settled to save mobile GPU/battery)
+      let isAnimating = false;
+      function requestTick() {
+        if (!isAnimating) {
+          isAnimating = true;
+          requestAnimationFrame(animate);
+        }
+      }
+
       function animate() {
-        currentRotY += (targetRotY - currentRotY) * 0.12;
-        currentMouseTiltX += (mouseTiltX - currentMouseTiltX) * 0.08;
-        currentMouseTiltY += (mouseTiltY - currentMouseTiltY) * 0.08;
+        const diffRot = targetRotY - currentRotY;
+        const diffTiltX = mouseTiltX - currentMouseTiltX;
+        const diffTiltY = mouseTiltY - currentMouseTiltY;
+
+        const isMoving = Math.abs(diffRot) > 0.05 || Math.abs(diffTiltX) > 0.05 || Math.abs(diffTiltY) > 0.05;
+
+        if (isMoving) {
+          currentRotY += diffRot * 0.12;
+          currentMouseTiltX += diffTiltX * 0.08;
+          currentMouseTiltY += diffTiltY * 0.08;
+        } else {
+          currentRotY = targetRotY;
+          currentMouseTiltX = mouseTiltX;
+          currentMouseTiltY = mouseTiltY;
+        }
 
         updateFaces(currentRotY);
 
@@ -5927,10 +5972,14 @@
           scale(${scale.toFixed(3)})
         `;
 
-        requestAnimationFrame(animate);
+        if (isMoving) {
+          requestAnimationFrame(animate);
+        } else {
+          isAnimating = false;
+        }
       }
 
-      requestAnimationFrame(animate);
+      requestTick();
       updateFromScroll();
     })();
 
