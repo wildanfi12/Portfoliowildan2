@@ -4567,10 +4567,25 @@ function initPortfolio() {
     });
   }
 
+  // Keep file naming conventions out of gallery captions; retain the artwork title.
+  function artworkLabel(name, client) {
+    let label = name || 'Untitled';
+    if (client && label.startsWith(client + ' — ')) label = label.slice(client.length + 3);
+    return label.replace(/^\d+[_\s-]+/, '').replace(/_/g, ' ')
+      .replace(/\s*\(\d+\s*x\s*\d+\s*(?:piksel|px)?\)/gi, '')
+      .replace(/\s+Final$/i, '').trim();
+  }
+
   // Helper to create a single project card DOM node
   function createProjectCard(p, idx) {
     const card = document.createElement('div');
-    card.className = 'glass-card project-card';
+    card.className = 'project-card';
+    card.tabIndex = 0;
+    card.setAttribute('role', 'button');
+    card.setAttribute('aria-label', 'Lihat koleksi ' + p.title);
+    card.addEventListener('keydown', e => {
+      if (e.target === card && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); openModal(p); }
+    });
     const isCardVid = p.thumbnail.endsWith('.mp4') || p.thumbnail.endsWith('.mov');
     const thumbBgStyle = p.thumbBg ? ` style="background: ${p.thumbBg};"` : '';
     const thumbImgStyle = p.thumbBg ? ' style="object-fit: contain; padding: 1.25rem;"' : '';
@@ -4591,17 +4606,12 @@ function initPortfolio() {
         ` : `
           <img src="${p.thumbnail}" alt="${p.title}" ${loadingAttr}${fetchPriorityAttr} ${decodingAttr}${thumbImgStyle}>
         `}
-        <span class="project-category-badge" style="${p.youtubeUrl ? 'background:rgba(220,38,38,0.9); color:#fff;' : ''}">📁 ${p.categoryName} • ${p.client}</span>
-        <div class="project-overlay">
-          ${p.youtubeUrl ? 
-            `<button class="btn btn-primary btn-sm" style="background:#ff0000; border-color:#ff0000; color:#fff;" onclick="event.stopPropagation(); window.open('${p.youtubeUrl}', '_blank');">▶ Buka YouTube Channel</button>` : 
-            `<button class="btn btn-primary btn-sm">Buka Folder ${p.client}</button>`
-          }
-        </div>
+        <span class="collection-open" aria-hidden="true">↗</span>
       </div>
       <div class="project-content">
+        <div class="collection-meta"><span>${p.categoryName}</span><span>${p.items?.length ? p.items.length + ' karya' : 'Lihat proyek'}</span></div>
         <h3 class="project-title">${p.title}</h3>
-        <p class="project-desc">${p.shortDesc}</p>
+        <p class="project-desc">${p.client}</p>
       </div>
     `;
 
@@ -4697,7 +4707,7 @@ function initPortfolio() {
     
     const isBunny = !!project.bunnyVideoId || (project.embedVideo && (project.embedVideo.includes('iframe.mediadelivery.net') || project.embedVideo.includes('player.mediadelivery.net') || project.embedVideo.includes('bunny') || project.embedVideo.includes('mediadelivery')));
     const isVideo = !isBunny && project.embedVideo && (project.embedVideo.endsWith('.mp4') || project.embedVideo.endsWith('.mov'));
-    const initialEmbedBg = project.embedBg || (project.items && project.items[0] && project.items[0].bg) || '#000';
+    const initialEmbedBg = project.embedBg || (project.items && project.items[0] && project.items[0].bg) || '#f4f4f2';
     const isInitialLogo = !!project.embedBg || (project.items && project.items[0] && !!project.items[0].bg);
 
     let bunnyEmbedSrc = '';
@@ -4712,6 +4722,7 @@ function initPortfolio() {
     }
 
     modalBody.innerHTML = `
+      <div class="collection-intro"><span>${project.categoryName} / ${project.client}</span><h2 class="modal-project-title" id="collection-title">${project.title}</h2><p>${project.items?.length ? project.items.length + ' karya dalam koleksi' : 'Project overview'}</p></div>
       <div class="modal-media" id="modal-main-media" style="position:relative; background:${initialEmbedBg};" onclick="${(!isVideo && !isBunny) ? `window.openZoomViewerForProject('${project.id}', 0)` : ''}">
         ${isBunny ? `
           <div class="bunny-player-box" style="position:relative; width:100%; aspect-ratio:16/9; border-radius:14px; overflow:hidden; background:#000; box-shadow:0 8px 32px rgba(0,0,0,0.5);">
@@ -4721,13 +4732,11 @@ function initPortfolio() {
           <video id="modal-video-player" src="${project.embedVideo}" controls autoplay loop muted preload="metadata" playsinline style="width:100%; height:100%; object-fit:contain; background:#000;"></video>
         ` : `
           <img id="modal-main-image" src="${project.embedVideo}" alt="${project.title}" loading="lazy" style="${isInitialLogo ? 'object-fit: contain; padding: 2rem; width: 100%; height: 100%;' : ''}">
-          <div class="modal-media-zoom-overlay">🔍 Klik untuk Zoom Fullscreen</div>
+          <div class="modal-media-zoom-overlay">Perbesar karya ↗</div>
         `}
       </div>
       <div class="modal-header-text" style="margin-bottom: 1.5rem;">
-        <span class="section-badge" style="display:inline-block; font-size:0.75rem; padding:0.35rem 0.8rem; border-radius:9999px; background:rgba(255,255,255,0.1); color:rgba(255,255,255,0.85); ${project.youtubeUrl ? 'background:rgba(220,38,38,0.9); color:#fff;' : ''}">📁 Folder ${project.client} • ${project.categoryName} • ${project.metric}</span>
-        <h2 class="modal-project-title">${project.title}</h2>
-        <p style="font-size: 1rem; color: rgba(255, 255, 255, 0.7); margin-bottom: 1rem; line-height: 1.6;">${project.fullDesc}</p>
+        <p class="collection-summary">${project.shortDesc.replace(/^Folder\s*/i, '').replace(/\s*—\s*/, ' — ')}</p>
         ${project.youtubeUrl ? `
           <div>
             <a href="${project.youtubeUrl}" target="_blank" class="btn btn-primary" style="background:#ff0000; border-color:#ff0000; color:#fff; font-weight:700; font-size:0.95rem; padding:0.7rem 1.3rem; display:inline-flex; align-items:center; gap:0.6rem; text-decoration:none; border-radius:12px; box-shadow: 0 4px 15px rgba(255, 0, 0, 0.3); max-width:100%; word-break:break-word;">
@@ -4740,11 +4749,8 @@ function initPortfolio() {
 
       <!-- INSIDE BRAND FOLDER: ARTWORK & VIDEO ITEMS GRID -->
       ${project.items && project.items.length > 0 ? `
-        <div style="margin-bottom: 2rem; background: rgba(255, 255, 255, 0.02); padding: 1.25rem; border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.08);">
-          <div style="margin-bottom: 1rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem;">
-            <span style="display: flex; align-items: center; gap: 0.5rem; font-weight: 600; font-size: 1.15rem; color: #fff;">📁 Isi Folder ${project.categoryName} ${project.client} (${project.items.length} Aset)</span>
-            <span style="font-size: 0.8rem; color: var(--accent-from); font-weight: 500;">🔍 Klik untuk putar / perbesar</span>
-          </div>
+        <section class="collection-gallery">
+          <div class="collection-gallery-heading"><h3>Koleksi karya <span>${String(project.items.length).padStart(2, '0')}</span></h3><p>Pilih karya untuk melihat detail ↗</p></div>
           <div class="modal-items-grid">
             ${project.items.map((item, idx) => {
               const isBunnyItem = item.video && (item.video.includes('mediadelivery.net') || item.video.includes('bunny') || item.video.includes('mediadelivery'));
@@ -4752,12 +4758,12 @@ function initPortfolio() {
               const isItemVid = isBunnyItem || isDirectVid || (item.img && (item.img.endsWith('.mp4') || item.img.endsWith('.mov')));
               const mediaSrc = item.video || item.img;
               const coverSrc = item.img || (project.thumbnail && !project.thumbnail.endsWith('.mp4') ? project.thumbnail : '');
-              const itemBg = item.bg || '#000';
+              const itemBg = item.bg || '#f2f2ef';
               const isLogoItem = !!item.bg;
 
               return `
-                <div class="modal-folder-item" onclick="window.onItemClick('${project.id}', ${idx}, ${isItemVid})">
-                  <div style="aspect-ratio: 16/9; border-radius: 10px; overflow: hidden; margin-bottom: 0.75rem; border: 1px solid rgba(255, 255, 255, 0.12); background: ${itemBg}; position: relative; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 16px rgba(0,0,0,0.3);">
+                <button type="button" class="modal-folder-item" onclick="window.onItemClick('${project.id}', ${idx}, ${isItemVid})">
+                  <div class="collection-artwork" style="background: ${itemBg};">
                     ${isBunnyItem ? 
                       `<img src="${coverSrc}" alt="${item.name}" loading="lazy" decoding="async" style="width: 100%; height: 100%; object-fit: cover;">
                        <div class="video-poster-fallback" style="opacity: 1; display: flex; align-items: center; justify-content: center; position: absolute; inset: 0; background: rgba(0,0,0,0.35);">
@@ -4766,38 +4772,38 @@ function initPortfolio() {
                       isDirectVid ? 
                       `<div class="video-poster-fallback"><div class="video-poster-icon" style="width:32px;height:32px;font-size:1rem;">▶</div></div>
                        <video poster="${coverSrc}" data-src="${mediaSrc.includes('#t=') ? mediaSrc : mediaSrc + '#t=1.0'}" class="card-video-thumb modal-video-lazy" loop muted playsinline preload="none"></video>` : 
-                      `<img src="${coverSrc || item.img}" alt="${item.name}" loading="lazy" decoding="async" style="width: 100%; height: 100%; ${isLogoItem ? 'object-fit: contain; padding: 0.85rem;' : 'object-fit: cover;'}">
-                       <div class="modal-media-zoom-overlay" style="bottom:0.5rem; right:0.5rem; font-size:0.75rem; padding:0.25rem 0.6rem;">🔍 Zoom</div>`
+                      `<img src="${coverSrc || item.img}" alt="${item.name}" loading="lazy" decoding="async" style="width: 100%; height: 100%; ${isLogoItem ? 'object-fit: contain; padding: 0.85rem;' : 'object-fit: contain; padding: 0.75rem;'}">
+                       <div class="modal-media-zoom-overlay" style="bottom:0.5rem; right:0.5rem; font-size:0.75rem; padding:0.25rem 0.6rem;">↗</div>`
                     }
                   </div>
-                  <h5 style="font-size: 0.9rem; font-weight: 600; margin-bottom: 0.25rem; color: #fff;">${item.name}</h5>
-                  <p style="font-size: 0.78rem; color: rgba(255, 255, 255, 0.55); line-height: 1.4;">${item.desc}</p>
-                </div>
+                  <span class="collection-item-caption"><span class="collection-item-number">${String(idx + 1).padStart(2, '0')}</span><span class="collection-item-name">${artworkLabel(item.name, project.client)}</span></span>
+                </button>
               `;
             }).join('')}
           </div>
-        </div>
+        </section>
       ` : ''}
 
       <div class="modal-two-col-grid">
-        <div style="padding: 1.25rem; background: rgba(255, 255, 255, 0.04); border-radius: 14px; border: 1px solid rgba(255, 255, 255, 0.08);">
-          <h4 style="color: var(--accent-from); margin-bottom: 0.5rem; font-size: 0.95rem; font-weight: 600;">The Challenge</h4>
-          <p style="font-size: 0.88rem; line-height: 1.5; color: rgba(255, 255, 255, 0.75);">${project.challenge}</p>
+        <div style="padding: 1.25rem; background: #f7f7f5; border-radius: 14px; border: 1px solid #e8e8e5;">
+          <h4 style="color: #555; margin-bottom: 0.5rem; font-size: 0.95rem; font-weight: 600;">The Challenge</h4>
+          <p style="font-size: 0.88rem; line-height: 1.5; color: #525252;">${project.challenge}</p>
         </div>
-        <div style="padding: 1.25rem; background: rgba(255, 255, 255, 0.04); border-radius: 14px; border: 1px solid rgba(255, 255, 255, 0.08);">
-          <h4 style="color: #34d399; margin-bottom: 0.5rem; font-size: 0.95rem; font-weight: 600;">The Creative Solution</h4>
-          <p style="font-size: 0.88rem; line-height: 1.5; color: rgba(255, 255, 255, 0.75);">${project.solution}</p>
+        <div style="padding: 1.25rem; background: #f7f7f5; border-radius: 14px; border: 1px solid #e8e8e5;">
+          <h4 style="color: #555; margin-bottom: 0.5rem; font-size: 0.95rem; font-weight: 600;">The Creative Solution</h4>
+          <p style="font-size: 0.88rem; line-height: 1.5; color: #525252;">${project.solution}</p>
         </div>
       </div>
 
       <div style="margin-bottom: 0.5rem;">
-        <h4 style="margin-bottom: 0.75rem; font-size: 1rem; font-weight: 600; color: #fff;">Key Results & Metrics</h4>
+        <h4 style="margin-bottom: 0.75rem; font-size: 1rem; font-weight: 600; color: #202020;">Key Results & Metrics</h4>
         <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem;">
-          ${project.results.map(r => `<li style="display: flex; align-items: center; gap: 0.6rem; color: rgba(255, 255, 255, 0.85); font-size: 0.9rem;"><span style="color: #34d399; font-weight: 700;">✓</span> ${r}</li>`).join('')}
+          ${project.results.map(r => `<li style="display: flex; align-items: center; gap: 0.6rem; color: #525252; font-size: 0.9rem;"><span style="color: #555; font-weight: 700;">✓</span> ${r}</li>`).join('')}
         </ul>
       </div>
     `;
 
+    modalBackdrop.setAttribute('aria-labelledby', 'collection-title');
     modalBackdrop.classList.add('active');
     if (typeof window.stopScroll === 'function') {
       window.stopScroll();
