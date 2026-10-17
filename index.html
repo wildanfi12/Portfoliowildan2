@@ -4112,7 +4112,7 @@
     }
 
   </style>
-  <link rel="stylesheet" href="portfolio-gallery.css">
+  <link rel="stylesheet" href="portfolio-gallery.css?v=4.0">
 </head>
 <body>
 
@@ -5239,26 +5239,26 @@
         <span class="zoom-counter" id="zoom-image-counter">1 / 1</span>
       </div>
       <div class="zoom-controls">
-        <button class="zoom-btn" id="zoom-out-btn" title="Zoom Out ( - )">−</button>
-        <button class="zoom-btn" id="zoom-reset-btn" title="Reset Zoom ( 100% )">100%</button>
-        <button class="zoom-btn" id="zoom-in-btn" title="Zoom In ( + )">+</button>
-        <button class="zoom-btn" id="zoom-open-btn" title="Open Full Image in New Tab">↗</button>
-        <button class="zoom-btn zoom-close-btn" id="zoom-close-btn" title="Close ( Esc )">✕</button>
+        <button class="zoom-btn" id="zoom-out-btn" title="Perkecil" aria-label="Perkecil gambar">−</button>
+        <button class="zoom-btn" id="zoom-reset-btn" title="Atur ulang zoom" aria-label="Atur ulang zoom">100%</button>
+        <button class="zoom-btn" id="zoom-in-btn" title="Perbesar" aria-label="Perbesar gambar">+</button>
+        <button class="zoom-btn" id="zoom-open-btn" title="Buka gambar asli" aria-label="Buka gambar asli di tab baru">↗</button>
+        <button class="zoom-btn zoom-close-btn" id="zoom-close-btn" title="Tutup" aria-label="Tutup pratinjau">✕</button>
       </div>
     </div>
     
-    <button class="zoom-nav-btn zoom-prev-btn" id="zoom-prev-btn" title="Previous Image ( Left Arrow )">‹</button>
-    <button class="zoom-nav-btn zoom-next-btn" id="zoom-next-btn" title="Next Image ( Right Arrow )">›</button>
+    <button class="zoom-nav-btn zoom-prev-btn" id="zoom-prev-btn" title="Karya sebelumnya" aria-label="Karya sebelumnya">‹</button>
+    <button class="zoom-nav-btn zoom-next-btn" id="zoom-next-btn" title="Karya berikutnya" aria-label="Karya berikutnya">›</button>
 
     <div class="zoom-viewport" id="zoom-viewport">
       <img src="" alt="Zoomed Image" id="zoom-target-image" class="zoom-img">
     </div>
     
-    <div class="zoom-hint">Klik foto untuk Zoom / Gunakan tombol panah [ ← ] [ → ] untuk melihat karya lain</div>
+    <div class="zoom-hint">Klik atau cubit untuk memperbesar · Gunakan tombol panah untuk berpindah karya</div>
   </div>
 
   <!-- Portfolio Data & Render Script -->
-  <script src="js/portfolio.js?v=3.2"></script>
+  <script src="js/portfolio.js?v=4.0"></script>
 
   <!-- Local Lenis Smooth Scroll Library (Offline & file:// Compatible) -->
   <script src="js/lenis.min.js"></script>

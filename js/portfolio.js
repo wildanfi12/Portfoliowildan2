@@ -4567,13 +4567,60 @@ function initPortfolio() {
     });
   }
 
-  // Keep file naming conventions out of gallery captions; retain the artwork title.
+  // Normalize visible copy without changing asset paths or the underlying project data.
+  function cleanPortfolioCopy(value = '') {
+    return String(value)
+      .replace(/\s*(?:via|melalui|menggunakan)?\s*Bunny Stream(?:\s+CDN)?(?:\s*\(Library ID:[^)]+\))?/gi, '')
+      .replace(/\s*\(Library ID:[^)]+\)/gi, '')
+      .replace(/\b(?:terhubung|terintegrasi|terkoneksi)(?:\s+langsung)?\s*(?:ke|dengan)?\s*(?=[.,]|$)/gi, '')
+      .replace(/\bIntegrasi\s+(?:video\s+)?streaming\s*(?:berkecepatan tinggi)?\s*,?\s*/gi, '')
+      .replace(/\s+([,.])/g, '$1')
+      .replace(/\s*[•|]\s*$/g, '')
+      .replace(/\s{2,}/g, ' ')
+      .replace(/\s+\./g, '.')
+      .trim();
+  }
+
+  function projectTitle(value = '') {
+    return String(value)
+      .replace(/_/g, ' ')
+      .replace(/\bConten Creator\b/gi, 'Content Creator')
+      .replace(/\s{2,}/g, ' ')
+      .trim();
+  }
+
+  function collectionSummary(project) {
+    let summary = cleanPortfolioCopy(project.shortDesc || project.fullDesc || '');
+    summary = summary.replace(/^Folder\s+/i, '');
+    const divider = summary.indexOf('—');
+    if (divider >= 0 && divider < summary.length - 1) summary = summary.slice(divider + 1).trim();
+    if (summary && !/[.!?]$/.test(summary)) summary += '.';
+    return summary;
+  }
+
+  // Keep file naming conventions out of gallery captions; retain the useful title.
   function artworkLabel(name, client) {
-    let label = name || 'Untitled';
-    if (client && label.startsWith(client + ' — ')) label = label.slice(client.length + 3);
-    return label.replace(/^\d+[_\s-]+/, '').replace(/_/g, ' ')
+    let label = cleanPortfolioCopy(name || 'Tanpa judul');
+    if (client) {
+      const escapedClient = client.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+      label = label.replace(new RegExp('^' + escapedClient + '\\s*[—–:-]\\s*', 'i'), '');
+    }
+    return label
+      .replace(/\.(?:mp4|mov|webm|jpe?g|png|webp|gif|pdf)$/i, '')
+      .replace(/^Brand Logo\s+\d+\s*[—–:-]\s*/i, '')
+      .replace(/^\d+[_.\s-]+/, '')
+      .replace(/[_]+/g, ' ')
       .replace(/\s*\(\d+\s*x\s*\d+\s*(?:piksel|px)?\)/gi, '')
-      .replace(/\s+Final$/i, '').trim();
+      .replace(/\s+\d+\s*x\s*\d+\s*(?:piksel|px)?/gi, '')
+      .replace(/\b(?:Salinan dari|Copy of)\s+/gi, '')
+      .replace(/\s+(?:Final|Revisi|Fix)$/i, '')
+      .replace(/\s{2,}/g, ' ')
+      .trim();
+  }
+
+  function itemDisplayLabel(item, client, isVideo) {
+    const preferredCopy = isVideo && item.desc ? item.desc : item.name;
+    return artworkLabel(preferredCopy, client);
   }
 
   // Helper to create a single project card DOM node
@@ -4582,7 +4629,7 @@ function initPortfolio() {
     card.className = 'project-card';
     card.tabIndex = 0;
     card.setAttribute('role', 'button');
-    card.setAttribute('aria-label', 'Lihat koleksi ' + p.title);
+    card.setAttribute('aria-label', 'Lihat koleksi ' + projectTitle(p.title));
     card.addEventListener('keydown', e => {
       if (e.target === card && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); openModal(p); }
     });
@@ -4604,13 +4651,13 @@ function initPortfolio() {
           </div>
           <video data-src="${p.thumbnail.includes('#t=') ? p.thumbnail : p.thumbnail + '#t=0.5'}" class="card-video-thumb" loop muted playsinline preload="none"></video>
         ` : `
-          <img src="${p.thumbnail}" alt="${p.title}" ${loadingAttr}${fetchPriorityAttr} ${decodingAttr}${thumbImgStyle}>
+          <img src="${p.thumbnail}" alt="Pratinjau ${projectTitle(p.title)}" ${loadingAttr}${fetchPriorityAttr} ${decodingAttr}${thumbImgStyle}>
         `}
         <span class="collection-open" aria-hidden="true">↗</span>
       </div>
       <div class="project-content">
         <div class="collection-meta"><span>${p.categoryName}</span><span>${p.items?.length ? p.items.length + ' karya' : 'Lihat proyek'}</span></div>
-        <h3 class="project-title">${p.title}</h3>
+        <h3 class="project-title">${projectTitle(p.title)}</h3>
         <p class="project-desc">${p.client}</p>
       </div>
     `;
@@ -4707,6 +4754,10 @@ function initPortfolio() {
     
     const isBunny = !!project.bunnyVideoId || (project.embedVideo && (project.embedVideo.includes('iframe.mediadelivery.net') || project.embedVideo.includes('player.mediadelivery.net') || project.embedVideo.includes('bunny') || project.embedVideo.includes('mediadelivery')));
     const isVideo = !isBunny && project.embedVideo && (project.embedVideo.endsWith('.mp4') || project.embedVideo.endsWith('.mov'));
+    const isVideoCollection = !!(project.items && project.items.some(item => {
+      const media = item.video || item.img || '';
+      return !!item.video || /\.(?:mp4|mov|webm)(?:#|$)/i.test(media);
+    }));
     const initialEmbedBg = project.embedBg || (project.items && project.items[0] && project.items[0].bg) || '#f4f4f2';
     const isInitialLogo = !!project.embedBg || (project.items && project.items[0] && !!project.items[0].bg);
 
@@ -4722,7 +4773,7 @@ function initPortfolio() {
     }
 
     modalBody.innerHTML = `
-      <div class="collection-intro"><span>${project.categoryName} / ${project.client}</span><h2 class="modal-project-title" id="collection-title">${project.title}</h2><p>${project.items?.length ? project.items.length + ' karya dalam koleksi' : 'Project overview'}</p></div>
+      <div class="collection-intro"><span>${project.categoryName} / ${project.client}</span><h2 class="modal-project-title" id="collection-title">${projectTitle(project.title)}</h2><p>${project.items?.length ? project.items.length + ' karya dalam koleksi' : 'Ringkasan proyek'}</p></div>
       <div class="modal-media" id="modal-main-media" style="position:relative; background:${initialEmbedBg};" onclick="${(!isVideo && !isBunny) ? `window.openZoomViewerForProject('${project.id}', 0)` : ''}">
         ${isBunny ? `
           <div class="bunny-player-box" style="position:relative; width:100%; aspect-ratio:16/9; border-radius:14px; overflow:hidden; background:#000; box-shadow:0 8px 32px rgba(0,0,0,0.5);">
@@ -4731,12 +4782,12 @@ function initPortfolio() {
         ` : isVideo ? `
           <video id="modal-video-player" src="${project.embedVideo}" controls autoplay loop muted preload="metadata" playsinline style="width:100%; height:100%; object-fit:contain; background:#000;"></video>
         ` : `
-          <img id="modal-main-image" src="${project.embedVideo}" alt="${project.title}" loading="lazy" style="${isInitialLogo ? 'object-fit: contain; padding: 2rem; width: 100%; height: 100%;' : ''}">
+          <img id="modal-main-image" src="${project.embedVideo}" alt="${projectTitle(project.title)}" loading="lazy" style="${isInitialLogo ? 'object-fit: contain; padding: 2rem; width: 100%; height: 100%;' : ''}">
           <div class="modal-media-zoom-overlay">Perbesar karya ↗</div>
         `}
       </div>
       <div class="modal-header-text" style="margin-bottom: 1.5rem;">
-        <p class="collection-summary">${project.shortDesc.replace(/^Folder\s*/i, '').replace(/\s*—\s*/, ' — ')}</p>
+        <p class="collection-summary">${collectionSummary(project)}</p>
         ${project.youtubeUrl ? `
           <div>
             <a href="${project.youtubeUrl}" target="_blank" class="btn btn-primary" style="background:#ff0000; border-color:#ff0000; color:#fff; font-weight:700; font-size:0.95rem; padding:0.7rem 1.3rem; display:inline-flex; align-items:center; gap:0.6rem; text-decoration:none; border-radius:12px; box-shadow: 0 4px 15px rgba(255, 0, 0, 0.3); max-width:100%; word-break:break-word;">
@@ -4749,8 +4800,8 @@ function initPortfolio() {
 
       <!-- INSIDE BRAND FOLDER: ARTWORK & VIDEO ITEMS GRID -->
       ${project.items && project.items.length > 0 ? `
-        <section class="collection-gallery">
-          <div class="collection-gallery-heading"><h3>Koleksi karya <span>${String(project.items.length).padStart(2, '0')}</span></h3><p>Pilih karya untuk melihat detail ↗</p></div>
+        <section class="collection-gallery ${isVideoCollection ? 'is-video-gallery' : 'is-image-gallery'}">
+          <div class="collection-gallery-heading"><h3>Koleksi karya <span>${String(project.items.length).padStart(2, '0')}</span></h3><p>${isVideoCollection ? 'Pilih video untuk memutar' : 'Pilih karya untuk memperbesar'} ↗</p></div>
           <div class="modal-items-grid">
             ${project.items.map((item, idx) => {
               const isBunnyItem = item.video && (item.video.includes('mediadelivery.net') || item.video.includes('bunny') || item.video.includes('mediadelivery'));
@@ -4762,21 +4813,21 @@ function initPortfolio() {
               const isLogoItem = !!item.bg;
 
               return `
-                <button type="button" class="modal-folder-item" onclick="window.onItemClick('${project.id}', ${idx}, ${isItemVid})">
+                <button type="button" class="modal-folder-item ${isItemVid ? 'is-video-item' : 'is-image-item'}" onclick="window.onItemClick('${project.id}', ${idx}, ${isItemVid})" aria-label="${isItemVid ? 'Putar' : 'Perbesar'} ${itemDisplayLabel(item, project.client, isItemVid)}">
                   <div class="collection-artwork" style="background: ${itemBg};">
                     ${isBunnyItem ? 
-                      `<img src="${coverSrc}" alt="${item.name}" loading="lazy" decoding="async" style="width: 100%; height: 100%; object-fit: cover;">
+                      `<img src="${coverSrc}" alt="Pratinjau ${itemDisplayLabel(item, project.client, true)}" loading="lazy" decoding="async" style="width: 100%; height: 100%; object-fit: cover;">
                        <div class="video-poster-fallback" style="opacity: 1; display: flex; align-items: center; justify-content: center; position: absolute; inset: 0; background: rgba(0,0,0,0.35);">
                          <div class="video-poster-icon" style="width:36px;height:36px;font-size:1rem; border-radius:50%; background:rgba(207,128,71,0.95); color:#fff; display:flex; align-items:center; justify-content:center; box-shadow:0 4px 15px rgba(207,128,71,0.5);">▶</div>
                        </div>` : 
                       isDirectVid ? 
                       `<div class="video-poster-fallback"><div class="video-poster-icon" style="width:32px;height:32px;font-size:1rem;">▶</div></div>
                        <video poster="${coverSrc}" data-src="${mediaSrc.includes('#t=') ? mediaSrc : mediaSrc + '#t=1.0'}" class="card-video-thumb modal-video-lazy" loop muted playsinline preload="none"></video>` : 
-                      `<img src="${coverSrc || item.img}" alt="${item.name}" loading="lazy" decoding="async" style="width: 100%; height: 100%; ${isLogoItem ? 'object-fit: contain; padding: 0.85rem;' : 'object-fit: contain; padding: 0.75rem;'}">
+                      `<img src="${coverSrc || item.img}" alt="${artworkLabel(item.name, project.client)}" loading="lazy" decoding="async" style="width: 100%; height: 100%; ${isLogoItem ? 'object-fit: contain; padding: 0.85rem;' : 'object-fit: contain; padding: 0.75rem;'}">
                        <div class="modal-media-zoom-overlay" style="bottom:0.5rem; right:0.5rem; font-size:0.75rem; padding:0.25rem 0.6rem;">↗</div>`
                     }
                   </div>
-                  <span class="collection-item-caption"><span class="collection-item-number">${String(idx + 1).padStart(2, '0')}</span><span class="collection-item-name">${artworkLabel(item.name, project.client)}</span></span>
+                  <span class="collection-item-caption"><span class="collection-item-number">${String(idx + 1).padStart(2, '0')}</span><span class="collection-item-name">${itemDisplayLabel(item, project.client, isItemVid)}</span></span>
                 </button>
               `;
             }).join('')}
@@ -4786,19 +4837,19 @@ function initPortfolio() {
 
       <div class="modal-two-col-grid">
         <div style="padding: 1.25rem; background: #f7f7f5; border-radius: 14px; border: 1px solid #e8e8e5;">
-          <h4 style="color: #555; margin-bottom: 0.5rem; font-size: 0.95rem; font-weight: 600;">The Challenge</h4>
-          <p style="font-size: 0.88rem; line-height: 1.5; color: #525252;">${project.challenge}</p>
+          <h4 style="color: #555; margin-bottom: 0.5rem; font-size: 0.95rem; font-weight: 600;">Tantangan</h4>
+          <p style="font-size: 0.88rem; line-height: 1.6; color: #525252;">${cleanPortfolioCopy(project.challenge)}</p>
         </div>
         <div style="padding: 1.25rem; background: #f7f7f5; border-radius: 14px; border: 1px solid #e8e8e5;">
-          <h4 style="color: #555; margin-bottom: 0.5rem; font-size: 0.95rem; font-weight: 600;">The Creative Solution</h4>
-          <p style="font-size: 0.88rem; line-height: 1.5; color: #525252;">${project.solution}</p>
+          <h4 style="color: #555; margin-bottom: 0.5rem; font-size: 0.95rem; font-weight: 600;">Pendekatan kreatif</h4>
+          <p style="font-size: 0.88rem; line-height: 1.6; color: #525252;">${cleanPortfolioCopy(project.solution)}</p>
         </div>
       </div>
 
       <div style="margin-bottom: 0.5rem;">
-        <h4 style="margin-bottom: 0.75rem; font-size: 1rem; font-weight: 600; color: #202020;">Key Results & Metrics</h4>
+        <h4 style="margin-bottom: 0.75rem; font-size: 1rem; font-weight: 600; color: #202020;">Hasil proyek</h4>
         <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem;">
-          ${project.results.map(r => `<li style="display: flex; align-items: center; gap: 0.6rem; color: #525252; font-size: 0.9rem;"><span style="color: #555; font-weight: 700;">✓</span> ${r}</li>`).join('')}
+          ${project.results.map(r => `<li style="display: flex; align-items: flex-start; gap: 0.6rem; color: #525252; font-size: 0.9rem; line-height:1.6;"><span style="color: #555; font-weight: 700;">✓</span> ${cleanPortfolioCopy(r)}</li>`).join('')}
         </ul>
       </div>
     `;
@@ -4866,10 +4917,12 @@ function initPortfolio() {
     if (!project || !project.items || !project.items[itemIndex]) return;
     const item = project.items[itemIndex];
     if (isVideo) {
-      window.viewMediaPreview(item.video || item.img, item.name, true);
+      window.viewMediaPreview(item.video || item.img, itemDisplayLabel(item, project.client, true), true);
     } else {
-      window.viewMediaPreview(item.img, item.name, false, item.bg);
-      window.openZoomViewerForProject(projectId, itemIndex);
+      window.viewMediaPreview(item.img, artworkLabel(item.name, project.client), false, item.bg);
+      const imageItems = project.items.filter(galleryItem => galleryItem.img && !galleryItem.video);
+      const galleryIndex = Math.max(0, imageItems.indexOf(item));
+      window.openZoomViewerForProject(projectId, galleryIndex);
     }
   };
 
@@ -4951,15 +5004,21 @@ function initPortfolio() {
 
   let activeGallery = [];
   let activeIndex = 0;
+  let activeFolderTitle = '';
   let currentScale = 1;
   let isZoomed = false;
   let translateX = 0, translateY = 0;
+  let touchStartDistance = 0;
+  let touchStartScale = 1;
+  let touchStartX = 0, touchStartY = 0;
+  let touchOriginX = 0, touchOriginY = 0;
 
   window.openZoomViewer = function(galleryItems, startIndex = 0, folderTitle = 'Preview Foto') {
     if (!zoomModal || !zoomImg || !galleryItems || galleryItems.length === 0) return;
 
     activeGallery = galleryItems.filter(item => item.img && !item.video);
     if (activeGallery.length === 0) return;
+    activeFolderTitle = folderTitle || '';
 
     // Preserve scroll position if not already recorded
     if (typeof window.savedScrollPosition !== 'number' || window.savedScrollPosition <= 0) {
@@ -4986,7 +5045,7 @@ function initPortfolio() {
     if (!item) return;
 
     zoomImg.src = item.img;
-    zoomTitle.textContent = item.name || folderTitle || 'Preview Foto';
+    zoomTitle.textContent = artworkLabel(item.name || activeFolderTitle || 'Preview foto', activeFolderTitle);
     zoomCounter.textContent = `${activeIndex + 1} / ${activeGallery.length}`;
 
     if (item.bg) {
@@ -5040,6 +5099,18 @@ function initPortfolio() {
     applyTransform();
   }
 
+  function clampPan() {
+    if (!zoomImg || currentScale <= 1) {
+      translateX = 0;
+      translateY = 0;
+      return;
+    }
+    const maxPanX = Math.max(0, (zoomImg.offsetWidth * (currentScale - 1)) / 2);
+    const maxPanY = Math.max(0, (zoomImg.offsetHeight * (currentScale - 1)) / 2);
+    translateX = Math.max(-maxPanX, Math.min(maxPanX, translateX));
+    translateY = Math.max(-maxPanY, Math.min(maxPanY, translateY));
+  }
+
   // Zoom Control Buttons
   if (zoomInBtn) zoomInBtn.addEventListener('click', () => setScale(currentScale + 0.5));
   if (zoomOutBtn) zoomOutBtn.addEventListener('click', () => setScale(currentScale - 0.5));
@@ -5084,6 +5155,50 @@ function initPortfolio() {
       translateY = -yPercent * maxPanY * 2;
       applyTransform();
     });
+
+    zoomViewport.addEventListener('wheel', (e) => {
+      if (!zoomModal || !zoomModal.classList.contains('active')) return;
+      e.preventDefault();
+      setScale(currentScale + (e.deltaY < 0 ? 0.25 : -0.25));
+    }, { passive: false });
+
+    zoomViewport.addEventListener('touchstart', (e) => {
+      if (e.touches.length === 2) {
+        touchStartDistance = Math.hypot(
+          e.touches[0].clientX - e.touches[1].clientX,
+          e.touches[0].clientY - e.touches[1].clientY
+        );
+        touchStartScale = currentScale;
+      } else if (e.touches.length === 1 && isZoomed) {
+        touchStartX = e.touches[0].clientX;
+        touchStartY = e.touches[0].clientY;
+        touchOriginX = translateX;
+        touchOriginY = translateY;
+      }
+    }, { passive: true });
+
+    zoomViewport.addEventListener('touchmove', (e) => {
+      if (e.touches.length === 2 && touchStartDistance > 0) {
+        e.preventDefault();
+        const distance = Math.hypot(
+          e.touches[0].clientX - e.touches[1].clientX,
+          e.touches[0].clientY - e.touches[1].clientY
+        );
+        setScale(touchStartScale * (distance / touchStartDistance));
+      } else if (e.touches.length === 1 && isZoomed) {
+        e.preventDefault();
+        translateX = touchOriginX + e.touches[0].clientX - touchStartX;
+        translateY = touchOriginY + e.touches[0].clientY - touchStartY;
+        clampPan();
+        applyTransform();
+      }
+    }, { passive: false });
+
+    zoomViewport.addEventListener('touchend', () => {
+      touchStartDistance = 0;
+      clampPan();
+      applyTransform();
+    }, { passive: true });
   }
 
   // Close Zoom Modal
