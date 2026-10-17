@@ -1666,7 +1666,8 @@
        ========================================================================== */
     #services {
       background: #ffffff;
-      padding-block: 3.5rem;
+      /* Mobile: kurangi padding section supaya tidak terlalu jauh dari atas/bawah */
+      padding-block: 2rem;
     }
     @media (min-width: 640px) {
       #services {
@@ -1680,7 +1681,8 @@
     }
 
     .services-h2 {
-      margin-block: 1rem 2rem;
+      /* Mobile: kurangi margin bawah heading supaya lebih rapat ke list */
+      margin-block: 0.75rem 1.25rem;
       max-width: 16ch;
       font-size: clamp(1.85rem, 5vw, 3rem);
       font-weight: 600;
@@ -1720,7 +1722,8 @@
       gap: 0.75rem;
       border: none;
       border-radius: var(--radius-card-sm);
-      padding-block: 1.15rem;
+      /* Mobile: padding row lebih kecil supaya baris tidak berjauhan */
+      padding-block: 0.7rem;
       padding-inline: 0.75rem;
       background: transparent;
       color: inherit;
@@ -1732,7 +1735,8 @@
     @media (min-width: 640px) {
       .service-row-trigger {
         gap: 1.25rem;
-        padding-block: 1.75rem;
+        /* Tablet: sedikit lebih lapang dari mobile */
+        padding-block: 1rem;
         padding-inline: 1.5rem;
       }
     }
@@ -1781,7 +1785,8 @@
 
     .service-title {
       flex: 1;
-      font-size: 1.25rem;
+      /* Mobile: font lebih kecil supaya proporsional dengan padding yang dikompres */
+      font-size: 1.05rem;
       font-weight: 500;
       letter-spacing: -0.01em;
       color: var(--foreground);
@@ -1817,8 +1822,9 @@
     }
 
     .service-badge {
-      width: 2.25rem;
-      height: 2.25rem;
+      /* Mobile: badge lebih kecil proporsional dengan row */
+      width: 1.85rem;
+      height: 1.85rem;
       display: grid;
       place-items: center;
       border-radius: var(--radius-pill);
@@ -5233,7 +5239,7 @@
   </div>
 
   <!-- Portfolio Data & Render Script -->
-  <script src="js/portfolio.js?v=3.1"></script>
+  <script src="js/portfolio.js?v=3.2"></script>
 
   <!-- Local Lenis Smooth Scroll Library (Offline & file:// Compatible) -->
   <script src="js/lenis.min.js"></script>
