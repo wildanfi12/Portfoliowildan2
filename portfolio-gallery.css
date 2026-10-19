@@ -105,6 +105,40 @@
   #image-zoom-modal .zoom-next-btn { right: 14px; }
   #image-zoom-modal .zoom-hint { display: none; }
 }
+
+/* Services spacing: compact on phones while preserving comfortable touch targets. */
+@media (max-width: 639px) {
+  #services { padding-block: 1.1rem 1.75rem; }
+  #services .eyebrow { margin-bottom: 0; }
+  #services .services-h2 {
+    margin-block: .55rem .9rem;
+    font-size: clamp(1.75rem, 8vw, 2.15rem);
+    line-height: 1.08;
+  }
+  #services .service-row-trigger {
+    min-height: 58px;
+    gap: .65rem;
+    padding: .68rem .35rem !important;
+    border-radius: 12px;
+  }
+  #services .service-index {
+    width: 1.35rem;
+    font-size: .75rem;
+  }
+  #services .service-title {
+    font-size: 1.05rem;
+    line-height: 1.2;
+  }
+  #services .service-badge {
+    width: 2.15rem;
+    height: 2.15rem;
+  }
+  #services .service-expand-inner {
+    padding-inline: .35rem;
+    padding-bottom: 1rem;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   #works .project-card, #works .project-thumb img, #works .project-thumb video, .collection-open, #project-modal .modal-folder-item { transition: none !important; transform: none !important; }
 }
