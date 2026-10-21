@@ -1,4 +1,4 @@
-/* ==========================================================================
+﻿/* ==========================================================================
    WILDAN PORTFOLIO - BRAND PORTFOLIO HUBS & CASE STUDY LIGHTBOX
    Folder-Based Hierarchy: Category -> Brand Folder -> Assets Collection
    ========================================================================== */
@@ -2362,7 +2362,7 @@ const PROJECTS = [
   {
     id: 'video-editing-andrey-ai-video-bootcamp',
     title: 'AI Video Bootcamp',
-    category: 'video',
+    category: ['video', 'ai-video'],
     categoryName: 'Video Editing',
     client: 'AI Video Bootcamp',
     metric: '7 Video Showcase • Bunny Stream',
@@ -2588,7 +2588,7 @@ const PROJECTS = [
   {
     id: 'video-editing-andrey-content-creator-ai',
     title: 'Conten Creator AI Vids',
-    category: 'video',
+    category: ['video', 'ai-video'],
     categoryName: 'Video Editing & Motion',
     client: 'Content Creator AI',
     metric: '2 Video Commercial • Bunny Stream',
@@ -2692,7 +2692,7 @@ const PROJECTS = [
   {
     id: 'video-editing-andrey-fighting-style-ai',
     title: 'Fighting Style AI Vids',
-    category: 'video',
+    category: ['video', 'ai-video'],
     categoryName: 'Video Editing & Motion',
     client: 'Action AI Motion',
     metric: '3 Video Commercial • Bunny Stream',
@@ -2735,7 +2735,7 @@ const PROJECTS = [
   {
     id: 'video-editing-andrey-food-vlog-ai',
     title: 'Food Vlog AI Video',
-    category: 'video',
+    category: ['video', 'ai-video'],
     categoryName: 'Video Editing & Motion',
     client: 'Culinary AI',
     metric: '6 Video Commercial • Bunny Stream',
@@ -2949,7 +2949,7 @@ const PROJECTS = [
   {
     id: 'video-editing-andrey-mixue-vlogger-ai',
     title: 'Mixue Vlogger AI Vids',
-    category: 'video',
+    category: ['video', 'ai-video'],
     categoryName: 'Video Editing & Motion',
     client: 'Mixue',
     metric: '6 Video Commercial • Bunny Stream',
@@ -4676,7 +4676,7 @@ function initPortfolio() {
       visibleCount = getInitialCount();
     }
 
-    const filtered = currentFilter === 'all' ? PROJECTS : PROJECTS.filter(p => p.category === currentFilter);
+    const filtered = currentFilter === 'all' ? PROJECTS : PROJECTS.filter(p => Array.isArray(p.category) ? p.category.includes(currentFilter) : p.category === currentFilter);
     const targetCount = Math.min(visibleCount, filtered.length);
 
     if (isCategoryChange || resetCount) {
