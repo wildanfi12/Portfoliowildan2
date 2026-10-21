@@ -1702,36 +1702,35 @@
        ========================================================================== */
     #services {
       background: #ffffff;
-      /* Mobile: kurangi padding section supaya tidak terlalu jauh dari atas/bawah */
+      /* Proposional: padding section lebih ringkas & elegan */
       padding-block: 2rem;
     }
     @media (min-width: 640px) {
       #services {
-        padding-block: 5rem;
+        padding-block: 3rem;
       }
     }
     @media (min-width: 1024px) {
       #services {
-        padding-block: 7rem;
+        padding-block: 4rem;
       }
     }
 
     .services-h2 {
-      /* Mobile: kurangi margin bawah heading supaya lebih rapat ke list */
-      margin-block: 0.75rem 1.25rem;
+      margin-block: 0.5rem 1rem;
       max-width: 16ch;
-      font-size: clamp(1.85rem, 5vw, 3rem);
+      font-size: clamp(1.5rem, 3vw, 2.25rem);
       font-weight: 600;
       letter-spacing: -0.02em;
     }
     @media (min-width: 640px) {
       .services-h2 {
-        margin-block: 1.25rem 2.5rem;
+        margin-block: 0.75rem 1.5rem;
       }
     }
     @media (min-width: 1024px) {
       .services-h2 {
-        margin-bottom: 3rem;
+        margin-bottom: 2rem;
       }
     }
 
@@ -1758,8 +1757,8 @@
       gap: 0.75rem;
       border: none;
       border-radius: var(--radius-card-sm);
-      /* Mobile: padding row lebih kecil supaya baris tidak berjauhan */
-      padding-block: 0.7rem;
+      /* Compact row padding */
+      padding-block: 0.65rem;
       padding-inline: 0.75rem;
       background: transparent;
       color: inherit;
@@ -1770,16 +1769,16 @@
     }
     @media (min-width: 640px) {
       .service-row-trigger {
-        gap: 1.25rem;
-        /* Tablet: sedikit lebih lapang dari mobile */
-        padding-block: 1rem;
-        padding-inline: 1.5rem;
+        gap: 1.15rem;
+        padding-block: 0.85rem;
+        padding-inline: 1.25rem;
       }
     }
     @media (min-width: 1024px) {
       .service-row-trigger {
-        gap: 1.5rem;
-        padding-block: 2rem;
+        gap: 1.25rem;
+        padding-block: 1.15rem;
+        padding-inline: 1.5rem;
       }
     }
     @media (hover: hover) {
@@ -1809,19 +1808,19 @@
     }
     @media (min-width: 640px) {
       .service-index {
-        width: 2rem;
-        font-size: 0.875rem;
+        width: 1.75rem;
+        font-size: 0.825rem;
       }
     }
     @media (min-width: 1024px) {
       .service-index {
-        width: 2.5rem;
+        width: 2rem;
+        font-size: 0.875rem;
       }
     }
 
     .service-title {
       flex: 1;
-      /* Mobile: font lebih kecil supaya proporsional dengan padding yang dikompres */
       font-size: 1.05rem;
       font-weight: 500;
       letter-spacing: -0.01em;
@@ -1829,24 +1828,24 @@
     }
     @media (min-width: 640px) {
       .service-title {
-        font-size: 1.65rem;
+        font-size: 1.25rem;
       }
     }
     @media (min-width: 768px) {
       .service-title {
-        font-size: 2rem;
+        font-size: 1.35rem;
       }
     }
     @media (min-width: 1024px) {
       .service-title {
-        font-size: 2.25rem;
+        font-size: 1.45rem;
       }
     }
 
     .service-desc {
       display: none;
-      max-width: 22rem;
-      font-size: 0.875rem;
+      max-width: 24rem;
+      font-size: 0.8125rem;
       color: rgba(17, 17, 17, 0.55);
       line-height: 1.4;
       text-align: right;
@@ -1858,7 +1857,6 @@
     }
 
     .service-badge {
-      /* Mobile: badge lebih kecil proporsional dengan row */
       width: 1.85rem;
       height: 1.85rem;
       display: grid;
@@ -1871,14 +1869,14 @@
     }
     @media (min-width: 640px) {
       .service-badge {
-        width: 2.75rem;
-        height: 2.75rem;
+        width: 2.15rem;
+        height: 2.15rem;
       }
     }
     @media (min-width: 1024px) {
       .service-badge {
-        width: 3rem;
-        height: 3rem;
+        width: 2.35rem;
+        height: 2.35rem;
       }
     }
     .service-badge svg {
@@ -4130,7 +4128,7 @@
     }
 
   </style>
-  <link rel="stylesheet" href="portfolio-gallery.css?v=4.5">
+  <link rel="stylesheet" href="portfolio-gallery.css?v=4.6">
 </head>
 <body>
 
@@ -4342,17 +4340,47 @@
             </div>
           </li>
 
-          <!-- 02 Graphic Design -->
-          <li class="service-row-item reveal-fade-up" style="transition-delay: 60ms;">
+          <!-- 02 AI Video Editing -->
+          <li class="service-row-item reveal-fade-up" style="transition-delay: 50ms;">
             <button type="button" class="service-row-trigger" aria-expanded="false" aria-controls="service-panel-02" id="service-header-02">
               <span class="service-index">02</span>
+              <h3 class="service-title">AI Video Editing</h3>
+              <p class="service-desc">Generative AI video, prompt engineering, commercial AI clips, and synthetic storytelling.</p>
+              <div class="service-badge" aria-hidden="true">
+                <svg class="icon icon-stroke" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg>
+              </div>
+            </button>
+            <div class="service-expand-panel" id="service-panel-02" role="region" aria-labelledby="service-header-02">
+              <div class="service-expand-inner">
+                <div class="service-expand-content">
+                  <span class="service-expand-label">WHAT I DO</span>
+                  <p class="service-expand-text">I produce next-generation video content using leading generative AI video models (Kling, Runway Gen-3, Midjourney, ElevenLabs) combined with professional post-production. My work spans AI commercial clips, product showcases, character motion, voice AI, and high-retention viral reels.</p>
+                  <div class="service-expand-footer">
+                    <div class="service-expand-focus">
+                      <span class="service-focus-label">Focus:</span>
+                      <span class="service-focus-items">Generative AI Video · Product Showcases · Commercial AI Clips · Voice AI & VFX</span>
+                    </div>
+                    <a href="#works" class="service-explore-link service-filter-link" data-filter="ai-video">
+                      <span>View AI video works</span>
+                      <svg class="icon icon-stroke" viewBox="0 0 24 24" style="width:12px; height:12px;"><path d="M7 17 17 7M8 7h9v9"/></svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <!-- 03 Graphic Design -->
+          <li class="service-row-item reveal-fade-up" style="transition-delay: 100ms;">
+            <button type="button" class="service-row-trigger" aria-expanded="false" aria-controls="service-panel-03" id="service-header-03">
+              <span class="service-index">03</span>
               <h3 class="service-title">Graphic Design</h3>
               <p class="service-desc">Brand logos, promotional flyers, posters, carousels, and complete visual identities.</p>
               <div class="service-badge" aria-hidden="true">
                 <svg class="icon icon-stroke" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg>
               </div>
             </button>
-            <div class="service-expand-panel" id="service-panel-02" role="region" aria-labelledby="service-header-02">
+            <div class="service-expand-panel" id="service-panel-03" role="region" aria-labelledby="service-header-03">
               <div class="service-expand-inner">
                 <div class="service-expand-content">
                   <span class="service-expand-label">WHAT I DO</span>
@@ -4372,17 +4400,17 @@
             </div>
           </li>
 
-          <!-- 03 AI Design -->
-          <li class="service-row-item reveal-fade-up" style="transition-delay: 120ms;">
-            <button type="button" class="service-row-trigger" aria-expanded="false" aria-controls="service-panel-03" id="service-header-03">
-              <span class="service-index">03</span>
+          <!-- 04 AI Design -->
+          <li class="service-row-item reveal-fade-up" style="transition-delay: 150ms;">
+            <button type="button" class="service-row-trigger" aria-expanded="false" aria-controls="service-panel-04" id="service-header-04">
+              <span class="service-index">04</span>
               <h3 class="service-title">AI Design</h3>
               <p class="service-desc">Generative AI artwork, hyper-realistic character visuals, and cutting-edge creative assets.</p>
               <div class="service-badge" aria-hidden="true">
                 <svg class="icon icon-stroke" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg>
               </div>
             </button>
-            <div class="service-expand-panel" id="service-panel-03" role="region" aria-labelledby="service-header-03">
+            <div class="service-expand-panel" id="service-panel-04" role="region" aria-labelledby="service-header-04">
               <div class="service-expand-inner">
                 <div class="service-expand-content">
                   <span class="service-expand-label">WHAT I DO</span>
@@ -4402,17 +4430,17 @@
             </div>
           </li>
 
-          <!-- 04 Motion Graphics -->
-          <li class="service-row-item reveal-fade-up" style="transition-delay: 180ms;">
-            <button type="button" class="service-row-trigger" aria-expanded="false" aria-controls="service-panel-04" id="service-header-04">
-              <span class="service-index">04</span>
+          <!-- 05 Motion Graphics -->
+          <li class="service-row-item reveal-fade-up" style="transition-delay: 200ms;">
+            <button type="button" class="service-row-trigger" aria-expanded="false" aria-controls="service-panel-05" id="service-header-05">
+              <span class="service-index">05</span>
               <h3 class="service-title">Motion Graphics</h3>
               <p class="service-desc">Kinetic typography, animated product reels, 2D/3D visual effects, and logo animation.</p>
               <div class="service-badge" aria-hidden="true">
                 <svg class="icon icon-stroke" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg>
               </div>
             </button>
-            <div class="service-expand-panel" id="service-panel-04" role="region" aria-labelledby="service-header-04">
+            <div class="service-expand-panel" id="service-panel-05" role="region" aria-labelledby="service-header-05">
               <div class="service-expand-inner">
                 <div class="service-expand-content">
                   <span class="service-expand-label">WHAT I DO</span>
@@ -4432,17 +4460,17 @@
             </div>
           </li>
 
-          <!-- 05 Advertising -->
-          <li class="service-row-item reveal-fade-up" style="transition-delay: 240ms;">
-            <button type="button" class="service-row-trigger" aria-expanded="false" aria-controls="service-panel-05" id="service-header-05">
-              <span class="service-index">05</span>
+          <!-- 06 Advertising -->
+          <li class="service-row-item reveal-fade-up" style="transition-delay: 250ms;">
+            <button type="button" class="service-row-trigger" aria-expanded="false" aria-controls="service-panel-06" id="service-header-06">
+              <span class="service-index">06</span>
               <h3 class="service-title">Advertising</h3>
               <p class="service-desc">High-conversion Meta & TikTok ad creative variations, product landing ads, and sales funnels.</p>
               <div class="service-badge" aria-hidden="true">
                 <svg class="icon icon-stroke" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg>
               </div>
             </button>
-            <div class="service-expand-panel" id="service-panel-05" role="region" aria-labelledby="service-header-05">
+            <div class="service-expand-panel" id="service-panel-06" role="region" aria-labelledby="service-header-06">
               <div class="service-expand-inner">
                 <div class="service-expand-content">
                   <span class="service-expand-label">WHAT I DO</span>
@@ -4462,17 +4490,17 @@
             </div>
           </li>
 
-          <!-- 06 YouTube -->
+          <!-- 07 YouTube -->
           <li class="service-row-item reveal-fade-up" style="transition-delay: 300ms;">
-            <button type="button" class="service-row-trigger" aria-expanded="false" aria-controls="service-panel-06" id="service-header-06">
-              <span class="service-index">06</span>
+            <button type="button" class="service-row-trigger" aria-expanded="false" aria-controls="service-panel-07" id="service-header-07">
+              <span class="service-index">07</span>
               <h3 class="service-title">YouTube</h3>
               <p class="service-desc">End-to-end channel production, high-CTR thumbnail design, and long-form video editing.</p>
               <div class="service-badge" aria-hidden="true">
                 <svg class="icon icon-stroke" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg>
               </div>
             </button>
-            <div class="service-expand-panel" id="service-panel-06" role="region" aria-labelledby="service-header-06">
+            <div class="service-expand-panel" id="service-panel-07" role="region" aria-labelledby="service-header-07">
               <div class="service-expand-inner">
                 <div class="service-expand-content">
                   <span class="service-expand-label">WHAT I DO</span>
@@ -5263,7 +5291,7 @@
   </div>
 
   <!-- Portfolio Data & Render Script -->
-  <script src="js/portfolio.js?v=4.5"></script>
+  <script src="js/portfolio.js?v=4.6"></script>
 
   <!-- Local Lenis Smooth Scroll Library (Offline & file:// Compatible) -->
   <script src="js/lenis.min.js"></script>
