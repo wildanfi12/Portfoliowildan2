@@ -2474,21 +2474,20 @@ const PROJECTS = [
       'Premiere Pro',
       'After Effects'
     ],
-    embedVideo: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WeAreGoingOnBullrun.mp4',
+    embedVideo: 'assets/lamis-resto/1.png',
     items: [
       {
-        name: 'Lamis Resto — Video Iklan Komersial 1',
-        video: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WeAreGoingOnBullrun.mp4',
+        name: 'Lamis Resto — Visual Promosi 1',
         img: 'assets/lamis-resto/1.png',
-        desc: 'Video iklan komersial kuliner Lamis Resto untuk kampanye promosi digital.'
+        desc: 'Visual promo kuliner Lamis Resto untuk kampanye promosi digital.'
       },
       {
-        name: 'Lamis Resto — Culinary Highlight Reel',
+        name: 'Lamis Resto — Culinary Highlight',
         img: 'assets/lamis-resto/2.png',
         desc: 'Materi visual promo hidangan spesial & culinary branding.'
       },
       {
-        name: 'Lamis Resto — Social Media Campaign Asset',
+        name: 'Lamis Resto — Social Media Asset',
         img: 'assets/lamis-resto/3.png',
         desc: 'Aset visual pendukung kampanye media sosial Lamis Resto.'
       }
