@@ -2741,14 +2741,14 @@ const PROJECTS = [
   },
   {
     id: 'video-editing-andrey-content-creator-ai',
-    title: 'Conten Creator AI Vids',
-    category: 'video',
-    categoryName: 'Video Editing & Motion',
+    title: 'Content Creator AI Vids',
+    category: 'ai-video',
+    categoryName: 'AI Video Editing',
     client: 'Content Creator AI',
     metric: '2 Video Commercial • Bunny Stream',
     thumbnail: 'assets/content-creator-ai/resep.jpg',
-    shortDesc: 'Folder Video Editing Conten Creator AI Vids — Seri Video Commercial & Vlog Edukasi AI via Bunny Stream CDN.',
-    fullDesc: 'Folder koleksi resmi Video Editing untuk Conten Creator AI Vids yang terhubung langsung ke Bunny Stream CDN. Berisi video komersial dan vlog edukasi interaktif hasil prompt engineering, visual storytelling ceria, kinetic typography, dan sound design profesional.',
+    shortDesc: 'Folder AI Video Editing Content Creator AI Vids — Seri Video Commercial & Vlog Edukasi AI via Bunny Stream CDN.',
+    fullDesc: 'Folder koleksi resmi AI Video Editing untuk Content Creator AI Vids yang terhubung langsung ke Bunny Stream CDN. Berisi video komersial dan vlog edukasi interaktif hasil prompt engineering, visual storytelling ceria, kinetic typography, dan sound design profesional.',
     challenge: 'Mengemas konten vlog edukasi dan resep komersial bernuansa ceria dengan pacing dinamis dan visual hook penonton tinggi.',
     solution: 'Integrasi video streaming melalui Bunny Stream CDN berkecepatan tinggi, cut dinamis, musik trending, dan pemutaran HD instan.',
     results: [
@@ -2783,13 +2783,13 @@ const PROJECTS = [
   {
     id: 'video-editing-andrey-fighting-style-ai',
     title: 'Fighting Style AI Vids',
-    category: 'video',
-    categoryName: 'Video Editing & Motion',
+    category: 'ai-video',
+    categoryName: 'AI Video Editing',
     client: 'Action AI Motion',
     metric: '3 Video Commercial • Bunny Stream',
     thumbnail: 'assets/fighting-style/captain.jpg',
-    shortDesc: 'Folder Video Editing Fighting Style AI Vids — 3 Aset Video Aksi Generative AI & Sound Design via Bunny Stream CDN.',
-    fullDesc: 'Folder koleksi resmi Video Editing untuk Fighting Style AI Vids yang terhubung langsung ke Bunny Stream CDN. Menampilkan 3 seri video aksi pertarungan jarak dekat (hand-to-hand combat) berintensitas tinggi hasil generative AI visual (Kling & VEO) dengan sound design dinamis dan transisi ritmis.',
+    shortDesc: 'Folder AI Video Editing Fighting Style AI Vids — 3 Aset Video Aksi Generative AI & Sound Design via Bunny Stream CDN.',
+    fullDesc: 'Folder koleksi resmi AI Video Editing untuk Fighting Style AI Vids yang terhubung langsung ke Bunny Stream CDN. Menampilkan 3 seri video aksi pertarungan jarak dekat (hand-to-hand combat) berintensitas tinggi hasil generative AI visual (Kling & VEO) dengan sound design dinamis dan transisi ritmis.',
     challenge: 'Menyajikan adegan koreografi laga dan pertarungan cepat bertenaga tinggi dengan detail gerakan fluid dan sinematik.',
     solution: 'Integrasi video streaming melalui Bunny Stream CDN berkecepatan tinggi, penyelarasan efek suara hantaman (impact SFX), dan pemutaran HD instan.',
     results: [
@@ -2830,13 +2830,13 @@ const PROJECTS = [
   {
     id: 'video-editing-andrey-food-vlog-ai',
     title: 'Food Vlog AI Video',
-    category: 'video',
-    categoryName: 'Video Editing & Motion',
+    category: 'ai-video',
+    categoryName: 'AI Video Editing',
     client: 'Culinary AI',
     metric: '6 Video Commercial • Bunny Stream',
     thumbnail: 'assets/food-vlog-ai/1.jpg',
-    shortDesc: 'Folder Video Editing Food Vlog AI Video — 6 Aset Video Kuliner Sinematik Generative AI via Bunny Stream CDN.',
-    fullDesc: 'Folder koleksi resmi Video Editing untuk Food Vlog AI Video yang terhubung langsung ke Bunny Stream CDN. Menampilkan 6 seri video commercial & aesthetic food vlog berbasis generative AI visual dengan motion ritmis, appetizing color grading, dan sound design dinamis.',
+    shortDesc: 'Folder AI Video Editing Food Vlog AI Video — 6 Aset Video Kuliner Sinematik Generative AI via Bunny Stream CDN.',
+    fullDesc: 'Folder koleksi resmi AI Video Editing untuk Food Vlog AI Video yang terhubung langsung ke Bunny Stream CDN. Menampilkan 6 seri video commercial & aesthetic food vlog berbasis generative AI visual dengan motion ritmis, appetizing color grading, dan sound design dinamis.',
     challenge: 'Menyajikan visual presentasi kuliner generative AI yang menggugah selera dengan tempo editing cepat dan kualitas visual tinggi.',
     solution: 'Integrasi video streaming melalui Bunny Stream CDN berkecepatan tinggi, optimasi visual presentasi makanan lezat, dan pemutaran responsif.',
     results: [
@@ -4754,6 +4754,10 @@ function initPortfolio() {
     if (/^agak laen/i.test(s)) s = 'Parodi Agak Laen';
     if (/^bisnis usai ngantor/i.test(s)) s = 'Bisnis Usai Ngantor';
     if (/^kling hand to hand/i.test(s)) s = 'Kling Hand to Hand';
+    if (/captain america fight/i.test(s)) s = 'Captain America Fight';
+    if (/evaluasi prompt/i.test(s)) s = 'Vlog Evaluasi Prompt AI';
+    if (/resep vlog ala sunda/i.test(s)) s = 'Resep Vlog Ala Sunda';
+    if (/veo hand to hand/i.test(s)) s = 'VEO Hand to Hand';
 
     if (/^\d+$/.test(s) || s.length <= 2) {
       if (item.desc) {
@@ -4769,6 +4773,7 @@ function initPortfolio() {
         if (/mixue/i.test(d)) s = ('Mixue AI Vlogger ' + num).trim();
         else if (/pond/i.test(d)) s = ("Pond's Acne Solution " + num).trim();
         else if (/cari tofu/i.test(d) || /tofu/i.test(d)) s = ('Cari Tofu ' + num).trim();
+        else if (/food vlog/i.test(d) || /food-vlog/i.test(d)) s = ('Food Vlog AI ' + num).trim();
         else {
           s = d.split('.')[0].replace(/^(?:Video|Koleksi|Animasi)\s+(?:commercial|reels|promosi|edukasi|dokumentasi)?\s*/i, '').trim();
         }
