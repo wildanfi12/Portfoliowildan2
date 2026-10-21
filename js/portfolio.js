@@ -2261,8 +2261,8 @@ const PROJECTS = [
   {
     id: 'video-editing-coca-cola',
     title: 'Coca-Cola',
-    category: 'video',
-    categoryName: 'Video Editing & Motion',
+    category: 'ai-video',
+    categoryName: 'AI Video Editing',
     client: 'Coca-Cola',
     metric: '7 Video Commercial • Bunny Stream',
     thumbnail: 'assets/coca-cola/cover.jpg',
@@ -2362,8 +2362,8 @@ const PROJECTS = [
   {
     id: 'video-editing-andrey-ai-video-bootcamp',
     title: 'AI Video Bootcamp',
-    category: ['video', 'ai-video'],
-    categoryName: 'Video Editing',
+    category: 'ai-video',
+    categoryName: 'AI Video Editing',
     client: 'AI Video Bootcamp',
     metric: '7 Video Showcase • Bunny Stream',
     thumbnail: 'assets/ai-video-bootcamp/cover.jpg',
@@ -2429,8 +2429,8 @@ const PROJECTS = [
   {
     id: 'video-editing-andrey-andreydigital-education-reels',
     title: 'Education Reels',
-    category: 'video',
-    categoryName: 'Video Editing & Motion',
+    category: 'ai-video',
+    categoryName: 'AI Video Editing',
     client: 'andreydigital.id',
     metric: '6 Video Showcase • Bunny Stream',
     thumbnail: 'assets/advertising-campaigns/andreydigital-viewers-to-buyers/1.png',
@@ -2588,7 +2588,7 @@ const PROJECTS = [
   {
     id: 'video-editing-andrey-content-creator-ai',
     title: 'Conten Creator AI Vids',
-    category: ['video', 'ai-video'],
+    category: 'video',
     categoryName: 'Video Editing & Motion',
     client: 'Content Creator AI',
     metric: '2 Video Commercial • Bunny Stream',
@@ -2623,76 +2623,9 @@ const PROJECTS = [
   },
 
   {
-    id: 'video-editing-andrey-diary-karyawan-reels',
-    title: 'Diary Karyawan Reels',
-    category: 'video',
-    categoryName: 'Video Editing & Motion',
-    client: 'Diary Karyawan',
-    metric: '7 Video Commercial • Bunny Stream',
-    thumbnail: 'assets/diary-karyawan/1.jpg',
-    shortDesc: 'Folder Video Editing Diary Karyawan Reels — 7 Koleksi Video Commercial, Shorts/Reels & Sound Design via Bunny Stream CDN.',
-    fullDesc: 'Folder koleksi resmi Video Editing untuk Diary Karyawan Reels yang terhubung langsung ke Bunny Stream CDN. Berisi 7 seri video komersial dengan fast-cut editing, kinetic titles, color grading, dan sound design profesional.',
-    challenge: 'Mengemas visual cerita & momen Diary Karyawan menjadi video promosi berenergi tinggi dengan retensi penonton maksimal.',
-    solution: 'Editing video ritmis dengan potongan lagu trending, animasi teks kinetik, dan integrasi streaming Bunny Stream CDN kualitas HD.',
-    results: [
-      '7 Aset Video Editing Resmi Terkoneksi ke Bunny Stream CDN (Library ID: 756896)',
-      'Pemutaran Cepat Kualitas HD Bebas Buffering & Bebas Iklan',
-      'Format Siap untuk Instagram Reels, TikTok, & YouTube Shorts'
-    ],
-    tools: ['Premiere Pro', 'After Effects', 'CapCut Pro', 'Bunny Stream'],
-    bunnyVideoId: 'd5e95c3d-a52d-4a55-969c-50b8304c732d',
-    bunnyLibraryId: '756896',
-    embedVideo: 'https://iframe.mediadelivery.net/embed/756896/d5e95c3d-a52d-4a55-969c-50b8304c732d',
-    items: [
-      {
-        name: '1.mp4',
-        img: 'assets/diary-karyawan/1.jpg',
-        video: 'https://iframe.mediadelivery.net/embed/756896/d5e95c3d-a52d-4a55-969c-50b8304c732d',
-        desc: '1.mp4 — Video komersial & editing ritmis Diary Karyawan seri 1.'
-      },
-      {
-        name: '2.mp4',
-        img: 'assets/diary-karyawan/2.jpg',
-        video: 'https://iframe.mediadelivery.net/embed/756896/9c6dc604-1b61-4565-b326-cc4f10c861d4',
-        desc: '2.mp4 — Video komersial & editing ritmis Diary Karyawan seri 2.'
-      },
-      {
-        name: '3.mp4',
-        img: 'assets/diary-karyawan/3.jpg',
-        video: 'https://iframe.mediadelivery.net/embed/756896/d525e6e1-4e92-469a-acec-c6e6e2647308',
-        desc: '3.mp4 — Video komersial & editing ritmis Diary Karyawan seri 3.'
-      },
-      {
-        name: '5.mp4',
-        img: 'assets/diary-karyawan/5.jpg',
-        video: 'https://iframe.mediadelivery.net/embed/756896/25ca96a6-9e5b-476f-9e86-d8c4367d7e71',
-        desc: '5.mp4 — Video komersial & editing ritmis Diary Karyawan seri 5.'
-      },
-      {
-        name: '6.mp4',
-        img: 'assets/diary-karyawan/6.jpg',
-        video: 'https://iframe.mediadelivery.net/embed/756896/bacec36d-1173-4b03-bcf3-daa701aa64f1',
-        desc: '6.mp4 — Video komersial & editing ritmis Diary Karyawan seri 6.'
-      },
-      {
-        name: '7.mp4',
-        img: 'assets/diary-karyawan/7.jpg',
-        video: 'https://iframe.mediadelivery.net/embed/756896/c2aa104f-cef0-4eda-b206-5ac2a46b0f1b',
-        desc: '7.mp4 — Video komersial & editing ritmis Diary Karyawan seri 7.'
-      },
-      {
-        name: '8.mp4',
-        img: 'assets/diary-karyawan/8.jpg',
-        video: 'https://iframe.mediadelivery.net/embed/756896/65edbb13-006e-404e-9c23-d88decb0507e',
-        desc: '8.mp4 — Video komersial & editing ritmis Diary Karyawan seri 8.'
-      }
-    ]
-  },
-
-  {
     id: 'video-editing-andrey-fighting-style-ai',
     title: 'Fighting Style AI Vids',
-    category: ['video', 'ai-video'],
+    category: 'video',
     categoryName: 'Video Editing & Motion',
     client: 'Action AI Motion',
     metric: '3 Video Commercial • Bunny Stream',
@@ -2735,7 +2668,7 @@ const PROJECTS = [
   {
     id: 'video-editing-andrey-food-vlog-ai',
     title: 'Food Vlog AI Video',
-    category: ['video', 'ai-video'],
+    category: 'video',
     categoryName: 'Video Editing & Motion',
     client: 'Culinary AI',
     metric: '6 Video Commercial • Bunny Stream',
@@ -2795,103 +2728,6 @@ const PROJECTS = [
 
 
   {
-    id: 'video-editing-andrey-kucingkerja-reels',
-    title: 'Kucingkerja_id AI Reels',
-    category: 'video',
-    categoryName: 'Video Editing & Motion',
-    client: 'Kucingkerja.id',
-    metric: '12 Video Commercial • Bunny Stream',
-    thumbnail: 'assets/kucingkerja-reels/3.jpg',
-    shortDesc: 'Folder Video Editing Kucingkerja_id AI Reels — 12 Aset Video Karakter AI Kucing & Motion Graphics via Bunny Stream CDN.',
-    fullDesc: 'Folder koleksi resmi Video Editing untuk Kucingkerja_id AI Reels yang terhubung langsung ke Bunny Stream CDN. Menampilkan 12 seri video komedi & relatable kehidupan kerja bertema karakter kucing AI dengan kinetic typography, sound effects lucu, dan storytelling kreatif.',
-    challenge: 'Mengemas konten visual cerita karakter kucing bertema dunia kerja dengan transisi dinamis dan retensi penonton tinggi.',
-    solution: 'Integrasi video streaming melalui Bunny Stream CDN berkecepatan tinggi, optimasi subtitle kinetik, dan pacing editing yang menghibur.',
-    results: [
-      '12 Video Reels Resmi Terkoneksi ke Bunny Stream CDN (Library ID: 756896)',
-      'Streaming Cepat Kualitas HD Bebas Buffering & Bebas Iklan',
-      'Format Optimal untuk Instagram Reels, TikTok & YouTube Shorts'
-    ],
-    tools: ['Premiere Pro', 'After Effects', 'CapCut Pro', 'DaVinci Resolve', 'Bunny Stream'],
-    bunnyVideoId: '88937fa4-b0fe-470e-9a9d-9fbd7f18212c',
-    bunnyLibraryId: '756896',
-    embedVideo: 'https://iframe.mediadelivery.net/embed/756896/88937fa4-b0fe-470e-9a9d-9fbd7f18212c',
-    items: [
-      {
-        name: '3.mp4',
-        img: 'assets/kucingkerja-reels/3.jpg',
-        video: 'https://iframe.mediadelivery.net/embed/756896/88937fa4-b0fe-470e-9a9d-9fbd7f18212c',
-        desc: '3.mp4 — Video kreatif Kucingkerja_id AI Reels seri 3.'
-      },
-      {
-        name: '5.mp4',
-        img: 'assets/kucingkerja-reels/5.jpg',
-        video: 'https://iframe.mediadelivery.net/embed/756896/8c332b4a-4c90-43f7-8c8b-32ce7651189d',
-        desc: '5.mp4 — Video kreatif Kucingkerja_id AI Reels seri 5.'
-      },
-      {
-        name: '6.mp4',
-        img: 'assets/kucingkerja-reels/6.jpg',
-        video: 'https://iframe.mediadelivery.net/embed/756896/509438e5-97d3-4cea-b1f0-d13de93a99d8',
-        desc: '6.mp4 — Video kreatif Kucingkerja_id AI Reels seri 6.'
-      },
-      {
-        name: '7.mp4',
-        img: 'assets/kucingkerja-reels/7.jpg',
-        video: 'https://iframe.mediadelivery.net/embed/756896/cae5c35f-567d-43e1-b1d8-3dc368822ed3',
-        desc: '7.mp4 — Video kreatif Kucingkerja_id AI Reels seri 7.'
-      },
-      {
-        name: '8.mp4',
-        img: 'assets/kucingkerja-reels/8.jpg',
-        video: 'https://iframe.mediadelivery.net/embed/756896/470942a6-9836-4585-a8b9-e9b7a8a8be4b',
-        desc: '8.mp4 — Video kreatif Kucingkerja_id AI Reels seri 8.'
-      },
-      {
-        name: '9.mp4',
-        img: 'assets/kucingkerja-reels/9.jpg',
-        video: 'https://iframe.mediadelivery.net/embed/756896/6fd89579-ffe6-44b4-89eb-b87575a0d3de',
-        desc: '9.mp4 — Video kreatif Kucingkerja_id AI Reels seri 9.'
-      },
-      {
-        name: '10.mp4',
-        img: 'assets/kucingkerja-reels/10.jpg',
-        video: 'https://iframe.mediadelivery.net/embed/756896/249d8985-b1c3-48e3-9af6-76d35d1c22c0',
-        desc: '10.mp4 — Video kreatif Kucingkerja_id AI Reels seri 10.'
-      },
-      {
-        name: '11.mp4',
-        img: 'assets/kucingkerja-reels/11.jpg',
-        video: 'https://iframe.mediadelivery.net/embed/756896/7c2c6df9-6728-4ae6-bdf1-4cf308d2b9ae',
-        desc: '11.mp4 — Video kreatif Kucingkerja_id AI Reels seri 11.'
-      },
-      {
-        name: '12.mp4',
-        img: 'assets/kucingkerja-reels/12.jpg',
-        video: 'https://iframe.mediadelivery.net/embed/756896/c57e7a1b-ded0-4245-89aa-03e7af0848d9',
-        desc: '12.mp4 — Video kreatif Kucingkerja_id AI Reels seri 12.'
-      },
-      {
-        name: '13.mp4',
-        img: 'assets/kucingkerja-reels/13.jpg',
-        video: 'https://iframe.mediadelivery.net/embed/756896/6fc43602-d93f-49a4-9699-211e161fe936',
-        desc: '13.mp4 — Video kreatif Kucingkerja_id AI Reels seri 13.'
-      },
-      {
-        name: '14.mp4',
-        img: 'assets/kucingkerja-reels/14.jpg',
-        video: 'https://iframe.mediadelivery.net/embed/756896/56b88252-733a-4b56-8663-f3be4ec716e1',
-        desc: '14.mp4 — Video kreatif Kucingkerja_id AI Reels seri 14.'
-      },
-      {
-        name: '15.mp4',
-        img: 'assets/kucingkerja-reels/15.jpg',
-        video: 'https://iframe.mediadelivery.net/embed/756896/375bde1b-8d0b-42c7-902c-bb6885745e5c',
-        desc: '15.mp4 — Video kreatif Kucingkerja_id AI Reels seri 15.'
-      }
-    ]
-  },
-
-  {
     id: 'video-editing-andrey-lamis-resto-reels',
     title: 'Lamis Resto Promotional Reels',
     category: 'video',
@@ -2949,8 +2785,8 @@ const PROJECTS = [
   {
     id: 'video-editing-andrey-mixue-vlogger-ai',
     title: 'Mixue Vlogger AI Vids',
-    category: ['video', 'ai-video'],
-    categoryName: 'Video Editing & Motion',
+    category: 'ai-video',
+    categoryName: 'AI Video Editing',
     client: 'Mixue',
     metric: '6 Video Commercial • Bunny Stream',
     thumbnail: 'assets/mixue-vlogger-ai/1.jpg',
@@ -3010,8 +2846,8 @@ const PROJECTS = [
   {
     id: 'video-editing-andrey-ponds-acne-solution',
     title: 'Ponds Acne Solution AI Clip',
-    category: 'video',
-    categoryName: 'Video Editing & Motion',
+    category: 'ai-video',
+    categoryName: 'AI Video Editing',
     client: 'Pond’s',
     metric: '11 Video Commercial • Bunny Stream',
     thumbnail: 'assets/ponds-acne-solution/0.jpg',
