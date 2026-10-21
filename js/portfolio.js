@@ -4,7 +4,6 @@
    ========================================================================== */
 
 const PROJECTS = [
-  // --- GRAPHIC DESIGN FOLDER (PER-BRAND CARDS) ---
   {
     id: 'graphic-design-brand-logos',
     title: 'Brand Logos & Identity',
@@ -24,7 +23,11 @@ const PROJECTS = [
       '10 Aset Desain Logo Resmi Terintegrasi di Running Marquee & Portfolio',
       'Digunakan untuk identitas visual utama, media branding, dan e-commerce klien'
     ],
-    tools: ['Illustrator', 'Photoshop', 'CorelDRAW'],
+    tools: [
+      'Illustrator',
+      'Photoshop',
+      'CorelDRAW'
+    ],
     items: [
       {
         name: 'Brand Logo 1 — FKDB 1 Dekade (10th Anniversary)',
@@ -88,7 +91,7 @@ const PROJECTS = [
       }
     ]
   },
-    {
+  {
     id: 'graphic-design-fkdb',
     title: 'FKDB',
     category: 'design',
@@ -105,7 +108,11 @@ const PROJECTS = [
       'Digunakan dalam Kampanye Publikasi Nasional FKDB',
       'Tingkat Interaksi & Simpan Media Sosial Meningkat'
     ],
-    tools: ['Photoshop', 'Illustrator', 'Canva'],
+    tools: [
+      'Photoshop',
+      'Illustrator',
+      'Canva'
+    ],
     embedVideo: 'assets/fkdb-graphic-design/33.png',
     items: [
       {
@@ -413,10 +420,8 @@ const PROJECTS = [
         img: 'assets/fkdb-graphic-design/62.png',
         desc: 'Desain grafis publikasi resmi FKDB: Twibbon Idul Fitri FKDB 2025.'
       }
-
     ]
   },
-
   {
     id: 'graphic-design-eastern-depo',
     title: 'Eastern Depo',
@@ -433,7 +438,11 @@ const PROJECTS = [
       '6 Aset Desain Grafis Brosur & Poster Resmi Terintegrasi di Folder Eastern Depo',
       'Digunakan untuk media promosi, cetak brosur & publikasi media sosial CV. Eastern Depo'
     ],
-    tools: ['Photoshop', 'Illustrator', 'CorelDRAW'],
+    tools: [
+      'Photoshop',
+      'Illustrator',
+      'CorelDRAW'
+    ],
     embedVideo: 'assets/eastern-depo/1.png',
     items: [
       {
@@ -468,7 +477,6 @@ const PROJECTS = [
       }
     ]
   },
-
   {
     id: 'graphic-design-elvorindo',
     title: 'Elvorindo',
@@ -485,7 +493,11 @@ const PROJECTS = [
       '11 Aset Desain Grafis Branding & Kemasan Resmi Terintegrasi di Folder Elvorindo',
       'Digunakan untuk pencetakan bando produk, stiker kemasan unboxing & promosi media sosial'
     ],
-    tools: ['Photoshop', 'Illustrator', 'Canva'],
+    tools: [
+      'Photoshop',
+      'Illustrator',
+      'Canva'
+    ],
     embedVideo: 'assets/elvorindo-graphic-design/1.png',
     items: [
       {
@@ -545,7 +557,6 @@ const PROJECTS = [
       }
     ]
   },
-
   {
     id: 'graphic-design-mind-mastery',
     title: 'Mind Mastery Academy',
@@ -562,7 +573,11 @@ const PROJECTS = [
       '4 Aset Desain Cover eBook Resmi Terintegrasi di Folder Mind Mastery Academy',
       'Meningkatkan angka unduh & penjualan modul digital'
     ],
-    tools: ['Photoshop', 'Illustrator', 'Canva'],
+    tools: [
+      'Photoshop',
+      'Illustrator',
+      'Canva'
+    ],
     embedVideo: 'assets/mind-mastery/1.png',
     items: [
       {
@@ -587,7 +602,6 @@ const PROJECTS = [
       }
     ]
   },
-
   {
     id: 'graphic-design-howell',
     title: 'Howell Niaga Indonesia',
@@ -604,7 +618,11 @@ const PROJECTS = [
       '9 Aset Desain Resmi Terintegrasi di Folder Howell Niaga Indonesia',
       'Digunakan untuk komunikasi pemasaran B2B & pameran dagang'
     ],
-    tools: ['Photoshop', 'Illustrator', 'CorelDRAW'],
+    tools: [
+      'Photoshop',
+      'Illustrator',
+      'CorelDRAW'
+    ],
     embedVideo: 'assets/howell/12.png',
     items: [
       {
@@ -654,7 +672,6 @@ const PROJECTS = [
       }
     ]
   },
-
   {
     id: 'graphic-design-lamis-resto',
     title: 'Lamis Resto',
@@ -671,7 +688,10 @@ const PROJECTS = [
       '3 Aset Desain Resmi Terintegrasi di Folder Lamis Resto',
       'Digunakan untuk promosi restoran & media sosial'
     ],
-    tools: ['Photoshop', 'Illustrator'],
+    tools: [
+      'Photoshop',
+      'Illustrator'
+    ],
     embedVideo: 'assets/lamis-resto/1.png',
     items: [
       {
@@ -691,7 +711,6 @@ const PROJECTS = [
       }
     ]
   },
-
   {
     id: 'graphic-design-andrey-buddhis-indonesia',
     title: 'Buddhis Indonesia — AI YouTube Thumbnail Design',
@@ -708,7 +727,12 @@ const PROJECTS = [
       '5 Aset Desain Grafis Resmi Terintegrasi di Folder Buddhis Indonesia',
       'Digunakan untuk media promosi & publikasi digital'
     ],
-    tools: ['Photoshop', 'Illustrator', 'Canva', 'Figma'],
+    tools: [
+      'Photoshop',
+      'Illustrator',
+      'Canva',
+      'Figma'
+    ],
     embedVideo: 'assets/andrey-graphic-design/buddhis-indonesia/1.png',
     items: [
       {
@@ -738,7 +762,6 @@ const PROJECTS = [
       }
     ]
   },
-
   {
     id: 'graphic-design-andrey-canva-course',
     title: 'andreydigital.id — Canva Course Slide Presentation',
@@ -755,7 +778,12 @@ const PROJECTS = [
       '31 Aset Desain Grafis Resmi Terintegrasi di Folder andreydigital.id',
       'Digunakan untuk media promosi & publikasi digital'
     ],
-    tools: ['Photoshop', 'Illustrator', 'Canva', 'Figma'],
+    tools: [
+      'Photoshop',
+      'Illustrator',
+      'Canva',
+      'Figma'
+    ],
     embedVideo: 'assets/andrey-graphic-design/canva-course/0.png',
     items: [
       {
@@ -915,7 +943,6 @@ const PROJECTS = [
       }
     ]
   },
-
   {
     id: 'graphic-design-andrey-juice-united',
     title: 'Juice United — Product Highlight & Promo Series',
@@ -932,7 +959,12 @@ const PROJECTS = [
       '12 Aset Desain Grafis Resmi Terintegrasi di Folder Juice United',
       'Digunakan untuk media promosi & publikasi digital'
     ],
-    tools: ['Photoshop', 'Illustrator', 'Canva', 'Figma'],
+    tools: [
+      'Photoshop',
+      'Illustrator',
+      'Canva',
+      'Figma'
+    ],
     embedVideo: 'assets/andrey-graphic-design/juice-united/1 Juni.png',
     items: [
       {
@@ -997,7 +1029,6 @@ const PROJECTS = [
       }
     ]
   },
-
   {
     id: 'graphic-design-andrey-kalapa-klopo',
     title: 'Kalapa Klopo — Social Media & Promo Visuals',
@@ -1014,7 +1045,12 @@ const PROJECTS = [
       '19 Aset Desain Grafis Resmi Terintegrasi di Folder Kalapa Klopo',
       'Digunakan untuk media promosi & publikasi digital'
     ],
-    tools: ['Photoshop', 'Illustrator', 'Canva', 'Figma'],
+    tools: [
+      'Photoshop',
+      'Illustrator',
+      'Canva',
+      'Figma'
+    ],
     embedVideo: 'assets/kalapa-klopo/1.png',
     items: [
       {
@@ -1103,14 +1139,12 @@ const PROJECTS = [
         desc: 'Desain visual art & materi promosi Kalapa Klopo edisi 5 Juni.'
       },
       {
-        name: 'Kalapa Klopo — Promo Visual 9 Juli',
         name: 'Kalapa Klopo — Promo Visual 9 Juni',
         img: 'assets/kalapa-klopo/19.png',
         desc: 'Desain visual art & materi promosi Kalapa Klopo edisi 9 Juni.'
       }
     ]
   },
-
   {
     id: 'graphic-design-andrey-kalceri-cafe',
     title: 'Kalceri Cafe — Menu & Promotional Visuals',
@@ -1127,7 +1161,12 @@ const PROJECTS = [
       '16 Aset Desain Grafis Resmi Terintegrasi di Folder Kalceri Cafe',
       'Digunakan untuk media promosi, daftar menu & publikasi media sosial'
     ],
-    tools: ['Photoshop', 'Illustrator', 'Canva', 'Figma'],
+    tools: [
+      'Photoshop',
+      'Illustrator',
+      'Canva',
+      'Figma'
+    ],
     embedVideo: 'assets/kalceri-cafe/1.png',
     items: [
       {
@@ -1212,7 +1251,6 @@ const PROJECTS = [
       }
     ]
   },
-
   {
     id: 'graphic-design-andrey-lamis-resto',
     title: 'Lamis Resto — Image Suite',
@@ -1229,7 +1267,12 @@ const PROJECTS = [
       '9 Aset Desain Grafis Resmi Terintegrasi di Folder Lamis Resto',
       'Digunakan untuk media promosi & publikasi digital'
     ],
-    tools: ['Photoshop', 'Illustrator', 'Canva', 'Figma'],
+    tools: [
+      'Photoshop',
+      'Illustrator',
+      'Canva',
+      'Figma'
+    ],
     embedVideo: 'assets/andrey-graphic-design/lamis-resto/1.png',
     items: [
       {
@@ -1279,7 +1322,6 @@ const PROJECTS = [
       }
     ]
   },
-
   {
     id: 'graphic-design-andrey-mind-mastery-tiktok',
     title: 'Mind Mastery Academy — TikTok & Social Carousel',
@@ -1296,7 +1338,12 @@ const PROJECTS = [
       '14 Aset Desain Grafis Resmi Terintegrasi di Folder Mind Mastery Academy',
       'Digunakan untuk media promosi & publikasi digital'
     ],
-    tools: ['Photoshop', 'Illustrator', 'Canva', 'Figma'],
+    tools: [
+      'Photoshop',
+      'Illustrator',
+      'Canva',
+      'Figma'
+    ],
     embedVideo: 'assets/andrey-graphic-design/mind-mastery-tiktok/154.png',
     items: [
       {
@@ -1371,7 +1418,6 @@ const PROJECTS = [
       }
     ]
   },
-
   {
     id: 'graphic-design-andrey-mirini-skincare',
     title: 'Mirini Skincare — Product Promotion & Feeds',
@@ -1388,7 +1434,12 @@ const PROJECTS = [
       '2 Aset Desain Grafis Resmi Terintegrasi di Folder Mirini Skincare',
       'Digunakan untuk media promosi & publikasi digital'
     ],
-    tools: ['Photoshop', 'Illustrator', 'Canva', 'Figma'],
+    tools: [
+      'Photoshop',
+      'Illustrator',
+      'Canva',
+      'Figma'
+    ],
     embedVideo: 'assets/andrey-graphic-design/mirini-skincare/5.png',
     items: [
       {
@@ -1403,7 +1454,6 @@ const PROJECTS = [
       }
     ]
   },
-
   {
     id: 'graphic-design-andrey-onlymenjewellers',
     title: 'Onlymenjewellers — Luxury Product Suite & Ads',
@@ -1420,7 +1470,12 @@ const PROJECTS = [
       '16 Aset Desain Grafis Resmi Terintegrasi di Folder Onlymenjewellers',
       'Digunakan untuk media promosi & publikasi digital'
     ],
-    tools: ['Photoshop', 'Illustrator', 'Canva', 'Figma'],
+    tools: [
+      'Photoshop',
+      'Illustrator',
+      'Canva',
+      'Figma'
+    ],
     embedVideo: 'assets/andrey-graphic-design/onlymenjewellers/23.png',
     items: [
       {
@@ -1505,7 +1560,6 @@ const PROJECTS = [
       }
     ]
   },
-
   {
     id: 'graphic-design-andrey-orsentry',
     title: 'Orsentry — Personal Care Promotion & Branding',
@@ -1522,7 +1576,12 @@ const PROJECTS = [
       '3 Aset Desain Grafis Resmi Terintegrasi di Folder Orsentry Personal Care',
       'Digunakan untuk media promosi & publikasi digital'
     ],
-    tools: ['Photoshop', 'Illustrator', 'Canva', 'Figma'],
+    tools: [
+      'Photoshop',
+      'Illustrator',
+      'Canva',
+      'Figma'
+    ],
     embedVideo: 'assets/andrey-graphic-design/orsentry/3.png',
     items: [
       {
@@ -1542,7 +1601,6 @@ const PROJECTS = [
       }
     ]
   },
-
   {
     id: 'graphic-design-andrey-rocket-academy',
     title: 'Rocket Digital Academy — Educational Content',
@@ -1559,7 +1617,12 @@ const PROJECTS = [
       '11 Aset Desain Grafis Resmi Terintegrasi di Folder Rocket Digital Academy',
       'Digunakan untuk media promosi & publikasi digital'
     ],
-    tools: ['Photoshop', 'Illustrator', 'Canva', 'Figma'],
+    tools: [
+      'Photoshop',
+      'Illustrator',
+      'Canva',
+      'Figma'
+    ],
     embedVideo: 'assets/andrey-graphic-design/rocket-academy/1.1.png',
     items: [
       {
@@ -1619,7 +1682,6 @@ const PROJECTS = [
       }
     ]
   },
-
   {
     id: 'graphic-design-andrey-saren-indah-bali',
     title: 'Saren Indah Bali — Resort & Travel Promotion',
@@ -1636,7 +1698,12 @@ const PROJECTS = [
       '7 Aset Desain Grafis Resmi Terintegrasi di Folder Saren Indah Bali',
       'Digunakan untuk media promosi & publikasi digital'
     ],
-    tools: ['Photoshop', 'Illustrator', 'Canva', 'Figma'],
+    tools: [
+      'Photoshop',
+      'Illustrator',
+      'Canva',
+      'Figma'
+    ],
     embedVideo: 'assets/andrey-graphic-design/saren-indah-bali/2.png',
     items: [
       {
@@ -1676,7 +1743,6 @@ const PROJECTS = [
       }
     ]
   },
-
   {
     id: 'graphic-design-andrey-the-body-shop',
     title: 'The Body Shop — Promotional Campaign Poster',
@@ -1693,7 +1759,12 @@ const PROJECTS = [
       '1 Aset Desain Grafis Resmi Terintegrasi di Folder The Body Shop',
       'Digunakan untuk media promosi & publikasi digital'
     ],
-    tools: ['Photoshop', 'Illustrator', 'Canva', 'Figma'],
+    tools: [
+      'Photoshop',
+      'Illustrator',
+      'Canva',
+      'Figma'
+    ],
     embedVideo: 'assets/andrey-graphic-design/the-body-shop/2.png',
     items: [
       {
@@ -1703,7 +1774,6 @@ const PROJECTS = [
       }
     ]
   },
-
   {
     id: 'graphic-design-andrey-uob-bank',
     title: 'UOB Bank — Instagram Feeds & Banking Carousel',
@@ -1720,7 +1790,12 @@ const PROJECTS = [
       '7 Aset Desain Grafis Resmi Terintegrasi di Folder UOB Bank',
       'Digunakan untuk media promosi & publikasi digital'
     ],
-    tools: ['Photoshop', 'Illustrator', 'Canva', 'Figma'],
+    tools: [
+      'Photoshop',
+      'Illustrator',
+      'Canva',
+      'Figma'
+    ],
     embedVideo: 'assets/andrey-graphic-design/uob-bank/1.png',
     items: [
       {
@@ -1760,7 +1835,6 @@ const PROJECTS = [
       }
     ]
   },
-
   {
     id: 'video-editing-fkdb',
     title: 'FKDB',
@@ -1778,7 +1852,12 @@ const PROJECTS = [
       'Streaming Cepat Kualitas HD Bebas Buffering & Bebas Iklan',
       'Format Optimal untuk Publikasi Media Sosial, Dokumentasi Korporat & Arsip Resmi'
     ],
-    tools: ['Premiere Pro', 'After Effects', 'CapCut Pro', 'Bunny Stream'],
+    tools: [
+      'Premiere Pro',
+      'After Effects',
+      'CapCut Pro',
+      'Bunny Stream'
+    ],
     bunnyVideoId: 'edaa2a09-729e-4523-987e-395b5f2e42c0',
     bunnyLibraryId: '756896',
     embedVideo: 'https://iframe.mediadelivery.net/embed/756896/edaa2a09-729e-4523-987e-395b5f2e42c0',
@@ -1845,17 +1924,16 @@ const PROJECTS = [
       }
     ]
   },
-
   {
     id: 'video-editing-howell',
     title: 'Howell',
     category: 'video',
     categoryName: 'Video Editing & Motion',
     client: 'PT. Howell Niaga Indonesia',
-    metric: '22 Video Commercial & Product Showcase • Bunny Stream',
-    thumbnail: 'assets/howell-video/howell_1.jpg',
-    shortDesc: 'Folder Video Editing Howell — 22 Video Commercial, Product Showcase, Kunjungan Pabrik, Konten Komedi Kantor & Edukasi Kabel via Bunny Stream CDN.',
-    fullDesc: 'Folder koleksi resmi Video Editing untuk Howell (PT. Howell Niaga Indonesia) yang terhubung langsung ke Bunny Stream CDN. Di dalamnya berisi 22 aset video commercial & sosial media meliputi Product Showcase Adapter HDMI 8K, Adaptor ADP024, Kabel LAN CAT6, Charger 20W, Konten Komedi Kantor (Gen-Z Pulang Kerja, Ghibah, Lupa Absen, Kerja Jaman Batu), Kunjungan Pabrik Howell, serta Video Edukasi Perbedaan USB & HDMI.',
+    metric: '14 Video Commercial & Sketsa Komedi • Bunny Stream',
+    thumbnail: 'assets/howell-video/howell_3.jpg',
+    shortDesc: 'Folder Video Editing Howell — 14 Video Konten Komedi Kantor, Kunjungan Pabrik & Product Showcase via Bunny Stream CDN.',
+    fullDesc: 'Folder koleksi resmi Video Editing untuk Howell (PT. Howell Niaga Indonesia) yang terhubung langsung ke Bunny Stream CDN. Di dalamnya berisi 14 aset video commercial & sosial media meliputi Kabel LAN CAT6, Charger 20W, Konten Komedi Kantor (Gen-Z Pulang Kerja, Ghibah, Lupa Absen, Kerja Jaman Batu), serta Kunjungan Pabrik Howell.',
     challenge: 'Memproduksi seri video produk elektronik Howell dan konten komedi kantor yang menghibur serta berkonversi tinggi untuk TikTok & Instagram Reels.',
     solution: 'Integrasi video streaming melalui Bunny Stream CDN berkecepatan tinggi, editing video produk ritmis, transisi kinetik, animasi teks spesifikasi teknis, copywriting komedi relate, dan sound design profesional.',
     results: [
@@ -1863,23 +1941,16 @@ const PROJECTS = [
       'Streaming Cepat Kualitas HD Bebas Buffering & Bebas Iklan',
       'Meningkatkan engagement penonton & jangkauan organik media sosial Howell'
     ],
-    tools: ['Premiere Pro', 'After Effects', 'CapCut Pro', 'Bunny Stream'],
-    bunnyVideoId: 'dad99ec4-89b5-4d66-bc61-15ff6ae57060',
+    tools: [
+      'Premiere Pro',
+      'After Effects',
+      'CapCut Pro',
+      'Bunny Stream'
+    ],
+    bunnyVideoId: '8123e8cc-d7d8-40df-8538-51399a89f114',
     bunnyLibraryId: '756896',
-    embedVideo: 'https://iframe.mediadelivery.net/embed/756896/dad99ec4-89b5-4d66-bc61-15ff6ae57060',
+    embedVideo: 'https://iframe.mediadelivery.net/embed/756896/8123e8cc-d7d8-40df-8538-51399a89f114',
     items: [
-      {
-        name: 'Adapter USB 3.0 Siku',
-        img: 'assets/howell-video/howell_1.jpg',
-        video: 'https://iframe.mediadelivery.net/embed/756896/dad99ec4-89b5-4d66-bc61-15ff6ae57060',
-        desc: 'Adapter HDMI 8K ADP006-3.mp4 — Video showcase produk Adapter HDMI 8K ADP006.'
-      },
-      {
-        name: 'Adaptor adp 024 new 3.mp4',
-        img: 'assets/howell-video/howell_2.jpg',
-        video: 'https://iframe.mediadelivery.net/embed/756896/dd2b3b3b-ac28-4ffe-b2d1-0f3a3f33bfe8',
-        desc: 'Adaptor adp 024 new 3.mp4 — Video commercial & product showcase Adaptor ADP 024.'
-      },
       {
         name: 'Cat 6 UTP Indoor 120M.mp4',
         img: 'assets/howell-video/howell_3.jpg',
@@ -1909,30 +1980,6 @@ const PROJECTS = [
         img: 'assets/howell-video/howell_7.jpg',
         video: 'https://iframe.mediadelivery.net/embed/756896/1aaab4ee-9824-424d-ba9d-0a2c1382a6df',
         desc: 'Ghibah.mp4 — Video konten komedi kantor sketsa Ghibah.'
-      },
-      {
-        name: 'HDMI 4K H0203 New-.mp4',
-        img: 'assets/howell-video/howell_8.jpg',
-        video: 'https://iframe.mediadelivery.net/embed/756896/b5ae02c7-5b9d-41b5-bb30-5f13818ea49b',
-        desc: 'HDMI 4K H0203 New-.mp4 — Video commercial showcase Kabel HDMI 4K H0203.'
-      },
-      {
-        name: 'Headset HW 01 (1)(1).mp4',
-        img: 'assets/howell-video/howell_9.jpg',
-        video: 'https://iframe.mediadelivery.net/embed/756896/23aa64ec-f69a-440a-8917-1c3b917feab9',
-        desc: 'Headset HW 01 (1)(1).mp4 — Video komersial showcase Gaming Headset HW-01.'
-      },
-      {
-        name: 'Howell HW-C03-Voice-ai(1).mp4',
-        img: 'assets/howell-video/howell_10.jpg',
-        video: 'https://iframe.mediadelivery.net/embed/756896/06198824-ea5d-4576-9850-79b8af8ff71b',
-        desc: 'Howell HW-C03-Voice-ai(1).mp4 — Video komersial & voice AI showcase Howell HW-C03.'
-      },
-      {
-        name: 'Kabel data AC0501-ai.mp4',
-        img: 'assets/howell-video/howell_11.jpg',
-        video: 'https://iframe.mediadelivery.net/embed/756896/c81f4734-0fc9-4998-af49-bb376e736f73',
-        desc: 'Kabel data AC0501-ai.mp4 — Video product showcase Kabel Data Fast Charging AC0501.'
       },
       {
         name: 'Kabel LAN CAT6 Roll 305-Voice.mp4',
@@ -1983,26 +2030,13 @@ const PROJECTS = [
         desc: 'Kunjungan pabrik howell-motion.mov — Video motion graphics dokumentasi Kunjungan Pabrik Howell.'
       },
       {
-        name: 'Mengenal Perbedaan USB.mp4',
-        img: 'assets/howell-video/howell_20.jpg',
-        video: 'https://iframe.mediadelivery.net/embed/756896/52e794ef-aa5a-44ae-8d48-b97051996dae',
-        desc: 'Mengenal Perbedaan USB.mp4 — Video edukasi & perbandingan tipe port USB.'
-      },
-      {
         name: 'Pegel pegel.mp4',
         img: 'assets/howell-video/howell_21.jpg',
         video: 'https://iframe.mediadelivery.net/embed/756896/275875d8-b374-451e-ad4e-4d0487f7487e',
         desc: 'Pegel pegel.mp4 — Video konten komedi kantor sketsa Pegel Pegel.'
-      },
-      {
-        name: 'Perbedaan Kabel HDMI(2).mp4',
-        img: 'assets/howell-video/howell_22.jpg',
-        video: 'https://iframe.mediadelivery.net/embed/756896/aa6990ec-c230-44e0-aab1-f185bde4d82f',
-        desc: 'Perbedaan Kabel HDMI(2).mp4 — Video edukasi & perbandingan versi kabel HDMI seri 2.'
       }
     ]
   },
-
   {
     id: 'video-editing-cari-tofu',
     title: 'Cari Tofu',
@@ -2020,7 +2054,13 @@ const PROJECTS = [
       'Streaming Cepat Kualitas HD Bebas Buffering & Bebas Iklan',
       'Meningkatkan engagement penonton & jangkauan organik media sosial'
     ],
-    tools: ['Premiere Pro', 'After Effects', 'CapCut Pro', 'Blender', 'Bunny Stream'],
+    tools: [
+      'Premiere Pro',
+      'After Effects',
+      'CapCut Pro',
+      'Blender',
+      'Bunny Stream'
+    ],
     bunnyVideoId: 'ef3f0a98-8111-4a48-8ddb-1ecb017c230d',
     bunnyLibraryId: '756896',
     embedVideo: 'https://iframe.mediadelivery.net/embed/756896/ef3f0a98-8111-4a48-8ddb-1ecb017c230d',
@@ -2141,7 +2181,6 @@ const PROJECTS = [
       }
     ]
   },
-
   {
     id: 'video-editing-mid-layer',
     title: 'Mid Layer',
@@ -2159,7 +2198,12 @@ const PROJECTS = [
       'Streaming Cepat Kualitas HD Bebas Buffering & Bebas Iklan',
       'Format Optimal untuk TikTok, Instagram Reels, dan YouTube Shorts'
     ],
-    tools: ['Premiere Pro', 'After Effects', 'CapCut Pro', 'Bunny Stream'],
+    tools: [
+      'Premiere Pro',
+      'After Effects',
+      'CapCut Pro',
+      'Bunny Stream'
+    ],
     bunnyVideoId: 'a858712e-f57b-4df0-a5b5-4ec786052bfe',
     bunnyLibraryId: '756896',
     embedVideo: 'https://iframe.mediadelivery.net/embed/756896/a858712e-f57b-4df0-a5b5-4ec786052bfe',
@@ -2220,7 +2264,6 @@ const PROJECTS = [
       }
     ]
   },
-
   {
     id: 'video-editing-elvorindo',
     title: 'Elvorindo',
@@ -2238,7 +2281,12 @@ const PROJECTS = [
       'Streaming Cepat Kualitas HD Bebas Buffering & Bebas Iklan',
       'Digunakan untuk dokumentasi internal & publikasi media sosial Elvorindo'
     ],
-    tools: ['Premiere Pro', 'After Effects', 'CapCut Pro', 'Bunny Stream'],
+    tools: [
+      'Premiere Pro',
+      'After Effects',
+      'CapCut Pro',
+      'Bunny Stream'
+    ],
     bunnyVideoId: '1cf27b72-e6ac-4332-843f-f0cb3a468d1e',
     bunnyLibraryId: '756896',
     embedVideo: 'https://iframe.mediadelivery.net/embed/756896/1cf27b72-e6ac-4332-843f-f0cb3a468d1e',
@@ -2257,7 +2305,6 @@ const PROJECTS = [
       }
     ]
   },
-
   {
     id: 'video-editing-coca-cola',
     title: 'Coca-Cola',
@@ -2275,7 +2322,13 @@ const PROJECTS = [
       'Pemutaran Cepat Kualitas HD Bebas Buffering & Bebas Iklan',
       'Format Siap untuk Instagram Reels, TikTok Ads & YouTube Shorts'
     ],
-    tools: ['Premiere Pro', 'After Effects', 'CapCut Pro', 'DaVinci Resolve', 'Bunny Stream'],
+    tools: [
+      'Premiere Pro',
+      'After Effects',
+      'CapCut Pro',
+      'DaVinci Resolve',
+      'Bunny Stream'
+    ],
     bunnyVideoId: '2479bf00-6cb8-4ca5-b07e-5bb6f5f75145',
     bunnyLibraryId: '756896',
     embedVideo: 'https://iframe.mediadelivery.net/embed/756896/2479bf00-6cb8-4ca5-b07e-5bb6f5f75145',
@@ -2324,7 +2377,84 @@ const PROJECTS = [
       }
     ]
   },
-
+  {
+    id: 'ai-video-howell',
+    title: 'Howell',
+    category: 'ai-video',
+    categoryName: 'AI Video Editing',
+    client: 'PT. Howell Niaga Indonesia',
+    metric: '8 Video Commercial & AI Content • Bunny Stream',
+    thumbnail: 'assets/howell-video/howell_1.jpg',
+    shortDesc: 'Folder AI Video Editing Howell — 8 Video Commercial, Product Showcase & AI Content via Bunny Stream CDN.',
+    fullDesc: 'Folder koleksi resmi AI Video Editing untuk Howell (PT. Howell Niaga Indonesia) yang terhubung langsung ke Bunny Stream CDN. Berisi 8 aset video komersial dan showcase produk: Adapter USB 3.0 Siku, Adaptor ADP 024, HDMI 4K H0203, Headset HW 01, Howell HW-C03 Voice AI, Kabel Data AC0501 AI, serta Video Edukasi Perbedaan USB & HDMI.',
+    challenge: 'Memproduksi seri video produk elektronik Howell berbasis generative audio-visual & AI showcase berkualitas sinematik.',
+    solution: 'Integrasi video streaming melalui Bunny Stream CDN berkecepatan tinggi, voice AI integration, editing dinamis, dan pemutaran HD instan.',
+    results: [
+      '8 Aset Video AI Commercial Resmi Terkoneksi ke Bunny Stream CDN (Library ID: 756896)',
+      'Streaming Cepat Kualitas HD Bebas Buffering & Bebas Iklan',
+      'Format Optimal untuk Publikasi Media Sosial, TikTok Ads & Portofolio'
+    ],
+    tools: [
+      'Premiere Pro',
+      'After Effects',
+      'CapCut Pro',
+      'Voice AI',
+      'Bunny Stream'
+    ],
+    bunnyVideoId: 'dad99ec4-89b5-4d66-bc61-15ff6ae57060',
+    bunnyLibraryId: '756896',
+    embedVideo: 'https://iframe.mediadelivery.net/embed/756896/dad99ec4-89b5-4d66-bc61-15ff6ae57060',
+    items: [
+      {
+        name: 'Adapter USB 3.0 Siku',
+        img: 'assets/howell-video/howell_1.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/dad99ec4-89b5-4d66-bc61-15ff6ae57060',
+        desc: 'Adapter HDMI 8K ADP006-3.mp4 — Video showcase produk Adapter HDMI 8K ADP006.'
+      },
+      {
+        name: 'Adaptor adp 024 new 3.mp4',
+        img: 'assets/howell-video/howell_2.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/dd2b3b3b-ac28-4ffe-b2d1-0f3a3f33bfe8',
+        desc: 'Adaptor adp 024 new 3.mp4 — Video commercial & product showcase Adaptor ADP 024.'
+      },
+      {
+        name: 'HDMI 4K H0203 New-.mp4',
+        img: 'assets/howell-video/howell_8.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/b5ae02c7-5b9d-41b5-bb30-5f13818ea49b',
+        desc: 'HDMI 4K H0203 New-.mp4 — Video commercial showcase Kabel HDMI 4K H0203.'
+      },
+      {
+        name: 'Headset HW 01 (1)(1).mp4',
+        img: 'assets/howell-video/howell_9.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/23aa64ec-f69a-440a-8917-1c3b917feab9',
+        desc: 'Headset HW 01 (1)(1).mp4 — Video komersial showcase Gaming Headset HW-01.'
+      },
+      {
+        name: 'Howell HW-C03-Voice-ai(1).mp4',
+        img: 'assets/howell-video/howell_10.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/06198824-ea5d-4576-9850-79b8af8ff71b',
+        desc: 'Howell HW-C03-Voice-ai(1).mp4 — Video komersial & voice AI showcase Howell HW-C03.'
+      },
+      {
+        name: 'Kabel data AC0501-ai.mp4',
+        img: 'assets/howell-video/howell_11.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/c81f4734-0fc9-4998-af49-bb376e736f73',
+        desc: 'Kabel data AC0501-ai.mp4 — Video product showcase Kabel Data Fast Charging AC0501.'
+      },
+      {
+        name: 'Mengenal Perbedaan USB.mp4',
+        img: 'assets/howell-video/howell_20.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/52e794ef-aa5a-44ae-8d48-b97051996dae',
+        desc: 'Mengenal Perbedaan USB.mp4 — Video edukasi & perbandingan tipe port USB.'
+      },
+      {
+        name: 'Perbedaan Kabel HDMI(2).mp4',
+        img: 'assets/howell-video/howell_22.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/aa6990ec-c230-44e0-aab1-f185bde4d82f',
+        desc: 'Perbedaan Kabel HDMI(2).mp4 — Video edukasi & perbandingan versi kabel HDMI seri 2.'
+      }
+    ]
+  },
   {
     id: 'video-editing-lamis-resto',
     title: 'Lamis Resto',
@@ -2337,8 +2467,13 @@ const PROJECTS = [
     fullDesc: 'Video promosi komersial kuliner untuk Lamis Resto yang dioptimalkan untuk TikTok, Reels, dan Meta Ads.',
     challenge: 'Membuat hook visual 3 detik pertama yang menarik calon pelanggan untuk melakukan reservasi.',
     solution: 'Cut video berenergi tinggi, teks overlay menarik, dan pencahayaan makanan dramatis.',
-    results: ['650K Jangkauan Audiens'],
-    tools: ['Premiere Pro', 'After Effects'],
+    results: [
+      '650K Jangkauan Audiens'
+    ],
+    tools: [
+      'Premiere Pro',
+      'After Effects'
+    ],
     embedVideo: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WeAreGoingOnBullrun.mp4',
     items: [
       {
@@ -2376,7 +2511,15 @@ const PROJECTS = [
       'Tersedia Thumbnail Presisi & Player HD Bebas Iklan',
       'Format Konten Siap untuk Media Sosial (Reels, TikTok, Shorts & Portofolio)'
     ],
-    tools: ['Kling AI', 'Runway Gen-3', 'Midjourney', 'ElevenLabs', 'Premiere Pro', 'After Effects', 'Bunny Stream'],
+    tools: [
+      'Kling AI',
+      'Runway Gen-3',
+      'Midjourney',
+      'ElevenLabs',
+      'Premiere Pro',
+      'After Effects',
+      'Bunny Stream'
+    ],
     bunnyVideoId: '12742592-91d2-462a-95a4-67b794b88ba7',
     bunnyLibraryId: '756896',
     embedVideo: 'https://iframe.mediadelivery.net/embed/756896/12742592-91d2-462a-95a4-67b794b88ba7',
@@ -2425,7 +2568,6 @@ const PROJECTS = [
       }
     ]
   },
-
   {
     id: 'video-editing-andrey-andreydigital-education-reels',
     title: 'Education Reels',
@@ -2443,7 +2585,12 @@ const PROJECTS = [
       'Pemutaran Instan Kualitas HD Bebas Buffering & Bebas Iklan',
       'Format Edukasi Siap untuk Instagram Reels, TikTok & Portfolio'
     ],
-    tools: ['Premiere Pro', 'After Effects', 'CapCut Pro', 'Bunny Stream'],
+    tools: [
+      'Premiere Pro',
+      'After Effects',
+      'CapCut Pro',
+      'Bunny Stream'
+    ],
     bunnyVideoId: '746f7ece-dc2c-4f62-a014-3983e1f2512b',
     bunnyLibraryId: '756896',
     embedVideo: 'https://iframe.mediadelivery.net/embed/756896/746f7ece-dc2c-4f62-a014-3983e1f2512b',
@@ -2486,7 +2633,6 @@ const PROJECTS = [
       }
     ]
   },
-
   {
     id: 'video-editing-andrey-andreydigital-lead-magnet-ads',
     title: 'Lead Magnet Video Ads',
@@ -2504,7 +2650,12 @@ const PROJECTS = [
       'Pemutaran Instan Kualitas HD Bebas Buffering & Bebas Iklan',
       'Format Video Ads Siap untuk Meta Ads (Instagram & Facebook) serta TikTok Ads'
     ],
-    tools: ['Premiere Pro', 'After Effects', 'CapCut Pro', 'Bunny Stream'],
+    tools: [
+      'Premiere Pro',
+      'After Effects',
+      'CapCut Pro',
+      'Bunny Stream'
+    ],
     bunnyVideoId: 'd5cb96f7-6ba7-49ad-9f22-7b17d3d4fe16',
     bunnyLibraryId: '756896',
     embedVideo: 'https://iframe.mediadelivery.net/embed/756896/d5cb96f7-6ba7-49ad-9f22-7b17d3d4fe16',
@@ -2529,7 +2680,6 @@ const PROJECTS = [
       }
     ]
   },
-
   {
     id: 'video-editing-andrey-andreydigital-make-money-vads',
     title: 'Make Money with Digital Product Video Ads',
@@ -2547,7 +2697,12 @@ const PROJECTS = [
       'Pemutaran Instan Kualitas HD Bebas Buffering & Bebas Iklan',
       'Format Video Ads Siap untuk Instagram Reels, TikTok Ads & Facebook Ads'
     ],
-    tools: ['Premiere Pro', 'After Effects', 'CapCut Pro', 'Bunny Stream'],
+    tools: [
+      'Premiere Pro',
+      'After Effects',
+      'CapCut Pro',
+      'Bunny Stream'
+    ],
     bunnyVideoId: 'dc1f31c5-e84d-4d4c-9360-3d8e130a411e',
     bunnyLibraryId: '756896',
     embedVideo: 'https://iframe.mediadelivery.net/embed/756896/dc1f31c5-e84d-4d4c-9360-3d8e130a411e',
@@ -2584,7 +2739,6 @@ const PROJECTS = [
       }
     ]
   },
-
   {
     id: 'video-editing-andrey-content-creator-ai',
     title: 'Conten Creator AI Vids',
@@ -2602,7 +2756,12 @@ const PROJECTS = [
       'Pemutaran Instan Kualitas HD Bebas Buffering & Bebas Iklan',
       'Format Siap untuk YouTube Shorts, Instagram Reels & TikTok'
     ],
-    tools: ['Premiere Pro', 'After Effects', 'CapCut Pro', 'Bunny Stream'],
+    tools: [
+      'Premiere Pro',
+      'After Effects',
+      'CapCut Pro',
+      'Bunny Stream'
+    ],
     bunnyVideoId: 'f3cf936c-9ba3-427b-b25f-5904143b5fc7',
     bunnyLibraryId: '756896',
     embedVideo: 'https://iframe.mediadelivery.net/embed/756896/f3cf936c-9ba3-427b-b25f-5904143b5fc7',
@@ -2621,7 +2780,6 @@ const PROJECTS = [
       }
     ]
   },
-
   {
     id: 'video-editing-andrey-fighting-style-ai',
     title: 'Fighting Style AI Vids',
@@ -2639,7 +2797,12 @@ const PROJECTS = [
       'Pemutaran Cepat Kualitas HD Bebas Buffering & Bebas Iklan',
       'Format Siap untuk Instagram Reels, TikTok & YouTube Shorts'
     ],
-    tools: ['Premiere Pro', 'After Effects', 'CapCut Pro', 'Bunny Stream'],
+    tools: [
+      'Premiere Pro',
+      'After Effects',
+      'CapCut Pro',
+      'Bunny Stream'
+    ],
     bunnyVideoId: 'f0b426ea-6494-41a1-949b-2b37a7b05445',
     bunnyLibraryId: '756896',
     embedVideo: 'https://iframe.mediadelivery.net/embed/756896/f0b426ea-6494-41a1-949b-2b37a7b05445',
@@ -2664,7 +2827,6 @@ const PROJECTS = [
       }
     ]
   },
-
   {
     id: 'video-editing-andrey-food-vlog-ai',
     title: 'Food Vlog AI Video',
@@ -2682,7 +2844,13 @@ const PROJECTS = [
       'Streaming Cepat Kualitas HD Bebas Buffering & Bebas Iklan',
       'Format Optimal untuk Instagram Reels, TikTok & YouTube Shorts'
     ],
-    tools: ['Premiere Pro', 'After Effects', 'CapCut Pro', 'DaVinci Resolve', 'Bunny Stream'],
+    tools: [
+      'Premiere Pro',
+      'After Effects',
+      'CapCut Pro',
+      'DaVinci Resolve',
+      'Bunny Stream'
+    ],
     bunnyVideoId: '810784b8-a614-4c4e-bd9f-6dda718cf2de',
     bunnyLibraryId: '756896',
     embedVideo: 'https://iframe.mediadelivery.net/embed/756896/810784b8-a614-4c4e-bd9f-6dda718cf2de',
@@ -2725,8 +2893,6 @@ const PROJECTS = [
       }
     ]
   },
-
-
   {
     id: 'video-editing-andrey-lamis-resto-reels',
     title: 'Lamis Resto Promotional Reels',
@@ -2744,7 +2910,13 @@ const PROJECTS = [
       'Streaming Cepat Kualitas HD Bebas Buffering & Bebas Iklan',
       'Format Optimal untuk Instagram Reels, TikTok & YouTube Shorts'
     ],
-    tools: ['Premiere Pro', 'After Effects', 'CapCut Pro', 'DaVinci Resolve', 'Bunny Stream'],
+    tools: [
+      'Premiere Pro',
+      'After Effects',
+      'CapCut Pro',
+      'DaVinci Resolve',
+      'Bunny Stream'
+    ],
     bunnyVideoId: '90057698-58f6-463b-a6d0-eeb75a07e47e',
     bunnyLibraryId: '756896',
     embedVideo: 'https://iframe.mediadelivery.net/embed/756896/90057698-58f6-463b-a6d0-eeb75a07e47e',
@@ -2781,7 +2953,6 @@ const PROJECTS = [
       }
     ]
   },
-
   {
     id: 'video-editing-andrey-mixue-vlogger-ai',
     title: 'Mixue Vlogger AI Vids',
@@ -2799,7 +2970,13 @@ const PROJECTS = [
       'Streaming Cepat Kualitas HD Bebas Buffering & Bebas Iklan',
       'Format Optimal untuk Instagram Reels, TikTok & YouTube Shorts'
     ],
-    tools: ['Premiere Pro', 'After Effects', 'CapCut Pro', 'DaVinci Resolve', 'Bunny Stream'],
+    tools: [
+      'Premiere Pro',
+      'After Effects',
+      'CapCut Pro',
+      'DaVinci Resolve',
+      'Bunny Stream'
+    ],
     bunnyVideoId: 'fb46d260-eee1-4c66-bb7d-b57730cbdb81',
     bunnyLibraryId: '756896',
     embedVideo: 'https://iframe.mediadelivery.net/embed/756896/fb46d260-eee1-4c66-bb7d-b57730cbdb81',
@@ -2842,7 +3019,6 @@ const PROJECTS = [
       }
     ]
   },
-
   {
     id: 'video-editing-andrey-ponds-acne-solution',
     title: 'Ponds Acne Solution AI Clip',
@@ -2860,7 +3036,13 @@ const PROJECTS = [
       'Streaming Cepat Kualitas HD Bebas Buffering & Bebas Iklan',
       'Format Optimal untuk Instagram Reels, TikTok & YouTube Shorts'
     ],
-    tools: ['Premiere Pro', 'After Effects', 'CapCut Pro', 'DaVinci Resolve', 'Bunny Stream'],
+    tools: [
+      'Premiere Pro',
+      'After Effects',
+      'CapCut Pro',
+      'DaVinci Resolve',
+      'Bunny Stream'
+    ],
     bunnyVideoId: '576dee0b-e400-4509-adf2-38e1accb32db',
     bunnyLibraryId: '756896',
     embedVideo: 'https://iframe.mediadelivery.net/embed/756896/576dee0b-e400-4509-adf2-38e1accb32db',
@@ -2933,10 +3115,6 @@ const PROJECTS = [
       }
     ]
   },
-
-
-
-  // --- AI DESIGN FOLDER (PER-BRAND CARDS) ---
   {
     id: 'ai-design-aussie-sawit',
     title: 'Aussie Sawit',
@@ -2953,7 +3131,12 @@ const PROJECTS = [
       '6 Aset AI Visual Single Image & Carousel Resmi Terintegrasi di Folder Aussie Sawit',
       'Digunakan untuk konten publikasi & edukasi media sosial Aussie Sawit'
     ],
-    tools: ['ChatGPT', 'Leonardo AI', 'Photoshop', 'Canva'],
+    tools: [
+      'ChatGPT',
+      'Leonardo AI',
+      'Photoshop',
+      'Canva'
+    ],
     embedVideo: 'assets/aussie-sawit/1. 1.1 - Salin.png',
     items: [
       {
@@ -3004,7 +3187,13 @@ const PROJECTS = [
       'Aset Digital Art & AI Content Resmi Terintegrasi di Folder andreydigital.id',
       'Digunakan untuk kebutuhan konten digital & branding'
     ],
-    tools: ['ChatGPT', 'Google Gemini', 'Kling AI', 'Leonardo AI', 'ElevenLabs'],
+    tools: [
+      'ChatGPT',
+      'Google Gemini',
+      'Kling AI',
+      'Leonardo AI',
+      'ElevenLabs'
+    ],
     embedVideo: 'assets/andreydigital/1.png',
     items: [
       {
@@ -3014,7 +3203,6 @@ const PROJECTS = [
       }
     ]
   },
-
   {
     id: 'ai-design-belayang-food-bali',
     title: 'Belayang Food Bali',
@@ -3031,7 +3219,11 @@ const PROJECTS = [
       '3 Aset AI Culinary Art Resmi Terintegrasi di Folder Belayang Food Bali',
       'Digunakan untuk media promosi & branding visual Belayang Food Bali'
     ],
-    tools: ['ChatGPT', 'Leonardo AI', 'Photoshop'],
+    tools: [
+      'ChatGPT',
+      'Leonardo AI',
+      'Photoshop'
+    ],
     embedVideo: 'assets/belayang-food-bali/ChatGPT Image 14 Jul 2026, 20.30.24.png',
     items: [
       {
@@ -3051,7 +3243,6 @@ const PROJECTS = [
       }
     ]
   },
-
   {
     id: 'ai-design-bhakti-utama',
     title: 'Bhakti Utama Foundation',
@@ -3068,7 +3259,11 @@ const PROJECTS = [
       '6 Aset AI Digital Art Resmi Terintegrasi di Folder Bhakti Utama Foundation',
       'Digunakan untuk media publikasi sosial & kampanye kemanusiaan'
     ],
-    tools: ['ChatGPT', 'Leonardo AI', 'Photoshop'],
+    tools: [
+      'ChatGPT',
+      'Leonardo AI',
+      'Photoshop'
+    ],
     embedVideo: 'assets/bhakti-utama/ChatGPT Image 10 Jul 2026, 22.17.41.png',
     items: [
       {
@@ -3103,7 +3298,6 @@ const PROJECTS = [
       }
     ]
   },
-
   {
     id: 'ai-design-etawa-99',
     title: 'F&B Etawa 99',
@@ -3120,7 +3314,11 @@ const PROJECTS = [
       'Aset AI Culinary Visual Resmi Terintegrasi di Folder F&B Etawa 99',
       'Digunakan untuk media promosi & branding produk F&B Etawa 99'
     ],
-    tools: ['ChatGPT', 'Leonardo AI', 'Photoshop'],
+    tools: [
+      'ChatGPT',
+      'Leonardo AI',
+      'Photoshop'
+    ],
     embedVideo: 'assets/etawa-99/ChatGPT Image 14 Jul 2026, 20.30.27.png',
     items: [
       {
@@ -3130,7 +3328,6 @@ const PROJECTS = [
       }
     ]
   },
-
   {
     id: 'ai-design-freelancer-ecourse',
     title: 'Freelancer E-Course with Rio Ramadhan',
@@ -3147,7 +3344,12 @@ const PROJECTS = [
       '3 Aset AI Digital Art Resmi Terintegrasi di Folder Freelancer E-Course',
       'Digunakan untuk media promosi & branding e-course Rio Ramadhan'
     ],
-    tools: ['ChatGPT', 'Leonardo AI', 'Photoshop', 'Canva'],
+    tools: [
+      'ChatGPT',
+      'Leonardo AI',
+      'Photoshop',
+      'Canva'
+    ],
     embedVideo: 'assets/freelancer-ecourse/ChatGPT Image 14 Jul 2026, 20.30.29.png',
     items: [
       {
@@ -3167,7 +3369,6 @@ const PROJECTS = [
       }
     ]
   },
-
   {
     id: 'ai-design-howell-flash-sale',
     title: 'Howell Flash Sale',
@@ -3184,7 +3385,12 @@ const PROJECTS = [
       '12 Aset AI Visual & Banner Flash Sale Resmi Terintegrasi',
       'Digunakan untuk kampanye promosi e-commerce & media sosial Howell Flash Sale'
     ],
-    tools: ['ChatGPT', 'Leonardo AI', 'Photoshop', 'Illustrator'],
+    tools: [
+      'ChatGPT',
+      'Leonardo AI',
+      'Photoshop',
+      'Illustrator'
+    ],
     embedVideo: 'assets/howell-flash-sale/1.png',
     items: [
       {
@@ -3249,7 +3455,6 @@ const PROJECTS = [
       }
     ]
   },
-
   {
     id: 'ai-design-yuntea',
     title: 'YUN’TEA',
@@ -3266,7 +3471,11 @@ const PROJECTS = [
       '5 Aset AI Beverage Art Resmi Terintegrasi di Folder YUN’TEA',
       'Digunakan untuk media promosi & branding visual YUN’TEA'
     ],
-    tools: ['ChatGPT', 'Leonardo AI', 'Photoshop'],
+    tools: [
+      'ChatGPT',
+      'Leonardo AI',
+      'Photoshop'
+    ],
     embedVideo: 'assets/yuntea/ChatGPT Image 9 Jul 2026, 21.48.32.png',
     items: [
       {
@@ -3296,9 +3505,6 @@ const PROJECTS = [
       }
     ]
   },
-
-  // --- MOTION GRAPHICS FOLDER (PER-BRAND CARDS) ---
-
   {
     id: 'motion-graphics-coca-cola',
     title: 'Motion Coca-Cola Commercial Ads',
@@ -3316,7 +3522,13 @@ const PROJECTS = [
       'Streaming Cepat Kualitas HD Bebas Buffering & Bebas Iklan',
       'Digunakan untuk tayangan promosi kampanye periklanan digital Coca-Cola'
     ],
-    tools: ['After Effects', 'Premiere Pro', 'Kling AI', 'VEO 3.1', 'Bunny Stream'],
+    tools: [
+      'After Effects',
+      'Premiere Pro',
+      'Kling AI',
+      'VEO 3.1',
+      'Bunny Stream'
+    ],
     bunnyVideoId: '2b2e4dd9-7006-4b95-9039-4f535b2bf61a',
     bunnyLibraryId: '756896',
     embedVideo: 'https://iframe.mediadelivery.net/embed/756896/2b2e4dd9-7006-4b95-9039-4f535b2bf61a',
@@ -3347,7 +3559,6 @@ const PROJECTS = [
       }
     ]
   },
-
   {
     id: 'motion-graphics-se-indonesia',
     title: 'Motion Se_Indonesia',
@@ -3365,7 +3576,12 @@ const PROJECTS = [
       'Streaming Cepat Kualitas HD Bebas Buffering & Bebas Iklan',
       'Digunakan untuk publikasi media sosial & kampanye promosi Se_Indonesia'
     ],
-    tools: ['After Effects', 'Premiere Pro', 'CapCut Pro', 'Bunny Stream'],
+    tools: [
+      'After Effects',
+      'Premiere Pro',
+      'CapCut Pro',
+      'Bunny Stream'
+    ],
     bunnyVideoId: '51314ab1-a392-4c5f-834a-549411e5e3d8',
     bunnyLibraryId: '756896',
     embedVideo: 'https://iframe.mediadelivery.net/embed/756896/51314ab1-a392-4c5f-834a-549411e5e3d8',
@@ -3378,7 +3594,6 @@ const PROJECTS = [
       }
     ]
   },
-
   {
     id: 'motion-graphics-shoe-product',
     title: 'Motion Shoe Product Beauty Shoots',
@@ -3396,7 +3611,12 @@ const PROJECTS = [
       'Streaming Cepat Kualitas HD Bebas Buffering & Bebas Iklan',
       'Digunakan untuk promosi produk sepatu di media sosial & e-commerce'
     ],
-    tools: ['After Effects', 'Kling AI', 'Premiere Pro', 'Bunny Stream'],
+    tools: [
+      'After Effects',
+      'Kling AI',
+      'Premiere Pro',
+      'Bunny Stream'
+    ],
     bunnyVideoId: '7aabeaf6-a16e-45af-b324-e15917b44695',
     bunnyLibraryId: '756896',
     embedVideo: 'https://iframe.mediadelivery.net/embed/756896/7aabeaf6-a16e-45af-b324-e15917b44695',
@@ -3432,7 +3652,13 @@ const PROJECTS = [
       'Streaming Cepat Kualitas HD Bebas Buffering & Bebas Iklan',
       'Digunakan untuk tayangan promosi marketplace, display toko fisik & kampanye digital Howell'
     ],
-    tools: ['After Effects', 'Premiere Pro', 'Cinema 4D', 'Illustrator', 'Bunny Stream'],
+    tools: [
+      'After Effects',
+      'Premiere Pro',
+      'Cinema 4D',
+      'Illustrator',
+      'Bunny Stream'
+    ],
     bunnyVideoId: 'bfc74b4f-d82f-4107-8afb-12b7a6d87d18',
     bunnyLibraryId: '756896',
     embedVideo: 'https://iframe.mediadelivery.net/embed/756896/bfc74b4f-d82f-4107-8afb-12b7a6d87d18',
@@ -3535,8 +3761,6 @@ const PROJECTS = [
       }
     ]
   },
-
-  // --- ADVERTISING FOLDER (PER-BRAND CARDS) ---
   {
     id: 'advertising-andreydigital-viewers-to-buyers',
     title: 'andreydigital.id — From Viewers to Buyers',
@@ -3553,7 +3777,12 @@ const PROJECTS = [
       '11 Aset Visual Advertising Resmi Terintegrasi di Folder andreydigital.id',
       'Digunakan untuk kampanye periklanan Meta Ads, TikTok Ads & Landing Page'
     ],
-    tools: ['Photoshop', 'Illustrator', 'Canva', 'Premiere Pro'],
+    tools: [
+      'Photoshop',
+      'Illustrator',
+      'Canva',
+      'Premiere Pro'
+    ],
     embedVideo: 'assets/advertising-campaigns/andreydigital-viewers-to-buyers/1.png',
     items: [
       {
@@ -3613,7 +3842,6 @@ const PROJECTS = [
       }
     ]
   },
-
   {
     id: 'advertising-andreydigital-make-money',
     title: 'andreydigital.id — Make Money with Digital Product',
@@ -3630,7 +3858,12 @@ const PROJECTS = [
       '11 Aset Visual Advertising Resmi Terintegrasi di Folder andreydigital.id',
       'Digunakan untuk kampanye periklanan Meta Ads, TikTok Ads & Landing Page'
     ],
-    tools: ['Photoshop', 'Illustrator', 'Canva', 'Premiere Pro'],
+    tools: [
+      'Photoshop',
+      'Illustrator',
+      'Canva',
+      'Premiere Pro'
+    ],
     embedVideo: 'assets/advertising-campaigns/andreydigital-make-money/10.png',
     items: [
       {
@@ -3690,7 +3923,6 @@ const PROJECTS = [
       }
     ]
   },
-
   {
     id: 'advertising-aussie-sawit-ads',
     title: 'Aussie Sawit — High-CTR Image Ads',
@@ -3707,7 +3939,12 @@ const PROJECTS = [
       '6 Aset Visual Advertising Resmi Terintegrasi di Folder Aussie Sawit',
       'Digunakan untuk kampanye periklanan Meta Ads, TikTok Ads & Landing Page'
     ],
-    tools: ['Photoshop', 'Illustrator', 'Canva', 'Premiere Pro'],
+    tools: [
+      'Photoshop',
+      'Illustrator',
+      'Canva',
+      'Premiere Pro'
+    ],
     embedVideo: 'assets/advertising-campaigns/aussie-sawit-ads/1.2.png',
     items: [
       {
@@ -3742,7 +3979,6 @@ const PROJECTS = [
       }
     ]
   },
-
   {
     id: 'advertising-ikutkelas-free-class',
     title: 'Ikutkelas.com — Free Class Campaign & Video Ads',
@@ -3759,7 +3995,12 @@ const PROJECTS = [
       '5 Aset Visual Advertising Resmi Terintegrasi di Folder Ikutkelas.com',
       'Digunakan untuk kampanye periklanan Meta Ads, TikTok Ads & Landing Page'
     ],
-    tools: ['Photoshop', 'Illustrator', 'Canva', 'Premiere Pro'],
+    tools: [
+      'Photoshop',
+      'Illustrator',
+      'Canva',
+      'Premiere Pro'
+    ],
     embedVideo: 'assets/advertising-campaigns/ikutkelas-free-class/Snaptik_7268543498389966086_ikutkelascom.mp4',
     items: [
       {
@@ -3794,7 +4035,6 @@ const PROJECTS = [
       }
     ]
   },
-
   {
     id: 'advertising-nalanda-foundation-talkshow',
     title: 'Nalanda Foundation — Talk Show Campaign Ads',
@@ -3811,7 +4051,12 @@ const PROJECTS = [
       '3 Aset Visual Advertising Resmi Terintegrasi di Folder Nalanda Foundation',
       'Digunakan untuk kampanye periklanan Meta Ads, TikTok Ads & Landing Page'
     ],
-    tools: ['Photoshop', 'Illustrator', 'Canva', 'Premiere Pro'],
+    tools: [
+      'Photoshop',
+      'Illustrator',
+      'Canva',
+      'Premiere Pro'
+    ],
     embedVideo: 'assets/advertising-campaigns/nalanda-foundation-talkshow/290854438_400514885375990_233712435215491284_n.mp4',
     items: [
       {
@@ -3832,7 +4077,6 @@ const PROJECTS = [
       }
     ]
   },
-
   {
     id: 'advertising-saratoga-landing-page',
     title: 'Saratoga — Landing Page & Funnel Ads',
@@ -3849,7 +4093,12 @@ const PROJECTS = [
       '11 Aset Visual Advertising Resmi Terintegrasi di Folder Saratoga',
       'Digunakan untuk kampanye periklanan Meta Ads, TikTok Ads & Landing Page'
     ],
-    tools: ['Photoshop', 'Illustrator', 'Canva', 'Premiere Pro'],
+    tools: [
+      'Photoshop',
+      'Illustrator',
+      'Canva',
+      'Premiere Pro'
+    ],
     embedVideo: 'assets/advertising-campaigns/saratoga-landing-page/1.png',
     items: [
       {
@@ -3909,7 +4158,6 @@ const PROJECTS = [
       }
     ]
   },
-
   {
     id: 'advertising-say-no-to-overthinking',
     title: 'Say No To Overthinking — E-Book Campaign Ads',
@@ -3926,7 +4174,12 @@ const PROJECTS = [
       '6 Aset Visual Advertising Resmi Terintegrasi di Folder Mind Mastery',
       'Digunakan untuk kampanye periklanan Meta Ads, TikTok Ads & Landing Page'
     ],
-    tools: ['Photoshop', 'Illustrator', 'Canva', 'Premiere Pro'],
+    tools: [
+      'Photoshop',
+      'Illustrator',
+      'Canva',
+      'Premiere Pro'
+    ],
     embedVideo: 'assets/advertising-campaigns/say-no-to-overthinking/18.png',
     items: [
       {
@@ -3961,7 +4214,6 @@ const PROJECTS = [
       }
     ]
   },
-
   {
     id: 'advertising-the-art-of-letting-go',
     title: 'The Art of Letting Go — E-Book & Funnel Campaign',
@@ -3978,7 +4230,12 @@ const PROJECTS = [
       '12 Aset Visual Advertising Resmi Terintegrasi di Folder E-Book Funnel',
       'Digunakan untuk kampanye periklanan Meta Ads, TikTok Ads & Landing Page'
     ],
-    tools: ['Photoshop', 'Illustrator', 'Canva', 'Premiere Pro'],
+    tools: [
+      'Photoshop',
+      'Illustrator',
+      'Canva',
+      'Premiere Pro'
+    ],
     embedVideo: 'assets/advertising-campaigns/the-art-of-letting-go/COVER3.png',
     items: [
       {
@@ -4045,7 +4302,6 @@ const PROJECTS = [
       }
     ]
   },
-
   {
     id: 'advertising-howell-official-store',
     title: 'Howell Official Store — E-Commerce Image Ads',
@@ -4062,7 +4318,12 @@ const PROJECTS = [
       '6 Aset Visual Advertising Resmi Terintegrasi di Folder PT. Howell Niaga Indonesia',
       'Digunakan untuk kampanye periklanan Meta Ads, TikTok Ads & Landing Page'
     ],
-    tools: ['Photoshop', 'Illustrator', 'Canva', 'Premiere Pro'],
+    tools: [
+      'Photoshop',
+      'Illustrator',
+      'Canva',
+      'Premiere Pro'
+    ],
     embedVideo: 'assets/advertising-campaigns/howell-official-store/11.png',
     items: [
       {
@@ -4097,9 +4358,6 @@ const PROJECTS = [
       }
     ]
   },
-
-
-    // --- YOUTUBE CONTENT FOLDER (PER-BRAND CARDS) ---
   {
     id: 'youtube-doa-bangsa-tv',
     title: 'Doa Bangsa TV',
@@ -4117,7 +4375,12 @@ const PROJECTS = [
       'Saluran Resmi YouTube Doa Bangsa TV Aktif & Terintegrasi (80.1K+ Subs, 1.2K+ Video)',
       'Menyajikan Ratusan Video Edukasi & Inspirasi Nasional dengan Thumbnails 16:9 Konsisten'
     ],
-    tools: ['YouTube', 'Premiere Pro', 'Photoshop', 'After Effects'],
+    tools: [
+      'YouTube',
+      'Premiere Pro',
+      'Photoshop',
+      'After Effects'
+    ],
     embedVideo: 'assets/Youtube/doa-bangsa-tv-thumb.png',
     items: [
       {
@@ -4140,7 +4403,6 @@ const PROJECTS = [
       }
     ]
   },
-
   {
     id: 'youtube-buddhis-indonesia',
     title: 'Buddhis Indonesia',
@@ -4158,7 +4420,12 @@ const PROJECTS = [
       'Saluran Resmi YouTube Buddhis Indonesia Aktif & Terintegrasi (9.9K+ Subs, 2.6K+ Video)',
       'Menyajikan Video Edukasi & AI YouTube Thumbnails High-CTR Resolusi 1920x1080'
     ],
-    tools: ['YouTube', 'Photoshop', 'Midjourney', 'Premiere Pro'],
+    tools: [
+      'YouTube',
+      'Photoshop',
+      'Midjourney',
+      'Premiere Pro'
+    ],
     embedVideo: 'assets/Youtube/buddhis-indonesia-thumb.png',
     items: [
       {
@@ -4199,7 +4466,6 @@ const PROJECTS = [
       }
     ]
   },
-
   {
     id: 'youtube-coach-yanto',
     title: 'Coach Yanto',
@@ -4217,7 +4483,12 @@ const PROJECTS = [
       'Saluran Resmi YouTube Coach Yanto Aktif & Terintegrasi (26.4K+ Subs, 565+ Video)',
       'Menyajikan Video Coaching Bisnis & Pengembangan Diri dengan High Engagement'
     ],
-    tools: ['YouTube', 'Premiere Pro', 'Photoshop', 'CapCut Pro'],
+    tools: [
+      'YouTube',
+      'Premiere Pro',
+      'Photoshop',
+      'CapCut Pro'
+    ],
     embedVideo: 'assets/Youtube/coach-yanto-thumb.png',
     items: [
       {
@@ -4234,7 +4505,6 @@ const PROJECTS = [
       }
     ]
   },
-
   {
     id: 'youtube-mind-mastery',
     title: 'Mind Mastery Academy',
@@ -4252,7 +4522,11 @@ const PROJECTS = [
       '500K+ Total Penayangan YouTube',
       'Desain Visual Thumbnail 16:9 High-CTR & Cover E-Learning Komprehensif'
     ],
-    tools: ['Premiere Pro', 'Photoshop', 'Illustrator'],
+    tools: [
+      'Premiere Pro',
+      'Photoshop',
+      'Illustrator'
+    ],
     embedVideo: 'assets/Youtube/mind-mastery-thumb.png',
     items: [
       {
