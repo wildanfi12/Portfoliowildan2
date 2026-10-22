@@ -2312,7 +2312,7 @@ const PROJECTS = [
     categoryName: 'AI Video Editing',
     client: 'Coca-Cola',
     metric: '7 Video Commercial • Bunny Stream',
-    thumbnail: 'assets/coca-cola/cover.jpg',
+    thumbnail: 'assets/coca-cola/1.jpg',
     shortDesc: 'Folder Video Editing Coca-Cola — 7 Video Commercial Editing, Shorts/Reels & Sound Design via Bunny Stream CDN.',
     fullDesc: 'Folder koleksi resmi Video Editing untuk Coca-Cola yang terhubung langsung ke Bunny Stream CDN. Berisi 7 seri video komersial dengan fast-cut editing, kinetic titles, color grading merah krispi khas Coca-Cola, dan sound design profesional.',
     challenge: 'Mengemas visual cerita & momen Coca-Cola menjadi video promosi berenergi tinggi dengan retensi penonton maksimal.',
@@ -3434,7 +3434,7 @@ const PROJECTS = [
       },
       {
         name: 'Howell Flash Sale — AI Concept Artwork 9',
-        img: 'assets/howell-flash-sale/ChatGPT Image Jul 25, 2026, 10_57_08 AM.png',
+        img: 'assets/advertising-campaigns/howell-official-store/ChatGPT Image Jul 25, 2026, 10_57_08 AM.png',
         desc: 'Visualisasi estetis produk perkakas & teknik Howell.'
       },
       {
@@ -3449,7 +3449,7 @@ const PROJECTS = [
       },
       {
         name: 'Howell Flash Sale — AI Concept Artwork 12',
-        img: 'assets/howell-flash-sale/ChatGPT Image Jul 25, 2026, 11_19_41 AM.png',
+        img: 'assets/advertising-campaigns/howell-official-store/ChatGPT Image Jul 25, 2026, 11_19_41 AM.png',
         desc: 'Aset visual branding penutup kampanye Howell Flash Sale.'
       }
     ]
@@ -4409,7 +4409,7 @@ const PROJECTS = [
     categoryName: 'YouTube Content',
     client: 'Buddhis Indonesia',
     metric: '▶ Channel YouTube Official',
-    thumbnail: 'assets/Youtube/buddhis-indonesia-thumb.png',
+    thumbnail: 'assets/andrey-graphic-design/buddhis-indonesia/1.png',
     youtubeUrl: 'https://www.youtube.com/@buddhisindonesia2023/videos',
     shortDesc: 'Official YouTube Channel Buddhis Indonesia — Video Edukasi, AI YouTube Thumbnails & Konten Keagamaan.',
     fullDesc: 'Saluran Resmi YouTube Buddhis Indonesia (https://www.youtube.com/@buddhisindonesia2023/videos). Menyajikan konten video edukasi spiritual, ajaran kebaikan, pembahasan dharma, dan video pendek inspiratif dengan thumbnail AI beresolusi 1920x1080.',
@@ -4425,7 +4425,7 @@ const PROJECTS = [
       'Midjourney',
       'Premiere Pro'
     ],
-    embedVideo: 'assets/Youtube/buddhis-indonesia-thumb.png',
+    embedVideo: 'assets/andrey-graphic-design/buddhis-indonesia/1.png',
     items: [
       {
         name: 'Buddhis Indonesia — Latihan Meditasi Mental Health Awareness (16:9 Thumbnail)',
