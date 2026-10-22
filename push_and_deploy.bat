@@ -1,8 +1,8 @@
 @echo off
-title Push ke GitHub dan Deploy ke Vercel - Wildan Portfolio
+title Push dan Deploy GitHub Pages - Wildan Portfolio
 color 0b
 echo ========================================================
-echo       WILDAN PORTFOLIO - PUSH KE GITHUB DAN VERCEL
+echo       WILDAN PORTFOLIO - DEPLOY GITHUB PAGES
 echo ========================================================
 echo.
 
@@ -11,7 +11,7 @@ if %ERRORLEVEL% NEQ 0 (
     set "PATH=%LOCALAPPDATA%\GitHubDesktop\app-3.6.5\resources\app\git\cmd;%PATH%"
 )
 
-echo [1/2] Mendorong perubahan ke GitHub (Portfoliowildan2)...
+echo Mendorong perubahan ke GitHub (Portfoliowildan2)...
 git push -u origin main
 if %ERRORLEVEL% NEQ 0 (
     echo.
@@ -25,13 +25,9 @@ echo ========================================================
 echo [BERHASIL] Push ke GitHub Sukses!
 echo ========================================================
 echo.
-echo [2/2] Melakukan deployment ke Vercel...
-echo (Jika belum login, Vercel akan membuka browser untuk verifikasi)
-echo.
-call npx vercel --prod
-
-echo.
+echo GitHub Pages akan menerbitkan branch main secara otomatis.
+echo Domain produksi: https://wildanportfolio.site/
 echo ========================================================
-echo       SELESAI! Website Anda berhasil di-deploy!
+echo       SELESAI! DEPLOYMENT SEDANG DIPROSES.
 echo ========================================================
 pause

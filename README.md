@@ -1,96 +1,49 @@
-# Wildan — Creative Designer, Video Editor & AI Content Specialist
+# Wildan Portfolio
 
-> **Personal Portfolio Website** showcasing commercial video editing, generative AI motion design, high-converting advertising creatives, and brand identity projects.
+Portfolio produksi Wildan Firdaus untuk video editing, graphic design, motion graphics, advertising creative, AI content, dan karya YouTube.
 
----
+**Production:** [wildanportfolio.site](https://wildanportfolio.site/)
 
-## 🌟 Overview
+## Fitur
 
-This portfolio is an ultra-fast, modern, single-page creative showcase built with **pure Vanilla HTML5, CSS3, and ES6 JavaScript**. It features an interactive folder system, smooth inertia scrolling with Lenis, media lightboxes with deep zoom, and direct integration with **Bunny Stream CDN** for buffer-free 4K/HD video playback.
+- Galeri 65 koleksi proyek dengan filter kategori dan pemuatan bertahap.
+- Folder proyek berisi galeri gambar atau video dengan modal responsif.
+- Lightbox gambar dengan zoom, navigasi keyboard, mouse, dan sentuhan.
+- Navigasi glassmorphism, animasi yang menghormati `prefers-reduced-motion`, serta fokus keyboard yang terlihat.
+- Metadata Open Graph, Twitter Card, JSON-LD, sitemap, robots, dan halaman 404.
+- Vanilla HTML, CSS, dan JavaScript tanpa proses build.
 
----
-
-## ✨ Key Features
-
-- **🚀 100% Zero-Dependency Build**: Works immediately directly from your local drive (`file:///`) or hosted on **GitHub Pages**, Vercel, Netlify, or Apache/Nginx.
-- **🎥 Bunny Stream CDN Integration**: High-speed video delivery without YouTube ads, watermarks, or bandwidth bottlenecks.
-- **📁 Interactive Project Folders**: Explore real brand campaigns (AI Video Bootcamp, andreydigital.id, Lamis Resto, Howell, Kalapa Klopo, etc.) with multi-asset galleries inside sleek modals.
-- **🔍 Professional Deep-Zoom Lightbox**: Pan and inspect artwork up to 400% zoom with keyboard navigation and mouse follow.
-- **🎨 Glassmorphism & Micro-Interactions**: Modern, polished dark/light aesthetic with fluid typography, responsive grid, and custom SVG logos.
-- **📱 Fully Responsive**: Pixel-perfect layout across UltraWide 4K monitors, desktops, tablets, and smartphones.
-
----
-
-## 📂 Project Structure
+## Struktur utama
 
 ```text
-├── index.html              # Main HTML markup, hero section, tech stack, and modals
-├── css/
-│   ├── design-system.css   # Color tokens, typography, layout & reset
-│   ├── components.css      # Cards, buttons, badges, modals, player boxes
-│   └── animations.css      # Smooth transitions & keyframes
+├── index.html
+├── portfolio-gallery.css
 ├── js/
-│   ├── app.js              # Navigation, mobile menu, dynamic interactions
-│   ├── portfolio.js        # Project database, Bunny Stream player, and modal logic
-│   ├── canvas-bg.js        # Interactive background particle canvas
-│   ├── animations.js       # Scroll reveal observers
-│   └── lenis.min.js        # Local inertia smooth scrolling library
+│   ├── portfolio.js
+│   └── lenis.min.js
 ├── assets/
-│   ├── wildan-profile.jpg  # Hero portrait photo
-│   ├── ai-video-bootcamp/  # AI Video Bootcamp cover & video thumbnails
-│   ├── logos/              # Client & partner brand logos
-│   ├── testimonials/       # Client testimonials & reviews
-│   └── ...                 # Brand project folders (artwork, covers, videos)
-├── .gitignore              # Git ignore rules for clean repository
-└── README.md               # Project documentation
+├── 404.html
+├── robots.txt
+├── sitemap.xml
+└── CNAME
 ```
 
----
+## Menjalankan secara lokal
 
-## 🚀 How to Run Locally
+Gunakan server lokal agar perilakunya sama dengan produksi:
 
-No Node.js, npm, or local server installation is required.
+```powershell
+node serve.js
+```
 
-1. Double click **`index.html`** or open it in any modern web browser:
-   - Google Chrome
-   - Microsoft Edge
-   - Mozilla Firefox
-   - Safari
+Lalu buka alamat yang ditampilkan oleh server.
 
----
+## Deployment
 
-## 🌐 Deploying to GitHub Pages
+Situs diterbitkan melalui GitHub Pages dari branch `main`. File `CNAME` mempertahankan domain kustom `wildanportfolio.site`. Setiap push ke `main` memicu workflow Pages secara otomatis.
 
-1. Push this repository to GitHub:
-   ```bash
-   git init
-   git add .
-   git commit -m "feat: complete portfolio with Bunny Stream integration and AI Video Bootcamp"
-   git branch -M main
-   git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPOSITORY_NAME.git
-   git push -u origin main
-   ```
-2. Go to your repository **Settings** on GitHub.
-3. Click on **Pages** in the left sidebar.
-4. Under **Branch**, select `main` and folder `/ (root)`, then click **Save**.
-5. Your portfolio will be live at `https://YOUR_USERNAME.github.io/YOUR_REPOSITORY_NAME/` in a few minutes!
+```powershell
+git push origin main
+```
 
----
-
-## 🛠 Tech Stack & Tools
-
-- **Frontend**: HTML5, CSS3 Custom Properties, Vanilla ES6+ JavaScript, Lenis Smooth Scroll
-- **Creative Suite**: Adobe Premiere Pro, After Effects, Photoshop, Illustrator, Figma, Canva, CapCut
-- **Generative AI**: Kling AI, Runway Gen-3, Midjourney, Claude, ChatGPT, Google Flow Labs, ElevenLabs
-- **Video Delivery**: Bunny Stream CDN
-
----
-
-## 📬 Contact & Inquiries
-
-- **Portfolio Owner**: Wildan
-- **Specialties**: Video Editing, Motion Graphics, AI Video, Graphic Design, Brand Advertising
-- **Location**: Indonesia
-
----
-*Crafted with precision & passion.*
+Deployment tidak memerlukan build step atau platform hosting lain.

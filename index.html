@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -20,6 +20,9 @@
   <meta property="og:title" content="Wildan — Creative Designer, Video Editor & AI Creator" />
   <meta property="og:description" content="Commercial video editing, generative AI motion design, high-converting advertising creatives, and brand identity projects." />
   <meta property="og:image" content="https://wildanportfolio.site/assets/wildan-profile.jpg" />
+  <meta property="og:image:width" content="768" />
+  <meta property="og:image:height" content="1024" />
+  <meta property="og:image:alt" content="Wildan, creative designer dan video editor" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
@@ -30,10 +33,8 @@
 
   <link rel="icon" type="image/jpeg" href="assets/wildan-profile.jpg" />
 
-  <!-- Preload hero portraits (1.jpg, 2.jpg, 3.jpg) for instantaneous 3D rotation -->
+  <!-- Prioritize only the image visible above the fold. -->
   <link rel="preload" as="image" href="assets/1.jpg" fetchpriority="high" />
-  <link rel="prefetch" as="image" href="assets/2.jpg" />
-  <link rel="prefetch" as="image" href="assets/3.jpg" />
 
   <!-- Bunny Stream CDN: preconnect for faster video loading -->
   <link rel="preconnect" href="https://iframe.mediadelivery.net" crossorigin>
@@ -43,6 +44,26 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Wildan Firdaus",
+    "url": "https://wildanportfolio.site/",
+    "image": "https://wildanportfolio.site/assets/wildan-profile.jpg",
+    "jobTitle": "Creative Designer, Video Editor, and AI Content Creator",
+    "sameAs": [
+      "https://www.instagram.com/wildanfii/"
+    ],
+    "knowsAbout": [
+      "Video Editing",
+      "Graphic Design",
+      "Motion Graphics",
+      "AI Content Creation"
+    ]
+  }
+  </script>
 
   <style>
     /* ==========================================================================
@@ -3189,6 +3210,10 @@
       border-color: rgba(17, 17, 17, 0.4);
       background: #ffffff;
     }
+    .modal-control:focus-visible {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(177, 95, 44, 0.16);
+    }
 
     .modal-footer {
       margin-top: 0.5rem;
@@ -4133,6 +4158,7 @@
 <body>
 
   <!-- Accessible Skip to Content -->
+  <a class="skip-link" href="#main">Lewati ke konten utama</a>
   <!-- ==========================================================================
        FLOATING ISLAND HEADER
        ========================================================================== -->
@@ -4140,7 +4166,7 @@
     <div class="floating-header-island">
       <!-- Left brand avatar & name -->
       <button class="brand-btn floating-brand-btn" id="brand-home-btn" aria-label="Wildan Home" data-target="home">
-        <img src="assets/wildan-profile-cafe.jpg" alt="Wildan" class="floating-avatar">
+        <img src="assets/wildan-profile-cafe.jpg" alt="Wildan" class="floating-avatar" width="1200" height="1600" decoding="async">
         <span class="floating-brand-name">Wildan</span>
       </button>
 
@@ -4221,16 +4247,16 @@
           
           <!-- 3D Standalone Photo Card Stage -->
           <div class="portrait-box reveal-fade-up" id="heroPortraitStage" style="transition-delay: 350ms;">
-            <div class="portrait-card-flip" id="heroPortraitFlip" title="Click to flip portrait card">
+            <div class="portrait-card-flip" id="heroPortraitFlip" role="button" tabindex="0" aria-label="Tampilkan foto berikutnya" title="Tampilkan foto berikutnya">
               
               <!-- FRONT FACE (0°) - Cafe Portrait (Foto 1) -->
               <div class="portrait-face front">
-                <img src="assets/1.jpg" alt="Wildan — Cafe Portrait (1)" class="portrait-photo" id="frontPortraitPhoto" fetchpriority="high">
+                <img src="assets/1.jpg" alt="Wildan — Cafe Portrait (1)" class="portrait-photo" id="frontPortraitPhoto" width="1200" height="1600" fetchpriority="high" decoding="async">
               </div>
 
               <!-- BACK FACE (180°) - Office Portrait (Foto 2) -->
               <div class="portrait-face back">
-                <img src="assets/2.jpg" alt="Wildan Firdaus — Office Portrait (2)" class="portrait-photo" id="backPortraitPhoto">
+                <img src="assets/2.jpg" alt="Wildan Firdaus — Office Portrait (2)" class="portrait-photo" id="backPortraitPhoto" width="960" height="1280" decoding="async">
               </div>
 
             </div>
@@ -4663,7 +4689,7 @@
           <!-- 06 Canva -->
           <div class="tech-card">
             <div class="tech-svg">
-              <img src="assets/canva-icon.png" alt="Canva">
+              <img src="assets/canva-icon.png" alt="Canva" width="512" height="512" loading="lazy" decoding="async">
             </div>
             <div class="tech-info">
               <span class="tech-name">Canva</span>
@@ -4746,7 +4772,7 @@
           <!-- 11 Antigravity -->
           <div class="tech-card">
             <div class="tech-svg" style="padding: 2px;">
-              <img src="assets/antigravity-logo.png" alt="Antigravity">
+              <img src="assets/antigravity-logo.png" alt="Antigravity" width="200" height="184" loading="lazy" decoding="async">
             </div>
             <div class="tech-info">
               <span class="tech-name">Antigravity</span>
@@ -4757,7 +4783,7 @@
           <!-- 12 Flow Labs -->
           <div class="tech-card">
             <div class="tech-svg">
-              <img src="assets/google-flow-app-icon.png" alt="Flow Labs" style="border-radius: 22%;">
+              <img src="assets/google-flow-app-icon.png" alt="Flow Labs" width="512" height="512" loading="lazy" decoding="async" style="border-radius: 22%;">
             </div>
             <div class="tech-info">
               <span class="tech-name">Flow Labs</span>
@@ -4869,7 +4895,7 @@
               <p class="testimonial-quote">"Makasih yaa. Kualitas gambarnya juara, bersih dan tajam banget keliatan HD-nya. Beneran sesuai ekspektasi bahkan lebih bagus dari aslinya. Sukses terus ya bg!"</p>
             </div>
             <div class="client-info">
-              <img src="assets/testimonials/dzul.jpg" alt="Dzul Avatar" class="client-avatar" loading="lazy">
+              <img src="assets/testimonials/dzul.jpg" alt="Dzul Avatar" class="client-avatar" width="1080" height="1080" loading="lazy" decoding="async">
               <div>
                 <div class="client-name">Dzul</div>
                 <div class="client-role">E-Commerce Specialist</div>
@@ -4890,7 +4916,7 @@
               <p class="testimonial-quote">"Hallo bang, aku masih ksih testi nihh. Btw aku suka bgt sama kualitasnya super HD bgt bener-bener sesuai ekspektasi akuu😍 gambarnya bener-bener detail jadi keliatan kaya bukan editan asli keren bgtt!"</p>
             </div>
             <div class="client-info">
-              <img src="assets/testimonials/indah.png" alt="Indah Avatar" class="client-avatar" loading="lazy">
+              <img src="assets/testimonials/indah.png" alt="Indah Avatar" class="client-avatar" width="1080" height="1350" loading="lazy" decoding="async">
               <div>
                 <div class="client-name">Indah</div>
                 <div class="client-role">Owner, Yuntea</div>
@@ -4911,7 +4937,7 @@
               <p class="testimonial-quote">"Keren!! Gambar produknya kelihatan jelas tajam dan ga pecah... komunikasinya juga sangat responsif dan memuaskan. Sukses selalu!"</p>
             </div>
             <div class="client-info">
-              <img src="assets/testimonials/tika.jpg" alt="Tika Rosmayanti Avatar" class="client-avatar" loading="lazy">
+              <img src="assets/testimonials/tika.jpg" alt="Tika Rosmayanti Avatar" class="client-avatar" width="1438" height="1440" loading="lazy" decoding="async">
               <div>
                 <div class="client-name">Tika Rosmayanti</div>
                 <div class="client-role">Pemilik UMKM</div>
@@ -5132,7 +5158,7 @@
       <!-- Right Column: Wildan Studio Info & Direct WhatsApp -->
       <div class="overlay-info-card">
         <div class="overlay-profile-header">
-          <img src="assets/wildan-profile.jpg" alt="Wildan" class="overlay-profile-avatar" loading="lazy">
+          <img src="assets/wildan-profile.jpg" alt="Wildan" class="overlay-profile-avatar" width="768" height="1024" loading="lazy" decoding="async">
           <div>
             <div class="overlay-badge-dot-wrap">
               <span class="overlay-pulse-dot"></span>
@@ -5253,7 +5279,7 @@
   <!-- ==========================================================================
        CASE STUDY LIGHTBOX MODAL (#project-modal)
        ========================================================================== -->
-  <div class="modal-backdrop" id="project-modal" role="dialog" aria-modal="true" data-lenis-prevent>
+  <div class="modal-backdrop" id="project-modal" role="dialog" aria-modal="true" aria-labelledby="collection-title" data-lenis-prevent>
     <div class="modal-content" data-lenis-prevent>
       <button class="modal-close" id="modal-close" aria-label="Close Case Study">✕</button>
       <div class="modal-body" id="modal-body-content" data-lenis-prevent>
@@ -5265,7 +5291,7 @@
   <!-- ==========================================================================
        FULLSCREEN IMAGE ZOOM LIGHTBOX (#image-zoom-modal)
        ========================================================================== -->
-  <div class="zoom-modal-backdrop" id="image-zoom-modal" role="dialog" aria-modal="true" data-lenis-prevent>
+  <div class="zoom-modal-backdrop" id="image-zoom-modal" role="dialog" aria-modal="true" aria-labelledby="zoom-image-title" data-lenis-prevent>
     <div class="zoom-toolbar">
       <div class="zoom-info">
         <span class="zoom-title" id="zoom-image-title">Preview Foto</span>
@@ -5284,7 +5310,7 @@
     <button class="zoom-nav-btn zoom-next-btn" id="zoom-next-btn" title="Karya berikutnya" aria-label="Karya berikutnya">›</button>
 
     <div class="zoom-viewport" id="zoom-viewport">
-      <img src="" alt="Zoomed Image" id="zoom-target-image" class="zoom-img">
+      <img src="" alt="Pratinjau karya diperbesar" id="zoom-target-image" class="zoom-img">
     </div>
     
     <div class="zoom-hint">Klik atau cubit untuk memperbesar · Gunakan tombol panah untuk berpindah karya</div>
@@ -6023,6 +6049,12 @@
         manualOverrideScrollY = window.pageYOffset || document.documentElement.scrollTop;
         targetRotY += 180;
         requestTick();
+      });
+
+      cardFlip.addEventListener('keydown', (e) => {
+        if (e.key !== 'Enter' && e.key !== ' ') return;
+        e.preventDefault();
+        cardFlip.click();
       });
 
       // Mouse parallax tilt on hover (Desktop)

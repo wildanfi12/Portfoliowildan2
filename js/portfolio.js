@@ -4810,9 +4810,9 @@ function initPortfolio() {
     const isCardVid = p.thumbnail.endsWith('.mp4') || p.thumbnail.endsWith('.mov');
     const thumbBgStyle = p.thumbBg ? ` style="background: ${p.thumbBg};"` : '';
     const thumbImgStyle = p.thumbBg ? ' style="object-fit: contain; padding: 1.25rem;"' : '';
-    const isInitialBatch = idx < 12;
+    const isInitialBatch = idx < 4;
     const loadingAttr = isInitialBatch ? 'loading="eager"' : 'loading="lazy"';
-    const fetchPriorityAttr = idx < 8 ? ' fetchpriority="high"' : '';
+    const fetchPriorityAttr = idx < 3 ? ' fetchpriority="high"' : '';
     // Use sync decoding for initially visible cards to prevent WebKit flashing empty/black background on mobile
     const decodingAttr = isInitialBatch ? 'decoding="sync"' : 'decoding="async"';
 
