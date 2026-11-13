@@ -3965,6 +3965,21 @@ function initPortfolio() {
     }
 
     const filtered = currentFilter === 'all' ? PROJECTS : PROJECTS.filter(p => Array.isArray(p.category) ? p.category.includes(currentFilter) : p.category === currentFilter);
+    if (currentFilter === 'design') {
+      const designPriority = [
+        'graphic-design-howell',
+        'graphic-design-fkdb',
+        'graphic-design-eastern-depo',
+        'graphic-design-elvorindo'
+      ];
+      filtered.sort((a, b) => {
+        const aPriority = designPriority.indexOf(a.id);
+        const bPriority = designPriority.indexOf(b.id);
+        if (aPriority === -1) return bPriority === -1 ? 0 : 1;
+        if (bPriority === -1) return -1;
+        return aPriority - bPriority;
+      });
+    }
     const targetCount = Math.min(visibleCount, filtered.length);
 
     if (isCategoryChange || resetCount) {
