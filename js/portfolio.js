@@ -3377,10 +3377,8 @@ function initPortfolio() {
     const isCardVid = p.thumbnail.endsWith('.mp4') || p.thumbnail.endsWith('.mov');
     const thumbBgStyle = p.thumbBg ? ` style="background: ${p.thumbBg};"` : '';
     const thumbImgStyle = p.thumbBg ? ' style="object-fit: contain; padding: 1.25rem;"' : '';
-    const isInitialBatch = idx < 3;
-    const loadingAttr = isInitialBatch ? 'loading="eager"' : 'loading="lazy"';
-    const fetchPriorityAttr = isInitialBatch ? ' fetchpriority="high"' : '';
-    // Async decode avoids blocking layout while keeping the first row prioritized.
+    const loadingAttr = 'loading="lazy"';
+    // Portfolio cards sit below the hero; lazy decode keeps first paint focused on visible content.
     const decodingAttr = 'decoding="async"';
 
     card.innerHTML = `
@@ -3392,7 +3390,7 @@ function initPortfolio() {
           </div>
           <video data-src="${p.thumbnail.includes('#t=') ? p.thumbnail : p.thumbnail + '#t=0.5'}" class="card-video-thumb" loop muted playsinline preload="none"></video>
         ` : `
-          <img src="${p.thumbnail}" alt="Pratinjau ${projectTitle(p.title)}" ${loadingAttr}${fetchPriorityAttr} ${decodingAttr}${thumbImgStyle}>
+          <img src="${p.thumbnail}" alt="Pratinjau ${projectTitle(p.title)}" ${loadingAttr} ${decodingAttr}${thumbImgStyle}>
         `}
         <span class="collection-open" aria-hidden="true">↗</span>
       </div>
