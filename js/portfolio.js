@@ -2193,6 +2193,192 @@ const PROJECTS = [
     ]
   },
   {
+    id: "motion-graphics-howell",
+    title: "Howell",
+    category: "ai-motion",
+    categoryName: "AI Motion Videos",
+    client: "PT. Howell Niaga Indonesia",
+    metric: "26 Video Commercial & AI Motion • Bunny Stream",
+    thumbnail: "assets/motion-howell/howell_motion_1.jpg",
+    shortDesc: "Folder AI Motion Videos Howell — 26 Video Motion Commercial 3D/2D Product Showcase, Promo Megasale, Adapter & Cable Specs via Bunny Stream CDN.",
+    fullDesc: "Folder koleksi resmi AI Motion Videos untuk Howell (PT. Howell Niaga Indonesia) yang terhubung langsung ke Bunny Stream CDN (Collection: d22f13da-d9ff-4a24-b39d-2097295d3028). Di dalamnya berisi 26 aset video motion graphics komersial meliputi Poster Promo, Box Megasale, Spiderman Cinematic, HDMI 8K/4K, Headset HW05/HW07, Kabel Data 4in1 65W, Kabel LAN Cat 8/6, Microphone MIC001/002, Laptop Stand, DisplayPort, dan produk ekosistem Howell lainnya.",
+    challenge: "Mempresentasikan 26 seri produk elektronik premium Howell dalam format animasi video motion graphics 3D/2D kinetik dan showcase produk ber-retensi tinggi.",
+    solution: "Integrasi video streaming berkecepatan tinggi via Bunny Stream CDN, keyframing animasi produk After Effects, motion typography spesifikasi teknis, lighting neon dinamis, dan sound design profesional.",
+    results: [
+      "26 Aset Video Motion Graphics Commercial Resmi Terkoneksi ke Bunny Stream CDN (Library ID: 756896)",
+      "Streaming Cepat Kualitas HD Bebas Buffering & Bebas Iklan",
+      "Optimal untuk materi promosi marketplace, display digital store, TikTok & Instagram Reels"
+    ],
+    tools: [
+      "After Effects",
+      "Premiere Pro",
+      "Cinema 4D",
+      "Illustrator",
+      "Bunny Stream"
+    ],
+    bunnyVideoId: "415addc4-e5bc-4e4a-9957-3b56659d5ff6",
+    bunnyLibraryId: "756896",
+    embedVideo: "https://iframe.mediadelivery.net/embed/756896/415addc4-e5bc-4e4a-9957-3b56659d5ff6",
+    items: [
+      {
+        name: "Kabel HDMI to Type C CH0201.mp4",
+        img: "assets/motion-howell/howell_motion_4.jpg",
+        video: "https://iframe.mediadelivery.net/embed/756896/a10f44cf-0963-44e5-8899-8c264e93fa5b",
+        desc: "Kabel HDMI to Type C CH0201.mp4 — Video animasi motion graphics produk Kabel HDMI to Type C CH0201 via Bunny Stream CDN."
+      },
+{
+        name: "Poster 1.1.mp4",
+        img: "assets/motion-howell/howell_motion_1.jpg",
+        video: "https://iframe.mediadelivery.net/embed/756896/415addc4-e5bc-4e4a-9957-3b56659d5ff6",
+        desc: "Poster 1.1.mp4 — Video animasi motion graphics produk Poster 1.1 via Bunny Stream CDN."
+      },
+      {
+        name: "Promo Box 9.9 Megasale.mp4",
+        img: "assets/motion-howell/howell_motion_2.jpg",
+        video: "https://iframe.mediadelivery.net/embed/756896/dc020273-edcf-4a87-bbb4-30306e5126b6",
+        desc: "Promo Box 9.9 Megasale.mp4 — Video animasi motion graphics produk Promo Box 9.9 Megasale via Bunny Stream CDN."
+      },
+      {
+        name: "Spiderman (2).mp4",
+        img: "assets/motion-howell/howell_motion_3.jpg",
+        video: "https://iframe.mediadelivery.net/embed/756896/43574ea1-08bd-46b5-a996-cf61113ace7e",
+        desc: "Spiderman (2).mp4 — Video animasi motion graphics produk Spiderman (2) via Bunny Stream CDN."
+      },
+            {
+        name: "Adapter HDMI 8K ADP008 - New (1).mp4",
+        img: "assets/motion-howell/howell_motion_5.jpg",
+        video: "https://iframe.mediadelivery.net/embed/756896/a686afad-f4e2-47b7-8d78-760fe16d2151",
+        desc: "Adapter HDMI 8K ADP008 - New (1).mp4 — Video animasi motion graphics produk Adapter HDMI 8K ADP008 - New (1) via Bunny Stream CDN."
+      },
+      {
+        name: "Headset HW05.mp4",
+        img: "assets/motion-howell/howell_motion_6.jpg",
+        video: "https://iframe.mediadelivery.net/embed/756896/c557bc81-a4c3-4b4b-b587-e272f1da5874",
+        desc: "Headset HW05.mp4 — Video animasi motion graphics produk Headset HW05 via Bunny Stream CDN."
+      },
+      {
+        name: "Kabel Data 4in1 65W AC01 - AI.mp4",
+        img: "assets/motion-howell/howell_motion_7.jpg",
+        video: "https://iframe.mediadelivery.net/embed/756896/7291e84e-787f-4ee2-8abb-12a6c7a8c226",
+        desc: "Kabel Data 4in1 65W AC01 - AI.mp4 — Video animasi motion graphics produk Kabel Data 4in1 65W AC01 - AI via Bunny Stream CDN."
+      },
+      {
+        name: "Kabel USB A to Type C AC03 - AI (1).mp4",
+        img: "assets/motion-howell/howell_motion_8.jpg",
+        video: "https://iframe.mediadelivery.net/embed/756896/a21fbe22-c2a3-4eb4-b789-a938ff67a1a4",
+        desc: "Kabel USB A to Type C AC03 - AI (1).mp4 — Video animasi motion graphics produk Kabel USB A to Type C AC03 - AI (1) via Bunny Stream CDN."
+      },
+      {
+        name: "Kabel LAN Cat 8 Flat N8A08 - AI (1).mp4",
+        img: "assets/motion-howell/howell_motion_9.jpg",
+        video: "https://iframe.mediadelivery.net/embed/756896/fddaf1d0-3cbc-4877-9b72-adb242a074c8",
+        desc: "Kabel LAN Cat 8 Flat N8A08 - AI (1).mp4 — Video animasi motion graphics produk Kabel LAN Cat 8 Flat N8A08 - AI (1) via Bunny Stream CDN."
+      },
+      {
+        name: "Kabel Data Type C to C CC02.mp4",
+        img: "assets/motion-howell/howell_motion_10.jpg",
+        video: "https://iframe.mediadelivery.net/embed/756896/5bc7b14f-9b6c-4e44-87a0-30d5e561f30c",
+        desc: "Kabel Data Type C to C CC02.mp4 — Video animasi motion graphics produk Kabel Data Type C to C CC02 via Bunny Stream CDN."
+      },
+      {
+        name: "Headset HW07 - Final.mp4",
+        img: "assets/motion-howell/howell_motion_11.jpg",
+        video: "https://iframe.mediadelivery.net/embed/756896/13841cf4-4cab-42d3-8a6a-b20dececcc7e",
+        desc: "Headset HW07 - Final.mp4 — Video animasi motion graphics produk Headset HW07 - Final via Bunny Stream CDN."
+      },
+      {
+        name: "Kabel HDMI to HDMI H0601 - AI (1).mp4",
+        img: "assets/motion-howell/howell_motion_12.jpg",
+        video: "https://iframe.mediadelivery.net/embed/756896/95659605-f684-4836-a782-9ecc9f0517d7",
+        desc: "Kabel HDMI to HDMI H0601 - AI (1).mp4 — Video animasi motion graphics produk Kabel HDMI to HDMI H0601 - AI (1) via Bunny Stream CDN."
+      },
+      {
+        name: "Kabel LAN Cat 6 N6A02 - AI.mp4",
+        img: "assets/motion-howell/howell_motion_13.jpg",
+        video: "https://iframe.mediadelivery.net/embed/756896/8669d44e-5ec9-4ce1-a56f-3c54cb210387",
+        desc: "Kabel LAN Cat 6 N6A02 - AI.mp4 — Video animasi motion graphics produk Kabel LAN Cat 6 N6A02 - AI via Bunny Stream CDN."
+      },
+      {
+        name: "Adapter USB ADP035 - Motion (1).mov",
+        img: "assets/motion-howell/howell_motion_14.jpg",
+        video: "https://iframe.mediadelivery.net/embed/756896/565b02b5-6be3-4f71-a12c-f1ce346043ad",
+        desc: "Adapter USB ADP035 - Motion (1).mov — Video animasi motion graphics produk Adapter USB ADP035 - Motion (1) via Bunny Stream CDN."
+      },
+      {
+        name: "Kabel LAN Cat 8 SFTP N8B03 - N8B08 - Motion.mp4",
+        img: "assets/motion-howell/howell_motion_15.jpg",
+        video: "https://iframe.mediadelivery.net/embed/756896/5f31d596-d113-4b55-ab19-6ac356b486c5",
+        desc: "Kabel LAN Cat 8 SFTP N8B03 - N8B08 - Motion.mp4 — Video animasi motion graphics produk Kabel LAN Cat 8 SFTP N8B03 - N8B08 - Motion via Bunny Stream CDN."
+      },
+      {
+        name: "Kabel HDMI L CH0603 - Motion.mov",
+        img: "assets/motion-howell/howell_motion_16.jpg",
+        video: "https://iframe.mediadelivery.net/embed/756896/fa856440-5d19-4913-945a-b37a30e24f81",
+        desc: "Kabel HDMI L CH0603 - Motion.mov — Video animasi motion graphics produk Kabel HDMI L CH0603 - Motion via Bunny Stream CDN."
+      },
+      {
+        name: "Microphone MIC002 - Motion.mov",
+        img: "assets/motion-howell/howell_motion_17.jpg",
+        video: "https://iframe.mediadelivery.net/embed/756896/d3e95003-65eb-48a4-b5b1-a1d0771fbf21",
+        desc: "Microphone MIC002 - Motion.mov — Video animasi motion graphics produk Microphone MIC002 - Motion via Bunny Stream CDN."
+      },
+      {
+        name: "Microphone MIC001 - Motion.mov",
+        img: "assets/motion-howell/howell_motion_18.jpg",
+        video: "https://iframe.mediadelivery.net/embed/756896/b46ab92a-75a4-4855-808c-dd550bcc845a",
+        desc: "Microphone MIC001 - Motion.mov — Video animasi motion graphics produk Microphone MIC001 - Motion via Bunny Stream CDN."
+      },
+      {
+        name: "Laptop Stand LCP005 - Motion.mov",
+        img: "assets/motion-howell/howell_motion_19.jpg",
+        video: "https://iframe.mediadelivery.net/embed/756896/f58add58-3010-451f-9d52-00d5ad3818fd",
+        desc: "Laptop Stand LCP005 - Motion.mov — Video animasi motion graphics produk Laptop Stand LCP005 - Motion via Bunny Stream CDN."
+      },
+      {
+        name: "Kabel HDMI H3503 - Motion.mov",
+        img: "assets/motion-howell/howell_motion_20.jpg",
+        video: "https://iframe.mediadelivery.net/embed/756896/ecb8e65b-b45c-4e87-85c1-169df05a6043",
+        desc: "Kabel HDMI H3503 - Motion.mov — Video animasi motion graphics produk Kabel HDMI H3503 - Motion via Bunny Stream CDN."
+      },
+      {
+        name: "Kabel Audio AU0603 - Motion.mov",
+        img: "assets/motion-howell/howell_motion_21.jpg",
+        video: "https://iframe.mediadelivery.net/embed/756896/978205ab-baf0-4bf5-a0b6-c39e59f08de3",
+        desc: "Kabel Audio AU0603 - Motion.mov — Video animasi motion graphics produk Kabel Audio AU0603 - Motion via Bunny Stream CDN."
+      },
+      {
+        name: "HDMI Spring DH0301.mov",
+        img: "assets/motion-howell/howell_motion_22.jpg",
+        video: "https://iframe.mediadelivery.net/embed/756896/3a7248fe-56a8-43b2-bd3a-cdc5515b7ea6",
+        desc: "HDMI Spring DH0301.mov — Video animasi motion graphics produk HDMI Spring DH0301 via Bunny Stream CDN."
+      },
+      {
+        name: "HDMI H1703 motion.mov",
+        img: "assets/motion-howell/howell_motion_23.jpg",
+        video: "https://iframe.mediadelivery.net/embed/756896/f54c7b63-c6a7-43d2-a7c7-ba7ccb650f05",
+        desc: "HDMI H1703 motion.mov — Video animasi motion graphics produk HDMI H1703 motion via Bunny Stream CDN."
+      },
+      {
+        name: "HDMI H3303.mov",
+        img: "assets/motion-howell/howell_motion_24.jpg",
+        video: "https://iframe.mediadelivery.net/embed/756896/242ca04b-8207-414e-a70c-b1fa09216ab2",
+        desc: "HDMI H3303.mov — Video animasi motion graphics produk HDMI H3303 via Bunny Stream CDN."
+      },
+      {
+        name: "HDMI CH0703.mov",
+        img: "assets/motion-howell/howell_motion_25.jpg",
+        video: "https://iframe.mediadelivery.net/embed/756896/3b1e8fb2-bb06-4aa9-a0f7-a20f81eddb59",
+        desc: "HDMI CH0703.mov — Video animasi motion graphics produk HDMI CH0703 via Bunny Stream CDN."
+      },
+      {
+        name: "DisplayPort 1.4 DP0403-motion.mov",
+        img: "assets/motion-howell/howell_motion_26.jpg",
+        video: "https://iframe.mediadelivery.net/embed/756896/de486358-fd71-4534-8df4-4d63a6e955e4",
+        desc: "DisplayPort 1.4 DP0403-motion.mov — Video animasi motion graphics produk DisplayPort 1.4 DP0403-motion via Bunny Stream CDN."
+      }
+    ]
+  },
+  {
     id: 'video-editing-andrey-ai-video-bootcamp',
     title: 'AI Video Bootcamp',
     category: 'ai-motion',
@@ -2322,6 +2508,126 @@ const PROJECTS = [
         img: 'assets/advertising-campaigns/andreydigital-make-money/MMDP Square.png',
         video: 'https://iframe.mediadelivery.net/embed/756896/0b8dcc66-12de-4365-9df8-2c5d29f4dbd7',
         desc: 'MMDP Video Ads 4 CP 6.mp4 — Fast-paced kinetic typography & strong call-to-action.'
+      }
+    ]
+  },
+  {
+    id: "ai-ugc-howell",
+    title: "Howell UGC",
+    category: "ai-ugc",
+    categoryName: "AI UGC Videos",
+    client: "PT. Howell Niaga Indonesia",
+    metric: "15 Video Commercial & UGC Showcase • Bunny Stream",
+    thumbnail: "assets/howell-ugc/howell_ugc_1.jpg",
+    shortDesc: "Folder Howell UGC — 15 Video Commercial, Product Showcase & UGC Video Content via Bunny Stream CDN.",
+    fullDesc: "Folder koleksi resmi Howell UGC untuk PT. Howell Niaga Indonesia yang terhubung langsung ke Bunny Stream CDN (Collection: 9ff55e89-9bb3-46ae-a360-2702067281ce). Berisi 15 aset video komersial & user-generated content produk Howell meliputi Kabel LAN Cat 8, Earphone HW01/HW02, Kabel Data AC0501/AC04, Kabel Power POW-102, HDMI Extender, Headset HW05, Adapter USB ADP035, HDMI 4K/8K, USB HUB 8in1, dan Wall HP0101.",
+    challenge: "Membuat serangkaian video UGC dan video komersial produk elektronik Howell yang natural, meyakinkan, dan berkonversi tinggi untuk TikTok & Instagram Reels.",
+    solution: "Integrasi video streaming via Bunny Stream CDN berkecepatan tinggi, format visual UGC ber-retensi tinggi, pacing dinamis, demonstrasi fitur produk praktis, dan sound design jernih.",
+    results: [
+      "15 Aset Video UGC & Commercial Resmi Terkoneksi ke Bunny Stream CDN (Library ID: 756896)",
+      "Streaming Cepat Kualitas HD Bebas Buffering & Bebas Iklan",
+      "Format Optimal untuk Iklan TikTok Ads, Reels & Showcase E-Commerce"
+    ],
+    tools: [
+      "Premiere Pro",
+      "After Effects",
+      "CapCut Pro",
+      "Voice AI",
+      "Bunny Stream"
+    ],
+    bunnyVideoId: "0747555f-8a0d-4f7e-a234-5014a493ad2c",
+    bunnyLibraryId: "756896",
+    embedVideo: "https://iframe.mediadelivery.net/embed/756896/0747555f-8a0d-4f7e-a234-5014a493ad2c",
+    items: [
+      {
+        name: "Kabel HDMI 8K CH0703.mov",
+        img: "assets/howell-ugc/howell_ugc_12.jpg",
+        video: "https://iframe.mediadelivery.net/embed/756896/1e98dad2-1939-4d9e-9ae0-d220e625cb07",
+        desc: "Kabel HDMI 8K CH0703.mov — Video UGC & product showcase Kabel HDMI 8K CH0703 via Bunny Stream CDN."
+      },
+{
+        name: "Kabel LAN Cat 8 - New (1).mp4",
+        img: "assets/howell-ugc/howell_ugc_1.jpg",
+        video: "https://iframe.mediadelivery.net/embed/756896/0747555f-8a0d-4f7e-a234-5014a493ad2c",
+        desc: "Kabel LAN Cat 8 - New (1).mp4 — Video UGC & product showcase Kabel LAN Cat 8 - New (1) via Bunny Stream CDN."
+      },
+      {
+        name: "Earphone HW01 - AI New.mov",
+        img: "assets/howell-ugc/howell_ugc_2.jpg",
+        video: "https://iframe.mediadelivery.net/embed/756896/c8fd3ee3-4047-41bf-bb8e-2d2f5ca1ef98",
+        desc: "Earphone HW01 - AI New.mov — Video UGC & product showcase Earphone HW01 - AI New via Bunny Stream CDN."
+      },
+      {
+        name: "Kabel Data AC0501 - New.mp4",
+        img: "assets/howell-ugc/howell_ugc_3.jpg",
+        video: "https://iframe.mediadelivery.net/embed/756896/54c7b49a-d900-4de8-8cd8-08e4be485338",
+        desc: "Kabel Data AC0501 - New.mp4 — Video UGC & product showcase Kabel Data AC0501 - New via Bunny Stream CDN."
+      },
+      {
+        name: "Kabel Data USB A to C AC04 - New 2.mp4",
+        img: "assets/howell-ugc/howell_ugc_4.jpg",
+        video: "https://iframe.mediadelivery.net/embed/756896/040cd5f9-cc88-4987-a735-05c10eeaa81f",
+        desc: "Kabel Data USB A to C AC04 - New 2.mp4 — Video UGC & product showcase Kabel Data USB A to C AC04 - New 2 via Bunny Stream CDN."
+      },
+      {
+        name: "Kabel Power POW-102 - New.mp4",
+        img: "assets/howell-ugc/howell_ugc_5.jpg",
+        video: "https://iframe.mediadelivery.net/embed/756896/b939ead2-cde4-41ac-9822-a6c8af545b3c",
+        desc: "Kabel Power POW-102 - New.mp4 — Video UGC & product showcase Kabel Power POW-102 - New via Bunny Stream CDN."
+      },
+      {
+        name: "HDMI Extender H1401.mov",
+        img: "assets/howell-ugc/howell_ugc_6.jpg",
+        video: "https://iframe.mediadelivery.net/embed/756896/9a8b8234-2bca-4272-8493-bbcb53837d3d",
+        desc: "HDMI Extender H1401.mov — Video UGC & product showcase HDMI Extender H1401 via Bunny Stream CDN."
+      },
+      {
+        name: "Earphone HW01 - AI.mp4",
+        img: "assets/howell-ugc/howell_ugc_7.jpg",
+        video: "https://iframe.mediadelivery.net/embed/756896/6458b288-66c1-44ac-b6bd-65295d8d9647",
+        desc: "Earphone HW01 - AI.mp4 — Video UGC & product showcase Earphone HW01 - AI via Bunny Stream CDN."
+      },
+      {
+        name: "Earphone HW02 (3).mp4",
+        img: "assets/howell-ugc/howell_ugc_8.jpg",
+        video: "https://iframe.mediadelivery.net/embed/756896/a9063a19-d95e-4e51-b3e9-58d3f87ce3d4",
+        desc: "Earphone HW02 (3).mp4 — Video UGC & product showcase Earphone HW02 (3) via Bunny Stream CDN."
+      },
+      {
+        name: "Headset HW05 - Copy.mp4",
+        img: "assets/howell-ugc/howell_ugc_9.jpg",
+        video: "https://iframe.mediadelivery.net/embed/756896/2eb73609-8735-465f-86a9-fb6151c80287",
+        desc: "Headset HW05 - Copy.mp4 — Video UGC & product showcase Headset HW05 - Copy via Bunny Stream CDN."
+      },
+      {
+        name: "Adapter USB ADP035.mov",
+        img: "assets/howell-ugc/howell_ugc_10.jpg",
+        video: "https://iframe.mediadelivery.net/embed/756896/a39f9f9c-674e-4d61-aec7-bcb1c75d33e9",
+        desc: "Adapter USB ADP035.mov — Video UGC & product showcase Adapter USB ADP035 via Bunny Stream CDN."
+      },
+      {
+        name: "Kabel HDMI 4K CH0403.mov",
+        img: "assets/howell-ugc/howell_ugc_11.jpg",
+        video: "https://iframe.mediadelivery.net/embed/756896/e2d92dc7-3b28-48eb-a5a3-8d8ba2e17339",
+        desc: "Kabel HDMI 4K CH0403.mov — Video UGC & product showcase Kabel HDMI 4K CH0403 via Bunny Stream CDN."
+      },
+            {
+        name: "USB HUB 8in1 HUB801.mov",
+        img: "assets/howell-ugc/howell_ugc_13.jpg",
+        video: "https://iframe.mediadelivery.net/embed/756896/567f9b70-b30b-4a00-948d-799921c72927",
+        desc: "USB HUB 8in1 HUB801.mov — Video UGC & product showcase USB HUB 8in1 HUB801 via Bunny Stream CDN."
+      },
+      {
+        name: "Wall HP0101.mov",
+        img: "assets/howell-ugc/howell_ugc_14.jpg",
+        video: "https://iframe.mediadelivery.net/embed/756896/973e47fb-93a5-45b5-af5e-ebe3d286e37f",
+        desc: "Wall HP0101.mov — Video UGC & product showcase Wall HP0101 via Bunny Stream CDN."
+      },
+      {
+        name: "Kabel HDMI 8K CH0703.mov",
+        img: "assets/howell-ugc/howell_ugc_15.jpg",
+        video: "https://iframe.mediadelivery.net/embed/756896/b6d78290-b629-4e1a-af06-eced9e147f6f",
+        desc: "Kabel HDMI 8K CH0703.mov — Video UGC & product showcase Kabel HDMI 8K CH0703 via Bunny Stream CDN."
       }
     ]
   },
@@ -2591,126 +2897,6 @@ const PROJECTS = [
         img: 'assets/ponds-acne-solution/6.jpg',
         video: 'https://iframe.mediadelivery.net/embed/756896/db9edec9-8bf3-4a91-a2fc-39d970dc1f1a',
         desc: '6.mp4 — Video komersial kecantikan Pond’s Acne Solution seri 6.'
-      }
-    ]
-  },
-  {
-    id: "ai-ugc-howell",
-    title: "Howell UGC",
-    category: "ai-ugc",
-    categoryName: "AI UGC Videos",
-    client: "PT. Howell Niaga Indonesia",
-    metric: "15 Video Commercial & UGC Showcase • Bunny Stream",
-    thumbnail: "assets/howell-ugc/howell_ugc_1.jpg",
-    shortDesc: "Folder Howell UGC — 15 Video Commercial, Product Showcase & UGC Video Content via Bunny Stream CDN.",
-    fullDesc: "Folder koleksi resmi Howell UGC untuk PT. Howell Niaga Indonesia yang terhubung langsung ke Bunny Stream CDN (Collection: 9ff55e89-9bb3-46ae-a360-2702067281ce). Berisi 15 aset video komersial & user-generated content produk Howell meliputi Kabel LAN Cat 8, Earphone HW01/HW02, Kabel Data AC0501/AC04, Kabel Power POW-102, HDMI Extender, Headset HW05, Adapter USB ADP035, HDMI 4K/8K, USB HUB 8in1, dan Wall HP0101.",
-    challenge: "Membuat serangkaian video UGC dan video komersial produk elektronik Howell yang natural, meyakinkan, dan berkonversi tinggi untuk TikTok & Instagram Reels.",
-    solution: "Integrasi video streaming via Bunny Stream CDN berkecepatan tinggi, format visual UGC ber-retensi tinggi, pacing dinamis, demonstrasi fitur produk praktis, dan sound design jernih.",
-    results: [
-      "15 Aset Video UGC & Commercial Resmi Terkoneksi ke Bunny Stream CDN (Library ID: 756896)",
-      "Streaming Cepat Kualitas HD Bebas Buffering & Bebas Iklan",
-      "Format Optimal untuk Iklan TikTok Ads, Reels & Showcase E-Commerce"
-    ],
-    tools: [
-      "Premiere Pro",
-      "After Effects",
-      "CapCut Pro",
-      "Voice AI",
-      "Bunny Stream"
-    ],
-    bunnyVideoId: "0747555f-8a0d-4f7e-a234-5014a493ad2c",
-    bunnyLibraryId: "756896",
-    embedVideo: "https://iframe.mediadelivery.net/embed/756896/0747555f-8a0d-4f7e-a234-5014a493ad2c",
-    items: [
-      {
-        name: "Kabel LAN Cat 8 - New (1).mp4",
-        img: "assets/howell-ugc/howell_ugc_1.jpg",
-        video: "https://iframe.mediadelivery.net/embed/756896/0747555f-8a0d-4f7e-a234-5014a493ad2c",
-        desc: "Kabel LAN Cat 8 - New (1).mp4 — Video UGC & product showcase Kabel LAN Cat 8 - New (1) via Bunny Stream CDN."
-      },
-      {
-        name: "Earphone HW01 - AI New.mov",
-        img: "assets/howell-ugc/howell_ugc_2.jpg",
-        video: "https://iframe.mediadelivery.net/embed/756896/c8fd3ee3-4047-41bf-bb8e-2d2f5ca1ef98",
-        desc: "Earphone HW01 - AI New.mov — Video UGC & product showcase Earphone HW01 - AI New via Bunny Stream CDN."
-      },
-      {
-        name: "Kabel Data AC0501 - New.mp4",
-        img: "assets/howell-ugc/howell_ugc_3.jpg",
-        video: "https://iframe.mediadelivery.net/embed/756896/54c7b49a-d900-4de8-8cd8-08e4be485338",
-        desc: "Kabel Data AC0501 - New.mp4 — Video UGC & product showcase Kabel Data AC0501 - New via Bunny Stream CDN."
-      },
-      {
-        name: "Kabel Data USB A to C AC04 - New 2.mp4",
-        img: "assets/howell-ugc/howell_ugc_4.jpg",
-        video: "https://iframe.mediadelivery.net/embed/756896/040cd5f9-cc88-4987-a735-05c10eeaa81f",
-        desc: "Kabel Data USB A to C AC04 - New 2.mp4 — Video UGC & product showcase Kabel Data USB A to C AC04 - New 2 via Bunny Stream CDN."
-      },
-      {
-        name: "Kabel Power POW-102 - New.mp4",
-        img: "assets/howell-ugc/howell_ugc_5.jpg",
-        video: "https://iframe.mediadelivery.net/embed/756896/b939ead2-cde4-41ac-9822-a6c8af545b3c",
-        desc: "Kabel Power POW-102 - New.mp4 — Video UGC & product showcase Kabel Power POW-102 - New via Bunny Stream CDN."
-      },
-      {
-        name: "HDMI Extender H1401.mov",
-        img: "assets/howell-ugc/howell_ugc_6.jpg",
-        video: "https://iframe.mediadelivery.net/embed/756896/9a8b8234-2bca-4272-8493-bbcb53837d3d",
-        desc: "HDMI Extender H1401.mov — Video UGC & product showcase HDMI Extender H1401 via Bunny Stream CDN."
-      },
-      {
-        name: "Earphone HW01 - AI.mp4",
-        img: "assets/howell-ugc/howell_ugc_7.jpg",
-        video: "https://iframe.mediadelivery.net/embed/756896/6458b288-66c1-44ac-b6bd-65295d8d9647",
-        desc: "Earphone HW01 - AI.mp4 — Video UGC & product showcase Earphone HW01 - AI via Bunny Stream CDN."
-      },
-      {
-        name: "Earphone HW02 (3).mp4",
-        img: "assets/howell-ugc/howell_ugc_8.jpg",
-        video: "https://iframe.mediadelivery.net/embed/756896/a9063a19-d95e-4e51-b3e9-58d3f87ce3d4",
-        desc: "Earphone HW02 (3).mp4 — Video UGC & product showcase Earphone HW02 (3) via Bunny Stream CDN."
-      },
-      {
-        name: "Headset HW05 - Copy.mp4",
-        img: "assets/howell-ugc/howell_ugc_9.jpg",
-        video: "https://iframe.mediadelivery.net/embed/756896/2eb73609-8735-465f-86a9-fb6151c80287",
-        desc: "Headset HW05 - Copy.mp4 — Video UGC & product showcase Headset HW05 - Copy via Bunny Stream CDN."
-      },
-      {
-        name: "Adapter USB ADP035.mov",
-        img: "assets/howell-ugc/howell_ugc_10.jpg",
-        video: "https://iframe.mediadelivery.net/embed/756896/a39f9f9c-674e-4d61-aec7-bcb1c75d33e9",
-        desc: "Adapter USB ADP035.mov — Video UGC & product showcase Adapter USB ADP035 via Bunny Stream CDN."
-      },
-      {
-        name: "Kabel HDMI 4K CH0403.mov",
-        img: "assets/howell-ugc/howell_ugc_11.jpg",
-        video: "https://iframe.mediadelivery.net/embed/756896/e2d92dc7-3b28-48eb-a5a3-8d8ba2e17339",
-        desc: "Kabel HDMI 4K CH0403.mov — Video UGC & product showcase Kabel HDMI 4K CH0403 via Bunny Stream CDN."
-      },
-      {
-        name: "Kabel HDMI 8K CH0703.mov",
-        img: "assets/howell-ugc/howell_ugc_12.jpg",
-        video: "https://iframe.mediadelivery.net/embed/756896/1e98dad2-1939-4d9e-9ae0-d220e625cb07",
-        desc: "Kabel HDMI 8K CH0703.mov — Video UGC & product showcase Kabel HDMI 8K CH0703 via Bunny Stream CDN."
-      },
-      {
-        name: "USB HUB 8in1 HUB801.mov",
-        img: "assets/howell-ugc/howell_ugc_13.jpg",
-        video: "https://iframe.mediadelivery.net/embed/756896/567f9b70-b30b-4a00-948d-799921c72927",
-        desc: "USB HUB 8in1 HUB801.mov — Video UGC & product showcase USB HUB 8in1 HUB801 via Bunny Stream CDN."
-      },
-      {
-        name: "Wall HP0101.mov",
-        img: "assets/howell-ugc/howell_ugc_14.jpg",
-        video: "https://iframe.mediadelivery.net/embed/756896/973e47fb-93a5-45b5-af5e-ebe3d286e37f",
-        desc: "Wall HP0101.mov — Video UGC & product showcase Wall HP0101 via Bunny Stream CDN."
-      },
-      {
-        name: "Kabel HDMI 8K CH0703.mov",
-        img: "assets/howell-ugc/howell_ugc_15.jpg",
-        video: "https://iframe.mediadelivery.net/embed/756896/b6d78290-b629-4e1a-af06-eced9e147f6f",
-        desc: "Kabel HDMI 8K CH0703.mov — Video UGC & product showcase Kabel HDMI 8K CH0703 via Bunny Stream CDN."
       }
     ]
   },
@@ -3074,192 +3260,6 @@ const PROJECTS = [
         img: 'assets/motion-se-indonesia/se_indonesia_motion_1.jpg',
         video: 'https://iframe.mediadelivery.net/embed/756896/51314ab1-a392-4c5f-834a-549411e5e3d8',
         desc: 'Food_Video_Generation_From_Prompts.mp4 — Video motion graphics komersial food motion Se_Indonesia dari generasi AI prompt.'
-      }
-    ]
-  },
-  {
-    id: "motion-graphics-howell",
-    title: "Howell",
-    category: "ai-motion",
-    categoryName: "AI Motion Videos",
-    client: "PT. Howell Niaga Indonesia",
-    metric: "26 Video Commercial & AI Motion • Bunny Stream",
-    thumbnail: "assets/motion-howell/howell_motion_1.jpg",
-    shortDesc: "Folder AI Motion Videos Howell — 26 Video Motion Commercial 3D/2D Product Showcase, Promo Megasale, Adapter & Cable Specs via Bunny Stream CDN.",
-    fullDesc: "Folder koleksi resmi AI Motion Videos untuk Howell (PT. Howell Niaga Indonesia) yang terhubung langsung ke Bunny Stream CDN (Collection: d22f13da-d9ff-4a24-b39d-2097295d3028). Di dalamnya berisi 26 aset video motion graphics komersial meliputi Poster Promo, Box Megasale, Spiderman Cinematic, HDMI 8K/4K, Headset HW05/HW07, Kabel Data 4in1 65W, Kabel LAN Cat 8/6, Microphone MIC001/002, Laptop Stand, DisplayPort, dan produk ekosistem Howell lainnya.",
-    challenge: "Mempresentasikan 26 seri produk elektronik premium Howell dalam format animasi video motion graphics 3D/2D kinetik dan showcase produk ber-retensi tinggi.",
-    solution: "Integrasi video streaming berkecepatan tinggi via Bunny Stream CDN, keyframing animasi produk After Effects, motion typography spesifikasi teknis, lighting neon dinamis, dan sound design profesional.",
-    results: [
-      "26 Aset Video Motion Graphics Commercial Resmi Terkoneksi ke Bunny Stream CDN (Library ID: 756896)",
-      "Streaming Cepat Kualitas HD Bebas Buffering & Bebas Iklan",
-      "Optimal untuk materi promosi marketplace, display digital store, TikTok & Instagram Reels"
-    ],
-    tools: [
-      "After Effects",
-      "Premiere Pro",
-      "Cinema 4D",
-      "Illustrator",
-      "Bunny Stream"
-    ],
-    bunnyVideoId: "415addc4-e5bc-4e4a-9957-3b56659d5ff6",
-    bunnyLibraryId: "756896",
-    embedVideo: "https://iframe.mediadelivery.net/embed/756896/415addc4-e5bc-4e4a-9957-3b56659d5ff6",
-    items: [
-      {
-        name: "Poster 1.1.mp4",
-        img: "assets/motion-howell/howell_motion_1.jpg",
-        video: "https://iframe.mediadelivery.net/embed/756896/415addc4-e5bc-4e4a-9957-3b56659d5ff6",
-        desc: "Poster 1.1.mp4 — Video animasi motion graphics produk Poster 1.1 via Bunny Stream CDN."
-      },
-      {
-        name: "Promo Box 9.9 Megasale.mp4",
-        img: "assets/motion-howell/howell_motion_2.jpg",
-        video: "https://iframe.mediadelivery.net/embed/756896/dc020273-edcf-4a87-bbb4-30306e5126b6",
-        desc: "Promo Box 9.9 Megasale.mp4 — Video animasi motion graphics produk Promo Box 9.9 Megasale via Bunny Stream CDN."
-      },
-      {
-        name: "Spiderman (2).mp4",
-        img: "assets/motion-howell/howell_motion_3.jpg",
-        video: "https://iframe.mediadelivery.net/embed/756896/43574ea1-08bd-46b5-a996-cf61113ace7e",
-        desc: "Spiderman (2).mp4 — Video animasi motion graphics produk Spiderman (2) via Bunny Stream CDN."
-      },
-      {
-        name: "Kabel HDMI to Type C CH0201.mp4",
-        img: "assets/motion-howell/howell_motion_4.jpg",
-        video: "https://iframe.mediadelivery.net/embed/756896/a10f44cf-0963-44e5-8899-8c264e93fa5b",
-        desc: "Kabel HDMI to Type C CH0201.mp4 — Video animasi motion graphics produk Kabel HDMI to Type C CH0201 via Bunny Stream CDN."
-      },
-      {
-        name: "Adapter HDMI 8K ADP008 - New (1).mp4",
-        img: "assets/motion-howell/howell_motion_5.jpg",
-        video: "https://iframe.mediadelivery.net/embed/756896/a686afad-f4e2-47b7-8d78-760fe16d2151",
-        desc: "Adapter HDMI 8K ADP008 - New (1).mp4 — Video animasi motion graphics produk Adapter HDMI 8K ADP008 - New (1) via Bunny Stream CDN."
-      },
-      {
-        name: "Headset HW05.mp4",
-        img: "assets/motion-howell/howell_motion_6.jpg",
-        video: "https://iframe.mediadelivery.net/embed/756896/c557bc81-a4c3-4b4b-b587-e272f1da5874",
-        desc: "Headset HW05.mp4 — Video animasi motion graphics produk Headset HW05 via Bunny Stream CDN."
-      },
-      {
-        name: "Kabel Data 4in1 65W AC01 - AI.mp4",
-        img: "assets/motion-howell/howell_motion_7.jpg",
-        video: "https://iframe.mediadelivery.net/embed/756896/7291e84e-787f-4ee2-8abb-12a6c7a8c226",
-        desc: "Kabel Data 4in1 65W AC01 - AI.mp4 — Video animasi motion graphics produk Kabel Data 4in1 65W AC01 - AI via Bunny Stream CDN."
-      },
-      {
-        name: "Kabel USB A to Type C AC03 - AI (1).mp4",
-        img: "assets/motion-howell/howell_motion_8.jpg",
-        video: "https://iframe.mediadelivery.net/embed/756896/a21fbe22-c2a3-4eb4-b789-a938ff67a1a4",
-        desc: "Kabel USB A to Type C AC03 - AI (1).mp4 — Video animasi motion graphics produk Kabel USB A to Type C AC03 - AI (1) via Bunny Stream CDN."
-      },
-      {
-        name: "Kabel LAN Cat 8 Flat N8A08 - AI (1).mp4",
-        img: "assets/motion-howell/howell_motion_9.jpg",
-        video: "https://iframe.mediadelivery.net/embed/756896/fddaf1d0-3cbc-4877-9b72-adb242a074c8",
-        desc: "Kabel LAN Cat 8 Flat N8A08 - AI (1).mp4 — Video animasi motion graphics produk Kabel LAN Cat 8 Flat N8A08 - AI (1) via Bunny Stream CDN."
-      },
-      {
-        name: "Kabel Data Type C to C CC02.mp4",
-        img: "assets/motion-howell/howell_motion_10.jpg",
-        video: "https://iframe.mediadelivery.net/embed/756896/5bc7b14f-9b6c-4e44-87a0-30d5e561f30c",
-        desc: "Kabel Data Type C to C CC02.mp4 — Video animasi motion graphics produk Kabel Data Type C to C CC02 via Bunny Stream CDN."
-      },
-      {
-        name: "Headset HW07 - Final.mp4",
-        img: "assets/motion-howell/howell_motion_11.jpg",
-        video: "https://iframe.mediadelivery.net/embed/756896/13841cf4-4cab-42d3-8a6a-b20dececcc7e",
-        desc: "Headset HW07 - Final.mp4 — Video animasi motion graphics produk Headset HW07 - Final via Bunny Stream CDN."
-      },
-      {
-        name: "Kabel HDMI to HDMI H0601 - AI (1).mp4",
-        img: "assets/motion-howell/howell_motion_12.jpg",
-        video: "https://iframe.mediadelivery.net/embed/756896/95659605-f684-4836-a782-9ecc9f0517d7",
-        desc: "Kabel HDMI to HDMI H0601 - AI (1).mp4 — Video animasi motion graphics produk Kabel HDMI to HDMI H0601 - AI (1) via Bunny Stream CDN."
-      },
-      {
-        name: "Kabel LAN Cat 6 N6A02 - AI.mp4",
-        img: "assets/motion-howell/howell_motion_13.jpg",
-        video: "https://iframe.mediadelivery.net/embed/756896/8669d44e-5ec9-4ce1-a56f-3c54cb210387",
-        desc: "Kabel LAN Cat 6 N6A02 - AI.mp4 — Video animasi motion graphics produk Kabel LAN Cat 6 N6A02 - AI via Bunny Stream CDN."
-      },
-      {
-        name: "Adapter USB ADP035 - Motion (1).mov",
-        img: "assets/motion-howell/howell_motion_14.jpg",
-        video: "https://iframe.mediadelivery.net/embed/756896/565b02b5-6be3-4f71-a12c-f1ce346043ad",
-        desc: "Adapter USB ADP035 - Motion (1).mov — Video animasi motion graphics produk Adapter USB ADP035 - Motion (1) via Bunny Stream CDN."
-      },
-      {
-        name: "Kabel LAN Cat 8 SFTP N8B03 - N8B08 - Motion.mp4",
-        img: "assets/motion-howell/howell_motion_15.jpg",
-        video: "https://iframe.mediadelivery.net/embed/756896/5f31d596-d113-4b55-ab19-6ac356b486c5",
-        desc: "Kabel LAN Cat 8 SFTP N8B03 - N8B08 - Motion.mp4 — Video animasi motion graphics produk Kabel LAN Cat 8 SFTP N8B03 - N8B08 - Motion via Bunny Stream CDN."
-      },
-      {
-        name: "Kabel HDMI L CH0603 - Motion.mov",
-        img: "assets/motion-howell/howell_motion_16.jpg",
-        video: "https://iframe.mediadelivery.net/embed/756896/fa856440-5d19-4913-945a-b37a30e24f81",
-        desc: "Kabel HDMI L CH0603 - Motion.mov — Video animasi motion graphics produk Kabel HDMI L CH0603 - Motion via Bunny Stream CDN."
-      },
-      {
-        name: "Microphone MIC002 - Motion.mov",
-        img: "assets/motion-howell/howell_motion_17.jpg",
-        video: "https://iframe.mediadelivery.net/embed/756896/d3e95003-65eb-48a4-b5b1-a1d0771fbf21",
-        desc: "Microphone MIC002 - Motion.mov — Video animasi motion graphics produk Microphone MIC002 - Motion via Bunny Stream CDN."
-      },
-      {
-        name: "Microphone MIC001 - Motion.mov",
-        img: "assets/motion-howell/howell_motion_18.jpg",
-        video: "https://iframe.mediadelivery.net/embed/756896/b46ab92a-75a4-4855-808c-dd550bcc845a",
-        desc: "Microphone MIC001 - Motion.mov — Video animasi motion graphics produk Microphone MIC001 - Motion via Bunny Stream CDN."
-      },
-      {
-        name: "Laptop Stand LCP005 - Motion.mov",
-        img: "assets/motion-howell/howell_motion_19.jpg",
-        video: "https://iframe.mediadelivery.net/embed/756896/f58add58-3010-451f-9d52-00d5ad3818fd",
-        desc: "Laptop Stand LCP005 - Motion.mov — Video animasi motion graphics produk Laptop Stand LCP005 - Motion via Bunny Stream CDN."
-      },
-      {
-        name: "Kabel HDMI H3503 - Motion.mov",
-        img: "assets/motion-howell/howell_motion_20.jpg",
-        video: "https://iframe.mediadelivery.net/embed/756896/ecb8e65b-b45c-4e87-85c1-169df05a6043",
-        desc: "Kabel HDMI H3503 - Motion.mov — Video animasi motion graphics produk Kabel HDMI H3503 - Motion via Bunny Stream CDN."
-      },
-      {
-        name: "Kabel Audio AU0603 - Motion.mov",
-        img: "assets/motion-howell/howell_motion_21.jpg",
-        video: "https://iframe.mediadelivery.net/embed/756896/978205ab-baf0-4bf5-a0b6-c39e59f08de3",
-        desc: "Kabel Audio AU0603 - Motion.mov — Video animasi motion graphics produk Kabel Audio AU0603 - Motion via Bunny Stream CDN."
-      },
-      {
-        name: "HDMI Spring DH0301.mov",
-        img: "assets/motion-howell/howell_motion_22.jpg",
-        video: "https://iframe.mediadelivery.net/embed/756896/3a7248fe-56a8-43b2-bd3a-cdc5515b7ea6",
-        desc: "HDMI Spring DH0301.mov — Video animasi motion graphics produk HDMI Spring DH0301 via Bunny Stream CDN."
-      },
-      {
-        name: "HDMI H1703 motion.mov",
-        img: "assets/motion-howell/howell_motion_23.jpg",
-        video: "https://iframe.mediadelivery.net/embed/756896/f54c7b63-c6a7-43d2-a7c7-ba7ccb650f05",
-        desc: "HDMI H1703 motion.mov — Video animasi motion graphics produk HDMI H1703 motion via Bunny Stream CDN."
-      },
-      {
-        name: "HDMI H3303.mov",
-        img: "assets/motion-howell/howell_motion_24.jpg",
-        video: "https://iframe.mediadelivery.net/embed/756896/242ca04b-8207-414e-a70c-b1fa09216ab2",
-        desc: "HDMI H3303.mov — Video animasi motion graphics produk HDMI H3303 via Bunny Stream CDN."
-      },
-      {
-        name: "HDMI CH0703.mov",
-        img: "assets/motion-howell/howell_motion_25.jpg",
-        video: "https://iframe.mediadelivery.net/embed/756896/3b1e8fb2-bb06-4aa9-a0f7-a20f81eddb59",
-        desc: "HDMI CH0703.mov — Video animasi motion graphics produk HDMI CH0703 via Bunny Stream CDN."
-      },
-      {
-        name: "DisplayPort 1.4 DP0403-motion.mov",
-        img: "assets/motion-howell/howell_motion_26.jpg",
-        video: "https://iframe.mediadelivery.net/embed/756896/de486358-fd71-4534-8df4-4d63a6e955e4",
-        desc: "DisplayPort 1.4 DP0403-motion.mov — Video animasi motion graphics produk DisplayPort 1.4 DP0403-motion via Bunny Stream CDN."
       }
     ]
   },
