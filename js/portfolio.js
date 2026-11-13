@@ -544,10 +544,16 @@ const PROJECTS = [
       'CapCut Pro',
       'Bunny Stream'
     ],
-    bunnyVideoId: 'a858712e-f57b-4df0-a5b5-4ec786052bfe',
+    bunnyVideoId: '2db65fa0-a82b-4c10-bc04-c6efcf1b8a59',
     bunnyLibraryId: '756896',
-    embedVideo: 'https://iframe.mediadelivery.net/embed/756896/a858712e-f57b-4df0-a5b5-4ec786052bfe',
+    embedVideo: 'https://iframe.mediadelivery.net/embed/756896/2db65fa0-a82b-4c10-bc04-c6efcf1b8a59',
     items: [
+      {
+        name: 'XXXTentacion Bio & Facts.mp4',
+        img: 'assets/mid-layer/mid_8.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/2db65fa0-a82b-4c10-bc04-c6efcf1b8a59',
+        desc: 'XXXTentacion Bio & Facts — Video dokumenter hip-hop fakta resmi perjalanan karier.'
+      },
       {
         name: 'The Paradox of Choice — Barry Schwartz.mp4',
         img: 'assets/mid-layer/mid_1.jpg',
@@ -590,12 +596,7 @@ const PROJECTS = [
         video: 'https://iframe.mediadelivery.net/embed/756896/c7553e73-cdf7-49df-81de-3133f7632640',
         desc: 'Kurt Cobain Storytelling — Mini dokumenter biografi vokalis Nirvana & kultur musik 90an.'
       },
-      {
-        name: 'XXXTentacion Bio & Facts.mp4',
-        img: 'assets/mid-layer/mid_8.jpg',
-        video: 'https://iframe.mediadelivery.net/embed/756896/2db65fa0-a82b-4c10-bc04-c6efcf1b8a59',
-        desc: 'XXXTentacion Bio & Facts — Video dokumenter hip-hop fakta resmi perjalanan karier.'
-      },
+
       {
         name: 'Biographical Narrative & Relationship Journey.mp4',
         img: 'assets/mid-layer/mid_9.jpg',
@@ -611,7 +612,7 @@ const PROJECTS = [
     categoryName: "AI UGC Videos",
     client: "PT. Howell Niaga Indonesia",
     metric: "15 Video Commercial & UGC Showcase • Bunny Stream",
-    thumbnail: "assets/howell-ugc/howell_ugc_1.jpg",
+    thumbnail: "assets/howell-ugc/howell_ugc_12.jpg",
     shortDesc: "Folder Howell UGC — 15 Video Commercial, Product Showcase & UGC Video Content via Bunny Stream CDN.",
     fullDesc: "Folder koleksi resmi Howell UGC untuk PT. Howell Niaga Indonesia yang terhubung langsung ke Bunny Stream CDN (Collection: 9ff55e89-9bb3-46ae-a360-2702067281ce). Berisi 15 aset video komersial & user-generated content produk Howell meliputi Kabel LAN Cat 8, Earphone HW01/HW02, Kabel Data AC0501/AC04, Kabel Power POW-102, HDMI Extender, Headset HW05, Adapter USB ADP035, HDMI 4K/8K, USB HUB 8in1, dan Wall HP0101.",
     challenge: "Membuat serangkaian video UGC dan video komersial produk elektronik Howell yang natural, meyakinkan, dan berkonversi tinggi untuk TikTok & Instagram Reels.",
