@@ -3025,13 +3025,14 @@ const PROJECTS = [
     ]
   },
   {
-    "id": "web-howell-spin-win",    "title": "Howell Spin & Win",
+    "id": "web-howell-spin-win",
+    "websitePreviewImage": "assets/web-projects/howell-spin-win-screenshot.jpg",    "title": "Howell Spin & Win",
     "category": "web",
     "categoryName": "Website & Landing Pages",
     "client": "PT. Howell Niaga Indonesia",
     "metric": "Interactive Campaign Website",
-    "thumbnail": "assets/web-projects/howell-spin-win.jpg",
-    "embedVideo": "assets/web-projects/howell-spin-win.jpg",
+    "thumbnail": "assets/web-projects/howell-spin-win-screenshot.jpg",
+    "embedVideo": "assets/web-projects/howell-spin-win-screenshot.jpg",
     "websiteUrl": "https://spin.howellcable.site/",
     "shortDesc": "Website campaign interaktif Spin & Win untuk Howell, dibuat dari perancangan hingga siap digunakan.",
     "fullDesc": "Website aktivasi Howell dengan roda hadiah interaktif, kontrol suara, simulasi spin, histori, dan tampilan layar penuh. Seluruh proyek dirancang dan dikembangkan dari nol hingga siap digunakan oleh Wildan Firdaus.",
@@ -3354,7 +3355,7 @@ function initPortfolio() {
       if (e.target === card && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); openModal(p); }
     });
     const isCardVid = p.thumbnail.endsWith('.mp4') || p.thumbnail.endsWith('.mov');
-    const isWebsitePreview = Boolean(p.websiteUrl && p.previewSite);
+    const isWebsitePreview = Boolean(p.websiteUrl);
     const thumbBgStyle = p.thumbBg ? ` style="background: ${p.thumbBg};"` : '';
     const thumbImgStyle = p.thumbBg ? ' style="object-fit: contain; padding: 1.25rem;"' : '';
     const loadingAttr = 'loading="lazy"';
@@ -3365,8 +3366,13 @@ function initPortfolio() {
       <div class="project-thumb"${thumbBgStyle}>
         ${isWebsitePreview ? `
           <div class="website-preview-window">
-            <iframe class="website-preview-frame" src="${p.websiteUrl}" loading="lazy" title="Website live ${projectTitle(p.title)}" referrerpolicy="strict-origin-when-cross-origin" aria-hidden="true" tabindex="-1"></iframe>
-            <span class="website-preview-label" aria-hidden="true">WEBSITE LIVE</span>
+            ${p.websitePreviewImage ? `
+              <img class="website-preview-still" src="${p.websitePreviewImage}" alt="Screenshot asli ${projectTitle(p.title)}" loading="lazy" decoding="async">
+              <span class="website-preview-label" aria-hidden="true">SCREENSHOT WEBSITE</span>
+            ` : `
+              <iframe class="website-preview-frame" src="${p.websiteUrl}" loading="lazy" title="Website live ${projectTitle(p.title)}" referrerpolicy="strict-origin-when-cross-origin" aria-hidden="true" tabindex="-1"></iframe>
+              <span class="website-preview-label" aria-hidden="true">WEBSITE LIVE</span>
+            `}
           </div>
         ` : isCardVid ? `
           <div class="video-poster-fallback">
