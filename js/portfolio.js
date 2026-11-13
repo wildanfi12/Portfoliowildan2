@@ -28,9 +28,9 @@ const PROJECTS = [
       "Illustrator",
       "Bunny Stream"
     ],
-    bunnyVideoId: "415addc4-e5bc-4e4a-9957-3b56659d5ff6",
+    bunnyVideoId: "fa856440-5d19-4913-945a-b37a30e24f81",
     bunnyLibraryId: "756896",
-    embedVideo: "https://iframe.mediadelivery.net/embed/756896/415addc4-e5bc-4e4a-9957-3b56659d5ff6",
+    embedVideo: "https://iframe.mediadelivery.net/embed/756896/fa856440-5d19-4913-945a-b37a30e24f81",
     items: [
             {
         name: "Kabel HDMI L CH0603 - Motion.mov",
