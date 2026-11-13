@@ -3023,6 +3023,89 @@ const PROJECTS = [
         desc: 'Desain visual paket promo bundling Mind Mastery Academy.'
       }
     ]
+  },
+  {
+    "id": "web-howell-spin-win",
+    "title": "Howell Spin & Win",
+    "category": "web",
+    "categoryName": "Website & Landing Pages",
+    "client": "PT. Howell Niaga Indonesia",
+    "metric": "Interactive Campaign Website",
+    "thumbnail": "assets/web-projects/howell-spin-win.svg",
+    "embedVideo": "assets/web-projects/howell-spin-win.svg",
+    "websiteUrl": "https://spin.howellcable.site/",
+    "shortDesc": "Website campaign interaktif Spin & Win untuk Howell, dibuat dari perancangan hingga siap digunakan.",
+    "fullDesc": "Website aktivasi Howell dengan roda hadiah interaktif, kontrol suara, simulasi spin, histori, dan tampilan layar penuh. Seluruh proyek dirancang dan dikembangkan dari nol hingga siap digunakan oleh Wildan Firdaus.",
+    "challenge": "Membuat pengalaman promosi yang terasa seperti permainan dan mudah diakses pengunjung acara.",
+    "solution": "Membangun halaman campaign interaktif dengan roda hadiah, kontrol permainan, serta panel pendukung yang terhubung dalam satu pengalaman.",
+    "results": [
+      "Roda hadiah interaktif dengan mode simulasi",
+      "Kontrol suara, histori, dan tampilan layar penuh",
+      "Perancangan dan pengembangan end-to-end oleh Wildan Firdaus"
+    ]
+  },
+  {
+    "id": "web-howell-catch-win",
+    "title": "Howell Catch & Win",
+    "category": "web",
+    "categoryName": "Website & Landing Pages",
+    "client": "PT. Howell Niaga Indonesia",
+    "metric": "Interactive Mini Game",
+    "thumbnail": "assets/web-projects/howell-catch-win.svg",
+    "embedVideo": "assets/web-projects/howell-catch-win.svg",
+    "websiteUrl": "https://game.howellcable.site/",
+    "shortDesc": "Game web Catch & Win bertema Howell, dikembangkan dari konsep hingga siap dimainkan.",
+    "fullDesc": "Game browser interaktif Catch & Win untuk Howell dengan tantangan 30 detik, papan skor, koleksi skin, serta elemen produk. Halaman live menandai permainan dan hadiah sebagai simulasi. Proyek dibuat dari nol hingga jadi oleh Wildan Firdaus.",
+    "challenge": "Mengemas interaksi brand dalam permainan singkat yang mudah dipahami pengunjung dan berjalan langsung di browser.",
+    "solution": "Membuat game 30 detik dengan alur mulai, papan skor, koleksi skin, elemen produk, serta antarmuka yang responsif.",
+    "results": [
+      "Game Catch & Win berbasis browser",
+      "Papan skor dan koleksi skin",
+      "Mode demo dengan hadiah simulasi",
+      "Perancangan dan pengembangan end-to-end oleh Wildan Firdaus"
+    ]
+  },
+  {
+    "id": "web-nadia-bakery",
+    "title": "Nadia Bakery",
+    "category": "web",
+    "categoryName": "Website & Landing Pages",
+    "client": "Nadia Bakery",
+    "metric": "Business Website & Product Catalog",
+    "thumbnail": "assets/web-projects/nadia-bakery.svg",
+    "embedVideo": "assets/web-projects/nadia-bakery.svg",
+    "websiteUrl": "https://wildanfi12.github.io/Nadia-Bakery/",
+    "shortDesc": "Website bisnis dan katalog Nadia Bakery dengan alur pemesanan langsung melalui WhatsApp.",
+    "fullDesc": "Website Nadia Bakery menampilkan cerita brand, katalog Roti Original, Roti Kering, Brownies, dan Pia, galeri, filter kategori, FAQ, serta ajakan pemesanan melalui WhatsApp. Seluruh proses dari awal hingga website jadi dikerjakan oleh Wildan Firdaus.",
+    "challenge": "Menyajikan informasi produk bakery rumahan dengan hangat, jelas, dan mudah diakses calon pelanggan.",
+    "solution": "Membangun website responsif dengan narasi brand, katalog produk yang dapat difilter, galeri visual, FAQ, dan tautan WhatsApp.",
+    "results": [
+      "Katalog empat kategori produk dengan filter",
+      "Cerita brand, galeri, dan FAQ",
+      "Alur pertanyaan dan pemesanan lewat WhatsApp",
+      "Perancangan dan pengembangan end-to-end oleh Wildan Firdaus"
+    ]
+  },
+  {
+    "id": "web-howell-indocomtech-registration",
+    "title": "Howell — Indocomtech Visitor Registration",
+    "category": "web",
+    "categoryName": "Website & Landing Pages",
+    "client": "PT. Howell Niaga Indonesia",
+    "metric": "Event Registration Website",
+    "thumbnail": "assets/web-projects/howell-registration.svg",
+    "embedVideo": "assets/web-projects/howell-registration.svg",
+    "websiteUrl": "https://registrasi.howellcable.site/",
+    "shortDesc": "Halaman registrasi pengunjung Howell untuk Indocomtech 2026, dibuat dari nol hingga siap digunakan.",
+    "fullDesc": "Website formulir registrasi pengunjung Indocomtech 2026 untuk Howell. Formulir mencakup data diri, kategori pengunjung, nama perusahaan, serta pilihan kebutuhan produk. Perancangan dan pengembangan dari awal sampai selesai dilakukan oleh Wildan Firdaus.",
+    "challenge": "Membuat formulir event yang menampung informasi pengunjung dan kebutuhan produk dalam satu alur yang jelas.",
+    "solution": "Menyusun formulir responsif dengan kelompok field data diri, profil bisnis, kategori pengunjung, dan kebutuhan produk Howell.",
+    "results": [
+      "Form registrasi pengunjung Indocomtech 2026",
+      "Kategori pengunjung dan pilihan kebutuhan produk",
+      "Tampilan terstruktur untuk desktop dan ponsel",
+      "Perancangan dan pengembangan end-to-end oleh Wildan Firdaus"
+    ]
   }
 ];
 
@@ -3295,7 +3378,7 @@ function initPortfolio() {
         <span class="collection-open" aria-hidden="true">↗</span>
       </div>
       <div class="project-content">
-        <div class="collection-meta"><span>${p.categoryName}</span><span>${p.items?.length ? p.items.length + ' karya' : 'Lihat proyek'}</span></div>
+        <div class="collection-meta"><span>${p.categoryName}</span><span>${p.items?.length ? p.items.length + ' karya' : (p.websiteUrl ? 'Website live' : 'Lihat proyek')}</span></div>
         <h3 class="project-title">${projectTitle(p.title)}</h3>
         <p class="project-desc">${p.client}</p>
       </div>
@@ -3441,7 +3524,7 @@ function initPortfolio() {
     }
 
     modalBody.innerHTML = `
-      <div class="collection-intro"><span>${project.categoryName} / ${project.client}</span><h2 class="modal-project-title" id="collection-title">${projectTitle(project.title)}</h2><p>${project.items?.length ? project.items.length + ' karya dalam koleksi' : 'Ringkasan proyek'}</p></div>
+      <div class="collection-intro"><span>${project.categoryName} / ${project.client}</span><h2 class="modal-project-title" id="collection-title">${projectTitle(project.title)}</h2><p>${project.items?.length ? project.items.length + ' karya dalam koleksi' : (project.websiteUrl ? 'Website live' : 'Ringkasan proyek')}</p></div>
       <div class="modal-media" id="modal-main-media" style="position:relative; background:${initialEmbedBg};" onclick="${(!isVideo && !isBunny) ? `window.openZoomViewerForProject('${project.id}', 0)` : ''}">
         ${isBunny ? `
           <div class="bunny-player-box" style="position:relative; width:100%; aspect-ratio:16/9; border-radius:14px; overflow:hidden; background:#000; box-shadow:0 8px 32px rgba(0,0,0,0.5);">
@@ -3456,6 +3539,11 @@ function initPortfolio() {
       </div>
       <div class="modal-header-text" style="margin-bottom: 1.5rem;">
         <p class="collection-summary" id="modal-active-caption" style="font-size: 1.15rem; font-weight: 600; color: #1a1a1a; margin-bottom: 0.5rem; letter-spacing: -0.01em;">${project.items && project.items[0] ? itemDisplayLabel(project.items[0], project.client, isVideo) : collectionSummary(project)}</p>
+        ${project.websiteUrl ? `
+          <div class="project-live-link-wrap">
+            <a href="${project.websiteUrl}" target="_blank" rel="noopener noreferrer" class="project-live-link">Kunjungi website <span aria-hidden="true">↗</span></a>
+          </div>
+        ` : ''}
         ${project.youtubeUrl ? `
           <div>
             <a href="${project.youtubeUrl}" target="_blank" class="btn btn-primary" style="background:#ff0000; border-color:#ff0000; color:#fff; font-weight:700; font-size:0.95rem; padding:0.7rem 1.3rem; display:inline-flex; align-items:center; gap:0.6rem; text-decoration:none; border-radius:12px; box-shadow: 0 4px 15px rgba(255, 0, 0, 0.3); max-width:100%; word-break:break-word;">
