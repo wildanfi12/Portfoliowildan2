@@ -170,3 +170,11 @@
 .project-live-link:hover { background: #454545; transform: translateY(-1px); }
 .project-live-link:focus-visible { outline: 2px solid #b15f2c; outline-offset: 3px; }
 @media (max-width: 540px) { .project-live-link { width: 100%; justify-content: center; } }
+
+
+/* Lightweight viewport-scaled auto-scroll previews for website project cards. */
+.website-preview-window { position: absolute; inset: 0; overflow: hidden; border-radius: inherit; background: #111; isolation: isolate; }
+.website-preview-frame { display: block; width: 200%; height: 200%; border: 0; transform: scale(.5); transform-origin: top left; pointer-events: none; }
+.website-preview-label { position: absolute; left: 10px; top: 10px; z-index: 2; padding: 5px 8px; border-radius: 999px; background: #101010b8; color: #fff; font-size: 8px; line-height: 1; letter-spacing: .08em; font-weight: 600; pointer-events: none; backdrop-filter: blur(8px); }
+@media (max-width: 640px) { .website-preview-label { left: 8px; top: 8px; padding: 4px 7px; font-size: 7px; } }
+@media (prefers-reduced-motion: reduce) { .website-preview-frame { scroll-behavior: auto; } }

@@ -3026,6 +3026,7 @@ const PROJECTS = [
   },
   {
     "id": "web-howell-spin-win",
+    "previewSite": "spin",
     "title": "Howell Spin & Win",
     "category": "web",
     "categoryName": "Website & Landing Pages",
@@ -3046,6 +3047,7 @@ const PROJECTS = [
   },
   {
     "id": "web-howell-catch-win",
+    "previewSite": "catch",
     "title": "Howell Catch & Win",
     "category": "web",
     "categoryName": "Website & Landing Pages",
@@ -3067,6 +3069,7 @@ const PROJECTS = [
   },
   {
     "id": "web-nadia-bakery",
+    "previewSite": "bakery",
     "title": "Nadia Bakery",
     "category": "web",
     "categoryName": "Website & Landing Pages",
@@ -3088,6 +3091,7 @@ const PROJECTS = [
   },
   {
     "id": "web-howell-indocomtech-registration",
+    "previewSite": "registration",
     "title": "Howell — Indocomtech Visitor Registration",
     "category": "web",
     "categoryName": "Website & Landing Pages",
@@ -3127,6 +3131,9 @@ function initPortfolio() {
   let visibleCount = getInitialCount();
   let currentFilter = 'all';
   let modalVideoObserver = null;
+  const websitePreviewObserver = "IntersectionObserver" in window ? new IntersectionObserver(entries => {
+    entries.forEach(entry => entry.target.contentWindow?.postMessage(entry.isIntersecting ? "preview-play" : "preview-pause", "*"));
+  }, { rootMargin: "120px 0px" }) : null;
 
   const showMoreWrap = document.getElementById('show-more-wrap');
 
@@ -3358,6 +3365,7 @@ function initPortfolio() {
       if (e.target === card && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); openModal(p); }
     });
     const isCardVid = p.thumbnail.endsWith('.mp4') || p.thumbnail.endsWith('.mov');
+    const isWebsitePreview = Boolean(p.websiteUrl && p.previewSite);
     const thumbBgStyle = p.thumbBg ? ` style="background: ${p.thumbBg};"` : '';
     const thumbImgStyle = p.thumbBg ? ' style="object-fit: contain; padding: 1.25rem;"' : '';
     const loadingAttr = 'loading="lazy"';
@@ -3366,7 +3374,12 @@ function initPortfolio() {
 
     card.innerHTML = `
       <div class="project-thumb"${thumbBgStyle}>
-        ${isCardVid ? `
+        ${isWebsitePreview ? `
+          <div class="website-preview-window">
+            <iframe class="website-preview-frame" src="assets/web-projects/preview.html?site=${encodeURIComponent(p.previewSite)}" loading="lazy" title="Pratinjau berjalan ${projectTitle(p.title)}" aria-hidden="true" tabindex="-1"></iframe>
+            <span class="website-preview-label" aria-hidden="true">AUTO-SCROLL PREVIEW</span>
+          </div>
+        ` : isCardVid ? `
           <div class="video-poster-fallback">
             <div class="video-poster-icon">▶</div>
             <span class="video-poster-badge">${p.client} • ${p.categoryName}</span>
@@ -3383,6 +3396,16 @@ function initPortfolio() {
         <p class="project-desc">${p.client}</p>
       </div>
     `;
+
+    const websiteFrame = card.querySelector('.website-preview-frame');
+    if (websiteFrame && websitePreviewObserver) {
+      websitePreviewObserver.observe(websiteFrame);
+      websiteFrame.addEventListener('load', () => {
+        const bounds = websiteFrame.getBoundingClientRect();
+        const isVisible = bounds.bottom > 0 && bounds.top < window.innerHeight;
+        websiteFrame.contentWindow?.postMessage(isVisible ? 'preview-play' : 'preview-pause', '*');
+      }, { once: true });
+    }
 
     const thumb = card.querySelector('.project-thumb');
     const thumbImg = thumb?.querySelector('img');
