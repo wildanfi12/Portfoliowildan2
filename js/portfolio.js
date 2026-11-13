@@ -628,9 +628,9 @@ const PROJECTS = [
       "Voice AI",
       "Bunny Stream"
     ],
-    bunnyVideoId: "0747555f-8a0d-4f7e-a234-5014a493ad2c",
+    bunnyVideoId: "1e98dad2-1939-4d9e-9ae0-d220e625cb07",
     bunnyLibraryId: "756896",
-    embedVideo: "https://iframe.mediadelivery.net/embed/756896/0747555f-8a0d-4f7e-a234-5014a493ad2c",
+    embedVideo: "https://iframe.mediadelivery.net/embed/756896/1e98dad2-1939-4d9e-9ae0-d220e625cb07",
     items: [
       {
         name: "Kabel HDMI 8K CH0703.mov",
