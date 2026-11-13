@@ -32,7 +32,19 @@ const PROJECTS = [
     bunnyLibraryId: "756896",
     embedVideo: "https://iframe.mediadelivery.net/embed/756896/415addc4-e5bc-4e4a-9957-3b56659d5ff6",
     items: [
+            {
+        name: "Kabel HDMI L CH0603 - Motion.mov",
+        img: "assets/motion-howell/howell_motion_16.jpg",
+        video: "https://iframe.mediadelivery.net/embed/756896/fa856440-5d19-4913-945a-b37a30e24f81",
+        desc: "Kabel HDMI L CH0603 - Motion.mov — Video animasi motion graphics produk Kabel HDMI L CH0603 - Motion via Bunny Stream CDN."
+      },
       {
+        name: "Kabel LAN Cat 8 SFTP N8B03 - N8B08 - Motion.mp4",
+        img: "assets/motion-howell/howell_motion_15.jpg",
+        video: "https://iframe.mediadelivery.net/embed/756896/5f31d596-d113-4b55-ab19-6ac356b486c5",
+        desc: "Kabel LAN Cat 8 SFTP N8B03 - N8B08 - Motion.mp4 — Video animasi motion graphics produk Kabel LAN Cat 8 SFTP N8B03 - N8B08 - Motion via Bunny Stream CDN."
+      },
+{
         name: "Kabel HDMI to Type C CH0201.mp4",
         img: "assets/motion-howell/howell_motion_4.jpg",
         video: "https://iframe.mediadelivery.net/embed/756896/a10f44cf-0963-44e5-8899-8c264e93fa5b",
@@ -115,18 +127,6 @@ const PROJECTS = [
         img: "assets/motion-howell/howell_motion_14.jpg",
         video: "https://iframe.mediadelivery.net/embed/756896/565b02b5-6be3-4f71-a12c-f1ce346043ad",
         desc: "Adapter USB ADP035 - Motion (1).mov — Video animasi motion graphics produk Adapter USB ADP035 - Motion (1) via Bunny Stream CDN."
-      },
-      {
-        name: "Kabel LAN Cat 8 SFTP N8B03 - N8B08 - Motion.mp4",
-        img: "assets/motion-howell/howell_motion_15.jpg",
-        video: "https://iframe.mediadelivery.net/embed/756896/5f31d596-d113-4b55-ab19-6ac356b486c5",
-        desc: "Kabel LAN Cat 8 SFTP N8B03 - N8B08 - Motion.mp4 — Video animasi motion graphics produk Kabel LAN Cat 8 SFTP N8B03 - N8B08 - Motion via Bunny Stream CDN."
-      },
-      {
-        name: "Kabel HDMI L CH0603 - Motion.mov",
-        img: "assets/motion-howell/howell_motion_16.jpg",
-        video: "https://iframe.mediadelivery.net/embed/756896/fa856440-5d19-4913-945a-b37a30e24f81",
-        desc: "Kabel HDMI L CH0603 - Motion.mov — Video animasi motion graphics produk Kabel HDMI L CH0603 - Motion via Bunny Stream CDN."
       },
       {
         name: "Microphone MIC002 - Motion.mov",
