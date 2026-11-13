@@ -11,7 +11,7 @@ const PROJECTS = [
     categoryName: "AI Motion Videos",
     client: "PT. Howell Niaga Indonesia",
     metric: "26 Video Commercial & AI Motion • Bunny Stream",
-    thumbnail: "assets/motion-howell/howell_motion_1.jpg",
+    thumbnail: "assets/motion-howell/howell_motion_16.jpg",
     shortDesc: "Folder AI Motion Videos Howell — 26 Video Motion Commercial 3D/2D Product Showcase, Promo Megasale, Adapter & Cable Specs via Bunny Stream CDN.",
     fullDesc: "Folder koleksi resmi AI Motion Videos untuk Howell (PT. Howell Niaga Indonesia) yang terhubung langsung ke Bunny Stream CDN (Collection: d22f13da-d9ff-4a24-b39d-2097295d3028). Di dalamnya berisi 26 aset video motion graphics komersial meliputi Poster Promo, Box Megasale, Spiderman Cinematic, HDMI 8K/4K, Headset HW05/HW07, Kabel Data 4in1 65W, Kabel LAN Cat 8/6, Microphone MIC001/002, Laptop Stand, DisplayPort, dan produk ekosistem Howell lainnya.",
     challenge: "Mempresentasikan 26 seri produk elektronik premium Howell dalam format animasi video motion graphics 3D/2D kinetik dan showcase produk ber-retensi tinggi.",
