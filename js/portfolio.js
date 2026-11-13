@@ -3376,7 +3376,7 @@ function initPortfolio() {
       <div class="project-thumb"${thumbBgStyle}>
         ${isWebsitePreview ? `
           <div class="website-preview-window">
-            <iframe class="website-preview-frame" src="assets/web-projects/preview.html?site=${encodeURIComponent(p.previewSite)}" loading="lazy" title="Pratinjau berjalan ${projectTitle(p.title)}" aria-hidden="true" tabindex="-1"></iframe>
+            <iframe class="website-preview-frame" src="assets/web-projects/preview.html?v=2&site=${encodeURIComponent(p.previewSite)}" loading="lazy" title="Pratinjau berjalan ${projectTitle(p.title)}" aria-hidden="true" tabindex="-1"></iframe>
             <span class="website-preview-label" aria-hidden="true">AUTO-SCROLL PREVIEW</span>
           </div>
         ` : isCardVid ? `
