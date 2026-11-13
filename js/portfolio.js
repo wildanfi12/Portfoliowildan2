@@ -528,7 +528,7 @@ const PROJECTS = [
     categoryName: 'Video Editing',
     client: 'Mid Layer',
     metric: '9 Video Reels & Storytelling • Bunny Stream',
-    thumbnail: 'assets/mid-layer/mid_1.jpg',
+    thumbnail: 'assets/mid-layer/thumbnail-mid-layer-4x3.jpg',
     shortDesc: 'Folder Video Editing Mid Layer — 9 Video Reels Edukasi, Pop Culture, Storytelling & Animasi via Bunny Stream CDN.',
     fullDesc: 'Folder koleksi resmi Video Editing untuk Mid Layer yang terhubung langsung ke Bunny Stream CDN. Berisi 9 video reels bertema psikologi buku, motivasi, self-development, eksplorasi sains NASA, dan mini dokumenter musik & pop culture dengan dynamic motion, captions, dan sound design profesional.',
     challenge: 'Mengolah topik edukasi, biografi, dan storytelling menjadi video format vertikal 9:16 yang engaging, cepat dipahami, dan mempertahankan retensi penonton tinggi.',
@@ -3136,10 +3136,8 @@ function initPortfolio() {
 
   // Dynamic Breakpoint-aware initial & increment count
   function getInitialCount() {
-    const w = window.innerWidth;
-    if (w >= 1200) return 12;   // Desktop: >=1200px -> 12 projects initially
-    if (w >= 768) return 8;     // Tablet: 768px-1199px -> 8 projects initially
-    return 6;                   // Mobile: <=767px -> 6 projects initially
+    // Render the complete collection; image payloads stay lazy-loaded below the fold.
+    return PROJECTS.length;
   }
 
   let visibleCount = getInitialCount();
@@ -3378,11 +3376,11 @@ function initPortfolio() {
     const isCardVid = p.thumbnail.endsWith('.mp4') || p.thumbnail.endsWith('.mov');
     const thumbBgStyle = p.thumbBg ? ` style="background: ${p.thumbBg};"` : '';
     const thumbImgStyle = p.thumbBg ? ' style="object-fit: contain; padding: 1.25rem;"' : '';
-    const isInitialBatch = idx < 4;
+    const isInitialBatch = idx < 3;
     const loadingAttr = isInitialBatch ? 'loading="eager"' : 'loading="lazy"';
-    const fetchPriorityAttr = idx < 3 ? ' fetchpriority="high"' : '';
-    // Use sync decoding for initially visible cards to prevent WebKit flashing empty/black background on mobile
-    const decodingAttr = isInitialBatch ? 'decoding="sync"' : 'decoding="async"';
+    const fetchPriorityAttr = isInitialBatch ? ' fetchpriority="high"' : '';
+    // Async decode avoids blocking layout while keeping the first row prioritized.
+    const decodingAttr = 'decoding="async"';
 
     card.innerHTML = `
       <div class="project-thumb"${thumbBgStyle}>
@@ -3403,6 +3401,20 @@ function initPortfolio() {
         <p class="project-desc">${p.client}</p>
       </div>
     `;
+
+    const thumb = card.querySelector('.project-thumb');
+    const thumbImg = thumb?.querySelector('img');
+    if (thumbImg) {
+      thumbImg.addEventListener('error', () => {
+        const fallback = document.createElement('div');
+        fallback.className = 'project-thumb-load-fallback';
+        fallback.textContent = projectTitle(p.title);
+        fallback.setAttribute('role', 'img');
+        fallback.setAttribute('aria-label', 'Pratinjau tidak tersedia: ' + projectTitle(p.title));
+        thumb.appendChild(fallback);
+        thumbImg.remove();
+      }, { once: true });
+    }
 
     card.addEventListener('click', () => {
       openModal(p);

@@ -1,4 +1,24 @@
-/* Portfolio: a quiet white gallery with an architectural grid and lift on hover. */
+/* Missing thumbnail fallback and compact, resilient tool-logo grid. */
+.project-thumb-load-fallback {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  background: radial-gradient(ellipse at 50% 35%, #45453f, #191917 72%);
+  color: #fff;
+  text-align: center;
+  font-size: clamp(1rem, 2vw, 1.4rem);
+  line-height: 1.3;
+  overflow-wrap: anywhere;
+}
+.tech-stack-grid { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; }
+@media (min-width: 480px) { .tech-stack-grid { grid-template-columns: repeat(4, minmax(0, 1fr)) !important; } }
+@media (min-width: 1100px) { .tech-stack-grid { grid-template-columns: repeat(8, minmax(0, 1fr)) !important; } }
+.tech-card, .tech-info { min-width: 0; }
+.tech-name, .tech-role { overflow-wrap: anywhere; }
+
+ /* Portfolio: a quiet white gallery with an architectural grid and lift on hover. */
 #works { position: relative; isolation: isolate; background: #fff; }
 #works::before { content: ''; position: absolute; inset: 0; z-index: -1; pointer-events: none; background-image: linear-gradient(90deg, #11111105 1px, transparent 1px); background-size: calc(100% / 12) 100%; mask-image: linear-gradient(transparent, #000 15%, #000 80%, transparent); }
 #works .portfolio-header { align-items: flex-start; text-align: left; border-top: 1px solid #deded9; padding-top: 28px; }
