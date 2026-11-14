@@ -522,6 +522,110 @@ const PROJECTS = [
     ]
   },
   {
+    id: 'video-editing-howell-video-product',
+    title: 'Howell Video Product',
+    category: 'video',
+    categoryName: 'Video Editing',
+    client: 'PT. Howell Niaga Indonesia',
+    metric: '14 Video Product • Bunny Stream',
+    thumbnail: 'assets/howell-video/howell_1.jpg',
+    shortDesc: 'Koleksi 14 video product Howell.',
+    fullDesc: 'Koleksi video product Howell yang ditautkan ke Bunny Stream.',
+    challenge: 'Mengumpulkan 14 video product Howell dalam satu halaman proyek.',
+    solution: 'Setiap video diputar langsung dari Bunny Stream menggunakan ID yang diberikan.',
+    results: ['14 video product tersedia dalam galeri proyek.'],
+    tools: ['Bunny Stream'],
+    bunnyVideoId: '781b069d-d3ca-41df-a02a-cba6b8146885',
+    bunnyLibraryId: '756896',
+    embedVideo: 'https://iframe.mediadelivery.net/embed/756896/781b069d-d3ca-41df-a02a-cba6b8146885',
+    items: [
+      {
+        name: 'Howell Video Product 01',
+        img: 'assets/howell-video/howell_1.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/781b069d-d3ca-41df-a02a-cba6b8146885',
+        desc: 'Video product Howell 01.'
+      },
+      {
+        name: 'Howell Video Product 02',
+        img: 'assets/howell-video/howell_2.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/2a0eb4d4-4497-4650-94e0-e62d71428992',
+        desc: 'Video product Howell 02.'
+      },
+      {
+        name: 'Howell Video Product 03',
+        img: 'assets/howell-video/howell_3.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/7994ef53-a6f8-4d7c-a2d4-3a44f1471608',
+        desc: 'Video product Howell 03.'
+      },
+      {
+        name: 'Howell Video Product 04',
+        img: 'assets/howell-video/howell_4.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/d73cc26d-dfff-45ba-b79f-d072cf997d81',
+        desc: 'Video product Howell 04.'
+      },
+      {
+        name: 'Howell Video Product 05',
+        img: 'assets/howell-video/howell_5.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/1ce75c08-f8c8-4b55-9e40-9b573d6a917a',
+        desc: 'Video product Howell 05.'
+      },
+      {
+        name: 'Howell Video Product 06',
+        img: 'assets/howell-video/howell_6.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/26adaee4-a404-4b7c-a575-7c7448f8338d',
+        desc: 'Video product Howell 06.'
+      },
+      {
+        name: 'Howell Video Product 07',
+        img: 'assets/howell-video/howell_7.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/b342a549-2fa5-4d2a-9b64-2eb3739723ad',
+        desc: 'Video product Howell 07.'
+      },
+      {
+        name: 'Howell Video Product 08',
+        img: 'assets/howell-video/howell_8.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/61134389-53f8-495a-839a-e708f8d5b0ea',
+        desc: 'Video product Howell 08.'
+      },
+      {
+        name: 'Howell Video Product 09',
+        img: 'assets/howell-video/howell_9.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/825172fe-666d-4cec-8b1c-5360bb6c6f48',
+        desc: 'Video product Howell 09.'
+      },
+      {
+        name: 'Howell Video Product 10',
+        img: 'assets/howell-video/howell_10.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/ab4c14b5-0573-4a3b-8a5a-f1eedf35d63b',
+        desc: 'Video product Howell 10.'
+      },
+      {
+        name: 'Howell Video Product 11',
+        img: 'assets/howell-video/howell_11.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/be49565c-e317-433c-8ceb-89b862e807a5',
+        desc: 'Video product Howell 11.'
+      },
+      {
+        name: 'Howell Video Product 12',
+        img: 'assets/howell-video/howell_12.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/73f3b02c-ccf0-4c69-aa5d-76e871c9133e',
+        desc: 'Video product Howell 12.'
+      },
+      {
+        name: 'Howell Video Product 13',
+        img: 'assets/howell-video/howell_13.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/a1fe5c61-3b20-4493-b6ac-ee4e3bcac408',
+        desc: 'Video product Howell 13.'
+      },
+      {
+        name: 'Howell Video Product 14',
+        img: 'assets/howell-video/howell_14.jpg',
+        video: 'https://iframe.mediadelivery.net/embed/756896/804012d5-2ddc-4be5-aa34-90eb4ed9cbaf',
+        desc: 'Video product Howell 14.'
+      }
+    ]
+  },
+  {
     id: 'video-editing-mid-layer',
     title: 'Mid Layer',
     category: 'video',
