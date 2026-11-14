@@ -3129,10 +3129,52 @@ const PROJECTS = [
     ]
   },
   {
+    id: 'web-howell-stockflow',
+    title: 'Stockflow',
+    category: 'web',
+    categoryName: 'Website & Landing Pages',
+    client: 'PT. Howell Niaga Indonesia',
+    metric: 'Internal cashier & sales system',
+    thumbnail: 'assets/web-projects/howell-stockflow.png',
+    websitePreviewImage: 'assets/web-projects/howell-stockflow.png',
+    embedVideo: 'assets/web-projects/howell-stockflow.png',
+    internalProject: true,
+    shortDesc: 'Aplikasi internal Howell untuk transaksi kasir, pemindaian barcode/SKU, dan penerbitan invoice.',
+    fullDesc: 'Stockflow adalah aplikasi operasional internal Howell. Layar kasir mendukung pemindaian barcode atau SKU, keranjang belanja, pengaturan diskon, metode pembayaran, data pelanggan, dan penerbitan invoice. Data aplikasi berjalan di VPS perusahaan.',
+    challenge: 'Menyatukan pemindaian produk, pencatatan transaksi, pembayaran, dan invoice dalam satu alur kasir.',
+    solution: 'Menyediakan antarmuka kasir yang menggabungkan scan barcode/SKU, keranjang belanja, data pelanggan, pembayaran, dan ringkasan transaksi.',
+    role: 'Web Developer',
+    projectType: 'Cashier & sales operations',
+    deployment: 'Internal • VPS data',
+    results: []
+  },
+  {
+    id: 'web-howell-inventory',
+    title: 'Inventory',
+    category: 'web',
+    categoryName: 'Website & Landing Pages',
+    client: 'PT. Howell Niaga Indonesia',
+    metric: 'Internal inventory management system',
+    thumbnail: 'assets/web-projects/howell-inventory.png',
+    websitePreviewImage: 'assets/web-projects/howell-inventory.png',
+    embedVideo: 'assets/web-projects/howell-inventory.png',
+    internalProject: true,
+    shortDesc: 'Dashboard internal Howell untuk persediaan, produk, cabang, pengiriman, dan aktivitas gudang.',
+    fullDesc: 'Inventory adalah aplikasi internal Howell untuk melihat ringkasan stok, master produk, pengiriman, cabang, posisi persediaan, stok menipis, performa penjualan, dan aktivitas gudang. Data aplikasi berjalan di VPS perusahaan.',
+    challenge: 'Menyajikan posisi persediaan dan aktivitas operasional gudang Howell dalam satu dashboard.',
+    solution: 'Dashboard merangkum total stok, pengiriman, master produk, persediaan per lokasi, stok menipis, performa penjualan, dan transaksi gudang.',
+    role: 'Web Developer',
+    projectType: 'Inventory management',
+    deployment: 'Internal • VPS data',
+    results: []
+  },
+  {
     "id": "web-howell-spin-win",
     "websitePreviewImage": "assets/web-projects/howell-spin-win-screenshot.jpg",    "title": "Howell Spin & Win",
     "category": "web",
     "categoryName": "Website & Landing Pages",
+    "role": "Website design & development",
+    "projectType": "Interactive campaign website",
     "client": "PT. Howell Niaga Indonesia",
     "metric": "Interactive Campaign Website",
     "thumbnail": "assets/web-projects/howell-spin-win-screenshot.jpg",
@@ -3152,6 +3194,8 @@ const PROJECTS = [
     "id": "web-howell-catch-win",    "title": "Howell Catch & Win",
     "category": "web",
     "categoryName": "Website & Landing Pages",
+    "role": "Website design & development",
+    "projectType": "Interactive browser game",
     "client": "PT. Howell Niaga Indonesia",
     "metric": "Interactive Mini Game",
     "thumbnail": "assets/web-projects/howell-catch-win.jpg",
@@ -3172,6 +3216,8 @@ const PROJECTS = [
     "id": "web-nadia-bakery",    "title": "Nadia Bakery",
     "category": "web",
     "categoryName": "Website & Landing Pages",
+    "role": "Website design & development",
+    "projectType": "Business website & product catalog",
     "client": "Nadia Bakery",
     "metric": "Business Website & Product Catalog",
     "thumbnail": "assets/web-projects/nadia-bakery.jpg",
@@ -3192,6 +3238,8 @@ const PROJECTS = [
     "id": "web-howell-indocomtech-registration",    "title": "Howell — Indocomtech Visitor Registration",
     "category": "web",
     "categoryName": "Website & Landing Pages",
+    "role": "Website design & development",
+    "projectType": "Event visitor registration",
     "client": "PT. Howell Niaga Indonesia",
     "metric": "Event Registration Website",
     "thumbnail": "assets/web-projects/howell-indocomtech-registration.jpg",
@@ -3459,7 +3507,7 @@ function initPortfolio() {
       if (e.target === card && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); openModal(p); }
     });
     const isCardVid = p.thumbnail.endsWith('.mp4') || p.thumbnail.endsWith('.mov');
-    const isWebsitePreview = Boolean(p.websiteUrl);
+    const isWebsitePreview = Boolean(p.websiteUrl || p.websitePreviewImage);
     const thumbBgStyle = p.thumbBg ? ` style="background: ${p.thumbBg};"` : '';
     const thumbImgStyle = p.thumbBg ? ' style="object-fit: contain; padding: 1.25rem;"' : '';
     const loadingAttr = 'loading="lazy"';
@@ -3490,7 +3538,7 @@ function initPortfolio() {
         <span class="collection-open" aria-hidden="true">↗</span>
       </div>
       <div class="project-content">
-        <div class="collection-meta"><span>${p.categoryName}</span><span>${p.items?.length ? p.items.length + ' karya' : (p.websiteUrl ? 'Website live' : 'Lihat proyek')}</span></div>
+        <div class="collection-meta"><span>${p.categoryName}</span><span>${p.items?.length ? p.items.length + ' karya' : (p.internalProject ? 'Internal • VPS' : (p.websiteUrl ? 'Website live' : 'Lihat proyek'))}</span></div>
         <h3 class="project-title">${projectTitle(p.title)}</h3>
         <p class="project-desc">${p.client}</p>
       </div>
@@ -3637,7 +3685,7 @@ function initPortfolio() {
     }
 
     modalBody.innerHTML = `
-      <div class="collection-intro"><span>${project.categoryName} / ${project.client}</span><h2 class="modal-project-title" id="collection-title">${projectTitle(project.title)}</h2><p>${project.items?.length ? project.items.length + ' karya dalam koleksi' : (project.websiteUrl ? 'Website live' : 'Ringkasan proyek')}</p></div>
+      <div class="collection-intro"><span>${project.categoryName} / ${project.client}</span><h2 class="modal-project-title" id="collection-title">${projectTitle(project.title)}</h2><p>${project.items?.length ? project.items.length + ' karya dalam koleksi' : (project.internalProject ? 'Aplikasi internal • VPS' : (project.websiteUrl ? 'Website live' : 'Ringkasan proyek'))}</p></div>
       <div class="modal-media" id="modal-main-media" style="position:relative; background:${initialEmbedBg};" onclick="${(!isVideo && !isBunny && !isLiveWebsite) ? `window.openZoomViewerForProject('${project.id}', 0)` : ''}">
         ${isLiveWebsite ? `
           <iframe src="${project.websiteUrl}" title="Website live ${projectTitle(project.title)}" loading="eager" referrerpolicy="strict-origin-when-cross-origin" style="position:absolute; inset:0; width:100%; height:100%; border:0;" allowfullscreen></iframe>
@@ -3717,12 +3765,21 @@ function initPortfolio() {
         </div>
       </div>
 
-      <div style="margin-bottom: 0.5rem;">
-        <h4 style="margin-bottom: 0.75rem; font-size: 1rem; font-weight: 600; color: #202020;">Hasil proyek</h4>
-        <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem;">
-          ${project.results.map(r => `<li style="display: flex; align-items: flex-start; gap: 0.6rem; color: #525252; font-size: 0.9rem; line-height:1.6;"><span style="color: #555; font-weight: 700;">✓</span> ${cleanPortfolioCopy(r)}</li>`).join('')}
-        </ul>
-      </div>
+      ${project.category === 'web' ? `
+        <section class="website-project-meta" aria-label="Ringkasan proyek website">
+          <div class="website-project-meta__item"><span>ROLE</span><strong>${cleanPortfolioCopy(project.role || 'Website development')}</strong></div>
+          <div class="website-project-meta__item"><span>PROJECT</span><strong>${cleanPortfolioCopy(project.projectType || project.metric || 'Website')}</strong></div>
+          <div class="website-project-meta__item"><span>DEPLOYMENT</span><strong>${cleanPortfolioCopy(project.deployment || (project.websiteUrl ? 'Public website' : 'Internal'))}</strong></div>
+          <div class="website-project-meta__item"><span>LINK</span>${project.websiteUrl ? `<a class="website-project-meta__link" href="${project.websiteUrl}" target="_blank" rel="noopener noreferrer">Open <span aria-hidden="true">↗</span></a>` : `<strong class="website-project-meta__private">${project.internalProject ? 'Private' : 'No public link'}</strong>`}</div>
+        </section>
+      ` : `
+        <div style="margin-bottom: 0.5rem;">
+          <h4 style="margin-bottom: 0.75rem; font-size: 1rem; font-weight: 600; color: #202020;">Hasil proyek</h4>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem;">
+            ${project.results.map(r => `<li style="display: flex; align-items: flex-start; gap: 0.6rem; color: #525252; font-size: 0.9rem; line-height:1.6;"><span style="color: #555; font-weight: 700;">✓</span> ${cleanPortfolioCopy(r)}</li>`).join('')}
+          </ul>
+        </div>
+      `}
     `;
 
     modalBackdrop.setAttribute('aria-labelledby', 'collection-title');
