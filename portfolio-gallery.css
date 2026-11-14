@@ -180,11 +180,6 @@
 
 
 /* Live website projects: clear, accessible link inside the project detail. */
-.project-live-link-wrap { margin-top: .9rem; }
-.project-live-link { display: inline-flex; align-items: center; gap: .55rem; min-height: 44px; padding: .65rem 1rem; border-radius: 999px; background: #202020; color: #fff; font-size: .9rem; font-weight: 600; text-decoration: none; transition: background .2s ease, transform .2s ease; }
-.project-live-link:hover { background: #454545; transform: translateY(-1px); }
-.project-live-link:focus-visible { outline: 2px solid #b15f2c; outline-offset: 3px; }
-@media (max-width: 540px) { .project-live-link { width: 100%; justify-content: center; } }
 
 
 /* Lightweight viewport-scaled auto-scroll previews for website project cards. */

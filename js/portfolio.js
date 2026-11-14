@@ -3702,11 +3702,6 @@ function initPortfolio() {
       </div>
       <div class="modal-header-text" style="margin-bottom: 1.5rem;">
         <p class="collection-summary" id="modal-active-caption" style="font-size: 1.15rem; font-weight: 600; color: #1a1a1a; margin-bottom: 0.5rem; letter-spacing: -0.01em;">${project.items && project.items[0] ? itemDisplayLabel(project.items[0], project.client, isVideo) : collectionSummary(project)}</p>
-        ${project.websiteUrl ? `
-          <div class="project-live-link-wrap">
-            <a href="${project.websiteUrl}" target="_blank" rel="noopener noreferrer" class="project-live-link">Kunjungi website <span aria-hidden="true">↗</span></a>
-          </div>
-        ` : ''}
         ${project.youtubeUrl ? `
           <div>
             <a href="${project.youtubeUrl}" target="_blank" class="btn btn-primary" style="background:#ff0000; border-color:#ff0000; color:#fff; font-weight:700; font-size:0.95rem; padding:0.7rem 1.3rem; display:inline-flex; align-items:center; gap:0.6rem; text-decoration:none; border-radius:12px; box-shadow: 0 4px 15px rgba(255, 0, 0, 0.3); max-width:100%; word-break:break-word;">
