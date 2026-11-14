@@ -3511,6 +3511,7 @@ function initPortfolio() {
       window.savedScrollPosition = curY;
     }
     
+    const isLiveWebsite = !!project.websiteUrl && !project.websitePreviewImage;
     const isBunny = !!project.bunnyVideoId || (project.embedVideo && (project.embedVideo.includes('iframe.mediadelivery.net') || project.embedVideo.includes('player.mediadelivery.net') || project.embedVideo.includes('bunny') || project.embedVideo.includes('mediadelivery')));
     const isVideo = !isBunny && project.embedVideo && (project.embedVideo.endsWith('.mp4') || project.embedVideo.endsWith('.mov'));
     const isVideoCollection = !!(project.items && project.items.some(item => {
@@ -3533,8 +3534,10 @@ function initPortfolio() {
 
     modalBody.innerHTML = `
       <div class="collection-intro"><span>${project.categoryName} / ${project.client}</span><h2 class="modal-project-title" id="collection-title">${projectTitle(project.title)}</h2><p>${project.items?.length ? project.items.length + ' karya dalam koleksi' : (project.websiteUrl ? 'Website live' : 'Ringkasan proyek')}</p></div>
-      <div class="modal-media" id="modal-main-media" style="position:relative; background:${initialEmbedBg};" onclick="${(!isVideo && !isBunny) ? `window.openZoomViewerForProject('${project.id}', 0)` : ''}">
-        ${isBunny ? `
+      <div class="modal-media" id="modal-main-media" style="position:relative; background:${initialEmbedBg};" onclick="${(!isVideo && !isBunny && !isLiveWebsite) ? `window.openZoomViewerForProject('${project.id}', 0)` : ''}">
+        ${isLiveWebsite ? `
+          <iframe src="${project.websiteUrl}" title="Website live ${projectTitle(project.title)}" loading="eager" referrerpolicy="strict-origin-when-cross-origin" style="position:absolute; inset:0; width:100%; height:100%; border:0;" allowfullscreen></iframe>
+        ` : isBunny ? `
           <div class="bunny-player-box" style="position:relative; width:100%; aspect-ratio:16/9; border-radius:14px; overflow:hidden; background:#000; box-shadow:0 8px 32px rgba(0,0,0,0.5);">
             <iframe src="${bunnyEmbedSrc}" loading="lazy" style="border:0; position:absolute; top:0; left:0; height:100%; width:100%;" allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;" allowfullscreen="true"></iframe>
           </div>
