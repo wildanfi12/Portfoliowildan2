@@ -3144,7 +3144,7 @@ const PROJECTS = [
     challenge: 'Menyatukan pemindaian produk, pencatatan transaksi, pembayaran, dan invoice dalam satu alur kasir.',
     solution: 'Menyediakan antarmuka kasir yang menggabungkan scan barcode/SKU, keranjang belanja, data pelanggan, pembayaran, dan ringkasan transaksi.',
     role: 'Web Developer',
-    projectType: 'Cashier & sales operations',
+    stack: ['HTML', 'CSS', 'Vanilla JavaScript', 'VPS API'],
     deployment: 'Internal • VPS data',
     results: []
   },
@@ -3164,7 +3164,7 @@ const PROJECTS = [
     challenge: 'Menyajikan posisi persediaan dan aktivitas operasional gudang Howell dalam satu dashboard.',
     solution: 'Dashboard merangkum total stok, pengiriman, master produk, persediaan per lokasi, stok menipis, performa penjualan, dan transaksi gudang.',
     role: 'Web Developer',
-    projectType: 'Inventory management',
+    stack: ['HTML', 'CSS', 'Vanilla JavaScript', 'VPS API'],
     deployment: 'Internal • VPS data',
     results: []
   },
@@ -3174,7 +3174,7 @@ const PROJECTS = [
     "category": "web",
     "categoryName": "Website & Landing Pages",
     "role": "Website design & development",
-    "projectType": "Interactive campaign website",
+    "stack": ["React", "JavaScript", "CSS"],
     "client": "PT. Howell Niaga Indonesia",
     "metric": "Interactive Campaign Website",
     "thumbnail": "assets/web-projects/howell-spin-win-screenshot.jpg",
@@ -3195,7 +3195,7 @@ const PROJECTS = [
     "category": "web",
     "categoryName": "Website & Landing Pages",
     "role": "Website design & development",
-    "projectType": "Interactive browser game",
+    "stack": ["HTML", "CSS", "JavaScript"],
     "client": "PT. Howell Niaga Indonesia",
     "metric": "Interactive Mini Game",
     "thumbnail": "assets/web-projects/howell-catch-win.jpg",
@@ -3217,7 +3217,7 @@ const PROJECTS = [
     "category": "web",
     "categoryName": "Website & Landing Pages",
     "role": "Website design & development",
-    "projectType": "Business website & product catalog",
+    "stack": ["HTML", "CSS", "JavaScript"],
     "client": "Nadia Bakery",
     "metric": "Business Website & Product Catalog",
     "thumbnail": "assets/web-projects/nadia-bakery.jpg",
@@ -3239,7 +3239,7 @@ const PROJECTS = [
     "category": "web",
     "categoryName": "Website & Landing Pages",
     "role": "Website design & development",
-    "projectType": "Event visitor registration",
+    "stack": ["HTML", "CSS", "JavaScript"],
     "client": "PT. Howell Niaga Indonesia",
     "metric": "Event Registration Website",
     "thumbnail": "assets/web-projects/howell-indocomtech-registration.jpg",
@@ -3763,7 +3763,7 @@ function initPortfolio() {
       ${project.category === 'web' ? `
         <section class="website-project-meta" aria-label="Ringkasan proyek website">
           <div class="website-project-meta__item"><span>ROLE</span><strong>${cleanPortfolioCopy(project.role || 'Website development')}</strong></div>
-          <div class="website-project-meta__item"><span>PROJECT</span><strong>${cleanPortfolioCopy(project.projectType || project.metric || 'Website')}</strong></div>
+          <div class="website-project-meta__item"><span>STACK</span><div class="website-project-stack">${(project.stack || []).map(technology => `<span class="website-project-stack__tag">${cleanPortfolioCopy(technology)}</span>`).join('')}</div></div>
           <div class="website-project-meta__item"><span>DEPLOYMENT</span><strong>${cleanPortfolioCopy(project.deployment || (project.websiteUrl ? 'Public website' : 'Internal'))}</strong></div>
           <div class="website-project-meta__item"><span>LINK</span>${project.websiteUrl ? `<a class="website-project-meta__link" href="${project.websiteUrl}" target="_blank" rel="noopener noreferrer">Open <span aria-hidden="true">↗</span></a>` : `<strong class="website-project-meta__private">${project.internalProject ? 'Private' : 'No public link'}</strong>`}</div>
         </section>
