@@ -609,6 +609,50 @@
       display: none !important;
     }
 
+    /* Language Switcher Pill (ID | EN) */
+    .lang-switcher {
+      display: inline-flex;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.55);
+      border: 1px solid rgba(15, 23, 42, 0.08);
+      border-radius: 9999px;
+      padding: 2px;
+      gap: 2px;
+      box-shadow: inset 0 1px 2px rgba(15, 23, 42, 0.04);
+    }
+    .lang-switch-btn {
+      background: transparent;
+      border: none;
+      border-radius: 9999px;
+      font-family: inherit;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      color: #525866;
+      padding: 0.28rem 0.55rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      line-height: 1;
+    }
+    .lang-switch-btn:hover {
+      color: #09090b;
+    }
+    .lang-switch-btn.active {
+      background: #18191d;
+      color: #ffffff;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.16);
+    }
+    @media (max-width: 640px) {
+      .lang-switch-btn {
+        font-size: 0.7rem;
+        padding: 0.25rem 0.45rem;
+      }
+      .floating-contact-btn {
+        padding: 0.42rem 0.85rem;
+        font-size: 0.8rem;
+      }
+    }
+
     /* ==========================================================================
        HERO SECTION (#home) - WITH LIQUID CURSOR REVEAL
        ========================================================================== */
@@ -4160,7 +4204,7 @@
 <body>
 
   <!-- Accessible Skip to Content -->
-  <a class="skip-link" href="#main">Lewati ke konten utama</a>
+  <a class="skip-link" href="#main" data-i18n="skipLink">Lewati ke konten utama</a>
   <!-- ==========================================================================
        FLOATING ISLAND HEADER
        ========================================================================== -->
@@ -4175,22 +4219,27 @@
       <!-- Center Nav Links -->
       <nav class="nav-center floating-nav" aria-label="Main Navigation">
         <ul class="nav-list floating-nav-list">
-          <li><button class="nav-item-btn floating-nav-link active" data-target="home" aria-current="page">Home</button></li>
-          <li><button class="nav-item-btn floating-nav-link" data-target="works">Portfolio</button></li>
-          <li><button class="nav-item-btn floating-nav-link" data-target="faq">FAQ</button></li>
+          <li><button class="nav-item-btn floating-nav-link active" data-target="home" aria-current="page" data-i18n="navHome">Home</button></li>
+          <li><button class="nav-item-btn floating-nav-link" data-target="works" data-i18n="navPortfolio">Portfolio</button></li>
+          <li><button class="nav-item-btn floating-nav-link" data-target="faq" data-i18n="navFaq">FAQ</button></li>
         </ul>
       </nav>
 
-      <!-- Right: Action Buttons (Contact Pill + Menu) -->
+      <!-- Right: Action Buttons (Language Toggle + Contact Pill + Menu) -->
       <div class="header-right floating-actions">
+        <div class="lang-switcher" role="group" aria-label="Language Switcher">
+          <button type="button" class="lang-switch-btn active" data-lang="id" aria-pressed="true" title="Bahasa Indonesia">ID</button>
+          <button type="button" class="lang-switch-btn" data-lang="en" aria-pressed="false" title="English">EN</button>
+        </div>
+
         <button class="floating-contact-btn btn-open-modal" aria-label="Contact Wildan">
-          <span>Contact</span>
+          <span data-i18n="navContact">Contact</span>
         </button>
 
         <button class="menu-btn floating-menu-btn" id="menu-open-btn" aria-label="Open Navigation Menu">
           <span class="menu-btn-inner floating-menu-inner">
             <svg class="icon icon-stroke" viewBox="0 0 24 24" style="width:16px;height:16px;"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
-            <span class="menu-btn-text floating-menu-text">Menu</span>
+            <span class="menu-btn-text floating-menu-text" data-i18n="navMenu">Menu</span>
           </span>
         </button>
       </div>
@@ -4213,22 +4262,22 @@
           
           <div class="eyebrow eyebrow-dark reveal-fade-up" style="transition-delay: 200ms;">
             <span class="eyebrow-dot"></span>
-            <span>Creative Designer & AI Specialist</span>
+            <span data-i18n="heroEyebrow">Creative Designer & AI Specialist</span>
           </div>
 
           <h1 class="hero-title" id="hero-title">
-            <span class="reveal-line-wrap"><span class="reveal-line" style="transition-delay: 250ms;">Turning Ideas Into</span></span>
-            <span class="reveal-line-wrap"><span class="reveal-line" style="transition-delay: 370ms;">Visual Stories.</span></span>
+            <span class="reveal-line-wrap"><span class="reveal-line" style="transition-delay: 250ms;" data-i18n="heroTitle1">Turning Ideas Into</span></span>
+            <span class="reveal-line-wrap"><span class="reveal-line" style="transition-delay: 370ms;" data-i18n="heroTitle2">Visual Stories.</span></span>
           </h1>
 
           <div class="rating-row reveal-fade-up" style="transition-delay: 500ms;">
-            <span class="rating-text">500+ projects delivered</span>
+            <span class="rating-text" data-i18n="heroRating">500+ projects delivered</span>
           </div>
 
           <div class="hero-ctas reveal-fade-up" style="transition-delay: 750ms;">
             <a href="https://wa.me/6282250561757" target="_blank" rel="noopener" class="btn-pill pill-dark pill-with-arrow">
               <span class="pill-inner">
-                <span>Let's Talk</span>
+                <span data-i18n="heroCtaTalk">Let's Talk</span>
                 <span class="pill-badge arrow-right">
                   <svg class="icon icon-stroke" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
                 </span>
@@ -4237,7 +4286,7 @@
 
             <button class="btn-pill pill-outline pill-no-arrow" data-target="works">
               <span class="pill-inner">
-                <span>View Work</span>
+                <span data-i18n="heroCtaWork">View Work</span>
               </span>
             </button>
           </div>
@@ -4249,7 +4298,7 @@
           
           <!-- 3D Standalone Photo Card Stage -->
           <div class="portrait-box reveal-fade-up" id="heroPortraitStage" style="transition-delay: 350ms;">
-            <div class="portrait-card-flip" id="heroPortraitFlip" role="button" tabindex="0" aria-label="Tampilkan foto berikutnya" title="Tampilkan foto berikutnya">
+            <div class="portrait-card-flip" id="heroPortraitFlip" role="button" tabindex="0" aria-label="Tampilkan foto berikutnya" title="Tampilkan foto berikutnya" data-i18n-title="heroFlipTitle">
               
               <!-- FRONT FACE (0°) - Cafe Portrait (Foto 1) -->
               <div class="portrait-face front">
@@ -4268,12 +4317,12 @@
           <div class="hero-partners-wrap reveal-fade-up" style="transition-delay: 500ms;">
             <span class="hero-partners-label">Wildan Firdaus</span>
             <div class="hero-partners-pills">
-              <span class="partner-pill">Content Creator</span>
-              <span class="partner-pill">Video Editor</span>
-              <span class="partner-pill">Social Media Specialist</span>
-              <span class="partner-pill">Graphic Designer</span>
-              <span class="partner-pill">Motion Designer</span>
-              <span class="partner-pill">AI Creative</span>
+              <span class="partner-pill" data-i18n="pill1">Content Creator</span>
+              <span class="partner-pill" data-i18n="pill2">Video Editor</span>
+              <span class="partner-pill" data-i18n="pill3">Social Media Specialist</span>
+              <span class="partner-pill" data-i18n="pill4">Graphic Designer</span>
+              <span class="partner-pill" data-i18n="pill5">Motion Designer</span>
+              <span class="partner-pill" data-i18n="pill6">AI Creative</span>
             </div>
           </div>
 
@@ -4292,28 +4341,28 @@
         <div class="portfolio-header">
           <div class="eyebrow eyebrow-dark eyebrow-badge reveal-fade-up">
             <span class="eyebrow-dot"></span>
-            <span>Portfolio</span>
+            <span data-i18n="portfolioEyebrow">Portfolio</span>
           </div>
           <h2 class="portfolio-h2">
-            <span class="reveal-line-wrap"><span class="reveal-line">Selected Work</span></span>
+            <span class="reveal-line-wrap"><span class="reveal-line" data-i18n="portfolioTitle">Selected Work</span></span>
           </h2>
-          <p style="color:var(--muted); font-size:0.95rem; max-width:32rem; margin-top:0.5rem;">
+          <p style="color:var(--muted); font-size:0.95rem; max-width:32rem; margin-top:0.5rem;" data-i18n="portfolioDesc">
             Explore projects across Video Editing, AI UGC, AI Motion, Graphic Design, AI Visual Design, Advertising, YouTube, and Web & Landing Pages.
           </p>
         </div>
 
         <!-- Filter Buttons Bar -->
         <div class="portfolio-filter reveal-fade-up">
-          <button class="filter-btn active" data-filter="all">All Projects</button>
-          <button class="filter-btn" data-filter="video">Video Editing</button>
-          <button class="filter-btn" data-filter="ai-ugc">AI UGC Videos</button>
-          <button class="filter-btn" data-filter="ai-motion">AI Motion Videos</button>
-          <button class="filter-btn" data-filter="design">Graphic Design</button>
-          <button class="filter-btn" data-filter="ai-visual">AI Visual Design</button>
+          <button class="filter-btn active" data-filter="all" data-i18n="filterAll">All Projects</button>
+          <button class="filter-btn" data-filter="video" data-i18n="filterVideo">Video Editing</button>
+          <button class="filter-btn" data-filter="ai-ugc" data-i18n="filterAiUgc">AI UGC Videos</button>
+          <button class="filter-btn" data-filter="ai-motion" data-i18n="filterAiMotion">AI Motion Videos</button>
+          <button class="filter-btn" data-filter="design" data-i18n="filterDesign">Graphic Design</button>
+          <button class="filter-btn" data-filter="ai-visual" data-i18n="filterAiVisual">AI Visual Design</button>
 
-          <button class="filter-btn" data-filter="ads">Advertising</button>
-          <button class="filter-btn" data-filter="youtube">YouTube</button>
-          <button class="filter-btn" data-filter="web">Website &amp; Landing Pages</button>
+          <button class="filter-btn" data-filter="ads" data-i18n="filterAds">Advertising</button>
+          <button class="filter-btn" data-filter="youtube" data-i18n="filterYoutube">YouTube</button>
+          <button class="filter-btn" data-filter="web" data-i18n="filterWeb">Website &amp; Landing Pages</button>
         </div>
 
         <!-- Dynamic Grid of Project Cards (rendered via portfolio.js) -->
@@ -4331,11 +4380,11 @@
         
         <div class="eyebrow eyebrow-dark reveal-fade-up">
           <span class="eyebrow-dot"></span>
-          <span>Services</span>
+          <span data-i18n="servicesEyebrow">Services</span>
         </div>
 
         <h2 class="services-h2">
-          <span class="reveal-line-wrap"><span class="reveal-line">What we do best</span></span>
+          <span class="reveal-line-wrap"><span class="reveal-line" data-i18n="servicesTitle">What we do best</span></span>
         </h2>
 
         <ul class="services-list" id="services-accordion">
@@ -4344,8 +4393,8 @@
           <li class="service-row-item reveal-fade-up" style="transition-delay: 0ms;">
             <button type="button" class="service-row-trigger" aria-expanded="false" aria-controls="service-panel-01" id="service-header-01">
               <span class="service-index">01</span>
-              <h3 class="service-title">Video Editing</h3>
-              <p class="service-desc">Editing Reels, TikTok, commercial videos, and podcast production.</p>
+              <h3 class="service-title" data-i18n="srv1Title">Video Editing</h3>
+              <p class="service-desc" data-i18n="srv1Desc">Editing Reels, TikTok, commercial videos, and podcast production.</p>
               <div class="service-badge" aria-hidden="true">
                 <svg class="icon icon-stroke" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg>
               </div>
@@ -4353,15 +4402,15 @@
             <div class="service-expand-panel" id="service-panel-01" role="region" aria-labelledby="service-header-01">
               <div class="service-expand-inner">
                 <div class="service-expand-content">
-                  <span class="service-expand-label">WHAT I DO</span>
-                  <p class="service-expand-text">I create engaging short-form and long-form video content for social media, brands, and digital campaigns. My work includes cutting and pacing, storytelling, transitions, sound design, color correction, subtitles, product videos, promotional content, and social media reels.</p>
+                  <span class="service-expand-label" data-i18n="whatIDo">WHAT I DO</span>
+                  <p class="service-expand-text" data-i18n="srv1Text">I create engaging short-form and long-form video content for social media, brands, and digital campaigns. My work includes cutting and pacing, storytelling, transitions, sound design, color correction, subtitles, product videos, promotional content, and social media reels.</p>
                   <div class="service-expand-footer">
                     <div class="service-expand-focus">
-                      <span class="service-focus-label">Focus:</span>
-                      <span class="service-focus-items">Editing Reels · TikTok · Commercial · Podcast</span>
+                      <span class="service-focus-label" data-i18n="focusLabel">Focus:</span>
+                      <span class="service-focus-items" data-i18n="srv1Focus">Editing Reels · TikTok · Commercial · Podcast</span>
                     </div>
                     <a href="#works" class="service-explore-link service-filter-link" data-filter="video">
-                      <span>View video works</span>
+                      <span data-i18n="srv1Link">View video works</span>
                       <svg class="icon icon-stroke" viewBox="0 0 24 24" style="width:12px; height:12px;"><path d="M7 17 17 7M8 7h9v9"/></svg>
                     </a>
                   </div>
@@ -4374,8 +4423,8 @@
           <li class="service-row-item reveal-fade-up" style="transition-delay: 50ms;">
             <button type="button" class="service-row-trigger" aria-expanded="false" aria-controls="service-panel-02" id="service-header-02">
               <span class="service-index">02</span>
-              <h3 class="service-title">AI UGC Videos</h3>
-              <p class="service-desc">AI influencer, testimonial, and high-converting product UGC video creatives.</p>
+              <h3 class="service-title" data-i18n="srv2Title">AI UGC Videos</h3>
+              <p class="service-desc" data-i18n="srv2Desc">AI influencer, testimonial, and high-converting product UGC video creatives.</p>
               <div class="service-badge" aria-hidden="true">
                 <svg class="icon icon-stroke" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg>
               </div>
@@ -4383,15 +4432,15 @@
             <div class="service-expand-panel" id="service-panel-02" role="region" aria-labelledby="service-header-02">
               <div class="service-expand-inner">
                 <div class="service-expand-content">
-                  <span class="service-expand-label">WHAT I DO</span>
-                  <p class="service-expand-text">I create high-converting AI UGC video campaigns using realistic AI digital avatars, synthetic influencer testimonials, and product reviews designed to build credibility and drive engagement on TikTok, Reels, and Meta Ads.</p>
+                  <span class="service-expand-label" data-i18n="whatIDo">WHAT I DO</span>
+                  <p class="service-expand-text" data-i18n="srv2Text">I create high-converting AI UGC video campaigns using realistic AI digital avatars, synthetic influencer testimonials, and product reviews designed to build credibility and drive engagement on TikTok, Reels, and Meta Ads.</p>
                   <div class="service-expand-footer">
                     <div class="service-expand-focus">
-                      <span class="service-focus-label">Focus:</span>
-                      <span class="service-focus-items">AI Influencer · Testimonial · Product UGC · Social Proof</span>
+                      <span class="service-focus-label" data-i18n="focusLabel">Focus:</span>
+                      <span class="service-focus-items" data-i18n="srv2Focus">AI Influencer · Testimonial · Product UGC · Social Proof</span>
                     </div>
                     <a href="#works" class="service-explore-link service-filter-link" data-filter="ai-ugc">
-                      <span>View AI UGC works</span>
+                      <span data-i18n="srv2Link">View AI UGC works</span>
                       <svg class="icon icon-stroke" viewBox="0 0 24 24" style="width:12px; height:12px;"><path d="M7 17 17 7M8 7h9v9"/></svg>
                     </a>
                   </div>
@@ -4404,8 +4453,8 @@
           <li class="service-row-item reveal-fade-up" style="transition-delay: 100ms;">
             <button type="button" class="service-row-trigger" aria-expanded="false" aria-controls="service-panel-03" id="service-header-03">
               <span class="service-index">03</span>
-              <h3 class="service-title">AI Motion Videos</h3>
-              <p class="service-desc">Image-to-video, AI cinematic storytelling, and AI-driven product animation.</p>
+              <h3 class="service-title" data-i18n="srv3Title">AI Motion Videos</h3>
+              <p class="service-desc" data-i18n="srv3Desc">Image-to-video, AI cinematic storytelling, and AI-driven product animation.</p>
               <div class="service-badge" aria-hidden="true">
                 <svg class="icon icon-stroke" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg>
               </div>
@@ -4413,15 +4462,15 @@
             <div class="service-expand-panel" id="service-panel-03" role="region" aria-labelledby="service-header-03">
               <div class="service-expand-inner">
                 <div class="service-expand-content">
-                  <span class="service-expand-label">WHAT I DO</span>
-                  <p class="service-expand-text">I produce dynamic motion visuals combining leading generative AI video models (Kling, Runway, Dreamina, VEO) with professional post-production. My work spans cinematic scene generation, dynamic AI camera moves, product animation, and rhythmic video effects.</p>
+                  <span class="service-expand-label" data-i18n="whatIDo">WHAT I DO</span>
+                  <p class="service-expand-text" data-i18n="srv3Text">I produce dynamic motion visuals combining leading generative AI video models (Kling, Runway, Dreamina, VEO) with professional post-production. My work spans cinematic scene generation, dynamic AI camera moves, product animation, and rhythmic video effects.</p>
                   <div class="service-expand-footer">
                     <div class="service-expand-focus">
-                      <span class="service-focus-label">Focus:</span>
-                      <span class="service-focus-items">Image-to-Video · AI Cinematic · Animasi Produk dengan AI</span>
+                      <span class="service-focus-label" data-i18n="focusLabel">Focus:</span>
+                      <span class="service-focus-items" data-i18n="srv3Focus">Image-to-Video · AI Cinematic · Animasi Produk dengan AI</span>
                     </div>
                     <a href="#works" class="service-explore-link service-filter-link" data-filter="ai-motion">
-                      <span>View AI motion works</span>
+                      <span data-i18n="srv3Link">View AI motion works</span>
                       <svg class="icon icon-stroke" viewBox="0 0 24 24" style="width:12px; height:12px;"><path d="M7 17 17 7M8 7h9v9"/></svg>
                     </a>
                   </div>
@@ -4434,8 +4483,8 @@
           <li class="service-row-item reveal-fade-up" style="transition-delay: 150ms;">
             <button type="button" class="service-row-trigger" aria-expanded="false" aria-controls="service-panel-04" id="service-header-04">
               <span class="service-index">04</span>
-              <h3 class="service-title">Graphic Design</h3>
-              <p class="service-desc">Poster, flyer, logo, banner, and social media carousels.</p>
+              <h3 class="service-title" data-i18n="srv4Title">Graphic Design</h3>
+              <p class="service-desc" data-i18n="srv4Desc">Poster, flyer, logo, banner, and social media carousels.</p>
               <div class="service-badge" aria-hidden="true">
                 <svg class="icon icon-stroke" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg>
               </div>
@@ -4443,15 +4492,15 @@
             <div class="service-expand-panel" id="service-panel-04" role="region" aria-labelledby="service-header-04">
               <div class="service-expand-inner">
                 <div class="service-expand-content">
-                  <span class="service-expand-label">WHAT I DO</span>
-                  <p class="service-expand-text">I design visual assets for brands, products, and digital campaigns, including social media posts, promotional banners, posters, carousels, product visuals, packaging concepts, and other marketing materials.</p>
+                  <span class="service-expand-label" data-i18n="whatIDo">WHAT I DO</span>
+                  <p class="service-expand-text" data-i18n="srv4Text">I design visual assets for brands, products, and digital campaigns, including social media posts, promotional banners, posters, carousels, product visuals, packaging concepts, and other marketing materials.</p>
                   <div class="service-expand-footer">
                     <div class="service-expand-focus">
-                      <span class="service-focus-label">Focus:</span>
-                      <span class="service-focus-items">Poster · Flyer · Logo · Banner · Carousel</span>
+                      <span class="service-focus-label" data-i18n="focusLabel">Focus:</span>
+                      <span class="service-focus-items" data-i18n="srv4Focus">Poster · Flyer · Logo · Banner · Carousel</span>
                     </div>
                     <a href="#works" class="service-explore-link service-filter-link" data-filter="design">
-                      <span>View design works</span>
+                      <span data-i18n="srv4Link">View design works</span>
                       <svg class="icon icon-stroke" viewBox="0 0 24 24" style="width:12px; height:12px;"><path d="M7 17 17 7M8 7h9v9"/></svg>
                     </a>
                   </div>
@@ -4464,8 +4513,8 @@
           <li class="service-row-item reveal-fade-up" style="transition-delay: 200ms;">
             <button type="button" class="service-row-trigger" aria-expanded="false" aria-controls="service-panel-05" id="service-header-05">
               <span class="service-index">05</span>
-              <h3 class="service-title">AI Visual Design</h3>
-              <p class="service-desc">AI product photography, AI fashion concepts, and commercial visual campaigns.</p>
+              <h3 class="service-title" data-i18n="srv5Title">AI Visual Design</h3>
+              <p class="service-desc" data-i18n="srv5Desc">AI product photography, AI fashion concepts, and commercial visual campaigns.</p>
               <div class="service-badge" aria-hidden="true">
                 <svg class="icon icon-stroke" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg>
               </div>
@@ -4473,15 +4522,15 @@
             <div class="service-expand-panel" id="service-panel-05" role="region" aria-labelledby="service-header-05">
               <div class="service-expand-inner">
                 <div class="service-expand-content">
-                  <span class="service-expand-label">WHAT I DO</span>
-                  <p class="service-expand-text">I produce commercial-grade visual assets using generative AI image generation, including studio-quality AI product photography, AI fashion editorials, visual campaigns, and realistic digital concepts for e-commerce and brand marketing.</p>
+                  <span class="service-expand-label" data-i18n="whatIDo">WHAT I DO</span>
+                  <p class="service-expand-text" data-i18n="srv5Text">I produce commercial-grade visual assets using generative AI image generation, including studio-quality AI product photography, AI fashion editorials, visual campaigns, and realistic digital concepts for e-commerce and brand marketing.</p>
                   <div class="service-expand-footer">
                     <div class="service-expand-focus">
-                      <span class="service-focus-label">Focus:</span>
-                      <span class="service-focus-items">AI Product Photography · AI Fashion · Visual Campaign</span>
+                      <span class="service-focus-label" data-i18n="focusLabel">Focus:</span>
+                      <span class="service-focus-items" data-i18n="srv5Focus">AI Product Photography · AI Fashion · Visual Campaign</span>
                     </div>
                     <a href="#works" class="service-explore-link service-filter-link" data-filter="ai-visual">
-                      <span>View AI visual works</span>
+                      <span data-i18n="srv5Link">View AI visual works</span>
                       <svg class="icon icon-stroke" viewBox="0 0 24 24" style="width:12px; height:12px;"><path d="M7 17 17 7M8 7h9v9"/></svg>
                     </a>
                   </div>
@@ -4494,8 +4543,8 @@
           <li class="service-row-item reveal-fade-up" style="transition-delay: 250ms;">
             <button type="button" class="service-row-trigger" aria-expanded="false" aria-controls="service-panel-06" id="service-header-06">
               <span class="service-index">06</span>
-              <h3 class="service-title">Advertising</h3>
-              <p class="service-desc">Meta Ads, TikTok Ads, and promotional creatives.</p>
+              <h3 class="service-title" data-i18n="srv6Title">Advertising</h3>
+              <p class="service-desc" data-i18n="srv6Desc">Meta Ads, TikTok Ads, and promotional creatives.</p>
               <div class="service-badge" aria-hidden="true">
                 <svg class="icon icon-stroke" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg>
               </div>
@@ -4503,15 +4552,15 @@
             <div class="service-expand-panel" id="service-panel-06" role="region" aria-labelledby="service-header-06">
               <div class="service-expand-inner">
                 <div class="service-expand-content">
-                  <span class="service-expand-label">WHAT I DO</span>
-                  <p class="service-expand-text">I create visual content for digital advertising and promotional campaigns, including Meta and TikTok ad creatives, product-focused videos, promotional graphics, creative variations, and content designed to communicate offers clearly.</p>
+                  <span class="service-expand-label" data-i18n="whatIDo">WHAT I DO</span>
+                  <p class="service-expand-text" data-i18n="srv6Text">I create visual content for digital advertising and promotional campaigns, including Meta and TikTok ad creatives, product-focused videos, promotional graphics, creative variations, and content designed to communicate offers clearly.</p>
                   <div class="service-expand-footer">
                     <div class="service-expand-focus">
-                      <span class="service-focus-label">Focus:</span>
-                      <span class="service-focus-items">Meta Ads · TikTok Ads · Promotional Creatives</span>
+                      <span class="service-focus-label" data-i18n="focusLabel">Focus:</span>
+                      <span class="service-focus-items" data-i18n="srv6Focus">Meta Ads · TikTok Ads · Promotional Creatives</span>
                     </div>
                     <a href="#works" class="service-explore-link service-filter-link" data-filter="ads">
-                      <span>View advertising works</span>
+                      <span data-i18n="srv6Link">View advertising works</span>
                       <svg class="icon icon-stroke" viewBox="0 0 24 24" style="width:12px; height:12px;"><path d="M7 17 17 7M8 7h9v9"/></svg>
                     </a>
                   </div>
@@ -4524,8 +4573,8 @@
           <li class="service-row-item reveal-fade-up" style="transition-delay: 300ms;">
             <button type="button" class="service-row-trigger" aria-expanded="false" aria-controls="service-panel-07" id="service-header-07">
               <span class="service-index">07</span>
-              <h3 class="service-title">YouTube</h3>
-              <p class="service-desc">Long-form video, Shorts, and thumbnail design.</p>
+              <h3 class="service-title" data-i18n="srv7Title">YouTube</h3>
+              <p class="service-desc" data-i18n="srv7Desc">Long-form video, Shorts, and thumbnail design.</p>
               <div class="service-badge" aria-hidden="true">
                 <svg class="icon icon-stroke" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg>
               </div>
@@ -4533,15 +4582,15 @@
             <div class="service-expand-panel" id="service-panel-07" role="region" aria-labelledby="service-header-07">
               <div class="service-expand-inner">
                 <div class="service-expand-content">
-                  <span class="service-expand-label">WHAT I DO</span>
-                  <p class="service-expand-text">I handle end-to-end YouTube content production, from editing and storytelling to subtitles, sound design, pacing, thumbnails, and long-form video optimization for a stronger viewing experience.</p>
+                  <span class="service-expand-label" data-i18n="whatIDo">WHAT I DO</span>
+                  <p class="service-expand-text" data-i18n="srv7Text">I handle end-to-end YouTube content production, from editing and storytelling to subtitles, sound design, pacing, thumbnails, and long-form video optimization for a stronger viewing experience.</p>
                   <div class="service-expand-footer">
                     <div class="service-expand-focus">
-                      <span class="service-focus-label">Focus:</span>
-                      <span class="service-focus-items">Long-form Video · Shorts · Thumbnail</span>
+                      <span class="service-focus-label" data-i18n="focusLabel">Focus:</span>
+                      <span class="service-focus-items" data-i18n="srv7Focus">Long-form Video · Shorts · Thumbnail</span>
                     </div>
                     <a href="#works" class="service-explore-link service-filter-link" data-filter="youtube">
-                      <span>View YouTube works</span>
+                      <span data-i18n="srv7Link">View YouTube works</span>
                       <svg class="icon icon-stroke" viewBox="0 0 24 24" style="width:12px; height:12px;"><path d="M7 17 17 7M8 7h9v9"/></svg>
                     </a>
                   </div>
@@ -4560,11 +4609,11 @@
           
           <div class="eyebrow eyebrow-light">
             <span class="eyebrow-dot"></span>
-            <span>By the numbers</span>
+            <span data-i18n="statsEyebrow">By the numbers</span>
           </div>
 
           <h2 class="stats-h2">
-            <span class="reveal-line-wrap"><span class="reveal-line">Proof in the work, not the words.</span></span>
+            <span class="reveal-line-wrap"><span class="reveal-line" data-i18n="statsTitle">Proof in the work, not the words.</span></span>
           </h2>
 
           <div class="stats-grid">
@@ -4573,21 +4622,21 @@
               <div class="stat-val-box">
                 <span class="stat-num" data-target="500">500</span><span>+</span>
               </div>
-              <p class="stat-label">Projects delivered</p>
+              <p class="stat-label" data-i18n="stat1Label">Projects delivered</p>
             </div>
 
             <div class="stat-item reveal-fade-up" style="transition-delay: 90ms;">
               <div class="stat-val-box">
                 <span class="stat-num" data-target="98">98</span><span>%</span>
               </div>
-              <p class="stat-label">Client retention</p>
+              <p class="stat-label" data-i18n="stat2Label">Client retention</p>
             </div>
 
             <div class="stat-item reveal-fade-up" style="transition-delay: 180ms;">
               <div class="stat-val-box">
                 <span class="stat-num" data-target="30">30</span><span>+</span>
               </div>
-              <p class="stat-label">Brands handled</p>
+              <p class="stat-label" data-i18n="stat3Label">Brands handled</p>
             </div>
 
           </div>
@@ -4602,10 +4651,10 @@
         <div class="tools-header reveal-fade-up">
           <div class="eyebrow eyebrow-dark eyebrow-badge" style="margin-bottom:0.75rem;">
             <span class="eyebrow-dot"></span>
-            <span>Tools & Stack</span>
+            <span data-i18n="toolsEyebrow">Tools & Stack</span>
           </div>
-          <h2 style="font-size: 2rem; font-weight: 600; letter-spacing: -0.02em;">Software & Generative AI Stack</h2>
-          <p style="color:var(--muted); font-size:0.9rem; margin-top:0.4rem;">Powered by industry-standard creative applications & state-of-the-art AI models.</p>
+          <h2 style="font-size: 2rem; font-weight: 600; letter-spacing: -0.02em;" data-i18n="toolsTitle">Software & Generative AI Stack</h2>
+          <p style="color:var(--muted); font-size:0.9rem; margin-top:0.4rem;" data-i18n="toolsDesc">Powered by industry-standard creative applications & state-of-the-art AI models.</p>
         </div>
 
         <div class="tech-stack-grid reveal-fade-up">
@@ -4621,7 +4670,7 @@
             </div>
             <div class="tech-info">
               <span class="tech-name">Premiere Pro</span>
-              <span class="tech-role">Video Editing</span>
+              <span class="tech-role" data-i18n="toolRole1">Video Editing</span>
             </div>
           </div>
 
@@ -4636,7 +4685,7 @@
             </div>
             <div class="tech-info">
               <span class="tech-name">After Effects</span>
-              <span class="tech-role">Motion Graphics</span>
+              <span class="tech-role" data-i18n="toolRole2">Motion Graphics</span>
             </div>
           </div>
 
@@ -4651,7 +4700,7 @@
             </div>
             <div class="tech-info">
               <span class="tech-name">Photoshop</span>
-              <span class="tech-role">Graphic Design</span>
+              <span class="tech-role" data-i18n="toolRole3">Graphic Design</span>
             </div>
           </div>
 
@@ -4667,7 +4716,7 @@
             </div>
             <div class="tech-info">
               <span class="tech-name">Illustrator</span>
-              <span class="tech-role">Vector & Logos</span>
+              <span class="tech-role" data-i18n="toolRole4">Vector & Logos</span>
             </div>
           </div>
 
@@ -4684,7 +4733,7 @@
             </div>
             <div class="tech-info">
               <span class="tech-name">Figma</span>
-              <span class="tech-role">UI/UX & Layout</span>
+              <span class="tech-role" data-i18n="toolRole5">UI/UX & Layout</span>
             </div>
           </div>
 
@@ -4695,7 +4744,7 @@
             </div>
             <div class="tech-info">
               <span class="tech-name">Canva</span>
-              <span class="tech-role">Visual Content</span>
+              <span class="tech-role" data-i18n="toolRole6">Visual Content</span>
             </div>
           </div>
 
@@ -4711,7 +4760,7 @@
             </div>
             <div class="tech-info">
               <span class="tech-name">CapCut</span>
-              <span class="tech-role">Reels & Shortform</span>
+              <span class="tech-role" data-i18n="toolRole7">Reels & Shortform</span>
             </div>
           </div>
 
@@ -4727,7 +4776,7 @@
             </div>
             <div class="tech-info">
               <span class="tech-name">ChatGPT</span>
-              <span class="tech-role">Script & Ideation</span>
+              <span class="tech-role" data-i18n="toolRole8">Script & Ideation</span>
             </div>
           </div>
 
@@ -4743,7 +4792,7 @@
             </div>
             <div class="tech-info">
               <span class="tech-name">Claude</span>
-              <span class="tech-role">Creative AI</span>
+              <span class="tech-role" data-i18n="toolRole9">Creative AI</span>
             </div>
           </div>
 
@@ -4767,7 +4816,7 @@
             </div>
             <div class="tech-info">
               <span class="tech-name">Google Gemini</span>
-              <span class="tech-role">Multimodal AI</span>
+              <span class="tech-role" data-i18n="toolRole10">Multimodal AI</span>
             </div>
           </div>
 
@@ -4778,7 +4827,7 @@
             </div>
             <div class="tech-info">
               <span class="tech-name">Antigravity</span>
-              <span class="tech-role">Agentic Systems</span>
+              <span class="tech-role" data-i18n="toolRole11">Agentic Systems</span>
             </div>
           </div>
 
@@ -4789,7 +4838,7 @@
             </div>
             <div class="tech-info">
               <span class="tech-name">Flow Labs</span>
-              <span class="tech-role">Generative Video</span>
+              <span class="tech-role" data-i18n="toolRole12">Generative Video</span>
             </div>
           </div>
 
@@ -4814,7 +4863,7 @@
             </div>
             <div class="tech-info">
               <span class="tech-name">Kling AI</span>
-              <span class="tech-role">Cinematic Video</span>
+              <span class="tech-role" data-i18n="toolRole13">Cinematic Video</span>
             </div>
           </div>
 
@@ -4830,7 +4879,7 @@
             </div>
             <div class="tech-info">
               <span class="tech-name">Runway</span>
-              <span class="tech-role">AI Motion & VFX</span>
+              <span class="tech-role" data-i18n="toolRole14">AI Motion & VFX</span>
             </div>
           </div>
 
@@ -4846,7 +4895,7 @@
             </div>
             <div class="tech-info">
               <span class="tech-name">Midjourney</span>
-              <span class="tech-role">AI Digital Art</span>
+              <span class="tech-role" data-i18n="toolRole15">AI Digital Art</span>
             </div>
           </div>
 
@@ -4862,7 +4911,7 @@
             </div>
             <div class="tech-info">
               <span class="tech-name">ElevenLabs</span>
-              <span class="tech-role">AI Voice & Audio</span>
+              <span class="tech-role" data-i18n="toolRole16">AI Voice & Audio</span>
             </div>
           </div>
 
@@ -4876,10 +4925,10 @@
         <div class="portfolio-header">
           <div class="eyebrow eyebrow-dark eyebrow-badge reveal-fade-up">
             <span class="eyebrow-dot"></span>
-            <span>Client Feedback</span>
+            <span data-i18n="testiEyebrow">Client Feedback</span>
           </div>
           <h2 class="portfolio-h2">
-            <span class="reveal-line-wrap"><span class="reveal-line">What Clients Say</span></span>
+            <span class="reveal-line-wrap"><span class="reveal-line" data-i18n="testiTitle">What Clients Say</span></span>
           </h2>
         </div>
 
@@ -4894,13 +4943,13 @@
                 <svg class="icon" viewBox="0 0 24 24"><path d="M12 2.5l2.9 5.88 6.49.94-4.7 4.58 1.11 6.46L12 17.9l-5.8 3.05 1.1-6.46-4.69-4.58 6.49-.94L12 2.5z"/></svg>
                 <svg class="icon" viewBox="0 0 24 24"><path d="M12 2.5l2.9 5.88 6.49.94-4.7 4.58 1.11 6.46L12 17.9l-5.8 3.05 1.1-6.46-4.69-4.58 6.49-.94L12 2.5z"/></svg>
               </div>
-              <p class="testimonial-quote">"Makasih yaa. Kualitas gambarnya juara, bersih dan tajam banget keliatan HD-nya. Beneran sesuai ekspektasi bahkan lebih bagus dari aslinya. Sukses terus ya bg!"</p>
+              <p class="testimonial-quote" data-i18n="testi1Quote">"Makasih yaa. Kualitas gambarnya juara, bersih dan tajam banget keliatan HD-nya. Beneran sesuai ekspektasi bahkan lebih bagus dari aslinya. Sukses terus ya bg!"</p>
             </div>
             <div class="client-info">
               <img src="assets/testimonials/dzul.jpg" alt="Dzul Avatar" class="client-avatar" width="1080" height="1080" loading="lazy" decoding="async">
               <div>
                 <div class="client-name">Dzul</div>
-                <div class="client-role">E-Commerce Specialist</div>
+                <div class="client-role" data-i18n="testi1Role">E-Commerce Specialist</div>
               </div>
             </div>
           </div>
@@ -4915,13 +4964,13 @@
                 <svg class="icon" viewBox="0 0 24 24"><path d="M12 2.5l2.9 5.88 6.49.94-4.7 4.58 1.11 6.46L12 17.9l-5.8 3.05 1.1-6.46-4.69-4.58 6.49-.94L12 2.5z"/></svg>
                 <svg class="icon" viewBox="0 0 24 24"><path d="M12 2.5l2.9 5.88 6.49.94-4.7 4.58 1.11 6.46L12 17.9l-5.8 3.05 1.1-6.46-4.69-4.58 6.49-.94L12 2.5z"/></svg>
               </div>
-              <p class="testimonial-quote">"Hallo bang, aku masih ksih testi nihh. Btw aku suka bgt sama kualitasnya super HD bgt bener-bener sesuai ekspektasi akuu😍 gambarnya bener-bener detail jadi keliatan kaya bukan editan asli keren bgtt!"</p>
+              <p class="testimonial-quote" data-i18n="testi2Quote">"Hallo bang, aku masih ksih testi nihh. Btw aku suka bgt sama kualitasnya super HD bgt bener-bener sesuai ekspektasi akuu😍 gambarnya bener-bener detail jadi keliatan kaya bukan editan asli keren bgtt!"</p>
             </div>
             <div class="client-info">
               <img src="assets/testimonials/indah.png" alt="Indah Avatar" class="client-avatar" width="1080" height="1350" loading="lazy" decoding="async">
               <div>
                 <div class="client-name">Indah</div>
-                <div class="client-role">Owner, Yuntea</div>
+                <div class="client-role" data-i18n="testi2Role">Owner, Yuntea</div>
               </div>
             </div>
           </div>
@@ -4936,13 +4985,13 @@
                 <svg class="icon" viewBox="0 0 24 24"><path d="M12 2.5l2.9 5.88 6.49.94-4.7 4.58 1.11 6.46L12 17.9l-5.8 3.05 1.1-6.46-4.69-4.58 6.49-.94L12 2.5z"/></svg>
                 <svg class="icon" viewBox="0 0 24 24"><path d="M12 2.5l2.9 5.88 6.49.94-4.7 4.58 1.11 6.46L12 17.9l-5.8 3.05 1.1-6.46-4.69-4.58 6.49-.94L12 2.5z"/></svg>
               </div>
-              <p class="testimonial-quote">"Keren!! Gambar produknya kelihatan jelas tajam dan ga pecah... komunikasinya juga sangat responsif dan memuaskan. Sukses selalu!"</p>
+              <p class="testimonial-quote" data-i18n="testi3Quote">"Keren!! Gambar produknya kelihatan jelas tajam dan ga pecah... komunikasinya juga sangat responsif dan memuaskan. Sukses selalu!"</p>
             </div>
             <div class="client-info">
               <img src="assets/testimonials/tika.jpg" alt="Tika Rosmayanti Avatar" class="client-avatar" width="1438" height="1440" loading="lazy" decoding="async">
               <div>
                 <div class="client-name">Tika Rosmayanti</div>
-                <div class="client-role">Pemilik UMKM</div>
+                <div class="client-role" data-i18n="testi3Role">Pemilik UMKM</div>
               </div>
             </div>
           </div>
@@ -4985,48 +5034,48 @@
         <div class="tools-header reveal-fade-up">
           <div class="eyebrow eyebrow-dark eyebrow-badge" style="margin-bottom:0.75rem;">
             <span class="eyebrow-dot"></span>
-            <span>Questions</span>
+            <span data-i18n="faqEyebrow">Questions</span>
           </div>
-          <h2 style="font-size: 2rem; font-weight: 600; letter-spacing: -0.02em;">Frequently Asked Questions</h2>
+          <h2 style="font-size: 2rem; font-weight: 600; letter-spacing: -0.02em;" data-i18n="faqTitle">Frequently Asked Questions</h2>
         </div>
 
         <div class="faq-accordion reveal-fade-up">
           <div class="faq-item active">
             <button class="faq-question">
-              <span>What is your typical turnaround time?</span>
+              <span data-i18n="faq1Q">What is your typical turnaround time?</span>
               <span class="faq-icon">+</span>
             </button>
-            <div class="faq-answer">
+            <div class="faq-answer" data-i18n="faq1A">
               For short-form Reels, TikToks, and social ads, turnaround is typically 24-48 hours. Larger commercial edits and motion graphics packages take 5-10 business days depending on scope.
             </div>
           </div>
 
           <div class="faq-item">
             <button class="faq-question">
-              <span>Do you accept remote projects?</span>
+              <span data-i18n="faq2Q">Do you accept remote projects?</span>
               <span class="faq-icon">+</span>
             </button>
-            <div class="faq-answer">
+            <div class="faq-answer" data-i18n="faq2A">
               Yes! I work with clients and companies across Indonesia and globally. We communicate smoothly via WhatsApp (0822-5056-1757), Email, Slack, or Google Meet.
             </div>
           </div>
 
           <div class="faq-item">
             <button class="faq-question">
-              <span>How many revisions are included?</span>
+              <span data-i18n="faq3Q">How many revisions are included?</span>
               <span class="faq-icon">+</span>
             </button>
-            <div class="faq-answer">
+            <div class="faq-answer" data-i18n="faq3A">
               All packages include 2 rounds of full revisions to ensure your complete satisfaction. Feedback is easily marked up step by step.
             </div>
           </div>
 
           <div class="faq-item">
             <button class="faq-question">
-              <span>Can you create custom AI visual assets?</span>
+              <span data-i18n="faq4Q">Can you create custom AI visual assets?</span>
               <span class="faq-icon">+</span>
             </button>
-            <div class="faq-answer">
+            <div class="faq-answer" data-i18n="faq4A">
               Engineered with ChatGPT, Gemini, Google Flow Labs, Kling AI, Leonardo AI, and ElevenLabs to generate unique images, voiceovers, and video sequences tailored specifically to your brand.
             </div>
           </div>
@@ -5045,13 +5094,13 @@
       <!-- CTA Row -->
       <div class="footer-cta-row">
         <h2 class="footer-cta-h2">
-          <span class="reveal-line-wrap"><span class="reveal-line">Have a project in mind?</span></span>
-          <span class="reveal-line-wrap"><span class="reveal-line">Let's get to work.</span></span>
+          <span class="reveal-line-wrap"><span class="reveal-line" data-i18n="footerCta1">Have a project in mind?</span></span>
+          <span class="reveal-line-wrap"><span class="reveal-line" data-i18n="footerCta2">Let's get to work.</span></span>
         </h2>
 
         <a href="https://wa.me/6282250561757" target="_blank" rel="noopener" class="btn-pill pill-light pill-with-arrow">
           <span class="pill-inner">
-            <span>WhatsApp Me</span>
+            <span data-i18n="footerWaBtn">WhatsApp Me</span>
             <span class="pill-badge arrow-up-right">
               <svg class="icon icon-stroke" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg>
             </span>
@@ -5067,34 +5116,34 @@
           <button class="brand-btn" data-target="home" style="color:#fff;">
             <span>Wildan</span>
           </button>
-          <p class="footer-tagline">Creative Designer & Video Specialist crafting high-converting visual assets.</p>
+          <p class="footer-tagline" data-i18n="footerTagline">Creative Designer & Video Specialist crafting high-converting visual assets.</p>
         </div>
 
         <!-- Navigation Links -->
         <div class="footer-nav-col">
-          <p class="footer-col-title">Navigation</p>
+          <p class="footer-col-title" data-i18n="footerColNav">Navigation</p>
           <ul class="footer-col-links">
-            <li><a href="#home" class="animated-link"><span>Home</span></a></li>
-            <li><a href="#works" class="animated-link"><span>Portfolio</span></a></li>
-            <li><a href="#faq" class="animated-link"><span>FAQ</span></a></li>
-            <li><a href="https://wa.me/6282250561757" target="_blank" rel="noopener" class="animated-link"><span>Contact</span></a></li>
+            <li><a href="#home" class="animated-link"><span data-i18n="navHome">Home</span></a></li>
+            <li><a href="#works" class="animated-link"><span data-i18n="navPortfolio">Portfolio</span></a></li>
+            <li><a href="#faq" class="animated-link"><span data-i18n="navFaq">FAQ</span></a></li>
+            <li><a href="https://wa.me/6282250561757" target="_blank" rel="noopener" class="animated-link"><span data-i18n="navContact">Contact</span></a></li>
           </ul>
         </div>
 
         <!-- Services Links -->
         <div class="footer-services-col">
-          <p class="footer-col-title">Services</p>
+          <p class="footer-col-title" data-i18n="footerColServices">Services</p>
           <ul class="footer-col-links">
-            <li><a href="#services" class="animated-link"><span>Video Editing</span></a></li>
-            <li><a href="#services" class="animated-link"><span>Motion Graphics</span></a></li>
-            <li><a href="#services" class="animated-link"><span>Graphic Design</span></a></li>
-            <li><a href="#services" class="animated-link"><span>AI Art Creation</span></a></li>
+            <li><a href="#services" class="animated-link"><span data-i18n="footerSrv1">Video Editing</span></a></li>
+            <li><a href="#services" class="animated-link"><span data-i18n="footerSrv2">Motion Graphics</span></a></li>
+            <li><a href="#services" class="animated-link"><span data-i18n="footerSrv3">Graphic Design</span></a></li>
+            <li><a href="#services" class="animated-link"><span data-i18n="footerSrv4">AI Art Creation</span></a></li>
           </ul>
         </div>
 
         <!-- Social Links -->
         <div class="footer-social-col">
-          <p class="footer-col-title">Social</p>
+          <p class="footer-col-title" data-i18n="footerColSocial">Social</p>
           <ul class="footer-col-links footer-social-links">
             <li><a href="https://wa.me/6282250561757" target="_blank" rel="noopener" class="animated-link"><span>WhatsApp</span></a></li>
             <li><a href="https://instagram.com/wildanfii/" target="_blank" rel="noopener" class="animated-link"><span>Instagram</span></a></li>
@@ -5120,7 +5169,7 @@
 
       <button class="overlay-close-btn" id="menu-close-btn" aria-label="Close Navigation Menu">
         <svg class="icon icon-stroke" viewBox="0 0 24 24" style="font-size:0.875rem;"><path d="M4 4l16 16M20 4 4 20"/></svg>
-        <span>Close</span>
+        <span data-i18n="navClose">Close</span>
       </button>
     </div>
 
@@ -5130,29 +5179,29 @@
         <li>
           <button class="overlay-nav-btn" data-target="home" style="transition-delay: 50ms;">
             <span class="overlay-idx">01</span>
-            <span class="overlay-label">Home</span>
-            <span class="overlay-sublabel">Visual Experiences</span>
+            <span class="overlay-label" data-i18n="navHome">Home</span>
+            <span class="overlay-sublabel" data-i18n="overlaySub1">Visual Experiences</span>
           </button>
         </li>
         <li>
           <button class="overlay-nav-btn" data-target="works" style="transition-delay: 100ms;">
             <span class="overlay-idx">02</span>
-            <span class="overlay-label">Portfolio</span>
-            <span class="overlay-sublabel">Video, Design & AI Works</span>
+            <span class="overlay-label" data-i18n="navPortfolio">Portfolio</span>
+            <span class="overlay-sublabel" data-i18n="overlaySub2">Video, Design & AI Works</span>
           </button>
         </li>
         <li>
           <button class="overlay-nav-btn" data-target="faq" style="transition-delay: 150ms;">
             <span class="overlay-idx">03</span>
-            <span class="overlay-label">FAQ</span>
-            <span class="overlay-sublabel">Questions & Answers</span>
+            <span class="overlay-label" data-i18n="navFaq">FAQ</span>
+            <span class="overlay-sublabel" data-i18n="overlaySub3">Questions & Answers</span>
           </button>
         </li>
         <li>
           <button class="overlay-nav-btn btn-open-modal" style="transition-delay: 200ms;">
             <span class="overlay-idx">04</span>
-            <span class="overlay-label">Contact</span>
-            <span class="overlay-sublabel">WhatsApp & Inquiries</span>
+            <span class="overlay-label" data-i18n="navContact">Contact</span>
+            <span class="overlay-sublabel" data-i18n="overlaySub4">WhatsApp & Inquiries</span>
           </button>
         </li>
       </ul>
@@ -5164,14 +5213,14 @@
           <div>
             <div class="overlay-badge-dot-wrap">
               <span class="overlay-pulse-dot"></span>
-              <span style="font-size:0.72rem; color:#34d399; font-weight:500;">Available for Projects</span>
+              <span style="font-size:0.72rem; color:#34d399; font-weight:500;" data-i18n="overlayAvail">Available for Projects</span>
             </div>
             <h3 class="overlay-profile-name">Wildan</h3>
-            <p class="overlay-profile-role">Creative Designer & Video Specialist</p>
+            <p class="overlay-profile-role" data-i18n="overlayRole">Creative Designer & Video Specialist</p>
           </div>
         </div>
 
-        <p class="overlay-profile-bio">
+        <p class="overlay-profile-bio" data-i18n="overlayBio">
           Crafting high-converting video edits, futuristic AI digital art, motion graphics & brand creative campaigns that move people.
         </p>
 
@@ -5185,11 +5234,11 @@
             <a href="mailto:wildanfi1212@gmail.com" style="color:#fff;">wildanfi1212@gmail.com</a>
           </div>
           <div class="overlay-contact-item">
-            <span class="overlay-contact-label">Location</span>
-            <span>Indonesia • Remote Worldwide</span>
+            <span class="overlay-contact-label" data-i18n="overlayLocLabel">Location</span>
+            <span data-i18n="overlayLocVal">Indonesia • Remote Worldwide</span>
           </div>
           <div class="overlay-contact-item">
-            <span class="overlay-contact-label">Socials</span>
+            <span class="overlay-contact-label" data-i18n="overlaySocialsLabel">Socials</span>
             <div style="display:flex; gap:0.75rem;">
               <a href="https://instagram.com/wildanfii/" target="_blank" rel="noopener" style="color:var(--accent-from);">Instagram ↗</a>
             </div>
@@ -5197,15 +5246,15 @@
         </div>
 
         <a href="https://wa.me/6282250561757" target="_blank" rel="noopener" class="overlay-wa-btn">
-          <span>Chat WhatsApp Langsung</span>
+          <span data-i18n="overlayWaDirect">Chat WhatsApp Langsung</span>
           <svg class="icon icon-stroke" viewBox="0 0 24 24" style="width:1.1em; height:1.1em;"><path d="M7 17 17 7M8 7h9v9"/></svg>
         </a>
       </div>
     </div>
 
     <div class="shell nav-overlay-bottom">
-      <span>Local time — <span id="overlay-live-time">9:41am</span> • Remote Worldwide</span>
-      <a href="https://wa.me/6282250561757" target="_blank" rel="noopener" class="overlay-start-link">Chat WhatsApp Langsung →</a>
+      <span><span data-i18n="overlayLocalTime">Local time</span> — <span id="overlay-live-time">9:41am</span> • <span data-i18n="overlayLocVal">Remote Worldwide</span></span>
+      <a href="https://wa.me/6282250561757" target="_blank" rel="noopener" class="overlay-start-link" data-i18n="overlayStartLink">Chat WhatsApp Langsung →</a>
     </div>
   </div>
 
@@ -5224,32 +5273,32 @@
         <div class="modal-header">
           <div class="eyebrow eyebrow-dark">
             <span class="eyebrow-dot" style="background:var(--accent);"></span>
-            <span>Start a project</span>
+            <span data-i18n="reqEyebrow">Start a project</span>
           </div>
-          <h2 class="modal-h2">Tell us what you're building.</h2>
+          <h2 class="modal-h2" data-i18n="reqTitle">Tell us what you're building.</h2>
         </div>
 
         <form class="modal-form" id="project-request-form">
           <div class="modal-field">
-            <label for="req-name">Name</label>
-            <input type="text" id="req-name" class="modal-control" placeholder="Your name" required />
+            <label for="req-name" data-i18n="reqNameLabel">Name</label>
+            <input type="text" id="req-name" class="modal-control" placeholder="Your name" data-i18n-placeholder="reqNamePlaceholder" required />
           </div>
 
           <div class="modal-field">
-            <label for="req-email">Email</label>
-            <input type="email" id="req-email" class="modal-control" placeholder="you@company.com" required />
+            <label for="req-email" data-i18n="reqEmailLabel">Email</label>
+            <input type="email" id="req-email" class="modal-control" placeholder="you@company.com" data-i18n-placeholder="reqEmailPlaceholder" required />
           </div>
 
           <div class="modal-field">
-            <label for="req-project">Project</label>
-            <textarea id="req-project" class="modal-control" rows="4" style="resize:none;" placeholder="A few words about your project, timeline, and budget." required></textarea>
+            <label for="req-project" data-i18n="reqProjLabel">Project</label>
+            <textarea id="req-project" class="modal-control" rows="4" style="resize:none;" placeholder="A few words about your project, timeline, and budget." data-i18n-placeholder="reqProjPlaceholder" required></textarea>
           </div>
 
           <div class="modal-footer">
-            <span class="modal-reply-note">Redirects to instant WhatsApp chat.</span>
+            <span class="modal-reply-note" data-i18n="reqNote">Redirects to instant WhatsApp chat.</span>
             <button type="submit" class="btn-pill pill-dark pill-with-arrow" id="modal-submit-btn">
               <span class="pill-inner">
-                <span id="submit-btn-text">Send request</span>
+                <span id="submit-btn-text" data-i18n="reqSubmit">Send request</span>
                 <span class="pill-badge arrow-up-right">
                   <svg class="icon icon-stroke" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg>
                 </span>
@@ -5264,13 +5313,13 @@
         <div class="modal-success-badge">
           <svg class="icon" viewBox="0 0 48 48"><path d="M24 2c2.2 13.8 7.9 19.6 22 22-14.1 2.4-19.8 8.2-22 22-2.2-13.8-7.9-19.6-22-22 14.1-2.4 19.8-8.2 22-22Z" fill="currentColor"/></svg>
         </div>
-        <h2 class="modal-h2">Request received</h2>
-        <p style="max-width:32ch; font-size:0.875rem; color:rgba(17,17,17,0.6); line-height:1.4;">
+        <h2 class="modal-h2" data-i18n="reqSuccessTitle">Request received</h2>
+        <p style="max-width:32ch; font-size:0.875rem; color:rgba(17,17,17,0.6); line-height:1.4;" data-i18n="reqSuccessDesc">
           Opening WhatsApp chat with Wildan...
         </p>
         <button class="btn-pill pill-dark pill-no-arrow" id="modal-done-btn" style="margin-top:0.5rem;">
           <span class="pill-inner">
-            <span>Close</span>
+            <span data-i18n="navClose">Close</span>
           </span>
         </button>
       </div>
@@ -5296,30 +5345,33 @@
   <div class="zoom-modal-backdrop" id="image-zoom-modal" role="dialog" aria-modal="true" aria-labelledby="zoom-image-title" data-lenis-prevent>
     <div class="zoom-toolbar">
       <div class="zoom-info">
-        <span class="zoom-title" id="zoom-image-title">Preview Foto</span>
+        <span class="zoom-title" id="zoom-image-title" data-i18n="zoomPreviewTitle">Preview Foto</span>
         <span class="zoom-counter" id="zoom-image-counter">1 / 1</span>
       </div>
       <div class="zoom-controls">
-        <button class="zoom-btn" id="zoom-out-btn" title="Perkecil" aria-label="Perkecil gambar">−</button>
-        <button class="zoom-btn" id="zoom-reset-btn" title="Atur ulang zoom" aria-label="Atur ulang zoom">100%</button>
-        <button class="zoom-btn" id="zoom-in-btn" title="Perbesar" aria-label="Perbesar gambar">+</button>
-        <button class="zoom-btn" id="zoom-open-btn" title="Buka gambar asli" aria-label="Buka gambar asli di tab baru">↗</button>
-        <button class="zoom-btn zoom-close-btn" id="zoom-close-btn" title="Tutup" aria-label="Tutup pratinjau">✕</button>
+        <button class="zoom-btn" id="zoom-out-btn" title="Perkecil" aria-label="Perkecil gambar" data-i18n-title="zoomOutTitle">−</button>
+        <button class="zoom-btn" id="zoom-reset-btn" title="Atur ulang zoom" aria-label="Atur ulang zoom" data-i18n-title="zoomResetTitle">100%</button>
+        <button class="zoom-btn" id="zoom-in-btn" title="Perbesar" aria-label="Perbesar gambar" data-i18n-title="zoomInTitle">+</button>
+        <button class="zoom-btn" id="zoom-open-btn" title="Buka gambar asli" aria-label="Buka gambar asli di tab baru" data-i18n-title="zoomOpenTitle">↗</button>
+        <button class="zoom-btn zoom-close-btn" id="zoom-close-btn" title="Tutup" aria-label="Tutup pratinjau" data-i18n-title="zoomCloseTitle">✕</button>
       </div>
     </div>
     
-    <button class="zoom-nav-btn zoom-prev-btn" id="zoom-prev-btn" title="Karya sebelumnya" aria-label="Karya sebelumnya">‹</button>
-    <button class="zoom-nav-btn zoom-next-btn" id="zoom-next-btn" title="Karya berikutnya" aria-label="Karya berikutnya">›</button>
+    <button class="zoom-nav-btn zoom-prev-btn" id="zoom-prev-btn" title="Karya sebelumnya" aria-label="Karya sebelumnya" data-i18n-title="zoomPrevTitle">‹</button>
+    <button class="zoom-nav-btn zoom-next-btn" id="zoom-next-btn" title="Karya berikutnya" aria-label="Karya berikutnya" data-i18n-title="zoomNextTitle">›</button>
 
     <div class="zoom-viewport" id="zoom-viewport">
       <img src="" alt="Pratinjau karya diperbesar" id="zoom-target-image" class="zoom-img">
     </div>
     
-    <div class="zoom-hint">Klik atau cubit untuk memperbesar · Gunakan tombol panah untuk berpindah karya</div>
+    <div class="zoom-hint" data-i18n="zoomHint">Klik atau cubit untuk memperbesar · Gunakan tombol panah untuk berpindah karya</div>
   </div>
 
+  <!-- Bilingual Language System (ID / EN) -->
+  <script src="js/i18n.js?v=5.31"></script>
+
   <!-- Portfolio Data & Render Script -->
-  <script src="js/portfolio.js?v=5.30"></script>
+  <script src="js/portfolio.js?v=5.31"></script>
 
   <!-- Local Lenis Smooth Scroll Library (Offline & file:// Compatible) -->
   <script src="js/lenis.min.js"></script>
@@ -5801,7 +5853,7 @@
         if (modalFormWrap) modalFormWrap.style.display = 'block';
         if (modalSuccessWrap) modalSuccessWrap.style.display = 'none';
         if (modalForm) modalForm.reset();
-        if (submitBtnText) submitBtnText.textContent = 'Send request';
+        if (submitBtnText) submitBtnText.textContent = typeof window.getPortfolioUIText === 'function' ? window.getPortfolioUIText('reqSubmit') : 'Send request';
       }, 300);
     }
 
@@ -5862,7 +5914,7 @@
         const email = document.getElementById('req-email').value.trim();
         const project = document.getElementById('req-project').value.trim();
 
-        if (submitBtnText) submitBtnText.textContent = 'Connecting WhatsApp…';
+        if (submitBtnText) submitBtnText.textContent = typeof window.getPortfolioUIText === 'function' ? window.getPortfolioUIText('reqConnecting') : 'Connecting WhatsApp…';
 
         const waText = `Halo Wildan! Saya ${name} (${email}).%0A%0AProject Inquiry:%0A${encodeURIComponent(project)}`;
         const waUrl = `https://wa.me/6282250561757?text=${waText}`;

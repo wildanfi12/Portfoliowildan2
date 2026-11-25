@@ -3276,6 +3276,23 @@ function initPortfolio() {
   let visibleCount = getInitialCount();
   let currentFilter = 'all';
   let modalVideoObserver = null;
+  let currentModalProject = null;
+
+  function uiText(key, fallback) {
+    return typeof window.getPortfolioUIText === 'function' ? window.getPortfolioUIText(key) : fallback;
+  }
+
+  function catLabel(p) {
+    return typeof window.getLocalizedCategoryName === 'function'
+      ? window.getLocalizedCategoryName(p.category, p.categoryName)
+      : p.categoryName;
+  }
+
+  function projField(p, field) {
+    return typeof window.getLocalizedProjectField === 'function'
+      ? window.getLocalizedProjectField(p, field)
+      : p[field];
+  }
 
   const showMoreWrap = document.getElementById('show-more-wrap');
 
@@ -3288,8 +3305,8 @@ function initPortfolio() {
     if (remaining > 0) {
       showMoreWrap.innerHTML = `
         <button class="btn-show-more" id="btn-show-more">
-          <span>Show More</span>
-          <span class="show-more-count">(${remaining} more)</span>
+          <span>${uiText('showMore', 'Show More')}</span>
+          <span class="show-more-count">(${remaining} ${uiText('showMoreSuffix', 'more')})</span>
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-left:0.25rem;"><path d="M6 9l6 6 6-6"/></svg>
         </button>
       `;
@@ -3303,7 +3320,7 @@ function initPortfolio() {
     } else if (visibleCount > baseCount && totalFiltered > baseCount) {
       showMoreWrap.innerHTML = `
         <button class="btn-show-more btn-show-less" id="btn-show-less">
-          <span>Show Less</span>
+          <span>${uiText('showLess', 'Show Less')}</span>
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-left:0.25rem;"><path d="M18 15l-6-6-6 6"/></svg>
         </button>
       `;
@@ -3398,7 +3415,8 @@ function initPortfolio() {
   }
 
   function collectionSummary(project) {
-    let summary = cleanPortfolioCopy(project.shortDesc || project.fullDesc || '');
+    const rawDesc = projField(project, 'shortDesc') || projField(project, 'fullDesc') || '';
+    let summary = cleanPortfolioCopy(rawDesc);
     summary = summary.replace(/^Folder\s+/i, '');
     const divider = summary.indexOf('—');
     if (divider >= 0 && divider < summary.length - 1) summary = summary.slice(divider + 1).trim();
@@ -3408,7 +3426,7 @@ function initPortfolio() {
 
   // Keep file naming conventions out of gallery captions; retain the useful title.
   function artworkLabel(name, client) {
-    let label = cleanPortfolioCopy(name || 'Tanpa judul');
+    let label = cleanPortfolioCopy(name || uiText('untitledWork', 'Tanpa judul'));
     if (client) {
       const escapedClient = client.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
       label = label.replace(new RegExp('^' + escapedClient + '\\s*[—–:-]\\s*', 'i'), '');
@@ -3427,7 +3445,7 @@ function initPortfolio() {
   }
 
   function itemDisplayLabel(item, client, isVideo) {
-    if (!item) return 'Karya';
+    if (!item) return uiText('cardWorksUnit', 'Karya');
     let s = item.name || '';
     s = s.replace(/\.(?:mp4|mov|webm|jpe?g|png|webp|gif|pdf)$/i, '');
     s = s.replace(/\s*-\s*Voice.*$/i, '');
@@ -3489,12 +3507,16 @@ function initPortfolio() {
     if (/^Video animasi kilas balik 2025/i.test(s)) s = 'Kilas Balik 2025';
     if (/^Video animasi refleksi/i.test(s)) s = 'Refleksi 2026 (Part 2)';
 
+    if (typeof window.translateItemLabel === 'function') {
+      s = window.translateItemLabel(s);
+    }
+
     // Keep it short: max 45 characters
     if (s.length > 45) {
       s = s.split(' ').slice(0, 5).join(' ');
     }
 
-    return s || 'Karya';
+    return s || uiText('cardWorksUnit', 'Karya');
   }
 
     function createProjectCard(p, idx) {
@@ -3502,7 +3524,7 @@ function initPortfolio() {
     card.className = 'project-card';
     card.tabIndex = 0;
     card.setAttribute('role', 'button');
-    card.setAttribute('aria-label', 'Lihat koleksi ' + projectTitle(p.title));
+    card.setAttribute('aria-label', uiText('cardViewCollectionAria', 'Lihat koleksi') + ' ' + projectTitle(p.title));
     card.addEventListener('keydown', e => {
       if (e.target === card && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); openModal(p); }
     });
@@ -3513,32 +3535,33 @@ function initPortfolio() {
     const loadingAttr = 'loading="lazy"';
     // Portfolio cards sit below the hero; lazy decode keeps first paint focused on visible content.
     const decodingAttr = 'decoding="async"';
+    const localizedCat = catLabel(p);
 
     card.innerHTML = `
       <div class="project-thumb"${thumbBgStyle}>
         ${isWebsitePreview ? `
           <div class="website-preview-window">
             ${p.websitePreviewImage ? `
-              <img class="website-preview-still" src="${p.websitePreviewImage}" alt="Screenshot asli ${projectTitle(p.title)}" loading="lazy" decoding="async">
-              <span class="website-preview-label" aria-hidden="true">SCREENSHOT WEBSITE</span>
+              <img class="website-preview-still" src="${p.websitePreviewImage}" alt="Screenshot ${projectTitle(p.title)}" loading="lazy" decoding="async">
+              <span class="website-preview-label" aria-hidden="true">${uiText('cardWebScreenshot', 'SCREENSHOT WEBSITE')}</span>
             ` : `
               <iframe class="website-preview-frame" src="${p.websiteUrl}" loading="lazy" title="Website live ${projectTitle(p.title)}" referrerpolicy="strict-origin-when-cross-origin" aria-hidden="true" tabindex="-1"></iframe>
-              <span class="website-preview-label" aria-hidden="true">WEBSITE LIVE</span>
+              <span class="website-preview-label" aria-hidden="true">${uiText('cardWebLive', 'WEBSITE LIVE')}</span>
             `}
           </div>
         ` : isCardVid ? `
           <div class="video-poster-fallback">
             <div class="video-poster-icon">▶</div>
-            <span class="video-poster-badge">${p.client} • ${p.categoryName}</span>
+            <span class="video-poster-badge">${p.client} • ${localizedCat}</span>
           </div>
           <video data-src="${p.thumbnail.includes('#t=') ? p.thumbnail : p.thumbnail + '#t=0.5'}" class="card-video-thumb" loop muted playsinline preload="none"></video>
         ` : `
-          <img src="${p.thumbnail}" alt="Pratinjau ${projectTitle(p.title)}" ${loadingAttr} ${decodingAttr}${thumbImgStyle}>
+          <img src="${p.thumbnail}" alt="Preview ${projectTitle(p.title)}" ${loadingAttr} ${decodingAttr}${thumbImgStyle}>
         `}
         <span class="collection-open" aria-hidden="true">↗</span>
       </div>
       <div class="project-content">
-        <div class="collection-meta"><span>${p.categoryName}</span><span>${p.items?.length ? p.items.length + ' karya' : (p.internalProject ? 'Internal • VPS' : (p.websiteUrl ? 'Website live' : 'Lihat proyek'))}</span></div>
+        <div class="collection-meta"><span>${localizedCat}</span><span>${p.items?.length ? p.items.length + ' ' + uiText('cardWorksUnit', 'karya') : (p.internalProject ? uiText('cardInternalVps', 'Internal • VPS') : (p.websiteUrl ? uiText('cardLiveWeb', 'Website live') : uiText('cardViewProj', 'Lihat proyek')))}</span></div>
         <h3 class="project-title">${projectTitle(p.title)}</h3>
         <p class="project-desc">${p.client}</p>
       </div>
@@ -3654,6 +3677,7 @@ function initPortfolio() {
   // Modal Open Function for Brand Folders & Artwork Assets
   function openModal(project) {
     if (!modalBackdrop || !modalBody) return;
+    currentModalProject = project;
 
     // Capture exact scroll position before opening modal
     const curY = (window.lenis && typeof window.lenis.scroll === 'number')
@@ -3684,8 +3708,15 @@ function initPortfolio() {
       }
     }
 
+    const localizedCat = catLabel(project);
+    const localizedChallenge = cleanPortfolioCopy(projField(project, 'challenge') || '');
+    const localizedSolution = cleanPortfolioCopy(projField(project, 'solution') || '');
+    const localizedResults = projField(project, 'results') || project.results || [];
+    const localizedRole = cleanPortfolioCopy(projField(project, 'role') || 'Website development');
+    const localizedDeployment = cleanPortfolioCopy(projField(project, 'deployment') || (project.websiteUrl ? uiText('cardLiveWeb', 'Public website') : 'Internal'));
+
     modalBody.innerHTML = `
-      <div class="collection-intro"><span>${project.categoryName} / ${project.client}</span><h2 class="modal-project-title" id="collection-title">${projectTitle(project.title)}</h2><p>${project.items?.length ? project.items.length + ' karya dalam koleksi' : (project.internalProject ? 'Aplikasi internal • VPS' : (project.websiteUrl ? 'Website live' : 'Ringkasan proyek'))}</p></div>
+      <div class="collection-intro"><span>${localizedCat} / ${project.client}</span><h2 class="modal-project-title" id="collection-title">${projectTitle(project.title)}</h2><p>${project.items?.length ? project.items.length + ' ' + uiText('modalWorksInCollection', 'karya dalam koleksi') : (project.internalProject ? uiText('modalInternalVps', 'Aplikasi internal • VPS') : (project.websiteUrl ? uiText('modalLiveWeb', 'Website live') : uiText('modalProjectSummary', 'Ringkasan proyek')))}</p></div>
       <div class="modal-media" id="modal-main-media" style="position:relative; background:${initialEmbedBg};" onclick="${(!isVideo && !isBunny && !isLiveWebsite) ? `window.openZoomViewerForProject('${project.id}', 0)` : ''}">
         ${isLiveWebsite ? `
           <iframe src="${project.websiteUrl}" title="Website live ${projectTitle(project.title)}" loading="eager" referrerpolicy="strict-origin-when-cross-origin" style="position:absolute; inset:0; width:100%; height:100%; border:0;" allowfullscreen></iframe>
@@ -3697,7 +3728,7 @@ function initPortfolio() {
           <video id="modal-video-player" src="${project.embedVideo}" controls autoplay loop muted preload="metadata" playsinline style="width:100%; height:100%; object-fit:contain; background:#000;"></video>
         ` : `
           <img id="modal-main-image" src="${project.embedVideo}" alt="${projectTitle(project.title)}" loading="lazy" style="${isInitialLogo ? 'object-fit: contain; padding: 2rem; width: 100%; height: 100%;' : ''}">
-          <div class="modal-media-zoom-overlay">Perbesar karya ↗</div>
+          <div class="modal-media-zoom-overlay">${uiText('modalZoomOverlay', 'Perbesar karya ↗')}</div>
         `}
       </div>
       <div class="modal-header-text" style="margin-bottom: 1.5rem;">
@@ -3706,7 +3737,7 @@ function initPortfolio() {
           <div>
             <a href="${project.youtubeUrl}" target="_blank" class="btn btn-primary" style="background:#ff0000; border-color:#ff0000; color:#fff; font-weight:700; font-size:0.95rem; padding:0.7rem 1.3rem; display:inline-flex; align-items:center; gap:0.6rem; text-decoration:none; border-radius:12px; box-shadow: 0 4px 15px rgba(255, 0, 0, 0.3); max-width:100%; word-break:break-word;">
               <svg viewBox="0 0 24 24" width="20" height="20" fill="#fff" style="flex-shrink:0;"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-              ▶ Kunjungi Channel YouTube ${project.title}
+              ${uiText('modalYoutubeBtn', '▶ Kunjungi Channel YouTube')} ${project.title}
             </a>
           </div>
         ` : ''}
@@ -3715,7 +3746,7 @@ function initPortfolio() {
       <!-- INSIDE BRAND FOLDER: ARTWORK & VIDEO ITEMS GRID -->
       ${project.items && project.items.length > 0 ? `
         <section class="collection-gallery ${isVideoCollection ? 'is-video-gallery' : 'is-image-gallery'}">
-          <div class="collection-gallery-heading"><h3>Koleksi karya <span>${String(project.items.length).padStart(2, '0')}</span></h3><p>${isVideoCollection ? 'Pilih video untuk memutar' : 'Pilih karya untuk memperbesar'} ↗</p></div>
+          <div class="collection-gallery-heading"><h3>${uiText('modalCollectionHeading', 'Koleksi karya')} <span>${String(project.items.length).padStart(2, '0')}</span></h3><p>${isVideoCollection ? uiText('modalSelectVideo', 'Pilih video untuk memutar') : uiText('modalSelectImage', 'Pilih karya untuk memperbesar')} ↗</p></div>
           <div class="modal-items-grid">
             ${project.items.map((item, idx) => {
               const isBunnyItem = item.video && (item.video.includes('mediadelivery.net') || item.video.includes('bunny') || item.video.includes('mediadelivery'));
@@ -3727,10 +3758,10 @@ function initPortfolio() {
               const isLogoItem = !!item.bg;
 
               return `
-                <button type="button" class="modal-folder-item ${isItemVid ? 'is-video-item' : 'is-image-item'}" onclick="window.onItemClick('${project.id}', ${idx}, ${isItemVid})" aria-label="${isItemVid ? 'Putar' : 'Perbesar'} ${itemDisplayLabel(item, project.client, isItemVid)}">
+                <button type="button" class="modal-folder-item ${isItemVid ? 'is-video-item' : 'is-image-item'}" onclick="window.onItemClick('${project.id}', ${idx}, ${isItemVid})" aria-label="${isItemVid ? uiText('modalPlayAria', 'Putar') : uiText('modalEnlargeAria', 'Perbesar')} ${itemDisplayLabel(item, project.client, isItemVid)}">
                   <div class="collection-artwork" style="background: ${itemBg};">
                     ${isBunnyItem ? 
-                      `<img src="${coverSrc}" alt="Pratinjau ${itemDisplayLabel(item, project.client, true)}" loading="lazy" decoding="async" style="width: 100%; height: 100%; object-fit: cover;">
+                      `<img src="${coverSrc}" alt="Preview ${itemDisplayLabel(item, project.client, true)}" loading="lazy" decoding="async" style="width: 100%; height: 100%; object-fit: cover;">
                        <div class="video-poster-fallback" style="opacity: 1; display: flex; align-items: center; justify-content: center; position: absolute; inset: 0; background: rgba(0,0,0,0.35);">
                          <div class="video-poster-icon" style="width:36px;height:36px;font-size:1rem; border-radius:50%; background:rgba(207,128,71,0.95); color:#fff; display:flex; align-items:center; justify-content:center; box-shadow:0 4px 15px rgba(207,128,71,0.5);">▶</div>
                        </div>` : 
@@ -3751,27 +3782,27 @@ function initPortfolio() {
 
       <div class="modal-two-col-grid">
         <div style="padding: 1.25rem; background: #f7f7f5; border-radius: 14px; border: 1px solid #e8e8e5;">
-          <h4 style="color: #555; margin-bottom: 0.5rem; font-size: 0.95rem; font-weight: 600;">Tantangan</h4>
-          <p style="font-size: 0.88rem; line-height: 1.6; color: #525252;">${cleanPortfolioCopy(project.challenge)}</p>
+          <h4 style="color: #555; margin-bottom: 0.5rem; font-size: 0.95rem; font-weight: 600;">${uiText('modalChallenge', 'Tantangan')}</h4>
+          <p style="font-size: 0.88rem; line-height: 1.6; color: #525252;">${localizedChallenge}</p>
         </div>
         <div style="padding: 1.25rem; background: #f7f7f5; border-radius: 14px; border: 1px solid #e8e8e5;">
-          <h4 style="color: #555; margin-bottom: 0.5rem; font-size: 0.95rem; font-weight: 600;">Pendekatan kreatif</h4>
-          <p style="font-size: 0.88rem; line-height: 1.6; color: #525252;">${cleanPortfolioCopy(project.solution)}</p>
+          <h4 style="color: #555; margin-bottom: 0.5rem; font-size: 0.95rem; font-weight: 600;">${uiText('modalSolution', 'Pendekatan kreatif')}</h4>
+          <p style="font-size: 0.88rem; line-height: 1.6; color: #525252;">${localizedSolution}</p>
         </div>
       </div>
 
       ${project.category === 'web' ? `
-        <section class="website-project-meta" aria-label="Ringkasan proyek website">
-          <div class="website-project-meta__item"><span>ROLE</span><strong>${cleanPortfolioCopy(project.role || 'Website development')}</strong></div>
-          <div class="website-project-meta__item"><span>STACK</span><div class="website-project-stack">${(project.stack || []).map(technology => `<span class="website-project-stack__tag">${cleanPortfolioCopy(technology)}</span>`).join('')}</div></div>
-          <div class="website-project-meta__item"><span>DEPLOYMENT</span><strong>${cleanPortfolioCopy(project.deployment || (project.websiteUrl ? 'Public website' : 'Internal'))}</strong></div>
-          <div class="website-project-meta__item"><span>LINK</span>${project.websiteUrl ? `<a class="website-project-meta__link" href="${project.websiteUrl}" target="_blank" rel="noopener noreferrer">Open <span aria-hidden="true">↗</span></a>` : `<strong class="website-project-meta__private">${project.internalProject ? 'Private' : 'No public link'}</strong>`}</div>
+        <section class="website-project-meta" aria-label="${uiText('modalProjectSummary', 'Ringkasan proyek website')}">
+          <div class="website-project-meta__item"><span>${uiText('modalRole', 'ROLE')}</span><strong>${localizedRole}</strong></div>
+          <div class="website-project-meta__item"><span>${uiText('modalStack', 'STACK')}</span><div class="website-project-stack">${(project.stack || []).map(technology => `<span class="website-project-stack__tag">${cleanPortfolioCopy(technology)}</span>`).join('')}</div></div>
+          <div class="website-project-meta__item"><span>${uiText('modalDeployment', 'DEPLOYMENT')}</span><strong>${localizedDeployment}</strong></div>
+          <div class="website-project-meta__item"><span>${uiText('modalLink', 'LINK')}</span>${project.websiteUrl ? `<a class="website-project-meta__link" href="${project.websiteUrl}" target="_blank" rel="noopener noreferrer">${uiText('modalOpenLink', 'Open')} <span aria-hidden="true">↗</span></a>` : `<strong class="website-project-meta__private">${project.internalProject ? uiText('modalPrivate', 'Private') : uiText('modalNoPublicLink', 'No public link')}</strong>`}</div>
         </section>
       ` : `
         <div style="margin-bottom: 0.5rem;">
-          <h4 style="margin-bottom: 0.75rem; font-size: 1rem; font-weight: 600; color: #202020;">Hasil proyek</h4>
+          <h4 style="margin-bottom: 0.75rem; font-size: 1rem; font-weight: 600; color: #202020;">${uiText('modalResults', 'Hasil proyek')}</h4>
           <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem;">
-            ${project.results.map(r => `<li style="display: flex; align-items: flex-start; gap: 0.6rem; color: #525252; font-size: 0.9rem; line-height:1.6;"><span style="color: #555; font-weight: 700;">✓</span> ${cleanPortfolioCopy(r)}</li>`).join('')}
+            ${localizedResults.map(r => `<li style="display: flex; align-items: flex-start; gap: 0.6rem; color: #525252; font-size: 0.9rem; line-height:1.6;"><span style="color: #555; font-weight: 700;">✓</span> ${cleanPortfolioCopy(r)}</li>`).join('')}
           </ul>
         </div>
       `}
@@ -3905,7 +3936,7 @@ function initPortfolio() {
         const padStyle = itemBg ? 'object-fit: contain; padding: 2rem;' : 'object-fit: contain;';
         mediaContainer.style.background = bg;
         mediaContainer.innerHTML = `<img src="${mediaSrc}" alt="${title}" style="width: 100%; height: 100%; ${padStyle} background: ${bg};">
-        <div class="modal-media-zoom-overlay">🔍 Klik untuk Zoom Fullscreen</div>`;
+        <div class="modal-media-zoom-overlay">${uiText('modalZoomFullOverlay', '🔍 Klik untuk Zoom Fullscreen')}</div>`;
       }
       const modalContentEl = document.querySelector('#project-modal .modal-content');
       if (modalContentEl) {
@@ -4242,6 +4273,13 @@ function initPortfolio() {
 
   // Initial Render
   renderProjects('all');
+
+  window.refreshPortfolioLanguage = function () {
+    renderProjects(currentFilter, true);
+    if (modalBackdrop && modalBackdrop.classList.contains('active') && currentModalProject) {
+      openModal(currentModalProject);
+    }
+  };
 }
 
 if (document.readyState === 'loading') {
