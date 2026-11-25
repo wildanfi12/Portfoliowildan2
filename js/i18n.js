@@ -198,7 +198,9 @@
       modalOpenLink: 'Open',
       modalPrivate: 'Private',
       modalNoPublicLink: 'No public link',
-      untitledWork: 'Untitled'
+      untitledWork: 'Untitled',
+      themeToDark: 'Switch to Dark Mode',
+      themeToLight: 'Switch to Light Mode'
     },
     id: {
       pageTitle: 'Wildan — Desainer Kreatif, Video Editor & Kreator AI',
@@ -955,14 +957,56 @@
       }
     });
 
-    // Update language toggle buttons state
+      // Update language toggle buttons state
     document.querySelectorAll('.lang-switch-btn').forEach(btn => {
       const btnLang = btn.getAttribute('data-lang');
       const isActive = btnLang === lang;
       btn.classList.toggle('active', isActive);
       btn.setAttribute('aria-pressed', isActive ? 'true' : 'false');
     });
+
+    updateThemeToggleA11y();
   }
+
+  let currentTheme = 'light';
+  try {
+    const savedTheme = localStorage.getItem('wildan_portfolio_theme');
+    if (savedTheme === 'dark' || savedTheme === 'light') {
+      currentTheme = savedTheme;
+    } else if (document.documentElement.getAttribute('data-theme') === 'dark') {
+      currentTheme = 'dark';
+    }
+  } catch (e) {}
+
+  function updateThemeToggleA11y() {
+    const btn = document.getElementById('theme-toggle-btn');
+    if (!btn) return;
+    const isDark = currentTheme === 'dark';
+    const label = isDark
+      ? (currentLang === 'en' ? 'Switch to Light Mode' : 'Ganti ke Mode Siang')
+      : (currentLang === 'en' ? 'Switch to Dark Mode' : 'Ganti ke Mode Malam');
+    btn.setAttribute('aria-label', label);
+    btn.setAttribute('title', label);
+    btn.setAttribute('aria-pressed', isDark ? 'true' : 'false');
+  }
+
+  window.getPortfolioTheme = function () {
+    return currentTheme;
+  };
+
+  window.setPortfolioTheme = function (theme) {
+    if (theme !== 'dark' && theme !== 'light') return;
+    currentTheme = theme;
+    document.documentElement.setAttribute('data-theme', theme);
+    try {
+      localStorage.setItem('wildan_portfolio_theme', theme);
+    } catch (e) {}
+    updateThemeToggleA11y();
+  };
+
+  window.togglePortfolioTheme = function () {
+    window.setPortfolioTheme(currentTheme === 'dark' ? 'light' : 'dark');
+  };
 
   window.setPortfolioLang = function (lang) {
     if (lang !== 'id' && lang !== 'en') return;
@@ -980,6 +1024,7 @@
   };
 
   function initLangSystem() {
+    document.documentElement.setAttribute('data-theme', currentTheme);
     applyStaticTranslations(currentLang);
 
     document.querySelectorAll('.lang-switch-btn').forEach(btn => {
@@ -990,6 +1035,14 @@
         }
       });
     });
+
+    const themeBtn = document.getElementById('theme-toggle-btn');
+    if (themeBtn) {
+      themeBtn.addEventListener('click', () => {
+        window.togglePortfolioTheme();
+      });
+    }
+    updateThemeToggleA11y();
   }
 
   if (document.readyState === 'loading') {

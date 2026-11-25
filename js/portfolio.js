@@ -3781,13 +3781,13 @@ function initPortfolio() {
       ` : ''}
 
       <div class="modal-two-col-grid">
-        <div style="padding: 1.25rem; background: #f7f7f5; border-radius: 14px; border: 1px solid #e8e8e5;">
-          <h4 style="color: #555; margin-bottom: 0.5rem; font-size: 0.95rem; font-weight: 600;">${uiText('modalChallenge', 'Tantangan')}</h4>
-          <p style="font-size: 0.88rem; line-height: 1.6; color: #525252;">${localizedChallenge}</p>
+        <div class="modal-case-box" style="padding: 1.25rem; background: #f7f7f5; border-radius: 14px; border: 1px solid #e8e8e5;">
+          <h4 class="modal-case-heading" style="color: #555; margin-bottom: 0.5rem; font-size: 0.95rem; font-weight: 600;">${uiText('modalChallenge', 'Tantangan')}</h4>
+          <p class="modal-case-text" style="font-size: 0.88rem; line-height: 1.6; color: #525252;">${localizedChallenge}</p>
         </div>
-        <div style="padding: 1.25rem; background: #f7f7f5; border-radius: 14px; border: 1px solid #e8e8e5;">
-          <h4 style="color: #555; margin-bottom: 0.5rem; font-size: 0.95rem; font-weight: 600;">${uiText('modalSolution', 'Pendekatan kreatif')}</h4>
-          <p style="font-size: 0.88rem; line-height: 1.6; color: #525252;">${localizedSolution}</p>
+        <div class="modal-case-box" style="padding: 1.25rem; background: #f7f7f5; border-radius: 14px; border: 1px solid #e8e8e5;">
+          <h4 class="modal-case-heading" style="color: #555; margin-bottom: 0.5rem; font-size: 0.95rem; font-weight: 600;">${uiText('modalSolution', 'Pendekatan kreatif')}</h4>
+          <p class="modal-case-text" style="font-size: 0.88rem; line-height: 1.6; color: #525252;">${localizedSolution}</p>
         </div>
       </div>
 
@@ -3799,10 +3799,10 @@ function initPortfolio() {
           <div class="website-project-meta__item"><span>${uiText('modalLink', 'LINK')}</span>${project.websiteUrl ? `<a class="website-project-meta__link" href="${project.websiteUrl}" target="_blank" rel="noopener noreferrer">${uiText('modalOpenLink', 'Open')} <span aria-hidden="true">↗</span></a>` : `<strong class="website-project-meta__private">${project.internalProject ? uiText('modalPrivate', 'Private') : uiText('modalNoPublicLink', 'No public link')}</strong>`}</div>
         </section>
       ` : `
-        <div style="margin-bottom: 0.5rem;">
-          <h4 style="margin-bottom: 0.75rem; font-size: 1rem; font-weight: 600; color: #202020;">${uiText('modalResults', 'Hasil proyek')}</h4>
+        <div class="modal-results-box" style="margin-bottom: 0.5rem;">
+          <h4 class="modal-results-heading" style="margin-bottom: 0.75rem; font-size: 1rem; font-weight: 600; color: #202020;">${uiText('modalResults', 'Hasil proyek')}</h4>
           <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem;">
-            ${localizedResults.map(r => `<li style="display: flex; align-items: flex-start; gap: 0.6rem; color: #525252; font-size: 0.9rem; line-height:1.6;"><span style="color: #555; font-weight: 700;">✓</span> ${cleanPortfolioCopy(r)}</li>`).join('')}
+            ${localizedResults.map(r => `<li class="modal-results-item" style="display: flex; align-items: flex-start; gap: 0.6rem; color: #525252; font-size: 0.9rem; line-height:1.6;"><span class="modal-results-check" style="color: #555; font-weight: 700;">✓</span> ${cleanPortfolioCopy(r)}</li>`).join('')}
           </ul>
         </div>
       `}

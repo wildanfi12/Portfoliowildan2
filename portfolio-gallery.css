@@ -192,3 +192,210 @@
 @media (prefers-reduced-motion: reduce) { .website-preview-frame { scroll-behavior: auto; } }
 
 .website-preview-still { display:block; width:100%; height:100%; object-fit:contain; background:#050505; }
+
+/* ==========================================================================
+   DARK MODE GALLERY & MODAL OVERRIDES (html[data-theme="dark"])
+   ========================================================================== */
+html[data-theme="dark"] #works {
+  background: #0b0b0e !important;
+  color: #f4f4f6;
+}
+html[data-theme="dark"] #works::before {
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  opacity: 0.65;
+}
+html[data-theme="dark"] #works .eyebrow-badge {
+  background: #141418;
+  border-color: rgba(255, 255, 255, 0.12);
+  color: #d4d4d8;
+}
+html[data-theme="dark"] #works .eyebrow-dot {
+  background: #d4d4d8;
+}
+html[data-theme="dark"] #works .portfolio-h2 {
+  color: #ffffff;
+}
+html[data-theme="dark"] .portfolio-subcopy {
+  color: #9ca3af;
+}
+html[data-theme="dark"] .filter-btn {
+  background: #141418;
+  border-color: rgba(255, 255, 255, 0.12);
+  color: #d4d4d8;
+}
+html[data-theme="dark"] .filter-btn:hover {
+  background: #1f1f26;
+  border-color: rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+}
+html[data-theme="dark"] .filter-btn.active {
+  background: #ffffff;
+  border-color: #ffffff;
+  color: #0b0b0e;
+}
+html[data-theme="dark"] #works .project-card {
+  background: #141418 !important;
+  color: #f4f4f6 !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+}
+@media (hover: hover) {
+  html[data-theme="dark"] #works .project-card:hover {
+    border-color: rgba(255, 255, 255, 0.24) !important;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.6);
+  }
+}
+html[data-theme="dark"] #works .project-thumb {
+  background: #1c1c22;
+}
+html[data-theme="dark"] #works .project-title {
+  color: #f4f4f6;
+}
+html[data-theme="dark"] #works .project-desc {
+  color: #a1a1aa;
+}
+html[data-theme="dark"] .collection-meta {
+  color: #8e8e99;
+}
+html[data-theme="dark"] .collection-open {
+  border-color: rgba(255, 255, 255, 0.14);
+  background: #1f1f26;
+  color: #f4f4f6;
+}
+@media (hover: hover) {
+  html[data-theme="dark"] #works .project-card:hover .collection-open {
+    background: #ffffff;
+    border-color: #ffffff;
+    color: #0b0b0e;
+  }
+}
+html[data-theme="dark"] .btn-show-more {
+  background: #ffffff;
+  color: #0b0b0e;
+}
+html[data-theme="dark"] .btn-show-more:hover {
+  background: #e4e4e7;
+}
+html[data-theme="dark"] .btn-show-more .show-more-count {
+  color: rgba(11, 11, 14, 0.65);
+}
+html[data-theme="dark"] .btn-show-more.btn-show-less {
+  background: transparent;
+  border-color: rgba(255, 255, 255, 0.16);
+  color: #d4d4d8;
+}
+html[data-theme="dark"] .btn-show-more.btn-show-less:hover {
+  background: #18181f;
+  border-color: rgba(255, 255, 255, 0.3);
+  color: #ffffff;
+}
+
+/* Dark Mode Case Study Modal (#project-modal) */
+html[data-theme="dark"] #project-modal .modal-content {
+  background: #141418;
+  color: #f4f4f6;
+  border-color: rgba(255, 255, 255, 0.12);
+}
+html[data-theme="dark"] #project-modal .modal-close {
+  background: #1f1f26;
+  border-color: rgba(255, 255, 255, 0.15);
+  color: #f4f4f6;
+}
+html[data-theme="dark"] #project-modal .modal-close:hover {
+  background: #ffffff;
+  border-color: #ffffff;
+  color: #0b0b0e;
+}
+html[data-theme="dark"] #project-modal .modal-media {
+  border-color: rgba(255, 255, 255, 0.12);
+  background: #1c1c22;
+}
+html[data-theme="dark"] .collection-intro {
+  border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+html[data-theme="dark"] .collection-intro span {
+  color: #9ca3af;
+}
+html[data-theme="dark"] .collection-intro .modal-project-title {
+  color: #ffffff;
+}
+html[data-theme="dark"] .collection-intro p {
+  color: #a1a1aa;
+}
+html[data-theme="dark"] #modal-active-caption {
+  color: #f4f4f6 !important;
+}
+html[data-theme="dark"] .collection-gallery {
+  border-top-color: rgba(255, 255, 255, 0.1);
+}
+html[data-theme="dark"] .collection-gallery-heading h3 {
+  color: #ffffff;
+}
+html[data-theme="dark"] .collection-gallery-heading h3 span,
+html[data-theme="dark"] .collection-gallery-heading p {
+  color: #9ca3af;
+}
+html[data-theme="dark"] #project-modal .modal-folder-item {
+  background: #1b1b22 !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+  color: #f4f4f6;
+}
+@media (hover: hover) {
+  html[data-theme="dark"] #project-modal .modal-folder-item:hover {
+    border-color: rgba(255, 255, 255, 0.28) !important;
+    background: #23232c !important;
+  }
+}
+html[data-theme="dark"] .collection-artwork {
+  background: #141418 !important;
+}
+html[data-theme="dark"] .collection-item-number {
+  color: #8e8e99;
+}
+html[data-theme="dark"] .collection-item-name {
+  color: #e4e4e7;
+}
+html[data-theme="dark"] #project-modal .modal-case-box {
+  background: #1b1b22 !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+html[data-theme="dark"] #project-modal .modal-case-heading {
+  color: #d4d4d8 !important;
+}
+html[data-theme="dark"] #project-modal .modal-case-text {
+  color: #a1a1aa !important;
+}
+html[data-theme="dark"] #project-modal .modal-results-heading {
+  color: #f4f4f6 !important;
+}
+html[data-theme="dark"] #project-modal .modal-results-item {
+  color: #a1a1aa !important;
+}
+html[data-theme="dark"] #project-modal .modal-results-check {
+  color: #e4e4e7 !important;
+}
+html[data-theme="dark"] .website-project-meta {
+  border-color: rgba(255, 255, 255, 0.1);
+  background: #1b1b22;
+}
+html[data-theme="dark"] .website-project-meta__item span {
+  color: #9ca3af;
+}
+html[data-theme="dark"] .website-project-meta__item strong {
+  color: #f4f4f6;
+}
+html[data-theme="dark"] .website-project-stack__tag {
+  border-color: rgba(255, 255, 255, 0.12);
+  background: #25252e;
+  color: #e4e4e7;
+}
+html[data-theme="dark"] .website-project-meta__link {
+  background: #ffffff;
+  color: #0b0b0e;
+}
+html[data-theme="dark"] .website-project-meta__private {
+  color: #a1a1aa;
+}
+
