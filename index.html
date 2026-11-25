@@ -609,97 +609,47 @@
       display: none !important;
     }
 
-    /* Standalone Language Switcher Island (Top-Right Corner, Matching Navbar Pill Size) */
-    .floating-lang-island {
-      position: fixed;
-      top: 1.25rem;
-      right: 1.5rem;
-      z-index: 100;
-      isolation: isolate;
+    /* Language Switcher Pill inside Navbar (Rightmost) */
+    .lang-switcher {
       display: inline-flex;
       align-items: center;
-      gap: 0.2rem;
-      padding: 5px 6px;
-      background: linear-gradient(135deg, #ffffff70, #ffffff08 42%, #ffffff30 78%, #ffffff66), rgba(248, 250, 252, 0.64);
-      backdrop-filter: blur(22px) saturate(190%);
-      -webkit-backdrop-filter: blur(22px) saturate(190%);
-      border: 1px solid rgba(255, 255, 255, 0.82);
+      background: rgba(255, 255, 255, 0.55);
+      border: 1px solid rgba(15, 23, 42, 0.08);
       border-radius: 9999px;
-      box-shadow: 0 8px 28px -8px rgba(15, 23, 42, 0.22), 0 2px 6px rgba(15, 23, 42, 0.05), inset 0 1px 0 rgba(255, 255, 255, 0.95), inset 0 -1px 0 rgba(15, 23, 42, 0.08);
-      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.32s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
-      will-change: transform, opacity;
-    }
-    .floating-lang-island::before {
-      content: '';
-      position: absolute;
-      inset: 2px;
-      border-radius: inherit;
-      pointer-events: none;
-      box-shadow: inset 0 2px 2px #ffffffb8, inset 1px 0 1px #ffffff80,
-        inset 0 -2px 2px #53607424, inset -1px 0 1px #ffffff70;
-      z-index: -1;
-    }
-    .floating-lang-island.scrolled {
-      box-shadow: 0 12px 36px -8px rgba(15, 23, 42, 0.28), 0 2px 8px rgba(15, 23, 42, 0.07), inset 0 1px 0 rgba(255, 255, 255, 0.95), inset 0 -1px 0 rgba(15, 23, 42, 0.08);
-    }
-    .floating-lang-island.header-hidden {
-      transform: translate3d(0, -150%, 0) scale(0.95);
-      opacity: 0;
-      visibility: hidden;
-      pointer-events: none;
-    }
-    @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
-      .floating-lang-island { background: #f4f5f7; }
-    }
-    @media (prefers-reduced-transparency: reduce) {
-      .floating-lang-island {
-        background: #f4f5f7;
-        backdrop-filter: none;
-        -webkit-backdrop-filter: none;
-      }
+      padding: 2px;
+      gap: 2px;
+      box-shadow: inset 0 1px 2px rgba(15, 23, 42, 0.04);
     }
     .lang-switch-btn {
       background: transparent;
       border: none;
       border-radius: 9999px;
       font-family: inherit;
-      font-size: 0.875rem;
-      font-weight: 500;
-      color: #30343b;
-      padding: 0.42rem 0.85rem;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      color: #525866;
+      padding: 0.34rem 0.62rem;
       cursor: pointer;
-      transition: color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
-      white-space: nowrap;
-      line-height: 1.25;
+      transition: all 0.2s ease;
+      line-height: 1;
     }
     .lang-switch-btn:hover {
       color: #09090b;
-      background: rgba(255, 255, 255, 0.48);
     }
     .lang-switch-btn.active {
-      background: linear-gradient(160deg, #35383e, #18191d);
+      background: #18191d;
       color: #ffffff;
-      font-weight: 600;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.16);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.16);
     }
     @media (max-width: 639px) {
-      #main-header {
-        left: 0.75rem !important;
-        transform: translate3d(0, 0, 0) !important;
-        max-width: calc(100vw - 7.5rem) !important;
-      }
-      #main-header.header-hidden {
-        transform: translate3d(0, -150%, 0) scale(0.95) !important;
-      }
-      .floating-lang-island {
-        top: 0.75rem !important;
-        right: 0.75rem !important;
-        padding: 4px 5px !important;
-        gap: 0.15rem !important;
-      }
       .lang-switch-btn {
+        font-size: 0.72rem !important;
+        padding: 0.28rem 0.48rem !important;
+      }
+      .floating-contact-btn {
+        padding: 0.38rem 0.8rem !important;
         font-size: 0.78rem !important;
-        padding: 0.35rem 0.62rem !important;
       }
     }
 
@@ -4275,11 +4225,16 @@
         </ul>
       </nav>
 
-      <!-- Right: Action Buttons (Contact Pill + Menu) -->
+      <!-- Right: Action Buttons (Contact Pill + Language Toggle Rightmost) -->
       <div class="header-right floating-actions">
         <button class="floating-contact-btn btn-open-modal" aria-label="Contact Wildan">
           <span data-i18n="navContact">Contact</span>
         </button>
+
+        <div class="lang-switcher" role="group" aria-label="Language Switcher">
+          <button type="button" class="lang-switch-btn active" data-lang="id" aria-pressed="true" title="Bahasa Indonesia">ID</button>
+          <button type="button" class="lang-switch-btn" data-lang="en" aria-pressed="false" title="English">EN</button>
+        </div>
 
         <button class="menu-btn floating-menu-btn" id="menu-open-btn" aria-label="Open Navigation Menu">
           <span class="menu-btn-inner floating-menu-inner">
@@ -4290,12 +4245,6 @@
       </div>
     </div>
   </header>
-
-  <!-- Standalone Language Switcher Pill (Top-Right Corner) -->
-  <div id="lang-header-island" class="floating-lang-island" role="group" aria-label="Language Switcher">
-    <button type="button" class="lang-switch-btn active" data-lang="id" aria-pressed="true" title="Bahasa Indonesia">ID</button>
-    <button type="button" class="lang-switch-btn" data-lang="en" aria-pressed="false" title="English">EN</button>
-  </div>
 
   <!-- ==========================================================================
        MAIN CONTENT WRAPPER
@@ -5553,7 +5502,6 @@
        - Automatically syncs active nav link as sections come into view
        ========================================================================== */
     const mainHeader = document.getElementById('main-header');
-    const langHeaderIsland = document.getElementById('lang-header-island');
     let lastHeaderScrollY = Math.max(0, window.pageYOffset || document.documentElement.scrollTop || 0);
     let isHeaderHidden = false;
     let isProgrammaticNavScroll = false;
@@ -5615,13 +5563,11 @@
 
       // Elevated shadow state when scrolled past 20px
       mainHeader.classList.toggle('scrolled', currentY > 20);
-      if (langHeaderIsland) langHeaderIsland.classList.toggle('scrolled', currentY > 20);
 
       // Always show when near the very top
       if (currentY <= 45) {
         if (isHeaderHidden) {
           mainHeader.classList.remove('header-hidden');
-          if (langHeaderIsland) langHeaderIsland.classList.remove('header-hidden');
           isHeaderHidden = false;
         }
         lastHeaderScrollY = currentY;
@@ -5632,7 +5578,6 @@
       if (isProgrammaticNavScroll) {
         if (isHeaderHidden) {
           mainHeader.classList.remove('header-hidden');
-          if (langHeaderIsland) langHeaderIsland.classList.remove('header-hidden');
           isHeaderHidden = false;
         }
         lastHeaderScrollY = currentY;
@@ -5643,7 +5588,6 @@
       if (delta > scrollThreshold && currentY > 70) {
         if (!isHeaderHidden) {
           mainHeader.classList.add('header-hidden');
-          if (langHeaderIsland) langHeaderIsland.classList.add('header-hidden');
           isHeaderHidden = true;
         }
       }
@@ -5651,7 +5595,6 @@
       else if (delta < -scrollThreshold) {
         if (isHeaderHidden) {
           mainHeader.classList.remove('header-hidden');
-          if (langHeaderIsland) langHeaderIsland.classList.remove('header-hidden');
           isHeaderHidden = false;
         }
       }
