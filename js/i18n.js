@@ -424,6 +424,16 @@
   };
 
   const PROJECT_EN = {
+    'ai-motion-pesan-dari-langit': {
+      shortDesc: '7 cinematic AI motion storytelling & generative visual videos for Pesan Dari Langit.',
+      challenge: 'Designing a 7-part cinematic AI motion storytelling series for Pesan Dari Langit with cohesive atmospheric visuals, dramatic lighting composition, and strong emotional narrative.',
+      solution: 'High-resolution generative AI video production combined with rhythmic editing, atmospheric sound design, cinematic color grading, and instant zero-buffering HD streaming.',
+      results: [
+        '7 Official Cinematic AI Motion Video Assets Integrated in the Pesan Dari Langit Collection',
+        'Fast HD Streaming with Zero Buffering & Ad-Free Playback',
+        'Optimized for social media campaigns, Instagram Reels, TikTok & YouTube Shorts'
+      ]
+    },
     'motion-graphics-howell': {
       shortDesc: '26 commercial 3D/2D motion product showcases, megasale promos, adapter & cable specifications.',
       challenge: 'Presenting 26 premium Howell electronic product series in kinetic 3D/2D motion graphics and high-retention product showcases.',

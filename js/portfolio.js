@@ -5,6 +5,80 @@
 
 const PROJECTS = [
   {
+    id: "ai-motion-pesan-dari-langit",
+    title: "Pesan Dari Langit",
+    category: "ai-motion",
+    categoryName: "AI Motion Videos",
+    client: "Pesan Dari Langit",
+    metric: "7 Video AI Motion • Bunny Stream",
+    thumbnail: "assets/pesan-dari-langit/cover.jpg",
+    shortDesc: "Folder AI Motion Videos Pesan Dari Langit — 7 Video AI Motion Storytelling, Visual Sinematik & Animasi Generatif via Bunny Stream CDN.",
+    fullDesc: "Folder koleksi resmi AI Motion Videos untuk Pesan Dari Langit yang terhubung langsung ke Bunny Stream CDN (Library ID: 756896). Berisi 7 seri video AI motion storytelling sinematik dengan atmosfer visual dramatis, gerakan kamera AI dinamis, color grading sinematik, serta tata suara imersif.",
+    challenge: "Merancang 7 seri video AI motion storytelling Pesan Dari Langit dengan kesinambungan atmosfer visual sinematik, komposisi pencahayaan dramatis, dan narasi emosional yang kuat.",
+    solution: "Produksi video generatif AI beresolusi tinggi yang dipadukan dengan penyuntingan ritmis, tata suara atmosferik, color grading sinematik, serta integrasi streaming HD instan bebas buffering.",
+    results: [
+      "7 Aset Video AI Motion Storytelling Resmi Terintegrasi di Koleksi Pesan Dari Langit",
+      "Streaming Cepat Kualitas HD Bebas Buffering & Bebas Iklan",
+      "Optimal untuk kampanye media sosial, Instagram Reels, TikTok & YouTube Shorts"
+    ],
+    tools: [
+      "Kling AI",
+      "Runway Gen-3",
+      "Dreamina",
+      "ElevenLabs",
+      "Premiere Pro",
+      "After Effects",
+      "Bunny Stream"
+    ],
+    bunnyVideoId: "08e85f71-d8b0-4add-845c-d9f107c388ef",
+    bunnyLibraryId: "756896",
+    embedVideo: "https://iframe.mediadelivery.net/embed/756896/08e85f71-d8b0-4add-845c-d9f107c388ef",
+    items: [
+      {
+        name: "Pesan Dari Langit — Seri 1",
+        img: "assets/pesan-dari-langit/pesan_1.jpg",
+        video: "https://iframe.mediadelivery.net/embed/756896/08e85f71-d8b0-4add-845c-d9f107c388ef",
+        desc: "Pesan Dari Langit Seri 1 — Video AI Motion storytelling sinematik."
+      },
+      {
+        name: "Pesan Dari Langit — Seri 2",
+        img: "assets/pesan-dari-langit/pesan_2.jpg",
+        video: "https://iframe.mediadelivery.net/embed/756896/4d69b84a-5189-4099-95a3-9e56eb1ad55e",
+        desc: "Pesan Dari Langit Seri 2 — Video AI Motion storytelling sinematik."
+      },
+      {
+        name: "Pesan Dari Langit — Seri 3",
+        img: "assets/pesan-dari-langit/pesan_3.jpg",
+        video: "https://iframe.mediadelivery.net/embed/756896/40a7d900-7417-4161-9c4f-dc1d395ac88e",
+        desc: "Pesan Dari Langit Seri 3 — Video AI Motion storytelling sinematik."
+      },
+      {
+        name: "Pesan Dari Langit — Seri 4",
+        img: "assets/pesan-dari-langit/pesan_4.jpg",
+        video: "https://iframe.mediadelivery.net/embed/756896/5837c460-58c0-4750-8ff8-9a696d90f7f4",
+        desc: "Pesan Dari Langit Seri 4 — Video AI Motion storytelling sinematik."
+      },
+      {
+        name: "Pesan Dari Langit — Seri 5",
+        img: "assets/pesan-dari-langit/pesan_5.jpg",
+        video: "https://iframe.mediadelivery.net/embed/756896/f68fd271-edca-4538-869d-c9b078094af3",
+        desc: "Pesan Dari Langit Seri 5 — Video AI Motion storytelling sinematik."
+      },
+      {
+        name: "Pesan Dari Langit — Seri 6",
+        img: "assets/pesan-dari-langit/pesan_6.jpg",
+        video: "https://iframe.mediadelivery.net/embed/756896/08aaf008-6219-4255-a411-4808a5c2fb61",
+        desc: "Pesan Dari Langit Seri 6 — Video AI Motion storytelling sinematik."
+      },
+      {
+        name: "Pesan Dari Langit — Seri 7",
+        img: "assets/pesan-dari-langit/pesan_7.jpg",
+        video: "https://iframe.mediadelivery.net/embed/756896/a3881279-87e8-484b-928e-679f6c59f705",
+        desc: "Pesan Dari Langit Seri 7 — Video AI Motion storytelling sinematik."
+      }
+    ]
+  },
+  {
     id: "motion-graphics-howell",
     title: "Howell",
     category: "ai-motion",
