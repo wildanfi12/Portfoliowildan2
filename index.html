@@ -613,11 +613,12 @@
     .lang-switcher {
       display: inline-flex;
       align-items: center;
-      background: rgba(255, 255, 255, 0.55);
+      background: rgba(255, 255, 255, 0.6);
       border: 1px solid rgba(15, 23, 42, 0.08);
       border-radius: 9999px;
       padding: 2px;
       gap: 2px;
+      flex-shrink: 0;
       box-shadow: inset 0 1px 2px rgba(15, 23, 42, 0.04);
     }
     .lang-switch-btn {
@@ -633,6 +634,7 @@
       cursor: pointer;
       transition: all 0.2s ease;
       line-height: 1;
+      white-space: nowrap;
     }
     .lang-switch-btn:hover {
       color: #09090b;
@@ -642,14 +644,64 @@
       color: #ffffff;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.16);
     }
-    @media (max-width: 639px) {
-      .lang-switch-btn {
-        font-size: 0.72rem !important;
-        padding: 0.28rem 0.48rem !important;
+    /* Tablet responsive calibration (640px - 1023px) */
+    @media (min-width: 640px) and (max-width: 1023px) {
+      #main-header {
+        top: 1rem !important;
+        max-width: calc(100vw - 2rem) !important;
+      }
+      .floating-header-island {
+        gap: 0.45rem !important;
+        padding: 5px 6px !important;
+      }
+      .floating-nav-link {
+        font-size: 0.84rem !important;
+        padding: 0.4rem 0.7rem !important;
       }
       .floating-contact-btn {
-        padding: 0.38rem 0.8rem !important;
-        font-size: 0.78rem !important;
+        font-size: 0.84rem !important;
+        padding: 0.44rem 1rem !important;
+      }
+      .lang-switch-btn {
+        font-size: 0.76rem !important;
+        padding: 0.32rem 0.58rem !important;
+      }
+    }
+    /* Mobile responsive calibration (<= 639px) */
+    @media (max-width: 639px) {
+      .floating-actions {
+        gap: 0.25rem !important;
+      }
+      .lang-switcher {
+        padding: 2px !important;
+        gap: 1px !important;
+      }
+      .lang-switch-btn {
+        font-size: 0.68rem !important;
+        padding: 0.26rem 0.42rem !important;
+      }
+    }
+    /* Small phones (<= 380px) */
+    @media (max-width: 380px) {
+      .floating-header-island {
+        gap: 0.2rem !important;
+        padding: 3px 4px !important;
+      }
+      .floating-avatar {
+        width: 28px !important;
+        height: 28px !important;
+      }
+      .floating-nav-link {
+        font-size: 0.7rem !important;
+        padding: 0.3rem 0.38rem !important;
+      }
+      .floating-contact-btn {
+        font-size: 0.7rem !important;
+        padding: 0.32rem 0.58rem !important;
+      }
+      .lang-switch-btn {
+        font-size: 0.64rem !important;
+        padding: 0.22rem 0.36rem !important;
       }
     }
 
@@ -3755,24 +3807,33 @@
       /* 2. Floating Header Island Mobile Adjustments */
       #main-header {
         top: 0.75rem !important;
+        left: 50% !important;
+        transform: translate3d(-50%, 0, 0) !important;
         padding: 0 !important;
-        max-width: calc(100vw - 1.25rem) !important;
+        width: max-content !important;
+        max-width: calc(100vw - 1rem) !important;
+      }
+      #main-header.header-hidden {
+        transform: translate3d(-50%, -150%, 0) scale(0.95) !important;
       }
       .floating-header-island {
-        padding: 4px 6px !important;
-        gap: 0.35rem !important;
+        padding: 4px 5px !important;
+        gap: 0.25rem !important;
       }
       .floating-avatar {
-        width: 32px !important;
-        height: 32px !important;
+        width: 30px !important;
+        height: 30px !important;
+      }
+      .floating-nav-list {
+        gap: 0.1rem !important;
       }
       .floating-nav-link {
-        font-size: 0.78rem !important;
-        padding: 0.35rem 0.52rem !important;
+        font-size: 0.74rem !important;
+        padding: 0.34rem 0.46rem !important;
       }
       .floating-contact-btn {
-        font-size: 0.78rem !important;
-        padding: 0.38rem 0.85rem !important;
+        font-size: 0.74rem !important;
+        padding: 0.35rem 0.68rem !important;
       }
       .floating-menu-btn {
         width: 32px !important;
