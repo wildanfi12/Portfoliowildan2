@@ -310,7 +310,11 @@ html[data-theme="dark"] #project-modal .modal-close:hover {
 }
 html[data-theme="dark"] #project-modal .modal-media {
   border-color: rgba(255, 255, 255, 0.12);
+  background: #1c1c22 !important;
+}
+html[data-theme="dark"] .project-thumb-load-fallback {
   background: #1c1c22;
+  color: #a1a1aa;
 }
 html[data-theme="dark"] .collection-intro {
   border-bottom-color: rgba(255, 255, 255, 0.1);

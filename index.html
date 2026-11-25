@@ -4539,6 +4539,14 @@
       background: #0b0b0e;
       color: #ffffff;
     }
+    html[data-theme="dark"] .pill-light .pill-inner {
+      background: #ffffff;
+      color: #0b0b0e;
+    }
+    html[data-theme="dark"] .pill-light .pill-badge {
+      background: #0b0b0e;
+      color: #ffffff;
+    }
     html[data-theme="dark"] .pill-outline .pill-inner {
       border-color: rgba(255, 255, 255, 0.18);
       background: rgba(255, 255, 255, 0.04);
@@ -4613,18 +4621,36 @@
       background: #23232b;
       color: #ffffff;
     }
+    html[data-theme="dark"] .service-expand-content {
+      border-top-color: rgba(255, 255, 255, 0.1);
+    }
+    html[data-theme="dark"] .service-expand-label {
+      color: rgba(244, 244, 246, 0.65);
+    }
     html[data-theme="dark"] .service-expand-text {
-      color: rgba(244, 244, 246, 0.78);
+      color: rgba(244, 244, 246, 0.85);
+    }
+    html[data-theme="dark"] .service-expand-footer {
+      border-top-color: rgba(255, 255, 255, 0.14);
     }
     html[data-theme="dark"] .service-focus-row {
       border-top-color: rgba(255, 255, 255, 0.1);
     }
+    html[data-theme="dark"] .service-focus-label {
+      color: #ffffff;
+    }
     html[data-theme="dark"] .service-focus-items {
-      color: rgba(244, 244, 246, 0.68);
+      color: rgba(244, 244, 246, 0.72);
     }
     html[data-theme="dark"] .service-explore-link {
       color: #ffffff;
-      border-bottom-color: rgba(255, 255, 255, 0.25);
+      border-bottom-color: rgba(255, 255, 255, 0.35);
+    }
+    html[data-theme="dark"] .service-explore-link:hover {
+      border-bottom-color: #ffffff;
+    }
+    html[data-theme="dark"] .service-row-trigger:focus-visible {
+      outline-color: #ffffff;
     }
 
     /* Stats Section in Dark Mode */
@@ -4640,6 +4666,9 @@
     html[data-theme="dark"] .tools-section {
       background: #0b0b0e;
     }
+    html[data-theme="dark"] .tools-header h2 {
+      color: #ffffff;
+    }
     html[data-theme="dark"] .tools-header p {
       color: #9ca3af !important;
     }
@@ -4649,7 +4678,8 @@
     }
     @media (hover: hover) {
       html[data-theme="dark"] .tech-card:hover {
-        border-color: rgba(255, 255, 255, 0.25);
+        background: #1c1c23;
+        border-color: rgba(255, 255, 255, 0.28);
         box-shadow: 0 12px 24px -8px rgba(0, 0, 0, 0.5);
       }
     }
@@ -4658,6 +4688,9 @@
     }
     html[data-theme="dark"] .tech-name {
       color: #f4f4f6;
+    }
+    html[data-theme="dark"] .tech-role {
+      color: #a1a1aa;
     }
 
     /* Testimonials Section in Dark Mode */
@@ -4740,11 +4773,25 @@
       border-color: rgba(255, 255, 255, 0.35);
     }
     html[data-theme="dark"] .modal-reply-note {
-      color: rgba(244, 244, 246, 0.55);
+      color: rgba(244, 244, 246, 0.6);
+    }
+    html[data-theme="dark"] .modal-control::placeholder {
+      color: rgba(244, 244, 246, 0.42);
+    }
+    html[data-theme="dark"] .modal-success p {
+      color: rgba(244, 244, 246, 0.75) !important;
+    }
+    html[data-theme="dark"] .modal-success-badge {
+      background: #23232e;
+      color: var(--accent-from);
+    }
+    html[data-theme="dark"] .skip-link {
+      background: #ffffff;
+      color: #0b0b0e;
     }
 
   </style>
-  <link rel="stylesheet" href="portfolio-gallery.css?v=4.14">
+  <link rel="stylesheet" href="portfolio-gallery.css?v=4.15">
 </head>
 <body>
 
